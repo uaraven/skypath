@@ -47,7 +47,12 @@
   --sky-day: rgb(88, 116, 148);
 
   --chart-trajectory: var(--accent-bright);
-  --chart-horizon-fill: rgba(26, 41, 47, 0.85);
+  /*
+   * The horizon silhouette is a translucent tint rather than a solid dark
+   * fill: it sits over every twilight band, and a dark fill vanished against
+   * the night band exactly where the observer cares most.
+   */
+  --chart-horizon-fill: rgba(116, 187, 241, 0.17);
   --chart-horizon-line: rgba(116, 187, 241, 0.55);
   --chart-grid: rgba(245, 245, 220, 0.18);
   --chart-label: rgba(245, 245, 220, 0.7);

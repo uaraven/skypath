@@ -1,0 +1,140 @@
+import { describe, expect, it } from 'vitest'
+import type { GeoLocation, SkyObject } from '../astro/types'
+import { objectByDesignation } from '../catalog'
+import { Horizon, horizonFromText } from '../horizon'
+import carrHorizon from '../horizon/fixtures/e.c.carr-horizon.txt?raw'
+import { altitudeChartModel, everVisible } from './model'
+
+const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
+const DATE = new Date(2026, 9, 15)
+
+const M13 = objectByDesignation('M13')!
+const POLARIS: SkyObject = {
+  id: 'polaris',
+  name: 'Polaris',
+  kind: 'deep-sky',
+  ra: 2.5303,
+  dec: 89.2641,
+}
+
+describe('altitudeChartModel', () => {
+  it('samples the trajectory and the horizon on the same time grid', () => {
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
+
+    expect(model.points.length).toBeGreaterThan(200)
+    expect(model.horizonTrack).toHaveLength(model.points.length)
+    for (let i = 0; i < model.points.length; i++) {
+      expect(model.horizonTrack[i].time).toEqual(model.points[i].time)
+    }
+  })
+
+  it('tracks the horizon along the object’s azimuth, not a fixed direction', () => {
+    // The Carr horizon varies with azimuth, so an object that swings across
+    // the sky must see different obstruction heights over the night.
+    const horizon = horizonFromText(carrHorizon)
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      horizon,
+    })
+
+    const altitudes = new Set(model.horizonTrack.map((s) => s.altitude))
+    expect(altitudes.size).toBeGreaterThan(10)
+
+    for (let i = 0; i < model.points.length; i++) {
+      expect(model.horizonTrack[i].altitude).toBeCloseTo(
+        horizon.altitudeAt(model.points[i].azimuth),
+        10,
+      )
+    }
+  })
+
+  it('defaults to a flat horizon when the observatory has none', () => {
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
+
+    expect(model.horizonTrack.every((s) => s.altitude === 0)).toBe(true)
+  })
+
+  it('reports the peak at the culmination altitude for the latitude', () => {
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
+
+    // Culmination altitude = 90 − |latitude − declination|; M13 sits at
+    // dec +36.46°, so from Kyiv it tops out near 76°.
+    expect(model.peak!.altitude).toBeCloseTo(76, 0)
+    // ...due south. The peak is the highest *sample*, so at a 5-minute step it
+    // can sit a couple of minutes either side of the meridian — about 0.7° of
+    // azimuth at this latitude. Exact culmination is Phase 6's job.
+    expect(Math.abs(model.peak!.azimuth - 180)).toBeLessThan(1)
+  })
+
+  it('shades the same window the trajectory spans', () => {
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
+
+    expect(model.bands[0].start).toEqual(model.window.start)
+    expect(model.bands[model.bands.length - 1].end).toEqual(model.window.end)
+  })
+})
+
+describe('everVisible', () => {
+  it('is true for an object that clears a flat horizon', () => {
+    expect(
+      everVisible(
+        altitudeChartModel({ object: M13, location: KYIV, date: DATE }),
+      ),
+    ).toBe(true)
+  })
+
+  it('is false when the horizon blocks the object all night', () => {
+    // Polaris sits at ~50° altitude due north from Kyiv and barely moves; a
+    // wall 80° high all around hides it for the whole window.
+    const wall = new Horizon([
+      { azimuth: 0, altitude: 80 },
+      { azimuth: 180, altitude: 80 },
+    ])
+    const model = altitudeChartModel({
+      object: POLARIS,
+      location: KYIV,
+      date: DATE,
+      horizon: wall,
+    })
+
+    expect(model.peak!.altitude).toBeGreaterThan(45)
+    expect(everVisible(model)).toBe(false)
+  })
+
+  it('is false for an object that never rises', () => {
+    // Deep southern declination, seen from Kyiv.
+    const southern: SkyObject = {
+      id: 'test-southern',
+      name: 'Southern test object',
+      kind: 'deep-sky',
+      ra: 6,
+      dec: -80,
+    }
+    const model = altitudeChartModel({
+      object: southern,
+      location: KYIV,
+      date: DATE,
+    })
+
+    expect(model.peak!.altitude).toBeLessThan(0)
+    expect(everVisible(model)).toBe(false)
+  })
+})
