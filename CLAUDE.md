@@ -20,7 +20,8 @@ Planning documents live in `.plan/`:
 - `npm run dev` — Vite dev server
 - `npm run build` / `npm run preview`
 - `npm test` (`test:watch`) — Vitest; `npm run check` — svelte-check + tsc
-  - Two projects: `test:unit` (Node, `src/lib/**`) and `test:components` (jsdom + Testing Library, `src/components/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
+  - Three projects: `test:unit` (Node, `src/lib/**`), `test:components` (jsdom + Testing Library, `src/components/**`) and `test:visual` (real Chromium via Playwright, `src/visual/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
+  - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face.
 - `npm run format` — Prettier (no ESLint)
 - `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC
 
