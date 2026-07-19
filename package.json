@@ -13,6 +13,8 @@
     "test:watch": "vitest",
     "test:unit": "vitest run --project unit",
     "test:components": "vitest run --project components",
+    "test:visual": "vitest run --project visual",
+    "test:visual:open": "vitest --project visual --browser.headless=false",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -26,7 +28,9 @@
     "@testing-library/user-event": "^14.6.1",
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.13.2",
+    "@vitest/browser": "^3.2.7",
     "jsdom": "^29.1.1",
+    "playwright": "^1.61.1",
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
     "svelte": "^5.56.4",
