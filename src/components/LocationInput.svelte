@@ -120,7 +120,9 @@
   }
 
   input {
-    width: 9ch;
+    /* Wide enough for a signed five-decimal degree — what "use my location"
+       fills in — so the value is never visually clipped. */
+    width: 12ch;
     font-family: var(--font-mono);
   }
 

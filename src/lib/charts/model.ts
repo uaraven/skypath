@@ -62,9 +62,32 @@ export function altitudeChartModel({
       time: point.time,
       altitude: horizon.altitudeAt(point.azimuth),
     })),
-    bands: skyBands(window, location),
+    bands: cachedBands(window, location),
     peak: peakAltitude(trajectory),
   }
+}
+
+/**
+ * The twilight bands depend only on the date and the observer — not on the
+ * object — so a list of charts showing different targets for one night all
+ * want the same ones. `skyBands` scans the sun's altitude across the window,
+ * which is by far the most expensive part of building a model, and the search
+ * results build one model per row on every keystroke.
+ *
+ * A single remembered entry is enough: those rows are computed back to back
+ * with identical arguments, so everything after the first row hits it.
+ */
+let lastBands: { key: string; bands: readonly SkyBand[] } | null = null
+
+function cachedBands(
+  window: TimeWindow,
+  location: GeoLocation,
+): readonly SkyBand[] {
+  const key = `${window.start.getTime()}|${window.end.getTime()}|${location.latitude}|${location.longitude}`
+  if (lastBands?.key !== key) {
+    lastBands = { key, bands: skyBands(window, location) }
+  }
+  return lastBands.bands
 }
 
 /** True when the object clears the observer's horizon at some point tonight. */

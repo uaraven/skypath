@@ -1,6 +1,7 @@
 # FlightPlan — Implementation Plan
 
 Spec: [flightplan-spec.md](flightplan-spec.md)
+UI mockups: [ui-mocks.md](ui-mocks.md) — the layout the app must have
 Progress tracking: [state.md](state.md)
 
 ## Goal
@@ -48,12 +49,15 @@ src/
       AzimuthalChart.svelte  # polar down-top view
       scales.ts              # projection/coordinate helpers shared by charts
   components/
-    ObjectPicker.svelte   # searchable Messier + planets selector
-    DatePicker.svelte
-    ObservatoryManager.svelte # create/select/edit/delete observatories
-    LocationInput.svelte  # lat/lon input + browser geolocation button
+    ObjectSearch.svelte   # Search tab: query box + result rows with thumbnails
+    ResultsPanel.svelte   # Results tab: altitude chart, all-sky, event times
+    ObservatoryManager.svelte # left panel: site list + add/edit/delete
+    ObservatoryEditor.svelte  # the add/edit modal form
+    LocationInput.svelte  # lat/lon/elevation input + browser geolocation button
     HorizonUpload.svelte  # file upload + paste textarea
-    EventTimesPanel.svelte
+    Modal.svelte          # shared dialog shell (scrim, Escape, focus)
+    ConfirmDialog.svelte  # destructive-action confirmation
+    EventTimesPanel.svelte    # Phase 6
   data/
     messier.json
   App.svelte
@@ -77,6 +81,34 @@ Key design points:
 - **Custom horizon crossings**: "above horizon" / "sets at horizon" compare object
   altitude against the interpolated horizon altitude at the object's current
   azimuth — solved by sampling + bisection on `alt(t) − horizonAlt(az(t))`.
+
+## UI layout (per `ui-mocks.md`)
+
+The app is a two-panel shell, built ahead of Phases 5–6 so those land in their
+final slots rather than in a scratch layout:
+
+- **Left**: the observatory list, with add / edit / delete beneath it. Selecting
+  a site drives every calculation on the right. Adding and editing open the
+  `ObservatoryEditor` **modal**; deleting goes through a confirmation dialog.
+- **Right**: a tabview.
+  - **Search** — a query box over the catalog, and a result row per match
+    showing the object's names, all its designations, and a **thumbnail
+    altitude chart** for the selected site. Picking a row switches to Results.
+  - **Results** — the altitude chart, the all-sky view (Phase 5), and the event
+    times (Phase 6) for the chosen object.
+- The date lives in the tab bar, applying to both tabs.
+
+Consequences worth recording:
+
+- The thumbnail charts mean **many chart instances on one page**. Each needs its
+  own SVG clip-path id, and the twilight bands — the expensive part of a model,
+  and identical for every row — are cached per (window, location) in
+  `charts/model.ts`.
+- Search is debounced; results are capped and sampled coarsely, because every
+  row costs a trajectory.
+- Dialogs are hand-rolled (`Modal.svelte`) rather than `<dialog showModal>`,
+  which keeps them testable without depending on how completely jsdom
+  implements dialog semantics.
 
 ## Visual design (consistency with voronin.cc)
 
@@ -140,23 +172,54 @@ site uses (`_includes/head.html`) — identical faces and loading behavior.
 - Object trajectory curve; horizon drawn as alt-vs-time curve along the object's azimuth track (matching the reference image); axis labels and time ticks.
 - **Done when:** visually matches `altitude.png` reference for a test case.
 
+### Phase 4.5 — UI shell (inserted after Phase 4, before Phase 5)
+
+Added at the user's request once `ui-mocks.md` existed: build the real layout
+now, so Phases 5 and 6 fill in prepared slots instead of being wired into a
+placeholder `App.svelte` and then moved.
+
+- Two-panel shell: observatory list left, Search / Results tabview right.
+- `ObservatoryManager` reduced to the list + add/edit/delete; the form moves
+  into the `ObservatoryEditor` modal, with `Modal` and `ConfirmDialog` shared.
+- `ObjectSearch`: debounced catalog search, result rows with a compact
+  `AltitudeChart` per row.
+- `ResultsPanel`: full altitude chart plus labelled placeholders for the
+  all-sky view and the event times.
+- Date picker in the tab bar (not in the mock, but the spec needs a date and
+  the charts were otherwise pinned to today).
+- **Done when:** the app matches the mockups, the observatory flow works
+  through the modals, and picking a search result opens it in Results.
+
 ### Phase 5 — Azimuthal chart
 - SVG polar plot: outer rim = 0° altitude, center = zenith, N at top, E/W per down-top convention.
 - Cardinal points N/S/E/W, azimuthal grid (altitude circles + azimuth spokes).
 - Horizon polygon wrapped around the rim; object trajectory with time direction markers.
+- Fills the "All-sky view" slot already laid out in `ResultsPanel`; follow
+  `AltitudeChart`'s shape — model under `lib/charts/`, component in
+  `src/components/`, unique SVG ids.
 - **Done when:** visually matches `azimutal.png` reference.
 
 ### Phase 6 — Event times
 - Object: rises above 0°, rises above custom horizon, max altitude (time + value), sets below custom horizon, sets below 0°.
 - Sun: sunset, sunrise, all three twilight/dawn pairs.
-- `EventTimesPanel` listing local times; handle circumpolar / never-rises cases gracefully.
+- Moonrise, moonset and moon phase belong here too (the mock lists them under
+  the times panel), though the Moon's own trajectory stays in Phase 8.
+- `EventTimesPanel` listing local times, filling the "Times and directions"
+  slot in `ResultsPanel`; handle circumpolar / never-rises cases gracefully.
 - **Done when:** times match Stellarium within ~1 min for test cases.
 
 ### Phase 7 — App assembly & UX
-- Wire ObjectPicker (search by M-number/name), DatePicker, ObservatoryManager (with LocationInput + HorizonUpload inside), chart-type toggle (or side-by-side), EventTimesPanel into App.
-- localStorage persistence of all inputs; sensible defaults (today, a default observatory with flat horizon on first launch).
-- Responsive layout; charts must scroll/scale on small screens.
-- Styling pass: cards, buttons, inputs follow voronin.cc look (panel backgrounds, borders, pill buttons, hover transitions) via `theme.css` tokens.
+Most of the assembly moved into Phase 4.5; what remains is persistence, polish
+and the things only visible once all the content is real.
+- Persist the remaining inputs (selected object, date) alongside the
+  observatories; restore them on load. The observatory list already persists.
+- Responsive pass with real content in place: charts must scroll/scale on small
+  screens, and the two-panel split has to collapse cleanly.
+- Styling pass against voronin.cc side by side; keyboard and focus behaviour
+  for the tabview and the modals (arrow-key tab navigation, focus restored to
+  the opener on close).
+- Show the OpenNGC attribution (`catalogSources`) in the credits — CC-BY-SA-4.0
+  requires it.
 - **Done when:** full user flow works end-to-end in the browser and the app is visually consistent with voronin.cc side by side.
 
 ### Phase 8 — Extended goal: Moon

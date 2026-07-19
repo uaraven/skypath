@@ -24,13 +24,27 @@
 
   interface Props {
     model: AltitudeChartModel
+    /**
+     * Thumbnail form for the search results: the same projection with the
+     * axes, labels and caption dropped, so a row can carry a chart.
+     */
+    compact?: boolean
   }
 
-  let { model }: Props = $props()
+  let { model, compact = false }: Props = $props()
 
-  const WIDTH = 960
-  const HEIGHT = 340
-  const PLOT: PlotArea = { left: 46, top: 14, width: 900, height: 296 }
+  const WIDTH = $derived(compact ? 420 : 960)
+  const HEIGHT = $derived(compact ? 96 : 340)
+  const PLOT: PlotArea = $derived(
+    compact
+      ? { left: 0, top: 0, width: 420, height: 96 }
+      : { left: 46, top: 14, width: 900, height: 296 },
+  )
+
+  // Every instance needs its own clip path: the search tab renders a chart per
+  // result row, and a shared id would point them all at the first one's plot.
+  const uid = $props.id()
+  const clipId = `altitude-plot-${uid}`
 
   /** Chart palette lives in theme.css so both charts shade identically. */
   const PHASE_FILL: Record<SkyPhase, string> = {
@@ -41,7 +55,7 @@
     night: 'var(--sky-night)',
   }
 
-  const baseline = plotBottom(PLOT)
+  const baseline = $derived(plotBottom(PLOT))
 
   const bands = $derived(
     model.bands.map((band) => {
@@ -99,7 +113,7 @@
   }
 </script>
 
-<figure class="chart">
+<figure class="chart" class:compact>
   <svg
     viewBox="0 0 {WIDTH} {HEIGHT}"
     preserveAspectRatio="xMidYMid meet"
@@ -109,7 +123,7 @@
     <title>{summary}</title>
 
     <defs>
-      <clipPath id="altitude-plot">
+      <clipPath id={clipId}>
         <rect
           x={PLOT.left}
           y={PLOT.top}
@@ -119,7 +133,7 @@
       </clipPath>
     </defs>
 
-    <g clip-path="url(#altitude-plot)">
+    <g clip-path="url(#{clipId})">
       {#each bands as band, i (i)}
         <rect
           class="band"
@@ -132,32 +146,34 @@
         />
       {/each}
 
-      {#each times as time (time.getTime())}
-        <line
-          class="grid"
-          x1={timeToX(time, model.window, PLOT)}
-          x2={timeToX(time, model.window, PLOT)}
-          y1={PLOT.top}
-          y2={baseline}
-        />
-      {/each}
+      {#if !compact}
+        {#each times as time (time.getTime())}
+          <line
+            class="grid"
+            x1={timeToX(time, model.window, PLOT)}
+            x2={timeToX(time, model.window, PLOT)}
+            y1={PLOT.top}
+            y2={baseline}
+          />
+        {/each}
 
-      {#each altitudes as altitude (altitude)}
-        <line
-          class="grid"
-          x1={PLOT.left}
-          x2={plotRight(PLOT)}
-          y1={altitudeToY(altitude, PLOT)}
-          y2={altitudeToY(altitude, PLOT)}
-        />
-      {/each}
+        {#each altitudes as altitude (altitude)}
+          <line
+            class="grid"
+            x1={PLOT.left}
+            x2={plotRight(PLOT)}
+            y1={altitudeToY(altitude, PLOT)}
+            y2={altitudeToY(altitude, PLOT)}
+          />
+        {/each}
+      {/if}
 
       <path class="horizon-fill" d={horizonFill} />
       <path class="horizon-line" d={horizonLine} />
       <path class="trajectory" d={trajectoryPath} />
 
       {#if peak}
-        <circle class="peak" cx={peak.x} cy={peak.y} r="5" />
+        <circle class="peak" cx={peak.x} cy={peak.y} r={compact ? 3 : 5} />
       {/if}
     </g>
 
@@ -170,40 +186,44 @@
       height={PLOT.height}
     />
 
-    {#each altitudes as altitude (altitude)}
-      <text
-        class="label altitude-label"
-        x={PLOT.left - 10}
-        y={altitudeToY(altitude, PLOT)}
-        text-anchor="end"
-        dominant-baseline="middle">{altitude}</text
-      >
-    {/each}
+    {#if !compact}
+      {#each altitudes as altitude (altitude)}
+        <text
+          class="label altitude-label"
+          x={PLOT.left - 10}
+          y={altitudeToY(altitude, PLOT)}
+          text-anchor="end"
+          dominant-baseline="middle">{altitude}</text
+        >
+      {/each}
 
-    {#each times as time (time.getTime())}
-      <text
-        class="label time-label"
-        x={timeToX(time, model.window, PLOT)}
-        y={baseline + 20}
-        text-anchor="middle">{formatHour(time)}</text
-      >
-    {/each}
+      {#each times as time (time.getTime())}
+        <text
+          class="label time-label"
+          x={timeToX(time, model.window, PLOT)}
+          y={baseline + 20}
+          text-anchor="middle">{formatHour(time)}</text
+        >
+      {/each}
 
-    {#if peak}
-      <text
-        class="label peak-label"
-        x={peak.x}
-        y={peak.y - 12}
-        text-anchor={peak.x > plotRight(PLOT) - 60 ? 'end' : 'middle'}
-        >{peak.label}</text
-      >
+      {#if peak}
+        <text
+          class="label peak-label"
+          x={peak.x}
+          y={peak.y - 12}
+          text-anchor={peak.x > plotRight(PLOT) - 60 ? 'end' : 'middle'}
+          >{peak.label}</text
+        >
+      {/if}
     {/if}
   </svg>
 
-  <figcaption>
-    Altitude of {model.object.name}, local noon to noon. Shading is twilight;
-    the filled band is your horizon along the object's azimuth.
-  </figcaption>
+  {#if !compact}
+    <figcaption>
+      Altitude of {model.object.name}, local noon to noon. Shading is twilight;
+      the filled band is your horizon along the object's azimuth.
+    </figcaption>
+  {/if}
 </figure>
 
 <style>
@@ -217,6 +237,10 @@
     height: auto;
     background-color: var(--bg-inset);
     border-radius: var(--radius-card);
+  }
+
+  .compact svg {
+    border-radius: 5px;
   }
 
   .grid {
