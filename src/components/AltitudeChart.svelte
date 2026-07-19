@@ -243,6 +243,22 @@
     border-radius: 5px;
   }
 
+  /*
+   * On a phone the full chart scaled to the panel width would squeeze a
+   * 24-hour axis into ~300px, where the hour labels stop being readable at
+   * all. Give it a floor and let the figure scroll sideways instead — the
+   * thumbnails are exempt, they are meant to be read as a shape, not a scale.
+   */
+  @media (max-width: 600px) {
+    .chart:not(.compact) {
+      overflow-x: auto;
+    }
+
+    .chart:not(.compact) svg {
+      min-width: 480px;
+    }
+  }
+
   .grid {
     stroke: var(--chart-grid);
     stroke-width: 1;

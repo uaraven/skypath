@@ -11,6 +11,7 @@
  * the module itself stays plain TypeScript and testable under Node.
  */
 
+import { defaultStorage, type KeyValueStore } from '../storage'
 import { isObservatory, type Observatory, type ObservatoryInput } from './types'
 
 /** Single versioned key holding the whole store, per the implementation plan. */
@@ -21,13 +22,6 @@ const SCHEMA_VERSION = 1
 export interface ObservatoryState {
   observatories: Observatory[]
   selectedId: string
-}
-
-/** The slice of the `Storage` API we use; lets tests hand in a fake. */
-export interface KeyValueStore {
-  getItem(key: string): string | null
-  setItem(key: string, value: string): void
-  removeItem(key: string): void
 }
 
 /**
@@ -206,23 +200,6 @@ function newId(): string {
     return crypto.randomUUID()
   }
   return `obs-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
-}
-
-/** localStorage when it is usable, null in Node or when storage is blocked. */
-function defaultStorage(): KeyValueStore | null {
-  try {
-    // Reached through `window` rather than as a bare global: Node exposes an
-    // experimental `localStorage` of its own and warns on any access to it,
-    // which would otherwise fire on every `npm test` run.
-    if (typeof window === 'undefined') return null
-    const storage = window.localStorage
-    // Node's experimental global yields `undefined` rather than a Storage, so
-    // check for the methods instead of trusting the type.
-    return typeof storage?.getItem === 'function' ? storage : null
-  } catch {
-    // Safari throws on access when cookies are fully blocked.
-    return null
-  }
 }
 
 /** The app-wide store. Tests build their own with an injected storage. */

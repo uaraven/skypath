@@ -10,7 +10,6 @@ export {
   STORAGE_KEY,
   DEFAULT_OBSERVATORY,
   type ObservatoryState,
-  type KeyValueStore,
 } from './store'
 export {
   observatoryLocation,

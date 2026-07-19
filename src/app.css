@@ -11,6 +11,17 @@ html {
   height: 100%;
 }
 
+/*
+ * The site's 14pt root is comfortable on a desktop and oversized on a phone,
+ * where it costs the charts and the times grid the width they need. Everything
+ * is sized in rem, so stepping the root down scales the whole app at once.
+ */
+@media (max-width: 600px) {
+  html {
+    font-size: 12pt;
+  }
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);

@@ -23,19 +23,54 @@
 
   let panel = $state<HTMLElement | null>(null)
 
+  const FOCUSABLE =
+    'input, textarea, select, button, a[href], [tabindex]:not([tabindex="-1"])'
+
   // Focus moves into the dialog on open so the keyboard lands somewhere
-  // sensible, and Escape closes it.
+  // sensible, and returns to whatever opened it on close — otherwise focus
+  // falls back to <body> and a keyboard user restarts from the top of the page
+  // every time they cancel a dialog. Captured before the first focus() call,
+  // and restored from the effect's cleanup, which runs on unmount.
   $effect(() => {
-    const target = panel?.querySelector<HTMLElement>(
-      'input, textarea, select, button',
-    )
-    target?.focus()
+    const opener = document.activeElement
+    panel?.querySelector<HTMLElement>(FOCUSABLE)?.focus()
+
+    return () => {
+      if (opener instanceof HTMLElement && opener.isConnected) opener.focus()
+    }
   })
 
   function onkeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       event.stopPropagation()
       onclose()
+      return
+    }
+    if (event.key === 'Tab') trapTab(event)
+  }
+
+  /**
+   * Keeps Tab inside the dialog. Without it the focus ring walks out into the
+   * page behind the scrim, where a sighted keyboard user cannot see it and the
+   * controls it lands on are the ones the modal is blocking.
+   */
+  function trapTab(event: KeyboardEvent) {
+    const focusable = [
+      ...(panel?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? []),
+    ]
+    if (focusable.length === 0) return
+
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    const active = document.activeElement
+
+    // Only the two ends need handling; in between, the browser is right.
+    if (event.shiftKey && (active === first || !panel?.contains(active))) {
+      event.preventDefault()
+      last.focus()
+    } else if (!event.shiftKey && active === last) {
+      event.preventDefault()
+      first.focus()
     }
   }
 </script>
