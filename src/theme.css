@@ -54,6 +54,12 @@
    */
   --chart-horizon-fill: rgba(116, 187, 241, 0.17);
   --chart-horizon-line: rgba(116, 187, 241, 0.55);
+  /*
+   * The time indicator has to read against every twilight band *and* against
+   * the trajectory it sits on, so it is deliberately the one warm colour in a
+   * palette that is otherwise blue.
+   */
+  --chart-marker: rgb(255, 176, 92);
   --chart-grid: rgba(245, 245, 220, 0.18);
   --chart-label: rgba(245, 245, 220, 0.7);
 }

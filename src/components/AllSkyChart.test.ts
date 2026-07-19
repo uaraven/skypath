@@ -27,8 +27,11 @@ function model(
   })
 }
 
-function renderChart(overrides = {}) {
-  const { container } = render(AllSkyChart, { model: model(overrides) })
+function renderChart(overrides = {}, props: Record<string, unknown> = {}) {
+  const { container } = render(AllSkyChart, {
+    model: model(overrides),
+    ...props,
+  })
   return container.querySelector('svg')!
 }
 
@@ -131,6 +134,30 @@ describe('AllSkyChart', () => {
     )
     // Still drawn, though — being blocked is not being absent.
     expect(svg.querySelectorAll('.trajectory')).toHaveLength(1)
+  })
+
+  it('draws no time indicator until one is asked for', () => {
+    expect(renderChart().querySelector('.marker')).toBeNull()
+  })
+
+  it('marks where the object is at the given moment', () => {
+    // 20:00 — M13 is up and in the north-west from Kyiv.
+    const svg = renderChart({}, { markerTime: new Date(2026, 9, 15, 20, 0) })
+
+    expect(svg.querySelector('.marker')).not.toBeNull()
+    expect(svg.getAttribute('aria-label')).toMatch(
+      /at the marked time it is at \d+° in the NW/,
+    )
+  })
+
+  // The dial has nothing below the rim to point at, and interpolating across
+  // the gap between two arcs would sit the indicator on the rim all night.
+  it('omits the indicator while the object is below the horizon', () => {
+    // M13 sets at 23:26 and rises again at 02:38 on this night.
+    const svg = renderChart({}, { markerTime: new Date(2026, 9, 16, 1, 0) })
+
+    expect(svg.querySelector('.marker')).toBeNull()
+    expect(svg.getAttribute('aria-label')).not.toContain('marked time')
   })
 
   it('draws no track for an object that never rises', () => {
