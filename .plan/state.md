@@ -11,9 +11,10 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
 | 2 | Catalogs (Messier JSON + planets) | done | 36 more tests (67 total). Extensible multi-catalog model; data generated from OpenNGC — see log |
 | 3 | Horizon & observatories (NINA parser, interpolation, observatory CRUD in localStorage) | done | 94 more tests (161 total), components included — Testing Library + jsdom added, see log |
 | 4 | Altitude chart (cylindrical, day/night bands) | done | 56 more tests (217 total). Matches `altitude.png`; screenshot in `screenshots/altitude-chart.png` — see log |
-| 5 | Azimuthal chart (polar down-top view) | not started | |
-| 6 | Event times (object + sun events) | not started | |
-| 7 | App assembly & UX (pickers, persistence, layout, voronin.cc styling pass) | not started | |
+| 4.5 | UI shell (two-panel layout, tabview, observatory modals, object search) | done | Inserted from `ui-mocks.md` before Phase 5. 23 more tests (240 total) — see log |
+| 5 | Azimuthal chart (polar down-top view) | not started | Slot is laid out in `ResultsPanel` |
+| 6 | Event times (object + sun events) | not started | Slot is laid out in `ResultsPanel`; moon rise/set/phase belongs here too |
+| 7 | App assembly & UX (persistence, responsive/styling polish, credits) | not started | Assembly largely done in 4.5; scope narrowed |
 | 8 | Extended: Moon (trajectory, rise/set, phase) | not started | |
 | 9 | Build, deploy to S3 & polish | not started | Open: subdomain vs voronin.cc/flightplan path |
 
@@ -70,3 +71,15 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
   - `--chart-horizon-fill` changed from a solid dark tone to a translucent accent tint: the dark fill was invisible against the night band, which is exactly where the observer cares about the horizon.
   - Mutation-checked: sampling the horizon at a fixed azimuth fails 1 test, skipping the boundary bisection fails 3, removing the altitude clamp fails 1 unit and 1 visual test.
   - `App.svelte` still a shell — it now shows M13 for tonight from the selected observatory so the chart is exercisable by hand; pickers land in Phase 7.
+- 2026-07-19 — **Phase 4.5 (UI shell) done.** New `.plan/ui-mocks.md` from the user specifies the real layout; built now, before Phase 5, so the azimuthal chart and the event times land in prepared slots instead of being wired into a placeholder and moved later. New components: `Modal`, `ConfirmDialog`, `ObservatoryEditor`, `ObjectSearch`, `ResultsPanel`. 23 new tests, 240 total.
+  - **`ObservatoryManager` was split.** It is now only the left-hand list plus add/edit/delete; the form moved into `ObservatoryEditor`, opened as a modal. Its test file split the same way, and the editor's contract got simpler in the process: it hands a validated `ObservatoryInput` to `onsave` or nothing at all, and never touches the store. That retired the draft/dirty/Revert machinery — cancelling the dialog *is* the revert.
+  - `window.confirm` is gone, replaced by an in-app `ConfirmDialog` (the mock asks for a confirmation dialog, and `confirm()` cannot be styled to match the site). Tests no longer stub a global.
+  - **Dialogs are hand-rolled, not `<dialog showModal>`** — the focus handling needed here is small and explicit, and this avoids depending on how completely jsdom implements dialog semantics.
+  - **Many charts on one page is a new condition, and it broke a hidden assumption.** `AltitudeChart` hard-coded its SVG clip-path id, so every thumbnail in the search results would have clipped to the first chart's plot. Ids are now per-instance via `$props.id()`; a test asserts they are distinct.
+  - **Twilight bands are now cached per (window, location)** in `charts/model.ts`. They are the expensive part of a model, they do not depend on the object, and the search rows build one model each with identical arguments — so a single remembered entry gives a hit on every row after the first. Search is also debounced (200 ms), capped at 8 results, and thumbnails sample at 15-minute steps.
+  - The observatory list is a `role="listbox"` with the option buttons as **direct children** — the first version wrapped them in `<li>`, which published a second, meaningless `listitem` role per site and made `getAllByRole('listitem')` in the visual tests pick up an observatory instead of a search result. The markup was wrong, not the test.
+  - **A date picker was added although the mock does not show one**: the spec requires choosing a date, and without it the charts were pinned to today. It sits in the tab bar, applying to both tabs. Flag if it belongs somewhere else.
+  - Designations render per the catalog registry's own conventions — `M31`, `NGC 224` — not the mock's `M 31`. `CATALOGS` sets the Messier separator to `''` deliberately; left as is.
+  - Visual tests updated for the new layout (the old "panels stack in one column" assertion contradicted the mock) and extended: the two-panel split, the modal actually covering the viewport, thumbnail legibility, and that the active tab is visibly distinct — the last because the tab styling was genuinely ambiguous in the screenshot at review size. Screenshots now cover four states: `app-shell`, `app-search`, `app-results`, `app-observatory-editor`.
+  - Mutation-checked: collapsing the grid to one column fails the split test, dropping the `.active` tab rule fails the tab test, sharing one clip-path id fails the clip-path test.
+  - **Phase 5 and 6 content is placeholder text in `ResultsPanel`**, labelled with the phase it arrives in — the slots are laid out, the astronomy is not written.

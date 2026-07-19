@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { MemoryStorage } from '../lib/observatory/memory-storage'
 import { ObservatoryStore, STORAGE_KEY } from '../lib/observatory'
 import ObservatoryManager from './ObservatoryManager.svelte'
@@ -8,6 +8,9 @@ import ObservatoryManager from './ObservatoryManager.svelte'
 /**
  * Each test gets its own store over its own storage, so nothing leaks between
  * cases and the assertions can look at what was actually persisted.
+ *
+ * These cover the panel's own job — listing, selecting, and opening the right
+ * dialog. The form inside the editor is covered by `ObservatoryEditor.test.ts`.
  */
 function setup() {
   const storage = new MemoryStorage()
@@ -16,254 +19,193 @@ function setup() {
   return { store, storage, ...rendered }
 }
 
-const nameInput = () => screen.getByLabelText(/^name/i)
-const latitudeInput = () => screen.getByLabelText(/latitude/i)
-const horizonInput = () => screen.getByLabelText(/paste/i)
 const button = (name: RegExp | string) => screen.getByRole('button', { name })
+const nameInput = () => screen.getByLabelText(/^name/i)
+const dialog = () => screen.queryByRole('dialog')
 
 /** The persisted observatories, read back the way a page reload would. */
 function persisted(storage: MemoryStorage) {
   return JSON.parse(storage.getItem(STORAGE_KEY) ?? '{}')
 }
 
-/** Deletion is behind a `confirm()`; stub it per test and inspect what it asked. */
-function stubConfirm() {
-  return vi.spyOn(window, 'confirm').mockReturnValue(true)
+function addSite(store: ObservatoryStore, name: string) {
+  return store.create({ name, latitude: 49, longitude: 31, horizonText: '' })
 }
 
-let confirmed: ReturnType<typeof stubConfirm>
-
-beforeEach(() => {
-  confirmed = stubConfirm()
-})
-
-describe('showing the selected observatory', () => {
-  it('loads the selected observatory into the form', () => {
-    setup()
-
-    expect(nameInput()).toHaveValue('Greenwich')
-    expect(latitudeInput()).toHaveValue(51.4779)
-  })
-
-  it('lists every observatory in the picker', () => {
+describe('listing observatories', () => {
+  it('lists every observatory', async () => {
     const { store } = setup()
-    store.create({
-      name: 'Dark site',
-      latitude: 49,
-      longitude: 31,
-      horizonText: '',
-    })
+    addSite(store, 'Dark site')
 
-    return waitFor(() => {
+    await waitFor(() => {
       expect(screen.getAllByRole('option').map((o) => o.textContent)).toEqual([
-        'Greenwich',
-        'Dark site',
+        expect.stringContaining('Greenwich'),
+        expect.stringContaining('Dark site'),
       ])
     })
   })
 
-  it('reloads the form when another observatory is selected', async () => {
+  it('marks the selected one', async () => {
+    const { store } = setup()
+    addSite(store, 'Dark site')
+
+    await waitFor(() => {
+      const selected = screen
+        .getAllByRole('option')
+        .filter((o) => o.getAttribute('aria-selected') === 'true')
+      expect(selected).toHaveLength(1)
+      expect(selected[0]).toHaveTextContent('Dark site')
+    })
+  })
+
+  it('shows each site’s coordinates', () => {
+    setup()
+
+    expect(screen.getByRole('option')).toHaveTextContent('51.48, -0.00')
+  })
+
+  it('selects the observatory that is clicked, and persists the choice', async () => {
+    const user = userEvent.setup()
+    const { store, storage } = setup()
+    const greenwich = store.selected.id
+    addSite(store, 'Dark site')
+    await waitFor(() => expect(screen.getAllByRole('option')).toHaveLength(2))
+
+    await user.click(screen.getByRole('option', { name: /Greenwich/ }))
+
+    expect(store.selected.id).toBe(greenwich)
+    expect(persisted(storage).selectedId).toBe(greenwich)
+  })
+})
+
+describe('adding', () => {
+  it('opens an empty editor', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await user.click(button(/add observatory/i))
+
+    expect(dialog()).toBeInTheDocument()
+    expect(screen.getByText('New observatory')).toBeInTheDocument()
+    expect(nameInput()).toHaveValue('')
+  })
+
+  it('seeds the new site with the selected one’s location', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await user.click(button(/add observatory/i))
+
+    expect(screen.getByLabelText(/latitude/i)).toHaveValue(51.4779)
+  })
+
+  it('creates and selects the observatory on save', async () => {
+    const user = userEvent.setup()
+    const { store, storage } = setup()
+
+    await user.click(button(/add observatory/i))
+    await user.type(nameInput(), 'Dark site')
+    await user.click(button('Save'))
+
+    expect(store.all).toHaveLength(2)
+    expect(store.selected.name).toBe('Dark site')
+    expect(persisted(storage).observatories[1].name).toBe('Dark site')
+    await waitFor(() => expect(dialog()).not.toBeInTheDocument())
+  })
+
+  it('adds nothing when the editor is cancelled', async () => {
     const user = userEvent.setup()
     const { store } = setup()
-    const greenwich = store.selected.id
-    store.create({
-      name: 'Dark site',
-      latitude: 49,
-      longitude: 31,
-      horizonText: '0 10',
-    })
 
-    await waitFor(() => expect(nameInput()).toHaveValue('Dark site'))
-    await user.selectOptions(screen.getByRole('combobox'), greenwich)
+    await user.click(button(/add observatory/i))
+    await user.type(nameInput(), 'Dark site')
+    await user.click(button('Cancel'))
 
-    expect(nameInput()).toHaveValue('Greenwich')
-    expect(latitudeInput()).toHaveValue(51.4779)
-    expect(horizonInput()).toHaveValue('')
+    expect(store.all).toHaveLength(1)
+    expect(dialog()).not.toBeInTheDocument()
   })
 })
 
 describe('editing', () => {
-  it('starts with nothing to save', () => {
-    setup()
-
-    expect(button('Save')).toBeDisabled()
-    expect(button('Revert')).toBeDisabled()
-    expect(screen.queryByText(/unsaved changes/i)).not.toBeInTheDocument()
-  })
-
-  it('flags unsaved changes as soon as the form is touched', async () => {
+  it('opens the editor on the selected observatory', async () => {
     const user = userEvent.setup()
     setup()
 
-    await user.type(nameInput(), '!')
+    await user.click(button('Edit'))
 
-    expect(screen.getByText(/unsaved changes/i)).toBeInTheDocument()
-    expect(button('Save')).toBeEnabled()
+    expect(screen.getByText('Edit observatory')).toBeInTheDocument()
+    expect(nameInput()).toHaveValue('Greenwich')
   })
 
-  it('does not touch the store until Save is pressed', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-
-    await user.clear(nameInput())
-    await user.type(nameInput(), 'Backyard')
-
-    expect(store.selected.name).toBe('Greenwich')
-  })
-
-  it('saves an edited name and location', async () => {
+  it('updates the observatory in place on save', async () => {
     const user = userEvent.setup()
     const { store, storage } = setup()
 
+    await user.click(button('Edit'))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
-    await user.clear(latitudeInput())
-    await user.type(latitudeInput(), '50.45')
     await user.click(button('Save'))
 
-    expect(store.selected).toMatchObject({
-      name: 'Backyard',
-      latitude: 50.45,
-    })
+    expect(store.all).toHaveLength(1)
+    expect(store.selected.name).toBe('Backyard')
     expect(persisted(storage).observatories[0].name).toBe('Backyard')
   })
 
-  it('settles clean after saving, even when the name was padded', async () => {
-    const user = userEvent.setup()
-    setup()
-
-    await user.type(nameInput(), '  ')
-    await user.click(button('Save'))
-
-    await waitFor(() => expect(button('Save')).toBeDisabled())
-    expect(screen.queryByText(/unsaved changes/i)).not.toBeInTheDocument()
-  })
-
-  it('saves a pasted horizon verbatim', async () => {
+  it('leaves the store untouched when cancelled', async () => {
     const user = userEvent.setup()
     const { store } = setup()
 
-    await user.type(horizonInput(), '0 20\n180 5')
-    await user.click(button('Save'))
-
-    expect(store.selected.horizonText).toBe('0 20\n180 5')
-  })
-
-  it('reverts the form to what is stored', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-
+    await user.click(button('Edit'))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
-    await user.type(horizonInput(), '0 20')
-    await user.click(button('Revert'))
+    await user.click(button('Cancel'))
+
+    expect(store.selected.name).toBe('Greenwich')
+  })
+
+  it('edits the site that was double-clicked', async () => {
+    const user = userEvent.setup()
+    const { store } = setup()
+    addSite(store, 'Dark site')
+    await waitFor(() => expect(screen.getAllByRole('option')).toHaveLength(2))
+
+    await user.dblClick(screen.getByRole('option', { name: /Greenwich/ }))
 
     expect(nameInput()).toHaveValue('Greenwich')
-    expect(horizonInput()).toHaveValue('')
-    expect(store.selected.name).toBe('Greenwich')
   })
 })
 
-describe('validation', () => {
-  it('refuses to save a nameless observatory', async () => {
+describe('deleting', () => {
+  it('asks before deleting', async () => {
     const user = userEvent.setup()
     const { store } = setup()
 
-    await user.clear(nameInput())
-    await user.click(button('Save'))
+    await user.click(button(/delete observatory/i))
 
-    expect(screen.getByText(/give the observatory a name/i)).toBeInTheDocument()
-    expect(store.selected.name).toBe('Greenwich')
+    expect(dialog()).toBeInTheDocument()
+    expect(store.all).toHaveLength(1)
   })
 
-  it('refuses an out-of-range latitude', async () => {
+  it('deletes on confirmation', async () => {
     const user = userEvent.setup()
     const { store } = setup()
+    addSite(store, 'Dark site')
+    await waitFor(() => expect(screen.getAllByRole('option')).toHaveLength(2))
 
-    await user.clear(latitudeInput())
-    await user.type(latitudeInput(), '95')
-    await user.click(button('Save'))
-
-    expect(screen.getByText(/latitude must be between/i)).toBeInTheDocument()
-    expect(store.selected.latitude).toBe(51.4779)
-  })
-
-  it('refuses an empty latitude', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-
-    await user.clear(latitudeInput())
-    await user.click(button('Save'))
-
-    expect(screen.getByText(/latitude must be between/i)).toBeInTheDocument()
-    expect(store.selected.latitude).toBe(51.4779)
-  })
-
-  it('clears the error once the form is valid again', async () => {
-    const user = userEvent.setup()
-    setup()
-
-    await user.clear(latitudeInput())
-    await user.click(button('Save'))
-    expect(screen.getByText(/latitude must be between/i)).toBeInTheDocument()
-
-    await user.type(latitudeInput(), '50')
-    await user.click(button('Save'))
-
-    await waitFor(() => {
-      expect(
-        screen.queryByText(/latitude must be between/i),
-      ).not.toBeInTheDocument()
-    })
-  })
-})
-
-describe('creating and deleting', () => {
-  it('creates a new observatory and selects it', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-
-    await user.click(button('New'))
-
-    expect(store.all).toHaveLength(2)
-    expect(store.selected.name).toBe('New observatory')
-    await waitFor(() => expect(nameInput()).toHaveValue('New observatory'))
-  })
-
-  it('seeds a new observatory with the current location', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-
-    await user.click(button('New'))
-
-    expect(store.selected.latitude).toBe(51.4779)
-    expect(store.selected.horizonText).toBe('')
-  })
-
-  it('deletes after confirmation and moves the form on', async () => {
-    const user = userEvent.setup()
-    const { store } = setup()
-    store.create({
-      name: 'Dark site',
-      latitude: 49,
-      longitude: 31,
-      horizonText: '',
-    })
-    await waitFor(() => expect(nameInput()).toHaveValue('Dark site'))
-
+    await user.click(button(/delete observatory/i))
     await user.click(button('Delete'))
 
-    expect(confirmed).toHaveBeenCalled()
     expect(store.all).toHaveLength(1)
-    await waitFor(() => expect(nameInput()).toHaveValue('Greenwich'))
+    expect(store.selected.name).toBe('Greenwich')
+    await waitFor(() => expect(dialog()).not.toBeInTheDocument())
   })
 
   it('keeps the observatory when the user cancels', async () => {
     const user = userEvent.setup()
-    confirmed.mockReturnValue(false)
     const { store } = setup()
 
-    await user.click(button('Delete'))
+    await user.click(button(/delete observatory/i))
+    await user.click(button('Cancel'))
 
     expect(store.all).toHaveLength(1)
     expect(store.selected.name).toBe('Greenwich')
@@ -273,19 +215,22 @@ describe('creating and deleting', () => {
     const user = userEvent.setup()
     setup()
 
-    await user.click(button('Delete'))
+    await user.click(button(/delete observatory/i))
 
-    expect(confirmed.mock.calls[0][0]).toMatch(/only one/i)
+    expect(screen.getByRole('dialog')).toHaveTextContent(/only one/i)
   })
 
   it('never leaves the user without an observatory', async () => {
     const user = userEvent.setup()
     const { store } = setup()
 
+    await user.click(button(/delete observatory/i))
     await user.click(button('Delete'))
 
     expect(store.all).toHaveLength(1)
-    await waitFor(() => expect(nameInput()).toHaveValue('Greenwich'))
+    await waitFor(() =>
+      expect(screen.getByRole('option')).toHaveTextContent('Greenwich'),
+    )
   })
 })
 
@@ -294,6 +239,7 @@ describe('default wiring', () => {
     const user = userEvent.setup()
     render(ObservatoryManager)
 
+    await user.click(button('Edit'))
     await user.type(nameInput(), ' Park')
     await user.click(button('Save'))
 
@@ -308,18 +254,15 @@ describe('persistence across a reload', () => {
     const user = userEvent.setup()
     const { storage } = setup()
 
+    await user.click(button('Edit'))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
-    await user.type(horizonInput(), '0 20\n180 5')
+    await user.type(screen.getByLabelText(/paste/i), '0 20\n180 5')
     await user.click(button('Save'))
 
     // A fresh store over the same storage is what a page reload amounts to.
-    screen.getByText(/observatory/i)
     const reloaded = new ObservatoryStore(storage)
-    render(ObservatoryManager, { props: { store: reloaded } })
-
-    const forms = screen.getAllByLabelText(/^name/i)
-    expect(forms[1]).toHaveValue('Backyard')
+    expect(reloaded.selected.name).toBe('Backyard')
     expect(reloaded.selected.horizonText).toBe('0 20\n180 5')
   })
 })

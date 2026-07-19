@@ -6,11 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **FlightPlan** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is FlightPlan.
 
-## Current state: phases 0–4 done (scaffolding, astronomy core, catalogs, horizon & observatories, altitude chart)
+## Current state: phases 0–4 plus 4.5 done (scaffolding, astronomy core, catalogs, horizon & observatories, altitude chart, UI shell)
 
 Planning documents live in `.plan/`:
 
 - `.plan/flightplan-spec.md` — requirements (source of truth for functionality)
+- `.plan/ui-mocks.md` — the layout the app must have (source of truth for UI structure)
 - `.plan/implementation-plan.md` — tech decisions, architecture, phases 0–9 with "done when" criteria
 - `.plan/state.md` — per-phase status table and decision log. **Keep this updated**: mark phase status changes and append dated log entries for any decision or requirement change.
 - `altitude.png` / `azimutal.png` — reference renderings the two chart types must visually match
@@ -40,7 +41,11 @@ Planning documents live in `.plan/`:
   - The **chart components live in `src/components/`**, not here, so Vitest's Node `unit` project doesn't collect them. Keep charts presentational: they render a model and do no astronomy of their own.
   - Twilight bands come from scanning the sun's altitude and bisecting phase changes, _not_ from assembling `computeSunEvents`' individually-nullable crossings. That's what makes polar day/night fall out for free.
   - `altitudeToY` clamps to 0–90° on purpose: a set object runs flat along the baseline rather than leaving a gap.
-- `src/components/` — Svelte UI. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
+  - `model.ts` caches the twilight bands for the last (window, location). They don't depend on the object and they're the expensive part of a model, so the per-row charts in the search results all hit the cache.
+- `src/components/` — Svelte UI, laid out per `.plan/ui-mocks.md`: observatory list left, Search / Results tabview right.
+  - `ObservatoryManager` is the **list only** — selection plus add/edit/delete. The form lives in `ObservatoryEditor`, opened as a modal, which never touches the store: it hands a validated `ObservatoryInput` to `onsave` or nothing at all. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
+  - Dialogs go through `Modal` / `ConfirmDialog`, not `<dialog>` and not `window.confirm`.
+  - The search results render **one `AltitudeChart` per row**. Any chart component must therefore give its SVG ids per-instance (`$props.id()`) — a hard-coded id makes every chart on the page clip to the first one's plot.
 
 ## Decided stack (do not re-litigate without the user)
 
