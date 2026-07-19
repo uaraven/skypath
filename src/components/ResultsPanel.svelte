@@ -1,17 +1,15 @@
 <script lang="ts">
   /**
    * The Results tab: everything about one object on one night from one site.
-   *
-   * The all-sky view and the event times are Phase 5 and Phase 6; their slots
-   * are laid out here so the tab has its final shape, and each says what is
-   * coming rather than pretending to be empty.
    */
+  import { nightEvents } from '../lib/astro/events'
   import type { GeoLocation, SkyObject } from '../lib/astro/types'
   import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
   import { allSkyChartModel, altitudeChartModel } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
+  import EventTimesPanel from './EventTimesPanel.svelte'
 
   interface Props {
     object: SkyObject | null
@@ -31,6 +29,10 @@
     object ? allSkyChartModel({ object, location, date, horizon }) : null,
   )
 
+  const events = $derived(
+    object ? nightEvents({ object, location, date, horizon }) : null,
+  )
+
   const designations = $derived(
     object && isCatalogObject(object)
       ? object.designations.map(formatDesignation).join(' · ')
@@ -42,7 +44,7 @@
   )
 </script>
 
-{#if !object || !model || !allSkyModel}
+{#if !object || !model || !allSkyModel || !events}
   <p class="empty">
     No object chosen yet — find one in the Search tab and pick it.
   </p>
@@ -68,13 +70,9 @@
       <AllSkyChart model={allSkyModel} />
     </section>
 
-    <section class="panel pending">
+    <section class="panel">
       <h3>Times and directions</h3>
-      <p>
-        Sunset and sunrise, the three twilights, moonrise, moonset and phase,
-        and the object's own rise, transit and set — against both a flat horizon
-        and yours — arrive in Phase 6.
-      </p>
+      <EventTimesPanel {events} horizonIsFlat={horizon.isFlat} />
     </section>
   </div>
 {/if}
@@ -101,11 +99,6 @@
 
   section h3 {
     margin-bottom: 0.75rem;
-  }
-
-  .pending p {
-    font-size: 0.85rem;
-    color: var(--text-dim);
   }
 
   .empty {
