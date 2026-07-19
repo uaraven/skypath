@@ -172,6 +172,35 @@ describe('app shell rendering', () => {
     }
   })
 
+  /**
+   * The OpenNGC attribution is a licence term, so "is it actually visible" is
+   * a real question — dimmed footer text is exactly the kind of thing that
+   * ends up at zero height or scrolled off with nobody noticing.
+   */
+  it('shows the credits, legibly, at the foot of the page', async () => {
+    const { container } = render(App)
+
+    const credits = container.querySelector('.credits')! as HTMLElement
+    const box = credits.getBoundingClientRect()
+    const style = getComputedStyle(credits)
+
+    expect(box.height).toBeGreaterThan(10)
+    expect(box.width).toBeGreaterThan(200)
+    expect(style.visibility).toBe('visible')
+    // Dimmed, but not to the point of being invisible against the background.
+    expect(Number(style.opacity)).toBeGreaterThan(0.5)
+    expect(parseFloat(style.fontSize)).toBeGreaterThanOrEqual(11)
+
+    // It sits below the workspace, not floating over it.
+    const workspace = container
+      .querySelector('.workspace')!
+      .getBoundingClientRect()
+    expect(box.top).toBeGreaterThanOrEqual(workspace.bottom - 1)
+
+    credits.scrollIntoView()
+    await screenshot('app-credits', credits)
+  })
+
   it('captures each view for eyeballing against voronin.cc and the mocks', async () => {
     const { container } = render(App)
     const app = container.querySelector('.app')! as HTMLElement

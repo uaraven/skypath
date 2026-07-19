@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
-import { MemoryStorage } from '../lib/observatory/memory-storage'
+import { MemoryStorage } from '../lib/storage'
 import { ObservatoryStore, STORAGE_KEY } from '../lib/observatory'
 import ObservatoryManager from './ObservatoryManager.svelte'
 

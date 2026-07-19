@@ -17,7 +17,15 @@ import { afterEach, beforeEach } from 'vitest'
 // `main.ts` does; `app.css` pulls in `theme.css` itself.
 import '../app.css'
 
-beforeEach(() => localStorage.clear())
+import { session } from '../lib/session'
+
+beforeEach(() => {
+  localStorage.clear()
+  // The session singleton caches its state in memory, so clearing storage is
+  // not enough: without this, a test that opens an object leaves the *next*
+  // render starting on the Results tab with that object already loaded.
+  session.reset()
+})
 
 // Registered explicitly for the same reason as in the jsdom project: Vitest
 // runs without `globals`, so testing-library cannot self-register.

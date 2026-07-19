@@ -1,11 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import {
-  DEFAULT_OBSERVATORY,
-  ObservatoryStore,
-  STORAGE_KEY,
-  type KeyValueStore,
-} from './store'
-import { MemoryStorage } from './memory-storage'
+import { DEFAULT_OBSERVATORY, ObservatoryStore, STORAGE_KEY } from './store'
+import { MemoryStorage, type KeyValueStore } from '../storage'
 import { observatoryLocation, type ObservatoryInput } from './types'
 
 const KYIV: ObservatoryInput = {

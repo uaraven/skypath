@@ -31,7 +31,9 @@ export default defineConfig({
         test: {
           name: 'components',
           environment: 'jsdom',
-          include: ['src/components/**/*.test.ts'],
+          // `src/*.test.ts` for `App.svelte`, which is a component like any
+          // other but lives at the root because it is the mount point.
+          include: ['src/components/**/*.test.ts', 'src/*.test.ts'],
           setupFiles: ['src/test/setup-dom.ts'],
           env: { TZ: 'UTC' },
         },
