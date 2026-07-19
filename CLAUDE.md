@@ -6,16 +6,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **FlightPlan** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is FlightPlan.
 
-## Current state: planning phase — no code yet
+## Current state: phases 0–2 done (scaffolding, astronomy core, catalogs)
 
-All work so far lives in `.plan/`:
+Planning documents live in `.plan/`:
 
 - `.plan/flightplan-spec.md` — requirements (source of truth for functionality)
 - `.plan/implementation-plan.md` — tech decisions, architecture, phases 0–9 with "done when" criteria
 - `.plan/state.md` — per-phase status table and decision log. **Keep this updated**: mark phase status changes and append dated log entries for any decision or requirement change.
 - `altitude.png` / `azimutal.png` — reference renderings the two chart types must visually match
 
-Once Phase 0 scaffolding lands, update this file with the real build/test/dev commands.
+## Commands
+
+- `npm run dev` — Vite dev server
+- `npm run build` / `npm run preview`
+- `npm test` (`test:watch`) — Vitest; `npm run check` — svelte-check + tsc
+- `npm run format` — Prettier (no ESLint)
+- `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC
+
+## Code layout
+
+- `src/lib/astro/` — ephemeris, sun/twilight, trajectory sampling. Knows nothing about catalogs.
+  - Watch the refraction convention: twilight is _geometric_ altitude, rise/set and the charts are _apparent_. See `AltitudeConvention` in `ephemeris.ts`.
+  - Deep-sky objects reach astronomy-engine via `withEngineBody()`, which reuses one shared `Body.Star1` slot — never retain the `Body` past the callback.
+- `src/lib/catalog/` — targets the user can pick. `index.ts` is the public API (`searchObjects`, `objectById`, `objectByDesignation`, `allObjects`).
+  - An object belongs to **many catalogs and has many names** — `CatalogObject.designations` / `.names`. Don't collapse either to a single value.
+  - To add a catalog: register it in `catalogs.ts`, generate JSON into `data/`, import it in `dso.ts`. Entries sharing a designation merge into one object.
+  - Data is generated from OpenNGC (**CC-BY-SA-4.0 — attribution required**, exposed as `catalogSources`). Never hand-edit `data/*.json`.
 
 ## Decided stack (do not re-litigate without the user)
 
@@ -32,6 +48,6 @@ Must match the main site, whose sources are in the sibling repo `../voronin_cc` 
 ## Domain notes
 
 - Horizon files are NINA-compatible: plain text, one `azimuth altitude` pair per line (azimuth 0–359°); interpolation must wrap around 360°→0°.
-- "Above horizon" events compare object altitude to the *user horizon* altitude at the object's current azimuth — distinct from the "above 0°" events; both are reported.
+- "Above horizon" events compare object altitude to the _user horizon_ altitude at the object's current azimuth — distinct from the "above 0°" events; both are reported.
 - Charts are centered on local midnight (time axis ≈ noon→noon); handle circumpolar / never-rises objects and polar day/night explicitly.
 - Times display in the browser's local timezone (known limitation, noted in plan).
