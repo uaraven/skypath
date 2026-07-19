@@ -71,6 +71,14 @@ export default defineConfig({
                 // Tall enough that a full-page element screenshot is not
                 // clipped: only what the browser has painted gets captured.
                 viewport: { width: 1280, height: 1600 },
+                context: {
+                  // The `env: { TZ }` above only reaches the Node process —
+                  // Playwright's Chromium keeps the host timezone unless told
+                  // otherwise. The charts are built from *local* noon, so on a
+                  // non-UTC machine the whole time axis shifted by the offset
+                  // and every position assertion measured a different night.
+                  timezoneId: 'UTC',
+                },
               },
             ],
           },

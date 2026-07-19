@@ -48,14 +48,14 @@ describe('app shell rendering', () => {
     expect(background).not.toBe('rgb(255, 255, 255)')
   })
 
-  it('gives every cardinal direction a visible horizon altitude', () => {
-    render(App)
+  it('shows the chart at a usable size inside the shell', () => {
+    const { container } = render(App)
 
-    for (const direction of ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']) {
-      expect(screen.getByText(direction)).toBeVisible()
-    }
+    const svg = container.querySelector('svg')!
+    const box = svg.getBoundingClientRect()
 
-    expect(screen.getAllByText(/^-?\d+\.\d°$/)).toHaveLength(8)
+    expect(box.width).toBeGreaterThan(400)
+    expect(box.height).toBeGreaterThan(150)
   })
 
   it('stacks the panels in one column, each spanning the content width', () => {

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **FlightPlan** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is FlightPlan.
 
-## Current state: phases 0–3 done (scaffolding, astronomy core, catalogs, horizon & observatories)
+## Current state: phases 0–4 done (scaffolding, astronomy core, catalogs, horizon & observatories, altitude chart)
 
 Planning documents live in `.plan/`:
 
@@ -21,7 +21,7 @@ Planning documents live in `.plan/`:
 - `npm run build` / `npm run preview`
 - `npm test` (`test:watch`) — Vitest; `npm run check` — svelte-check + tsc
   - Three projects: `test:unit` (Node, `src/lib/**`), `test:components` (jsdom + Testing Library, `src/components/**`) and `test:visual` (real Chromium via Playwright, `src/visual/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
-  - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face.
+  - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face. The Playwright instance also pins `context.timezoneId` — `env: { TZ }` only reaches the Node process, and since the charts are built from _local_ noon, the host timezone would otherwise draw a different night than the assertions compute.
 - `npm run format` — Prettier (no ESLint)
 - `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC
 
@@ -36,6 +36,10 @@ Planning documents live in `.plan/`:
   - Data is generated from OpenNGC (**CC-BY-SA-4.0 — attribution required**, exposed as `catalogSources`). Never hand-edit `data/*.json`.
 - `src/lib/horizon/` — NINA file parsing and `Horizon.altitudeAt(azimuth)`. The azimuth axis is circular: the segment between the last and first point wraps through north, and getting that wrong silently reports a clear horizon.
 - `src/lib/observatory/` — named location + horizon bundles in localStorage. Invariants: the list is never empty and one is always selected. The horizon is stored as **raw text**, parsed on the render path by the memoizing `horizonFromText`.
+- `src/lib/charts/` — chart geometry and data, no Svelte: `scales.ts` (projection into an SVG `PlotArea`), `sky-bands.ts` (twilight shading), `model.ts` (`altitudeChartModel` — everything a chart draws, computed once).
+  - The **chart components live in `src/components/`**, not here, so Vitest's Node `unit` project doesn't collect them. Keep charts presentational: they render a model and do no astronomy of their own.
+  - Twilight bands come from scanning the sun's altitude and bisecting phase changes, _not_ from assembling `computeSunEvents`' individually-nullable crossings. That's what makes polar day/night fall out for free.
+  - `altitudeToY` clamps to 0–90° on purpose: a set object runs flat along the baseline rather than leaving a gap.
 - `src/components/` — Svelte UI. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
 
 ## Decided stack (do not re-litigate without the user)

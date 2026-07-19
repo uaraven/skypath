@@ -1,6 +1,9 @@
 <script lang="ts">
-  // Phase 3 shell — replaced with the real layout in Phase 7.
+  // Phase 4 shell — the real pickers and layout arrive in Phase 7.
+  import AltitudeChart from './components/AltitudeChart.svelte'
   import ObservatoryManager from './components/ObservatoryManager.svelte'
+  import { altitudeChartModel } from './lib/charts'
+  import { objectByDesignation } from './lib/catalog'
   import { horizonFromText } from './lib/horizon'
   import { observatories } from './lib/observatory'
 
@@ -12,16 +15,19 @@
 
   const horizon = $derived(horizonFromText(selected.horizonText))
 
-  const CARDINALS = [
-    { label: 'N', azimuth: 0 },
-    { label: 'NE', azimuth: 45 },
-    { label: 'E', azimuth: 90 },
-    { label: 'SE', azimuth: 135 },
-    { label: 'S', azimuth: 180 },
-    { label: 'SW', azimuth: 225 },
-    { label: 'W', azimuth: 270 },
-    { label: 'NW', azimuth: 315 },
-  ]
+  // Until the object and date pickers land, the chart previews a fixed target
+  // for tonight so the phase is exercisable by hand.
+  const object = objectByDesignation('M13')!
+  const today = new Date()
+
+  const model = $derived(
+    altitudeChartModel({
+      object,
+      location: { latitude: selected.latitude, longitude: selected.longitude },
+      date: today,
+      horizon,
+    }),
+  )
 </script>
 
 <div class="app">
@@ -34,21 +40,11 @@
     <ObservatoryManager />
 
     <section class="panel">
-      <h3>Horizon check</h3>
+      <h3>{object.name} tonight</h3>
       <p class="note">
-        Interpolated horizon altitude of the saved horizon, in each cardinal
-        direction. Charts arrive in Phase 4.
+        From {selected.name}. Object and date pickers arrive in Phase 7.
       </p>
-      <ul class="cardinals">
-        {#each CARDINALS as cardinal (cardinal.label)}
-          <li>
-            <span class="direction">{cardinal.label}</span>
-            <span class="altitude"
-              >{horizon.altitudeAt(cardinal.azimuth).toFixed(1)}°</span
-            >
-          </li>
-        {/each}
-      </ul>
+      <AltitudeChart {model} />
     </section>
   </main>
 </div>
@@ -80,32 +76,5 @@
     font-size: 0.8rem;
     color: var(--text-dim);
     margin-bottom: 0.75rem;
-  }
-
-  .cardinals {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .cardinals li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 4rem;
-    padding: 0.4rem 0.6rem;
-    background-color: var(--bg-inset);
-    border-radius: 5px;
-  }
-
-  .direction {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-  }
-
-  .altitude {
-    font-family: var(--font-mono);
-    color: var(--accent-bright);
   }
 </style>
