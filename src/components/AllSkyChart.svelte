@@ -11,21 +11,29 @@
     azimuthLabel,
     closedPath,
     compassPoint,
+    markerTriangle,
     obstructionPath,
     polarPoint,
     polylinePath,
     radialPoint,
     ringAltitudes,
     spokeAzimuths,
+    trajectoryAt,
     type AllSkyChartModel,
     type PolarDial,
   } from '../lib/charts'
 
   interface Props {
     model: AllSkyChartModel
+    /**
+     * Instant to flag on the track, from the Results tab's time slider. Null —
+     * the default — draws no indicator; nor does a time at which the object is
+     * below the rim, where the dial has nowhere to put one.
+     */
+    markerTime?: Date | null
   }
 
-  let { model }: Props = $props()
+  let { model, markerTime = null }: Props = $props()
 
   const SIZE = 420
   const DIAL: PolarDial = { cx: SIZE / 2, cy: SIZE / 2, radius: 176 }
@@ -66,7 +74,39 @@
       : null,
   )
 
-  const summary = $derived(describe(model))
+  const MARKER_SIZE = 12
+
+  /**
+   * The arcs are disjoint in time and each is cut at the rim, so trying them in
+   * turn both finds the right one and rejects a moment when the object is
+   * below the horizon — where the dial has no room to mark anything. Joining
+   * them first would interpolate straight across the gap and park the
+   * indicator on the rim for the entire time the object is down.
+   */
+  const marker = $derived.by(() => {
+    if (!markerTime) return null
+
+    for (const arc of model.arcs) {
+      const at = trajectoryAt(arc, markerTime)
+      if (at) {
+        return {
+          path: markerTriangle(
+            polarPoint(at.azimuth, at.altitude, DIAL),
+            MARKER_SIZE,
+          ),
+          altitude: at.altitude,
+          azimuth: at.azimuth,
+        }
+      }
+    }
+    return null
+  })
+
+  const summary = $derived(
+    marker
+      ? `${describe(model)}; at the marked time it is at ${Math.round(marker.altitude)}° in the ${compassPoint(marker.azimuth)}`
+      : describe(model),
+  )
 
   function describe(model: AllSkyChartModel): string {
     const peak = model.peak
@@ -138,6 +178,10 @@
 
       {#if peak}
         <circle class="peak" cx={peak.x} cy={peak.y} r={5} />
+      {/if}
+
+      {#if marker}
+        <path class="marker" d={marker.path} />
       {/if}
     </g>
 
@@ -234,6 +278,10 @@
 
   .peak {
     fill: var(--text);
+  }
+
+  .marker {
+    fill: var(--chart-marker);
   }
 
   .label {

@@ -15,6 +15,7 @@ import carrHorizon from '../lib/horizon/fixtures/e.c.carr-horizon.txt?raw'
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
 const LONGYEARBYEN: GeoLocation = { latitude: 78.22, longitude: 15.65 }
 const M13 = objectByDesignation('M13')!
+const NUMBERS = /[\d.]+/g
 
 function model(
   overrides: Partial<Parameters<typeof altitudeChartModel>[0]> = {},
@@ -28,8 +29,11 @@ function model(
   })
 }
 
-function renderChart(overrides = {}) {
-  const { container } = render(AltitudeChart, { model: model(overrides) })
+function renderChart(overrides = {}, props: Record<string, unknown> = {}) {
+  const { container } = render(AltitudeChart, {
+    model: model(overrides),
+    ...props,
+  })
   return container.querySelector('svg')!
 }
 
@@ -121,6 +125,33 @@ describe('AltitudeChart', () => {
       /Messier 13|M 13|peaks at 76°/,
     )
     expect(svg.getAttribute('role')).toBe('img')
+  })
+
+  it('draws no time indicator until one is asked for', () => {
+    expect(renderChart().querySelector('.marker')).toBeNull()
+  })
+
+  it('puts the time indicator on the curve at the given moment', () => {
+    const midnight = new Date(2026, 9, 16, 0, 0)
+    const svg = renderChart({}, { markerTime: midnight })
+
+    const apex = svg
+      .querySelector('.marker')!
+      .getAttribute('d')!
+      .match(NUMBERS)!
+    const line = svg.querySelector('.marker-line')!
+
+    // The apex sits where the trajectory is at that time, and the guide line
+    // stands at the same x — that pairing is the whole point of the indicator.
+    expect(Number(apex[0])).toBeCloseTo(Number(line.getAttribute('x1')), 6)
+    expect(svg.getAttribute('aria-label')).toContain('at 00:00')
+  })
+
+  it('ignores a time outside the night window', () => {
+    const svg = renderChart({}, { markerTime: new Date(2026, 9, 20, 0, 0) })
+
+    expect(svg.querySelector('.marker')).toBeNull()
+    expect(svg.querySelector('.marker-line')).toBeNull()
   })
 
   it('omits the peak marker for an object that never rises', () => {

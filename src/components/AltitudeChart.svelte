@@ -12,10 +12,12 @@
     altitudeToY,
     areaPath,
     hourTicks,
+    markerTriangle,
     plotBottom,
     plotRight,
     polylinePath,
     timeToX,
+    trajectoryAt,
     type AltitudeChartModel,
     type PlotArea,
     type Point,
@@ -29,9 +31,14 @@
      * axes, labels and caption dropped, so a row can carry a chart.
      */
     compact?: boolean
+    /**
+     * Instant to flag on the curve, from the Results tab's time slider.
+     * Null — the default — draws no indicator at all.
+     */
+    markerTime?: Date | null
   }
 
-  let { model, compact = false }: Props = $props()
+  let { model, compact = false, markerTime = null }: Props = $props()
 
   const WIDTH = $derived(compact ? 420 : 960)
   const HEIGHT = $derived(compact ? 96 : 340)
@@ -91,10 +98,33 @@
       : null,
   )
 
+  const MARKER_SIZE = $derived(compact ? 7 : 12)
+
+  const marker = $derived.by(() => {
+    const at = markerTime ? trajectoryAt(model.points, markerTime) : null
+    if (!at) return null
+
+    const point = toPoint(at)
+    return {
+      x: point.x,
+      // The triangle hangs off the curve itself, so a set object's indicator
+      // rides the baseline exactly where `altitudeToY` clamps the curve to.
+      path: markerTriangle(point, MARKER_SIZE),
+      altitude: at.altitude,
+      time: at.time,
+    }
+  })
+
   const summary = $derived(
-    peak
-      ? `${model.object.name}: peaks at ${peak.label} at ${formatTime(peak.time)}`
-      : `${model.object.name}: stays below the horizon all night`,
+    [
+      peak
+        ? `${model.object.name}: peaks at ${peak.label} at ${formatTime(peak.time)}`
+        : `${model.object.name}: stays below the horizon all night`,
+      marker &&
+        `at ${formatTime(marker.time)} it is at ${Math.round(marker.altitude)}°`,
+    ]
+      .filter(Boolean)
+      .join('; '),
   )
 
   function toPoint(sample: { time: Date; altitude: number }): Point {
@@ -174,6 +204,17 @@
 
       {#if peak}
         <circle class="peak" cx={peak.x} cy={peak.y} r={compact ? 3 : 5} />
+      {/if}
+
+      {#if marker}
+        <line
+          class="marker-line"
+          x1={marker.x}
+          x2={marker.x}
+          y1={PLOT.top}
+          y2={baseline}
+        />
+        <path class="marker" d={marker.path} />
       {/if}
     </g>
 
@@ -291,6 +332,16 @@
 
   .peak {
     fill: var(--text);
+  }
+
+  .marker {
+    fill: var(--chart-marker);
+  }
+
+  .marker-line {
+    stroke: var(--chart-marker);
+    stroke-width: 1;
+    opacity: 0.45;
   }
 
   .label {

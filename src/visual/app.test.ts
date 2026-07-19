@@ -6,6 +6,7 @@
  * component tests under `src/components/`.
  */
 
+import { page } from '@vitest/browser/context'
 import { render, screen } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
@@ -138,6 +139,66 @@ describe('app shell rendering', () => {
 
     expect(box.width).toBeGreaterThan(400)
     expect(box.height).toBeGreaterThan(150)
+  })
+
+  /**
+   * The time sliders, driven the way a user drives them. jsdom can check that
+   * the value propagates; only a real browser can say whether the readout beside
+   * the slider fits or the pair overflows the panel it sits in.
+   */
+  it('scrubs both charts from either slider, with the readout fitting beside it', async () => {
+    const { container } = render(App)
+
+    await userEvent.type(
+      screen.getByRole('searchbox', { name: /search objects/i }),
+      'Andromeda',
+    )
+    await userEvent.click(await screen.findByText('Andromeda Galaxy'))
+
+    const sliders = screen.getAllByRole('slider') as HTMLInputElement[]
+    expect(sliders).toHaveLength(2)
+
+    const markerX = () =>
+      [...container.querySelectorAll('[role="tabpanel"] .marker')].map((m) =>
+        m.getBoundingClientRect().x.toFixed(1),
+      )
+    const before = markerX()
+    expect(before).toHaveLength(2)
+
+    // Grab the all-sky slider three quarters along — a positioned click is what
+    // a real drag reduces to, and it goes through the browser's own value
+    // handling rather than an event we synthesised. The altitude chart, bound
+    // to the same number, has to follow.
+    const track = sliders[1].getBoundingClientRect()
+    await page.elementLocator(sliders[1]).click({
+      position: { x: track.width * 0.75, y: track.height / 2 },
+    })
+
+    expect(Number(sliders[1].value)).toBeGreaterThan(720)
+    expect(sliders[0].value).toBe(sliders[1].value)
+    expect(markerX()).not.toEqual(before)
+
+    // Both ends have to be reachable by pointer, and be *seen* to be reached:
+    // a native thumb is contained by its track, so the custom fill is measured
+    // across the thumb's own travel to keep the two in agreement at the limits.
+    // Three pixels in, not one: at the very edge pixel the hit test lands on
+    // the row wrapping the input, and Playwright refuses the click.
+    for (const [x, expected] of [
+      [3, '0'],
+      [track.width - 3, String(sliders[1].max)],
+    ] as const) {
+      await page
+        .elementLocator(sliders[1])
+        .click({ position: { x, y: track.height / 2 } })
+      expect(sliders[1].value).toBe(expected)
+      expect(sliders[0].value).toBe(expected)
+    }
+
+    for (const readout of container.querySelectorAll('output')) {
+      expect(readout.scrollWidth).toBeLessThanOrEqual(readout.clientWidth + 1)
+      const row = readout.parentElement!
+      expect(row.scrollWidth).toBeLessThanOrEqual(row.clientWidth + 1)
+    }
   })
 
   it('lays the event times out in columns without clipping any value', async () => {

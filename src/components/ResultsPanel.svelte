@@ -3,13 +3,15 @@
    * The Results tab: everything about one object on one night from one site.
    */
   import { nightEvents } from '../lib/astro/events'
+  import { MS_PER_MINUTE, nightWindow, windowHours } from '../lib/astro/time'
   import type { GeoLocation, SkyObject } from '../lib/astro/types'
   import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
-  import { allSkyChartModel, altitudeChartModel } from '../lib/charts'
+  import { allSkyChartModel, altitudeChartModel, clamp } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
   import EventTimesPanel from './EventTimesPanel.svelte'
+  import TimeSlider from './TimeSlider.svelte'
 
   interface Props {
     object: SkyObject | null
@@ -42,6 +44,25 @@
   const type = $derived(
     object && isCatalogObject(object) ? typeLabel(object.type) : null,
   )
+
+  /**
+   * The scrubbed time, held as minutes from the start of the night so that it
+   * survives a change of date or object: the user is picking a moment of the
+   * night ("just after 1am"), not an absolute instant.
+   *
+   * The window runs local noon → noon, so 12 hours in is local midnight.
+   */
+  let offsetMinutes = $state(12 * 60)
+
+  const window = $derived(nightWindow(date))
+  const spanMinutes = $derived(Math.round(windowHours(window) * 60))
+
+  const markerTime = $derived(
+    new Date(
+      window.start.getTime() +
+        clamp(offsetMinutes, 0, spanMinutes) * MS_PER_MINUTE,
+    ),
+  )
 </script>
 
 {#if !object || !model || !allSkyModel || !events}
@@ -62,12 +83,24 @@
 
     <section class="panel">
       <h3>Altitude</h3>
-      <AltitudeChart {model} />
+      <AltitudeChart {model} {markerTime} />
+      <TimeSlider
+        bind:value={offsetMinutes}
+        max={spanMinutes}
+        time={markerTime}
+        label="Time shown on the altitude chart"
+      />
     </section>
 
     <section class="panel">
       <h3>All-sky view</h3>
-      <AllSkyChart model={allSkyModel} />
+      <AllSkyChart model={allSkyModel} {markerTime} />
+      <TimeSlider
+        bind:value={offsetMinutes}
+        max={spanMinutes}
+        time={markerTime}
+        label="Time shown on the all-sky chart"
+      />
     </section>
 
     <section class="panel">

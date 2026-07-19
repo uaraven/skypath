@@ -20,6 +20,7 @@ import {
   type Horizon,
   type HorizonPoint,
 } from '../horizon'
+import { shortestTurn } from './marker'
 import { hourTicks } from './scales'
 
 /**
@@ -143,16 +144,6 @@ function rimCrossing(
       from.azimuth + fraction * shortestTurn(from.azimuth, to.azimuth),
     ),
   }
-}
-
-/**
- * The signed azimuth change from `from` to `to`, taking the short way round.
- *
- * Straight subtraction would send an object crossing north from 359° to 1°
- * sweeping backwards through the whole sky.
- */
-function shortestTurn(from: number, to: number): number {
-  return ((to - from + 540) % 360) - 180
 }
 
 /**

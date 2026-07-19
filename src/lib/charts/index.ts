@@ -46,6 +46,7 @@ export {
   obstructionPath,
   type PolarDial,
 } from './polar'
+export { trajectoryAt, shortestTurn, markerTriangle } from './marker'
 export {
   allSkyChartModel,
   aboveHorizonArcs,
