@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **FlightPlan** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is FlightPlan.
 
-## Current state: phases 0–2 done (scaffolding, astronomy core, catalogs)
+## Current state: phases 0–3 done (scaffolding, astronomy core, catalogs, horizon & observatories)
 
 Planning documents live in `.plan/`:
 
@@ -20,6 +20,7 @@ Planning documents live in `.plan/`:
 - `npm run dev` — Vite dev server
 - `npm run build` / `npm run preview`
 - `npm test` (`test:watch`) — Vitest; `npm run check` — svelte-check + tsc
+  - Two projects: `test:unit` (Node, `src/lib/**`) and `test:components` (jsdom + Testing Library, `src/components/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
 - `npm run format` — Prettier (no ESLint)
 - `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC
 
@@ -32,6 +33,9 @@ Planning documents live in `.plan/`:
   - An object belongs to **many catalogs and has many names** — `CatalogObject.designations` / `.names`. Don't collapse either to a single value.
   - To add a catalog: register it in `catalogs.ts`, generate JSON into `data/`, import it in `dso.ts`. Entries sharing a designation merge into one object.
   - Data is generated from OpenNGC (**CC-BY-SA-4.0 — attribution required**, exposed as `catalogSources`). Never hand-edit `data/*.json`.
+- `src/lib/horizon/` — NINA file parsing and `Horizon.altitudeAt(azimuth)`. The azimuth axis is circular: the segment between the last and first point wraps through north, and getting that wrong silently reports a clear horizon.
+- `src/lib/observatory/` — named location + horizon bundles in localStorage. Invariants: the list is never empty and one is always selected. The horizon is stored as **raw text**, parsed on the render path by the memoizing `horizonFromText`.
+- `src/components/` — Svelte UI. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
 
 ## Decided stack (do not re-litigate without the user)
 

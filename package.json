@@ -11,6 +11,8 @@
     "catalog:build": "node scripts/build-catalog.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:unit": "vitest run --project unit",
+    "test:components": "vitest run --project components",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -19,8 +21,12 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/svelte": "^5.4.2",
+    "@testing-library/user-event": "^14.6.1",
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.13.2",
+    "jsdom": "^29.1.1",
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
     "svelte": "^5.56.4",
