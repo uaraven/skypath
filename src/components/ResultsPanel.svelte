@@ -8,8 +8,9 @@
    */
   import type { GeoLocation, SkyObject } from '../lib/astro/types'
   import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
-  import { altitudeChartModel } from '../lib/charts'
+  import { allSkyChartModel, altitudeChartModel } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
+  import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
 
   interface Props {
@@ -26,6 +27,10 @@
     object ? altitudeChartModel({ object, location, date, horizon }) : null,
   )
 
+  const allSkyModel = $derived(
+    object ? allSkyChartModel({ object, location, date, horizon }) : null,
+  )
+
   const designations = $derived(
     object && isCatalogObject(object)
       ? object.designations.map(formatDesignation).join(' · ')
@@ -37,7 +42,7 @@
   )
 </script>
 
-{#if !object || !model}
+{#if !object || !model || !allSkyModel}
   <p class="empty">
     No object chosen yet — find one in the Search tab and pick it.
   </p>
@@ -58,12 +63,9 @@
       <AltitudeChart {model} />
     </section>
 
-    <section class="panel pending">
+    <section class="panel">
       <h3>All-sky view</h3>
-      <p>
-        The polar all-sky chart arrives in Phase 5 — the object's track around
-        the sky with your horizon wrapped around the rim.
-      </p>
+      <AllSkyChart model={allSkyModel} />
     </section>
 
     <section class="panel pending">
