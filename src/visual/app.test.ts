@@ -140,6 +140,38 @@ describe('app shell rendering', () => {
     expect(box.height).toBeGreaterThan(150)
   })
 
+  it('lays the event times out in columns without clipping any value', async () => {
+    render(App)
+
+    await userEvent.type(
+      screen.getByRole('searchbox', { name: /search objects/i }),
+      'Andromeda',
+    )
+    await userEvent.click(await screen.findByText('Andromeda Galaxy'))
+
+    const sun = screen.getByRole('heading', { name: 'Sun' })
+    const moon = screen.getByRole('heading', { name: 'Moon' })
+
+    // The panel is a responsive grid; at this viewport it must actually resolve
+    // to columns rather than one tall stack, which is what the mock shows.
+    expect(sun.getBoundingClientRect().top).toBeCloseTo(
+      moon.getBoundingClientRect().top,
+      0,
+    )
+    expect(sun.getBoundingClientRect().left).not.toBeCloseTo(
+      moon.getBoundingClientRect().left,
+      0,
+    )
+
+    // Times carry an altitude and a bearing beside them and the labels are
+    // long; a column too narrow for its row truncates silently in jsdom.
+    const values = sun.closest('section')!.parentElement!.querySelectorAll('dd')
+    expect(values.length).toBeGreaterThan(8)
+    for (const value of values) {
+      expect(value.scrollWidth).toBeLessThanOrEqual(value.clientWidth + 1)
+    }
+  })
+
   it('captures each view for eyeballing against voronin.cc and the mocks', async () => {
     const { container } = render(App)
     const app = container.querySelector('.app')! as HTMLElement

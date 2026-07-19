@@ -144,6 +144,27 @@ describe('choosing a result', () => {
   })
 })
 
+describe('a restored query', () => {
+  /**
+   * The tabview unmounts this tab, so coming back from Results is a fresh
+   * mount handed the term App kept.
+   */
+  it('shows the term and its results without waiting for the debounce', async () => {
+    render(ObjectSearch, {
+      props: {
+        location: KYIV,
+        horizon: FLAT_HORIZON,
+        date: DATE,
+        onselect: vi.fn(),
+        query: 'Andromeda',
+      },
+    })
+
+    expect(queryBox()).toHaveValue('Andromeda')
+    expect(screen.getByText('Andromeda Galaxy')).toBeInTheDocument()
+  })
+})
+
 describe('debouncing', () => {
   it('applies a typed query on its own, without pressing Search', async () => {
     const user = userEvent.setup()

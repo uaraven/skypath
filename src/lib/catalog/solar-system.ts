@@ -1,4 +1,5 @@
 import { Body } from 'astronomy-engine'
+import { MOON } from '../astro/moon'
 import type { SolarSystemObject } from '../astro/types'
 
 /**
@@ -16,12 +17,12 @@ export const PLANETS: SolarSystemObject[] = [
   { id: 'neptune', name: 'Neptune', kind: 'planet', body: Body.Neptune },
 ]
 
-export const MOON: SolarSystemObject = {
-  id: 'moon',
-  name: 'Moon',
-  kind: 'moon',
-  body: Body.Moon,
-}
+/**
+ * The Moon is defined in `astro/moon.ts`, which needs it for the rise/set and
+ * phase calculations and cannot import from here. Re-exported so it is
+ * searchable alongside the planets.
+ */
+export { MOON }
 
 /** Everything in the solar system a user can pick as a target. */
 export const solarSystemObjects: SolarSystemObject[] = [...PLANETS, MOON]

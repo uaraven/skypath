@@ -31,6 +31,9 @@
 
   let tab = $state<Tab>('search')
   let object = $state<SkyObject | null>(null)
+  // Held here, not in ObjectSearch, because the tabview unmounts the inactive
+  // tab — the search term has to survive a trip to Results and back.
+  let query = $state('')
   // `<input type="date">` speaks `YYYY-MM-DD`; keeping the state in that form
   // avoids round-tripping a Date through the local/UTC boundary on every edit.
   let dateText = $state(isoDate(new Date()))
@@ -100,7 +103,13 @@
 
       {#if tab === 'search'}
         <div role="tabpanel" id="panel-search" aria-labelledby="tab-search">
-          <ObjectSearch {location} {horizon} {date} onselect={choose} />
+          <ObjectSearch
+            {location}
+            {horizon}
+            {date}
+            onselect={choose}
+            bind:query
+          />
         </div>
       {:else}
         <div role="tabpanel" id="panel-results" aria-labelledby="tab-results">

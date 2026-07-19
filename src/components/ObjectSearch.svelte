@@ -23,9 +23,21 @@
     horizon: Horizon
     date: Date
     onselect: (object: SkyObject) => void
+    /**
+     * Bindable so the term outlives this component: the tabview unmounts the
+     * Search tab, and the user expects their query and its results back when
+     * they return from Results.
+     */
+    query?: string
   }
 
-  let { location, horizon, date, onselect }: Props = $props()
+  let {
+    location,
+    horizon,
+    date,
+    onselect,
+    query = $bindable(''),
+  }: Props = $props()
 
   /** Enough to choose from, few enough that the charts stay cheap. */
   const MAX_RESULTS = 8
@@ -35,8 +47,9 @@
 
   const DEBOUNCE_MS = 200
 
-  let query = $state('')
-  let applied = $state('')
+  // Seeded from the incoming query so a restored search draws its results on
+  // the first frame rather than flashing the empty state for one debounce.
+  let applied = $state(query)
 
   // Typing settles before the charts are built; the Search button and Enter
   // bypass the wait.
