@@ -1,0 +1,54 @@
+/*
+ * FlightPlan design tokens.
+ *
+ * Mirrors voronin.cc (../voronin_cc/static/css/styles.css) so the app sits
+ * visually inside the main site. Both the UI and the SVG charts read these.
+ */
+
+:root {
+  /* Surfaces */
+  --bg: rgb(16, 31, 37);
+  --bg-panel: rgba(1, 20, 29, 0.5);
+  --bg-inset: rgb(26, 41, 47);
+
+  /* Text */
+  --text: #f5f5dc;
+  --text-dim: rgba(245, 245, 220, 0.6);
+  --text-faint: rgba(245, 245, 220, 0.3);
+  --heading: #c3cfec;
+  --heading-sub: #a3afbe;
+
+  /* Accents */
+  --accent: #228da8;
+  --accent-bright: #74bbf1;
+  --visited: #b5a4cb;
+
+  /* Lines */
+  --border: rgba(98, 169, 255, 0.3);
+  --border-soft: rgba(245, 245, 220, 0.3);
+
+  /* Type */
+  --font-ui: 'Red Hat Display', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Shape & motion */
+  --radius-card: 10px;
+  --radius-pill: 20px;
+  --transition: 0.3s ease;
+
+  /*
+   * Chart palette: sky shading from full night to full day. The altitude
+   * chart steps through these for the twilight bands.
+   */
+  --sky-night: rgb(9, 14, 20);
+  --sky-astro: rgb(18, 28, 42);
+  --sky-nautical: rgb(30, 46, 68);
+  --sky-civil: rgb(52, 74, 100);
+  --sky-day: rgb(88, 116, 148);
+
+  --chart-trajectory: var(--accent-bright);
+  --chart-horizon-fill: rgba(26, 41, 47, 0.85);
+  --chart-horizon-line: rgba(116, 187, 241, 0.55);
+  --chart-grid: rgba(245, 245, 220, 0.18);
+  --chart-label: rgba(245, 245, 220, 0.7);
+}
