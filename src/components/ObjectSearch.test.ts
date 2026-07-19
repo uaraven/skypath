@@ -34,9 +34,7 @@ describe('an empty query', () => {
   it('explains what can be searched instead of listing everything', () => {
     setup()
 
-    expect(
-      screen.getByText(/search the messier catalogue/i),
-    ).toBeInTheDocument()
+    expect(screen.getByText(/search the messier, ngc, ic/i)).toBeInTheDocument()
     expect(screen.queryByRole('listitem')).not.toBeInTheDocument()
   })
 })

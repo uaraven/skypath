@@ -142,6 +142,27 @@ describe('app shell rendering', () => {
   })
 
   /**
+   * A target from one of the catalogs that carries no common name and no
+   * magnitude, searched by designation and driven through to a chart. The
+   * Messier objects all have names and magnitudes, so this is the path that
+   * the rest of the suite would not exercise.
+   */
+  it('plots an object picked by designation from the Sharpless catalogue', async () => {
+    const { container } = render(App)
+
+    await userEvent.type(
+      screen.getByRole('searchbox', { name: /search objects/i }),
+      'Sh2-155',
+    )
+    await userEvent.click(await screen.findByText('Sh2-155'))
+
+    const path = container.querySelector('[role="tabpanel"] svg path')
+    expect(path).not.toBeNull()
+    expect(path!.getAttribute('d')).toMatch(/^M[\s\d.,-]/)
+    expect(screen.getByText(/HII region/i)).toBeVisible()
+  })
+
+  /**
    * The time sliders, driven the way a user drives them. jsdom can check that
    * the value propagates; only a real browser can say whether the readout beside
    * the slider fits or the pair overflows the panel it sits in.

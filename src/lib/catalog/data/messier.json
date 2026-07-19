@@ -1,1112 +1,1594 @@
 {
-  "catalog": "M",
-  "title": "Messier catalog",
-  "source": "OpenNGC (https://github.com/mattiaverga/OpenNGC), CC-BY-SA-4.0, plus the Messier designations of the addendum file.",
-  "objects": [
-    {
-      "id": "M1",
-      "designations": ["M1", "NGC1952", "LBN833"],
-      "names": ["Crab Nebula"],
-      "ra": 5.575547,
-      "dec": 22.014472,
-      "type": "SNR",
-      "magnitude": 8.4,
-      "constellation": "Tau"
-    },
-    {
-      "id": "M2",
-      "designations": ["M2", "NGC7089"],
-      "names": [],
-      "ra": 21.557503,
-      "dec": -0.823306,
-      "type": "GCl",
-      "magnitude": 6.25,
-      "constellation": "Aqr"
-    },
-    {
-      "id": "M3",
-      "designations": ["M3", "NGC5272"],
-      "names": [],
-      "ra": 13.703119,
-      "dec": 28.375444,
-      "type": "GCl",
-      "magnitude": 6.39,
-      "constellation": "CVn"
-    },
-    {
-      "id": "M4",
-      "designations": ["M4", "NGC6121"],
-      "names": [],
-      "ra": 16.393167,
-      "dec": -26.525528,
-      "type": "GCl",
-      "magnitude": 5.4,
-      "constellation": "Sco"
-    },
-    {
-      "id": "M5",
-      "designations": ["M5", "NGC5904"],
-      "names": [],
-      "ra": 15.309375,
-      "dec": 2.082694,
-      "type": "GCl",
-      "magnitude": 5.95,
-      "constellation": "Se1"
-    },
-    {
-      "id": "M6",
-      "designations": ["M6", "NGC6405"],
-      "names": ["Butterfly Cluster"],
-      "ra": 17.672431,
-      "dec": -32.254167,
-      "type": "OCl",
-      "magnitude": 4.2,
-      "constellation": "Sco"
-    },
-    {
-      "id": "M7",
-      "designations": ["M7", "NGC6475"],
-      "names": ["Ptolemy's Cluster"],
-      "ra": 17.89755,
-      "dec": -34.792833,
-      "type": "OCl",
-      "magnitude": 3.3,
-      "constellation": "Sco"
-    },
-    {
-      "id": "M8",
-      "designations": ["M8", "NGC6523", "NGC6533", "LBN25"],
-      "names": ["Lagoon Nebula"],
-      "ra": 18.061464,
-      "dec": -24.380167,
-      "type": "Neb",
-      "magnitude": 5.8,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M9",
-      "designations": ["M9", "NGC6333"],
-      "names": [],
-      "ra": 17.319939,
-      "dec": -18.51625,
-      "type": "GCl",
-      "magnitude": 8.42,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M10",
-      "designations": ["M10", "NGC6254"],
-      "names": [],
-      "ra": 16.952497,
-      "dec": -4.099333,
-      "type": "GCl",
-      "magnitude": 4.98,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M11",
-      "designations": ["M11", "NGC6705"],
-      "names": ["Amas de l'Ecu de Sobieski", "Wild Duck Cluster"],
-      "ra": 18.851664,
-      "dec": -6.270028,
-      "type": "OCl",
-      "magnitude": 5.8,
-      "constellation": "Sct"
-    },
-    {
-      "id": "M12",
-      "designations": ["M12", "NGC6218"],
-      "names": [],
-      "ra": 16.787367,
-      "dec": -1.947833,
-      "type": "GCl",
-      "magnitude": 6.07,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M13",
-      "designations": ["M13", "NGC6205"],
-      "names": ["Hercules Globular Cluster"],
-      "ra": 16.694897,
-      "dec": 36.461306,
-      "type": "GCl",
-      "magnitude": 5.8,
-      "constellation": "Her"
-    },
-    {
-      "id": "M14",
-      "designations": ["M14", "NGC6402"],
-      "names": [],
-      "ra": 17.626711,
-      "dec": -3.245917,
-      "type": "GCl",
-      "magnitude": 5.73,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M15",
-      "designations": ["M15", "NGC7078"],
-      "names": [],
-      "ra": 21.49955,
-      "dec": 12.166833,
-      "type": "GCl",
-      "magnitude": 6.3,
-      "constellation": "Peg"
-    },
-    {
-      "id": "M16",
-      "designations": ["M16", "NGC6611", "LBN67"],
-      "names": ["Eagle Nebula"],
-      "ra": 18.313381,
-      "dec": -13.807222,
-      "type": "Neb",
-      "magnitude": 6,
-      "constellation": "Se2"
-    },
-    {
-      "id": "M17",
-      "designations": ["M17", "NGC6618", "LBN60"],
-      "names": [
-        "Checkmark Nebula",
-        "Lobster Nebula",
-        "Swan Nebula",
-        "omega Nebula"
-      ],
-      "ra": 18.346419,
-      "dec": -16.171528,
-      "type": "Neb",
-      "magnitude": 7,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M18",
-      "designations": ["M18", "NGC6613"],
-      "names": [],
-      "ra": 18.332914,
-      "dec": -17.101972,
-      "type": "OCl",
-      "magnitude": 6.9,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M19",
-      "designations": ["M19", "NGC6273"],
-      "names": [],
-      "ra": 17.0438,
-      "dec": -26.267944,
-      "type": "GCl",
-      "magnitude": 5.57,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M20",
-      "designations": ["M20", "NGC6514", "LBN27"],
-      "names": ["Trifid Nebula"],
-      "ra": 18.045031,
-      "dec": -22.971889,
-      "type": "Neb",
-      "magnitude": 8.5,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M21",
-      "designations": ["M21", "NGC6531"],
-      "names": [],
-      "ra": 18.070403,
-      "dec": -22.490056,
-      "type": "OCl",
-      "magnitude": 5.9,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M22",
-      "designations": ["M22", "NGC6656"],
-      "names": [],
-      "ra": 18.606722,
-      "dec": -23.903417,
-      "type": "GCl",
-      "magnitude": 6.17,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M23",
-      "designations": ["M23", "NGC6494"],
-      "names": [],
-      "ra": 17.951325,
-      "dec": -18.985333,
-      "type": "OCl",
-      "magnitude": 5.5,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M24",
-      "designations": ["M24", "IC4715"],
-      "names": ["Small Sgr Star Cloud"],
-      "ra": 18.282256,
-      "dec": -18.514556,
-      "type": "*Ass",
-      "magnitude": 4.5,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M25",
-      "designations": ["M25", "IC4725"],
-      "names": [],
-      "ra": 18.529658,
-      "dec": -19.114944,
-      "type": "OCl",
-      "magnitude": 4.6,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M26",
-      "designations": ["M26", "NGC6694"],
-      "names": [],
-      "ra": 18.755183,
-      "dec": -9.383611,
-      "type": "OCl",
-      "magnitude": 8.87,
-      "constellation": "Sct"
-    },
-    {
-      "id": "M27",
-      "designations": ["M27", "NGC6853"],
-      "names": ["Dumbbell Nebula"],
-      "ra": 19.993439,
-      "dec": 22.721028,
-      "type": "PN",
-      "magnitude": 7.4,
-      "constellation": "Vul"
-    },
-    {
-      "id": "M28",
-      "designations": ["M28", "NGC6626"],
-      "names": [],
-      "ra": 18.409136,
-      "dec": -24.869833,
-      "type": "GCl",
-      "magnitude": 6.9,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M29",
-      "designations": ["M29", "NGC6913"],
-      "names": [],
-      "ra": 20.399381,
-      "dec": 38.507667,
-      "type": "OCl",
-      "magnitude": 6.6,
-      "constellation": "Cyg"
-    },
-    {
-      "id": "M30",
-      "designations": ["M30", "NGC7099"],
-      "names": [],
-      "ra": 21.672783,
-      "dec": -23.179083,
-      "type": "GCl",
-      "magnitude": 7.1,
-      "constellation": "Cap"
-    },
-    {
-      "id": "M31",
-      "designations": ["M31", "NGC224", "UGC454", "PGC2557"],
-      "names": ["Andromeda Galaxy"],
-      "ra": 0.712319,
-      "dec": 41.269056,
-      "type": "G",
-      "magnitude": 3.44,
-      "constellation": "And"
-    },
-    {
-      "id": "M32",
-      "designations": ["M32", "NGC221", "UGC452", "PGC2555"],
-      "names": [],
-      "ra": 0.711619,
-      "dec": 40.865278,
-      "type": "G",
-      "magnitude": 8.13,
-      "constellation": "And"
-    },
-    {
-      "id": "M33",
-      "designations": ["M33", "NGC598", "UGC1117", "PGC5818"],
-      "names": ["Triangulum Galaxy", "Triangulum Pinwheel"],
-      "ra": 1.564136,
-      "dec": 30.660222,
-      "type": "G",
-      "magnitude": 5.79,
-      "constellation": "Tri"
-    },
-    {
-      "id": "M34",
-      "designations": ["M34", "NGC1039"],
-      "names": [],
-      "ra": 2.702056,
-      "dec": 42.746139,
-      "type": "OCl",
-      "magnitude": 5.2,
-      "constellation": "Per"
-    },
-    {
-      "id": "M35",
-      "designations": ["M35", "NGC2168"],
-      "names": [],
-      "ra": 6.151406,
-      "dec": 24.338639,
-      "type": "OCl",
-      "magnitude": 5.1,
-      "constellation": "Gem"
-    },
-    {
-      "id": "M36",
-      "designations": ["M36", "NGC1960"],
-      "names": [],
-      "ra": 5.604928,
-      "dec": 34.14075,
-      "type": "OCl",
-      "magnitude": 6,
-      "constellation": "Aur"
-    },
-    {
-      "id": "M37",
-      "designations": ["M37", "NGC2099"],
-      "names": [],
-      "ra": 5.871764,
-      "dec": 32.553,
-      "type": "OCl",
-      "magnitude": 5.6,
-      "constellation": "Aur"
-    },
-    {
-      "id": "M38",
-      "designations": ["M38", "NGC1912"],
-      "names": [],
-      "ra": 5.478469,
-      "dec": 35.854917,
-      "type": "OCl",
-      "magnitude": 6.4,
-      "constellation": "Aur"
-    },
-    {
-      "id": "M39",
-      "designations": ["M39", "NGC7092"],
-      "names": [],
-      "ra": 21.530089,
-      "dec": 48.438167,
-      "type": "OCl",
-      "magnitude": 4.6,
-      "constellation": "Cyg"
-    },
-    {
-      "id": "M40",
-      "designations": ["M40"],
-      "names": [],
-      "ra": 12.371139,
-      "dec": 58.084444,
-      "type": "**",
-      "magnitude": 8,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M41",
-      "designations": ["M41", "NGC2287"],
-      "names": [],
-      "ra": 6.76665,
-      "dec": -20.754222,
-      "type": "OCl",
-      "magnitude": 4.5,
-      "constellation": "CMa"
-    },
-    {
-      "id": "M42",
-      "designations": ["M42", "NGC1976", "LBN974"],
-      "names": ["Great Orion Nebula", "Orion Nebula"],
-      "ra": 5.587911,
-      "dec": -5.389667,
-      "type": "Cl+N",
-      "magnitude": 4,
-      "constellation": "Ori"
-    },
-    {
-      "id": "M43",
-      "designations": ["M43", "NGC1982"],
-      "names": ["Mairan's Nebula"],
-      "ra": 5.59205,
-      "dec": -5.267472,
-      "type": "HII",
-      "magnitude": 9,
-      "constellation": "Ori"
-    },
-    {
-      "id": "M44",
-      "designations": ["M44", "NGC2632"],
-      "names": ["Beehive", "Praesepe Cluster"],
-      "ra": 8.672833,
-      "dec": 19.672056,
-      "type": "OCl",
-      "magnitude": 3.1,
-      "constellation": "Cnc"
-    },
-    {
-      "id": "M45",
-      "designations": ["M45", "Mel22"],
-      "names": ["Pleiades"],
-      "ra": 3.791278,
-      "dec": 24.105278,
-      "type": "OCl",
-      "magnitude": 1.2,
-      "constellation": "Tau"
-    },
-    {
-      "id": "M46",
-      "designations": ["M46", "NGC2437"],
-      "names": [],
-      "ra": 7.696339,
-      "dec": -14.81,
-      "type": "OCl",
-      "magnitude": 6.1,
-      "constellation": "Pup"
-    },
-    {
-      "id": "M47",
-      "designations": ["M47", "NGC2422", "NGC2478"],
-      "names": [],
-      "ra": 7.609728,
-      "dec": -14.482611,
-      "type": "OCl",
-      "magnitude": 4.4,
-      "constellation": "Pup"
-    },
-    {
-      "id": "M48",
-      "designations": ["M48", "NGC2548"],
-      "names": [],
-      "ra": 8.228661,
-      "dec": -5.750444,
-      "type": "OCl",
-      "magnitude": 5.8,
-      "constellation": "Hya"
-    },
-    {
-      "id": "M49",
-      "designations": ["M49", "NGC4472", "UGC7629", "PGC41220"],
-      "names": [],
-      "ra": 12.496322,
-      "dec": 8.000472,
-      "type": "G",
-      "magnitude": 8.28,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M50",
-      "designations": ["M50", "NGC2323"],
-      "names": [],
-      "ra": 7.044575,
-      "dec": -8.364028,
-      "type": "OCl",
-      "magnitude": 5.9,
-      "constellation": "Mon"
-    },
-    {
-      "id": "M51",
-      "designations": ["M51", "NGC5194", "UGC8493", "PGC47404"],
-      "names": ["Whirlpool Galaxy"],
-      "ra": 13.497975,
-      "dec": 47.195167,
-      "type": "G",
-      "magnitude": 8.36,
-      "constellation": "CVn"
-    },
-    {
-      "id": "M52",
-      "designations": ["M52", "NGC7654"],
-      "names": [],
-      "ra": 23.413444,
-      "dec": 61.593167,
-      "type": "OCl",
-      "magnitude": 6.9,
-      "constellation": "Cas"
-    },
-    {
-      "id": "M53",
-      "designations": ["M53", "NGC5024"],
-      "names": [],
-      "ra": 13.215342,
-      "dec": 18.169111,
-      "type": "GCl",
-      "magnitude": 7.79,
-      "constellation": "Com"
-    },
-    {
-      "id": "M54",
-      "designations": ["M54", "NGC6715"],
-      "names": [],
-      "ra": 18.917575,
-      "dec": -30.4785,
-      "type": "GCl",
-      "magnitude": 7.7,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M55",
-      "designations": ["M55", "NGC6809"],
-      "names": [],
-      "ra": 19.6665,
-      "dec": -30.962083,
-      "type": "GCl",
-      "magnitude": 6.49,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M56",
-      "designations": ["M56", "NGC6779"],
-      "names": [],
-      "ra": 19.276531,
-      "dec": 30.1845,
-      "type": "GCl",
-      "magnitude": 8.4,
-      "constellation": "Lyr"
-    },
-    {
-      "id": "M57",
-      "designations": ["M57", "NGC6720"],
-      "names": ["Ring Nebula"],
-      "ra": 18.893058,
-      "dec": 33.028583,
-      "type": "PN",
-      "magnitude": 8.8,
-      "constellation": "Lyr"
-    },
-    {
-      "id": "M58",
-      "designations": ["M58", "NGC4579", "UGC7796", "PGC42168"],
-      "names": [],
-      "ra": 12.628756,
-      "dec": 11.818194,
-      "type": "G",
-      "magnitude": 10.3,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M59",
-      "designations": ["M59", "NGC4621", "UGC7858", "PGC42628"],
-      "names": [],
-      "ra": 12.700622,
-      "dec": 11.647028,
-      "type": "G",
-      "magnitude": 9.56,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M60",
-      "designations": ["M60", "NGC4649", "UGC7898", "PGC42831"],
-      "names": [],
-      "ra": 12.727772,
-      "dec": 11.552694,
-      "type": "G",
-      "magnitude": 8.79,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M61",
-      "designations": ["M61", "NGC4303", "UGC7420", "PGC40001"],
-      "names": [],
-      "ra": 12.36525,
-      "dec": 4.473639,
-      "type": "G",
-      "magnitude": 10.25,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M62",
-      "designations": ["M62", "NGC6266"],
-      "names": [],
-      "ra": 17.020167,
-      "dec": -30.112361,
-      "type": "GCl",
-      "magnitude": 7.39,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M63",
-      "designations": ["M63", "NGC5055", "UGC8334", "PGC46153"],
-      "names": ["Sunflower Galaxy"],
-      "ra": 13.263703,
-      "dec": 42.029278,
-      "type": "G",
-      "magnitude": 8.61,
-      "constellation": "CVn"
-    },
-    {
-      "id": "M64",
-      "designations": ["M64", "NGC4826", "UGC8062", "PGC44182"],
-      "names": ["Black Eye Galaxy", "Evil Eye Galaxy"],
-      "ra": 12.945456,
-      "dec": 21.682972,
-      "type": "G",
-      "magnitude": 8.52,
-      "constellation": "Com"
-    },
-    {
-      "id": "M65",
-      "designations": ["M65", "NGC3623", "UGC6328", "PGC34612"],
-      "names": [],
-      "ra": 11.315533,
-      "dec": 13.092361,
-      "type": "G",
-      "magnitude": 9.32,
-      "constellation": "Leo"
-    },
-    {
-      "id": "M66",
-      "designations": ["M66", "NGC3627", "UGC6346", "PGC34695"],
-      "names": [],
-      "ra": 11.337489,
-      "dec": 12.991528,
-      "type": "G",
-      "magnitude": 8.92,
-      "constellation": "Leo"
-    },
-    {
-      "id": "M67",
-      "designations": ["M67", "NGC2682"],
-      "names": [],
-      "ra": 8.855592,
-      "dec": 11.811944,
-      "type": "OCl",
-      "magnitude": 6.9,
-      "constellation": "Cnc"
-    },
-    {
-      "id": "M68",
-      "designations": ["M68", "NGC4590"],
-      "names": [],
-      "ra": 12.657781,
-      "dec": -26.743028,
-      "type": "GCl",
-      "magnitude": 7.96,
-      "constellation": "Hya"
-    },
-    {
-      "id": "M69",
-      "designations": ["M69", "NGC6634", "NGC6637"],
-      "names": [],
-      "ra": 18.523119,
-      "dec": -32.347972,
-      "type": "GCl",
-      "magnitude": 8.31,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M70",
-      "designations": ["M70", "NGC6681"],
-      "names": [],
-      "ra": 18.720178,
-      "dec": -32.291889,
-      "type": "GCl",
-      "magnitude": 9.06,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M71",
-      "designations": ["M71", "NGC6838", "NGC6839"],
-      "names": [],
-      "ra": 19.896142,
-      "dec": 18.778389,
-      "type": "GCl",
-      "magnitude": 6.1,
-      "constellation": "Sge"
-    },
-    {
-      "id": "M72",
-      "designations": ["M72", "NGC6981"],
-      "names": [],
-      "ra": 20.891086,
-      "dec": -12.537056,
-      "type": "GCl",
-      "magnitude": 8.96,
-      "constellation": "Aqr"
-    },
-    {
-      "id": "M73",
-      "designations": ["M73", "NGC6994"],
-      "names": [],
-      "ra": 20.982214,
-      "dec": -12.6355,
-      "type": "Other",
-      "magnitude": 8.9,
-      "constellation": "Aqr"
-    },
-    {
-      "id": "M74",
-      "designations": ["M74", "NGC628", "UGC1149", "PGC5974"],
-      "names": [],
-      "ra": 1.611597,
-      "dec": 15.783667,
-      "type": "G",
-      "magnitude": 9.31,
-      "constellation": "Psc"
-    },
-    {
-      "id": "M75",
-      "designations": ["M75", "NGC6864"],
-      "names": [],
-      "ra": 20.101344,
-      "dec": -21.922222,
-      "type": "GCl",
-      "magnitude": 8.26,
-      "constellation": "Sgr"
-    },
-    {
-      "id": "M76",
-      "designations": ["M76", "NGC650", "NGC651"],
-      "names": ["Barbell Nebula", "Cork Nebula", "Little Dumbbell Nebula"],
-      "ra": 1.705469,
-      "dec": 51.575472,
-      "type": "PN",
-      "magnitude": 10.1,
-      "constellation": "Per"
-    },
-    {
-      "id": "M77",
-      "designations": ["M77", "NGC1068", "UGC2188", "PGC10266"],
-      "names": [],
-      "ra": 2.711308,
-      "dec": -0.013278,
-      "type": "G",
-      "magnitude": 9.29,
-      "constellation": "Cet"
-    },
-    {
-      "id": "M78",
-      "designations": ["M78", "NGC2068"],
-      "names": [],
-      "ra": 5.779394,
-      "dec": 0.079306,
-      "type": "RfN",
-      "magnitude": 8,
-      "constellation": "Ori"
-    },
-    {
-      "id": "M79",
-      "designations": ["M79", "NGC1904"],
-      "names": [],
-      "ra": 5.402942,
-      "dec": -24.524222,
-      "type": "GCl",
-      "magnitude": 8.16,
-      "constellation": "Lep"
-    },
-    {
-      "id": "M80",
-      "designations": ["M80", "NGC6093"],
-      "names": [],
-      "ra": 16.284031,
-      "dec": -22.975111,
-      "type": "GCl",
-      "magnitude": 7.3,
-      "constellation": "Sco"
-    },
-    {
-      "id": "M81",
-      "designations": ["M81", "NGC3031", "UGC5318", "PGC28630"],
-      "names": ["Bode's Galaxy"],
-      "ra": 9.925881,
-      "dec": 69.065306,
-      "type": "G",
-      "magnitude": 6.92,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M82",
-      "designations": ["M82", "NGC3034", "UGC5322", "PGC28655"],
-      "names": ["Cigar Galaxy"],
-      "ra": 9.931314,
-      "dec": 69.679389,
-      "type": "G",
-      "magnitude": 8.3,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M83",
-      "designations": ["M83", "NGC5236", "PGC48082"],
-      "names": ["Southern Pinwheel Galaxy"],
-      "ra": 13.616931,
-      "dec": -29.865417,
-      "type": "G",
-      "magnitude": 7.21,
-      "constellation": "Hya"
-    },
-    {
-      "id": "M84",
-      "designations": ["M84", "NGC4374", "UGC7494", "PGC40455"],
-      "names": [],
-      "ra": 12.417706,
-      "dec": 12.886972,
-      "type": "G",
-      "magnitude": 9.79,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M85",
-      "designations": ["M85", "NGC4382", "UGC7508", "PGC40515"],
-      "names": [],
-      "ra": 12.423364,
-      "dec": 18.1915,
-      "type": "G",
-      "magnitude": 9.05,
-      "constellation": "Com"
-    },
-    {
-      "id": "M86",
-      "designations": ["M86", "NGC4406", "UGC7532", "PGC40653"],
-      "names": [],
-      "ra": 12.436594,
-      "dec": 12.946222,
-      "type": "G",
-      "magnitude": 8.86,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M87",
-      "designations": ["M87", "NGC4486", "UGC7654", "PGC41361"],
-      "names": ["Virgo Galaxy"],
-      "ra": 12.513728,
-      "dec": 12.391111,
-      "type": "G",
-      "magnitude": 9,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M88",
-      "designations": ["M88", "NGC4501", "UGC7675", "PGC41517"],
-      "names": [],
-      "ra": 12.5331,
-      "dec": 14.420389,
-      "type": "G",
-      "magnitude": 10.33,
-      "constellation": "Com"
-    },
-    {
-      "id": "M89",
-      "designations": ["M89", "NGC4552", "UGC7760", "PGC41968"],
-      "names": [],
-      "ra": 12.594392,
-      "dec": 12.556333,
-      "type": "G",
-      "magnitude": 10.08,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M90",
-      "designations": ["M90", "NGC4569", "UGC7786", "PGC42089"],
-      "names": [],
-      "ra": 12.613831,
-      "dec": 13.162944,
-      "type": "G",
-      "magnitude": 9.54,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M91",
-      "designations": ["M91", "NGC4548", "UGC7753", "PGC41934"],
-      "names": [],
-      "ra": 12.590681,
-      "dec": 14.496333,
-      "type": "G",
-      "magnitude": 10.96,
-      "constellation": "Com"
-    },
-    {
-      "id": "M92",
-      "designations": ["M92", "NGC6341"],
-      "names": [],
-      "ra": 17.285353,
-      "dec": 43.136528,
-      "type": "GCl",
-      "magnitude": 6.52,
-      "constellation": "Her"
-    },
-    {
-      "id": "M93",
-      "designations": ["M93", "NGC2447"],
-      "names": [],
-      "ra": 7.741453,
-      "dec": -23.853083,
-      "type": "OCl",
-      "magnitude": 6.2,
-      "constellation": "Pup"
-    },
-    {
-      "id": "M94",
-      "designations": ["M94", "NGC4736", "UGC7996", "PGC43495"],
-      "names": [],
-      "ra": 12.848072,
-      "dec": 41.120444,
-      "type": "G",
-      "magnitude": 8.24,
-      "constellation": "CVn"
-    },
-    {
-      "id": "M95",
-      "designations": ["M95", "NGC3351", "UGC5850", "PGC32007"],
-      "names": [],
-      "ra": 10.732694,
-      "dec": 11.703806,
-      "type": "G",
-      "magnitude": 9.77,
-      "constellation": "Leo"
-    },
-    {
-      "id": "M96",
-      "designations": ["M96", "NGC3368", "UGC5882", "PGC32192"],
-      "names": [],
-      "ra": 10.779372,
-      "dec": 11.819944,
-      "type": "G",
-      "magnitude": 9.21,
-      "constellation": "Leo"
-    },
-    {
-      "id": "M97",
-      "designations": ["M97", "NGC3587"],
-      "names": ["Owl Nebula"],
-      "ra": 11.246586,
-      "dec": 55.019028,
-      "type": "PN",
-      "magnitude": 9.9,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M98",
-      "designations": ["M98", "NGC4192", "UGC7231", "PGC39028"],
-      "names": [],
-      "ra": 12.230081,
-      "dec": 14.900333,
-      "type": "G",
-      "magnitude": 10.84,
-      "constellation": "Com"
-    },
-    {
-      "id": "M99",
-      "designations": ["M99", "NGC4254", "UGC7345", "PGC39578"],
-      "names": ["Coma Pinwheel", "Virgo Cluster Pinwheel"],
-      "ra": 12.313778,
-      "dec": 14.4165,
-      "type": "G",
-      "magnitude": 9.84,
-      "constellation": "Com"
-    },
-    {
-      "id": "M100",
-      "designations": ["M100", "NGC4321", "UGC7450", "PGC40153"],
-      "names": [],
-      "ra": 12.381897,
-      "dec": 15.821806,
-      "type": "G",
-      "magnitude": 9.47,
-      "constellation": "Com"
-    },
-    {
-      "id": "M101",
-      "designations": ["M101", "NGC5457", "UGC8981", "PGC50063"],
-      "names": [],
-      "ra": 14.053483,
-      "dec": 54.348944,
-      "type": "G",
-      "magnitude": 7.9,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M102",
-      "designations": ["M102", "NGC5866", "UGC9723", "PGC53933"],
-      "names": [],
-      "ra": 15.108194,
-      "dec": 55.763222,
-      "type": "G",
-      "magnitude": 9.89,
-      "constellation": "Dra"
-    },
-    {
-      "id": "M103",
-      "designations": ["M103", "NGC581"],
-      "names": [],
-      "ra": 1.556058,
-      "dec": 60.658,
-      "type": "OCl",
-      "magnitude": 7.4,
-      "constellation": "Cas"
-    },
-    {
-      "id": "M104",
-      "designations": ["M104", "NGC4594", "PGC42407"],
-      "names": ["Sombrero Galaxy"],
-      "ra": 12.666508,
-      "dec": -11.623056,
-      "type": "G",
-      "magnitude": 8.59,
-      "constellation": "Vir"
-    },
-    {
-      "id": "M105",
-      "designations": ["M105", "NGC3379", "UGC5902", "PGC32256"],
-      "names": [],
-      "ra": 10.797108,
-      "dec": 12.581611,
-      "type": "G",
-      "magnitude": 9.27,
-      "constellation": "Leo"
-    },
-    {
-      "id": "M106",
-      "designations": ["M106", "NGC4258", "UGC7353", "PGC39600"],
-      "names": [],
-      "ra": 12.315972,
-      "dec": 47.303972,
-      "type": "G",
-      "magnitude": 9.29,
-      "constellation": "CVn"
-    },
-    {
-      "id": "M107",
-      "designations": ["M107", "NGC6171"],
-      "names": [],
-      "ra": 16.5422,
-      "dec": -13.053639,
-      "type": "GCl",
-      "magnitude": 8.85,
-      "constellation": "Oph"
-    },
-    {
-      "id": "M108",
-      "designations": ["M108", "NGC3556", "UGC6225", "PGC34030"],
-      "names": [],
-      "ra": 11.191936,
-      "dec": 55.674111,
-      "type": "G",
-      "magnitude": 10.05,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M109",
-      "designations": ["M109", "NGC3992", "UGC6937", "PGC37617"],
-      "names": [],
-      "ra": 11.959994,
-      "dec": 53.374528,
-      "type": "G",
-      "magnitude": 9.88,
-      "constellation": "UMa"
-    },
-    {
-      "id": "M110",
-      "designations": ["M110", "NGC205", "UGC426", "PGC2429"],
-      "names": [],
-      "ra": 0.6728,
-      "dec": 41.685306,
-      "type": "G",
-      "magnitude": 8.15,
-      "constellation": "And"
-    }
-  ]
+ "catalog": "M",
+ "title": "Messier catalog",
+ "source": "OpenNGC (https://github.com/mattiaverga/OpenNGC), CC-BY-SA-4.0, plus the Messier designations of the addendum file.",
+ "objects": [
+  {
+   "id": "M1",
+   "designations": [
+    "M1",
+    "NGC1952",
+    "LBN833"
+   ],
+   "names": [
+    "Crab Nebula"
+   ],
+   "ra": 5.575547,
+   "dec": 22.014472,
+   "type": "SNR",
+   "magnitude": 8.4,
+   "constellation": "Tau"
+  },
+  {
+   "id": "M2",
+   "designations": [
+    "M2",
+    "NGC7089"
+   ],
+   "names": [],
+   "ra": 21.557503,
+   "dec": -0.823306,
+   "type": "GCl",
+   "magnitude": 6.25,
+   "constellation": "Aqr"
+  },
+  {
+   "id": "M3",
+   "designations": [
+    "M3",
+    "NGC5272"
+   ],
+   "names": [],
+   "ra": 13.703119,
+   "dec": 28.375444,
+   "type": "GCl",
+   "magnitude": 6.39,
+   "constellation": "CVn"
+  },
+  {
+   "id": "M4",
+   "designations": [
+    "M4",
+    "NGC6121"
+   ],
+   "names": [],
+   "ra": 16.393167,
+   "dec": -26.525528,
+   "type": "GCl",
+   "magnitude": 5.4,
+   "constellation": "Sco"
+  },
+  {
+   "id": "M5",
+   "designations": [
+    "M5",
+    "NGC5904"
+   ],
+   "names": [],
+   "ra": 15.309375,
+   "dec": 2.082694,
+   "type": "GCl",
+   "magnitude": 5.95,
+   "constellation": "Se1"
+  },
+  {
+   "id": "M6",
+   "designations": [
+    "M6",
+    "NGC6405"
+   ],
+   "names": [
+    "Butterfly Cluster"
+   ],
+   "ra": 17.672431,
+   "dec": -32.254167,
+   "type": "OCl",
+   "magnitude": 4.2,
+   "constellation": "Sco"
+  },
+  {
+   "id": "M7",
+   "designations": [
+    "M7",
+    "NGC6475"
+   ],
+   "names": [
+    "Ptolemy's Cluster"
+   ],
+   "ra": 17.89755,
+   "dec": -34.792833,
+   "type": "OCl",
+   "magnitude": 3.3,
+   "constellation": "Sco"
+  },
+  {
+   "id": "M8",
+   "designations": [
+    "M8",
+    "NGC6523",
+    "NGC6533",
+    "LBN25"
+   ],
+   "names": [
+    "Lagoon Nebula"
+   ],
+   "ra": 18.061464,
+   "dec": -24.380167,
+   "type": "Neb",
+   "magnitude": 5.8,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M9",
+   "designations": [
+    "M9",
+    "NGC6333"
+   ],
+   "names": [],
+   "ra": 17.319939,
+   "dec": -18.51625,
+   "type": "GCl",
+   "magnitude": 8.42,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M10",
+   "designations": [
+    "M10",
+    "NGC6254"
+   ],
+   "names": [],
+   "ra": 16.952497,
+   "dec": -4.099333,
+   "type": "GCl",
+   "magnitude": 4.98,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M11",
+   "designations": [
+    "M11",
+    "NGC6705"
+   ],
+   "names": [
+    "Amas de l'Ecu de Sobieski",
+    "Wild Duck Cluster"
+   ],
+   "ra": 18.851664,
+   "dec": -6.270028,
+   "type": "OCl",
+   "magnitude": 5.8,
+   "constellation": "Sct"
+  },
+  {
+   "id": "M12",
+   "designations": [
+    "M12",
+    "NGC6218"
+   ],
+   "names": [],
+   "ra": 16.787367,
+   "dec": -1.947833,
+   "type": "GCl",
+   "magnitude": 6.07,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M13",
+   "designations": [
+    "M13",
+    "NGC6205"
+   ],
+   "names": [
+    "Hercules Globular Cluster"
+   ],
+   "ra": 16.694897,
+   "dec": 36.461306,
+   "type": "GCl",
+   "magnitude": 5.8,
+   "constellation": "Her"
+  },
+  {
+   "id": "M14",
+   "designations": [
+    "M14",
+    "NGC6402"
+   ],
+   "names": [],
+   "ra": 17.626711,
+   "dec": -3.245917,
+   "type": "GCl",
+   "magnitude": 5.73,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M15",
+   "designations": [
+    "M15",
+    "NGC7078"
+   ],
+   "names": [],
+   "ra": 21.49955,
+   "dec": 12.166833,
+   "type": "GCl",
+   "magnitude": 6.3,
+   "constellation": "Peg"
+  },
+  {
+   "id": "M16",
+   "designations": [
+    "M16",
+    "NGC6611",
+    "LBN67"
+   ],
+   "names": [
+    "Eagle Nebula"
+   ],
+   "ra": 18.313381,
+   "dec": -13.807222,
+   "type": "Neb",
+   "magnitude": 6,
+   "constellation": "Se2"
+  },
+  {
+   "id": "M17",
+   "designations": [
+    "M17",
+    "NGC6618",
+    "LBN60"
+   ],
+   "names": [
+    "Checkmark Nebula",
+    "Lobster Nebula",
+    "Swan Nebula",
+    "omega Nebula"
+   ],
+   "ra": 18.346419,
+   "dec": -16.171528,
+   "type": "Neb",
+   "magnitude": 7,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M18",
+   "designations": [
+    "M18",
+    "NGC6613"
+   ],
+   "names": [],
+   "ra": 18.332914,
+   "dec": -17.101972,
+   "type": "OCl",
+   "magnitude": 6.9,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M19",
+   "designations": [
+    "M19",
+    "NGC6273"
+   ],
+   "names": [],
+   "ra": 17.0438,
+   "dec": -26.267944,
+   "type": "GCl",
+   "magnitude": 5.57,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M20",
+   "designations": [
+    "M20",
+    "NGC6514",
+    "LBN27"
+   ],
+   "names": [
+    "Trifid Nebula"
+   ],
+   "ra": 18.045031,
+   "dec": -22.971889,
+   "type": "Neb",
+   "magnitude": 8.5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M21",
+   "designations": [
+    "M21",
+    "NGC6531"
+   ],
+   "names": [],
+   "ra": 18.070403,
+   "dec": -22.490056,
+   "type": "OCl",
+   "magnitude": 5.9,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M22",
+   "designations": [
+    "M22",
+    "NGC6656"
+   ],
+   "names": [],
+   "ra": 18.606722,
+   "dec": -23.903417,
+   "type": "GCl",
+   "magnitude": 6.17,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M23",
+   "designations": [
+    "M23",
+    "NGC6494"
+   ],
+   "names": [],
+   "ra": 17.951325,
+   "dec": -18.985333,
+   "type": "OCl",
+   "magnitude": 5.5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M24",
+   "designations": [
+    "M24",
+    "IC4715"
+   ],
+   "names": [
+    "Small Sgr Star Cloud"
+   ],
+   "ra": 18.282256,
+   "dec": -18.514556,
+   "type": "*Ass",
+   "magnitude": 4.5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M25",
+   "designations": [
+    "M25",
+    "IC4725"
+   ],
+   "names": [],
+   "ra": 18.529658,
+   "dec": -19.114944,
+   "type": "OCl",
+   "magnitude": 4.6,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M26",
+   "designations": [
+    "M26",
+    "NGC6694"
+   ],
+   "names": [],
+   "ra": 18.755183,
+   "dec": -9.383611,
+   "type": "OCl",
+   "magnitude": 8.87,
+   "constellation": "Sct"
+  },
+  {
+   "id": "M27",
+   "designations": [
+    "M27",
+    "NGC6853"
+   ],
+   "names": [
+    "Dumbbell Nebula"
+   ],
+   "ra": 19.993439,
+   "dec": 22.721028,
+   "type": "PN",
+   "magnitude": 7.4,
+   "constellation": "Vul"
+  },
+  {
+   "id": "M28",
+   "designations": [
+    "M28",
+    "NGC6626"
+   ],
+   "names": [],
+   "ra": 18.409136,
+   "dec": -24.869833,
+   "type": "GCl",
+   "magnitude": 6.9,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M29",
+   "designations": [
+    "M29",
+    "NGC6913"
+   ],
+   "names": [],
+   "ra": 20.399381,
+   "dec": 38.507667,
+   "type": "OCl",
+   "magnitude": 6.6,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "M30",
+   "designations": [
+    "M30",
+    "NGC7099"
+   ],
+   "names": [],
+   "ra": 21.672783,
+   "dec": -23.179083,
+   "type": "GCl",
+   "magnitude": 7.1,
+   "constellation": "Cap"
+  },
+  {
+   "id": "M31",
+   "designations": [
+    "M31",
+    "NGC224",
+    "UGC454",
+    "PGC2557"
+   ],
+   "names": [
+    "Andromeda Galaxy"
+   ],
+   "ra": 0.712319,
+   "dec": 41.269056,
+   "type": "G",
+   "magnitude": 3.44,
+   "constellation": "And"
+  },
+  {
+   "id": "M32",
+   "designations": [
+    "M32",
+    "NGC221",
+    "UGC452",
+    "PGC2555"
+   ],
+   "names": [],
+   "ra": 0.711619,
+   "dec": 40.865278,
+   "type": "G",
+   "magnitude": 8.13,
+   "constellation": "And"
+  },
+  {
+   "id": "M33",
+   "designations": [
+    "M33",
+    "NGC598",
+    "UGC1117",
+    "PGC5818"
+   ],
+   "names": [
+    "Triangulum Galaxy",
+    "Triangulum Pinwheel"
+   ],
+   "ra": 1.564136,
+   "dec": 30.660222,
+   "type": "G",
+   "magnitude": 5.79,
+   "constellation": "Tri"
+  },
+  {
+   "id": "M34",
+   "designations": [
+    "M34",
+    "NGC1039"
+   ],
+   "names": [],
+   "ra": 2.702056,
+   "dec": 42.746139,
+   "type": "OCl",
+   "magnitude": 5.2,
+   "constellation": "Per"
+  },
+  {
+   "id": "M35",
+   "designations": [
+    "M35",
+    "NGC2168"
+   ],
+   "names": [],
+   "ra": 6.151406,
+   "dec": 24.338639,
+   "type": "OCl",
+   "magnitude": 5.1,
+   "constellation": "Gem"
+  },
+  {
+   "id": "M36",
+   "designations": [
+    "M36",
+    "NGC1960"
+   ],
+   "names": [],
+   "ra": 5.604928,
+   "dec": 34.14075,
+   "type": "OCl",
+   "magnitude": 6,
+   "constellation": "Aur"
+  },
+  {
+   "id": "M37",
+   "designations": [
+    "M37",
+    "NGC2099"
+   ],
+   "names": [],
+   "ra": 5.871764,
+   "dec": 32.553,
+   "type": "OCl",
+   "magnitude": 5.6,
+   "constellation": "Aur"
+  },
+  {
+   "id": "M38",
+   "designations": [
+    "M38",
+    "NGC1912"
+   ],
+   "names": [],
+   "ra": 5.478469,
+   "dec": 35.854917,
+   "type": "OCl",
+   "magnitude": 6.4,
+   "constellation": "Aur"
+  },
+  {
+   "id": "M39",
+   "designations": [
+    "M39",
+    "NGC7092"
+   ],
+   "names": [],
+   "ra": 21.530089,
+   "dec": 48.438167,
+   "type": "OCl",
+   "magnitude": 4.6,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "M40",
+   "designations": [
+    "M40"
+   ],
+   "names": [],
+   "ra": 12.371139,
+   "dec": 58.084444,
+   "type": "**",
+   "magnitude": 8,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M41",
+   "designations": [
+    "M41",
+    "NGC2287"
+   ],
+   "names": [],
+   "ra": 6.76665,
+   "dec": -20.754222,
+   "type": "OCl",
+   "magnitude": 4.5,
+   "constellation": "CMa"
+  },
+  {
+   "id": "M42",
+   "designations": [
+    "M42",
+    "NGC1976",
+    "LBN974"
+   ],
+   "names": [
+    "Great Orion Nebula",
+    "Orion Nebula"
+   ],
+   "ra": 5.587911,
+   "dec": -5.389667,
+   "type": "Cl+N",
+   "magnitude": 4,
+   "constellation": "Ori"
+  },
+  {
+   "id": "M43",
+   "designations": [
+    "M43",
+    "NGC1982"
+   ],
+   "names": [
+    "Mairan's Nebula"
+   ],
+   "ra": 5.59205,
+   "dec": -5.267472,
+   "type": "HII",
+   "magnitude": 9,
+   "constellation": "Ori"
+  },
+  {
+   "id": "M44",
+   "designations": [
+    "M44",
+    "NGC2632"
+   ],
+   "names": [
+    "Beehive",
+    "Praesepe Cluster"
+   ],
+   "ra": 8.672833,
+   "dec": 19.672056,
+   "type": "OCl",
+   "magnitude": 3.1,
+   "constellation": "Cnc"
+  },
+  {
+   "id": "M45",
+   "designations": [
+    "M45",
+    "Mel22"
+   ],
+   "names": [
+    "Pleiades"
+   ],
+   "ra": 3.791278,
+   "dec": 24.105278,
+   "type": "OCl",
+   "magnitude": 1.2,
+   "constellation": "Tau"
+  },
+  {
+   "id": "M46",
+   "designations": [
+    "M46",
+    "NGC2437"
+   ],
+   "names": [],
+   "ra": 7.696339,
+   "dec": -14.81,
+   "type": "OCl",
+   "magnitude": 6.1,
+   "constellation": "Pup"
+  },
+  {
+   "id": "M47",
+   "designations": [
+    "M47",
+    "NGC2422",
+    "NGC2478"
+   ],
+   "names": [],
+   "ra": 7.609728,
+   "dec": -14.482611,
+   "type": "OCl",
+   "magnitude": 4.4,
+   "constellation": "Pup"
+  },
+  {
+   "id": "M48",
+   "designations": [
+    "M48",
+    "NGC2548"
+   ],
+   "names": [],
+   "ra": 8.228661,
+   "dec": -5.750444,
+   "type": "OCl",
+   "magnitude": 5.8,
+   "constellation": "Hya"
+  },
+  {
+   "id": "M49",
+   "designations": [
+    "M49",
+    "NGC4472",
+    "UGC7629",
+    "PGC41220"
+   ],
+   "names": [],
+   "ra": 12.496322,
+   "dec": 8.000472,
+   "type": "G",
+   "magnitude": 8.28,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M50",
+   "designations": [
+    "M50",
+    "NGC2323"
+   ],
+   "names": [],
+   "ra": 7.044575,
+   "dec": -8.364028,
+   "type": "OCl",
+   "magnitude": 5.9,
+   "constellation": "Mon"
+  },
+  {
+   "id": "M51",
+   "designations": [
+    "M51",
+    "NGC5194",
+    "UGC8493",
+    "PGC47404"
+   ],
+   "names": [
+    "Whirlpool Galaxy"
+   ],
+   "ra": 13.497975,
+   "dec": 47.195167,
+   "type": "G",
+   "magnitude": 8.36,
+   "constellation": "CVn"
+  },
+  {
+   "id": "M52",
+   "designations": [
+    "M52",
+    "NGC7654"
+   ],
+   "names": [],
+   "ra": 23.413444,
+   "dec": 61.593167,
+   "type": "OCl",
+   "magnitude": 6.9,
+   "constellation": "Cas"
+  },
+  {
+   "id": "M53",
+   "designations": [
+    "M53",
+    "NGC5024"
+   ],
+   "names": [],
+   "ra": 13.215342,
+   "dec": 18.169111,
+   "type": "GCl",
+   "magnitude": 7.79,
+   "constellation": "Com"
+  },
+  {
+   "id": "M54",
+   "designations": [
+    "M54",
+    "NGC6715"
+   ],
+   "names": [],
+   "ra": 18.917575,
+   "dec": -30.4785,
+   "type": "GCl",
+   "magnitude": 7.7,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M55",
+   "designations": [
+    "M55",
+    "NGC6809"
+   ],
+   "names": [],
+   "ra": 19.6665,
+   "dec": -30.962083,
+   "type": "GCl",
+   "magnitude": 6.49,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M56",
+   "designations": [
+    "M56",
+    "NGC6779"
+   ],
+   "names": [],
+   "ra": 19.276531,
+   "dec": 30.1845,
+   "type": "GCl",
+   "magnitude": 8.4,
+   "constellation": "Lyr"
+  },
+  {
+   "id": "M57",
+   "designations": [
+    "M57",
+    "NGC6720"
+   ],
+   "names": [
+    "Ring Nebula"
+   ],
+   "ra": 18.893058,
+   "dec": 33.028583,
+   "type": "PN",
+   "magnitude": 8.8,
+   "constellation": "Lyr"
+  },
+  {
+   "id": "M58",
+   "designations": [
+    "M58",
+    "NGC4579",
+    "UGC7796",
+    "PGC42168"
+   ],
+   "names": [],
+   "ra": 12.628756,
+   "dec": 11.818194,
+   "type": "G",
+   "magnitude": 10.3,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M59",
+   "designations": [
+    "M59",
+    "NGC4621",
+    "UGC7858",
+    "PGC42628"
+   ],
+   "names": [],
+   "ra": 12.700622,
+   "dec": 11.647028,
+   "type": "G",
+   "magnitude": 9.56,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M60",
+   "designations": [
+    "M60",
+    "NGC4649",
+    "UGC7898",
+    "PGC42831"
+   ],
+   "names": [],
+   "ra": 12.727772,
+   "dec": 11.552694,
+   "type": "G",
+   "magnitude": 8.79,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M61",
+   "designations": [
+    "M61",
+    "NGC4303",
+    "UGC7420",
+    "PGC40001"
+   ],
+   "names": [],
+   "ra": 12.36525,
+   "dec": 4.473639,
+   "type": "G",
+   "magnitude": 10.25,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M62",
+   "designations": [
+    "M62",
+    "NGC6266"
+   ],
+   "names": [],
+   "ra": 17.020167,
+   "dec": -30.112361,
+   "type": "GCl",
+   "magnitude": 7.39,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M63",
+   "designations": [
+    "M63",
+    "NGC5055",
+    "UGC8334",
+    "PGC46153"
+   ],
+   "names": [
+    "Sunflower Galaxy"
+   ],
+   "ra": 13.263703,
+   "dec": 42.029278,
+   "type": "G",
+   "magnitude": 8.61,
+   "constellation": "CVn"
+  },
+  {
+   "id": "M64",
+   "designations": [
+    "M64",
+    "NGC4826",
+    "UGC8062",
+    "PGC44182"
+   ],
+   "names": [
+    "Black Eye Galaxy",
+    "Evil Eye Galaxy"
+   ],
+   "ra": 12.945456,
+   "dec": 21.682972,
+   "type": "G",
+   "magnitude": 8.52,
+   "constellation": "Com"
+  },
+  {
+   "id": "M65",
+   "designations": [
+    "M65",
+    "NGC3623",
+    "UGC6328",
+    "PGC34612"
+   ],
+   "names": [],
+   "ra": 11.315533,
+   "dec": 13.092361,
+   "type": "G",
+   "magnitude": 9.32,
+   "constellation": "Leo"
+  },
+  {
+   "id": "M66",
+   "designations": [
+    "M66",
+    "NGC3627",
+    "UGC6346",
+    "PGC34695"
+   ],
+   "names": [],
+   "ra": 11.337489,
+   "dec": 12.991528,
+   "type": "G",
+   "magnitude": 8.92,
+   "constellation": "Leo"
+  },
+  {
+   "id": "M67",
+   "designations": [
+    "M67",
+    "NGC2682"
+   ],
+   "names": [],
+   "ra": 8.855592,
+   "dec": 11.811944,
+   "type": "OCl",
+   "magnitude": 6.9,
+   "constellation": "Cnc"
+  },
+  {
+   "id": "M68",
+   "designations": [
+    "M68",
+    "NGC4590"
+   ],
+   "names": [],
+   "ra": 12.657781,
+   "dec": -26.743028,
+   "type": "GCl",
+   "magnitude": 7.96,
+   "constellation": "Hya"
+  },
+  {
+   "id": "M69",
+   "designations": [
+    "M69",
+    "NGC6634",
+    "NGC6637"
+   ],
+   "names": [],
+   "ra": 18.523119,
+   "dec": -32.347972,
+   "type": "GCl",
+   "magnitude": 8.31,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M70",
+   "designations": [
+    "M70",
+    "NGC6681"
+   ],
+   "names": [],
+   "ra": 18.720178,
+   "dec": -32.291889,
+   "type": "GCl",
+   "magnitude": 9.06,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M71",
+   "designations": [
+    "M71",
+    "NGC6838",
+    "NGC6839"
+   ],
+   "names": [],
+   "ra": 19.896142,
+   "dec": 18.778389,
+   "type": "GCl",
+   "magnitude": 6.1,
+   "constellation": "Sge"
+  },
+  {
+   "id": "M72",
+   "designations": [
+    "M72",
+    "NGC6981"
+   ],
+   "names": [],
+   "ra": 20.891086,
+   "dec": -12.537056,
+   "type": "GCl",
+   "magnitude": 8.96,
+   "constellation": "Aqr"
+  },
+  {
+   "id": "M73",
+   "designations": [
+    "M73",
+    "NGC6994"
+   ],
+   "names": [],
+   "ra": 20.982214,
+   "dec": -12.6355,
+   "type": "Other",
+   "magnitude": 8.9,
+   "constellation": "Aqr"
+  },
+  {
+   "id": "M74",
+   "designations": [
+    "M74",
+    "NGC628",
+    "UGC1149",
+    "PGC5974"
+   ],
+   "names": [],
+   "ra": 1.611597,
+   "dec": 15.783667,
+   "type": "G",
+   "magnitude": 9.31,
+   "constellation": "Psc"
+  },
+  {
+   "id": "M75",
+   "designations": [
+    "M75",
+    "NGC6864"
+   ],
+   "names": [],
+   "ra": 20.101344,
+   "dec": -21.922222,
+   "type": "GCl",
+   "magnitude": 8.26,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "M76",
+   "designations": [
+    "M76",
+    "NGC650",
+    "NGC651"
+   ],
+   "names": [
+    "Barbell Nebula",
+    "Cork Nebula",
+    "Little Dumbbell Nebula"
+   ],
+   "ra": 1.705469,
+   "dec": 51.575472,
+   "type": "PN",
+   "magnitude": 10.1,
+   "constellation": "Per"
+  },
+  {
+   "id": "M77",
+   "designations": [
+    "M77",
+    "NGC1068",
+    "UGC2188",
+    "PGC10266"
+   ],
+   "names": [],
+   "ra": 2.711308,
+   "dec": -0.013278,
+   "type": "G",
+   "magnitude": 9.29,
+   "constellation": "Cet"
+  },
+  {
+   "id": "M78",
+   "designations": [
+    "M78",
+    "NGC2068"
+   ],
+   "names": [],
+   "ra": 5.779394,
+   "dec": 0.079306,
+   "type": "RfN",
+   "magnitude": 8,
+   "constellation": "Ori"
+  },
+  {
+   "id": "M79",
+   "designations": [
+    "M79",
+    "NGC1904"
+   ],
+   "names": [],
+   "ra": 5.402942,
+   "dec": -24.524222,
+   "type": "GCl",
+   "magnitude": 8.16,
+   "constellation": "Lep"
+  },
+  {
+   "id": "M80",
+   "designations": [
+    "M80",
+    "NGC6093"
+   ],
+   "names": [],
+   "ra": 16.284031,
+   "dec": -22.975111,
+   "type": "GCl",
+   "magnitude": 7.3,
+   "constellation": "Sco"
+  },
+  {
+   "id": "M81",
+   "designations": [
+    "M81",
+    "NGC3031",
+    "UGC5318",
+    "PGC28630"
+   ],
+   "names": [
+    "Bode's Galaxy"
+   ],
+   "ra": 9.925881,
+   "dec": 69.065306,
+   "type": "G",
+   "magnitude": 6.92,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M82",
+   "designations": [
+    "M82",
+    "NGC3034",
+    "UGC5322",
+    "PGC28655"
+   ],
+   "names": [
+    "Cigar Galaxy"
+   ],
+   "ra": 9.931314,
+   "dec": 69.679389,
+   "type": "G",
+   "magnitude": 8.3,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M83",
+   "designations": [
+    "M83",
+    "NGC5236",
+    "PGC48082"
+   ],
+   "names": [
+    "Southern Pinwheel Galaxy"
+   ],
+   "ra": 13.616931,
+   "dec": -29.865417,
+   "type": "G",
+   "magnitude": 7.21,
+   "constellation": "Hya"
+  },
+  {
+   "id": "M84",
+   "designations": [
+    "M84",
+    "NGC4374",
+    "UGC7494",
+    "PGC40455"
+   ],
+   "names": [],
+   "ra": 12.417706,
+   "dec": 12.886972,
+   "type": "G",
+   "magnitude": 9.79,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M85",
+   "designations": [
+    "M85",
+    "NGC4382",
+    "UGC7508",
+    "PGC40515"
+   ],
+   "names": [],
+   "ra": 12.423364,
+   "dec": 18.1915,
+   "type": "G",
+   "magnitude": 9.05,
+   "constellation": "Com"
+  },
+  {
+   "id": "M86",
+   "designations": [
+    "M86",
+    "NGC4406",
+    "UGC7532",
+    "PGC40653"
+   ],
+   "names": [],
+   "ra": 12.436594,
+   "dec": 12.946222,
+   "type": "G",
+   "magnitude": 8.86,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M87",
+   "designations": [
+    "M87",
+    "NGC4486",
+    "UGC7654",
+    "PGC41361"
+   ],
+   "names": [
+    "Virgo Galaxy"
+   ],
+   "ra": 12.513728,
+   "dec": 12.391111,
+   "type": "G",
+   "magnitude": 9,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M88",
+   "designations": [
+    "M88",
+    "NGC4501",
+    "UGC7675",
+    "PGC41517"
+   ],
+   "names": [],
+   "ra": 12.5331,
+   "dec": 14.420389,
+   "type": "G",
+   "magnitude": 10.33,
+   "constellation": "Com"
+  },
+  {
+   "id": "M89",
+   "designations": [
+    "M89",
+    "NGC4552",
+    "UGC7760",
+    "PGC41968"
+   ],
+   "names": [],
+   "ra": 12.594392,
+   "dec": 12.556333,
+   "type": "G",
+   "magnitude": 10.08,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M90",
+   "designations": [
+    "M90",
+    "NGC4569",
+    "UGC7786",
+    "PGC42089"
+   ],
+   "names": [],
+   "ra": 12.613831,
+   "dec": 13.162944,
+   "type": "G",
+   "magnitude": 9.54,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M91",
+   "designations": [
+    "M91",
+    "NGC4548",
+    "UGC7753",
+    "PGC41934"
+   ],
+   "names": [],
+   "ra": 12.590681,
+   "dec": 14.496333,
+   "type": "G",
+   "magnitude": 10.96,
+   "constellation": "Com"
+  },
+  {
+   "id": "M92",
+   "designations": [
+    "M92",
+    "NGC6341"
+   ],
+   "names": [],
+   "ra": 17.285353,
+   "dec": 43.136528,
+   "type": "GCl",
+   "magnitude": 6.52,
+   "constellation": "Her"
+  },
+  {
+   "id": "M93",
+   "designations": [
+    "M93",
+    "NGC2447"
+   ],
+   "names": [],
+   "ra": 7.741453,
+   "dec": -23.853083,
+   "type": "OCl",
+   "magnitude": 6.2,
+   "constellation": "Pup"
+  },
+  {
+   "id": "M94",
+   "designations": [
+    "M94",
+    "NGC4736",
+    "UGC7996",
+    "PGC43495"
+   ],
+   "names": [],
+   "ra": 12.848072,
+   "dec": 41.120444,
+   "type": "G",
+   "magnitude": 8.24,
+   "constellation": "CVn"
+  },
+  {
+   "id": "M95",
+   "designations": [
+    "M95",
+    "NGC3351",
+    "UGC5850",
+    "PGC32007"
+   ],
+   "names": [],
+   "ra": 10.732694,
+   "dec": 11.703806,
+   "type": "G",
+   "magnitude": 9.77,
+   "constellation": "Leo"
+  },
+  {
+   "id": "M96",
+   "designations": [
+    "M96",
+    "NGC3368",
+    "UGC5882",
+    "PGC32192"
+   ],
+   "names": [],
+   "ra": 10.779372,
+   "dec": 11.819944,
+   "type": "G",
+   "magnitude": 9.21,
+   "constellation": "Leo"
+  },
+  {
+   "id": "M97",
+   "designations": [
+    "M97",
+    "NGC3587"
+   ],
+   "names": [
+    "Owl Nebula"
+   ],
+   "ra": 11.246586,
+   "dec": 55.019028,
+   "type": "PN",
+   "magnitude": 9.9,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M98",
+   "designations": [
+    "M98",
+    "NGC4192",
+    "UGC7231",
+    "PGC39028"
+   ],
+   "names": [],
+   "ra": 12.230081,
+   "dec": 14.900333,
+   "type": "G",
+   "magnitude": 10.84,
+   "constellation": "Com"
+  },
+  {
+   "id": "M99",
+   "designations": [
+    "M99",
+    "NGC4254",
+    "UGC7345",
+    "PGC39578"
+   ],
+   "names": [
+    "Coma Pinwheel",
+    "Virgo Cluster Pinwheel"
+   ],
+   "ra": 12.313778,
+   "dec": 14.4165,
+   "type": "G",
+   "magnitude": 9.84,
+   "constellation": "Com"
+  },
+  {
+   "id": "M100",
+   "designations": [
+    "M100",
+    "NGC4321",
+    "UGC7450",
+    "PGC40153"
+   ],
+   "names": [],
+   "ra": 12.381897,
+   "dec": 15.821806,
+   "type": "G",
+   "magnitude": 9.47,
+   "constellation": "Com"
+  },
+  {
+   "id": "M101",
+   "designations": [
+    "M101",
+    "NGC5457",
+    "UGC8981",
+    "PGC50063"
+   ],
+   "names": [],
+   "ra": 14.053483,
+   "dec": 54.348944,
+   "type": "G",
+   "magnitude": 7.9,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M102",
+   "designations": [
+    "M102",
+    "NGC5866",
+    "UGC9723",
+    "PGC53933"
+   ],
+   "names": [],
+   "ra": 15.108194,
+   "dec": 55.763222,
+   "type": "G",
+   "magnitude": 9.89,
+   "constellation": "Dra"
+  },
+  {
+   "id": "M103",
+   "designations": [
+    "M103",
+    "NGC581"
+   ],
+   "names": [],
+   "ra": 1.556058,
+   "dec": 60.658,
+   "type": "OCl",
+   "magnitude": 7.4,
+   "constellation": "Cas"
+  },
+  {
+   "id": "M104",
+   "designations": [
+    "M104",
+    "NGC4594",
+    "PGC42407"
+   ],
+   "names": [
+    "Sombrero Galaxy"
+   ],
+   "ra": 12.666508,
+   "dec": -11.623056,
+   "type": "G",
+   "magnitude": 8.59,
+   "constellation": "Vir"
+  },
+  {
+   "id": "M105",
+   "designations": [
+    "M105",
+    "NGC3379",
+    "UGC5902",
+    "PGC32256"
+   ],
+   "names": [],
+   "ra": 10.797108,
+   "dec": 12.581611,
+   "type": "G",
+   "magnitude": 9.27,
+   "constellation": "Leo"
+  },
+  {
+   "id": "M106",
+   "designations": [
+    "M106",
+    "NGC4258",
+    "UGC7353",
+    "PGC39600"
+   ],
+   "names": [],
+   "ra": 12.315972,
+   "dec": 47.303972,
+   "type": "G",
+   "magnitude": 9.29,
+   "constellation": "CVn"
+  },
+  {
+   "id": "M107",
+   "designations": [
+    "M107",
+    "NGC6171"
+   ],
+   "names": [],
+   "ra": 16.5422,
+   "dec": -13.053639,
+   "type": "GCl",
+   "magnitude": 8.85,
+   "constellation": "Oph"
+  },
+  {
+   "id": "M108",
+   "designations": [
+    "M108",
+    "NGC3556",
+    "UGC6225",
+    "PGC34030"
+   ],
+   "names": [],
+   "ra": 11.191936,
+   "dec": 55.674111,
+   "type": "G",
+   "magnitude": 10.05,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M109",
+   "designations": [
+    "M109",
+    "NGC3992",
+    "UGC6937",
+    "PGC37617"
+   ],
+   "names": [],
+   "ra": 11.959994,
+   "dec": 53.374528,
+   "type": "G",
+   "magnitude": 9.88,
+   "constellation": "UMa"
+  },
+  {
+   "id": "M110",
+   "designations": [
+    "M110",
+    "NGC205",
+    "UGC426",
+    "PGC2429"
+   ],
+   "names": [],
+   "ra": 0.6728,
+   "dec": 41.685306,
+   "type": "G",
+   "magnitude": 8.15,
+   "constellation": "And"
+  }
+ ]
 }

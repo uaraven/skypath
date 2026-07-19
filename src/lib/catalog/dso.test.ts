@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { trajectoryForDate } from '../astro/trajectory'
 import type { GeoLocation } from '../astro/types'
-import { buildCatalog, deepSkyObjects } from './dso'
+import { buildCatalog, catalogSources, deepSkyObjects } from './dso'
 import type { CatalogFile } from './types'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
@@ -16,7 +16,7 @@ function designations(id: string): string[] {
   return find(id).designations.map((d) => `${d.catalog}${d.number}`)
 }
 
-describe('bundled Messier catalog', () => {
+describe('bundled deep-sky catalog', () => {
   it('covers every Messier number', () => {
     const numbers = new Set(
       deepSkyObjects.flatMap((object) =>
@@ -80,9 +80,18 @@ describe('bundled Messier catalog', () => {
     expect(find('M2').name).toBe('M2')
   })
 
-  it('resolves every object to a valid trajectory', () => {
+  /**
+   * Sampled rather than exhaustive: a trajectory per object is ~25 ephemeris
+   * solutions, which at catalog scale runs for minutes. The coordinates of
+   * every object are checked above; this covers the step from coordinates to
+   * a plotted path, and the stride crosses all five data files.
+   */
+  it('resolves sampled objects across every catalog to a valid trajectory', () => {
     const date = new Date('2026-10-15T12:00:00Z')
-    for (const object of deepSkyObjects) {
+    const sample = deepSkyObjects.filter((_, i) => i % 97 === 0)
+    expect(sample.length).toBeGreaterThan(100)
+
+    for (const object of sample) {
       const { points } = trajectoryForDate(object, KYIV, date, 60)
       expect(points.length, object.id).toBeGreaterThan(0)
       for (const point of points) {
@@ -92,6 +101,58 @@ describe('bundled Messier catalog', () => {
         expect(point.azimuth, object.id).toBeLessThan(360)
       }
     }
+  })
+
+  it('merges NGC entries into the Messier objects they are', () => {
+    // The whole point of merging by designation: M13 and NGC 6205 are one
+    // object with two numbers, not two rows in the results.
+    expect(find('M13').designations[0]).toEqual({ catalog: 'M', number: '13' })
+    expect(deepSkyObjects.filter((o) => o.id === 'NGC6205')).toHaveLength(0)
+    expect(find('M13').names).toContain('Hercules Globular Cluster')
+  })
+
+  it('keeps designations of objects OpenNGC catalogued twice', () => {
+    // IC 11 is a re-observation of NGC 281; the stub row is dropped but the
+    // number stays searchable on the surviving object.
+    expect(designations('NGC281')).toContain('IC11')
+    // NGC 755's own row does not mention NGC 763 — only the duplicate's does.
+    expect(designations('NGC755')).toContain('NGC763')
+  })
+
+  it('carries the VizieR-derived nebula catalogs', () => {
+    const cave = find('Sh2-155')
+    expect(cave.type).toBe('HII')
+    expect(cave.constellation).toBe('Cep')
+    // J2000, precessed by VizieR from the catalogue's B1900 positions.
+    expect(cave.ra).toBeCloseTo(22.9455, 3)
+    expect(cave.dec).toBeCloseTo(62.6177, 3)
+
+    const ldn = find('LDN1622')
+    expect(ldn.type).toBe('DrkN')
+    expect(ldn.magnitude).toBeUndefined()
+  })
+
+  it('attributes every bundled source', () => {
+    expect(catalogSources).toHaveLength(3)
+    expect(catalogSources.some((s) => s.includes('OpenNGC'))).toBe(true)
+    expect(catalogSources.some((s) => s.includes('Sharpless'))).toBe(true)
+    expect(catalogSources.some((s) => s.includes('Lynds'))).toBe(true)
+    // CC-BY-SA-4.0 makes the OpenNGC line a licence obligation, not a nicety.
+    expect(catalogSources.some((s) => s.includes('CC-BY-SA-4.0'))).toBe(true)
+  })
+
+  it('covers each bundled catalog', () => {
+    const primary = (id: string) =>
+      deepSkyObjects.filter((object) => object.designations[0].catalog === id)
+        .length
+
+    // Objects in more than one catalog are filed under the earliest, so NGC
+    // is short its ~40 Messier entries and IC short those it shares with NGC.
+    expect(primary('M')).toBe(110)
+    expect(primary('NGC')).toBeGreaterThan(7000)
+    expect(primary('IC')).toBeGreaterThan(4000)
+    expect(primary('Sh2')).toBe(313)
+    expect(primary('LDN')).toBe(1787)
   })
 })
 

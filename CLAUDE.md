@@ -34,7 +34,8 @@ Planning documents live in `.plan/`:
 - `src/lib/catalog/` — targets the user can pick. `index.ts` is the public API (`searchObjects`, `objectById`, `objectByDesignation`, `allObjects`).
   - An object belongs to **many catalogs and has many names** — `CatalogObject.designations` / `.names`. Don't collapse either to a single value.
   - To add a catalog: register it in `catalogs.ts`, generate JSON into `data/`, import it in `dso.ts`. Entries sharing a designation merge into one object.
-  - Data is generated from OpenNGC (**CC-BY-SA-4.0 — attribution required**, exposed as `catalogSources`). Never hand-edit `data/*.json`.
+  - Bundled: Messier, NGC, IC (from OpenNGC) and Sharpless 2, LDN (from VizieR) — ~15 000 objects. Data is generated, never hand-edit `data/*.json`. OpenNGC is **CC-BY-SA-4.0 — attribution required** (all sources exposed as `catalogSources`).
+  - Sharpless/LDN **do not cross-match** to NGC/IC: no shared designations exist in either source, so NGC 7000 and Sh2-117 are two entries, and neither VizieR catalog carries common names. See `data/README.md`.
 - `src/lib/horizon/` — NINA file parsing and `Horizon.altitudeAt(azimuth)`. The azimuth axis is circular: the segment between the last and first point wraps through north, and getting that wrong silently reports a clear horizon.
 - `src/lib/observatory/` — named location + horizon bundles in localStorage. Invariants: the list is never empty and one is always selected. The horizon is stored as **raw text**, parsed on the render path by the memoizing `horizonFromText`.
 - `src/lib/charts/` — chart geometry and data, no Svelte: `scales.ts` (projection into an SVG `PlotArea`), `sky-bands.ts` (twilight shading), `model.ts` (`altitudeChartModel` — everything a chart draws, computed once).
