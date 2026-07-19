@@ -116,8 +116,8 @@
 
   {#if applied.trim() === ''}
     <p class="empty">
-      Search the Messier catalogue and the planets by name, designation or type.
-      Pick a result to see it in full.
+      Search the Messier, NGC, IC, Sharpless 2 and LDN catalogues and the
+      planets by name, designation or type. Pick a result to see it in full.
     </p>
   {:else if rows.length === 0}
     <p class="empty">Nothing matches “{applied}”.</p>

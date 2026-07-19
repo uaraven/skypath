@@ -6,13 +6,29 @@ import {
 } from './catalogs'
 import type { CatalogFile, CatalogFileEntry, CatalogObject } from './types'
 import messier from './data/messier.json'
+import ngc from './data/ngc.json'
+import ic from './data/ic.json'
+import sharpless from './data/sharpless.json'
+import ldn from './data/ldn.json'
 
 /**
  * Data files bundled into the app. To add a catalog, generate its JSON (see
  * `scripts/build-catalog.mjs`), import it here and append it to this list;
  * objects already present under another designation are merged, not duplicated.
+ *
+ * Order is significant — the first file to carry an object wins on
+ * coordinates — so these run most-curated first: Messier's 110 positions are
+ * spot-checked against published values, NGC and IC come from the same
+ * OpenNGC pass, and the two VizieR catalogs of extended nebulosity come last,
+ * their positions being cloud centroids rather than anything pointlike.
  */
-const FILES: CatalogFile[] = [messier as CatalogFile]
+const FILES: CatalogFile[] = [
+  messier as CatalogFile,
+  ngc as CatalogFile,
+  ic as CatalogFile,
+  sharpless as CatalogFile,
+  ldn as CatalogFile,
+]
 
 /**
  * Builds the object list from the given files.

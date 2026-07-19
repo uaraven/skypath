@@ -65,7 +65,12 @@ describe('searchObjects', () => {
   })
 
   it('matches object type, but ranks it below names', () => {
-    expect(ids('globular', 3).every((id) => id.startsWith('M'))).toBe(true)
+    // M13 is the "Hercules Globular Cluster": its own name carries the
+    // word, so it outranks the thousands of objects merely typed GCl.
+    const globular = searchObjects('globular', 3)
+    expect(globular[0].object.id).toBe('M13')
+    expect(globular[1].score).toBeLessThan(globular[0].score)
+
     // "Galaxy" is a type and part of "Andromeda Galaxy": the name wins.
     expect(ids('galaxy')[0]).toBe('M31')
   })

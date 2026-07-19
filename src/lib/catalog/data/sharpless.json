@@ -1,0 +1,3450 @@
+{
+ "catalog": "Sh2",
+ "title": "Sharpless 2 catalogue of HII regions",
+ "source": "Sharpless (1959) ApJS 4, 257 — catalogue VII/20 via VizieR (CDS, https://vizier.cds.unistra.fr/).",
+ "objects": [
+  {
+   "id": "Sh2-1",
+   "designations": [
+    "Sh2-1"
+   ],
+   "names": [],
+   "ra": 15.980891,
+   "dec": -26.12052,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-2",
+   "designations": [
+    "Sh2-2"
+   ],
+   "names": [],
+   "ra": 17.068507,
+   "dec": -38.14249,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-3",
+   "designations": [
+    "Sh2-3"
+   ],
+   "names": [],
+   "ra": 17.229176,
+   "dec": -38.503106,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-4",
+   "designations": [
+    "Sh2-4"
+   ],
+   "names": [],
+   "ra": 17.330218,
+   "dec": -39.338753,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-5",
+   "designations": [
+    "Sh2-5"
+   ],
+   "names": [],
+   "ra": 17.334297,
+   "dec": -38.45477,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-6",
+   "designations": [
+    "Sh2-6"
+   ],
+   "names": [],
+   "ra": 17.251143,
+   "dec": -37.116545,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-7",
+   "designations": [
+    "Sh2-7"
+   ],
+   "names": [],
+   "ra": 16.00549,
+   "dec": -22.950642,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-8",
+   "designations": [
+    "Sh2-8"
+   ],
+   "names": [],
+   "ra": 17.356902,
+   "dec": -36.034691,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-9",
+   "designations": [
+    "Sh2-9"
+   ],
+   "names": [],
+   "ra": 16.353026,
+   "dec": -25.589444,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-10",
+   "designations": [
+    "Sh2-10"
+   ],
+   "names": [],
+   "ra": 17.31667,
+   "dec": -34.090316,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-11",
+   "designations": [
+    "Sh2-11"
+   ],
+   "names": [],
+   "ra": 17.441931,
+   "dec": -34.205691,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-12",
+   "designations": [
+    "Sh2-12"
+   ],
+   "names": [],
+   "ra": 17.598938,
+   "dec": -32.599595,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-13",
+   "designations": [
+    "Sh2-13"
+   ],
+   "names": [],
+   "ra": 17.507933,
+   "dec": -31.562676,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-14",
+   "designations": [
+    "Sh2-14"
+   ],
+   "names": [],
+   "ra": 17.505133,
+   "dec": -30.262997,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-15",
+   "designations": [
+    "Sh2-15"
+   ],
+   "names": [],
+   "ra": 17.842887,
+   "dec": -31.264091,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-16",
+   "designations": [
+    "Sh2-16"
+   ],
+   "names": [],
+   "ra": 17.797836,
+   "dec": -29.303855,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-17",
+   "designations": [
+    "Sh2-17"
+   ],
+   "names": [],
+   "ra": 17.769113,
+   "dec": -28.858004,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-18",
+   "designations": [
+    "Sh2-18"
+   ],
+   "names": [],
+   "ra": 17.812798,
+   "dec": -29.251675,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-19",
+   "designations": [
+    "Sh2-19"
+   ],
+   "names": [],
+   "ra": 17.822688,
+   "dec": -29.116895,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-20",
+   "designations": [
+    "Sh2-20"
+   ],
+   "names": [],
+   "ra": 17.820641,
+   "dec": -28.667165,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-21",
+   "designations": [
+    "Sh2-21"
+   ],
+   "names": [],
+   "ra": 17.860847,
+   "dec": -28.89466,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-22",
+   "designations": [
+    "Sh2-22"
+   ],
+   "names": [],
+   "ra": 17.917717,
+   "dec": -25.036147,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-23",
+   "designations": [
+    "Sh2-23"
+   ],
+   "names": [],
+   "ra": 16.223506,
+   "dec": -8.372276,
+   "type": "HII",
+   "constellation": "Sco"
+  },
+  {
+   "id": "Sh2-24",
+   "designations": [
+    "Sh2-24"
+   ],
+   "names": [],
+   "ra": 16.184391,
+   "dec": -7.077277,
+   "type": "HII",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Sh2-25",
+   "designations": [
+    "Sh2-25"
+   ],
+   "names": [],
+   "ra": 18.090566,
+   "dec": -24.394248,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-26",
+   "designations": [
+    "Sh2-26"
+   ],
+   "names": [],
+   "ra": 17.983064,
+   "dec": -23.326526,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-27",
+   "designations": [
+    "Sh2-27"
+   ],
+   "names": [],
+   "ra": 16.620114,
+   "dec": -10.569733,
+   "type": "HII",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Sh2-28",
+   "designations": [
+    "Sh2-28"
+   ],
+   "names": [],
+   "ra": 18.044935,
+   "dec": -23.584187,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-29",
+   "designations": [
+    "Sh2-29"
+   ],
+   "names": [],
+   "ra": 18.175254,
+   "dec": -23.998547,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-30",
+   "designations": [
+    "Sh2-30"
+   ],
+   "names": [],
+   "ra": 18.059499,
+   "dec": -23.015365,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-31",
+   "designations": [
+    "Sh2-31"
+   ],
+   "names": [],
+   "ra": 18.18843,
+   "dec": -23.796616,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-32",
+   "designations": [
+    "Sh2-32"
+   ],
+   "names": [],
+   "ra": 18.181649,
+   "dec": -23.647595,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-33",
+   "designations": [
+    "Sh2-33"
+   ],
+   "names": [],
+   "ra": 15.997882,
+   "dec": -1.617448,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-34",
+   "designations": [
+    "Sh2-34"
+   ],
+   "names": [],
+   "ra": 18.106805,
+   "dec": -21.658393,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-35",
+   "designations": [
+    "Sh2-35"
+   ],
+   "names": [],
+   "ra": 18.264082,
+   "dec": -20.252068,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-36",
+   "designations": [
+    "Sh2-36"
+   ],
+   "names": [],
+   "ra": 16.09176,
+   "dec": 0.394481,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-37",
+   "designations": [
+    "Sh2-37"
+   ],
+   "names": [],
+   "ra": 18.295313,
+   "dec": -19.664158,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-38",
+   "designations": [
+    "Sh2-38"
+   ],
+   "names": [],
+   "ra": 18.145985,
+   "dec": -18.269167,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-39",
+   "designations": [
+    "Sh2-39"
+   ],
+   "names": [],
+   "ra": 18.27958,
+   "dec": -18.649727,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-40",
+   "designations": [
+    "Sh2-40"
+   ],
+   "names": [],
+   "ra": 18.200606,
+   "dec": -17.744513,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-41",
+   "designations": [
+    "Sh2-41"
+   ],
+   "names": [],
+   "ra": 18.264284,
+   "dec": -18.235265,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-42",
+   "designations": [
+    "Sh2-42"
+   ],
+   "names": [],
+   "ra": 18.171615,
+   "dec": -16.815356,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-43",
+   "designations": [
+    "Sh2-43"
+   ],
+   "names": [],
+   "ra": 18.273687,
+   "dec": -17.40052,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-44",
+   "designations": [
+    "Sh2-44"
+   ],
+   "names": [],
+   "ra": 18.274882,
+   "dec": -16.733645,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-45",
+   "designations": [
+    "Sh2-45"
+   ],
+   "names": [],
+   "ra": 18.346144,
+   "dec": -16.17325,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-46",
+   "designations": [
+    "Sh2-46"
+   ],
+   "names": [],
+   "ra": 18.103095,
+   "dec": -14.15854,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-47",
+   "designations": [
+    "Sh2-47"
+   ],
+   "names": [],
+   "ra": 18.29576,
+   "dec": -15.613882,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-48",
+   "designations": [
+    "Sh2-48"
+   ],
+   "names": [],
+   "ra": 18.37337,
+   "dec": -14.58588,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-49",
+   "designations": [
+    "Sh2-49"
+   ],
+   "names": [],
+   "ra": 18.311282,
+   "dec": -13.961541,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-50",
+   "designations": [
+    "Sh2-50"
+   ],
+   "names": [],
+   "ra": 18.425114,
+   "dec": -14.711707,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-51",
+   "designations": [
+    "Sh2-51"
+   ],
+   "names": [],
+   "ra": 18.679647,
+   "dec": -16.558348,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-52",
+   "designations": [
+    "Sh2-52"
+   ],
+   "names": [],
+   "ra": 19.796346,
+   "dec": -23.087477,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-53",
+   "designations": [
+    "Sh2-53"
+   ],
+   "names": [],
+   "ra": 18.420765,
+   "dec": -13.228931,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-54",
+   "designations": [
+    "Sh2-54"
+   ],
+   "names": [],
+   "ra": 18.298099,
+   "dec": -11.730014,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-55",
+   "designations": [
+    "Sh2-55"
+   ],
+   "names": [],
+   "ra": 18.536418,
+   "dec": -11.762104,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-56",
+   "designations": [
+    "Sh2-56"
+   ],
+   "names": [],
+   "ra": 18.518391,
+   "dec": -9.714613,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-57",
+   "designations": [
+    "Sh2-57"
+   ],
+   "names": [],
+   "ra": 18.509334,
+   "dec": -8.615871,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-58",
+   "designations": [
+    "Sh2-58"
+   ],
+   "names": [],
+   "ra": 18.524232,
+   "dec": -8.463708,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-59",
+   "designations": [
+    "Sh2-59"
+   ],
+   "names": [],
+   "ra": 18.616987,
+   "dec": -7.600271,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-60",
+   "designations": [
+    "Sh2-60"
+   ],
+   "names": [],
+   "ra": 18.611402,
+   "dec": -6.701034,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-61",
+   "designations": [
+    "Sh2-61"
+   ],
+   "names": [],
+   "ra": 18.548644,
+   "dec": -5.010015,
+   "type": "HII",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Sh2-62",
+   "designations": [
+    "Sh2-62"
+   ],
+   "names": [],
+   "ra": 18.459568,
+   "dec": -3.856186,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-63",
+   "designations": [
+    "Sh2-63"
+   ],
+   "names": [],
+   "ra": 19.961995,
+   "dec": -14.115665,
+   "type": "HII",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Sh2-64",
+   "designations": [
+    "Sh2-64"
+   ],
+   "names": [],
+   "ra": 18.526647,
+   "dec": -1.91305,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-65",
+   "designations": [
+    "Sh2-65"
+   ],
+   "names": [],
+   "ra": 18.782812,
+   "dec": -3.742939,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-66",
+   "designations": [
+    "Sh2-66"
+   ],
+   "names": [],
+   "ra": 18.758366,
+   "dec": -1.996359,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-67",
+   "designations": [
+    "Sh2-67"
+   ],
+   "names": [],
+   "ra": 18.823591,
+   "dec": -2.353714,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-68",
+   "designations": [
+    "Sh2-68"
+   ],
+   "names": [],
+   "ra": 18.419861,
+   "dec": 0.854944,
+   "type": "HII",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Sh2-69",
+   "designations": [
+    "Sh2-69"
+   ],
+   "names": [],
+   "ra": 18.740607,
+   "dec": -0.282159,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-70",
+   "designations": [
+    "Sh2-70"
+   ],
+   "names": [],
+   "ra": 18.244144,
+   "dec": 7.063032,
+   "type": "HII",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Sh2-71",
+   "designations": [
+    "Sh2-71"
+   ],
+   "names": [],
+   "ra": 19.034086,
+   "dec": 2.159682,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-72",
+   "designations": [
+    "Sh2-72"
+   ],
+   "names": [],
+   "ra": 19.063994,
+   "dec": 2.313897,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-73",
+   "designations": [
+    "Sh2-73"
+   ],
+   "names": [],
+   "ra": 16.185451,
+   "dec": 21.874001,
+   "type": "HII",
+   "constellation": "Her"
+  },
+  {
+   "id": "Sh2-74",
+   "designations": [
+    "Sh2-74"
+   ],
+   "names": [],
+   "ra": 19.14695,
+   "dec": 5.609001,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-75",
+   "designations": [
+    "Sh2-75"
+   ],
+   "names": [],
+   "ra": 18.987609,
+   "dec": 7.120011,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-76",
+   "designations": [
+    "Sh2-76"
+   ],
+   "names": [],
+   "ra": 18.940483,
+   "dec": 7.813373,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-77",
+   "designations": [
+    "Sh2-77"
+   ],
+   "names": [],
+   "ra": 19.8048,
+   "dec": 1.147923,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-78",
+   "designations": [
+    "Sh2-78"
+   ],
+   "names": [],
+   "ra": 19.053093,
+   "dec": 14.129562,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-79",
+   "designations": [
+    "Sh2-79"
+   ],
+   "names": [],
+   "ra": 19.388455,
+   "dec": 13.976087,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-80",
+   "designations": [
+    "Sh2-80"
+   ],
+   "names": [],
+   "ra": 19.191372,
+   "dec": 16.865698,
+   "type": "HII",
+   "constellation": "Sge"
+  },
+  {
+   "id": "Sh2-81",
+   "designations": [
+    "Sh2-81"
+   ],
+   "names": [],
+   "ra": 20.020411,
+   "dec": 11.792703,
+   "type": "HII",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Sh2-82",
+   "designations": [
+    "Sh2-82"
+   ],
+   "names": [],
+   "ra": 19.505766,
+   "dec": 18.275551,
+   "type": "HII",
+   "constellation": "Sge"
+  },
+  {
+   "id": "Sh2-83",
+   "designations": [
+    "Sh2-83"
+   ],
+   "names": [],
+   "ra": 19.408931,
+   "dec": 20.795858,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-84",
+   "designations": [
+    "Sh2-84"
+   ],
+   "names": [],
+   "ra": 19.817776,
+   "dec": 18.400282,
+   "type": "HII",
+   "constellation": "Sge"
+  },
+  {
+   "id": "Sh2-85",
+   "designations": [
+    "Sh2-85"
+   ],
+   "names": [],
+   "ra": 19.054786,
+   "dec": 25.830382,
+   "type": "HII",
+   "constellation": "Lyr"
+  },
+  {
+   "id": "Sh2-86",
+   "designations": [
+    "Sh2-86"
+   ],
+   "names": [],
+   "ra": 19.71936,
+   "dec": 23.287607,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-87",
+   "designations": [
+    "Sh2-87"
+   ],
+   "names": [],
+   "ra": 19.773528,
+   "dec": 24.628112,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-88",
+   "designations": [
+    "Sh2-88"
+   ],
+   "names": [],
+   "ra": 19.766341,
+   "dec": 25.343871,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-89",
+   "designations": [
+    "Sh2-89"
+   ],
+   "names": [],
+   "ra": 19.834003,
+   "dec": 26.486076,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-90",
+   "designations": [
+    "Sh2-90"
+   ],
+   "names": [],
+   "ra": 19.820364,
+   "dec": 26.867656,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-91",
+   "designations": [
+    "Sh2-91"
+   ],
+   "names": [],
+   "ra": 19.59279,
+   "dec": 29.604452,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-92",
+   "designations": [
+    "Sh2-92"
+   ],
+   "names": [],
+   "ra": 19.777586,
+   "dec": 28.245479,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-93",
+   "designations": [
+    "Sh2-93"
+   ],
+   "names": [],
+   "ra": 19.917005,
+   "dec": 27.213485,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-94",
+   "designations": [
+    "Sh2-94"
+   ],
+   "names": [],
+   "ra": 19.464335,
+   "dec": 31.470599,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-95",
+   "designations": [
+    "Sh2-95"
+   ],
+   "names": [],
+   "ra": 19.917145,
+   "dec": 29.296933,
+   "type": "HII",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Sh2-96",
+   "designations": [
+    "Sh2-96"
+   ],
+   "names": [],
+   "ra": 19.478348,
+   "dec": 32.689232,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-97",
+   "designations": [
+    "Sh2-97"
+   ],
+   "names": [],
+   "ra": 19.934795,
+   "dec": 30.265907,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-98",
+   "designations": [
+    "Sh2-98"
+   ],
+   "names": [],
+   "ra": 19.979035,
+   "dec": 31.421603,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-99",
+   "designations": [
+    "Sh2-99"
+   ],
+   "names": [],
+   "ra": 20.014175,
+   "dec": 33.492825,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-100",
+   "designations": [
+    "Sh2-100"
+   ],
+   "names": [],
+   "ra": 20.030881,
+   "dec": 33.511601,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-101",
+   "designations": [
+    "Sh2-101"
+   ],
+   "names": [],
+   "ra": 19.999312,
+   "dec": 35.291038,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-102",
+   "designations": [
+    "Sh2-102"
+   ],
+   "names": [],
+   "ra": 20.529742,
+   "dec": 30.605153,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-103",
+   "designations": [
+    "Sh2-103"
+   ],
+   "names": [],
+   "ra": 20.842353,
+   "dec": 30.923446,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-104",
+   "designations": [
+    "Sh2-104"
+   ],
+   "names": [],
+   "ra": 20.295872,
+   "dec": 36.744464,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-105",
+   "designations": [
+    "Sh2-105"
+   ],
+   "names": [],
+   "ra": 20.200772,
+   "dec": 38.349646,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-106",
+   "designations": [
+    "Sh2-106"
+   ],
+   "names": [],
+   "ra": 20.457687,
+   "dec": 37.397065,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-107",
+   "designations": [
+    "Sh2-107"
+   ],
+   "names": [],
+   "ra": 20.713007,
+   "dec": 36.34282,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-108",
+   "designations": [
+    "Sh2-108"
+   ],
+   "names": [],
+   "ra": 20.376522,
+   "dec": 40.254302,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-109",
+   "designations": [
+    "Sh2-109"
+   ],
+   "names": [],
+   "ra": 20.560684,
+   "dec": 40.342476,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-110",
+   "designations": [
+    "Sh2-110"
+   ],
+   "names": [],
+   "ra": 21.346906,
+   "dec": 32.457864,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-111",
+   "designations": [
+    "Sh2-111"
+   ],
+   "names": [],
+   "ra": 21.698137,
+   "dec": 30.105702,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-112",
+   "designations": [
+    "Sh2-112"
+   ],
+   "names": [],
+   "ra": 20.56399,
+   "dec": 45.659808,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-113",
+   "designations": [
+    "Sh2-113"
+   ],
+   "names": [],
+   "ra": 21.346716,
+   "dec": 38.091341,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-114",
+   "designations": [
+    "Sh2-114"
+   ],
+   "names": [],
+   "ra": 21.353003,
+   "dec": 38.708617,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-115",
+   "designations": [
+    "Sh2-115"
+   ],
+   "names": [],
+   "ra": 20.576112,
+   "dec": 46.877934,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-116",
+   "designations": [
+    "Sh2-116"
+   ],
+   "names": [],
+   "ra": 20.538681,
+   "dec": 47.357009,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-117",
+   "designations": [
+    "Sh2-117"
+   ],
+   "names": [],
+   "ra": 20.9796,
+   "dec": 44.321858,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-118",
+   "designations": [
+    "Sh2-118"
+   ],
+   "names": [],
+   "ra": 21.616981,
+   "dec": 40.215724,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-119",
+   "designations": [
+    "Sh2-119"
+   ],
+   "names": [],
+   "ra": 21.307164,
+   "dec": 43.937802,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-120",
+   "designations": [
+    "Sh2-120"
+   ],
+   "names": [],
+   "ra": 21.063086,
+   "dec": 49.880726,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-121",
+   "designations": [
+    "Sh2-121"
+   ],
+   "names": [],
+   "ra": 21.086861,
+   "dec": 49.64979,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-122",
+   "designations": [
+    "Sh2-122"
+   ],
+   "names": [],
+   "ra": 23.14647,
+   "dec": 14.92496,
+   "type": "HII",
+   "constellation": "Peg"
+  },
+  {
+   "id": "Sh2-123",
+   "designations": [
+    "Sh2-123"
+   ],
+   "names": [],
+   "ra": 21.70633,
+   "dec": 44.540061,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-124",
+   "designations": [
+    "Sh2-124"
+   ],
+   "names": [],
+   "ra": 21.639365,
+   "dec": 50.351297,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-125",
+   "designations": [
+    "Sh2-125"
+   ],
+   "names": [],
+   "ra": 21.89255,
+   "dec": 47.27172,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-126",
+   "designations": [
+    "Sh2-126"
+   ],
+   "names": [],
+   "ra": 22.557642,
+   "dec": 38.582232,
+   "type": "HII",
+   "constellation": "Lac"
+  },
+  {
+   "id": "Sh2-127",
+   "designations": [
+    "Sh2-127"
+   ],
+   "names": [],
+   "ra": 21.478309,
+   "dec": 54.620754,
+   "type": "HII",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Sh2-128",
+   "designations": [
+    "Sh2-128"
+   ],
+   "names": [],
+   "ra": 21.535785,
+   "dec": 55.859258,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-129",
+   "designations": [
+    "Sh2-129"
+   ],
+   "names": [],
+   "ra": 21.195812,
+   "dec": 59.961301,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-130",
+   "designations": [
+    "Sh2-130"
+   ],
+   "names": [],
+   "ra": 20.716569,
+   "dec": 63.228471,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-131",
+   "designations": [
+    "Sh2-131"
+   ],
+   "names": [],
+   "ra": 21.65009,
+   "dec": 57.485863,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-132",
+   "designations": [
+    "Sh2-132"
+   ],
+   "names": [],
+   "ra": 22.313243,
+   "dec": 56.134785,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-133",
+   "designations": [
+    "Sh2-133"
+   ],
+   "names": [],
+   "ra": 21.483319,
+   "dec": 64.30521,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-134",
+   "designations": [
+    "Sh2-134"
+   ],
+   "names": [],
+   "ra": 22.191633,
+   "dec": 59.410326,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-135",
+   "designations": [
+    "Sh2-135"
+   ],
+   "names": [],
+   "ra": 22.369902,
+   "dec": 58.738369,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-136",
+   "designations": [
+    "Sh2-136"
+   ],
+   "names": [],
+   "ra": 21.274911,
+   "dec": 68.253161,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-137",
+   "designations": [
+    "Sh2-137"
+   ],
+   "names": [],
+   "ra": 21.951989,
+   "dec": 64.693635,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-138",
+   "designations": [
+    "Sh2-138"
+   ],
+   "names": [],
+   "ra": 22.544315,
+   "dec": 58.481799,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-139",
+   "designations": [
+    "Sh2-139"
+   ],
+   "names": [],
+   "ra": 22.58344,
+   "dec": 58.217249,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-140",
+   "designations": [
+    "Sh2-140"
+   ],
+   "names": [],
+   "ra": 22.318844,
+   "dec": 63.285379,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-141",
+   "designations": [
+    "Sh2-141"
+   ],
+   "names": [],
+   "ra": 22.475129,
+   "dec": 61.644674,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-142",
+   "designations": [
+    "Sh2-142"
+   ],
+   "names": [],
+   "ra": 22.793259,
+   "dec": 58.061042,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-143",
+   "designations": [
+    "Sh2-143"
+   ],
+   "names": [],
+   "ra": 22.837477,
+   "dec": 57.713043,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-144",
+   "designations": [
+    "Sh2-144"
+   ],
+   "names": [],
+   "ra": 22.747825,
+   "dec": 59.892275,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-145",
+   "designations": [
+    "Sh2-145"
+   ],
+   "names": [],
+   "ra": 22.426008,
+   "dec": 64.308586,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-146",
+   "designations": [
+    "Sh2-146"
+   ],
+   "names": [],
+   "ra": 22.823984,
+   "dec": 59.92914,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-147",
+   "designations": [
+    "Sh2-147"
+   ],
+   "names": [],
+   "ra": 22.924917,
+   "dec": 58.466813,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-148",
+   "designations": [
+    "Sh2-148"
+   ],
+   "names": [],
+   "ra": 22.936726,
+   "dec": 58.5173,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-149",
+   "designations": [
+    "Sh2-149"
+   ],
+   "names": [],
+   "ra": 22.940099,
+   "dec": 58.534105,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-150",
+   "designations": [
+    "Sh2-150"
+   ],
+   "names": [],
+   "ra": 22.519984,
+   "dec": 65.113988,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-151",
+   "designations": [
+    "Sh2-151"
+   ],
+   "names": [],
+   "ra": 23.050931,
+   "dec": 57.071732,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-152",
+   "designations": [
+    "Sh2-152"
+   ],
+   "names": [],
+   "ra": 22.977161,
+   "dec": 58.785598,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-153",
+   "designations": [
+    "Sh2-153"
+   ],
+   "names": [],
+   "ra": 22.987347,
+   "dec": 58.735998,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-154",
+   "designations": [
+    "Sh2-154"
+   ],
+   "names": [],
+   "ra": 22.85684,
+   "dec": 61.18062,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-155",
+   "designations": [
+    "Sh2-155"
+   ],
+   "names": [],
+   "ra": 22.945495,
+   "dec": 62.617717,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-156",
+   "designations": [
+    "Sh2-156"
+   ],
+   "names": [],
+   "ra": 23.086265,
+   "dec": 60.256376,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-157",
+   "designations": [
+    "Sh2-157"
+   ],
+   "names": [],
+   "ra": 23.267657,
+   "dec": 60.045551,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-158",
+   "designations": [
+    "Sh2-158"
+   ],
+   "names": [],
+   "ra": 23.227864,
+   "dec": 61.51105,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-159",
+   "designations": [
+    "Sh2-159"
+   ],
+   "names": [],
+   "ra": 23.261985,
+   "dec": 61.145395,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-160",
+   "designations": [
+    "Sh2-160"
+   ],
+   "names": [],
+   "ra": 23.09658,
+   "dec": 64.67346,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-161",
+   "designations": [
+    "Sh2-161"
+   ],
+   "names": [],
+   "ra": 23.258186,
+   "dec": 61.861956,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-162",
+   "designations": [
+    "Sh2-162"
+   ],
+   "names": [],
+   "ra": 23.345036,
+   "dec": 61.197683,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-163",
+   "designations": [
+    "Sh2-163"
+   ],
+   "names": [],
+   "ra": 23.555445,
+   "dec": 60.785671,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-164",
+   "designations": [
+    "Sh2-164"
+   ],
+   "names": [],
+   "ra": 23.640437,
+   "dec": 59.970418,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-165",
+   "designations": [
+    "Sh2-165"
+   ],
+   "names": [],
+   "ra": 23.663633,
+   "dec": 61.937426,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-166",
+   "designations": [
+    "Sh2-166"
+   ],
+   "names": [],
+   "ra": 23.7029,
+   "dec": 60.971286,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-167",
+   "designations": [
+    "Sh2-167"
+   ],
+   "names": [],
+   "ra": 23.589576,
+   "dec": 64.852947,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-168",
+   "designations": [
+    "Sh2-168"
+   ],
+   "names": [],
+   "ra": 23.884395,
+   "dec": 60.47298,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-169",
+   "designations": [
+    "Sh2-169"
+   ],
+   "names": [],
+   "ra": 23.899662,
+   "dec": 60.373066,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-170",
+   "designations": [
+    "Sh2-170"
+   ],
+   "names": [],
+   "ra": 0.028439,
+   "dec": 64.623442,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-171",
+   "designations": [
+    "Sh2-171"
+   ],
+   "names": [],
+   "ra": 0.077849,
+   "dec": 67.156754,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-172",
+   "designations": [
+    "Sh2-172"
+   ],
+   "names": [],
+   "ra": 0.259147,
+   "dec": 61.255903,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-173",
+   "designations": [
+    "Sh2-173"
+   ],
+   "names": [],
+   "ra": 0.364415,
+   "dec": 61.738175,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-174",
+   "designations": [
+    "Sh2-174"
+   ],
+   "names": [],
+   "ra": 23.78035,
+   "dec": 80.938866,
+   "type": "HII",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Sh2-175",
+   "designations": [
+    "Sh2-175"
+   ],
+   "names": [],
+   "ra": 0.455337,
+   "dec": 64.703596,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-176",
+   "designations": [
+    "Sh2-176"
+   ],
+   "names": [],
+   "ra": 0.527576,
+   "dec": 57.285703,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-177",
+   "designations": [
+    "Sh2-177"
+   ],
+   "names": [],
+   "ra": 0.525856,
+   "dec": 62.469078,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-178",
+   "designations": [
+    "Sh2-178"
+   ],
+   "names": [],
+   "ra": 22.315625,
+   "dec": 87.761599,
+   "type": "HII",
+   "constellation": "UMi"
+  },
+  {
+   "id": "Sh2-179",
+   "designations": [
+    "Sh2-179"
+   ],
+   "names": [],
+   "ra": 0.673721,
+   "dec": 62.866004,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-180",
+   "designations": [
+    "Sh2-180"
+   ],
+   "names": [],
+   "ra": 0.81297,
+   "dec": 62.929036,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-181",
+   "designations": [
+    "Sh2-181"
+   ],
+   "names": [],
+   "ra": 0.821298,
+   "dec": 65.21215,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-182",
+   "designations": [
+    "Sh2-182"
+   ],
+   "names": [],
+   "ra": 0.837965,
+   "dec": 64.744991,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-183",
+   "designations": [
+    "Sh2-183"
+   ],
+   "names": [],
+   "ra": 0.899947,
+   "dec": 65.709768,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-184",
+   "designations": [
+    "Sh2-184"
+   ],
+   "names": [],
+   "ra": 0.880769,
+   "dec": 56.610293,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-185",
+   "designations": [
+    "Sh2-185"
+   ],
+   "names": [],
+   "ra": 1.000004,
+   "dec": 60.989678,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-186",
+   "designations": [
+    "Sh2-186"
+   ],
+   "names": [],
+   "ra": 1.147531,
+   "dec": 63.134072,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-187",
+   "designations": [
+    "Sh2-187"
+   ],
+   "names": [],
+   "ra": 1.385493,
+   "dec": 61.856646,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-188",
+   "designations": [
+    "Sh2-188"
+   ],
+   "names": [],
+   "ra": 1.510931,
+   "dec": 58.366758,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-189",
+   "designations": [
+    "Sh2-189"
+   ],
+   "names": [],
+   "ra": 2.202375,
+   "dec": 64.171696,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-190",
+   "designations": [
+    "Sh2-190"
+   ],
+   "names": [],
+   "ra": 2.556432,
+   "dec": 61.442324,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-191",
+   "designations": [
+    "Sh2-191"
+   ],
+   "names": [],
+   "ra": 2.610926,
+   "dec": 59.637358,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-192",
+   "designations": [
+    "Sh2-192"
+   ],
+   "names": [],
+   "ra": 2.787273,
+   "dec": 61.987958,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-193",
+   "designations": [
+    "Sh2-193"
+   ],
+   "names": [],
+   "ra": 2.792373,
+   "dec": 62.004143,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-194",
+   "designations": [
+    "Sh2-194"
+   ],
+   "names": [],
+   "ra": 2.788867,
+   "dec": 61.937803,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-195",
+   "designations": [
+    "Sh2-195"
+   ],
+   "names": [],
+   "ra": 2.668347,
+   "dec": 59.64883,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-196",
+   "designations": [
+    "Sh2-196"
+   ],
+   "names": [],
+   "ra": 2.855336,
+   "dec": 62.231473,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-197",
+   "designations": [
+    "Sh2-197"
+   ],
+   "names": [],
+   "ra": 2.698729,
+   "dec": 59.646042,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-198",
+   "designations": [
+    "Sh2-198"
+   ],
+   "names": [],
+   "ra": 2.83384,
+   "dec": 59.69999,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-199",
+   "designations": [
+    "Sh2-199"
+   ],
+   "names": [],
+   "ra": 2.909325,
+   "dec": 60.409384,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-200",
+   "designations": [
+    "Sh2-200"
+   ],
+   "names": [],
+   "ra": 3.179187,
+   "dec": 62.815491,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-201",
+   "designations": [
+    "Sh2-201"
+   ],
+   "names": [],
+   "ra": 3.052881,
+   "dec": 60.478346,
+   "type": "HII",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Sh2-202",
+   "designations": [
+    "Sh2-202"
+   ],
+   "names": [],
+   "ra": 3.314316,
+   "dec": 59.633997,
+   "type": "HII",
+   "constellation": "Cam"
+  },
+  {
+   "id": "Sh2-203",
+   "designations": [
+    "Sh2-203"
+   ],
+   "names": [],
+   "ra": 3.366953,
+   "dec": 54.87779,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-204",
+   "designations": [
+    "Sh2-204"
+   ],
+   "names": [],
+   "ra": 3.929349,
+   "dec": 57.428936,
+   "type": "HII",
+   "constellation": "Cam"
+  },
+  {
+   "id": "Sh2-205",
+   "designations": [
+    "Sh2-205"
+   ],
+   "names": [],
+   "ra": 3.935602,
+   "dec": 53.194393,
+   "type": "HII",
+   "constellation": "Cam"
+  },
+  {
+   "id": "Sh2-206",
+   "designations": [
+    "Sh2-206"
+   ],
+   "names": [],
+   "ra": 4.053632,
+   "dec": 51.329528,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-207",
+   "designations": [
+    "Sh2-207"
+   ],
+   "names": [],
+   "ra": 4.334713,
+   "dec": 53.143657,
+   "type": "HII",
+   "constellation": "Cam"
+  },
+  {
+   "id": "Sh2-208",
+   "designations": [
+    "Sh2-208"
+   ],
+   "names": [],
+   "ra": 4.329417,
+   "dec": 52.977665,
+   "type": "HII",
+   "constellation": "Cam"
+  },
+  {
+   "id": "Sh2-209",
+   "designations": [
+    "Sh2-209"
+   ],
+   "names": [],
+   "ra": 4.184169,
+   "dec": 51.162946,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-210",
+   "designations": [
+    "Sh2-210"
+   ],
+   "names": [],
+   "ra": 4.516415,
+   "dec": 52.55291,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-211",
+   "designations": [
+    "Sh2-211"
+   ],
+   "names": [],
+   "ra": 4.616056,
+   "dec": 50.939353,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-212",
+   "designations": [
+    "Sh2-212"
+   ],
+   "names": [],
+   "ra": 4.677157,
+   "dec": 50.381015,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-213",
+   "designations": [
+    "Sh2-213"
+   ],
+   "names": [],
+   "ra": 4.345269,
+   "dec": 44.924881,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-214",
+   "designations": [
+    "Sh2-214"
+   ],
+   "names": [],
+   "ra": 4.359696,
+   "dec": 44.372947,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-215",
+   "designations": [
+    "Sh2-215"
+   ],
+   "names": [],
+   "ra": 4.292487,
+   "dec": 42.614943,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-216",
+   "designations": [
+    "Sh2-216"
+   ],
+   "names": [],
+   "ra": 4.749176,
+   "dec": 46.820848,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-217",
+   "designations": [
+    "Sh2-217"
+   ],
+   "names": [],
+   "ra": 4.979866,
+   "dec": 48.005693,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-218",
+   "designations": [
+    "Sh2-218"
+   ],
+   "names": [],
+   "ra": 5.687937,
+   "dec": 52.188411,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-219",
+   "designations": [
+    "Sh2-219"
+   ],
+   "names": [],
+   "ra": 4.935561,
+   "dec": 47.395149,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-220",
+   "designations": [
+    "Sh2-220"
+   ],
+   "names": [],
+   "ra": 4.010659,
+   "dec": 36.61725,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-221",
+   "designations": [
+    "Sh2-221"
+   ],
+   "names": [],
+   "ra": 5.027781,
+   "dec": 46.34883,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-222",
+   "designations": [
+    "Sh2-222"
+   ],
+   "names": [],
+   "ra": 4.502736,
+   "dec": 35.270057,
+   "type": "HII",
+   "constellation": "Per"
+  },
+  {
+   "id": "Sh2-223",
+   "designations": [
+    "Sh2-223"
+   ],
+   "names": [],
+   "ra": 5.286639,
+   "dec": 42.211837,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-224",
+   "designations": [
+    "Sh2-224"
+   ],
+   "names": [],
+   "ra": 5.454479,
+   "dec": 42.971187,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-225",
+   "designations": [
+    "Sh2-225"
+   ],
+   "names": [],
+   "ra": 5.450106,
+   "dec": 40.621623,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-226",
+   "designations": [
+    "Sh2-226"
+   ],
+   "names": [],
+   "ra": 5.185229,
+   "dec": 37.99261,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-227",
+   "designations": [
+    "Sh2-227"
+   ],
+   "names": [],
+   "ra": 5.331466,
+   "dec": 38.955179,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-228",
+   "designations": [
+    "Sh2-228"
+   ],
+   "names": [],
+   "ra": 5.226424,
+   "dec": 37.453387,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-229",
+   "designations": [
+    "Sh2-229"
+   ],
+   "names": [],
+   "ra": 5.271941,
+   "dec": 34.463366,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-230",
+   "designations": [
+    "Sh2-230"
+   ],
+   "names": [],
+   "ra": 5.375103,
+   "dec": 34.131925,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-231",
+   "designations": [
+    "Sh2-231"
+   ],
+   "names": [],
+   "ra": 5.655436,
+   "dec": 35.924953,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-232",
+   "designations": [
+    "Sh2-232"
+   ],
+   "names": [],
+   "ra": 5.707414,
+   "dec": 36.200769,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-233",
+   "designations": [
+    "Sh2-233"
+   ],
+   "names": [],
+   "ra": 5.645298,
+   "dec": 35.79308,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-234",
+   "designations": [
+    "Sh2-234"
+   ],
+   "names": [],
+   "ra": 5.468828,
+   "dec": 34.435144,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-235",
+   "designations": [
+    "Sh2-235"
+   ],
+   "names": [],
+   "ra": 5.683722,
+   "dec": 35.854181,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-236",
+   "designations": [
+    "Sh2-236"
+   ],
+   "names": [],
+   "ra": 5.376065,
+   "dec": 33.36507,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-237",
+   "designations": [
+    "Sh2-237"
+   ],
+   "names": [],
+   "ra": 5.523736,
+   "dec": 34.277219,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-238",
+   "designations": [
+    "Sh2-238"
+   ],
+   "names": [],
+   "ra": 4.363884,
+   "dec": 19.537712,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-239",
+   "designations": [
+    "Sh2-239"
+   ],
+   "names": [],
+   "ra": 4.5215,
+   "dec": 18.11669,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-240",
+   "designations": [
+    "Sh2-240"
+   ],
+   "names": [],
+   "ra": 5.683426,
+   "dec": 28.103722,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-241",
+   "designations": [
+    "Sh2-241"
+   ],
+   "names": [],
+   "ra": 6.068697,
+   "dec": 30.247783,
+   "type": "HII",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Sh2-242",
+   "designations": [
+    "Sh2-242"
+   ],
+   "names": [],
+   "ra": 5.864272,
+   "dec": 27.010706,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-243",
+   "designations": [
+    "Sh2-243"
+   ],
+   "names": [],
+   "ra": 5.656256,
+   "dec": 23.290721,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-244",
+   "designations": [
+    "Sh2-244"
+   ],
+   "names": [],
+   "ra": 5.575204,
+   "dec": 21.952384,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-245",
+   "designations": [
+    "Sh2-245"
+   ],
+   "names": [],
+   "ra": 4.042625,
+   "dec": 4.128584,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-246",
+   "designations": [
+    "Sh2-246"
+   ],
+   "names": [],
+   "ra": 5.035998,
+   "dec": 14.095695,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-247",
+   "designations": [
+    "Sh2-247"
+   ],
+   "names": [],
+   "ra": 6.141762,
+   "dec": 21.619964,
+   "type": "HII",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Sh2-248",
+   "designations": [
+    "Sh2-248"
+   ],
+   "names": [],
+   "ra": 6.277411,
+   "dec": 22.500255,
+   "type": "HII",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Sh2-249",
+   "designations": [
+    "Sh2-249"
+   ],
+   "names": [],
+   "ra": 6.34951,
+   "dec": 23.089801,
+   "type": "HII",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Sh2-250",
+   "designations": [
+    "Sh2-250"
+   ],
+   "names": [],
+   "ra": 4.669812,
+   "dec": 7.362835,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-251",
+   "designations": [
+    "Sh2-251"
+   ],
+   "names": [],
+   "ra": 4.547175,
+   "dec": 5.862733,
+   "type": "HII",
+   "constellation": "Tau"
+  },
+  {
+   "id": "Sh2-252",
+   "designations": [
+    "Sh2-252"
+   ],
+   "names": [],
+   "ra": 6.160929,
+   "dec": 20.500444,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-253",
+   "designations": [
+    "Sh2-253"
+   ],
+   "names": [],
+   "ra": 6.428868,
+   "dec": 20.028111,
+   "type": "HII",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Sh2-254",
+   "designations": [
+    "Sh2-254"
+   ],
+   "names": [],
+   "ra": 6.205807,
+   "dec": 18.043776,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-255",
+   "designations": [
+    "Sh2-255"
+   ],
+   "names": [],
+   "ra": 6.21909,
+   "dec": 17.975171,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-256",
+   "designations": [
+    "Sh2-256"
+   ],
+   "names": [],
+   "ra": 6.210734,
+   "dec": 17.943053,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-257",
+   "designations": [
+    "Sh2-257"
+   ],
+   "names": [],
+   "ra": 6.214091,
+   "dec": 17.975899,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-258",
+   "designations": [
+    "Sh2-258"
+   ],
+   "names": [],
+   "ra": 6.225719,
+   "dec": 17.924203,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-259",
+   "designations": [
+    "Sh2-259"
+   ],
+   "names": [],
+   "ra": 6.193714,
+   "dec": 17.445507,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-260",
+   "designations": [
+    "Sh2-260"
+   ],
+   "names": [],
+   "ra": 4.918854,
+   "dec": 5.661731,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-261",
+   "designations": [
+    "Sh2-261"
+   ],
+   "names": [],
+   "ra": 6.149223,
+   "dec": 15.801905,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-262",
+   "designations": [
+    "Sh2-262"
+   ],
+   "names": [],
+   "ra": 5.112566,
+   "dec": 6.167872,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-263",
+   "designations": [
+    "Sh2-263"
+   ],
+   "names": [],
+   "ra": 5.362411,
+   "dec": 8.399039,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-264",
+   "designations": [
+    "Sh2-264"
+   ],
+   "names": [],
+   "ra": 5.586815,
+   "dec": 9.933437,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-265",
+   "designations": [
+    "Sh2-265"
+   ],
+   "names": [],
+   "ra": 5.310106,
+   "dec": 7.439821,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-266",
+   "designations": [
+    "Sh2-266"
+   ],
+   "names": [],
+   "ra": 6.313845,
+   "dec": 15.277909,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-267",
+   "designations": [
+    "Sh2-267"
+   ],
+   "names": [],
+   "ra": 6.264818,
+   "dec": 14.268325,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-268",
+   "designations": [
+    "Sh2-268"
+   ],
+   "names": [],
+   "ra": 6.170848,
+   "dec": 13.331964,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-269",
+   "designations": [
+    "Sh2-269"
+   ],
+   "names": [],
+   "ra": 6.242846,
+   "dec": 13.821501,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-270",
+   "designations": [
+    "Sh2-270"
+   ],
+   "names": [],
+   "ra": 6.170495,
+   "dec": 12.815323,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-271",
+   "designations": [
+    "Sh2-271"
+   ],
+   "names": [],
+   "ra": 6.248511,
+   "dec": 12.353937,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-272",
+   "designations": [
+    "Sh2-272"
+   ],
+   "names": [],
+   "ra": 6.250167,
+   "dec": 12.337029,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-273",
+   "designations": [
+    "Sh2-273"
+   ],
+   "names": [],
+   "ra": 6.680141,
+   "dec": 9.907967,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-274",
+   "designations": [
+    "Sh2-274"
+   ],
+   "names": [],
+   "ra": 7.48525,
+   "dec": 13.261891,
+   "type": "HII",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Sh2-275",
+   "designations": [
+    "Sh2-275"
+   ],
+   "names": [],
+   "ra": 6.528581,
+   "dec": 4.929592,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-276",
+   "designations": [
+    "Sh2-276"
+   ],
+   "names": [],
+   "ra": 5.457812,
+   "dec": -3.965242,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-277",
+   "designations": [
+    "Sh2-277"
+   ],
+   "names": [],
+   "ra": 5.678786,
+   "dec": -2.447136,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-278",
+   "designations": [
+    "Sh2-278"
+   ],
+   "names": [],
+   "ra": 5.330064,
+   "dec": -5.663628,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-279",
+   "designations": [
+    "Sh2-279"
+   ],
+   "names": [],
+   "ra": 5.588931,
+   "dec": -4.800887,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-280",
+   "designations": [
+    "Sh2-280"
+   ],
+   "names": [],
+   "ra": 6.572038,
+   "dec": 2.539868,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-281",
+   "designations": [
+    "Sh2-281"
+   ],
+   "names": [],
+   "ra": 5.581833,
+   "dec": -5.466557,
+   "type": "HII",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Sh2-282",
+   "designations": [
+    "Sh2-282"
+   ],
+   "names": [],
+   "ra": 6.633046,
+   "dec": 1.514355,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-283",
+   "designations": [
+    "Sh2-283"
+   ],
+   "names": [],
+   "ra": 6.644199,
+   "dec": 0.712711,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-284",
+   "designations": [
+    "Sh2-284"
+   ],
+   "names": [],
+   "ra": 6.750561,
+   "dec": 0.230744,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-285",
+   "designations": [
+    "Sh2-285"
+   ],
+   "names": [],
+   "ra": 6.9201,
+   "dec": -0.510139,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-286",
+   "designations": [
+    "Sh2-286"
+   ],
+   "names": [],
+   "ra": 6.909236,
+   "dec": -4.508777,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-287",
+   "designations": [
+    "Sh2-287"
+   ],
+   "names": [],
+   "ra": 6.992402,
+   "dec": -4.803904,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-288",
+   "designations": [
+    "Sh2-288"
+   ],
+   "names": [],
+   "ra": 7.14275,
+   "dec": -4.308344,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-289",
+   "designations": [
+    "Sh2-289"
+   ],
+   "names": [],
+   "ra": 6.765721,
+   "dec": -7.33844,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-290",
+   "designations": [
+    "Sh2-290"
+   ],
+   "names": [],
+   "ra": 8.903079,
+   "dec": 8.921139,
+   "type": "HII",
+   "constellation": "Cnc"
+  },
+  {
+   "id": "Sh2-291",
+   "designations": [
+    "Sh2-291"
+   ],
+   "names": [],
+   "ra": 6.92366,
+   "dec": -8.027651,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-292",
+   "designations": [
+    "Sh2-292"
+   ],
+   "names": [],
+   "ra": 7.073833,
+   "dec": -10.448963,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-293",
+   "designations": [
+    "Sh2-293"
+   ],
+   "names": [],
+   "ra": 7.029919,
+   "dec": -11.309492,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-294",
+   "designations": [
+    "Sh2-294"
+   ],
+   "names": [],
+   "ra": 7.27625,
+   "dec": -9.44379,
+   "type": "HII",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Sh2-295",
+   "designations": [
+    "Sh2-295"
+   ],
+   "names": [],
+   "ra": 7.044828,
+   "dec": -11.461598,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-296",
+   "designations": [
+    "Sh2-296"
+   ],
+   "names": [],
+   "ra": 7.096681,
+   "dec": -11.21887,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-297",
+   "designations": [
+    "Sh2-297"
+   ],
+   "names": [],
+   "ra": 7.087617,
+   "dec": -12.334317,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-298",
+   "designations": [
+    "Sh2-298"
+   ],
+   "names": [],
+   "ra": 7.310546,
+   "dec": -13.198687,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-299",
+   "designations": [
+    "Sh2-299"
+   ],
+   "names": [],
+   "ra": 7.511044,
+   "dec": -15.292796,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-300",
+   "designations": [
+    "Sh2-300"
+   ],
+   "names": [],
+   "ra": 7.517642,
+   "dec": -15.410358,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-301",
+   "designations": [
+    "Sh2-301"
+   ],
+   "names": [],
+   "ra": 7.163567,
+   "dec": -18.478562,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-302",
+   "designations": [
+    "Sh2-302"
+   ],
+   "names": [],
+   "ra": 7.528302,
+   "dec": -16.978531,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-303",
+   "designations": [
+    "Sh2-303"
+   ],
+   "names": [],
+   "ra": 6.900498,
+   "dec": -22.425061,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-304",
+   "designations": [
+    "Sh2-304"
+   ],
+   "names": [],
+   "ra": 6.724057,
+   "dec": -24.133306,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-305",
+   "designations": [
+    "Sh2-305"
+   ],
+   "names": [],
+   "ra": 7.502249,
+   "dec": -18.525085,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-306",
+   "designations": [
+    "Sh2-306"
+   ],
+   "names": [],
+   "ra": 7.510201,
+   "dec": -19.109519,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-307",
+   "designations": [
+    "Sh2-307"
+   ],
+   "names": [],
+   "ra": 7.592214,
+   "dec": -18.753859,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-308",
+   "designations": [
+    "Sh2-308"
+   ],
+   "names": [],
+   "ra": 6.902702,
+   "dec": -23.942122,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-309",
+   "designations": [
+    "Sh2-309"
+   ],
+   "names": [],
+   "ra": 7.535019,
+   "dec": -19.429546,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-310",
+   "designations": [
+    "Sh2-310"
+   ],
+   "names": [],
+   "ra": 7.2176,
+   "dec": -24.586383,
+   "type": "HII",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Sh2-311",
+   "designations": [
+    "Sh2-311"
+   ],
+   "names": [],
+   "ra": 7.872441,
+   "dec": -26.44106,
+   "type": "HII",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Sh2-312",
+   "designations": [
+    "Sh2-312"
+   ],
+   "names": [],
+   "ra": 8.986034,
+   "dec": -25.688557,
+   "type": "HII",
+   "constellation": "Pyx"
+  },
+  {
+   "id": "Sh2-313",
+   "designations": [
+    "Sh2-313"
+   ],
+   "names": [],
+   "ra": 12.892121,
+   "dec": -22.859898,
+   "type": "HII",
+   "constellation": "Hya"
+  }
+ ]
+}

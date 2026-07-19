@@ -31,6 +31,13 @@ export const CATALOGS: CatalogDefinition[] = [
   { id: 'IC', name: 'Index Catalogue', separator: ' ' },
   { id: 'Mel', name: 'Melotte', separator: ' ', aliases: ['melotte'] },
   { id: 'Cr', name: 'Collinder', separator: ' ', aliases: ['collinder'] },
+  {
+    id: 'Sh2',
+    name: 'Sharpless 2',
+    separator: '-',
+    aliases: ['sharpless', 'sh'],
+  },
+  { id: 'LDN', name: 'Lynds Dark Nebula', separator: ' ' },
   { id: 'UGC', name: 'Uppsala General Catalogue', separator: ' ' },
   { id: 'PGC', name: 'Principal Galaxies Catalogue', separator: ' ' },
   { id: 'LBN', name: 'Lynds Bright Nebula', separator: ' ' },
