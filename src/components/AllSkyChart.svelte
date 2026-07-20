@@ -209,12 +209,6 @@
       >
     {/each}
   </svg>
-
-  <figcaption>
-    The whole sky from directly overhead: centre is the zenith, the rim is the
-    horizon, north is up. The shaded ring is your horizon; dots mark whole hours
-    along the track.
-  </figcaption>
 </figure>
 
 <style>
@@ -297,11 +291,5 @@
 
   .hour-label {
     font-size: 11px;
-  }
-
-  figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text-dim);
   }
 </style>
