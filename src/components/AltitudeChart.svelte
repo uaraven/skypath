@@ -41,12 +41,20 @@
   let { model, compact = false, markerTime = null }: Props = $props()
 
   const WIDTH = $derived(compact ? 420 : 960)
-  const HEIGHT = $derived(compact ? 96 : 340)
+  const HEIGHT = $derived(compact ? 96 : 384)
+  // The full chart keeps a tall top margin — the header band — so the compass
+  // row and a near-zenith transit label sit above the plot without clipping at
+  // the viewBox edge or reaching down into the plotted area.
   const PLOT: PlotArea = $derived(
     compact
       ? { left: 0, top: 0, width: 420, height: 96 }
-      : { left: 46, top: 14, width: 900, height: 296 },
+      : { left: 46, top: 58, width: 900, height: 296 },
   )
+
+  /** Text baseline for the compass row, near the top of the header band. */
+  const CARDINAL_Y = 20
+  /** Transit labels never rise above this, keeping them clear of the compass row. */
+  const TRANSIT_LABEL_FLOOR = 40
 
   // Every instance needs its own clip path: the search tab renders a chart per
   // result row, and a shared id would point them all at the first one's plot.
@@ -86,6 +94,13 @@
 
   const times = $derived(hourTicks(model.window))
   const altitudes = altitudeTicks()
+
+  const cardinals = $derived(
+    model.cardinals.map((crossing) => ({
+      x: timeToX(crossing.time, model.window, PLOT),
+      label: crossing.label,
+    })),
+  )
 
   const peak = $derived(
     model.peak && model.peak.altitude > 0
@@ -247,11 +262,20 @@
         >
       {/each}
 
+      {#each cardinals as cardinal, i (i)}
+        <text
+          class="label cardinal-label"
+          x={cardinal.x}
+          y={CARDINAL_Y}
+          text-anchor="middle">{cardinal.label}</text
+        >
+      {/each}
+
       {#if peak}
         <text
           class="label peak-label"
           x={peak.x}
-          y={peak.y - 12}
+          y={Math.max(peak.y - 12, TRANSIT_LABEL_FLOOR)}
           text-anchor={peak.x > plotRight(PLOT) - 60 ? 'end' : 'middle'}
           >{peak.label}</text
         >
@@ -353,6 +377,11 @@
   .peak-label {
     fill: var(--text);
     font-size: 15px;
+  }
+
+  .cardinal-label {
+    fill: var(--text-dim);
+    font-size: 13px;
   }
 
   figcaption {

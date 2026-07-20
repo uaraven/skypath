@@ -30,9 +30,11 @@ export {
 export {
   altitudeChartModel,
   everVisible,
+  cardinalCrossings,
   type AltitudeChartModel,
   type AltitudeChartInput,
   type HorizonSample,
+  type CardinalCrossing,
 } from './model'
 export {
   altitudeRadius,
