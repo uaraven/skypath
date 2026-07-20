@@ -107,7 +107,7 @@ describe('at phone width', () => {
   it('keeps the observatory editor inside the screen', async () => {
     render(App)
 
-    await userEvent.click(screen.getByRole('button', { name: 'Edit' }))
+    await userEvent.click(screen.getByRole('button', { name: /edit observatory/i }))
     const box = screen.getByRole('dialog').getBoundingClientRect()
 
     expect(box.left).toBeGreaterThanOrEqual(0)
