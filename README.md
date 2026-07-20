@@ -53,30 +53,18 @@ npm run format     # Prettier
 npm run catalog:build   # regenerate catalogue JSON from OpenNGC and VizieR
 ```
 
-Tests are split into three Vitest projects, chosen by directory rather than filename:
-
-| Project      | Environment                  | Covers              |
-| ------------ | ---------------------------- | ------------------- |
-| `unit`       | Node                         | `src/lib/**`        |
-| `components` | jsdom + Testing Library      | `src/components/**` |
-| `visual`     | real Chromium via Playwright | `src/visual/**`     |
-
-The visual project exists for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs it headed; screenshots land in `screenshots/`.
-
 ## Built with
 
 [Svelte 5](https://svelte.dev) + TypeScript on [Vite](https://vite.dev), with [astronomy-engine](https://github.com/cosinekitty/astronomy) for all ephemeris math. Both charts are hand-rolled SVG — no charting library. Tests run on [Vitest](https://vitest.dev) and [Playwright](https://playwright.dev).
 
-## Layout
+## Use of AI
 
-```
-src/lib/astro/       ephemeris, sun/twilight, trajectory, events, moon
-src/lib/catalog/     deep-sky catalogues + solar system, search, multi-catalog merge
-src/lib/horizon/     NINA parsing, circular interpolation
-src/lib/observatory/ location + horizon bundles in localStorage
-src/lib/charts/      chart geometry and data models (no Svelte)
-src/components/      the Svelte UI, including both chart components
-```
+This is the first project that I completely vibe coded. I've generated programs with AI before, but I always check the code afterwards to make sure I understand what it does and that it does it efficiently. This project is not it.
+
+I am not a front-end developer. I can do some JS coding and just to have the app to look as I want to would have taken me a week.
+
+I decided that I don't really care how it works (also Claude Code with Opus/Fable/Sonnet 5 combination generates fine code. I still find ways to improve it, but all-in-all it's not bad at all) as long as it works fast enough and looks the way I want.
+
 
 ## Data and credits
 
