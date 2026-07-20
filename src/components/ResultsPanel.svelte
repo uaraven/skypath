@@ -128,6 +128,10 @@
         time={markerTime}
         label="Time shown on the all-sky chart"
       />
+      <label class="moon-toggle">
+        <input type="checkbox" bind:checked={showMoon} />
+        <span>Show the Moon</span>
+      </label>
     </section>
 
     <section class="panel">
