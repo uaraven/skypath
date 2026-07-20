@@ -220,17 +220,40 @@
     justify-content: space-between;
     gap: 0.75rem;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 0.75rem;
   }
 
   [role='tablist'] {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  /* Tabs, not pills: strip the shared button's border and radius and mark the
+     active one with an underline that sits on the tabbar's divider. */
+  [role='tab'] {
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-dim);
+    /* Overlap the 1px divider so the underline merges with it. */
+    margin-bottom: -1px;
+  }
+
+  [role='tab']:hover {
+    background: transparent;
+    color: var(--text);
+    border-bottom-color: var(--border);
   }
 
   [role='tab'].active {
-    border-color: var(--accent-bright);
     color: var(--accent-bright);
+    border-bottom-color: var(--accent-bright);
+  }
+
+  [role='tab']:focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: -2px;
   }
 
   .date {
