@@ -4,7 +4,8 @@
    * `currentColor`, so each icon inherits the button's text colour and its
    * hover/disabled states for free. Decorative — the button carries the label.
    */
-  type IconName = 'plus' | 'pencil' | 'trash' | 'pin'
+  type IconName =
+    'plus' | 'pencil' | 'trash' | 'pin' | 'menu' | 'download' | 'upload'
 
   interface Props {
     name: IconName
@@ -38,6 +39,16 @@
   {:else if name === 'pin'}
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
     <circle cx="12" cy="10" r="3" />
+  {:else if name === 'menu'}
+    <path d="M4 6h16M4 12h16M4 18h16" />
+  {:else if name === 'download'}
+    <path d="M12 3v12" />
+    <path d="m7 10 5 5 5-5" />
+    <path d="M5 21h14" />
+  {:else if name === 'upload'}
+    <path d="M12 21V9" />
+    <path d="m7 14 5-5 5 5" />
+    <path d="M5 3h14" />
   {/if}
 </svg>
 

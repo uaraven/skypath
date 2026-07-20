@@ -10,6 +10,9 @@
   import {
     observatories,
     ObservatoryStore,
+    parseObservatoryImport,
+    serializeObservatories,
+    type ImportResult,
     type Observatory,
     type ObservatoryInput,
   } from '../lib/observatory'
@@ -17,6 +20,7 @@
   import ConfirmDialog from './ConfirmDialog.svelte'
   import Icon from './Icon.svelte'
   import ObservatoryEditor from './ObservatoryEditor.svelte'
+  import ObservatoryImportDialog from './ObservatoryImportDialog.svelte'
 
   interface Props {
     /** Defaults to the app-wide store; tests inject one with its own storage. */
@@ -33,8 +37,14 @@
   $effect(() => store.subscribe((state) => (storeState = state)))
 
   /** Which modal is open. `editing: null` means the editor is in create mode. */
-  let dialog = $state<'editor' | 'delete' | null>(null)
+  let dialog = $state<'editor' | 'delete' | 'import' | null>(null)
   let editing = $state<Observatory | null>(null)
+
+  /** The overflow menu, and the parsed file waiting on an import-mode choice. */
+  let menuOpen = $state(false)
+  let importResult = $state<ImportResult | null>(null)
+  let fileInput = $state<HTMLInputElement | null>(null)
+  let menuWrap = $state<HTMLElement | null>(null)
 
   const selected = $derived(
     storeState.observatories.find((o) => o.id === storeState.selectedId) ??
@@ -54,6 +64,51 @@
   function close() {
     dialog = null
     editing = null
+    importResult = null
+  }
+
+  /** Downloads the whole collection as a dated JSON file. */
+  function exportObservatories() {
+    menuOpen = false
+    const json = serializeObservatories(store.all)
+    const blob = new Blob([json], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const today = new Date().toISOString().slice(0, 10)
+    const anchor = document.createElement('a')
+    anchor.href = url
+    anchor.download = `skypath-observatories-${today}.json`
+    anchor.click()
+    URL.revokeObjectURL(url)
+  }
+
+  /** Reads the picked file and opens the import dialog with what it found. */
+  async function loadImportFile(event: Event) {
+    const input = event.currentTarget as HTMLInputElement
+    const file = input.files?.[0]
+    // Reset first, so re-picking the same file after a change fires again.
+    input.value = ''
+    if (!file) return
+
+    let text: string
+    try {
+      text = await file.text()
+    } catch {
+      importResult = {
+        observatories: [],
+        invalid: 0,
+        error: `Could not read ${file.name}.`,
+      }
+      dialog = 'import'
+      return
+    }
+    importResult = parseObservatoryImport(text)
+    dialog = 'import'
+  }
+
+  function runImport(mode: 'append' | 'overwrite') {
+    if (importResult)
+      store.importObservatories(importResult.observatories, mode)
+    close()
   }
 
   function save(input: ObservatoryInput) {
@@ -75,7 +130,22 @@
       ? `Delete “${selected.name}”? It is the only one, so a default observatory will take its place.`
       : `Delete “${selected.name}”? Its location and horizon will be lost.`,
   )
+
+  // Close the overflow menu on Escape or any click outside it. The click check
+  // uses containment, so the toggle and menu items (inside the wrap) don't
+  // count as outside clicks and the menu never immediately reopens.
+  function onWindowKeydown(event: KeyboardEvent) {
+    if (menuOpen && event.key === 'Escape') menuOpen = false
+  }
+
+  function onWindowClick(event: MouseEvent) {
+    if (!menuOpen) return
+    if (event.target instanceof Node && menuWrap?.contains(event.target)) return
+    menuOpen = false
+  }
 </script>
+
+<svelte:window onkeydown={onWindowKeydown} onclick={onWindowClick} />
 
 <section class="panel observatories">
   <h2>Observatories</h2>
@@ -126,7 +196,52 @@
       title="Delete observatory"
       onclick={() => (dialog = 'delete')}><Icon name="trash" /></button
     >
+
+    <!--
+      Clicks inside this wrapper are ignored by the window outside-click handler
+      (which tests containment), so opening the menu and using its items never
+      counts as an outside click that would close it again.
+    -->
+    <div class="menu-wrap" bind:this={menuWrap}>
+      <button
+        type="button"
+        class="icon-button"
+        aria-haspopup="menu"
+        aria-expanded={menuOpen}
+        aria-label="More actions"
+        title="More actions"
+        onclick={() => (menuOpen = !menuOpen)}><Icon name="menu" /></button
+      >
+
+      {#if menuOpen}
+        <div class="menu" role="menu">
+          <button type="button" role="menuitem" onclick={exportObservatories}>
+            <Icon name="download" size={16} />
+            <span>Export observatories</span>
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onclick={() => {
+              menuOpen = false
+              fileInput?.click()
+            }}
+          >
+            <Icon name="upload" size={16} />
+            <span>Import…</span>
+          </button>
+        </div>
+      {/if}
+    </div>
   </footer>
+
+  <input
+    class="file"
+    type="file"
+    accept=".json,application/json"
+    bind:this={fileInput}
+    onchange={loadImportFile}
+  />
 </section>
 
 {#if dialog === 'editor'}
@@ -147,20 +262,29 @@
   />
 {/if}
 
+{#if dialog === 'import' && importResult}
+  <ObservatoryImportDialog
+    result={importResult}
+    onappend={() => runImport('append')}
+    onoverwrite={() => runImport('overwrite')}
+    oncancel={close}
+  />
+{/if}
+
 <style>
   .observatories {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* The list grows; the buttons stay pinned to the bottom of the panel. */
-    height: 100%;
   }
 
   .list {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    flex: 1;
+    /* Size to the list so the toolbar sits directly under the last site; a long
+       list scrolls within this cap rather than pushing the controls away. */
+    max-height: 50vh;
     overflow-y: auto;
   }
 
@@ -195,6 +319,7 @@
 
   footer {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
   }
 
@@ -208,5 +333,47 @@
   .danger:hover {
     border-color: #e08585;
     color: #e08585;
+  }
+
+  .file {
+    display: none;
+  }
+
+  /* The overflow menu is pushed to the far end of the toolbar and anchors its
+     popover. */
+  .menu-wrap {
+    position: relative;
+    margin-left: auto;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.35rem);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    min-width: 12rem;
+    padding: 0.25rem;
+    background-color: var(--bg-inset);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+  }
+
+  .menu button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  .menu button:hover {
+    background-color: rgba(245, 245, 220, 0.1);
   }
 </style>

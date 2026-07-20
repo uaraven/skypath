@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { MemoryStorage } from '../lib/storage'
 import { ObservatoryStore, STORAGE_KEY } from '../lib/observatory'
 import ObservatoryManager from './ObservatoryManager.svelte'
@@ -246,6 +246,132 @@ describe('default wiring', () => {
     await waitFor(() => {
       expect(window.localStorage.getItem(STORAGE_KEY)).toContain('Park')
     })
+  })
+})
+
+describe('exporting', () => {
+  it('downloads the collection as JSON from the menu', async () => {
+    const user = userEvent.setup()
+    const { store } = setup()
+    addSite(store, 'Dark site')
+
+    const url = 'blob:export'
+    const createObjectURL = vi.fn((_blob: Blob) => url)
+    const revokeObjectURL = vi.fn()
+    vi.stubGlobal('URL', { createObjectURL, revokeObjectURL })
+    let downloaded: { name: string; blob: Blob } | null = null
+    const clickSpy = vi
+      .spyOn(HTMLAnchorElement.prototype, 'click')
+      .mockImplementation(function (this: HTMLAnchorElement) {
+        downloaded = {
+          name: this.download,
+          blob: createObjectURL.mock.calls[0][0] as Blob,
+        }
+      })
+
+    await user.click(button(/more actions/i))
+    await user.click(
+      screen.getByRole('menuitem', { name: /export observatories/i }),
+    )
+
+    expect(createObjectURL).toHaveBeenCalledOnce()
+    expect(revokeObjectURL).toHaveBeenCalledWith(url)
+    expect(downloaded!.name).toMatch(
+      /^skypath-observatories-\d{4}-\d{2}-\d{2}\.json$/,
+    )
+    const text = await downloaded!.blob.text()
+    expect(
+      JSON.parse(text).observatories.map((o: { name: string }) => o.name),
+    ).toEqual(['Greenwich', 'Dark site'])
+
+    clickSpy.mockRestore()
+    vi.unstubAllGlobals()
+  })
+})
+
+describe('importing', () => {
+  /** A JSON file the file input can hand to the component. */
+  function importFile(observatories: unknown[]) {
+    return new File(
+      [
+        JSON.stringify({
+          app: 'skypath',
+          kind: 'observatories',
+          version: 1,
+          observatories,
+        }),
+      ],
+      'sites.json',
+      { type: 'application/json' },
+    )
+  }
+
+  const fileInput = () =>
+    document.querySelector<HTMLInputElement>('input[type="file"]')!
+
+  const site = (id: string, name: string) => ({
+    id,
+    name,
+    latitude: 49,
+    longitude: 31,
+    horizonText: '',
+  })
+
+  it('opens the import dialog with a summary of the file', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await user.upload(
+      fileInput(),
+      importFile([site('a', 'Alpha'), site('b', 'Beta')]),
+    )
+
+    await waitFor(() =>
+      expect(screen.getByRole('dialog')).toHaveTextContent(
+        /2 observatories found/i,
+      ),
+    )
+  })
+
+  it('appends imported sites, skipping ids already present', async () => {
+    const user = userEvent.setup()
+    const { store } = setup()
+    const existing = store.selected.id
+
+    await user.upload(
+      fileInput(),
+      importFile([site(existing, 'Clash'), site('new', 'Fresh')]),
+    )
+    await user.click(await screen.findByRole('button', { name: 'Append' }))
+
+    expect(store.all.map((o) => o.name)).toEqual(['Greenwich', 'Fresh'])
+    await waitFor(() => expect(dialog()).not.toBeInTheDocument())
+  })
+
+  it('replaces the whole list on overwrite', async () => {
+    const user = userEvent.setup()
+    const { store } = setup()
+
+    await user.upload(fileInput(), importFile([site('x', 'Only site')]))
+    await user.click(await screen.findByRole('button', { name: 'Overwrite' }))
+
+    expect(store.all.map((o) => o.name)).toEqual(['Only site'])
+    expect(store.selected.name).toBe('Only site')
+  })
+
+  it('reports an unreadable file without changing anything', async () => {
+    const user = userEvent.setup()
+    const { store } = setup()
+
+    const junk = new File(['{ not json'], 'broken.json', {
+      type: 'application/json',
+    })
+    await user.upload(fileInput(), junk)
+
+    const importDialog = await screen.findByRole('dialog')
+    expect(importDialog).toHaveTextContent(/json/i)
+    expect(screen.getByRole('button', { name: 'Append' })).toBeDisabled()
+    expect(store.all).toHaveLength(1)
   })
 })
 
