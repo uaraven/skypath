@@ -23,15 +23,30 @@
 
   let { object, location, horizon, date, observatoryName }: Props = $props()
 
+  // The Moon is drawn on both charts; the checkbox under the slider toggles it.
+  let showMoon = $state(true)
+
   const model = $derived(
     object
-      ? altitudeChartModel({ object, location, date, horizon, includeMoon: true })
+      ? altitudeChartModel({
+          object,
+          location,
+          date,
+          horizon,
+          includeMoon: showMoon,
+        })
       : null,
   )
 
   const allSkyModel = $derived(
     object
-      ? allSkyChartModel({ object, location, date, horizon, includeMoon: true })
+      ? allSkyChartModel({
+          object,
+          location,
+          date,
+          horizon,
+          includeMoon: showMoon,
+        })
       : null,
   )
 
@@ -98,6 +113,10 @@
         time={markerTime}
         label="Time shown on the altitude chart"
       />
+      <label class="moon-toggle">
+        <input type="checkbox" bind:checked={showMoon} />
+        <span>Show the Moon</span>
+      </label>
     </section>
 
     <section class="panel">
@@ -140,6 +159,16 @@
 
   section h3 {
     margin-bottom: 0.75rem;
+  }
+
+  .moon-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    cursor: pointer;
   }
 
   .empty {

@@ -133,10 +133,16 @@
   // repeating the date under every hour.
   const dateTicks = $derived.by(() => {
     if (times.length === 0) return []
-    const ends = [times[0], times[times.length - 1]]
-    return ends
-      .filter((time, i) => i === 0 || time.getTime() !== ends[0].getTime())
-      .map((time) => ({ x: timeToX(time, model.window, PLOT), label: formatDate(time) }))
+    const ends = [times[0], times[times.length - 1]].filter(
+      (time, i, all) => i === 0 || time.getTime() !== all[0].getTime(),
+    )
+    return ends.map((time, i) => ({
+      x: timeToX(time, model.window, PLOT),
+      label: formatDate(time),
+      // Anchor the ends inward — the last date sits at the plot's right edge, so
+      // centring it would push half the text past the viewBox and clip it.
+      anchor: ends.length > 1 && i === ends.length - 1 ? 'end' : 'start',
+    }))
   })
 
   const peak = $derived(
@@ -321,7 +327,7 @@
       <MoonGlyph
         cx={moonGlyph.x}
         cy={moonGlyph.y}
-        r={10}
+        r={8}
         illumination={moonGlyph.illumination}
         waxing={moonGlyph.waxing}
       />
@@ -361,7 +367,7 @@
           class="label date-label"
           x={tick.x}
           y={baseline + 38}
-          text-anchor="middle">{tick.label}</text
+          text-anchor={tick.anchor}>{tick.label}</text
         >
       {/each}
 

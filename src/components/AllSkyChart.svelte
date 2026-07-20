@@ -214,7 +214,7 @@
       <MoonGlyph
         cx={moonGlyph.x}
         cy={moonGlyph.y}
-        r={9}
+        r={7}
         illumination={moonGlyph.illumination}
         waxing={moonGlyph.waxing}
       />
