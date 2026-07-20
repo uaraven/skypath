@@ -125,8 +125,8 @@
   />
 
   <p class="hint">
-    Decimal degrees — latitude positive north, longitude positive east (Kyiv is
-    50.45, 30.52). Elevation is metres above sea level, and optional.
+    Decimal degrees — latitude positive north, longitude positive east.
+    Elevation is metres above sea level, and optional.
   </p>
 
   <HorizonUpload bind:text={draft.horizonText} />

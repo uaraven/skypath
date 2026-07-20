@@ -15,7 +15,7 @@ import { defaultStorage, type KeyValueStore } from '../storage'
 import { isObservatory, type Observatory, type ObservatoryInput } from './types'
 
 /** Single versioned key holding the whole store, per the implementation plan. */
-export const STORAGE_KEY = 'flightplan.observatories.v1'
+export const STORAGE_KEY = 'skypath.observatories.v1'
 
 const SCHEMA_VERSION = 1
 
