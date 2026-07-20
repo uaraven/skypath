@@ -112,6 +112,36 @@ export class ObservatoryStore {
     this.#commit({ observatories, selectedId })
   }
 
+  /**
+   * Bulk import from a file. `append` adds only entries whose id isn't already
+   * present, so re-importing a file exported from this browser is a no-op rather
+   * than a source of duplicates; selection is left where it was. `overwrite`
+   * replaces the whole list and selects the first entry. An empty `incoming` is
+   * ignored so the never-empty invariant can never be broken from here — the
+   * import UI only offers a mode once it has at least one valid observatory.
+   */
+  importObservatories(
+    incoming: Observatory[],
+    mode: 'append' | 'overwrite',
+  ): { added: number; skipped: number } {
+    if (incoming.length === 0) return { added: 0, skipped: 0 }
+
+    if (mode === 'overwrite') {
+      this.#commit({ observatories: incoming, selectedId: incoming[0].id })
+      return { added: incoming.length, skipped: 0 }
+    }
+
+    const existingIds = new Set(this.#state.observatories.map((o) => o.id))
+    const added = incoming.filter((o) => !existingIds.has(o.id))
+    if (added.length > 0) {
+      this.#commit({
+        ...this.#state,
+        observatories: [...this.#state.observatories, ...added],
+      })
+    }
+    return { added: added.length, skipped: incoming.length - added.length }
+  }
+
   /** Selects an existing observatory; unknown ids are ignored. */
   select(id: string): void {
     if (!this.byId(id)) return

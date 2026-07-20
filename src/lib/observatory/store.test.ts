@@ -1,7 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { DEFAULT_OBSERVATORY, ObservatoryStore, STORAGE_KEY } from './store'
 import { MemoryStorage, type KeyValueStore } from '../storage'
-import { observatoryLocation, type ObservatoryInput } from './types'
+import {
+  observatoryLocation,
+  type Observatory,
+  type ObservatoryInput,
+} from './types'
 
 const KYIV: ObservatoryInput = {
   name: 'Kyiv balcony',
@@ -124,6 +128,78 @@ describe('CRUD', () => {
 
     expect(store.all).toHaveLength(1)
     expect(store.selected).toMatchObject(DEFAULT_OBSERVATORY)
+  })
+})
+
+describe('importObservatories', () => {
+  const withId = (input: ObservatoryInput, id: string): Observatory => ({
+    ...input,
+    id,
+  })
+
+  it('appends new entries and leaves the selection alone', () => {
+    const store = new ObservatoryStore(storage)
+    const greenwich = store.all[0]
+
+    const result = store.importObservatories(
+      [withId(KYIV, 'kyiv'), withId(DARK_SITE, 'dark')],
+      'append',
+    )
+
+    expect(result).toEqual({ added: 2, skipped: 0 })
+    expect(store.all.map((o) => o.name)).toEqual([
+      'Greenwich',
+      'Kyiv balcony',
+      'Dark site',
+    ])
+    expect(store.selected.id).toBe(greenwich.id)
+  })
+
+  it('skips appended entries whose id already exists', () => {
+    const store = new ObservatoryStore(storage)
+    const existing = store.all[0]
+
+    const result = store.importObservatories(
+      [withId(KYIV, existing.id), withId(DARK_SITE, 'dark')],
+      'append',
+    )
+
+    expect(result).toEqual({ added: 1, skipped: 1 })
+    expect(store.all.map((o) => o.id)).toEqual([existing.id, 'dark'])
+    // The existing entry is untouched — the clashing import did not overwrite it.
+    expect(store.byId(existing.id)).toEqual(existing)
+  })
+
+  it('replaces the whole list and selects the first on overwrite', () => {
+    const store = new ObservatoryStore(storage)
+
+    store.importObservatories(
+      [withId(KYIV, 'kyiv'), withId(DARK_SITE, 'dark')],
+      'overwrite',
+    )
+
+    expect(store.all.map((o) => o.id)).toEqual(['kyiv', 'dark'])
+    expect(store.selected.id).toBe('kyiv')
+  })
+
+  it('persists an import so it survives a reload', () => {
+    const store = new ObservatoryStore(storage)
+    store.importObservatories([withId(KYIV, 'kyiv')], 'overwrite')
+
+    const reloaded = new ObservatoryStore(storage)
+
+    expect(reloaded.all.map((o) => o.id)).toEqual(['kyiv'])
+    expect(reloaded.selected.id).toBe('kyiv')
+  })
+
+  it('ignores an empty import so the list is never emptied', () => {
+    const store = new ObservatoryStore(storage)
+    const before = store.state
+
+    const result = store.importObservatories([], 'overwrite')
+
+    expect(result).toEqual({ added: 0, skipped: 0 })
+    expect(store.state).toEqual(before)
   })
 })
 
