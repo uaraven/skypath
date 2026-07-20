@@ -27,6 +27,10 @@ function setup(overrides = {}) {
 
 const sliders = () => screen.getAllByRole('slider') as HTMLInputElement[]
 
+/** The two slider readouts, distinct from the chart's own axis date labels. */
+const readouts = () =>
+  Array.from(document.querySelectorAll('.readout')) as HTMLElement[]
+
 /** Marker apex x on the altitude chart, which is the one that always has one. */
 function markerX(container: HTMLElement): number {
   const d = container.querySelector('.chart .marker')!.getAttribute('d')!
@@ -41,7 +45,11 @@ describe('ResultsPanel', () => {
     // The window runs local noon → noon, so midnight is 720 minutes in.
     expect(altitude.value).toBe('720')
     expect(allSky.value).toBe('720')
-    expect(screen.getAllByText(/Oct 16/)).toHaveLength(2)
+    const readoutTexts = readouts()
+    expect(readoutTexts).toHaveLength(2)
+    for (const readout of readoutTexts) {
+      expect(readout.textContent).toMatch(/Oct 16/)
+    }
   })
 
   it('spans the whole night window', () => {
@@ -61,7 +69,9 @@ describe('ResultsPanel', () => {
     await fireEvent.input(sliders()[1], { target: { value: '1230' } })
 
     expect(sliders()[0].value).toBe('1230')
-    expect(screen.getAllByText(/Oct 16.*08:30|Oct 16.*8:30/)).toHaveLength(2)
+    for (const readout of readouts()) {
+      expect(readout.textContent).toMatch(/Oct 16.*08:30|Oct 16.*8:30/)
+    }
   })
 
   it('moves the chart indicator when the slider moves', async () => {
@@ -80,6 +90,10 @@ describe('ResultsPanel', () => {
     await rerender({ date: new Date(2026, 9, 20) })
 
     expect(sliders()[0].value).toBe('900')
-    expect(screen.getAllByText(/Oct 21/)).toHaveLength(2)
+    const readoutTexts = readouts()
+    expect(readoutTexts).toHaveLength(2)
+    for (const readout of readoutTexts) {
+      expect(readout.textContent).toMatch(/Oct 21/)
+    }
   })
 })

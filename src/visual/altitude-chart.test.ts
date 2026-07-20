@@ -10,7 +10,7 @@
 import { render } from '@testing-library/svelte'
 import { describe, expect, it } from 'vitest'
 import AltitudeChart from '../components/AltitudeChart.svelte'
-import type { GeoLocation } from '../lib/astro/types'
+import type { GeoLocation, SkyObject } from '../lib/astro/types'
 import { objectByDesignation } from '../lib/catalog'
 import { altitudeChartModel } from '../lib/charts'
 import { horizonFromText } from '../lib/horizon'
@@ -141,6 +141,85 @@ describe('altitude chart geometry', () => {
     await document.fonts.ready
     const label = svg.querySelector('.time-label')!
     expect(getComputedStyle(label).fontFamily).toContain('Fira Code')
+  })
+
+  it('paints the compass labels in the header band above the plot', () => {
+    const { svg } = renderChart()
+
+    const frame = svg.querySelector('.frame')!.getBoundingClientRect()
+    const labels = [...svg.querySelectorAll('.cardinal-label')]
+
+    // M13 rises in the east, transits south and sets in the west, so it sweeps
+    // through several compass points over the night.
+    expect(labels.length).toBeGreaterThan(0)
+    for (const label of labels) {
+      // The whole point of the header band: the letters sit above the plot,
+      // never over the curve inside it.
+      expect(label.getBoundingClientRect().bottom).toBeLessThanOrEqual(
+        frame.top + 1,
+      )
+    }
+  })
+
+  it('keeps a near-zenith transit label inside the chart', () => {
+    // An object at the observer's declination culminates near 90°, driving the
+    // transit label to the very top — where it used to clip off the viewBox.
+    const overhead: SkyObject = {
+      id: 'overhead',
+      name: 'Overhead',
+      kind: 'deep-sky',
+      ra: 22,
+      dec: KYIV.latitude,
+    }
+    const model = altitudeChartModel({ object: overhead, location: KYIV, date: DATE })
+    const { container } = render(AltitudeChart, { model })
+    const svg = container.querySelector('svg')!
+
+    expect(model.peak!.altitude).toBeGreaterThan(85)
+    const label = svg.querySelector('.peak-label')!.getBoundingClientRect()
+    const box = svg.getBoundingClientRect()
+    expect(label.top).toBeGreaterThanOrEqual(box.top - 1)
+  })
+
+  it('scrubs to the clicked moment of the night', () => {
+    let scrubbed: number | null = null
+    const model = altitudeChartModel({ object: M13, location: KYIV, date: DATE })
+    const { container } = render(AltitudeChart, {
+      model,
+      onScrub: (minutes: number) => (scrubbed = minutes),
+    })
+    const svg = container.querySelector('svg')!
+    const frame = svg.querySelector('.frame')!.getBoundingClientRect()
+
+    // A click at the horizontal centre of the plot is local midnight — half of
+    // a 1440-minute window in.
+    svg.dispatchEvent(
+      new MouseEvent('click', {
+        clientX: frame.left + frame.width / 2,
+        clientY: frame.top + frame.height / 2,
+        bubbles: true,
+      }),
+    )
+
+    expect(scrubbed).not.toBeNull()
+    expect(scrubbed!).toBeGreaterThan(700)
+    expect(scrubbed!).toBeLessThan(740)
+  })
+
+  it('draws the Moon track and phase glyph when asked', () => {
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      includeMoon: true,
+    })
+    const { container } = render(AltitudeChart, { model })
+
+    expect(container.querySelector('.moon-track')).not.toBeNull()
+    // The glyph is drawn only when the Moon is up at its high point.
+    if (model.moon!.peak && model.moon!.peak.altitude > 0) {
+      expect(container.querySelector('.moon-glyph')).not.toBeNull()
+    }
   })
 
   it('captures the chart for comparison against altitude.png', async () => {

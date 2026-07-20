@@ -70,7 +70,7 @@ describe('app shell rendering', () => {
   it('opens the observatory editor as a modal over the app', async () => {
     render(App)
 
-    await userEvent.click(screen.getByRole('button', { name: 'Edit' }))
+    await userEvent.click(screen.getByRole('button', { name: /edit observatory/i }))
 
     const dialog = screen.getByRole('dialog')
     const box = dialog.getBoundingClientRect()
@@ -300,7 +300,7 @@ describe('app shell rendering', () => {
     await userEvent.click(screen.getByText('Andromeda Galaxy'))
     await screenshot('app-results', app)
 
-    await userEvent.click(screen.getByRole('button', { name: 'Edit' }))
+    await userEvent.click(screen.getByRole('button', { name: /edit observatory/i }))
     // The dialog is fixed-position, so the page is the frame that contains it.
     await screenshot('app-observatory-editor', document.body)
   })

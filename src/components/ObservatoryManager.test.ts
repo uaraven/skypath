@@ -131,7 +131,7 @@ describe('editing', () => {
     const user = userEvent.setup()
     setup()
 
-    await user.click(button('Edit'))
+    await user.click(button(/edit observatory/i))
 
     expect(screen.getByText('Edit observatory')).toBeInTheDocument()
     expect(nameInput()).toHaveValue('Greenwich')
@@ -141,7 +141,7 @@ describe('editing', () => {
     const user = userEvent.setup()
     const { store, storage } = setup()
 
-    await user.click(button('Edit'))
+    await user.click(button(/edit observatory/i))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
     await user.click(button('Save'))
@@ -155,7 +155,7 @@ describe('editing', () => {
     const user = userEvent.setup()
     const { store } = setup()
 
-    await user.click(button('Edit'))
+    await user.click(button(/edit observatory/i))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
     await user.click(button('Cancel'))
@@ -239,7 +239,7 @@ describe('default wiring', () => {
     const user = userEvent.setup()
     render(ObservatoryManager)
 
-    await user.click(button('Edit'))
+    await user.click(button(/edit observatory/i))
     await user.type(nameInput(), ' Park')
     await user.click(button('Save'))
 
@@ -254,7 +254,7 @@ describe('persistence across a reload', () => {
     const user = userEvent.setup()
     const { storage } = setup()
 
-    await user.click(button('Edit'))
+    await user.click(button(/edit observatory/i))
     await user.clear(nameInput())
     await user.type(nameInput(), 'Backyard')
     await user.type(screen.getByLabelText(/paste/i), '0 20\n180 5')

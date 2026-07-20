@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="skypath.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="3"
+   inkscape:export-ydpi="3"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1"
+     inkscape:cx="246.5"
+     inkscape:cy="246.5"
+     inkscape:window-width="1728"
+     inkscape:window-height="1056"
+     inkscape:window-x="1"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg17" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="bg"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0%"
+         stop-color="#081426"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#17355f"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="path"
+       x1="42.206033"
+       y1="341.30192"
+       x2="280.32365"
+       y2="341.30192"
+       gradientTransform="matrix(1.6074306,0,0,0.66877979,-5.72205,-13.379943)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#7dd3fc"
+         id="stop3" />
+      <stop
+         offset="100%"
+         stop-color="#60a5fa"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <!-- rounded background -->
+  <path
+     d="M 72,0 C 32.112,0 0,32.112 0,72 v 288.11328 c 40,-10.0583 70,20.11683 110,8.04688 40,-12.06996 80,-38.22026 120,-23.13282 50,20.1166 90,40.23203 135,27.15625 45,-12.06996 85,-32.18705 147,-17.09961 V 72 C 512,32.112 479.888,0 440,0 Z"
+     style="display:inline;fill:url(#bg)"
+     id="path17" />
+  <!-- stars -->
+  <g
+     fill="white"
+     opacity="0.9"
+     id="g10">
+    <circle
+       cx="92"
+       cy="80"
+       r="3"
+       id="circle4" />
+    <circle
+       cx="164"
+       cy="118"
+       r="2"
+       id="circle5" />
+    <circle
+       cx="368"
+       cy="190"
+       r="2"
+       id="circle7" />
+    <circle
+       cx="405"
+       cy="74"
+       r="3"
+       id="circle6" />
+    <circle
+       cx="450"
+       cy="155"
+       r="2.5"
+       id="circle8" />
+    <circle
+       cx="300"
+       cy="65"
+       r="2"
+       id="circle9" />
+    <circle
+       cx="114"
+       cy="246"
+       id="circle10"
+       r="2" />
+  </g>
+  <path
+     d="M 67.184152,368.81585 Q 253.5,71.552455 439.81585,368.81585"
+     fill="none"
+     stroke="url(#path)"
+     stroke-width="10.3683"
+     stroke-linecap="round"
+     id="path12"
+     style="stroke:url(#path)" />
+  <!-- horizon -->
+  <!-- horizon outline -->
+  <path
+     d="M 512,355.08398 C 450,339.99654 410,360.11363 365,372.18359 320,385.25937 280,365.14394 230,345.02734 190,329.9399 150,356.0902 110,368.16016 70,380.23011 40,350.05498 0,360.11328 V 440 c 0,39.888 32.112,72 72,72 h 368 c 39.888,0 72,-32.112 72,-72 z"
+     style="fill:#07111d;stroke-width:1.00291"
+     id="path18" />
+  <path
+     d="       M0 360       C40 350 70 380 110 368       C150 356 190 330 230 345       C280 365 320 385 365 372       C410 360 450 340 512 355"
+     fill="none"
+     stroke="#d6a55d"
+     stroke-width="4"
+     stroke-linecap="round"
+     id="path11" />
+  <!-- celestial path -->
+  <!-- object positions -->
+  <g
+     fill="#ffffff"
+     id="g16">
+    <circle
+       cx="224"
+       cy="268"
+       r="8"
+       id="circle12" />
+    <circle
+       cx="93"
+       cy="153"
+       r="8"
+       id="circle13" />
+    <circle
+       cx="256"
+       cy="160"
+       r="10"
+       id="circle14" />
+    <circle
+       cx="432"
+       cy="90"
+       r="8"
+       id="circle15" />
+    <circle
+       cx="431"
+       cy="252"
+       r="8"
+       id="circle16" />
+  </g>
+  <!-- current object -->
+  <circle
+     cx="310"
+     cy="230"
+     r="16"
+     fill="#fde68a"
+     stroke="#ffffff"
+     stroke-width="3"
+     id="circle17" />
+</svg>

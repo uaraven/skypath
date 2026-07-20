@@ -30,10 +30,14 @@ export {
 export {
   altitudeChartModel,
   everVisible,
+  cardinalCrossings,
   type AltitudeChartModel,
   type AltitudeChartInput,
   type HorizonSample,
+  type CardinalCrossing,
+  type MoonTrack,
 } from './model'
+export { moonPhasePath } from './moon-glyph'
 export {
   altitudeRadius,
   polarPoint,
@@ -54,4 +58,5 @@ export {
   type AllSkyChartModel,
   type AllSkyChartInput,
   type HourMark,
+  type MoonDial,
 } from './all-sky'

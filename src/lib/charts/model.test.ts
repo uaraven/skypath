@@ -3,7 +3,8 @@ import type { GeoLocation, SkyObject } from '../astro/types'
 import { objectByDesignation } from '../catalog'
 import { Horizon, horizonFromText } from '../horizon'
 import carrHorizon from '../horizon/fixtures/e.c.carr-horizon.txt?raw'
-import { altitudeChartModel, everVisible } from './model'
+import type { TrajectoryPoint } from '../astro/types'
+import { altitudeChartModel, cardinalCrossings, everVisible } from './model'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
 const DATE = new Date(2026, 9, 15)
@@ -80,6 +81,22 @@ describe('altitudeChartModel', () => {
     expect(Math.abs(model.peak!.azimuth - 180)).toBeLessThan(1)
   })
 
+  it('leaves the Moon out unless asked, and includes it when asked', () => {
+    const without = altitudeChartModel({ object: M13, location: KYIV, date: DATE })
+    expect(without.moon).toBeNull()
+
+    const withMoon = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      includeMoon: true,
+    })
+    expect(withMoon.moon).not.toBeNull()
+    expect(withMoon.moon!.points).toHaveLength(withMoon.points.length)
+    expect(withMoon.moon!.illumination).toBeGreaterThanOrEqual(0)
+    expect(withMoon.moon!.illumination).toBeLessThanOrEqual(1)
+  })
+
   it('shades the same window the trajectory spans', () => {
     const model = altitudeChartModel({
       object: M13,
@@ -89,6 +106,54 @@ describe('altitudeChartModel', () => {
 
     expect(model.bands[0].start).toEqual(model.window.start)
     expect(model.bands[model.bands.length - 1].end).toEqual(model.window.end)
+  })
+})
+
+describe('cardinalCrossings', () => {
+  const at = (
+    minutes: number,
+    azimuth: number,
+    altitude: number,
+  ): TrajectoryPoint => ({
+    time: new Date(2026, 9, 15, 12, minutes),
+    azimuth,
+    altitude,
+  })
+
+  it('marks each cardinal point the object sweeps through, in time order', () => {
+    // A rising object swinging east → south-east → south while it is up.
+    // Only the four cardinals are marked, so SE is skipped.
+    const crossings = cardinalCrossings([
+      at(0, 80, 5),
+      at(10, 100, 20),
+      at(20, 140, 30),
+      at(30, 190, 25),
+    ])
+
+    expect(crossings.map((c) => c.label)).toEqual(['E', 'S'])
+    for (let i = 1; i < crossings.length; i++) {
+      expect(crossings[i].time.getTime()).toBeGreaterThan(
+        crossings[i - 1].time.getTime(),
+      )
+    }
+  })
+
+  it('takes the short way round north rather than lapping the sky', () => {
+    const crossings = cardinalCrossings([
+      at(0, 350, 10),
+      at(10, 10, 12),
+    ])
+
+    expect(crossings.map((c) => c.label)).toEqual(['N'])
+  })
+
+  it('ignores crossings that happen below the horizon', () => {
+    const crossings = cardinalCrossings([
+      at(0, 80, -5),
+      at(10, 100, -2),
+    ])
+
+    expect(crossings).toEqual([])
   })
 })
 

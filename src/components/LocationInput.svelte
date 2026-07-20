@@ -1,5 +1,6 @@
 <script lang="ts">
   import { LATITUDE_RANGE, LONGITUDE_RANGE } from '../lib/observatory'
+  import Icon from './Icon.svelte'
 
   /**
    * Nullable because an emptied `<input type="number">` binds to null; the
@@ -89,8 +90,16 @@
   </label>
 
   {#if supportsGeolocation}
-    <button type="button" onclick={locate} disabled={locating}>
-      {locating ? 'Locating…' : 'Use my location'}
+    <button
+      type="button"
+      class="locate icon-button"
+      class:locating
+      aria-label={locating ? 'Locating…' : 'Use my location'}
+      title={locating ? 'Locating…' : 'Use my location'}
+      onclick={locate}
+      disabled={locating}
+    >
+      <Icon name="pin" />
     </button>
   {/if}
 
@@ -129,6 +138,36 @@
   small {
     align-self: center;
     color: var(--text-faint);
+  }
+
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+  }
+
+  /* Sits on the input baseline, not the taller label-plus-input stack. */
+  .locate {
+    align-self: end;
+  }
+
+  /* A quiet pulse while the geolocation prompt is outstanding. */
+  .locate.locating {
+    animation: locate-pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes locate-pulse {
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .locate.locating {
+      animation: none;
+      opacity: 0.6;
+    }
   }
 
   .error {

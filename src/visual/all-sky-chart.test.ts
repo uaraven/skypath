@@ -147,6 +147,22 @@ describe('all-sky chart geometry', () => {
     expect(getComputedStyle(label).fontFamily).toContain('Fira Code')
   })
 
+  it('draws the Moon arc and phase glyph when asked', () => {
+    const model = allSkyChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      horizon: horizonFromText(carrHorizon),
+      includeMoon: true,
+    })
+    const { container } = render(AllSkyChart, { model })
+
+    expect(container.querySelector('.moon-track')).not.toBeNull()
+    if (model.moon!.peak && model.moon!.peak.altitude > 0) {
+      expect(container.querySelector('.moon-glyph')).not.toBeNull()
+    }
+  })
+
   it('captures the chart for comparison against azimutal.png', async () => {
     const { svg } = renderChart()
 

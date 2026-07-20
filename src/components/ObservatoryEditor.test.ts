@@ -179,13 +179,13 @@ describe('validation', () => {
 })
 
 describe('coordinate help', () => {
-  it('explains the sign convention on demand', async () => {
-    const user = userEvent.setup()
+  it('shows the sign convention inline, with no toggle button', () => {
     setup()
 
-    expect(screen.queryByText(/positive north/i)).not.toBeInTheDocument()
-    await user.click(button(/about coordinates/i))
-
+    // The hint is always visible now — no "?" button to reveal it.
     expect(screen.getByText(/positive north/i)).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /about coordinates/i })).toBe(
+      null,
+    )
   })
 })

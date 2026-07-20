@@ -46,7 +46,6 @@
 
   let draft = $state<Draft>(untrack(() => toDraft(observatory, seed)))
   let error = $state<string | null>(null)
-  let showHelp = $state(false)
 
   function toDraft(
     observatory: Observatory | null,
@@ -119,29 +118,16 @@
     <input type="text" bind:value={draft.name} />
   </label>
 
-  <div class="coordinates">
-    <LocationInput
-      bind:latitude={draft.latitude}
-      bind:longitude={draft.longitude}
-      bind:elevation={draft.elevation}
-    />
-    <button
-      type="button"
-      class="help"
-      aria-label="About coordinates"
-      aria-expanded={showHelp}
-      onclick={() => (showHelp = !showHelp)}>?</button
-    >
-  </div>
+  <LocationInput
+    bind:latitude={draft.latitude}
+    bind:longitude={draft.longitude}
+    bind:elevation={draft.elevation}
+  />
 
-  {#if showHelp}
-    <p class="hint">
-      Decimal degrees. Latitude is positive north of the equator, longitude
-      positive east of Greenwich — so 50.45, 30.52 is Kyiv and 34.22, −118.06 is
-      Mount Wilson. Elevation is metres above sea level; it refines rise and set
-      times slightly and is optional.
-    </p>
-  {/if}
+  <p class="hint">
+    Decimal degrees — latitude positive north, longitude positive east (Kyiv is
+    50.45, 30.52). Elevation is metres above sea level, and optional.
+  </p>
 
   <HorizonUpload bind:text={draft.horizonText} />
 
@@ -162,18 +148,6 @@
     gap: 0.25rem;
     font-size: 0.8rem;
     color: var(--text-dim);
-  }
-
-  .coordinates {
-    display: flex;
-    align-items: end;
-    gap: 0.75rem;
-  }
-
-  .help {
-    width: 2.2rem;
-    padding: 0.4rem 0;
-    font-family: var(--font-mono);
   }
 
   .hint {
