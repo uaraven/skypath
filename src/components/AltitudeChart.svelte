@@ -11,6 +11,7 @@
     altitudeTicks,
     altitudeToY,
     areaPath,
+    clamp,
     hourTicks,
     markerTriangle,
     plotBottom,
@@ -37,9 +38,17 @@
      * Null — the default — draws no indicator at all.
      */
     markerTime?: Date | null
+    /**
+     * Called with a click's position as minutes from the start of the window,
+     * so the Results tab can scrub the shared marker to where the chart was
+     * clicked. Omitted — the default — leaves the chart non-interactive.
+     */
+    onScrub?: (minutes: number) => void
   }
 
-  let { model, compact = false, markerTime = null }: Props = $props()
+  let { model, compact = false, markerTime = null, onScrub }: Props = $props()
+
+  const interactive = $derived(!compact && !!onScrub)
 
   const WIDTH = $derived(compact ? 420 : 960)
   const HEIGHT = $derived(compact ? 96 : 400)
@@ -188,6 +197,42 @@
   function formatDate(time: Date): string {
     return time.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })
   }
+
+  /**
+   * Turn a click anywhere on the plot into a moment of the night. The click is
+   * mapped from screen space back into the viewBox so it works at any rendered
+   * size, then read across the plot as a fraction of the window.
+   */
+  function scrubTo(svg: SVGSVGElement, event: MouseEvent) {
+    if (!onScrub) return
+    const ctm = svg.getScreenCTM()
+    if (!ctm) return
+
+    const point = svg.createSVGPoint()
+    point.x = event.clientX
+    point.y = event.clientY
+    const userX = point.matrixTransform(ctm.inverse()).x
+
+    const fraction = clamp((userX - PLOT.left) / PLOT.width, 0, 1)
+    const spanMs = model.window.end.getTime() - model.window.start.getTime()
+    onScrub(Math.round((fraction * spanMs) / 60000))
+  }
+
+  /**
+   * Clicking the plot scrubs the shared time marker. Attached as an action
+   * rather than an `onclick` so the chart stays a plain non-interactive image
+   * for a11y — the range slider beside it is the keyboard-accessible path — and
+   * the listener is simply absent when the chart isn't interactive.
+   */
+  function scrubbable(svg: SVGSVGElement) {
+    const handler = (event: MouseEvent) => scrubTo(svg, event)
+    svg.addEventListener('click', handler)
+    return {
+      destroy() {
+        svg.removeEventListener('click', handler)
+      },
+    }
+  }
 </script>
 
 <figure class="chart" class:compact>
@@ -196,6 +241,8 @@
     preserveAspectRatio="xMidYMid meet"
     role="img"
     aria-label={summary}
+    class:interactive
+    use:scrubbable
   >
     <title>{summary}</title>
 
@@ -355,6 +402,10 @@
 
   .compact svg {
     border-radius: 5px;
+  }
+
+  svg.interactive {
+    cursor: pointer;
   }
 
   /*

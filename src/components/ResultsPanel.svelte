@@ -85,7 +85,11 @@
 
     <section class="panel">
       <h3>Altitude</h3>
-      <AltitudeChart {model} {markerTime} />
+      <AltitudeChart
+        {model}
+        {markerTime}
+        onScrub={(minutes) => (offsetMinutes = minutes)}
+      />
       <TimeSlider
         bind:value={offsetMinutes}
         max={spanMinutes}
