@@ -1,4 +1,4 @@
-# FlightPlan
+# SkyPath
 
 A static single-page web app for planning a night of astronomical observation. Pick a target, a date and an observatory, and see where the object goes across the sky that night — against _your_ horizon, not an idealised flat one.
 
@@ -6,7 +6,7 @@ No backend, no accounts, no server-side state. Everything runs in the browser an
 
 ## Why
 
-Planning a session means answering a few concrete questions: is the object up tonight, when is it highest, and is it actually visible from where I stand — or is it behind the neighbour's roofline until 1 a.m.? Planetarium software answers the first two well and the third one rarely. FlightPlan takes a measured horizon profile as a first-class input, so "above the horizon" means the horizon you actually have.
+Planning a session means answering a few concrete questions: is the object up tonight, when is it highest, and is it actually visible from where I stand — or is it behind the neighbour's roofline until 1 a.m.? Planetarium software answers the first two well and the third one rarely. SkyPath takes a measured horizon profile as a first-class input, so "above the horizon" means the horizon you actually have.
 
 ## What it does
 

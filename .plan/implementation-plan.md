@@ -1,6 +1,6 @@
-# FlightPlan — Implementation Plan
+# SkyPath — Implementation Plan
 
-Spec: [flightplan-spec.md](flightplan-spec.md)
+Spec: [skypath-spec.md](skypath-spec.md)
 UI mockups: [ui-mocks.md](ui-mocks.md) — the layout the app must have
 Progress tracking: [state.md](state.md)
 
@@ -69,7 +69,7 @@ Key design points:
 - **Observatories**: location and horizon are bundled into named observatories
   (spec § Observatories). All calculations read location + horizon from the
   currently selected observatory. Stored in localStorage under a single versioned
-  key (e.g. `flightplan.observatories.v1` holding `{ selectedId, list }`); the
+  key (e.g. `skypath.observatories.v1` holding `{ selectedId, list }`); the
   horizon is stored as raw NINA text and re-parsed on load. Location entry offers
   manual lat/lon plus "use my location" via the Geolocation API.
 - **Night window**: charts are centered on local midnight of the selected date;
@@ -144,7 +144,7 @@ site uses (`_includes/head.html`) — identical faces and loading behavior.
 - Configure `vite.config.ts` with `base: './'` for S3-prefix-agnostic deploys.
 - Prettier + ESLint, `npm run build` producing `dist/`.
 - `src/theme.css` with voronin.cc design tokens (see Visual design section); Google Fonts `<link>` tags for Red Hat Display + Fira Code in `index.html` (same as main site's `head.html`).
-- Minimal App shell rendering "FlightPlan" already themed (dark bg, Red Hat Display).
+- Minimal App shell rendering "SkyPath" already themed (dark bg, Red Hat Display).
 - **Done when:** `npm run dev` and `npm run build` work; dist opens from `file://` or any static host.
 
 ### Phase 1 — Astronomy core
@@ -227,15 +227,15 @@ and the things only visible once all the content is real.
 - **Done when:** moon data matches reference sources.
 
 ### Phase 9 — Build, deploy & polish
-- `deploy.sh`: `npm run build && aws s3 sync dist/ s3://<bucket>[/flightplan] --delete` (model on the main site's `deploy.sh`).
-- Resolve open question: subdomain (flightplan.voronin.cc) vs path (voronin.cc/flightplan) — `base: './'` keeps the build working for either, so the decision can wait until deploy time.
+- `deploy.sh`: `npm run build && aws s3 sync dist/ s3://<bucket>[/skypath] --delete` (model on the main site's `deploy.sh`).
+- Resolve open question: subdomain (skypath.voronin.cc) vs path (voronin.cc/skypath) — `base: './'` keeps the build working for either, so the decision can wait until deploy time.
 - Optional: link/navbar integration with the main site.
 - README with usage + deploy instructions; final cross-browser check (Chrome/Firefox/Safari).
 - **Done when:** app fully functional when served from its S3 location under voronin.cc.
 
 ## Risks / open questions
 
-- **Deployment URL (open)**: subdomain flightplan.voronin.cc vs path voronin.cc/flightplan — undecided. Build with `base: './'` works for both; decide in Phase 9.
+- **Deployment URL (open)**: subdomain skypath.voronin.cc vs path voronin.cc/skypath — undecided. Build with `base: './'` works for both; decide in Phase 9.
 - **Timezone handling**: display times in the browser's local timezone (assume the observer is at the browser's locale); note as limitation for remote-location planning.
 - **Horizon rendering on the altitude chart**: the horizon line depends on the object's azimuth at each time — worth confirming against NINA's own rendering.
 - **Messier catalog data source**: compile from public-domain data; verify a handful of entries against SIMBAD.

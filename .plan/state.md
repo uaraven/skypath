@@ -1,4 +1,4 @@
-# FlightPlan — Implementation State
+# SkyPath — Implementation State
 
 Plan: [implementation-plan.md](implementation-plan.md)
 
@@ -17,7 +17,7 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
 | 7 | App assembly & UX (persistence, responsive/styling polish, credits) | done | 48 more tests (377 total). Session persistence, phone layout, tab/modal keyboard, credits — see log |
 | 7.5 | Time slider on the Results tab (linked, both charts indicate the time) | done | User request after Phase 7. 22 more tests (399 total) — see log |
 | 8 | Extended: Moon (trajectory, rise/set, phase) | not started | |
-| 9 | Build, deploy to S3 & polish | not started | Open: subdomain vs voronin.cc/flightplan path |
+| 9 | Build, deploy to S3 & polish | not started | Open: subdomain vs voronin.cc/skypath path |
 
 ## Log
 
@@ -133,3 +133,4 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
   - Also excluded: `NonEx` rows, and NED sub-components (names containing a space) — components of a galaxy group, not targets.
   - **Two tests had to change meaning, not just numbers.** "Resolves every object to a valid trajectory" is ~25 ephemeris solutions per object and ran for minutes at 15 000 objects; it is now a deterministic stride across all five files, with the exhaustive coordinate-range check kept separate and cheap. "Type ranks below names" asserted the top 3 globular hits were all Messier — true only while Messier *was* the catalog; it now asserts the ranking property directly.
   - The `ObjectSearch` empty-state copy said "Search the Messier catalogue"; it now names all five. A visual test drives Sh2-155 from the search box to a plotted chart — the no-name, no-magnitude path the Messier-based tests never touched.
+- 2026-07-20 — Project renamed FlightPlan → **SkyPath**. Spec file renamed to `skypath-spec.md`; all references, localStorage keys (`skypath.observatories.v1`, `skypath.session.v1`) and candidate URLs (skypath.voronin.cc / voronin.cc/skypath) updated across the app, docs and CLAUDE.md. Repo directory still `skyproject/`. The key change orphans any localStorage saved under the old `flightplan.*` keys — acceptable pre-deploy, no migration written.

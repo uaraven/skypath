@@ -26,7 +26,7 @@ describe('app shell rendering', () => {
     render(App)
 
     const heading = screen.getByRole('heading', {
-      name: 'FlightPlan',
+      name: 'SkyPath',
       level: 1,
     })
     expect(getComputedStyle(heading).fontFamily).toContain('Red Hat Display')

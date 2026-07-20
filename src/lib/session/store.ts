@@ -13,7 +13,7 @@
 import { nightWindow } from '../astro/time'
 import { defaultStorage, type KeyValueStore } from '../storage'
 
-export const SESSION_KEY = 'flightplan.session.v1'
+export const SESSION_KEY = 'skypath.session.v1'
 
 const SCHEMA_VERSION = 1
 

@@ -1,22 +1,22 @@
-# FlightPlan
+# SkyPath
 
 ## functionality
 
-FlightPlan is a single-page web application that draws a trajectory of a sky object in the sky at a given date.
+SkyPath is a single-page web application that draws a trajectory of a sky object in the sky at a given date.
 
-FlightPlan draws the sky map with cardinal points N,S,E,W, azimutal grid and horizon.
+SkyPath draws the sky map with cardinal points N,S,E,W, azimutal grid and horizon.
 
 Horizon is defined in a NINA-compatible file that can be uploaded.
 
 The file is a plain text file where each row defines two numbers separated by space. First is an azimuth (0-359) and the second one is horizon altitude in degrees at the given azimuth direction.
 
-FlightPlan is able to draw two type of charts: Altitude chart where the sky is unwrapped in cylindrical projection displaying the altitude of the given celestial object at any given time (centered around the night time for the given date). It displays day and night and twilight/dawn transitions, object trajectory and horizon.
+SkyPath is able to draw two type of charts: Altitude chart where the sky is unwrapped in cylindrical projection displaying the altitude of the given celestial object at any given time (centered around the night time for the given date). It displays day and night and twilight/dawn transitions, object trajectory and horizon.
 ![alt text](altitude.png)
 
 Second type of chart is a circular down-top view of the sky with outer bound matching altitude 0º and the center of the circle is zenith - altitude 90º. North is at the top. Trajectory is shown, but no day/night/twilight/dawn. Horizon is wrapped around the outer boundary of the view.
 ![alt text](azimutal.png)
 
-The FlightPlan also calculates following times:
+The SkyPath also calculates following times:
 
  - object above 0º
  - object above horizon
@@ -46,7 +46,7 @@ Extended goals:
 
 Implemented in Javascript/Typescript. If possible, does not require backend. Loading external resources (fonts, graphics, CDN assets) is allowed — only a backend is excluded.
 
-The project will be part of the voronin.cc site. Open question: deployed as a 3rd-level domain (e.g. flightplan.voronin.cc) or as a path (voronin.cc/flightplan) — not yet decided.
+The project will be part of the voronin.cc site. Open question: deployed as a 3rd-level domain (e.g. skypath.voronin.cc) or as a path (voronin.cc/skypath) — not yet decided.
 
 Built-in Messier catalog and Solar system planets. 
 Horizon file can be uploaded/pasted 

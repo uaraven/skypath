@@ -119,7 +119,7 @@
 
 <div class="app">
   <header class="masthead">
-    <h1>FlightPlan</h1>
+    <h1>SkyPath</h1>
     <p class="tagline">Plan what to observe, and when.</p>
   </header>
 

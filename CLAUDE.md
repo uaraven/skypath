@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-**FlightPlan** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is FlightPlan.
+**SkyPath** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is SkyPath.
 
 ## Current state: phases 0–4 plus 4.5 done (scaffolding, astronomy core, catalogs, horizon & observatories, altitude chart, UI shell)
 
 Planning documents live in `.plan/`:
 
-- `.plan/flightplan-spec.md` — requirements (source of truth for functionality)
+- `.plan/skypath-spec.md` — requirements (source of truth for functionality)
 - `.plan/ui-mocks.md` — the layout the app must have (source of truth for UI structure)
 - `.plan/implementation-plan.md` — tech decisions, architecture, phases 0–9 with "done when" criteria
 - `.plan/state.md` — per-phase status table and decision log. **Keep this updated**: mark phase status changes and append dated log entries for any decision or requirement change.
@@ -54,7 +54,7 @@ Planning documents live in `.plan/`:
 - `astronomy-engine` (npm) for all ephemeris math — do not hand-roll coordinate transforms or rise/set searches
 - Hand-rolled SVG for both charts (no charting library)
 - Vitest for unit tests; astronomy results validated against Stellarium/USNO reference values
-- `localStorage` for all persistence (single versioned key `flightplan.observatories.v1`); no backend ever
+- `localStorage` for all persistence (single versioned key `skypath.observatories.v1`); no backend ever
 
 ## Styling
 
