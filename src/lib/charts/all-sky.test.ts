@@ -105,6 +105,25 @@ describe('allSkyChartModel', () => {
     expect(model.everClears).toBe(true)
   })
 
+  it('leaves the Moon out unless asked, and includes it when asked', () => {
+    const without = allSkyChartModel({ object: M13, location: KYIV, date: DATE })
+    expect(without.moon).toBeNull()
+
+    const withMoon = allSkyChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      includeMoon: true,
+    })
+    expect(withMoon.moon).not.toBeNull()
+    expect(withMoon.moon!.illumination).toBeGreaterThanOrEqual(0)
+    expect(withMoon.moon!.illumination).toBeLessThanOrEqual(1)
+    // Every point of every Moon arc is at or above the rim, like the object's.
+    for (const arc of withMoon.moon!.arcs) {
+      for (const p of arc) expect(p.altitude).toBeGreaterThanOrEqual(0)
+    }
+  })
+
   it('leaves no arcs for an object that never rises', () => {
     const model = allSkyChartModel({
       object: SOUTHERN,

@@ -6,6 +6,7 @@
  */
 
 import { horizontalAt } from '../astro/ephemeris'
+import { computeMoonEvents, MOON } from '../astro/moon'
 import { nightWindow } from '../astro/time'
 import { peakAltitude, sampleTrajectory } from '../astro/trajectory'
 import type {
@@ -39,6 +40,18 @@ export interface HourMark extends TrajectoryPoint {
   labelled: boolean
 }
 
+/** The Moon on the dial: its above-horizon arcs, high point and phase. */
+export interface MoonDial {
+  /** Above-horizon runs, cut at the rim like the object's own arcs. */
+  arcs: readonly (readonly TrajectoryPoint[])[]
+  /** Highest sampled point, or null if the Moon never rises — where the glyph goes. */
+  peak: TrajectoryPoint | null
+  /** Illuminated fraction of the disc, 0–1, for the phase glyph. */
+  illumination: number
+  /** True while the Moon is waxing — which way the phase glyph is lit. */
+  waxing: boolean
+}
+
 export interface AllSkyChartModel {
   object: SkyObject
   window: TimeWindow
@@ -61,6 +74,8 @@ export interface AllSkyChartModel {
   peak: TrajectoryPoint | null
   /** True when the object clears the *observer's* horizon at some point. */
   everClears: boolean
+  /** The Moon's arcs and phase, or null when it wasn't asked for. */
+  moon: MoonDial | null
 }
 
 export interface AllSkyChartInput {
@@ -69,6 +84,8 @@ export interface AllSkyChartInput {
   date: Date
   horizon?: Horizon
   stepMinutes?: number
+  /** Include the Moon's arcs and phase. Off by default. */
+  includeMoon?: boolean
 }
 
 export function allSkyChartModel({
@@ -77,6 +94,7 @@ export function allSkyChartModel({
   date,
   horizon = FLAT_HORIZON,
   stepMinutes,
+  includeMoon = false,
 }: AllSkyChartInput): AllSkyChartModel {
   const window = nightWindow(date)
   const trajectory = sampleTrajectory(object, location, window, stepMinutes)
@@ -91,6 +109,23 @@ export function allSkyChartModel({
     everClears: trajectory.points.some((point) =>
       horizon.isVisible(point.azimuth, point.altitude),
     ),
+    moon: includeMoon ? moonDial(location, window, stepMinutes) : null,
+  }
+}
+
+/** The Moon sampled over the window, split into its above-horizon arcs. */
+function moonDial(
+  location: GeoLocation,
+  window: TimeWindow,
+  stepMinutes?: number,
+): MoonDial {
+  const trajectory = sampleTrajectory(MOON, location, window, stepMinutes)
+  const events = computeMoonEvents(window, location)
+  return {
+    arcs: aboveHorizonArcs(trajectory.points),
+    peak: peakAltitude(trajectory),
+    illumination: events.illumination,
+    waxing: events.phaseAngle < 180,
   }
 }
 

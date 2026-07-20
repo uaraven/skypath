@@ -22,6 +22,7 @@
     type AllSkyChartModel,
     type PolarDial,
   } from '../lib/charts'
+  import MoonGlyph from './MoonGlyph.svelte'
 
   interface Props {
     model: AllSkyChartModel
@@ -73,6 +74,25 @@
       ? polarPoint(model.peak.azimuth, model.peak.altitude, DIAL)
       : null,
   )
+
+  const moonArcs = $derived(
+    model.moon
+      ? model.moon.arcs.map((arc) =>
+          polylinePath(arc.map((p) => polarPoint(p.azimuth, p.altitude, DIAL))),
+        )
+      : [],
+  )
+
+  /** The phase disc sits at the Moon's high point, when it is above the horizon. */
+  const moonGlyph = $derived.by(() => {
+    const moonPeak = model.moon?.peak
+    if (!model.moon || !moonPeak || moonPeak.altitude <= 0) return null
+    return {
+      ...polarPoint(moonPeak.azimuth, moonPeak.altitude, DIAL),
+      illumination: model.moon.illumination,
+      waxing: model.moon.waxing,
+    }
+  })
 
   const MARKER_SIZE = 12
 
@@ -156,6 +176,10 @@
         />
       {/each}
 
+      {#each moonArcs as d, i (i)}
+        <path class="moon-track" {d} />
+      {/each}
+
       {#each arcPaths as d, i (i)}
         <path class="trajectory" {d} />
       {/each}
@@ -184,6 +208,17 @@
         <path class="marker" d={marker.path} />
       {/if}
     </g>
+
+    <!-- Outside the clip so the disc stays whole even for a Moon near the rim. -->
+    {#if moonGlyph}
+      <MoonGlyph
+        cx={moonGlyph.x}
+        cy={moonGlyph.y}
+        r={9}
+        illumination={moonGlyph.illumination}
+        waxing={moonGlyph.waxing}
+      />
+    {/if}
 
     {#each marks as mark, i (i)}
       {#if mark.labelled}
@@ -257,6 +292,15 @@
     fill: none;
     stroke: var(--chart-trajectory);
     stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  .moon-track {
+    fill: none;
+    stroke: var(--chart-moon);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 4;
     stroke-linejoin: round;
     stroke-linecap: round;
   }

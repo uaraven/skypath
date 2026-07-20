@@ -30,7 +30,9 @@
   )
 
   const allSkyModel = $derived(
-    object ? allSkyChartModel({ object, location, date, horizon }) : null,
+    object
+      ? allSkyChartModel({ object, location, date, horizon, includeMoon: true })
+      : null,
   )
 
   const events = $derived(

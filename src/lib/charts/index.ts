@@ -58,4 +58,5 @@ export {
   type AllSkyChartModel,
   type AllSkyChartInput,
   type HourMark,
+  type MoonDial,
 } from './all-sky'
