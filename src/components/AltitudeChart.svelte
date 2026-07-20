@@ -42,7 +42,7 @@
   let { model, compact = false, markerTime = null }: Props = $props()
 
   const WIDTH = $derived(compact ? 420 : 960)
-  const HEIGHT = $derived(compact ? 96 : 384)
+  const HEIGHT = $derived(compact ? 96 : 400)
   // The full chart keeps a tall top margin — the header band — so the compass
   // row and a near-zenith transit label sit above the plot without clipping at
   // the viewBox edge or reaching down into the plotted area.
@@ -119,6 +119,17 @@
     })),
   )
 
+  // The window runs local noon → noon, so its first and last ticks fall on two
+  // different calendar days; dating just those two anchors the axis without
+  // repeating the date under every hour.
+  const dateTicks = $derived.by(() => {
+    if (times.length === 0) return []
+    const ends = [times[0], times[times.length - 1]]
+    return ends
+      .filter((time, i) => i === 0 || time.getTime() !== ends[0].getTime())
+      .map((time) => ({ x: timeToX(time, model.window, PLOT), label: formatDate(time) }))
+  })
+
   const peak = $derived(
     model.peak && model.peak.altitude > 0
       ? {
@@ -172,6 +183,10 @@
 
   function formatTime(time: Date): string {
     return `${formatHour(time)}:${String(time.getMinutes()).padStart(2, '0')}`
+  }
+
+  function formatDate(time: Date): string {
+    return time.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })
   }
 </script>
 
@@ -294,6 +309,15 @@
         >
       {/each}
 
+      {#each dateTicks as tick, i (i)}
+        <text
+          class="label date-label"
+          x={tick.x}
+          y={baseline + 38}
+          text-anchor="middle">{tick.label}</text
+        >
+      {/each}
+
       {#each cardinals as cardinal, i (i)}
         <text
           class="label cardinal-label"
@@ -314,13 +338,6 @@
       {/if}
     {/if}
   </svg>
-
-  {#if !compact}
-    <figcaption>
-      Altitude of {model.object.name}, local noon to noon. Shading is twilight;
-      the filled band is your horizon along the object's azimuth.
-    </figcaption>
-  {/if}
 </figure>
 
 <style>
@@ -425,9 +442,8 @@
     font-size: 13px;
   }
 
-  figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text-dim);
+  .date-label {
+    font-size: 12px;
+    fill: var(--chart-label);
   }
 </style>
