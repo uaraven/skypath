@@ -23,6 +23,7 @@
     type Point,
     type SkyPhase,
   } from '../lib/charts'
+  import MoonGlyph from './MoonGlyph.svelte'
 
   interface Props {
     model: AltitudeChartModel
@@ -87,6 +88,22 @@
   )
 
   const trajectoryPath = $derived(polylinePath(model.points.map(toPoint)))
+
+  const moonPath = $derived(
+    model.moon ? polylinePath(model.moon.points.map(toPoint)) : null,
+  )
+
+  /** The phase disc sits at the Moon's high point, when it is above the horizon. */
+  const moonGlyph = $derived.by(() => {
+    const peak = model.moon?.peak
+    if (!model.moon || !peak || peak.altitude <= 0) return null
+    return {
+      x: timeToX(peak.time, model.window, PLOT),
+      y: altitudeToY(peak.altitude, PLOT),
+      illumination: model.moon.illumination,
+      waxing: model.moon.waxing,
+    }
+  })
 
   const horizonPoints = $derived(model.horizonTrack.map(toPoint))
   const horizonFill = $derived(areaPath(horizonPoints, baseline))
@@ -215,6 +232,9 @@
 
       <path class="horizon-fill" d={horizonFill} />
       <path class="horizon-line" d={horizonLine} />
+      {#if moonPath}
+        <path class="moon-track" d={moonPath} />
+      {/if}
       <path class="trajectory" d={trajectoryPath} />
 
       {#if peak}
@@ -232,6 +252,18 @@
         <path class="marker" d={marker.path} />
       {/if}
     </g>
+
+    <!-- Outside the clip so a high Moon's disc stays whole rather than shaved
+         by the plot's top edge. -->
+    {#if moonGlyph}
+      <MoonGlyph
+        cx={moonGlyph.x}
+        cy={moonGlyph.y}
+        r={10}
+        illumination={moonGlyph.illumination}
+        waxing={moonGlyph.waxing}
+      />
+    {/if}
 
     <!-- Axis frame drawn after the clipped content so it stays crisp on top. -->
     <rect
@@ -350,6 +382,15 @@
     fill: none;
     stroke: var(--chart-trajectory);
     stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  .moon-track {
+    fill: none;
+    stroke: var(--chart-moon);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 4;
     stroke-linejoin: round;
     stroke-linecap: round;
   }

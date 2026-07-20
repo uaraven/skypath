@@ -35,7 +35,9 @@ export {
   type AltitudeChartInput,
   type HorizonSample,
   type CardinalCrossing,
+  type MoonTrack,
 } from './model'
+export { moonPhasePath } from './moon-glyph'
 export {
   altitudeRadius,
   polarPoint,

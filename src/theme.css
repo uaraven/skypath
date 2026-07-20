@@ -62,4 +62,12 @@
   --chart-marker: rgb(255, 176, 92);
   --chart-grid: rgba(245, 245, 220, 0.18);
   --chart-label: rgba(245, 245, 220, 0.7);
+
+  /*
+   * The Moon: a muted straw curve, distinct from the blue target track without
+   * competing with it, and a pale disc for the phase glyph.
+   */
+  --chart-moon: rgba(230, 214, 160, 0.55);
+  --chart-moon-lit: rgb(233, 224, 190);
+  --chart-moon-dark: rgb(52, 60, 66);
 }

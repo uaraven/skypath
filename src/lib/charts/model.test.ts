@@ -81,6 +81,22 @@ describe('altitudeChartModel', () => {
     expect(Math.abs(model.peak!.azimuth - 180)).toBeLessThan(1)
   })
 
+  it('leaves the Moon out unless asked, and includes it when asked', () => {
+    const without = altitudeChartModel({ object: M13, location: KYIV, date: DATE })
+    expect(without.moon).toBeNull()
+
+    const withMoon = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+      includeMoon: true,
+    })
+    expect(withMoon.moon).not.toBeNull()
+    expect(withMoon.moon!.points).toHaveLength(withMoon.points.length)
+    expect(withMoon.moon!.illumination).toBeGreaterThanOrEqual(0)
+    expect(withMoon.moon!.illumination).toBeLessThanOrEqual(1)
+  })
+
   it('shades the same window the trajectory spans', () => {
     const model = altitudeChartModel({
       object: M13,

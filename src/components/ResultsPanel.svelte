@@ -24,7 +24,9 @@
   let { object, location, horizon, date, observatoryName }: Props = $props()
 
   const model = $derived(
-    object ? altitudeChartModel({ object, location, date, horizon }) : null,
+    object
+      ? altitudeChartModel({ object, location, date, horizon, includeMoon: true })
+      : null,
   )
 
   const allSkyModel = $derived(

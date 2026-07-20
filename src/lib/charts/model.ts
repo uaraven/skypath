@@ -7,6 +7,7 @@
 
 import { sampleTrajectory, peakAltitude } from '../astro/trajectory'
 import { nightWindow } from '../astro/time'
+import { computeMoonEvents, MOON } from '../astro/moon'
 import type { GeoLocation, SkyObject, TrajectoryPoint } from '../astro/types'
 import { FLAT_HORIZON, type Horizon } from '../horizon'
 import { shortestTurn } from './marker'
@@ -25,6 +26,17 @@ export interface CardinalCrossing {
   time: Date
   /** `N`, `NE`, … — the compass point the object's azimuth crosses. */
   label: string
+}
+
+/** The Moon's own track for the night, drawn alongside the target. */
+export interface MoonTrack {
+  points: readonly TrajectoryPoint[]
+  /** Highest sampled point, or null if the Moon never rises. */
+  peak: TrajectoryPoint | null
+  /** Illuminated fraction of the disc, 0–1, for the phase glyph. */
+  illumination: number
+  /** True while the Moon is waxing — which way the phase glyph is lit. */
+  waxing: boolean
 }
 
 export interface AltitudeChartModel {
@@ -48,6 +60,11 @@ export interface AltitudeChartModel {
    * time order — the top axis marks these so you can read which way to look.
    */
   cardinals: readonly CardinalCrossing[]
+  /**
+   * The Moon's track and phase, or null when it wasn't asked for — the search
+   * thumbnails leave it out, both to stay cheap and to stay uncluttered.
+   */
+  moon: MoonTrack | null
 }
 
 export interface AltitudeChartInput {
@@ -56,6 +73,8 @@ export interface AltitudeChartInput {
   date: Date
   horizon?: Horizon
   stepMinutes?: number
+  /** Include the Moon's track and phase. Off by default — see `MoonTrack`. */
+  includeMoon?: boolean
 }
 
 export function altitudeChartModel({
@@ -64,6 +83,7 @@ export function altitudeChartModel({
   date,
   horizon = FLAT_HORIZON,
   stepMinutes,
+  includeMoon = false,
 }: AltitudeChartInput): AltitudeChartModel {
   const window = nightWindow(date)
   const trajectory = sampleTrajectory(object, location, window, stepMinutes)
@@ -79,6 +99,24 @@ export function altitudeChartModel({
     bands: cachedBands(window, location),
     peak: peakAltitude(trajectory),
     cardinals: cardinalCrossings(trajectory.points),
+    moon: includeMoon ? moonTrack(location, window, stepMinutes) : null,
+  }
+}
+
+/** The Moon sampled over the same window, with its midnight phase. */
+function moonTrack(
+  location: GeoLocation,
+  window: TimeWindow,
+  stepMinutes?: number,
+): MoonTrack {
+  const trajectory = sampleTrajectory(MOON, location, window, stepMinutes)
+  const events = computeMoonEvents(window, location)
+  return {
+    points: trajectory.points,
+    peak: peakAltitude(trajectory),
+    illumination: events.illumination,
+    // Phase angle runs 0 (new) → 180 (full) → 360 (new); the first half waxes.
+    waxing: events.phaseAngle < 180,
   }
 }
 
