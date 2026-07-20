@@ -25,3 +25,7 @@ dist-ssr
 
 # Screenshots from the visual test project
 screenshots
+
+# Deployment script
+
+deploy.sh
