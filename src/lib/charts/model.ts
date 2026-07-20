@@ -24,7 +24,7 @@ export interface HorizonSample {
 /** A moment the object passes one of the eight compass points, for the top axis. */
 export interface CardinalCrossing {
   time: Date
-  /** `N`, `NE`, … — the compass point the object's azimuth crosses. */
+  /** `N`, `E`, `S` or `W` — the cardinal point the object's azimuth crosses. */
   label: string
 }
 
@@ -120,8 +120,10 @@ function moonTrack(
   }
 }
 
-/** The eight compass azimuths, north first, matching `compassPoint`. */
-const CARDINAL_AZIMUTHS = [0, 45, 90, 135, 180, 225, 270, 315]
+// The four cardinal azimuths, north first. Only N/E/S/W: the eight-point set
+// crowds SE/S/SW into an unreadable overlap when an object transits near the
+// zenith, where its azimuth sweeps through all three within a few pixels.
+const CARDINAL_AZIMUTHS = [0, 90, 180, 270]
 
 /**
  * Every moment the object's azimuth passes a compass point while it is up.

@@ -120,8 +120,9 @@ describe('cardinalCrossings', () => {
     altitude,
   })
 
-  it('marks each compass point the object sweeps through, in time order', () => {
+  it('marks each cardinal point the object sweeps through, in time order', () => {
     // A rising object swinging east → south-east → south while it is up.
+    // Only the four cardinals are marked, so SE is skipped.
     const crossings = cardinalCrossings([
       at(0, 80, 5),
       at(10, 100, 20),
@@ -129,7 +130,7 @@ describe('cardinalCrossings', () => {
       at(30, 190, 25),
     ])
 
-    expect(crossings.map((c) => c.label)).toEqual(['E', 'SE', 'S'])
+    expect(crossings.map((c) => c.label)).toEqual(['E', 'S'])
     for (let i = 1; i < crossings.length; i++) {
       expect(crossings[i].time.getTime()).toBeGreaterThan(
         crossings[i - 1].time.getTime(),
