@@ -15,6 +15,7 @@
   } from '../lib/observatory'
   import { untrack } from 'svelte'
   import ConfirmDialog from './ConfirmDialog.svelte'
+  import Icon from './Icon.svelte'
   import ObservatoryEditor from './ObservatoryEditor.svelte'
 
   interface Props {
@@ -106,17 +107,24 @@
   <footer>
     <button
       type="button"
+      class="icon-button"
       aria-label="Add observatory"
-      title="Add"
-      onclick={openNew}>+</button
+      title="Add observatory"
+      onclick={openNew}><Icon name="plus" /></button
     >
-    <button type="button" onclick={openEdit}>Edit</button>
     <button
       type="button"
-      class="danger"
+      class="icon-button"
+      aria-label="Edit observatory"
+      title="Edit observatory"
+      onclick={openEdit}><Icon name="pencil" /></button
+    >
+    <button
+      type="button"
+      class="icon-button danger"
       aria-label="Delete observatory"
-      title="Delete"
-      onclick={() => (dialog = 'delete')}>−</button
+      title="Delete observatory"
+      onclick={() => (dialog = 'delete')}><Icon name="trash" /></button
     >
   </footer>
 </section>
@@ -190,8 +198,11 @@
     gap: 0.5rem;
   }
 
-  footer button {
-    padding: 0.35rem 0.9rem;
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
   }
 
   .danger:hover {
