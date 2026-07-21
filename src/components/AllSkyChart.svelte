@@ -22,6 +22,7 @@
     type AllSkyChartModel,
     type PolarDial,
   } from '../lib/charts'
+  import { formatHour } from '../lib/format'
   import MoonGlyph from './MoonGlyph.svelte'
 
   interface Props {
@@ -65,7 +66,7 @@
     model.hourMarks.map((mark) => ({
       ...polarPoint(mark.azimuth, mark.altitude, DIAL),
       labelled: mark.labelled,
-      hour: String(mark.time.getHours()).padStart(2, '0'),
+      hour: formatHour(mark.time),
     })),
   )
 

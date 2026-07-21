@@ -15,7 +15,11 @@
   import type { SkyObject } from './lib/astro/types'
   import { objectById } from './lib/catalog'
   import { horizonFromText } from './lib/horizon'
-  import { observatories } from './lib/observatory'
+  import {
+    observatories,
+    observatoryLocation,
+    selectedObservatory,
+  } from './lib/observatory'
   import {
     formatIsoDate,
     session as sessionStore,
@@ -33,19 +37,11 @@
 
   let helpOpen = $state(false)
 
-  const selected = $derived(
-    $observatories.observatories.find(
-      (o) => o.id === $observatories.selectedId,
-    ) ?? $observatories.observatories[0],
-  )
+  const selected = $derived(selectedObservatory($observatories))
 
   const horizon = $derived(horizonFromText(selected.horizonText))
 
-  const location = $derived({
-    latitude: selected.latitude,
-    longitude: selected.longitude,
-    elevation: selected.elevation,
-  })
+  const location = $derived(observatoryLocation(selected))
 
   // The saved object and night, restored before first paint so the app never
   // renders "nothing chosen" and then flips. `untrack` because the store

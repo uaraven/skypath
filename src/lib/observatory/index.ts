@@ -7,6 +7,7 @@
 export {
   ObservatoryStore,
   observatories,
+  selectedObservatory,
   STORAGE_KEY,
   DEFAULT_OBSERVATORY,
   type ObservatoryState,

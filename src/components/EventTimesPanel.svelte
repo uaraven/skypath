@@ -10,6 +10,7 @@
   import type { NightEvents } from '../lib/astro/events'
   import type { TrajectoryPoint } from '../lib/astro/types'
   import { compassPoint } from '../lib/charts'
+  import { formatClock } from '../lib/format'
 
   interface Props {
     events: NightEvents
@@ -25,21 +26,6 @@
     point?: TrajectoryPoint | null
     /** Shown in place of a time when the event does not occur. */
     absent?: string
-  }
-
-  /**
-   * 24-hour regardless of locale: the charts' time axis is 24-hour, these
-   * times sit directly beneath it, and an almanac that says 08:06 PM next to
-   * an axis tick labelled 20 is asking the reader to convert.
-   */
-  const timeFormat = new Intl.DateTimeFormat(undefined, {
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23',
-  })
-
-  function formatTime(time: Date): string {
-    return timeFormat.format(time)
   }
 
   /**
@@ -169,7 +155,7 @@
             <dt>{row.label}</dt>
             <dd>
               {#if row.time}
-                <span class="time">{formatTime(row.time)}</span>
+                <span class="time">{formatClock(row.time)}</span>
                 {#if isNextDay(row.time)}<span
                     class="next-day"
                     title="the following day">+1</span
