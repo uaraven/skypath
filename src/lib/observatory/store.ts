@@ -57,12 +57,7 @@ export class ObservatoryStore {
 
   /** The observatory driving every calculation. Never undefined. */
   get selected(): Observatory {
-    const found = this.#state.observatories.find(
-      (o) => o.id === this.#state.selectedId,
-    )
-    // The invariant is maintained on every mutation; this is belt and braces
-    // for a hand-edited localStorage that slipped past validation.
-    return found ?? this.#state.observatories[0]
+    return selectedObservatory(this.#state)
   }
 
   byId(id: string): Observatory | undefined {
@@ -193,6 +188,20 @@ export class ObservatoryStore {
       // stays correct for this session, which is the best we can do offline.
     }
   }
+}
+
+/**
+ * The selected observatory for a given state — the one driving every
+ * calculation. Falls back to the first entry if `selectedId` dangles; the
+ * store's invariants prevent that, but a hand-edited localStorage might not.
+ * Exported so reactive readers (the Svelte app subscribes to the state) can
+ * derive it without duplicating the fallback.
+ */
+export function selectedObservatory(state: ObservatoryState): Observatory {
+  return (
+    state.observatories.find((o) => o.id === state.selectedId) ??
+    state.observatories[0]
+  )
 }
 
 /**

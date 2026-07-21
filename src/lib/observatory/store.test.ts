@@ -1,5 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { DEFAULT_OBSERVATORY, ObservatoryStore, STORAGE_KEY } from './store'
+import {
+  DEFAULT_OBSERVATORY,
+  ObservatoryStore,
+  selectedObservatory,
+  STORAGE_KEY,
+} from './store'
 import { MemoryStorage, type KeyValueStore } from '../storage'
 import {
   observatoryLocation,
@@ -26,6 +31,23 @@ let storage: MemoryStorage
 
 beforeEach(() => {
   storage = new MemoryStorage()
+})
+
+describe('selectedObservatory', () => {
+  const a: Observatory = { ...KYIV, id: 'a' }
+  const b: Observatory = { ...DARK_SITE, id: 'b' }
+
+  it('returns the entry matching selectedId', () => {
+    expect(
+      selectedObservatory({ observatories: [a, b], selectedId: 'b' }),
+    ).toBe(b)
+  })
+
+  it('falls back to the first entry when selectedId dangles', () => {
+    expect(
+      selectedObservatory({ observatories: [a, b], selectedId: 'gone' }),
+    ).toBe(a)
+  })
 })
 
 describe('first launch', () => {

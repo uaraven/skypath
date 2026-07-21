@@ -147,8 +147,8 @@ describe('EventTimesPanel', () => {
     const wall = new Horizon([{ azimuth: 0, altitude: 89 }])
     renderPanel({ horizon: wall })
 
-    expect(valueOf('Clears your horizon')).toContain('stays blocked')
-    expect(valueOf('Behind your horizon')).toContain('stays blocked')
+    expect(valueOf('Above horizon')).toContain('stays blocked')
+    expect(valueOf('Below horizon')).toContain('stays blocked')
     // The mathematical horizon is a different question and still has answers.
     expect(valueOf('Rises (0°)')).toMatch(/\d\d:\d\d/)
   })
@@ -156,8 +156,8 @@ describe('EventTimesPanel', () => {
   it('drops the observer-horizon rows when the horizon is flat', () => {
     renderPanel({ horizon: new Horizon() })
 
-    expect(screen.queryByText('Clears your horizon')).not.toBeInTheDocument()
-    expect(screen.queryByText('Behind your horizon')).not.toBeInTheDocument()
+    expect(screen.queryByText('Above horizon')).not.toBeInTheDocument()
+    expect(screen.queryByText('Below horizon')).not.toBeInTheDocument()
     expect(screen.getByText('Rises (0°)')).toBeInTheDocument()
   })
 
@@ -166,7 +166,7 @@ describe('EventTimesPanel', () => {
 
     // With the Carr horizon in place these are genuinely different times from
     // the 0° rise and set, which is the whole reason both are listed.
-    expect(valueOf('Clears your horizon')).not.toBe(valueOf('Rises (0°)'))
-    expect(valueOf('Behind your horizon')).not.toBe(valueOf('Sets (0°)'))
+    expect(valueOf('Above horizon')).not.toBe(valueOf('Rises (0°)'))
+    expect(valueOf('Below horizon')).not.toBe(valueOf('Sets (0°)'))
   })
 })

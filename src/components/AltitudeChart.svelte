@@ -24,6 +24,7 @@
     type Point,
     type SkyPhase,
   } from '../lib/charts'
+  import { formatClock, formatHour } from '../lib/format'
   import MoonGlyph from './MoonGlyph.svelte'
 
   interface Props {
@@ -176,10 +177,10 @@
   const summary = $derived(
     [
       peak
-        ? `${model.object.name}: peaks at ${peak.label} at ${formatTime(peak.time)}`
+        ? `${model.object.name}: peaks at ${peak.label} at ${formatClock(peak.time)}`
         : `${model.object.name}: stays below the horizon all night`,
       marker &&
-        `at ${formatTime(marker.time)} it is at ${Math.round(marker.altitude)}°`,
+        `at ${formatClock(marker.time)} it is at ${Math.round(marker.altitude)}°`,
     ]
       .filter(Boolean)
       .join('; '),
@@ -190,14 +191,6 @@
       x: timeToX(sample.time, model.window, PLOT),
       y: altitudeToY(sample.altitude, PLOT),
     }
-  }
-
-  function formatHour(time: Date): string {
-    return String(time.getHours()).padStart(2, '0')
-  }
-
-  function formatTime(time: Date): string {
-    return `${formatHour(time)}:${String(time.getMinutes()).padStart(2, '0')}`
   }
 
   function formatDate(time: Date): string {

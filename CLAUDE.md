@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state: phases 0–7.5 done — the app is functionally complete
 
-Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, and a Help dialog are all in. Remaining: phase 8 (Moon as a *target* — trajectory/rise/set/phase) and phase 9 (build & deploy to S3). See `.plan/state.md` for the authoritative per-phase table.
+Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, and a Help dialog are all in. Remaining: phase 8 (Moon as a _target_ — trajectory/rise/set/phase) and phase 9 (build & deploy to S3). See `.plan/state.md` for the authoritative per-phase table.
 
 Planning documents live in `.plan/`:
 
