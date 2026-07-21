@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **SkyPath** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is SkyPath.
 
-## Current state: phases 0–4 plus 4.5 done (scaffolding, astronomy core, catalogs, horizon & observatories, altitude chart, UI shell)
+## Current state: phases 0–7.5 done — the app is functionally complete
+
+Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, and a Help dialog are all in. Remaining: phase 8 (Moon as a *target* — trajectory/rise/set/phase) and phase 9 (build & deploy to S3). See `.plan/state.md` for the authoritative per-phase table.
 
 Planning documents live in `.plan/`:
 
@@ -24,7 +26,7 @@ Planning documents live in `.plan/`:
   - Three projects: `test:unit` (Node, `src/lib/**`), `test:components` (jsdom + Testing Library, `src/components/**`) and `test:visual` (real Chromium via Playwright, `src/visual/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
   - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face. The Playwright instance also pins `context.timezoneId` — `env: { TZ }` only reaches the Node process, and since the charts are built from _local_ noon, the host timezone would otherwise draw a different night than the assertions compute.
 - `npm run format` — Prettier (no ESLint)
-- `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC
+- `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC (Messier/NGC/IC) and VizieR (Sharpless 2, LDN)
 
 ## Code layout
 
@@ -38,14 +40,16 @@ Planning documents live in `.plan/`:
   - Sharpless/LDN **do not cross-match** to NGC/IC: no shared designations exist in either source, so NGC 7000 and Sh2-117 are two entries, and neither VizieR catalog carries common names. See `data/README.md`.
 - `src/lib/horizon/` — NINA file parsing and `Horizon.altitudeAt(azimuth)`. The azimuth axis is circular: the segment between the last and first point wraps through north, and getting that wrong silently reports a clear horizon.
 - `src/lib/observatory/` — named location + horizon bundles in localStorage. Invariants: the list is never empty and one is always selected. The horizon is stored as **raw text**, parsed on the render path by the memoizing `horizonFromText`.
-- `src/lib/charts/` — chart geometry and data, no Svelte: `scales.ts` (projection into an SVG `PlotArea`), `sky-bands.ts` (twilight shading), `model.ts` (`altitudeChartModel` — everything a chart draws, computed once).
+  - `transfer.ts` moves observatories between machines as a tagged JSON file (`serializeObservatories` / `parseObservatoryImport`). `selectedId` is deliberately **not** exported — highlight is a property of the browser, not the collection — and the horizon travels as its raw NINA text, so a round trip is byte-for-byte.
+- `src/lib/charts/` — chart geometry and data, no Svelte. Altitude chart: `scales.ts` (projection into an SVG `PlotArea`), `sky-bands.ts` (twilight shading), `model.ts` (`altitudeChartModel` — everything a chart draws, computed once). All-sky/azimuthal chart: `polar.ts` (the **down-top** projection — the E/W handedness convention lives here) + `all-sky.ts` (its model). `marker.ts` is the shared time-slider marker both charts flag the current moment with; `moon-glyph.ts` the Moon phase glyph.
   - The **chart components live in `src/components/`**, not here, so Vitest's Node `unit` project doesn't collect them. Keep charts presentational: they render a model and do no astronomy of their own.
   - Twilight bands come from scanning the sun's altitude and bisecting phase changes, _not_ from assembling `computeSunEvents`' individually-nullable crossings. That's what makes polar day/night fall out for free.
   - `altitudeToY` clamps to 0–90° on purpose: a set object runs flat along the baseline rather than leaving a gap.
   - `model.ts` caches the twilight bands for the last (window, location). They don't depend on the object and they're the expensive part of a model, so the per-row charts in the search results all hit the cache.
 - `src/components/` — Svelte UI, laid out per `.plan/ui-mocks.md`: observatory list left, Search / Results tabview right.
   - `ObservatoryManager` is the **list only** — selection plus add/edit/delete. The form lives in `ObservatoryEditor`, opened as a modal, which never touches the store: it hands a validated `ObservatoryInput` to `onsave` or nothing at all. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
-  - Dialogs go through `Modal` / `ConfirmDialog`, not `<dialog>` and not `window.confirm`.
+  - Dialogs go through `Modal` / `ConfirmDialog`, not `<dialog>` and not `window.confirm`. `ObservatoryImportDialog` handles the export/import flow; `HelpDialog` holds the credits and catalog attribution (there is **no** attribution footer — it was removed).
+  - `AllSkyChart` renders the polar view, `EventTimesPanel` the rise/set/twilight/moon rows, and `TimeSlider` drives the marker shared by both charts on the Results tab.
   - The search results render **one `AltitudeChart` per row**. Any chart component must therefore give its SVG ids per-instance (`$props.id()`) — a hard-coded id makes every chart on the page clip to the first one's plot.
 
 ## Decided stack (do not re-litigate without the user)
