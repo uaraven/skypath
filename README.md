@@ -2,6 +2,8 @@
 
 A static single-page web app for planning a night of astronomical observation. Pick a target, a date and an observatory, and see where the object goes across the sky that night — against _your_ horizon, not an idealised flat one.
 
+![Main screen preview](images/preview.png)
+
 No backend, no accounts, no server-side state. Everything runs in the browser and everything you save stays in `localStorage`.
 
 ## Why
@@ -27,11 +29,11 @@ A time slider under the charts links them: both flag the same moment with a mark
 
 Non-events are answers too: _circumpolar — always up_, _never rises_, _stays blocked_, _polar day_. The app says which rather than printing a dash.
 
-**Targets** — about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalog by design: an object belongs to many catalogues and carries many names, so M 13 and NGC 6205 are one entry with two numbers, not two rows.
+**Targets** — about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
 
 **Observatories** — named bundles of an observer location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
 
-**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359. Upload a file or paste it. Interpolation wraps around 360° → 0°, so the segment through north is handled like any other. Parse problems are reported with line numbers instead of rows being silently dropped.
+**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it. Interpolation wraps around 360° → 0°, so the segment through north is handled like any other. Parse problems are reported with line numbers instead of rows being silently dropped.
 
 ## Running it
 
