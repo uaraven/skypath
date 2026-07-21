@@ -7,6 +7,7 @@
    * both tabs read them and the Search tab writes one of them.
    */
   import { untrack } from 'svelte'
+  import skypathIcon from '../images/skypath.svg'
   import HelpDialog from './components/HelpDialog.svelte'
   import Icon from './components/Icon.svelte'
   import ObjectSearch from './components/ObjectSearch.svelte'
@@ -25,6 +26,8 @@
     session as sessionStore,
     SessionStore,
   } from './lib/session'
+
+  const version = __APP_VERSION__
 
   type Tab = 'search' | 'results'
 
@@ -118,9 +121,14 @@
 
 <div class="app">
   <header class="masthead">
-    <div>
-      <h1>SkyPath</h1>
-      <p class="tagline">Plan what to observe, and when.</p>
+    <div class="title">
+      <img class="logo" src={skypathIcon} alt="" width="56" height="56" />
+      <div>
+        <h1>SkyPath</h1>
+        <p class="tagline">
+          Know what's up tonight — and when it clears your horizon
+        </p>
+      </div>
     </div>
     <button type="button" class="help-button" onclick={() => (helpOpen = true)}>
       <Icon name="help" size={16} />
@@ -184,6 +192,13 @@
     </section>
   </main>
 
+  <footer class="colophon">
+    <p>
+      SkyPath v{version}.
+      <a href="https://voronin.cc/astro">https://voronin.cc/astro</a>
+    </p>
+  </footer>
+
   {#if helpOpen}
     <HelpDialog onclose={() => (helpOpen = false)} />
   {/if}
@@ -204,6 +219,19 @@
     margin-bottom: 1.5rem;
   }
 
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .logo {
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+  }
+
   .help-button {
     display: inline-flex;
     align-items: center;
@@ -212,9 +240,19 @@
   }
 
   .tagline {
+    color: var(--text-faint);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .colophon {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
     color: var(--text-dim);
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    text-align: center;
   }
 
   /* The mock's vertical split: a fixed-width site list, charts taking the rest. */

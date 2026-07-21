@@ -226,16 +226,16 @@ and the things only visible once all the content is real.
 - Moon trajectory on both charts (distinct style), moonrise/moonset in events panel, moon phase (illumination % + name/icon).
 - **Done when:** moon data matches reference sources.
 
-### Phase 9 — Build, deploy & polish
-- `deploy.sh`: `npm run build && aws s3 sync dist/ s3://<bucket>[/skypath] --delete` (model on the main site's `deploy.sh`).
-- Resolve open question: subdomain (skypath.voronin.cc) vs path (voronin.cc/skypath) — `base: './'` keeps the build working for either, so the decision can wait until deploy time.
-- Optional: link/navbar integration with the main site.
-- README with usage + deploy instructions; final cross-browser check (Chrome/Firefox/Safari).
-- **Done when:** app fully functional when served from its S3 location under voronin.cc.
+### Phase 9 — Build, deploy & polish — **done**
+- Build ships as plain relative-path files from `dist/` (`base: './'`); synced to S3 behind CloudFront by a local, untracked deploy script.
+- Open question resolved: deployed to the **subdomain skypath.voronin.cc** (not the voronin.cc/skypath path).
+- Main-site integration done: a colophon footer links back to voronin.cc/astro.
+- README carries usage and running instructions.
+- **Done when:** app fully functional when served from its S3 location under voronin.cc. ✓
 
 ## Risks / open questions
 
-- **Deployment URL (open)**: subdomain skypath.voronin.cc vs path voronin.cc/skypath — undecided. Build with `base: './'` works for both; decide in Phase 9.
+- **Deployment URL (resolved)**: deployed to the subdomain **skypath.voronin.cc**. Build with `base: './'` stayed agnostic, so no config change was needed.
 - **Timezone handling**: display times in the browser's local timezone (assume the observer is at the browser's locale); note as limitation for remote-location planning.
 - **Horizon rendering on the altitude chart**: the horizon line depends on the object's azimuth at each time — worth confirming against NINA's own rendering.
 - **Messier catalog data source**: compile from public-domain data; verify a handful of entries against SIMBAD.
