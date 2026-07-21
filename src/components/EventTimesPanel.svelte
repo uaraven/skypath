@@ -138,11 +138,26 @@
     Math.round(events.moon.illumination * 100),
   )
 
-  const groups = $derived([
-    { title: events.target.object.name, rows: objectRows },
-    { title: 'Sun', rows: sunRows },
-    { title: 'Moon', rows: moonRows },
-  ])
+  /**
+   * When the Moon itself is the target, its rise/set already appear in the
+   * object group (and via the same `SearchRiseSet` the Moon rows would use), so
+   * a second "Moon" group would only duplicate them — and collide on the key.
+   * The phase row is folded into the object group instead.
+   */
+  const targetIsMoon = $derived(events.target.object.id === 'moon')
+
+  const groups = $derived(
+    targetIsMoon
+      ? [
+          { title: events.target.object.name, rows: objectRows, phase: true },
+          { title: 'Sun', rows: sunRows, phase: false },
+        ]
+      : [
+          { title: events.target.object.name, rows: objectRows, phase: false },
+          { title: 'Sun', rows: sunRows, phase: false },
+          { title: 'Moon', rows: moonRows, phase: true },
+        ],
+  )
 </script>
 
 <div class="times">
@@ -171,7 +186,7 @@
             </dd>
           </div>
         {/each}
-        {#if group.title === 'Moon'}
+        {#if group.phase}
           <div class="row">
             <dt>Phase</dt>
             <dd>

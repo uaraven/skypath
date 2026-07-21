@@ -8,7 +8,11 @@
 import { horizontalAt } from '../astro/ephemeris'
 import { computeMoonEvents, MOON } from '../astro/moon'
 import { nightWindow } from '../astro/time'
-import { peakAltitude, sampleTrajectory } from '../astro/trajectory'
+import {
+  peakAltitude,
+  sampleTrajectory,
+  type Trajectory,
+} from '../astro/trajectory'
 import type {
   GeoLocation,
   SkyObject,
@@ -109,17 +113,27 @@ export function allSkyChartModel({
     everClears: trajectory.points.some((point) =>
       horizon.isVisible(point.azimuth, point.altitude),
     ),
-    moon: includeMoon ? moonDial(location, window, stepMinutes) : null,
+    // The Moon as target supplies its own phase glyph from the primary track;
+    // otherwise it is an optional overlay. See the same branch in `model.ts`.
+    moon:
+      object.id === MOON.id
+        ? moonDial(location, window, trajectory)
+        : includeMoon
+          ? moonDial(
+              location,
+              window,
+              sampleTrajectory(MOON, location, window, stepMinutes),
+            )
+          : null,
   }
 }
 
-/** The Moon sampled over the window, split into its above-horizon arcs. */
+/** A `MoonDial` from an already-sampled Moon trajectory, split into arcs. */
 function moonDial(
   location: GeoLocation,
   window: TimeWindow,
-  stepMinutes?: number,
+  trajectory: Trajectory,
 ): MoonDial {
-  const trajectory = sampleTrajectory(MOON, location, window, stepMinutes)
   const events = computeMoonEvents(window, location)
   return {
     arcs: aboveHorizonArcs(trajectory.points),

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { GeoLocation, SkyObject } from '../astro/types'
-import { objectByDesignation } from '../catalog'
+import { MOON, objectByDesignation } from '../catalog'
 import { Horizon, horizonFromText } from '../horizon'
 import carrHorizon from '../horizon/fixtures/e.c.carr-horizon.txt?raw'
 import type { TrajectoryPoint } from '../astro/types'
@@ -99,6 +99,23 @@ describe('altitudeChartModel', () => {
     expect(withMoon.moon!.points).toHaveLength(withMoon.points.length)
     expect(withMoon.moon!.illumination).toBeGreaterThanOrEqual(0)
     expect(withMoon.moon!.illumination).toBeLessThanOrEqual(1)
+  })
+
+  it('exposes the Moon’s phase from its own track when it is the target', () => {
+    const model = altitudeChartModel({
+      object: MOON,
+      location: KYIV,
+      date: DATE,
+      // Even without an overlay requested, a Moon target carries its phase so
+      // the chart can draw the glyph — and it reuses the primary trajectory
+      // (same array reference) rather than sampling the Moon a second time.
+      includeMoon: false,
+    })
+
+    expect(model.moon).not.toBeNull()
+    expect(model.moon!.points).toBe(model.points)
+    expect(model.moon!.illumination).toBeGreaterThanOrEqual(0)
+    expect(model.moon!.illumination).toBeLessThanOrEqual(1)
   })
 
   it('shades the same window the trajectory spans', () => {
