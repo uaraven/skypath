@@ -166,9 +166,27 @@ describe('tabview keyboard navigation', () => {
   })
 })
 
-describe('credits', () => {
-  it('shows the OpenNGC attribution the licence requires', () => {
+describe('help dialog', () => {
+  it('opens from the Help button and shows the version', async () => {
+    const user = userEvent.setup()
     setup()
+
+    expect(
+      screen.queryByRole('dialog', { name: 'SkyPath' }),
+    ).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: /help/i }))
+
+    const dialog = screen.getByRole('dialog', { name: 'SkyPath' })
+    expect(dialog).toBeInTheDocument()
+    expect(dialog).toHaveTextContent(/Version/i)
+  })
+
+  it('shows the OpenNGC attribution the licence requires', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await user.click(screen.getByRole('button', { name: /help/i }))
 
     const link = screen.getByRole('link', { name: /openngc/i })
     expect(link).toHaveAttribute(

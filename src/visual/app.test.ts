@@ -70,7 +70,9 @@ describe('app shell rendering', () => {
   it('opens the observatory editor as a modal over the app', async () => {
     render(App)
 
-    await userEvent.click(screen.getByRole('button', { name: /edit observatory/i }))
+    await userEvent.click(
+      screen.getByRole('button', { name: /edit observatory/i }),
+    )
 
     const dialog = screen.getByRole('dialog')
     const box = dialog.getBoundingClientRect()
@@ -256,31 +258,28 @@ describe('app shell rendering', () => {
 
   /**
    * The OpenNGC attribution is a licence term, so "is it actually visible" is
-   * a real question — dimmed footer text is exactly the kind of thing that
-   * ends up at zero height or scrolled off with nobody noticing.
+   * a real question. It now lives in the Help dialog, so the check is that the
+   * dialog opens and the credit renders legibly inside it.
    */
-  it('shows the credits, legibly, at the foot of the page', async () => {
+  it('shows the credits, legibly, in the Help dialog', async () => {
+    const user = userEvent.setup()
     const { container } = render(App)
 
-    const credits = container.querySelector('.credits')! as HTMLElement
-    const box = credits.getBoundingClientRect()
-    const style = getComputedStyle(credits)
+    await user.click(screen.getByRole('button', { name: /help/i }))
+
+    const dialog = container.querySelector('[role="dialog"]')! as HTMLElement
+    const box = dialog.getBoundingClientRect()
+    const style = getComputedStyle(dialog)
 
     expect(box.height).toBeGreaterThan(10)
     expect(box.width).toBeGreaterThan(200)
     expect(style.visibility).toBe('visible')
-    // Dimmed, but not to the point of being invisible against the background.
-    expect(Number(style.opacity)).toBeGreaterThan(0.5)
     expect(parseFloat(style.fontSize)).toBeGreaterThanOrEqual(11)
 
-    // It sits below the workspace, not floating over it.
-    const workspace = container
-      .querySelector('.workspace')!
-      .getBoundingClientRect()
-    expect(box.top).toBeGreaterThanOrEqual(workspace.bottom - 1)
+    const openngc = screen.getByRole('link', { name: /openngc/i })
+    expect(openngc.getBoundingClientRect().height).toBeGreaterThan(5)
 
-    credits.scrollIntoView()
-    await screenshot('app-credits', credits)
+    await screenshot('app-help', dialog)
   })
 
   it('captures each view for eyeballing against voronin.cc and the mocks', async () => {
@@ -300,7 +299,9 @@ describe('app shell rendering', () => {
     await userEvent.click(screen.getByText('Andromeda Galaxy'))
     await screenshot('app-results', app)
 
-    await userEvent.click(screen.getByRole('button', { name: /edit observatory/i }))
+    await userEvent.click(
+      screen.getByRole('button', { name: /edit observatory/i }),
+    )
     // The dialog is fixed-position, so the page is the frame that contains it.
     await screenshot('app-observatory-editor', document.body)
   })

@@ -171,7 +171,11 @@ describe('altitude chart geometry', () => {
       ra: 22,
       dec: KYIV.latitude,
     }
-    const model = altitudeChartModel({ object: overhead, location: KYIV, date: DATE })
+    const model = altitudeChartModel({
+      object: overhead,
+      location: KYIV,
+      date: DATE,
+    })
     const { container } = render(AltitudeChart, { model })
     const svg = container.querySelector('svg')!
 
@@ -183,7 +187,11 @@ describe('altitude chart geometry', () => {
 
   it('scrubs to the clicked moment of the night', () => {
     let scrubbed: number | null = null
-    const model = altitudeChartModel({ object: M13, location: KYIV, date: DATE })
+    const model = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
     const { container } = render(AltitudeChart, {
       model,
       onScrub: (minutes: number) => (scrubbed = minutes),

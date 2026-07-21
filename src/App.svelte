@@ -7,7 +7,8 @@
    * both tabs read them and the Search tab writes one of them.
    */
   import { untrack } from 'svelte'
-  import Credits from './components/Credits.svelte'
+  import HelpDialog from './components/HelpDialog.svelte'
+  import Icon from './components/Icon.svelte'
   import ObjectSearch from './components/ObjectSearch.svelte'
   import ObservatoryManager from './components/ObservatoryManager.svelte'
   import ResultsPanel from './components/ResultsPanel.svelte'
@@ -29,6 +30,8 @@
   }
 
   let { session = sessionStore }: Props = $props()
+
+  let helpOpen = $state(false)
 
   const selected = $derived(
     $observatories.observatories.find(
@@ -119,8 +122,14 @@
 
 <div class="app">
   <header class="masthead">
-    <h1>SkyPath</h1>
-    <p class="tagline">Plan what to observe, and when.</p>
+    <div>
+      <h1>SkyPath</h1>
+      <p class="tagline">Plan what to observe, and when.</p>
+    </div>
+    <button type="button" class="help-button" onclick={() => (helpOpen = true)}>
+      <Icon name="help" size={16} />
+      Help
+    </button>
   </header>
 
   <main>
@@ -179,7 +188,9 @@
     </section>
   </main>
 
-  <Credits />
+  {#if helpOpen}
+    <HelpDialog onclose={() => (helpOpen = false)} />
+  {/if}
 </div>
 
 <style>
@@ -190,7 +201,18 @@
   }
 
   .masthead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 1.5rem;
+  }
+
+  .help-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: none;
   }
 
   .tagline {

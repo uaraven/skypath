@@ -106,7 +106,11 @@ describe('allSkyChartModel', () => {
   })
 
   it('leaves the Moon out unless asked, and includes it when asked', () => {
-    const without = allSkyChartModel({ object: M13, location: KYIV, date: DATE })
+    const without = allSkyChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
     expect(without.moon).toBeNull()
 
     const withMoon = allSkyChartModel({

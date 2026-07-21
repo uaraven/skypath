@@ -78,7 +78,7 @@
 
     if (!horizonIsFlat) {
       rows.push({
-        label: 'Clears your horizon',
+        label: 'Above horizon',
         time: target.clears?.time ?? null,
         point: target.clears,
         absent: target.everClears ? 'already clear' : 'stays blocked',
@@ -94,7 +94,7 @@
 
     if (!horizonIsFlat) {
       rows.push({
-        label: 'Behind your horizon',
+        label: 'Below horizon',
         time: target.hides?.time ?? null,
         point: target.hides,
         absent: target.everClears ? 'still clear' : 'stays blocked',
