@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { GeoLocation, SkyObject, TrajectoryPoint } from '../astro/types'
-import { objectByDesignation } from '../catalog'
+import { MOON, objectByDesignation } from '../catalog'
 import { Horizon, horizonFromText } from '../horizon'
 import carrHorizon from '../horizon/fixtures/e.c.carr-horizon.txt?raw'
 import { aboveHorizonArcs, allSkyChartModel } from './all-sky'
@@ -126,6 +126,22 @@ describe('allSkyChartModel', () => {
     for (const arc of withMoon.moon!.arcs) {
       for (const p of arc) expect(p.altitude).toBeGreaterThanOrEqual(0)
     }
+  })
+
+  it('exposes the Moon’s phase from its own arcs when it is the target', () => {
+    const model = allSkyChartModel({
+      object: MOON,
+      location: KYIV,
+      date: DATE,
+      // A Moon target carries its phase even with no overlay requested, and its
+      // dial arcs are exactly the object's own — no second sample.
+      includeMoon: false,
+    })
+
+    expect(model.moon).not.toBeNull()
+    expect(model.moon!.arcs).toEqual(model.arcs)
+    expect(model.moon!.illumination).toBeGreaterThanOrEqual(0)
+    expect(model.moon!.illumination).toBeLessThanOrEqual(1)
   })
 
   it('leaves no arcs for an object that never rises', () => {

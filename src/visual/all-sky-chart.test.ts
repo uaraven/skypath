@@ -11,7 +11,7 @@ import { render } from '@testing-library/svelte'
 import { describe, expect, it } from 'vitest'
 import AllSkyChart from '../components/AllSkyChart.svelte'
 import type { GeoLocation } from '../lib/astro/types'
-import { objectByDesignation } from '../lib/catalog'
+import { MOON, objectByDesignation } from '../lib/catalog'
 import { allSkyChartModel } from '../lib/charts'
 import { horizonFromText } from '../lib/horizon'
 import carrHorizon from '../lib/horizon/fixtures/e.c.carr-horizon.txt?raw'
@@ -158,6 +158,21 @@ describe('all-sky chart geometry', () => {
     const { container } = render(AllSkyChart, { model })
 
     expect(container.querySelector('.moon-track')).not.toBeNull()
+    if (model.moon!.peak && model.moon!.peak.altitude > 0) {
+      expect(container.querySelector('.moon-glyph')).not.toBeNull()
+    }
+  })
+
+  it('draws the phase glyph but no companion track when the Moon is the target', () => {
+    const model = allSkyChartModel({
+      object: MOON,
+      location: KYIV,
+      date: DATE,
+      horizon: horizonFromText(carrHorizon),
+    })
+    const { container } = render(AllSkyChart, { model })
+
+    expect(container.querySelector('.moon-track')).toBeNull()
     if (model.moon!.peak && model.moon!.peak.altitude > 0) {
       expect(container.querySelector('.moon-glyph')).not.toBeNull()
     }

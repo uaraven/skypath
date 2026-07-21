@@ -76,8 +76,12 @@
       : null,
   )
 
+  // When the Moon is the target its own arcs already draw it, so only the phase
+  // glyph is wanted — not a second, dimmed companion track over the top.
+  const targetIsMoon = $derived(model.object.id === 'moon')
+
   const moonArcs = $derived(
-    model.moon
+    model.moon && !targetIsMoon
       ? model.moon.arcs.map((arc) =>
           polylinePath(arc.map((p) => polarPoint(p.azimuth, p.altitude, DIAL))),
         )
@@ -201,7 +205,7 @@
         />
       {/each}
 
-      {#if peak}
+      {#if peak && !targetIsMoon}
         <circle class="peak" cx={peak.x} cy={peak.y} r={5} />
       {/if}
 

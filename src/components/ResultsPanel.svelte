@@ -23,8 +23,13 @@
 
   let { object, location, horizon, date, observatoryName }: Props = $props()
 
-  // The Moon is drawn on both charts; the checkbox under the slider toggles it.
+  // The Moon is drawn on both charts as an overlay; the checkbox under the
+  // slider toggles it. When the Moon itself is the target, the overlay would
+  // just double the primary track, so it is suppressed and the toggle hidden —
+  // the charts still draw the Moon's phase glyph on its own trajectory.
   let showMoon = $state(true)
+  const targetIsMoon = $derived(object?.id === 'moon')
+  const overlayMoon = $derived(showMoon && !targetIsMoon)
 
   const model = $derived(
     object
@@ -33,7 +38,7 @@
           location,
           date,
           horizon,
-          includeMoon: showMoon,
+          includeMoon: overlayMoon,
         })
       : null,
   )
@@ -45,7 +50,7 @@
           location,
           date,
           horizon,
-          includeMoon: showMoon,
+          includeMoon: overlayMoon,
         })
       : null,
   )
@@ -113,10 +118,12 @@
         time={markerTime}
         label="Time shown on the altitude chart"
       />
-      <label class="moon-toggle">
-        <input type="checkbox" bind:checked={showMoon} />
-        <span>Show the Moon</span>
-      </label>
+      {#if !targetIsMoon}
+        <label class="moon-toggle">
+          <input type="checkbox" bind:checked={showMoon} />
+          <span>Show the Moon</span>
+        </label>
+      {/if}
     </section>
 
     <section class="panel">
@@ -128,10 +135,12 @@
         time={markerTime}
         label="Time shown on the all-sky chart"
       />
-      <label class="moon-toggle">
-        <input type="checkbox" bind:checked={showMoon} />
-        <span>Show the Moon</span>
-      </label>
+      {#if !targetIsMoon}
+        <label class="moon-toggle">
+          <input type="checkbox" bind:checked={showMoon} />
+          <span>Show the Moon</span>
+        </label>
+      {/if}
     </section>
 
     <section class="panel">

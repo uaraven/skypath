@@ -11,7 +11,7 @@ import { render } from '@testing-library/svelte'
 import { describe, expect, it } from 'vitest'
 import AltitudeChart from '../components/AltitudeChart.svelte'
 import type { GeoLocation, SkyObject } from '../lib/astro/types'
-import { objectByDesignation } from '../lib/catalog'
+import { MOON, objectByDesignation } from '../lib/catalog'
 import { altitudeChartModel } from '../lib/charts'
 import { horizonFromText } from '../lib/horizon'
 import { windowFraction } from '../lib/astro/time'
@@ -228,6 +228,28 @@ describe('altitude chart geometry', () => {
     if (model.moon!.peak && model.moon!.peak.altitude > 0) {
       expect(container.querySelector('.moon-glyph')).not.toBeNull()
     }
+  })
+
+  it('draws the phase glyph but no companion track when the Moon is the target', async () => {
+    const model = altitudeChartModel({
+      object: MOON,
+      location: KYIV,
+      date: DATE,
+    })
+    const { container } = render(AltitudeChart, { model })
+
+    // The Moon's own trajectory shows it — no dimmed overlay on top — but the
+    // phase glyph still marks its high point.
+    expect(container.querySelector('.moon-track')).toBeNull()
+    if (model.moon!.peak && model.moon!.peak.altitude > 0) {
+      expect(container.querySelector('.moon-glyph')).not.toBeNull()
+    }
+
+    await document.fonts.ready
+    await screenshot(
+      'altitude-chart-moon-target',
+      container.querySelector('.chart')!,
+    )
   })
 
   it('captures the chart for comparison against altitude.png', async () => {

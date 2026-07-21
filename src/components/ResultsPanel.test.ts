@@ -8,7 +8,7 @@ import { fireEvent, render, screen } from '@testing-library/svelte'
 import { describe, expect, it } from 'vitest'
 import ResultsPanel from './ResultsPanel.svelte'
 import type { GeoLocation } from '../lib/astro/types'
-import { objectByDesignation } from '../lib/catalog'
+import { MOON, objectByDesignation } from '../lib/catalog'
 import { FLAT_HORIZON } from '../lib/horizon'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
@@ -81,6 +81,21 @@ describe('ResultsPanel', () => {
     await fireEvent.input(sliders()[0], { target: { value: '1080' } })
 
     expect(markerX(container)).toBeGreaterThan(before)
+  })
+
+  it('offers the Moon overlay for an ordinary target', () => {
+    setup()
+
+    expect(screen.getAllByText('Show the Moon')).toHaveLength(2)
+  })
+
+  it('hides the Moon overlay toggle when the Moon itself is the target', () => {
+    const { container } = setup({ object: MOON })
+
+    // No overlay to toggle — the Moon's own track already shows it.
+    expect(screen.queryByText('Show the Moon')).not.toBeInTheDocument()
+    // And no dimmed companion track is drawn on top of the primary trajectory.
+    expect(container.querySelector('.moon-track')).toBeNull()
   })
 
   it('keeps the chosen time of night when the date changes', async () => {

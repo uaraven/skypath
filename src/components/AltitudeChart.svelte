@@ -99,8 +99,14 @@
 
   const trajectoryPath = $derived(polylinePath(model.points.map(toPoint)))
 
+  // When the Moon is the target its own trajectory already draws it, so only the
+  // phase glyph is wanted — not a second, dimmed companion track over the top.
+  const targetIsMoon = $derived(model.object.id === 'moon')
+
   const moonPath = $derived(
-    model.moon ? polylinePath(model.moon.points.map(toPoint)) : null,
+    model.moon && !targetIsMoon
+      ? polylinePath(model.moon.points.map(toPoint))
+      : null,
   )
 
   /** The phase disc sits at the Moon's high point, when it is above the horizon. */
@@ -301,7 +307,7 @@
       {/if}
       <path class="trajectory" d={trajectoryPath} />
 
-      {#if peak}
+      {#if peak && !targetIsMoon}
         <circle class="peak" cx={peak.x} cy={peak.y} r={compact ? 3 : 5} />
       {/if}
 

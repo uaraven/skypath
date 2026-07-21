@@ -35,9 +35,11 @@ export function moonPhasePath(
 
   // The bright limb: the right semicircle when waxing, the left when waning.
   const limbSweep = waxing ? 1 : 0
-  // The terminator returns to the top; its sweep flips once the face is more
-  // than half lit, so the ellipse bulges across the centre instead of short of it.
-  const termSweep = rx >= 0 ? limbSweep : 1 - limbSweep
+  // The terminator returns to the top on the ellipse half that keeps the lit
+  // side lit: while crescent (rx > 0) it hugs the bright limb, so the lune stays
+  // a thin sliver; past half (rx < 0) it flips across the centre, so the lit
+  // region bulges into a gibbous face instead of collapsing to its complement.
+  const termSweep = rx >= 0 ? 1 - limbSweep : limbSweep
 
   return [
     `M${top}`,

@@ -5,7 +5,11 @@
  * no astronomy of its own, which keeps the interesting parts testable in Node.
  */
 
-import { sampleTrajectory, peakAltitude } from '../astro/trajectory'
+import {
+  sampleTrajectory,
+  peakAltitude,
+  type Trajectory,
+} from '../astro/trajectory'
 import { nightWindow } from '../astro/time'
 import { computeMoonEvents, MOON } from '../astro/moon'
 import type { GeoLocation, SkyObject, TrajectoryPoint } from '../astro/types'
@@ -99,17 +103,29 @@ export function altitudeChartModel({
     bands: cachedBands(window, location),
     peak: peakAltitude(trajectory),
     cardinals: cardinalCrossings(trajectory.points),
-    moon: includeMoon ? moonTrack(location, window, stepMinutes) : null,
+    // When the Moon is the target its own track already shows it, so the phase
+    // glyph is sourced from that trajectory rather than a redundant second
+    // sample — the component then skips the dimmed companion track. Otherwise
+    // the Moon is an optional overlay, off unless asked for.
+    moon:
+      object.id === MOON.id
+        ? moonTrack(location, window, trajectory)
+        : includeMoon
+          ? moonTrack(
+              location,
+              window,
+              sampleTrajectory(MOON, location, window, stepMinutes),
+            )
+          : null,
   }
 }
 
-/** The Moon sampled over the same window, with its midnight phase. */
+/** A `MoonTrack` from an already-sampled Moon trajectory, with its midnight phase. */
 function moonTrack(
   location: GeoLocation,
   window: TimeWindow,
-  stepMinutes?: number,
+  trajectory: Trajectory,
 ): MoonTrack {
-  const trajectory = sampleTrajectory(MOON, location, window, stepMinutes)
   const events = computeMoonEvents(window, location)
   return {
     points: trajectory.points,

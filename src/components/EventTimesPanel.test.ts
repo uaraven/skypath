@@ -10,7 +10,7 @@ import EventTimesPanel from './EventTimesPanel.svelte'
 import { nightEvents } from '../lib/astro/events'
 import type { GeoLocation, SkyObject } from '../lib/astro/types'
 import { Horizon, horizonFromText } from '../lib/horizon'
-import { objectByDesignation } from '../lib/catalog'
+import { MOON, objectByDesignation } from '../lib/catalog'
 import carrHorizon from '../lib/horizon/fixtures/e.c.carr-horizon.txt?raw'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
@@ -65,6 +65,19 @@ describe('EventTimesPanel', () => {
     expect(screen.getByRole('heading', { name: M13.name })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Sun' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Moon' })).toBeInTheDocument()
+  })
+
+  it('folds the phase into the object group and drops the duplicate Moon group when the Moon is the target', () => {
+    renderPanel({ object: MOON })
+
+    // Only one "Moon" heading — the object group — not a second, redundant one.
+    expect(screen.getAllByRole('heading', { name: 'Moon' })).toHaveLength(1)
+    // The phase row moves under it, and the object's own rise/set stand in for
+    // the moonrise/moonset that the separate group would have shown.
+    expect(valueOf('Phase')).toMatch(/Crescent|Gibbous|Quarter|Full|New/)
+    expect(screen.queryByText('Moonrise')).not.toBeInTheDocument()
+    expect(screen.queryByText('Moonset')).not.toBeInTheDocument()
+    expect(valueOf('Rises (0°)')).toMatch(/\d\d:\d\d/)
   })
 
   it('lists all eight sun events', () => {
