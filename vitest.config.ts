@@ -1,5 +1,6 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vitest/config'
+import pkg from './package.json' with { type: 'json' }
 
 /**
  * Three projects rather than one run. The astronomy and catalog tests are pure
@@ -13,6 +14,8 @@ import { defineConfig } from 'vitest/config'
  * As with the other two, project membership follows the directory.
  */
 export default defineConfig({
+  // `__APP_VERSION__` (read by the Help dialog) is injected per project below,
+  // mirroring vite.config.ts — a root-level `define` does not reach projects.
   test: {
     // The night window is built from local calendar time, so the timezone has
     // to be pinned for those assertions to mean anything.
@@ -28,6 +31,9 @@ export default defineConfig({
       },
       {
         plugins: [svelte()],
+        define: {
+          __APP_VERSION__: JSON.stringify(pkg.version),
+        },
         test: {
           name: 'components',
           environment: 'jsdom',
@@ -44,6 +50,9 @@ export default defineConfig({
       },
       {
         plugins: [svelte()],
+        define: {
+          __APP_VERSION__: JSON.stringify(pkg.version),
+        },
         optimizeDeps: {
           // Browser mode serves real modules through Vite, so the dependency
           // optimizer sees testing-library's internal `.svelte` wrapper —

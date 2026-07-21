@@ -5,7 +5,14 @@
    * hover/disabled states for free. Decorative — the button carries the label.
    */
   type IconName =
-    'plus' | 'pencil' | 'trash' | 'pin' | 'menu' | 'download' | 'upload'
+    | 'plus'
+    | 'pencil'
+    | 'trash'
+    | 'pin'
+    | 'menu'
+    | 'download'
+    | 'upload'
+    | 'help'
 
   interface Props {
     name: IconName
@@ -49,6 +56,10 @@
     <path d="M12 21V9" />
     <path d="m7 14 5-5 5 5" />
     <path d="M5 3h14" />
+  {:else if name === 'help'}
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2.5 2-2.5 3.5" />
+    <path d="M12 17h.01" />
   {/if}
 </svg>
 

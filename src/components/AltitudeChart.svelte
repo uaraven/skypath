@@ -201,7 +201,10 @@
   }
 
   function formatDate(time: Date): string {
-    return time.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })
+    return time.toLocaleDateString(undefined, {
+      day: 'numeric',
+      month: 'short',
+    })
   }
 
   /**

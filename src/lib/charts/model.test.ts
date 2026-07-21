@@ -82,7 +82,11 @@ describe('altitudeChartModel', () => {
   })
 
   it('leaves the Moon out unless asked, and includes it when asked', () => {
-    const without = altitudeChartModel({ object: M13, location: KYIV, date: DATE })
+    const without = altitudeChartModel({
+      object: M13,
+      location: KYIV,
+      date: DATE,
+    })
     expect(without.moon).toBeNull()
 
     const withMoon = altitudeChartModel({
@@ -139,19 +143,13 @@ describe('cardinalCrossings', () => {
   })
 
   it('takes the short way round north rather than lapping the sky', () => {
-    const crossings = cardinalCrossings([
-      at(0, 350, 10),
-      at(10, 10, 12),
-    ])
+    const crossings = cardinalCrossings([at(0, 350, 10), at(10, 10, 12)])
 
     expect(crossings.map((c) => c.label)).toEqual(['N'])
   })
 
   it('ignores crossings that happen below the horizon', () => {
-    const crossings = cardinalCrossings([
-      at(0, 80, -5),
-      at(10, 100, -2),
-    ])
+    const crossings = cardinalCrossings([at(0, 80, -5), at(10, 100, -2)])
 
     expect(crossings).toEqual([])
   })
