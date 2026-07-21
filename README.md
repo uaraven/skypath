@@ -1,6 +1,6 @@
 # SkyPath
 
-A static single-page web app for planning a night of astronomical observation. Pick a target, a date and an observatory, and see where the object goes across the sky that night — against _your_ horizon, not an idealised flat one.
+A static single-page web app for planning a night of astronomical observation. Pick a target, a date and a location, and see where the object goes across the sky that night taking _your_ horizon into account.
 
 ![Main screen preview](images/preview.png)
 
@@ -8,18 +8,20 @@ No backend, no accounts, no server-side state. Everything runs in the browser an
 
 ## Why
 
-Planning a session means answering a few concrete questions: is the object up tonight, when is it highest, and is it actually visible from where I stand — or is it behind the neighbour's roofline until 1 a.m.? Planetarium software answers the first two well and the third one rarely. SkyPath takes a measured horizon profile as a first-class input, so "above the horizon" means the horizon you actually have.
+I like planning a session in [Telescopius](https://telescopius.com), but it doesn't know what obstructs my view. In NINA, I can create a custom horizon and it will overlay it on the target trajectory when planning, but NINA is running on a separate computer, which is usually attached to a telescope and requires VNC or RDP to connect to it.
+
+SkyPath combines a (very much) simplified NINA search and a NINA horizon and displays it to you in your browser.
 
 ## What it does
 
-**Two charts of the night, both centred on local midnight** (the window runs roughly noon → noon):
+SkyPath draws **two charts of the night, both centred on local midnight** (the window runs roughly noon → noon):
 
 - **Altitude chart** — the sky unwrapped: object altitude against time, with day, twilight and night shaded behind it, and your horizon drawn as the obstruction along the object's own azimuth track.
-- **All-sky chart** — a circular down-top view. Rim is altitude 0°, centre is the zenith, north at the top. The trajectory is cut at the rim into separate passes, with hour marks showing which way time runs, and the obstruction drawn as a wall around the edge.
+- **All-sky chart** — a circular down-top view. Rim is altitude 0°, centre is the zenith, north at the top. The obstruction is drawn as a wall around the edge and the target path as it moves across the sky.
 
-A time slider under the charts links them: both flag the same moment with a marker.
+A time slider under the charts links them: both flag the same moment with a marker. There is also a toggle to show the moon path and its phase.
 
-**Event times**, in a 24-hour clock, local timezone:
+Additionally, SkyPath calculates **event times**, in a 24-hour clock, local timezone:
 
 - object rises above 0° / above your horizon
 - object at maximum altitude (transit), with the altitude and direction
@@ -27,24 +29,11 @@ A time slider under the charts links them: both flag the same moment with a mark
 - sunset, sunrise, and civil / nautical / astronomical twilight and dawn
 - moonrise, moonset and the moon phase
 
-Non-events are answers too: _circumpolar — always up_, _never rises_, _stays blocked_, _polar day_. The app says which rather than printing a dash.
+SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
 
-**Targets** — about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
+**Observatories** — named combination of a location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
 
-**Observatories** — named bundles of an observer location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
-
-**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it. Interpolation wraps around 360° → 0°, so the segment through north is handled like any other. Parse problems are reported with line numbers instead of rows being silently dropped.
-
-## Running it
-
-```sh
-npm install
-npm run dev        # Vite dev server
-npm run build      # static files into dist/
-npm run preview
-```
-
-The build uses `base: './'` and emits plain files — it works from a subdomain or from a path prefix, and deploys by copying `dist/` to any static host.
+**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it. 
 
 ### Development
 
