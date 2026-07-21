@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **SkyPath** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is SkyPath.
 
-## Current state: phases 0–8 done — the app is functionally complete
+## Current state: all phases (0–9) done — the app is complete and deployed
 
-Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, a Help dialog, and the Moon (both as an optional overlay and as a selectable target — trajectory/rise/set/phase) are all in. Remaining: phase 9 (build & deploy to S3). See `.plan/state.md` for the authoritative per-phase table.
+Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, a Help dialog, and the Moon (both as an optional overlay and as a selectable target — trajectory/rise/set/phase) are all in. The app is built and deployed to **skypath.voronin.cc** (subdomain, decided in phase 9). See `.plan/state.md` for the authoritative per-phase table.
 
 The Moon is drawn two ways and they must not collide: as a **companion overlay** on both charts (the "Show the Moon" toggle → `includeMoon`, a dashed `.moon-track` + phase glyph), and as the **selected target** itself. When `object.id === MOON.id` the chart models fill the same `moon` field from the _primary_ trajectory (glyph only, no second sample), the components skip the redundant dimmed track/peak marker, and `ResultsPanel`/`EventTimesPanel` suppress the now-duplicate overlay toggle and standalone "Moon" times group.
 

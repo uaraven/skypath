@@ -74,7 +74,6 @@ Messier, NGC and IC are generated from [OpenNGC](https://github.com/mattiaverga/
 ## Known limitations
 
 - Times display in the browser's local timezone.
-- The Moon as a _target_ is not finished (its trajectory is drawn from the body centre, while the moonrise row correctly uses the upper limb — the two read a couple of minutes apart).
 
 ## Licence
 

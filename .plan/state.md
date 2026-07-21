@@ -17,7 +17,7 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
 | 7 | App assembly & UX (persistence, responsive/styling polish, credits) | done | 48 more tests (377 total). Session persistence, phone layout, tab/modal keyboard, credits — see log |
 | 7.5 | Time slider on the Results tab (linked, both charts indicate the time) | done | User request after Phase 7. 22 more tests (399 total) — see log |
 | 8 | Extended: Moon (trajectory, rise/set, phase) | done | Most landed incidentally in Phases 5–7.5 (Moon overlay + searchable target); this phase integrated the Moon-*as-target* case. 7 more tests — see log |
-| 9 | Build, deploy to S3 & polish | not started | Open: subdomain vs voronin.cc/skypath path |
+| 9 | Build, deploy to S3 & polish | done | Deployed to the **skypath.voronin.cc** subdomain; footer links back to voronin.cc/astro — see log |
 
 ## Log
 
@@ -142,3 +142,4 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
   - **`ResultsPanel` suppresses the overlay and hides the "Show the Moon" toggle when the Moon is the target** (`showMoon && !targetIsMoon`) — overlaying the Moon on the Moon is meaningless.
   - **`EventTimesPanel` folds the phase row into the object group and drops the standalone "Moon" group when the Moon is the target.** Two groups titled "Moon" would collide on the `{#each}` key and duplicate rise/set; the object group's `Rises (0°)`/`Sets (0°)` already come from the same `SearchRiseSet` (upper-limb) the Moon rows use, so nothing is lost. Groups now carry an explicit `phase` flag rather than string-matching the title.
   - Mutation-checked: sourcing the glyph from a fresh Moon sample instead of the primary track fails the `.toBe(model.points)` identity assertion; not gating the overlay draws a `.moon-track` over the Moon target (fails the ResultsPanel and both chart tests); not collapsing the times groups yields two "Moon" headings (fails the panel test). 7 new tests (454 total, all green); `npm run check` clean. New screenshot `altitude-chart-moon-target`.
+- 2026-07-21 — **Phase 9 (build & deploy) done; open URL question resolved.** The app is deployed to the **skypath.voronin.cc subdomain** (not the voronin.cc/skypath path) — `base: './'` kept the build agnostic, so no config change was needed. `npm run build` / `npm run check` green. A colophon footer was added to `App.svelte` linking back to **voronin.cc/astro** (the main site's astro section) — the plan's optional main-site integration. README "Known limitations" pruned of the stale Moon-as-target caveat (that case shipped in Phase 8). Deploy tooling is an untracked, gitignored local script by request (holds the CloudFront distribution id) and is deliberately undocumented.
