@@ -554,18 +554,6 @@
    "constellation": "Cyg"
   },
   {
-   "id": "M40",
-   "designations": [
-    "M40"
-   ],
-   "names": [],
-   "ra": 12.371139,
-   "dec": 58.084444,
-   "type": "**",
-   "magnitude": 8,
-   "constellation": "UMa"
-  },
-  {
    "id": "M41",
    "designations": [
     "M41",

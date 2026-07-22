@@ -101,18 +101,6 @@
    "constellation": "Scl"
   },
   {
-   "id": "NGC8",
-   "designations": [
-    "NGC8"
-   ],
-   "names": [],
-   "ra": 0.145917,
-   "dec": 23.838889,
-   "type": "**",
-   "magnitude": 15.32,
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC9",
    "designations": [
     "NGC9",
@@ -236,18 +224,6 @@
    "type": "G",
    "magnitude": 13.52,
    "constellation": "Cet"
-  },
-  {
-   "id": "NGC18",
-   "designations": [
-    "NGC18"
-   ],
-   "names": [],
-   "ra": 0.156417,
-   "dec": 27.732083,
-   "type": "**",
-   "magnitude": 14,
-   "constellation": "Peg"
   },
   {
    "id": "NGC19",
@@ -374,17 +350,6 @@
    "constellation": "Phe"
   },
   {
-   "id": "NGC30",
-   "designations": [
-    "NGC30"
-   ],
-   "names": [],
-   "ra": 0.180775,
-   "dec": 21.976972,
-   "type": "**",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC31",
    "designations": [
     "NGC31",
@@ -396,28 +361,6 @@
    "type": "G",
    "magnitude": 14.58,
    "constellation": "Phe"
-  },
-  {
-   "id": "NGC32",
-   "designations": [
-    "NGC32"
-   ],
-   "names": [],
-   "ra": 0.181553,
-   "dec": 18.796,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC33",
-   "designations": [
-    "NGC33"
-   ],
-   "names": [],
-   "ra": 0.1824,
-   "dec": 3.675917,
-   "type": "**",
-   "constellation": "Psc"
   },
   {
    "id": "NGC35",
@@ -543,17 +486,6 @@
    "constellation": "And"
   },
   {
-   "id": "NGC44",
-   "designations": [
-    "NGC44"
-   ],
-   "names": [],
-   "ra": 0.220389,
-   "dec": 31.28625,
-   "type": "**",
-   "constellation": "And"
-  },
-  {
    "id": "NGC45",
    "designations": [
     "NGC45",
@@ -565,18 +497,6 @@
    "type": "G",
    "magnitude": 10.44,
    "constellation": "Cet"
-  },
-  {
-   "id": "NGC46",
-   "designations": [
-    "NGC46"
-   ],
-   "names": [],
-   "ra": 0.236072,
-   "dec": 5.987694,
-   "type": "*",
-   "magnitude": 11.68,
-   "constellation": "Psc"
   },
   {
    "id": "NGC47",
@@ -1099,17 +1019,6 @@
    "constellation": "And"
   },
   {
-   "id": "NGC82",
-   "designations": [
-    "NGC82"
-   ],
-   "names": [],
-   "ra": 0.354875,
-   "dec": 22.460361,
-   "type": "*",
-   "constellation": "And"
-  },
-  {
    "id": "NGC83",
    "designations": [
     "NGC83",
@@ -1121,17 +1030,6 @@
    "dec": 22.433611,
    "type": "G",
    "magnitude": 12.55,
-   "constellation": "And"
-  },
-  {
-   "id": "NGC84",
-   "designations": [
-    "NGC84"
-   ],
-   "names": [],
-   "ra": 0.355903,
-   "dec": 22.619694,
-   "type": "*",
    "constellation": "And"
   },
   {
@@ -1226,18 +1124,6 @@
    "dec": 22.4,
    "type": "G",
    "magnitude": 13.77,
-   "constellation": "And"
-  },
-  {
-   "id": "NGC91",
-   "designations": [
-    "NGC91"
-   ],
-   "names": [],
-   "ra": 0.364367,
-   "dec": 22.368361,
-   "type": "*",
-   "magnitude": 15.2,
    "constellation": "And"
   },
   {
@@ -1636,28 +1522,6 @@
    "type": "GCl",
    "magnitude": 11.24,
    "constellation": "Tuc"
-  },
-  {
-   "id": "NGC122",
-   "designations": [
-    "NGC122"
-   ],
-   "names": [],
-   "ra": 0.460647,
-   "dec": -1.640472,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
-   "id": "NGC123",
-   "designations": [
-    "NGC123"
-   ],
-   "names": [],
-   "ra": 0.461108,
-   "dec": -1.627639,
-   "type": "*",
-   "constellation": "Cet"
   },
   {
    "id": "NGC124",
@@ -2069,17 +1933,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "NGC156",
-   "designations": [
-    "NGC156"
-   ],
-   "names": [],
-   "ra": 0.576617,
-   "dec": -8.340056,
-   "type": "**",
-   "constellation": "Cet"
-  },
-  {
    "id": "NGC157",
    "designations": [
     "NGC157",
@@ -2090,17 +1943,6 @@
    "dec": -8.396444,
    "type": "G",
    "magnitude": 13.11,
-   "constellation": "Cet"
-  },
-  {
-   "id": "NGC158",
-   "designations": [
-    "NGC158"
-   ],
-   "names": [],
-   "ra": 0.584889,
-   "dec": -8.345722,
-   "type": "**",
    "constellation": "Cet"
   },
   {
@@ -2142,17 +1984,6 @@
    "type": "G",
    "magnitude": 14.36,
    "constellation": "Cet"
-  },
-  {
-   "id": "NGC162",
-   "designations": [
-    "NGC162"
-   ],
-   "names": [],
-   "ra": 0.602572,
-   "dec": 23.962417,
-   "type": "*",
-   "constellation": "And"
   },
   {
    "id": "NGC163",
@@ -4079,17 +3910,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "NGC302",
-   "designations": [
-    "NGC302"
-   ],
-   "names": [],
-   "ra": 0.940364,
-   "dec": -10.663222,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
    "id": "NGC303",
    "designations": [
     "NGC303",
@@ -4154,17 +3974,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "NGC308",
-   "designations": [
-    "NGC308"
-   ],
-   "names": [],
-   "ra": 0.942839,
-   "dec": -1.783917,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
    "id": "NGC309",
    "designations": [
     "NGC309",
@@ -4175,17 +3984,6 @@
    "dec": -9.913861,
    "type": "G",
    "magnitude": 12.17,
-   "constellation": "Cet"
-  },
-  {
-   "id": "NGC310",
-   "designations": [
-    "NGC310"
-   ],
-   "names": [],
-   "ra": 0.946661,
-   "dec": -1.765778,
-   "type": "*",
    "constellation": "Cet"
   },
   {
@@ -4251,18 +4049,6 @@
    "dec": 30.352444,
    "type": "G",
    "magnitude": 11.6,
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC316",
-   "designations": [
-    "NGC316"
-   ],
-   "names": [],
-   "ra": 0.964569,
-   "dec": 30.354306,
-   "type": "*",
-   "magnitude": 16.8,
    "constellation": "Psc"
   },
   {
@@ -5264,17 +5050,6 @@
    "constellation": "And"
   },
   {
-   "id": "NGC390",
-   "designations": [
-    "NGC390"
-   ],
-   "names": [],
-   "ra": 1.131597,
-   "dec": 32.433111,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC391",
    "designations": [
     "NGC391",
@@ -5393,39 +5168,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "NGC400",
-   "designations": [
-    "NGC400"
-   ],
-   "names": [],
-   "ra": 1.150692,
-   "dec": 32.732417,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC401",
-   "designations": [
-    "NGC401"
-   ],
-   "names": [],
-   "ra": 1.152144,
-   "dec": 32.759333,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC402",
-   "designations": [
-    "NGC402"
-   ],
-   "names": [],
-   "ra": 1.153711,
-   "dec": 32.80625,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC403",
    "designations": [
     "NGC403",
@@ -5490,17 +5232,6 @@
    "dec": 33.1265,
    "type": "G",
    "magnitude": 14.3,
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC408",
-   "designations": [
-    "NGC408"
-   ],
-   "names": [],
-   "ra": 1.180858,
-   "dec": 33.151278,
-   "type": "*",
    "constellation": "Psc"
   },
   {
@@ -6228,17 +5959,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "NGC464",
-   "designations": [
-    "NGC464"
-   ],
-   "names": [],
-   "ra": 1.324078,
-   "dec": 34.955417,
-   "type": "**",
-   "constellation": "And"
-  },
-  {
    "id": "NGC465",
    "designations": [
     "NGC465"
@@ -6807,17 +6527,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "NGC506",
-   "designations": [
-    "NGC506"
-   ],
-   "names": [],
-   "ra": 1.393153,
-   "dec": 33.244667,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC507",
    "designations": [
     "NGC507",
@@ -6857,17 +6566,6 @@
    "dec": 9.433556,
    "type": "G",
    "magnitude": 14.61,
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC510",
-   "designations": [
-    "NGC510"
-   ],
-   "names": [],
-   "ra": 1.398767,
-   "dec": 33.496889,
-   "type": "**",
    "constellation": "Psc"
   },
   {
@@ -7456,17 +7154,6 @@
    "type": "G",
    "magnitude": 13.42,
    "constellation": "And"
-  },
-  {
-   "id": "NGC552",
-   "designations": [
-    "NGC552"
-   ],
-   "names": [],
-   "ra": 1.436153,
-   "dec": 33.405861,
-   "type": "*",
-   "constellation": "Psc"
   },
   {
    "id": "NGC553",
@@ -8301,17 +7988,6 @@
    "type": "G",
    "magnitude": 11.66,
    "constellation": "Cet"
-  },
-  {
-   "id": "NGC616",
-   "designations": [
-    "NGC616"
-   ],
-   "names": [],
-   "ra": 1.601167,
-   "dec": 33.770222,
-   "type": "**",
-   "constellation": "Tri"
   },
   {
    "id": "NGC617",
@@ -9817,17 +9493,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "NGC730",
-   "designations": [
-    "NGC730"
-   ],
-   "names": [],
-   "ra": 1.921667,
-   "dec": 5.636389,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC731",
    "designations": [
     "NGC731",
@@ -9854,18 +9519,6 @@
    "type": "G",
    "magnitude": 14.85,
    "constellation": "And"
-  },
-  {
-   "id": "NGC733",
-   "designations": [
-    "NGC733"
-   ],
-   "names": [],
-   "ra": 1.942747,
-   "dec": 33.055306,
-   "type": "*",
-   "magnitude": 15.8,
-   "constellation": "Tri"
   },
   {
    "id": "NGC734",
@@ -10199,18 +9852,6 @@
    "constellation": "And"
   },
   {
-   "id": "NGC760",
-   "designations": [
-    "NGC760"
-   ],
-   "names": [],
-   "ra": 1.963167,
-   "dec": 33.355389,
-   "type": "**",
-   "magnitude": 14.5,
-   "constellation": "Tri"
-  },
-  {
    "id": "NGC761",
    "designations": [
     "NGC761",
@@ -10235,17 +9876,6 @@
    "dec": -5.402861,
    "type": "G",
    "magnitude": 14,
-   "constellation": "Cet"
-  },
-  {
-   "id": "NGC764",
-   "designations": [
-    "NGC764"
-   ],
-   "names": [],
-   "ra": 1.950908,
-   "dec": -16.0625,
-   "type": "**",
    "constellation": "Cet"
   },
   {
@@ -10330,18 +9960,6 @@
    "type": "G",
    "magnitude": 13.49,
    "constellation": "Ari"
-  },
-  {
-   "id": "NGC771",
-   "designations": [
-    "NGC771"
-   ],
-   "names": [],
-   "ra": 2.057386,
-   "dec": 72.420889,
-   "type": "*",
-   "magnitude": 3.95,
-   "constellation": "Cas"
   },
   {
    "id": "NGC772",
@@ -10631,17 +10249,6 @@
    "type": "G",
    "magnitude": 14.53,
    "constellation": "Ari"
-  },
-  {
-   "id": "NGC793",
-   "designations": [
-    "NGC793"
-   ],
-   "names": [],
-   "ra": 2.048483,
-   "dec": 31.980722,
-   "type": "**",
-   "constellation": "Tri"
   },
   {
    "id": "NGC794",
@@ -11149,17 +10756,6 @@
    "type": "G",
    "magnitude": 15.22,
    "constellation": "Cet"
-  },
-  {
-   "id": "NGC832",
-   "designations": [
-    "NGC832"
-   ],
-   "names": [],
-   "ra": 2.183564,
-   "dec": 35.54125,
-   "type": "**",
-   "constellation": "Tri"
   },
   {
    "id": "NGC833",
@@ -12937,17 +12533,6 @@
    "constellation": "Tri"
   },
   {
-   "id": "NGC971",
-   "designations": [
-    "NGC971"
-   ],
-   "names": [],
-   "ra": 2.571125,
-   "dec": 32.987111,
-   "type": "*",
-   "constellation": "Tri"
-  },
-  {
    "id": "NGC972",
    "designations": [
     "NGC972",
@@ -13513,17 +13098,6 @@
    "dec": -11.50725,
    "type": "G",
    "magnitude": 15.02,
-   "constellation": "Cet"
-  },
-  {
-   "id": "NGC1014",
-   "designations": [
-    "NGC1014"
-   ],
-   "names": [],
-   "ra": 2.633569,
-   "dec": -9.573389,
-   "type": "**",
    "constellation": "Cet"
   },
   {
@@ -14114,17 +13688,6 @@
    "constellation": "Per"
   },
   {
-   "id": "NGC1059",
-   "designations": [
-    "NGC1059"
-   ],
-   "names": [],
-   "ra": 2.709889,
-   "dec": 17.99675,
-   "type": "**",
-   "constellation": "Ari"
-  },
-  {
    "id": "NGC1060",
    "designations": [
     "NGC1060",
@@ -14149,17 +13712,6 @@
    "dec": 32.466722,
    "type": "G",
    "magnitude": 15.13,
-   "constellation": "Tri"
-  },
-  {
-   "id": "NGC1062",
-   "designations": [
-    "NGC1062"
-   ],
-   "names": [],
-   "ra": 2.723339,
-   "dec": 32.462139,
-   "type": "*",
    "constellation": "Tri"
   },
   {
@@ -14871,17 +14423,6 @@
    "dec": 13.22375,
    "type": "G",
    "magnitude": 14.85,
-   "constellation": "Ari"
-  },
-  {
-   "id": "NGC1113",
-   "designations": [
-    "NGC1113"
-   ],
-   "names": [],
-   "ra": 2.834736,
-   "dec": 13.327417,
-   "type": "*",
    "constellation": "Ari"
   },
   {
@@ -15671,18 +15212,6 @@
    "constellation": "Per"
   },
   {
-   "id": "NGC1176",
-   "designations": [
-    "NGC1176"
-   ],
-   "names": [],
-   "ra": 3.076356,
-   "dec": 42.393444,
-   "type": "*",
-   "magnitude": 14.6,
-   "constellation": "Per"
-  },
-  {
    "id": "NGC1177",
    "designations": [
     "NGC1177",
@@ -15694,18 +15223,6 @@
    "dec": 42.362833,
    "type": "G",
    "magnitude": 15.68,
-   "constellation": "Per"
-  },
-  {
-   "id": "NGC1178",
-   "designations": [
-    "NGC1178"
-   ],
-   "names": [],
-   "ra": 3.07745,
-   "dec": 42.313472,
-   "type": "*",
-   "magnitude": 15.3,
    "constellation": "Per"
   },
   {
@@ -15760,18 +15277,6 @@
    "type": "G",
    "magnitude": 14.79,
    "constellation": "Eri"
-  },
-  {
-   "id": "NGC1183",
-   "designations": [
-    "NGC1183"
-   ],
-   "names": [],
-   "ra": 3.079489,
-   "dec": 42.368944,
-   "type": "*",
-   "magnitude": 15,
-   "constellation": "Per"
   },
   {
    "id": "NGC1184",
@@ -16474,17 +15979,6 @@
    "constellation": "Ari"
   },
   {
-   "id": "NGC1237",
-   "designations": [
-    "NGC1237"
-   ],
-   "names": [],
-   "ra": 3.169158,
-   "dec": -8.692333,
-   "type": "**",
-   "constellation": "Eri"
-  },
-  {
    "id": "NGC1238",
    "designations": [
     "NGC1238",
@@ -16511,17 +16005,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1240",
-   "designations": [
-    "NGC1240"
-   ],
-   "names": [],
-   "ra": 3.224078,
-   "dec": 30.507167,
-   "type": "**",
-   "constellation": "Ari"
-  },
-  {
    "id": "NGC1241",
    "designations": [
     "NGC1241",
@@ -16545,17 +16028,6 @@
    "dec": -8.902417,
    "type": "G",
    "magnitude": 13.71,
-   "constellation": "Eri"
-  },
-  {
-   "id": "NGC1243",
-   "designations": [
-    "NGC1243"
-   ],
-   "names": [],
-   "ra": 3.190406,
-   "dec": -8.945278,
-   "type": "**",
    "constellation": "Eri"
   },
   {
@@ -16650,17 +16122,6 @@
    "constellation": "Per"
   },
   {
-   "id": "NGC1251",
-   "designations": [
-    "NGC1251"
-   ],
-   "names": [],
-   "ra": 3.235864,
-   "dec": 1.456528,
-   "type": "**",
-   "constellation": "Cet"
-  },
-  {
    "id": "NGC1252",
    "designations": [
     "NGC1252"
@@ -16735,17 +16196,6 @@
    "type": "G",
    "magnitude": 13.55,
    "constellation": "Eri"
-  },
-  {
-   "id": "NGC1257",
-   "designations": [
-    "NGC1257"
-   ],
-   "names": [],
-   "ra": 3.283208,
-   "dec": 41.529056,
-   "type": "**",
-   "constellation": "Per"
   },
   {
    "id": "NGC1258",
@@ -16991,17 +16441,6 @@
    "dec": 41.511694,
    "type": "G",
    "magnitude": 12.24,
-   "constellation": "Per"
-  },
-  {
-   "id": "NGC1276",
-   "designations": [
-    "NGC1276"
-   ],
-   "names": [],
-   "ra": 3.330892,
-   "dec": 41.641972,
-   "type": "**",
    "constellation": "Per"
   },
   {
@@ -17443,17 +16882,6 @@
    "type": "G",
    "magnitude": 12.94,
    "constellation": "Hor"
-  },
-  {
-   "id": "NGC1312",
-   "designations": [
-    "NGC1312"
-   ],
-   "names": [],
-   "ra": 3.394925,
-   "dec": 1.184667,
-   "type": "**",
-   "constellation": "Tau"
   },
   {
    "id": "NGC1313",
@@ -18370,17 +17798,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1378",
-   "designations": [
-    "NGC1378"
-   ],
-   "names": [],
-   "ra": 3.5995,
-   "dec": -35.211167,
-   "type": "**",
-   "constellation": "For"
-  },
-  {
    "id": "NGC1379",
    "designations": [
     "NGC1379",
@@ -18773,17 +18190,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1408",
-   "designations": [
-    "NGC1408"
-   ],
-   "names": [],
-   "ra": 3.6548,
-   "dec": -35.500833,
-   "type": "**",
-   "constellation": "For"
-  },
-  {
    "id": "NGC1409",
    "designations": [
     "NGC1409",
@@ -19069,17 +18475,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1430",
-   "designations": [
-    "NGC1430"
-   ],
-   "names": [],
-   "ra": 3.723672,
-   "dec": -18.225083,
-   "type": "*",
-   "constellation": "Eri"
-  },
-  {
    "id": "NGC1431",
    "designations": [
     "NGC1431",
@@ -19227,17 +18622,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1443",
-   "designations": [
-    "NGC1443"
-   ],
-   "names": [],
-   "ra": 3.764733,
-   "dec": -4.052722,
-   "type": "*",
-   "constellation": "Eri"
-  },
-  {
    "id": "NGC1444",
    "designations": [
     "NGC1444"
@@ -19260,18 +18644,6 @@
    "dec": -9.855861,
    "type": "G",
    "magnitude": 15.02,
-   "constellation": "Eri"
-  },
-  {
-   "id": "NGC1446",
-   "designations": [
-    "NGC1446"
-   ],
-   "names": [],
-   "ra": 3.765961,
-   "dec": -4.112167,
-   "type": "*",
-   "magnitude": 13.5,
    "constellation": "Eri"
   },
   {
@@ -19366,29 +18738,6 @@
    "type": "G",
    "magnitude": 11.41,
    "constellation": "Eri"
-  },
-  {
-   "id": "NGC1454",
-   "designations": [
-    "NGC1454"
-   ],
-   "names": [],
-   "ra": 3.766483,
-   "dec": -20.652306,
-   "type": "*",
-   "constellation": "Eri"
-  },
-  {
-   "id": "NGC1456",
-   "designations": [
-    "NGC1456"
-   ],
-   "names": [],
-   "ra": 3.802292,
-   "dec": 22.558611,
-   "type": "**",
-   "magnitude": 10.96,
-   "constellation": "Tau"
   },
   {
    "id": "NGC1458",
@@ -19763,17 +19112,6 @@
    "dec": -42.368056,
    "type": "GPair",
    "constellation": "Eri"
-  },
-  {
-   "id": "NGC1488",
-   "designations": [
-    "NGC1488"
-   ],
-   "names": [],
-   "ra": 4.001203,
-   "dec": 18.567306,
-   "type": "**",
-   "constellation": "Tau"
   },
   {
    "id": "NGC1489",
@@ -20674,17 +20012,6 @@
    "type": "G",
    "magnitude": 9.31,
    "constellation": "Dor"
-  },
-  {
-   "id": "NGC1554",
-   "designations": [
-    "NGC1554"
-   ],
-   "names": [],
-   "ra": 4.362097,
-   "dec": 19.520583,
-   "type": "*",
-   "constellation": "Tau"
   },
   {
    "id": "NGC1555",
@@ -23025,17 +22352,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "NGC1742",
-   "designations": [
-    "NGC1742"
-   ],
-   "names": [],
-   "ra": 5.033147,
-   "dec": -3.294972,
-   "type": "*",
-   "constellation": "Ori"
-  },
-  {
    "id": "NGC1743",
    "designations": [
     "NGC1743"
@@ -25334,18 +24650,6 @@
    "constellation": "Aur"
   },
   {
-   "id": "NGC1932",
-   "designations": [
-    "NGC1932"
-   ],
-   "names": [],
-   "ra": 5.371456,
-   "dec": -66.154333,
-   "type": "*",
-   "magnitude": 13.8,
-   "constellation": "Dor"
-  },
-  {
    "id": "NGC1933",
    "designations": [
     "NGC1933"
@@ -26028,17 +25332,6 @@
    "constellation": "Men"
   },
   {
-   "id": "NGC1988",
-   "designations": [
-    "NGC1988"
-   ],
-   "names": [],
-   "ra": 5.624025,
-   "dec": 21.21825,
-   "type": "*",
-   "constellation": "Tau"
-  },
-  {
    "id": "NGC1989",
    "designations": [
     "NGC1989",
@@ -26050,20 +25343,6 @@
    "type": "G",
    "magnitude": 14.13,
    "constellation": "Col"
-  },
-  {
-   "id": "NGC1990",
-   "designations": [
-    "NGC1990"
-   ],
-   "names": [
-    "Alnilam"
-   ],
-   "ra": 5.603561,
-   "dec": -1.201917,
-   "type": "*",
-   "magnitude": 1.69,
-   "constellation": "Ori"
   },
   {
    "id": "NGC1992",
@@ -26101,17 +25380,6 @@
    "dec": -69.141833,
    "type": "OCl",
    "constellation": "Dor"
-  },
-  {
-   "id": "NGC1995",
-   "designations": [
-    "NGC1995"
-   ],
-   "names": [],
-   "ra": 5.550928,
-   "dec": -48.675139,
-   "type": "**",
-   "constellation": "Pic"
   },
   {
    "id": "NGC1996",
@@ -26693,18 +25961,6 @@
    "type": "*Ass",
    "magnitude": 10.59,
    "constellation": "Dor"
-  },
-  {
-   "id": "NGC2045",
-   "designations": [
-    "NGC2045"
-   ],
-   "names": [],
-   "ra": 5.750361,
-   "dec": 12.888361,
-   "type": "*",
-   "magnitude": 6.46,
-   "constellation": "Tau"
   },
   {
    "id": "NGC2046",
@@ -27896,18 +27152,6 @@
    "constellation": "Ori"
   },
   {
-   "id": "NGC2142",
-   "designations": [
-    "NGC2142"
-   ],
-   "names": [],
-   "ra": 6.030675,
-   "dec": -10.597944,
-   "type": "*",
-   "magnitude": 4.94,
-   "constellation": "Mon"
-  },
-  {
    "id": "NGC2143",
    "designations": [
     "NGC2143"
@@ -28210,18 +27454,6 @@
    "type": "OCl",
    "magnitude": 12.86,
    "constellation": "Dor"
-  },
-  {
-   "id": "NGC2167",
-   "designations": [
-    "NGC2167"
-   ],
-   "names": [],
-   "ra": 6.116267,
-   "dec": -6.202639,
-   "type": "*",
-   "magnitude": 6.58,
-   "constellation": "Mon"
   },
   {
    "id": "NGC2168",
@@ -28575,17 +27807,6 @@
    "dec": 12.806667,
    "type": "OCl",
    "magnitude": 8.5,
-   "constellation": "Ori"
-  },
-  {
-   "id": "NGC2195",
-   "designations": [
-    "NGC2195"
-   ],
-   "names": [],
-   "ra": 6.242725,
-   "dec": 17.639389,
-   "type": "**",
    "constellation": "Ori"
   },
   {
@@ -29634,17 +28855,6 @@
    "constellation": "Gem"
   },
   {
-   "id": "NGC2278",
-   "designations": [
-    "NGC2278"
-   ],
-   "names": [],
-   "ra": 6.804561,
-   "dec": 33.394306,
-   "type": "**",
-   "constellation": "Gem"
-  },
-  {
    "id": "NGC2279",
    "designations": [
     "NGC2279"
@@ -29715,17 +28925,6 @@
    "ra": 6.819322,
    "dec": 33.193806,
    "type": "Other",
-   "constellation": "Gem"
-  },
-  {
-   "id": "NGC2285",
-   "designations": [
-    "NGC2285"
-   ],
-   "names": [],
-   "ra": 6.826672,
-   "dec": 33.364667,
-   "type": "**",
    "constellation": "Gem"
   },
   {
@@ -30061,18 +29260,6 @@
    "ra": 6.97965,
    "dec": 10.294472,
    "type": "OCl",
-   "constellation": "Mon"
-  },
-  {
-   "id": "NGC2313",
-   "designations": [
-    "NGC2313"
-   ],
-   "names": [],
-   "ra": 6.967444,
-   "dec": -7.945028,
-   "type": "*",
-   "magnitude": 14.2,
    "constellation": "Mon"
   },
   {
@@ -30913,17 +30100,6 @@
    "constellation": "Mon"
   },
   {
-   "id": "NGC2378",
-   "designations": [
-    "NGC2378"
-   ],
-   "names": [],
-   "ra": 7.456722,
-   "dec": 33.831583,
-   "type": "**",
-   "constellation": "Gem"
-  },
-  {
    "id": "NGC2379",
    "designations": [
     "NGC2379",
@@ -31052,28 +30228,6 @@
    "dec": 33.860972,
    "type": "G",
    "magnitude": 12.92,
-   "constellation": "Gem"
-  },
-  {
-   "id": "NGC2390",
-   "designations": [
-    "NGC2390"
-   ],
-   "names": [],
-   "ra": 7.484519,
-   "dec": 33.836806,
-   "type": "*",
-   "constellation": "Gem"
-  },
-  {
-   "id": "NGC2391",
-   "designations": [
-    "NGC2391"
-   ],
-   "names": [],
-   "ra": 7.485414,
-   "dec": 33.825944,
-   "type": "*",
    "constellation": "Gem"
   },
   {
@@ -31354,17 +30508,6 @@
    "type": "G",
    "magnitude": 14.4,
    "constellation": "Gem"
-  },
-  {
-   "id": "NGC2412",
-   "designations": [
-    "NGC2412"
-   ],
-   "names": [],
-   "ra": 7.572633,
-   "dec": 8.547778,
-   "type": "*",
-   "constellation": "CMi"
   },
   {
    "id": "NGC2413",
@@ -31979,17 +31122,6 @@
    "constellation": "Cam"
   },
   {
-   "id": "NGC2461",
-   "designations": [
-    "NGC2461"
-   ],
-   "names": [],
-   "ra": 7.940628,
-   "dec": 56.673306,
-   "type": "*",
-   "constellation": "Lyn"
-  },
-  {
    "id": "NGC2462",
    "designations": [
     "NGC2462",
@@ -32024,17 +31156,6 @@
    "ra": 7.959081,
    "dec": 56.690556,
    "type": "Other",
-   "constellation": "Lyn"
-  },
-  {
-   "id": "NGC2465",
-   "designations": [
-    "NGC2465"
-   ],
-   "names": [],
-   "ra": 7.95725,
-   "dec": 56.822472,
-   "type": "*",
    "constellation": "Lyn"
   },
   {
@@ -32102,17 +31223,6 @@
    "type": "G",
    "magnitude": 12.69,
    "constellation": "CMi"
-  },
-  {
-   "id": "NGC2471",
-   "designations": [
-    "NGC2471"
-   ],
-   "names": [],
-   "ra": 7.975822,
-   "dec": 56.776167,
-   "type": "**",
-   "constellation": "Lyn"
   },
   {
    "id": "NGC2472",
@@ -32680,17 +31790,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "NGC2515",
-   "designations": [
-    "NGC2515"
-   ],
-   "names": [],
-   "ra": 8.055914,
-   "dec": 20.188,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "NGC2516",
    "designations": [
     "C96",
@@ -32728,17 +31827,6 @@
    "dec": 51.131611,
    "type": "G",
    "magnitude": 14.18,
-   "constellation": "Lyn"
-  },
-  {
-   "id": "NGC2519",
-   "designations": [
-    "NGC2519"
-   ],
-   "names": [],
-   "ra": 8.133008,
-   "dec": 51.128222,
-   "type": "*",
    "constellation": "Lyn"
   },
   {
@@ -33079,18 +32167,6 @@
    "type": "G",
    "magnitude": 11.7,
    "constellation": "Lyn"
-  },
-  {
-   "id": "NGC2542",
-   "designations": [
-    "NGC2542"
-   ],
-   "names": [],
-   "ra": 8.187886,
-   "dec": -12.927083,
-   "type": "**",
-   "magnitude": 4.72,
-   "constellation": "Pup"
   },
   {
    "id": "NGC2543",
@@ -33837,17 +32913,6 @@
    "dec": 17.284083,
    "type": "G",
    "magnitude": 13.48,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "NGC2597",
-   "designations": [
-    "NGC2597"
-   ],
-   "names": [],
-   "ra": 8.499281,
-   "dec": 21.501889,
-   "type": "**",
    "constellation": "Cnc"
   },
   {
@@ -34598,17 +33663,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "NGC2653",
-   "designations": [
-    "NGC2653"
-   ],
-   "names": [],
-   "ra": 8.915433,
-   "dec": 78.393556,
-   "type": "**",
-   "constellation": "Cam"
-  },
-  {
    "id": "NGC2654",
    "designations": [
     "NGC2654",
@@ -34961,17 +34015,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "NGC2680",
-   "designations": [
-    "NGC2680"
-   ],
-   "names": [],
-   "ra": 8.859303,
-   "dec": 30.865806,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "NGC2681",
    "designations": [
     "NGC2681",
@@ -35276,17 +34319,6 @@
    "constellation": "Hya"
   },
   {
-   "id": "NGC2700",
-   "designations": [
-    "NGC2700"
-   ],
-   "names": [],
-   "ra": 8.930717,
-   "dec": -3.116389,
-   "type": "*",
-   "constellation": "Hya"
-  },
-  {
    "id": "NGC2701",
    "designations": [
     "NGC2701",
@@ -35299,28 +34331,6 @@
    "type": "G",
    "magnitude": 12.36,
    "constellation": "UMa"
-  },
-  {
-   "id": "NGC2702",
-   "designations": [
-    "NGC2702"
-   ],
-   "names": [],
-   "ra": 8.931844,
-   "dec": -3.065333,
-   "type": "*",
-   "constellation": "Hya"
-  },
-  {
-   "id": "NGC2703",
-   "designations": [
-    "NGC2703"
-   ],
-   "names": [],
-   "ra": 8.929758,
-   "dec": -3.306917,
-   "type": "**",
-   "constellation": "Hya"
   },
   {
    "id": "NGC2704",
@@ -35338,17 +34348,6 @@
    "constellation": "Lyn"
   },
   {
-   "id": "NGC2705",
-   "designations": [
-    "NGC2705"
-   ],
-   "names": [],
-   "ra": 8.933347,
-   "dec": -3.014889,
-   "type": "*",
-   "constellation": "Hya"
-  },
-  {
    "id": "NGC2706",
    "designations": [
     "NGC2706",
@@ -35360,17 +34359,6 @@
    "dec": -2.563444,
    "type": "G",
    "magnitude": 13.71,
-   "constellation": "Hya"
-  },
-  {
-   "id": "NGC2707",
-   "designations": [
-    "NGC2707"
-   ],
-   "names": [],
-   "ra": 8.934911,
-   "dec": -3.066417,
-   "type": "*",
    "constellation": "Hya"
   },
   {
@@ -36768,17 +35756,6 @@
    "constellation": "UMa"
   },
   {
-   "id": "NGC2806",
-   "designations": [
-    "NGC2806"
-   ],
-   "names": [],
-   "ra": 9.282442,
-   "dec": 20.070611,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "NGC2807",
    "designations": [
     "NGC2807"
@@ -37217,17 +36194,6 @@
    "constellation": "Car"
   },
   {
-   "id": "NGC2837",
-   "designations": [
-    "NGC2837"
-   ],
-   "names": [],
-   "ra": 9.306492,
-   "dec": -16.481722,
-   "type": "**",
-   "constellation": "Hya"
-  },
-  {
    "id": "NGC2838",
    "designations": [
     "NGC2838",
@@ -37333,17 +36299,6 @@
    "type": "G",
    "magnitude": 11.97,
    "constellation": "Vel"
-  },
-  {
-   "id": "NGC2846",
-   "designations": [
-    "NGC2846"
-   ],
-   "names": [],
-   "ra": 9.327908,
-   "dec": -14.676278,
-   "type": "**",
-   "constellation": "Hya"
   },
   {
    "id": "NGC2847",
@@ -37650,17 +36605,6 @@
    "type": "G",
    "magnitude": 13.87,
    "constellation": "UMa"
-  },
-  {
-   "id": "NGC2871",
-   "designations": [
-    "NGC2871"
-   ],
-   "names": [],
-   "ra": 9.42765,
-   "dec": 11.444333,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "NGC2872",
@@ -38135,17 +37079,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "NGC2909",
-   "designations": [
-    "NGC2909"
-   ],
-   "names": [],
-   "ra": 9.616639,
-   "dec": 65.940556,
-   "type": "**",
-   "constellation": "UMa"
-  },
-  {
    "id": "NGC2910",
    "designations": [
     "NGC2910"
@@ -38169,17 +37102,6 @@
    "dec": 10.152444,
    "type": "G",
    "magnitude": 13.18,
-   "constellation": "Leo"
-  },
-  {
-   "id": "NGC2912",
-   "designations": [
-    "NGC2912"
-   ],
-   "names": [],
-   "ra": 9.5658,
-   "dec": 10.192222,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -39350,17 +38272,6 @@
    "constellation": "UMa"
   },
   {
-   "id": "NGC3000",
-   "designations": [
-    "NGC3000"
-   ],
-   "names": [],
-   "ra": 9.814244,
-   "dec": 44.130278,
-   "type": "**",
-   "constellation": "UMa"
-  },
-  {
    "id": "NGC3001",
    "designations": [
     "NGC3001",
@@ -39372,17 +38283,6 @@
    "type": "G",
    "magnitude": 11.57,
    "constellation": "Ant"
-  },
-  {
-   "id": "NGC3002",
-   "designations": [
-    "NGC3002"
-   ],
-   "names": [],
-   "ra": 9.81595,
-   "dec": 44.057222,
-   "type": "*",
-   "constellation": "UMa"
   },
   {
    "id": "NGC3003",
@@ -39397,17 +38297,6 @@
    "type": "G",
    "magnitude": 11.78,
    "constellation": "LMi"
-  },
-  {
-   "id": "NGC3004",
-   "designations": [
-    "NGC3004"
-   ],
-   "names": [],
-   "ra": 9.817347,
-   "dec": 44.111028,
-   "type": "*",
-   "constellation": "UMa"
   },
   {
    "id": "NGC3005",
@@ -40211,17 +39100,6 @@
    "type": "G",
    "magnitude": 15.17,
    "constellation": "Sex"
-  },
-  {
-   "id": "NGC3063",
-   "designations": [
-    "NGC3063"
-   ],
-   "names": [],
-   "ra": 10.028269,
-   "dec": 72.117833,
-   "type": "**",
-   "constellation": "UMa"
   },
   {
    "id": "NGC3064",
@@ -41079,17 +39957,6 @@
    "constellation": "Hya"
   },
   {
-   "id": "NGC3129",
-   "designations": [
-    "NGC3129"
-   ],
-   "names": [],
-   "ra": 10.138683,
-   "dec": 18.430639,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "NGC3130",
    "designations": [
     "NGC3130",
@@ -41356,18 +40223,6 @@
    "type": "G",
    "magnitude": 11.94,
    "constellation": "Dra"
-  },
-  {
-   "id": "NGC3148",
-   "designations": [
-    "NGC3148"
-   ],
-   "names": [],
-   "ra": 10.228842,
-   "dec": 50.496528,
-   "type": "*",
-   "magnitude": 6.63,
-   "constellation": "UMa"
   },
   {
    "id": "NGC3149",
@@ -41655,17 +40510,6 @@
    "type": "G",
    "magnitude": 10.89,
    "constellation": "Sex"
-  },
-  {
-   "id": "NGC3170",
-   "designations": [
-    "NGC3170"
-   ],
-   "names": [],
-   "ra": 10.270703,
-   "dec": 46.612361,
-   "type": "**",
-   "constellation": "UMa"
   },
   {
    "id": "NGC3171",
@@ -42151,17 +40995,6 @@
    "type": "G",
    "magnitude": 13.85,
    "constellation": "Leo"
-  },
-  {
-   "id": "NGC3210",
-   "designations": [
-    "NGC3210"
-   ],
-   "names": [],
-   "ra": 10.466444,
-   "dec": 79.832528,
-   "type": "**",
-   "constellation": "Dra"
   },
   {
    "id": "NGC3211",
@@ -43142,17 +41975,6 @@
    "constellation": "Ant"
   },
   {
-   "id": "NGC3272",
-   "designations": [
-    "NGC3272"
-   ],
-   "names": [],
-   "ra": 10.530042,
-   "dec": 28.468778,
-   "type": "**",
-   "constellation": "LMi"
-  },
-  {
    "id": "NGC3273",
    "designations": [
     "NGC3273",
@@ -43497,17 +42319,6 @@
    "type": "G",
    "magnitude": 14.44,
    "constellation": "Hya"
-  },
-  {
-   "id": "NGC3291",
-   "designations": [
-    "NGC3291"
-   ],
-   "names": [],
-   "ra": 10.6018,
-   "dec": 37.274417,
-   "type": "*",
-   "constellation": "LMi"
   },
   {
    "id": "NGC3292",
@@ -44014,17 +42825,6 @@
    "constellation": "LMi"
   },
   {
-   "id": "NGC3328",
-   "designations": [
-    "NGC3328"
-   ],
-   "names": [],
-   "ra": 10.665069,
-   "dec": 9.300111,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "NGC3329",
    "designations": [
     "NGC3329",
@@ -44160,18 +42960,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "NGC3339",
-   "designations": [
-    "NGC3339"
-   ],
-   "names": [],
-   "ra": 10.702794,
-   "dec": -0.36925,
-   "type": "*",
-   "magnitude": 15.4,
-   "constellation": "Sex"
-  },
-  {
    "id": "NGC3340",
    "designations": [
     "NGC3340",
@@ -44226,17 +43014,6 @@
    "type": "G",
    "magnitude": 9.98,
    "constellation": "LMi"
-  },
-  {
-   "id": "NGC3345",
-   "designations": [
-    "NGC3345"
-   ],
-   "names": [],
-   "ra": 10.725561,
-   "dec": 11.985278,
-   "type": "**",
-   "constellation": "Leo"
   },
   {
    "id": "NGC3346",
@@ -44756,17 +43533,6 @@
    "dec": 34.711417,
    "type": "G",
    "magnitude": 12.89,
-   "constellation": "LMi"
-  },
-  {
-   "id": "NGC3382",
-   "designations": [
-    "NGC3382"
-   ],
-   "names": [],
-   "ra": 10.806953,
-   "dec": 36.725444,
-   "type": "**",
    "constellation": "LMi"
   },
   {
@@ -46234,17 +45000,6 @@
    "constellation": "LMi"
   },
   {
-   "id": "NGC3494",
-   "designations": [
-    "NGC3494"
-   ],
-   "names": [],
-   "ra": 11.019697,
-   "dec": 3.774306,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "NGC3495",
    "designations": [
     "NGC3495",
@@ -46762,17 +45517,6 @@
    "dec": -10.257778,
    "type": "GPair",
    "constellation": "Crt"
-  },
-  {
-   "id": "NGC3538",
-   "designations": [
-    "NGC3538"
-   ],
-   "names": [],
-   "ra": 11.192872,
-   "dec": 75.569722,
-   "type": "**",
-   "constellation": "Dra"
   },
   {
    "id": "NGC3539",
@@ -47793,17 +46537,6 @@
    "dec": 23.397333,
    "type": "G",
    "magnitude": 13.89,
-   "constellation": "Leo"
-  },
-  {
-   "id": "NGC3616",
-   "designations": [
-    "NGC3616"
-   ],
-   "names": [],
-   "ra": 11.302464,
-   "dec": 14.765222,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -50255,29 +48988,6 @@
    "constellation": "Crt"
   },
   {
-   "id": "NGC3792",
-   "designations": [
-    "NGC3792"
-   ],
-   "names": [],
-   "ra": 11.660703,
-   "dec": 5.0995,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC3793",
-   "designations": [
-    "NGC3793"
-   ],
-   "names": [],
-   "ra": 11.667219,
-   "dec": 31.877722,
-   "type": "*",
-   "magnitude": 14.4,
-   "constellation": "UMa"
-  },
-  {
    "id": "NGC3794",
    "designations": [
     "NGC3794",
@@ -50332,18 +49042,6 @@
    "dec": 60.298917,
    "type": "G",
    "magnitude": 12.86,
-   "constellation": "UMa"
-  },
-  {
-   "id": "NGC3797",
-   "designations": [
-    "NGC3797"
-   ],
-   "names": [],
-   "ra": 11.670364,
-   "dec": 31.906556,
-   "type": "*",
-   "magnitude": 14.9,
    "constellation": "UMa"
   },
   {
@@ -50455,17 +49153,6 @@
    "dec": 17.796278,
    "type": "G",
    "magnitude": 13.62,
-   "constellation": "Leo"
-  },
-  {
-   "id": "NGC3807",
-   "designations": [
-    "NGC3807"
-   ],
-   "names": [],
-   "ra": 11.698522,
-   "dec": 17.818917,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -51348,17 +50035,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "NGC3874",
-   "designations": [
-    "NGC3874"
-   ],
-   "names": [],
-   "ra": 11.760486,
-   "dec": 8.573917,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC3875",
    "designations": [
     "NGC3875",
@@ -52142,17 +50818,6 @@
    "constellation": "UMa"
   },
   {
-   "id": "NGC3932",
-   "designations": [
-    "NGC3932"
-   ],
-   "names": [],
-   "ra": 11.869678,
-   "dec": 48.620389,
-   "type": "*",
-   "constellation": "UMa"
-  },
-  {
    "id": "NGC3933",
    "designations": [
     "NGC3933",
@@ -52342,17 +51007,6 @@
    "dec": 20.751722,
    "type": "G",
    "magnitude": 13.2,
-   "constellation": "Leo"
-  },
-  {
-   "id": "NGC3948",
-   "designations": [
-    "NGC3948"
-   ],
-   "names": [],
-   "ra": 11.893514,
-   "dec": 20.950778,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -53134,17 +51788,6 @@
    "dec": 28.1925,
    "type": "G",
    "magnitude": 12.02,
-   "constellation": "Leo"
-  },
-  {
-   "id": "NGC4009",
-   "designations": [
-    "NGC4009"
-   ],
-   "names": [],
-   "ra": 11.970847,
-   "dec": 25.18975,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -54547,17 +53190,6 @@
    "constellation": "Crv"
   },
   {
-   "id": "NGC4115",
-   "designations": [
-    "NGC4115"
-   ],
-   "names": [],
-   "ra": 12.119319,
-   "dec": 14.406556,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "NGC4116",
    "designations": [
     "NGC4116",
@@ -55087,17 +53719,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "NGC4160",
-   "designations": [
-    "NGC4160"
-   ],
-   "names": [],
-   "ra": 12.200483,
-   "dec": 43.735583,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "NGC4161",
    "designations": [
     "NGC4161",
@@ -55208,28 +53829,6 @@
    "dec": 29.179417,
    "type": "G",
    "magnitude": 12.2,
-   "constellation": "Com"
-  },
-  {
-   "id": "NGC4170",
-   "designations": [
-    "NGC4170"
-   ],
-   "names": [],
-   "ra": 12.203678,
-   "dec": 29.166806,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "NGC4171",
-   "designations": [
-    "NGC4171"
-   ],
-   "names": [],
-   "ra": 12.210664,
-   "dec": 29.2245,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -55759,18 +54358,6 @@
    "dec": 13.9015,
    "type": "G",
    "magnitude": 11.1,
-   "constellation": "Com"
-  },
-  {
-   "id": "NGC4209",
-   "designations": [
-    "NGC4209"
-   ],
-   "names": [],
-   "ra": 12.257172,
-   "dec": 28.468417,
-   "type": "*",
-   "magnitude": 13.6,
    "constellation": "Com"
   },
   {
@@ -57183,17 +55770,6 @@
    "constellation": "Com"
   },
   {
-   "id": "NGC4311",
-   "designations": [
-    "NGC4311"
-   ],
-   "names": [],
-   "ra": 12.374125,
-   "dec": 29.145944,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "NGC4312",
    "designations": [
     "NGC4312",
@@ -57234,17 +55810,6 @@
    "type": "G",
    "magnitude": 10.57,
    "constellation": "Com"
-  },
-  {
-   "id": "NGC4315",
-   "designations": [
-    "NGC4315"
-   ],
-   "names": [],
-   "ra": 12.379206,
-   "dec": 9.305389,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "NGC4316",
@@ -57329,18 +55894,6 @@
    "constellation": "Com"
   },
   {
-   "id": "NGC4322",
-   "designations": [
-    "NGC4322"
-   ],
-   "names": [],
-   "ra": 12.378303,
-   "dec": 15.903278,
-   "type": "*",
-   "magnitude": 13.4,
-   "constellation": "Com"
-  },
-  {
    "id": "NGC4323",
    "designations": [
     "NGC4323",
@@ -57394,18 +55947,6 @@
    "type": "G",
    "magnitude": 14.23,
    "constellation": "Vir"
-  },
-  {
-   "id": "NGC4327",
-   "designations": [
-    "NGC4327"
-   ],
-   "names": [],
-   "ra": 12.385419,
-   "dec": 15.7365,
-   "type": "*",
-   "magnitude": 16.1,
-   "constellation": "Com"
   },
   {
    "id": "NGC4328",
@@ -57642,17 +56183,6 @@
    "type": "G",
    "magnitude": 12.14,
    "constellation": "CVn"
-  },
-  {
-   "id": "NGC4347",
-   "designations": [
-    "NGC4347"
-   ],
-   "names": [],
-   "ra": 12.3979,
-   "dec": -3.240417,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "NGC4348",
@@ -57902,17 +56432,6 @@
    "dec": 7.353028,
    "type": "G",
    "magnitude": 14.9,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC4367",
-   "designations": [
-    "NGC4367"
-   ],
-   "names": [],
-   "ra": 12.409761,
-   "dec": 12.182306,
-   "type": "**",
    "constellation": "Vir"
   },
   {
@@ -58329,17 +56848,6 @@
    "constellation": "Com"
   },
   {
-   "id": "NGC4398",
-   "designations": [
-    "NGC4398"
-   ],
-   "names": [],
-   "ra": 12.435397,
-   "dec": 10.686083,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC4399",
    "designations": [
     "NGC4399"
@@ -58717,18 +57225,6 @@
    "type": "G",
    "magnitude": 11.95,
    "constellation": "Vir"
-  },
-  {
-   "id": "NGC4426",
-   "designations": [
-    "NGC4426",
-    "NGC4427"
-   ],
-   "names": [],
-   "ra": 12.452925,
-   "dec": 27.838194,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "NGC4428",
@@ -59852,17 +58348,6 @@
    "constellation": "Cen"
   },
   {
-   "id": "NGC4508",
-   "designations": [
-    "NGC4508"
-   ],
-   "names": [],
-   "ra": 12.538172,
-   "dec": 5.819972,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC4509",
    "designations": [
     "NGC4509",
@@ -60170,17 +58655,6 @@
    "constellation": "Com"
   },
   {
-   "id": "NGC4530",
-   "designations": [
-    "NGC4530"
-   ],
-   "names": [],
-   "ra": 12.563253,
-   "dec": 41.353472,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "NGC4531",
    "designations": [
     "NGC4531",
@@ -60482,17 +58956,6 @@
    "type": "G",
    "magnitude": 12.2,
    "constellation": "Cen"
-  },
-  {
-   "id": "NGC4554",
-   "designations": [
-    "NGC4554"
-   ],
-   "names": [],
-   "ra": 12.599867,
-   "dec": 11.265361,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "NGC4555",
@@ -60941,18 +59404,6 @@
    "dec": 1.47775,
    "type": "G",
    "magnitude": 12.38,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC4582",
-   "designations": [
-    "NGC4582"
-   ],
-   "names": [],
-   "ra": 12.636167,
-   "dec": 0.18275,
-   "type": "*",
-   "magnitude": 14.28,
    "constellation": "Vir"
   },
   {
@@ -63645,28 +62096,6 @@
    "constellation": "Cen"
   },
   {
-   "id": "NGC4768",
-   "designations": [
-    "NGC4768"
-   ],
-   "names": [],
-   "ra": 12.888125,
-   "dec": -9.531444,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC4769",
-   "designations": [
-    "NGC4769"
-   ],
-   "names": [],
-   "ra": 12.888356,
-   "dec": -9.536,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC4770",
    "designations": [
     "NGC4770",
@@ -64135,17 +62564,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC4805",
-   "designations": [
-    "NGC4805"
-   ],
-   "names": [],
-   "ra": 12.923397,
-   "dec": 27.981306,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "NGC4806",
    "designations": [
     "NGC4806",
@@ -64383,17 +62801,6 @@
    "type": "G",
    "magnitude": 15.97,
    "constellation": "Vir"
-  },
-  {
-   "id": "NGC4824",
-   "designations": [
-    "NGC4824"
-   ],
-   "names": [],
-   "ra": 12.943436,
-   "dec": 27.432639,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "NGC4825",
@@ -64708,18 +63115,6 @@
    "dec": -3.621139,
    "type": "G",
    "magnitude": 14.2,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC4844",
-   "designations": [
-    "NGC4844"
-   ],
-   "names": [],
-   "ra": 12.968961,
-   "dec": -13.079917,
-   "type": "*",
-   "magnitude": 14.14,
    "constellation": "Vir"
   },
   {
@@ -65180,17 +63575,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC4879",
-   "designations": [
-    "NGC4879"
-   ],
-   "names": [],
-   "ra": 13.007114,
-   "dec": -6.111222,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC4880",
    "designations": [
     "NGC4880",
@@ -65311,17 +63695,6 @@
    "dec": -4.604333,
    "type": "G",
    "magnitude": 13.84,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC4891",
-   "designations": [
-    "NGC4891"
-   ],
-   "names": [],
-   "ra": 13.013053,
-   "dec": -13.425944,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -67804,17 +66177,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC5067",
-   "designations": [
-    "NGC5067"
-   ],
-   "names": [],
-   "ra": 13.307711,
-   "dec": -10.145278,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5068",
    "designations": [
     "NGC5068",
@@ -68024,17 +66386,6 @@
    "type": "G",
    "magnitude": 12.6,
    "constellation": "Hya"
-  },
-  {
-   "id": "NGC5086",
-   "designations": [
-    "NGC5086"
-   ],
-   "names": [],
-   "ra": 13.349836,
-   "dec": -43.733528,
-   "type": "**",
-   "constellation": "Cen"
   },
   {
    "id": "NGC5087",
@@ -69028,17 +67379,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC5160",
-   "designations": [
-    "NGC5160"
-   ],
-   "names": [],
-   "ra": 13.472667,
-   "dec": 5.995889,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5161",
    "designations": [
     "NGC5161",
@@ -69215,17 +67555,6 @@
    "type": "G",
    "magnitude": 13.38,
    "constellation": "CVn"
-  },
-  {
-   "id": "NGC5175",
-   "designations": [
-    "NGC5175"
-   ],
-   "names": [],
-   "ra": 13.490631,
-   "dec": 10.995139,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "NGC5176",
@@ -69563,17 +67892,6 @@
    "type": "G",
    "magnitude": 14.8,
    "constellation": "CVn"
-  },
-  {
-   "id": "NGC5200",
-   "designations": [
-    "NGC5200"
-   ],
-   "names": [],
-   "ra": 13.528461,
-   "dec": -0.030167,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "NGC5201",
@@ -70509,18 +68827,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "NGC5268",
-   "designations": [
-    "NGC5268"
-   ],
-   "names": [],
-   "ra": 13.703497,
-   "dec": -13.859556,
-   "type": "*",
-   "magnitude": 11.33,
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5269",
    "designations": [
     "NGC5269"
@@ -71058,18 +69364,6 @@
    "dec": -15.618417,
    "type": "G",
    "magnitude": 15.71,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC5310",
-   "designations": [
-    "NGC5310"
-   ],
-   "names": [],
-   "ra": 13.829928,
-   "dec": 0.069194,
-   "type": "*",
-   "magnitude": 14.07,
    "constellation": "Vir"
   },
   {
@@ -72317,17 +70611,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "NGC5404",
-   "designations": [
-    "NGC5404"
-   ],
-   "names": [],
-   "ra": 14.018744,
-   "dec": 0.085889,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5405",
    "designations": [
     "NGC5405",
@@ -72643,28 +70926,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC5428",
-   "designations": [
-    "NGC5428"
-   ],
-   "names": [],
-   "ra": 14.057786,
-   "dec": -5.984472,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC5429",
-   "designations": [
-    "NGC5429"
-   ],
-   "names": [],
-   "ra": 14.059267,
-   "dec": -6.038278,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5430",
    "designations": [
     "NGC5430",
@@ -72729,17 +70990,6 @@
    "type": "G",
    "magnitude": 13.28,
    "constellation": "Boo"
-  },
-  {
-   "id": "NGC5435",
-   "designations": [
-    "NGC5435"
-   ],
-   "names": [],
-   "ra": 14.066681,
-   "dec": -5.931667,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "NGC5436",
@@ -73108,18 +71358,6 @@
    "constellation": "Hya"
   },
   {
-   "id": "NGC5465",
-   "designations": [
-    "NGC5465"
-   ],
-   "names": [],
-   "ra": 14.107578,
-   "dec": -5.506278,
-   "type": "*",
-   "magnitude": 14.47,
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5466",
    "designations": [
     "NGC5466"
@@ -73130,19 +71368,6 @@
    "type": "GCl",
    "magnitude": 9.7,
    "constellation": "Boo"
-  },
-  {
-   "id": "NGC5467",
-   "designations": [
-    "NGC5467",
-    "IC973"
-   ],
-   "names": [],
-   "ra": 14.108194,
-   "dec": -5.481472,
-   "type": "*",
-   "magnitude": 15.12,
-   "constellation": "Vir"
   },
   {
    "id": "NGC5468",
@@ -73932,17 +72157,6 @@
    "constellation": "Boo"
   },
   {
-   "id": "NGC5524",
-   "designations": [
-    "NGC5524"
-   ],
-   "names": [],
-   "ra": 14.233511,
-   "dec": 36.417361,
-   "type": "*",
-   "constellation": "Boo"
-  },
-  {
    "id": "NGC5525",
    "designations": [
     "NGC5525",
@@ -74452,17 +72666,6 @@
    "dec": 7.055417,
    "type": "G",
    "magnitude": 15.13,
-   "constellation": "Vir"
-  },
-  {
-   "id": "NGC5565",
-   "designations": [
-    "NGC5565"
-   ],
-   "names": [],
-   "ra": 14.321806,
-   "dec": 6.994944,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -76520,18 +74723,6 @@
    "constellation": "Boo"
   },
   {
-   "id": "NGC5724",
-   "designations": [
-    "NGC5724"
-   ],
-   "names": [],
-   "ra": 14.650592,
-   "dec": 46.692028,
-   "type": "*",
-   "magnitude": 18,
-   "constellation": "Boo"
-  },
-  {
    "id": "NGC5725",
    "designations": [
     "NGC5725",
@@ -78266,18 +76457,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC5856",
-   "designations": [
-    "NGC5856"
-   ],
-   "names": [],
-   "ra": 15.122286,
-   "dec": 18.442444,
-   "type": "**",
-   "magnitude": 6.03,
-   "constellation": "Boo"
-  },
-  {
    "id": "NGC5857",
    "designations": [
     "NGC5857",
@@ -78454,17 +76633,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "NGC5871",
-   "designations": [
-    "NGC5871"
-   ],
-   "names": [],
-   "ra": 15.167997,
-   "dec": 0.498,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "NGC5872",
    "designations": [
     "NGC5872",
@@ -78531,17 +76699,6 @@
    "type": "G",
    "magnitude": 13.71,
    "constellation": "Boo"
-  },
-  {
-   "id": "NGC5877",
-   "designations": [
-    "NGC5877"
-   ],
-   "names": [],
-   "ra": 15.214742,
-   "dec": -4.927222,
-   "type": "**",
-   "constellation": "Lib"
   },
   {
    "id": "NGC5878",
@@ -78623,17 +76780,6 @@
    "type": "G",
    "magnitude": 14.54,
    "constellation": "Lib"
-  },
-  {
-   "id": "NGC5884",
-   "designations": [
-    "NGC5884"
-   ],
-   "names": [],
-   "ra": 15.219203,
-   "dec": 31.861056,
-   "type": "**",
-   "constellation": "Boo"
   },
   {
    "id": "NGC5885",
@@ -78846,17 +76992,6 @@
    "dec": 42.209417,
    "type": "G",
    "magnitude": 13.39,
-   "constellation": "Boo"
-  },
-  {
-   "id": "NGC5901",
-   "designations": [
-    "NGC5901"
-   ],
-   "names": [],
-   "ra": 15.250722,
-   "dec": 42.228056,
-   "type": "*",
    "constellation": "Boo"
   },
   {
@@ -79472,17 +77607,6 @@
    "type": "G",
    "magnitude": 14.58,
    "constellation": "Boo"
-  },
-  {
-   "id": "NGC5948",
-   "designations": [
-    "NGC5948"
-   ],
-   "names": [],
-   "ra": 15.549622,
-   "dec": 3.982833,
-   "type": "**",
-   "constellation": "Se1"
   },
   {
    "id": "NGC5949",
@@ -80216,17 +78340,6 @@
    "constellation": "CrB"
   },
   {
-   "id": "NGC6002",
-   "designations": [
-    "NGC6002"
-   ],
-   "names": [],
-   "ra": 15.795664,
-   "dec": 28.609694,
-   "type": "*",
-   "constellation": "CrB"
-  },
-  {
    "id": "NGC6003",
    "designations": [
     "NGC6003",
@@ -80893,18 +79006,6 @@
    "constellation": "UMi"
   },
   {
-   "id": "NGC6049",
-   "designations": [
-    "NGC6049"
-   ],
-   "names": [],
-   "ra": 16.093869,
-   "dec": 8.09625,
-   "type": "*",
-   "magnitude": 6.27,
-   "constellation": "Se1"
-  },
-  {
    "id": "NGC6050",
    "designations": [
     "NGC6050",
@@ -81026,17 +79127,6 @@
    "type": "PN",
    "magnitude": 12.9,
    "constellation": "Her"
-  },
-  {
-   "id": "NGC6059",
-   "designations": [
-    "NGC6059"
-   ],
-   "names": [],
-   "ra": 16.113333,
-   "dec": -6.393056,
-   "type": "**",
-   "constellation": "Oph"
   },
   {
    "id": "NGC6060",
@@ -81470,17 +79560,6 @@
    "type": "G",
    "magnitude": 14.77,
    "constellation": "UMi"
-  },
-  {
-   "id": "NGC6092",
-   "designations": [
-    "NGC6092"
-   ],
-   "names": [],
-   "ra": 16.234611,
-   "dec": 28.125611,
-   "type": "**",
-   "constellation": "CrB"
   },
   {
    "id": "NGC6093",
@@ -82865,18 +80944,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "NGC6199",
-   "designations": [
-    "NGC6199"
-   ],
-   "names": [],
-   "ra": 16.658047,
-   "dec": 36.058972,
-   "type": "*",
-   "magnitude": 15,
-   "constellation": "Her"
-  },
-  {
    "id": "NGC6200",
    "designations": [
     "NGC6200"
@@ -83220,18 +81287,6 @@
    "type": "G",
    "magnitude": 14.94,
    "constellation": "Her"
-  },
-  {
-   "id": "NGC6227",
-   "designations": [
-    "NGC6227"
-   ],
-   "names": [],
-   "ra": 16.859367,
-   "dec": -41.230528,
-   "type": "*",
-   "magnitude": 5.22,
-   "constellation": "Sco"
   },
   {
    "id": "NGC6228",
@@ -83890,17 +81945,6 @@
    "constellation": "Her"
   },
   {
-   "id": "NGC6277",
-   "designations": [
-    "NGC6277"
-   ],
-   "names": [],
-   "ra": 17.013581,
-   "dec": 23.039361,
-   "type": "*",
-   "constellation": "Her"
-  },
-  {
    "id": "NGC6278",
    "designations": [
     "NGC6278",
@@ -84109,17 +82153,6 @@
    "dec": -26.58175,
    "type": "GCl",
    "magnitude": 9.02,
-   "constellation": "Oph"
-  },
-  {
-   "id": "NGC6294",
-   "designations": [
-    "NGC6294"
-   ],
-   "names": [],
-   "ra": 17.171175,
-   "dec": -26.574556,
-   "type": "**",
    "constellation": "Oph"
   },
   {
@@ -84760,17 +82793,6 @@
    "dec": 41.052722,
    "type": "G",
    "magnitude": 14.51,
-   "constellation": "Her"
-  },
-  {
-   "id": "NGC6344",
-   "designations": [
-    "NGC6344"
-   ],
-   "names": [],
-   "ra": 17.288375,
-   "dec": 42.434194,
-   "type": "**",
    "constellation": "Her"
   },
   {
@@ -85586,17 +83608,6 @@
    "constellation": "Sco"
   },
   {
-   "id": "NGC6406",
-   "designations": [
-    "NGC6406"
-   ],
-   "names": [],
-   "ra": 17.638625,
-   "dec": 18.833056,
-   "type": "**",
-   "constellation": "Her"
-  },
-  {
    "id": "NGC6407",
    "designations": [
     "NGC6407",
@@ -85634,17 +83645,6 @@
    "dec": 50.765889,
    "type": "G",
    "magnitude": 14.6,
-   "constellation": "Dra"
-  },
-  {
-   "id": "NGC6410",
-   "designations": [
-    "NGC6410"
-   ],
-   "names": [],
-   "ra": 17.589022,
-   "dec": 60.793056,
-   "type": "**",
    "constellation": "Dra"
   },
   {
@@ -85863,17 +83863,6 @@
    "dec": 25.493917,
    "type": "G",
    "magnitude": 14.52,
-   "constellation": "Her"
-  },
-  {
-   "id": "NGC6428",
-   "designations": [
-    "NGC6428"
-   ],
-   "names": [],
-   "ra": 17.731336,
-   "dec": 25.554778,
-   "type": "**",
    "constellation": "Her"
   },
   {
@@ -86766,17 +84755,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "NGC6499",
-   "designations": [
-    "NGC6499"
-   ],
-   "names": [],
-   "ra": 17.922225,
-   "dec": 18.35975,
-   "type": "**",
-   "constellation": "Her"
-  },
-  {
    "id": "NGC6500",
    "designations": [
     "NGC6500",
@@ -87018,17 +84996,6 @@
    "type": "G",
    "magnitude": 14.94,
    "constellation": "Her"
-  },
-  {
-   "id": "NGC6519",
-   "designations": [
-    "NGC6519"
-   ],
-   "names": [],
-   "ra": 18.055592,
-   "dec": -29.80425,
-   "type": "**",
-   "constellation": "Sgr"
   },
   {
    "id": "NGC6520",
@@ -88708,17 +86675,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "NGC6655",
-   "designations": [
-    "NGC6655"
-   ],
-   "names": [],
-   "ra": 18.57525,
-   "dec": -5.920861,
-   "type": "**",
-   "constellation": "Sct"
-  },
-  {
    "id": "NGC6656",
    "designations": [
     "NGC6656"
@@ -88927,17 +86883,6 @@
    "dec": 26.417194,
    "type": "G",
    "magnitude": 13.72,
-   "constellation": "Lyr"
-  },
-  {
-   "id": "NGC6672",
-   "designations": [
-    "NGC6672"
-   ],
-   "names": [],
-   "ra": 18.603997,
-   "dec": 42.947639,
-   "type": "**",
    "constellation": "Lyr"
   },
   {
@@ -89668,17 +87613,6 @@
    "constellation": "Pav"
   },
   {
-   "id": "NGC6731",
-   "designations": [
-    "NGC6731"
-   ],
-   "names": [],
-   "ra": 18.953742,
-   "dec": 43.076778,
-   "type": "**",
-   "constellation": "Lyr"
-  },
-  {
    "id": "NGC6732",
    "designations": [
     "NGC6732",
@@ -90102,17 +88036,6 @@
    "dec": 30.545556,
    "type": "PN",
    "magnitude": 12.9,
-   "constellation": "Lyr"
-  },
-  {
-   "id": "NGC6767",
-   "designations": [
-    "NGC6767"
-   ],
-   "names": [],
-   "ra": 19.192753,
-   "dec": 37.725444,
-   "type": "**",
    "constellation": "Lyr"
   },
   {
@@ -91898,17 +89821,6 @@
    "constellation": "Cyg"
   },
   {
-   "id": "NGC6896",
-   "designations": [
-    "NGC6896"
-   ],
-   "names": [],
-   "ra": 20.300994,
-   "dec": 30.640056,
-   "type": "**",
-   "constellation": "Cyg"
-  },
-  {
    "id": "NGC6897",
    "designations": [
     "NGC6897",
@@ -92427,18 +90339,6 @@
    "constellation": "Pav"
   },
   {
-   "id": "NGC6933",
-   "designations": [
-    "NGC6933"
-   ],
-   "names": [],
-   "ra": 20.560606,
-   "dec": 7.387333,
-   "type": "*",
-   "magnitude": 11.61,
-   "constellation": "Del"
-  },
-  {
    "id": "NGC6934",
    "designations": [
     "C47",
@@ -92824,18 +90724,6 @@
    "constellation": "Aqr"
   },
   {
-   "id": "NGC6963",
-   "designations": [
-    "NGC6963"
-   ],
-   "names": [],
-   "ra": 20.788742,
-   "dec": 0.510639,
-   "type": "**",
-   "magnitude": 15.2,
-   "constellation": "Aqr"
-  },
-  {
    "id": "NGC6964",
    "designations": [
     "NGC6964",
@@ -92861,17 +90749,6 @@
    "dec": 0.484056,
    "type": "G",
    "magnitude": 13.68,
-   "constellation": "Aqr"
-  },
-  {
-   "id": "NGC6966",
-   "designations": [
-    "NGC6966"
-   ],
-   "names": [],
-   "ra": 20.790767,
-   "dec": 0.367694,
-   "type": "**",
    "constellation": "Aqr"
   },
   {
@@ -92957,17 +90834,6 @@
    "constellation": "Del"
   },
   {
-   "id": "NGC6973",
-   "designations": [
-    "NGC6973"
-   ],
-   "names": [],
-   "ra": 20.868311,
-   "dec": -5.895194,
-   "type": "*",
-   "constellation": "Aqr"
-  },
-  {
    "id": "NGC6974",
    "designations": [
     "NGC6974"
@@ -93028,17 +90894,6 @@
    "dec": 32.025889,
    "type": "SNR",
    "constellation": "Cyg"
-  },
-  {
-   "id": "NGC6980",
-   "designations": [
-    "NGC6980"
-   ],
-   "names": [],
-   "ra": 20.880261,
-   "dec": -5.837889,
-   "type": "*",
-   "constellation": "Aqr"
   },
   {
    "id": "NGC6981",
@@ -93898,17 +91753,6 @@
    "constellation": "Cyg"
   },
   {
-   "id": "NGC7045",
-   "designations": [
-    "NGC7045"
-   ],
-   "names": [],
-   "ra": 21.247239,
-   "dec": 4.506778,
-   "type": "**",
-   "constellation": "Equ"
-  },
-  {
    "id": "NGC7046",
    "designations": [
     "NGC7046",
@@ -94653,17 +92497,6 @@
    "constellation": "Cap"
   },
   {
-   "id": "NGC7100",
-   "designations": [
-    "NGC7100"
-   ],
-   "names": [],
-   "ra": 21.651956,
-   "dec": 8.951528,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7101",
    "designations": [
     "NGC7101",
@@ -94811,20 +92644,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7114",
-   "designations": [
-    "NGC7114"
-   ],
-   "names": [
-    "Schmidt's Nova Cygni"
-   ],
-   "ra": 21.695564,
-   "dec": 42.841806,
-   "type": "*",
-   "magnitude": 3,
-   "constellation": "Cyg"
-  },
-  {
    "id": "NGC7115",
    "designations": [
     "NGC7115",
@@ -94939,17 +92758,6 @@
    "type": "G",
    "magnitude": 14.39,
    "constellation": "Aqr"
-  },
-  {
-   "id": "NGC7122",
-   "designations": [
-    "NGC7122"
-   ],
-   "names": [],
-   "ra": 21.763283,
-   "dec": -8.829611,
-   "type": "**",
-   "constellation": "Cap"
   },
   {
    "id": "NGC7123",
@@ -95116,17 +92924,6 @@
    "constellation": "PsA"
   },
   {
-   "id": "NGC7136",
-   "designations": [
-    "NGC7136"
-   ],
-   "names": [],
-   "ra": 21.828647,
-   "dec": -11.793306,
-   "type": "**",
-   "constellation": "Cap"
-  },
-  {
    "id": "NGC7137",
    "designations": [
     "NGC7137",
@@ -95253,17 +93050,6 @@
    "dec": 3.071694,
    "type": "G",
    "magnitude": 14.97,
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC7148",
-   "designations": [
-    "NGC7148"
-   ],
-   "names": [],
-   "ra": 21.869019,
-   "dec": 3.341472,
-   "type": "**",
    "constellation": "Peg"
   },
   {
@@ -95961,17 +93747,6 @@
    "dec": -31.263,
    "type": "G",
    "magnitude": 13.95,
-   "constellation": "PsA"
-  },
-  {
-   "id": "NGC7202",
-   "designations": [
-    "NGC7202"
-   ],
-   "names": [],
-   "ra": 22.112011,
-   "dec": -31.217889,
-   "type": "*",
    "constellation": "PsA"
   },
   {
@@ -97681,29 +95456,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7325",
-   "designations": [
-    "NGC7325"
-   ],
-   "names": [],
-   "ra": 22.613478,
-   "dec": 34.368028,
-   "type": "**",
-   "magnitude": 14.7,
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC7326",
-   "designations": [
-    "NGC7326"
-   ],
-   "names": [],
-   "ra": 22.614469,
-   "dec": 34.423111,
-   "type": "**",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7327",
    "designations": [
     "NGC7327",
@@ -97787,18 +95539,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7333",
-   "designations": [
-    "NGC7333"
-   ],
-   "names": [],
-   "ra": 22.6199,
-   "dec": 34.437833,
-   "type": "*",
-   "magnitude": 15.1,
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7335",
    "designations": [
     "NGC7335",
@@ -97837,17 +95577,6 @@
    "dec": 34.374306,
    "type": "G",
    "magnitude": 15.65,
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC7338",
-   "designations": [
-    "NGC7338"
-   ],
-   "names": [],
-   "ra": 22.625367,
-   "dec": 34.414472,
-   "type": "**",
    "constellation": "Peg"
   },
   {
@@ -97998,17 +95727,6 @@
    "type": "G",
    "magnitude": 14.51,
    "constellation": "Aqr"
-  },
-  {
-   "id": "NGC7350",
-   "designations": [
-    "NGC7350"
-   ],
-   "names": [],
-   "ra": 22.680156,
-   "dec": 12.006528,
-   "type": "**",
-   "constellation": "Peg"
   },
   {
    "id": "NGC7351",
@@ -98462,17 +96180,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7384",
-   "designations": [
-    "NGC7384"
-   ],
-   "names": [],
-   "ra": 22.828486,
-   "dec": 11.487444,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7385",
    "designations": [
     "NGC7385",
@@ -98511,17 +96218,6 @@
    "dec": 11.636722,
    "type": "G",
    "magnitude": 13.98,
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC7388",
-   "designations": [
-    "NGC7388"
-   ],
-   "names": [],
-   "ra": 22.839172,
-   "dec": 11.710944,
-   "type": "*",
    "constellation": "Peg"
   },
   {
@@ -98706,17 +96402,6 @@
    "dec": 1.144444,
    "type": "G",
    "magnitude": 16.05,
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC7403",
-   "designations": [
-    "NGC7403"
-   ],
-   "names": [],
-   "ra": 22.885111,
-   "dec": 1.482722,
-   "type": "*",
    "constellation": "Psc"
   },
   {
@@ -99936,17 +97621,6 @@
    "constellation": "Aqr"
   },
   {
-   "id": "NGC7493",
-   "designations": [
-    "NGC7493"
-   ],
-   "names": [],
-   "ra": 23.142119,
-   "dec": 0.91,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC7494",
    "designations": [
     "NGC7494",
@@ -100090,17 +97764,6 @@
    "type": "G",
    "magnitude": 13.49,
    "constellation": "Psc"
-  },
-  {
-   "id": "NGC7504",
-   "designations": [
-    "NGC7504"
-   ],
-   "names": [],
-   "ra": 23.178103,
-   "dec": 14.386306,
-   "type": "*",
-   "constellation": "Peg"
   },
   {
    "id": "NGC7505",
@@ -100328,17 +97991,6 @@
    "type": "G",
    "magnitude": 14.9,
    "constellation": "Psc"
-  },
-  {
-   "id": "NGC7522",
-   "designations": [
-    "NGC7522"
-   ],
-   "names": [],
-   "ra": 23.260111,
-   "dec": -22.894861,
-   "type": "*",
-   "constellation": "Aqr"
   },
   {
    "id": "NGC7523",
@@ -100866,28 +98518,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7560",
-   "designations": [
-    "NGC7560"
-   ],
-   "names": [],
-   "ra": 23.264933,
-   "dec": 4.495861,
-   "type": "**",
-   "constellation": "Psc"
-  },
-  {
-   "id": "NGC7561",
-   "designations": [
-    "NGC7561"
-   ],
-   "names": [],
-   "ra": 23.26595,
-   "dec": 4.522722,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC7562",
    "designations": [
     "NGC7562",
@@ -100929,17 +98559,6 @@
    "type": "G",
    "magnitude": 12.83,
    "constellation": "Peg"
-  },
-  {
-   "id": "NGC7564",
-   "designations": [
-    "NGC7564"
-   ],
-   "names": [],
-   "ra": 23.266997,
-   "dec": 7.348056,
-   "type": "*",
-   "constellation": "Psc"
   },
   {
    "id": "NGC7565",
@@ -101512,18 +99131,6 @@
    "type": "G",
    "magnitude": 11,
    "constellation": "Aqr"
-  },
-  {
-   "id": "NGC7607",
-   "designations": [
-    "NGC7607",
-    "IC1480"
-   ],
-   "names": [],
-   "ra": 23.316456,
-   "dec": 11.341722,
-   "type": "**",
-   "constellation": "Peg"
   },
   {
    "id": "NGC7608",
@@ -103419,18 +101026,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7748",
-   "designations": [
-    "NGC7748"
-   ],
-   "names": [],
-   "ra": 23.749075,
-   "dec": 69.754861,
-   "type": "*",
-   "magnitude": 7.15,
-   "constellation": "Cep"
-  },
-  {
    "id": "NGC7749",
    "designations": [
     "NGC7749",
@@ -103524,17 +101119,6 @@
    "type": "G",
    "magnitude": 11.68,
    "constellation": "Scl"
-  },
-  {
-   "id": "NGC7756",
-   "designations": [
-    "NGC7756"
-   ],
-   "names": [],
-   "ra": 23.807944,
-   "dec": 4.125167,
-   "type": "*",
-   "constellation": "Psc"
   },
   {
    "id": "NGC7757",
@@ -104004,17 +101588,6 @@
    "constellation": "Cas"
   },
   {
-   "id": "NGC7791",
-   "designations": [
-    "NGC7791"
-   ],
-   "names": [],
-   "ra": 23.965917,
-   "dec": 10.765722,
-   "type": "**",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7792",
    "designations": [
     "NGC7792",
@@ -104107,17 +101680,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "NGC7799",
-   "designations": [
-    "NGC7799"
-   ],
-   "names": [],
-   "ra": 23.992097,
-   "dec": 31.295611,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "NGC7800",
    "designations": [
     "NGC7800",
@@ -104169,17 +101731,6 @@
    "type": "G",
    "magnitude": 14.07,
    "constellation": "Peg"
-  },
-  {
-   "id": "NGC7804",
-   "designations": [
-    "NGC7804"
-   ],
-   "names": [],
-   "ra": 0.021889,
-   "dec": 7.749694,
-   "type": "**",
-   "constellation": "Psc"
   },
   {
    "id": "NGC7805",
@@ -104315,17 +101866,6 @@
    "dec": 16.145417,
    "type": "G",
    "magnitude": 10.6,
-   "constellation": "Peg"
-  },
-  {
-   "id": "NGC7815",
-   "designations": [
-    "NGC7815"
-   ],
-   "names": [],
-   "ra": 0.056897,
-   "dec": 20.704167,
-   "type": "*",
    "constellation": "Peg"
   },
   {
@@ -104515,17 +102055,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "NGC7830",
-   "designations": [
-    "NGC7830"
-   ],
-   "names": [],
-   "ra": 0.100517,
-   "dec": 8.342778,
-   "type": "*",
-   "constellation": "Psc"
-  },
-  {
    "id": "NGC7831",
    "designations": [
     "NGC7831",
@@ -104631,17 +102160,6 @@
    "type": "G",
    "magnitude": 15.18,
    "constellation": "Psc"
-  },
-  {
-   "id": "NGC7839",
-   "designations": [
-    "NGC7839"
-   ],
-   "names": [],
-   "ra": 0.116842,
-   "dec": 27.635222,
-   "type": "**",
-   "constellation": "Peg"
   },
   {
    "id": "NGC7840",
