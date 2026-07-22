@@ -163,6 +163,93 @@ describe('a restored query', () => {
   })
 })
 
+describe('filters', () => {
+  async function openFilters(user: ReturnType<typeof userEvent.setup>) {
+    await user.click(screen.getByText(/^\s*Filters/))
+  }
+
+  it('offers the object types as filters, but not individual stars', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await openFilters(user)
+
+    expect(
+      screen.getByRole('checkbox', { name: /globular cluster/i }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('checkbox', { name: /^galaxy$/i }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole('checkbox', { name: /^double star$/i }),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('checkbox', { name: /^star$/i }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('restricts the above filter to night by default', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await openFilters(user)
+
+    expect(
+      screen.getByRole('checkbox', { name: /during night/i }),
+    ).toBeChecked()
+  })
+
+  it('browses by type with no query typed', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await openFilters(user)
+    await user.click(
+      screen.getByRole('checkbox', { name: /globular cluster/i }),
+    )
+
+    await waitFor(() =>
+      expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0),
+    )
+  })
+
+  it('says nothing qualifies when a filter admits no object', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await openFilters(user)
+    // Nothing stays above 85° for a full day.
+    await user.selectOptions(
+      screen.getByRole('combobox', { name: /^above$/i }),
+      '85',
+    )
+    const hours = screen.getByLabelText(/hours above threshold/i)
+    await user.clear(hours)
+    await user.type(hours, '24')
+
+    await waitFor(() =>
+      expect(
+        screen.getByText(/no objects match these filters/i),
+      ).toBeInTheDocument(),
+    )
+  })
+
+  it('clears the filters', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await openFilters(user)
+    const globular = screen.getByRole('checkbox', {
+      name: /globular cluster/i,
+    })
+    await user.click(globular)
+    expect(globular).toBeChecked()
+
+    await user.click(screen.getByRole('button', { name: /clear filters/i }))
+    expect(globular).not.toBeChecked()
+  })
+})
+
 describe('debouncing', () => {
   it('applies a typed query on its own, without pressing Search', async () => {
     const user = userEvent.setup()

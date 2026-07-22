@@ -33,6 +33,40 @@ export interface SearchResult {
   score: number
 }
 
+/**
+ * Structured filters applied before scoring, so the result cap falls on the
+ * objects that pass. Both are cheap catalog properties — `types` holds raw
+ * OpenNGC codes (`G`, `OCl`, `EmN`, …), and `maxMagnitude` keeps objects at
+ * least that bright, excluding those with no recorded magnitude.
+ */
+export interface CatalogFilters {
+  types?: ReadonlySet<string>
+  maxMagnitude?: number
+}
+
+function hasFilters(filters?: CatalogFilters): boolean {
+  return (
+    !!filters &&
+    ((filters.types?.size ?? 0) > 0 || filters.maxMagnitude != null)
+  )
+}
+
+function passesFilters(object: SkyObject, filters?: CatalogFilters): boolean {
+  if (!filters) return true
+
+  if (filters.types && filters.types.size > 0) {
+    const type = isCatalogObject(object) ? object.type : undefined
+    if (!type || !filters.types.has(type)) return false
+  }
+
+  if (filters.maxMagnitude != null) {
+    const magnitude = isDeepSky(object) ? object.magnitude : undefined
+    if (magnitude == null || magnitude > filters.maxMagnitude) return false
+  }
+
+  return true
+}
+
 interface IndexEntry {
   object: SkyObject
   /** `m13`, `ngc6205` — exact designation keys. */
@@ -86,9 +120,33 @@ export class SearchIndex {
     this.entries = objects.map(indexEntry)
   }
 
-  search(query: string, limit = 20): SearchResult[] {
+  /**
+   * `browse` forces the empty-query browse even when no catalog filter is set,
+   * so a caller applying its own downstream filter (e.g. observability) can ask
+   * for the brightest-first candidate pool. Text queries ignore it.
+   */
+  search(
+    query: string,
+    limit = 20,
+    filters?: CatalogFilters,
+    browse = false,
+  ): SearchResult[] {
     const normalized = normalize(query)
-    if (!normalized) return []
+
+    // With no text to score against, filters alone drive the results: browse
+    // everything they admit, brightest first. Without filters this stays an
+    // empty query — the picker shows its help text, not the whole catalog.
+    if (!normalized) {
+      if (!browse && !hasFilters(filters)) return []
+      const results: SearchResult[] = []
+      for (const entry of this.entries) {
+        if (passesFilters(entry.object, filters)) {
+          results.push({ object: entry.object, score: 0 })
+        }
+      }
+      results.sort((a, b) => byBrightness(a.object, b.object))
+      return results.slice(0, limit)
+    }
 
     // Both spellings matter: "m 13" is what normalize() produces, "m13" is
     // what designation keys look like.
@@ -97,6 +155,7 @@ export class SearchIndex {
 
     const results: SearchResult[] = []
     for (const entry of this.entries) {
+      if (!passesFilters(entry.object, filters)) continue
       const score = scoreEntry(entry, normalized, compact, designation)
       if (score > 0) results.push({ object: entry.object, score })
     }

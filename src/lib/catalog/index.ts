@@ -9,13 +9,18 @@
 import type { SkyObject } from '../astro/types'
 import { designationKey, parseDesignation } from './catalogs'
 import { deepSkyObjects } from './dso'
-import { SearchIndex, type SearchResult } from './search'
+import { SearchIndex, type CatalogFilters, type SearchResult } from './search'
 import { solarSystemObjects } from './solar-system'
 import type { CatalogObject } from './types'
 
 export { deepSkyObjects, catalogSources } from './dso'
 export { solarSystemObjects, PLANETS, MOON } from './solar-system'
-export { SearchIndex, normalize, type SearchResult } from './search'
+export {
+  SearchIndex,
+  normalize,
+  type CatalogFilters,
+  type SearchResult,
+} from './search'
 export { buildCatalog } from './dso'
 export {
   CATALOGS,
@@ -48,9 +53,18 @@ const index = new SearchIndex(allObjects)
 
 const byId = new Map(allObjects.map((object) => [object.id, object]))
 
-/** Ranked matches for a free-text query; empty for an empty query. */
-export function searchObjects(query: string, limit?: number): SearchResult[] {
-  return index.search(query, limit)
+/**
+ * Ranked matches for a free-text query, optionally narrowed by catalog
+ * filters. An empty query with no filters is empty; an empty query with
+ * filters browses everything they admit, brightest first.
+ */
+export function searchObjects(
+  query: string,
+  limit?: number,
+  filters?: CatalogFilters,
+  browse?: boolean,
+): SearchResult[] {
+  return index.search(query, limit, filters, browse)
 }
 
 /** Looks up an object by its stable id, e.g. `M13` or `jupiter`. */

@@ -6,6 +6,7 @@ import {
   allObjects,
 } from './index'
 import { normalize } from './search'
+import type { SkyObject } from '../astro/types'
 
 function ids(query: string, limit = 5): string[] {
   return searchObjects(query, limit).map((result) => result.object.id)
@@ -95,6 +96,60 @@ describe('searchObjects', () => {
 
   it('respects the limit', () => {
     expect(searchObjects('m', 7)).toHaveLength(7)
+  })
+})
+
+function typeOf(object: SkyObject): string | undefined {
+  return 'type' in object ? object.type : undefined
+}
+
+function magnitudeOf(object: SkyObject): number | undefined {
+  return 'magnitude' in object ? object.magnitude : undefined
+}
+
+describe('catalog filters', () => {
+  it('keeps only the requested object types', () => {
+    const results = searchObjects('cluster', 50, {
+      types: new Set(['GCl']),
+    })
+    expect(results.length).toBeGreaterThan(0)
+    expect(results.every((r) => typeOf(r.object) === 'GCl')).toBe(true)
+  })
+
+  it('keeps only objects at least as bright as the limit', () => {
+    const results = searchObjects('', 50, { maxMagnitude: 6 })
+    expect(results.length).toBeGreaterThan(0)
+    for (const { object } of results) {
+      const magnitude = magnitudeOf(object)
+      expect(magnitude).toBeDefined()
+      expect(magnitude!).toBeLessThanOrEqual(6)
+    }
+  })
+
+  it('browses by filter with no query, brightest first', () => {
+    const results = searchObjects('', 20, { types: new Set(['GCl']) })
+    expect(results.length).toBeGreaterThan(0)
+    expect(results.every((r) => typeOf(r.object) === 'GCl')).toBe(true)
+    const magnitudes = results.map((r) => magnitudeOf(r.object) ?? Infinity)
+    expect(magnitudes).toEqual([...magnitudes].sort((a, b) => a - b))
+  })
+
+  it('still returns nothing for an empty query without filters', () => {
+    expect(searchObjects('')).toEqual([])
+    expect(searchObjects('', 20, {})).toEqual([])
+  })
+
+  it('browses everything when browse is forced, even with no filters', () => {
+    // The pool a downstream (observability) filter draws from: the whole
+    // catalog, not the empty result an unforced empty query gives.
+    expect(searchObjects('', 5, undefined, true)).toHaveLength(5)
+    expect(searchObjects('', 5, undefined, false)).toEqual([])
+  })
+
+  it('narrows a text query by type', () => {
+    const results = searchObjects('nebula', 50, { types: new Set(['PN']) })
+    expect(results.length).toBeGreaterThan(0)
+    expect(results.every((r) => typeOf(r.object) === 'PN')).toBe(true)
   })
 })
 

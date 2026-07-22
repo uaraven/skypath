@@ -7,16 +7,31 @@
    * are capped and sampled coarsely, and the query is debounced rather than
    * recomputed on every keystroke.
    */
-  import type { GeoLocation, SkyObject } from '../lib/astro/types'
+  import type { GeoLocation, SkyObject, TimeWindow } from '../lib/astro/types'
+  import {
+    hoursAboveAltitude,
+    hoursAboveHorizon,
+    observingWindow,
+  } from '../lib/astro/observability'
   import {
     formatDesignation,
     isCatalogObject,
+    OBJECT_TYPES,
     searchObjects,
     typeLabel,
+    type CatalogFilters,
+    type SearchResult,
   } from '../lib/catalog'
   import { altitudeChartModel } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
   import AltitudeChart from './AltitudeChart.svelte'
+  import {
+    activeFilterCount,
+    defaultFilters,
+    filtersActive,
+    resetFilters,
+    type SearchFilters,
+  } from './searchFilters'
 
   interface Props {
     location: GeoLocation
@@ -29,6 +44,8 @@
      * they return from Results.
      */
     query?: string
+    /** Bindable for the same reason as `query`: filters must survive the tab. */
+    filters?: SearchFilters
   }
 
   let {
@@ -37,32 +54,84 @@
     date,
     onselect,
     query = $bindable(''),
+    filters = $bindable(defaultFilters()),
   }: Props = $props()
 
   /** Enough to choose from, few enough that the charts stay cheap. */
   const MAX_RESULTS = 20
+
+  /**
+   * How many text/catalog matches to weigh an observability filter against.
+   * The filter culls some, so we start from a wider pool than we display, but
+   * bounded so the per-object trajectory work stays responsive.
+   */
+  const CANDIDATE_LIMIT = 200
 
   /** Thumbnails are ~420 units wide, so finer sampling would not be visible. */
   const THUMBNAIL_STEP_MINUTES = 15
 
   const DEBOUNCE_MS = 200
 
-  // Seeded from the incoming query so a restored search draws its results on
+  /** Individual stars aren't observing targets, so they aren't offered. */
+  const HIDDEN_TYPES = new Set(['*', '**'])
+
+  /** The object types offered as filters, in the map's own order. */
+  const typeOptions = Object.entries(OBJECT_TYPES)
+    .filter(([code]) => !HIDDEN_TYPES.has(code))
+    .map(([code, label]) => ({ code, label }))
+
+  /** Altitude thresholds the "Above" dropdown offers, 15°–85° in 5° steps. */
+  const ALTITUDE_OPTIONS = Array.from(
+    { length: (85 - 15) / 5 + 1 },
+    (_, i) => 15 + i * 5,
+  )
+
+  // Seeded from the incoming state so a restored search draws its results on
   // the first frame rather than flashing the empty state for one debounce.
   let applied = $state(query)
+  let appliedFilters = $state<SearchFilters>($state.snapshot(filters))
 
-  // Typing settles before the charts are built; the Search button and Enter
-  // bypass the wait.
+  // Typing and dragging inputs settle before the charts are built; the Search
+  // button and Enter bypass the wait for the query.
   $effect(() => {
-    const pending = query
-    const timer = setTimeout(() => (applied = pending), DEBOUNCE_MS)
+    const pendingQuery = query
+    const pendingFilters = $state.snapshot(filters)
+    const timer = setTimeout(() => {
+      applied = pendingQuery
+      appliedFilters = pendingFilters
+    }, DEBOUNCE_MS)
     return () => clearTimeout(timer)
   })
 
-  const results = $derived(searchObjects(applied, MAX_RESULTS))
+  const catalogFilters = $derived<CatalogFilters>({
+    types:
+      appliedFilters.types.length > 0
+        ? new Set(appliedFilters.types)
+        : undefined,
+    maxMagnitude: appliedFilters.maxMagnitude ?? undefined,
+  })
+
+  // The "above" filter needs a trajectory per object, so it runs after the
+  // cheap catalog search, over its candidate pool.
+  const observabilityActive = $derived(appliedFilters.above !== '')
+
+  const anyFilterActive = $derived(filtersActive(appliedFilters))
+
+  const candidates = $derived(
+    searchObjects(
+      applied,
+      observabilityActive ? CANDIDATE_LIMIT : MAX_RESULTS,
+      catalogFilters,
+      observabilityActive,
+    ),
+  )
+
+  const matched = $derived(
+    observabilityActive ? observableWithin(candidates) : candidates,
+  )
 
   const rows = $derived(
-    results.map(({ object }) => ({
+    matched.map(({ object }) => ({
       object,
       subtitle: subtitleOf(object),
       model: altitudeChartModel({
@@ -74,6 +143,34 @@
       }),
     })),
   )
+
+  /**
+   * Keep the candidates that stay up long enough, in the order they came, and
+   * stop once the display is full — the expensive check runs no more than it
+   * must.
+   */
+  function observableWithin(pool: SearchResult[]): SearchResult[] {
+    const window = observingWindow(date, location, appliedFilters.duringNight)
+    // Restricting to darkness on a polar day leaves no night to observe in.
+    if (window === null) return []
+
+    const kept: SearchResult[] = []
+    for (const result of pool) {
+      if (meetsDuration(result.object, window)) kept.push(result)
+      if (kept.length >= MAX_RESULTS) break
+    }
+    return kept
+  }
+
+  function meetsDuration(object: SkyObject, window: TimeWindow): boolean {
+    const f = appliedFilters
+    if (f.above === '') return true
+    const hours =
+      f.above === 'horizon'
+        ? hoursAboveHorizon(object, location, window, horizon)
+        : hoursAboveAltitude(object, location, window, Number(f.above))
+    return hours >= f.aboveHours
+  }
 
   /** Every designation the object answers to, or its kind for a planet. */
   function subtitleOf(object: SkyObject): string {
@@ -98,7 +195,10 @@
   function submit(event: SubmitEvent) {
     event.preventDefault()
     applied = query
+    appliedFilters = $state.snapshot(filters)
   }
+
+  const filterCount = $derived(activeFilterCount(filters))
 </script>
 
 <div class="search">
@@ -114,13 +214,86 @@
     <button type="submit">Search</button>
   </form>
 
-  {#if applied.trim() === ''}
+  <details class="filters">
+    <summary>
+      Filters{filterCount > 0 ? ` (${filterCount})` : ''}
+    </summary>
+
+    <div class="filter-body">
+      <fieldset class="types">
+        <legend>Object type</legend>
+        <div class="type-options">
+          {#each typeOptions as { code, label } (code)}
+            <label class="type">
+              <input type="checkbox" bind:group={filters.types} value={code} />
+              {label}
+            </label>
+          {/each}
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <span>Brighter than</span>
+        <input
+          type="number"
+          step="0.5"
+          bind:value={filters.maxMagnitude}
+          placeholder="mag"
+          aria-label="maximum magnitude"
+        />
+        <span class="unit">mag</span>
+      </div>
+
+      <div class="field">
+        <label for="above-threshold">Above</label>
+        <select id="above-threshold" bind:value={filters.above}>
+          <option value="">—</option>
+          <option value="horizon">Horizon</option>
+          {#each ALTITUDE_OPTIONS as degrees (degrees)}
+            <option value={String(degrees)}>{degrees}°</option>
+          {/each}
+        </select>
+        <span class="unit">for</span>
+        <input
+          type="number"
+          min="0"
+          step="0.5"
+          bind:value={filters.aboveHours}
+          aria-label="hours above threshold"
+        />
+        <span class="unit">h</span>
+        <label class="toggle">
+          <input type="checkbox" bind:checked={filters.duringNight} />
+          during night
+        </label>
+      </div>
+
+      <button
+        type="button"
+        class="clear"
+        disabled={filterCount === 0}
+        onclick={() => resetFilters(filters)}
+      >
+        Clear filters
+      </button>
+    </div>
+  </details>
+
+  {#if applied.trim() === '' && !anyFilterActive}
     <p class="empty">
       Search the Messier, NGC, IC, Sharpless 2 and LDN catalogues and the
-      planets by name, designation or type. Pick a result to see it in full.
+      planets by name, designation or type — or use the filters to browse by
+      type, brightness and how long a target clears your horizon. Pick a result
+      to see it in full.
     </p>
   {:else if rows.length === 0}
-    <p class="empty">Nothing matches “{applied}”.</p>
+    <p class="empty">
+      {#if applied.trim() === ''}
+        No objects match these filters.
+      {:else}
+        Nothing matches “{applied}”.
+      {/if}
+    </p>
   {:else}
     <ul>
       {#each rows as row (row.object.id)}
@@ -158,6 +331,82 @@
 
   form input {
     flex: 1;
+  }
+
+  .filters {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 0.4rem 0.6rem;
+  }
+
+  .filters summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .filter-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .types {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .types legend {
+    padding: 0;
+    margin-bottom: 0.4rem;
+    color: var(--text-dim);
+  }
+
+  .type-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+  }
+
+  .type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+  }
+
+  .field {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .field input[type='number'] {
+    width: 4rem;
+    font-family: var(--font-mono);
+  }
+
+  .field select {
+    font-family: var(--font-mono);
+  }
+
+  .field .unit {
+    color: var(--text-dim);
+  }
+
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .clear {
+    align-self: flex-start;
+    font-size: 0.8rem;
   }
 
   ul {
