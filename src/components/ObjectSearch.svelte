@@ -40,7 +40,7 @@
   }: Props = $props()
 
   /** Enough to choose from, few enough that the charts stay cheap. */
-  const MAX_RESULTS = 8
+  const MAX_RESULTS = 20
 
   /** Thumbnails are ~420 units wide, so finer sampling would not be visible. */
   const THUMBNAIL_STEP_MINUTES = 15
