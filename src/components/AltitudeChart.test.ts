@@ -90,19 +90,23 @@ describe('AltitudeChart', () => {
   it('labels the time axis noon to noon and the altitude axis 0–90°', () => {
     const svg = renderChart()
 
-    const hours = [...svg.querySelectorAll('.time-label')].map(
-      (t) => t.textContent,
+    // en-US test locale: the axis reads the noon-to-noon window on a 12-hour
+    // clock. The am/pm token spelling is ICU's (PM vs p.m.), so normalise it.
+    const norm = (s: string | null) =>
+      (s ?? '').replace(/\s+/g, ' ').replace(/\./g, '').toUpperCase()
+    const hours = [...svg.querySelectorAll('.time-label')].map((t) =>
+      norm(t.textContent),
     )
     expect(hours).toEqual([
-      '12',
-      '15',
-      '18',
-      '21',
-      '00',
-      '03',
-      '06',
-      '09',
-      '12',
+      '12 PM',
+      '03 PM',
+      '06 PM',
+      '09 PM',
+      '12 AM',
+      '03 AM',
+      '06 AM',
+      '09 AM',
+      '12 PM',
     ])
 
     const altitudes = [...svg.querySelectorAll('.altitude-label')].map(
@@ -144,7 +148,9 @@ describe('AltitudeChart', () => {
     // The apex sits where the trajectory is at that time, and the guide line
     // stands at the same x — that pairing is the whole point of the indicator.
     expect(Number(apex[0])).toBeCloseTo(Number(line.getAttribute('x1')), 6)
-    expect(svg.getAttribute('aria-label')).toContain('at 00:00')
+    // en-US test locale renders local midnight as "12:00 AM" (am/pm spelling
+    // is ICU's — match it loosely).
+    expect(svg.getAttribute('aria-label')).toMatch(/at 12:00\s[ap]\.?m\.?/i)
   })
 
   it('ignores a time outside the night window', () => {

@@ -91,12 +91,15 @@ describe('AllSkyChart', () => {
     const svg = renderChart()
 
     const marks = svg.querySelectorAll('circle.hour')
-    const labels = [...svg.querySelectorAll('.hour-label')].map(
-      (t) => t.textContent,
+    // Labels carry the locale clock (e.g. "3 PM" under en-US), so read the
+    // leading hour number off the text. Every-third-hour holds on both clocks:
+    // the labelled 24-h hours 0/3/…/21 map to 12-h 12/3/6/9, all multiples of 3.
+    const labels = [...svg.querySelectorAll('.hour-label')].map((t) =>
+      Number(t.textContent!.match(/\d+/)![0]),
     )
 
     expect(marks.length).toBeGreaterThan(labels.length)
-    expect(labels.every((hour) => Number(hour) % 3 === 0)).toBe(true)
+    expect(labels.every((hour) => hour % 3 === 0)).toBe(true)
   })
 
   it('gives each instance its own clip path', () => {
