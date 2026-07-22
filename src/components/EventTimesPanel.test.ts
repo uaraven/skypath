@@ -106,12 +106,12 @@ describe('EventTimesPanel', () => {
     expect(valueOf('Highest')).toMatch(/S 180°/)
   })
 
-  it('shows times on a 24-hour clock, matching the charts’ axis', () => {
+  it('shows times in the locale clock, matching the charts’ axis', () => {
     renderPanel()
 
-    // Not locale-dependent: the test runs under en-US, whose default is AM/PM.
-    expect(valueOf('Sunset')).not.toMatch(/[AP]M/)
-    expect(valueOf('Sunset')).toMatch(/^\d\d:\d\d/)
+    // Locale-dependent: the test runs under en-US, whose default is am/pm
+    // (spelled "PM" or "p.m." depending on the CLDR version).
+    expect(valueOf('Sunset')).toMatch(/^\d\d:\d\d\s[ap]\.?m\.?/i)
   })
 
   it('reports the moon phase by name and by illuminated fraction', () => {

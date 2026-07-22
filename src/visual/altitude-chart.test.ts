@@ -72,9 +72,14 @@ describe('altitude chart geometry', () => {
 
     // The defining property of the noon→noon window: the night sits whole in
     // the middle rather than split across two chart edges.
-    const midnight = [...svg.querySelectorAll('.time-label')].find(
-      (label) => label.textContent === '00',
-    )!
+    // The midnight label reads "00" on a 24-hour clock and "12 AM" on a
+    // 12-hour one (am/pm spelling is ICU's) — match either, but not noon.
+    const norm = (s: string | null) =>
+      (s ?? '').replace(/\s+/g, ' ').replace(/\./g, '').toUpperCase()
+    const midnight = [...svg.querySelectorAll('.time-label')].find((label) => {
+      const text = norm(label.textContent)
+      return text === '00' || text === '12 AM'
+    })!
     const box = midnight.getBoundingClientRect()
 
     expect(timeFraction(svg, box.left + box.width / 2)).toBeCloseTo(0.5, 2)
