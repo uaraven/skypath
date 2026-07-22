@@ -27,6 +27,7 @@ export interface CatalogDefinition {
 /** Ordered by how a user is most likely to refer to an object. */
 export const CATALOGS: CatalogDefinition[] = [
   { id: 'M', name: 'Messier', separator: '', aliases: ['messier'] },
+  { id: 'C', name: 'Caldwell', separator: '', aliases: ['caldwell'] },
   { id: 'NGC', name: 'New General Catalogue', separator: ' ' },
   { id: 'IC', name: 'Index Catalogue', separator: ' ' },
   { id: 'Mel', name: 'Melotte', separator: ' ', aliases: ['melotte'] },

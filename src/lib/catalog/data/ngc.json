@@ -489,6 +489,7 @@
   {
    "id": "NGC40",
    "designations": [
+    "C2",
     "NGC40"
    ],
    "names": [
@@ -689,6 +690,7 @@
   {
    "id": "NGC55",
    "designations": [
+    "C72",
     "NGC55",
     "PGC1014"
    ],
@@ -1401,6 +1403,7 @@
   {
    "id": "NGC104",
    "designations": [
+    "C106",
     "NGC104"
    ],
    "names": [
@@ -1961,6 +1964,7 @@
   {
    "id": "NGC147",
    "designations": [
+    "C17",
     "NGC147",
     "UGC326",
     "PGC2004"
@@ -2447,6 +2451,7 @@
   {
    "id": "NGC185",
    "designations": [
+    "C18",
     "NGC185",
     "UGC396",
     "PGC2329"
@@ -2488,6 +2493,7 @@
   {
    "id": "NGC188",
    "designations": [
+    "C1",
     "NGC188"
    ],
    "names": [],
@@ -3289,6 +3295,7 @@
   {
    "id": "NGC246",
    "designations": [
+    "C56",
     "NGC246"
    ],
    "names": [],
@@ -3301,6 +3308,7 @@
   {
    "id": "NGC247",
    "designations": [
+    "C62",
     "NGC247",
     "PGC2758"
    ],
@@ -3431,6 +3439,7 @@
   {
    "id": "NGC253",
    "designations": [
+    "C65",
     "NGC253",
     "PGC2789"
    ],
@@ -4045,6 +4054,7 @@
   {
    "id": "NGC300",
    "designations": [
+    "C70",
     "NGC300",
     "PGC3238"
    ],
@@ -4903,6 +4913,7 @@
   {
    "id": "NGC362",
    "designations": [
+    "C104",
     "NGC362"
    ],
    "names": [],
@@ -6127,6 +6138,7 @@
   {
    "id": "NGC457",
    "designations": [
+    "C13",
     "NGC457"
    ],
    "names": [
@@ -7563,6 +7575,7 @@
   {
    "id": "NGC559",
    "designations": [
+    "C8",
     "NGC559"
    ],
    "names": [],
@@ -8911,6 +8924,7 @@
   {
    "id": "NGC663",
    "designations": [
+    "C10",
     "NGC663"
    ],
    "names": [],
@@ -10092,6 +10106,7 @@
   {
    "id": "NGC752",
    "designations": [
+    "C28",
     "NGC752"
    ],
    "names": [],
@@ -11864,6 +11879,7 @@
   {
    "id": "NGC891",
    "designations": [
+    "C23",
     "NGC891",
     "UGC1831",
     "PGC9031"
@@ -14628,6 +14644,7 @@
   {
    "id": "NGC1097",
    "designations": [
+    "C67",
     "NGC1097",
     "PGC10488"
    ],
@@ -16773,6 +16790,7 @@
   {
    "id": "NGC1261",
    "designations": [
+    "C87",
     "NGC1261"
    ],
    "names": [],
@@ -16961,6 +16979,7 @@
   {
    "id": "NGC1275",
    "designations": [
+    "C24",
     "NGC1275",
     "UGC2669",
     "PGC12429"
@@ -24346,6 +24365,7 @@
   {
    "id": "NGC1851",
    "designations": [
+    "C73",
     "NGC1851"
    ],
    "names": [],
@@ -26973,6 +26993,7 @@
   {
    "id": "NGC2070",
    "designations": [
+    "C103",
     "NGC2070"
    ],
    "names": [
@@ -29088,6 +29109,7 @@
   {
    "id": "NGC2238",
    "designations": [
+    "C49",
     "NGC2238",
     "LBN948"
    ],
@@ -29103,6 +29125,7 @@
   {
    "id": "NGC2239",
    "designations": [
+    "C50",
     "NGC2239",
     "NGC2244"
    ],
@@ -29363,6 +29386,7 @@
   {
    "id": "NGC2261",
    "designations": [
+    "C46",
     "NGC2261",
     "LBN920"
    ],
@@ -30643,6 +30667,7 @@
   {
    "id": "NGC2360",
    "designations": [
+    "C58",
     "NGC2360"
    ],
    "names": [
@@ -30668,6 +30693,7 @@
   {
    "id": "NGC2362",
    "designations": [
+    "C64",
     "NGC2362"
    ],
    "names": [],
@@ -31053,6 +31079,7 @@
   {
    "id": "NGC2392",
    "designations": [
+    "C39",
     "NGC2392"
    ],
    "names": [
@@ -31214,6 +31241,7 @@
   {
    "id": "NGC2403",
    "designations": [
+    "C7",
     "NGC2403",
     "UGC3918",
     "PGC21396"
@@ -31419,6 +31447,7 @@
   {
    "id": "NGC2419",
    "designations": [
+    "C25",
     "NGC2419"
    ],
    "names": [],
@@ -32153,6 +32182,7 @@
   {
    "id": "NGC2477",
    "designations": [
+    "C71",
     "NGC2477"
    ],
    "names": [],
@@ -32530,6 +32560,7 @@
   {
    "id": "NGC2506",
    "designations": [
+    "C54",
     "NGC2506"
    ],
    "names": [],
@@ -32662,6 +32693,7 @@
   {
    "id": "NGC2516",
    "designations": [
+    "C96",
     "NGC2516"
    ],
    "names": [],
@@ -36268,6 +36300,7 @@
   {
    "id": "NGC2775",
    "designations": [
+    "C48",
     "NGC2775",
     "UGC4820",
     "PGC25861"
@@ -37581,6 +37614,7 @@
   {
    "id": "NGC2867",
    "designations": [
+    "C90",
     "NGC2867"
    ],
    "names": [],
@@ -40885,6 +40919,7 @@
   {
    "id": "NGC3115",
    "designations": [
+    "C53",
     "NGC3115",
     "PGC29265"
    ],
@@ -41085,6 +41120,7 @@
   {
    "id": "NGC3132",
    "designations": [
+    "C74",
     "NGC3132"
    ],
    "names": [
@@ -41918,6 +41954,7 @@
   {
    "id": "NGC3195",
    "designations": [
+    "C109",
     "NGC3195"
    ],
    "names": [],
@@ -41995,6 +42032,7 @@
   {
    "id": "NGC3201",
    "designations": [
+    "C79",
     "NGC3201"
    ],
    "names": [],
@@ -42518,6 +42556,7 @@
   {
    "id": "NGC3242",
    "designations": [
+    "C59",
     "NGC3242"
    ],
    "names": [
@@ -44582,6 +44621,7 @@
   {
    "id": "NGC3372",
    "designations": [
+    "C92",
     "NGC3372"
    ],
    "names": [
@@ -46631,6 +46671,7 @@
   {
    "id": "NGC3532",
    "designations": [
+    "C91",
     "NGC3532"
    ],
    "names": [
@@ -47890,6 +47931,7 @@
   {
    "id": "NGC3626",
    "designations": [
+    "C40",
     "NGC3626",
     "NGC3632",
     "UGC6343",
@@ -49849,6 +49891,7 @@
   {
    "id": "NGC3766",
    "designations": [
+    "C97",
     "NGC3766"
    ],
    "names": [
@@ -53491,6 +53534,7 @@
   {
    "id": "NGC4038",
    "designations": [
+    "C60",
     "NGC4038",
     "PGC37967"
    ],
@@ -53506,6 +53550,7 @@
   {
    "id": "NGC4039",
    "designations": [
+    "C61",
     "NGC4039",
     "PGC37969"
    ],
@@ -56092,6 +56137,7 @@
   {
    "id": "NGC4236",
    "designations": [
+    "C3",
     "NGC4236",
     "UGC7306",
     "PGC39346"
@@ -56191,6 +56237,7 @@
   {
    "id": "NGC4244",
    "designations": [
+    "C26",
     "NGC4244",
     "UGC7322",
     "PGC39422"
@@ -57913,6 +57960,7 @@
   {
    "id": "NGC4372",
    "designations": [
+    "C108",
     "NGC4372"
    ],
    "names": [],
@@ -58950,6 +58998,7 @@
   {
    "id": "NGC4449",
    "designations": [
+    "C21",
     "NGC4449",
     "UGC7592",
     "PGC40973"
@@ -60501,6 +60550,7 @@
   {
    "id": "NGC4559",
    "designations": [
+    "C36",
     "NGC4559",
     "IC3550",
     "IC3592",
@@ -60619,6 +60669,7 @@
   {
    "id": "NGC4565",
    "designations": [
+    "C38",
     "NGC4565",
     "IC3543",
     "IC3546",
@@ -61300,6 +61351,7 @@
   {
    "id": "NGC4609",
    "designations": [
+    "C98",
     "NGC4609"
    ],
    "names": [
@@ -61604,6 +61656,7 @@
   {
    "id": "NGC4631",
    "designations": [
+    "C32",
     "NGC4631",
     "UGC7865",
     "PGC42637"
@@ -62628,6 +62681,7 @@
   {
    "id": "NGC4697",
    "designations": [
+    "C52",
     "NGC4697",
     "PGC43276"
    ],
@@ -63395,6 +63449,7 @@
   {
    "id": "NGC4755",
    "designations": [
+    "C94",
     "NGC4755"
    ],
    "names": [
@@ -64452,6 +64507,7 @@
   {
    "id": "NGC4833",
    "designations": [
+    "C105",
     "NGC4833"
    ],
    "names": [],
@@ -65231,6 +65287,7 @@
   {
    "id": "NGC4889",
    "designations": [
+    "C35",
     "NGC4884",
     "NGC4889",
     "UGC8110",
@@ -66076,6 +66133,7 @@
   {
    "id": "NGC4945",
    "designations": [
+    "C83",
     "NGC4945",
     "PGC45279"
    ],
@@ -66902,6 +66960,7 @@
   {
    "id": "NGC5005",
    "designations": [
+    "C29",
     "NGC5005",
     "UGC8256",
     "PGC45749"
@@ -68541,6 +68600,7 @@
   {
    "id": "NGC5128",
    "designations": [
+    "C77",
     "NGC5128",
     "PGC46957"
    ],
@@ -68689,6 +68749,7 @@
   {
    "id": "NGC5139",
    "designations": [
+    "C80",
     "NGC5139"
    ],
    "names": [
@@ -70169,6 +70230,7 @@
   {
    "id": "NGC5248",
    "designations": [
+    "C45",
     "NGC5248",
     "UGC8616",
     "PGC48130"
@@ -70684,6 +70746,7 @@
   {
    "id": "NGC5286",
    "designations": [
+    "C84",
     "NGC5286"
    ],
    "names": [],
@@ -76085,6 +76148,7 @@
   {
    "id": "NGC5694",
    "designations": [
+    "C66",
     "NGC5694"
    ],
    "names": [],
@@ -77784,6 +77848,7 @@
   {
    "id": "NGC5823",
    "designations": [
+    "C88",
     "NGC5823"
    ],
    "names": [],
@@ -80467,6 +80532,7 @@
   {
    "id": "NGC6025",
    "designations": [
+    "C95",
     "NGC6025"
    ],
    "names": [],
@@ -81346,6 +81412,7 @@
   {
    "id": "NGC6087",
    "designations": [
+    "C89",
     "NGC6087"
    ],
    "names": [
@@ -81524,6 +81591,7 @@
   {
    "id": "NGC6101",
    "designations": [
+    "C107",
     "NGC6101"
    ],
    "names": [],
@@ -81831,6 +81899,7 @@
   {
    "id": "NGC6124",
    "designations": [
+    "C75",
     "NGC6124"
    ],
    "names": [],
@@ -82716,6 +82785,7 @@
   {
    "id": "NGC6193",
    "designations": [
+    "C82",
     "NGC6193"
    ],
    "names": [],
@@ -83203,6 +83273,7 @@
   {
    "id": "NGC6231",
    "designations": [
+    "C76",
     "NGC6231"
    ],
    "names": [],
@@ -84138,6 +84209,7 @@
   {
    "id": "NGC6302",
    "designations": [
+    "C69",
     "NGC6302"
    ],
    "names": [
@@ -84796,6 +84868,7 @@
   {
    "id": "NGC6352",
    "designations": [
+    "C81",
     "NGC6352"
    ],
    "names": [],
@@ -85400,6 +85473,7 @@
   {
    "id": "NGC6397",
    "designations": [
+    "C86",
     "NGC6397"
    ],
    "names": [],
@@ -87213,6 +87287,7 @@
   {
    "id": "NGC6541",
    "designations": [
+    "C78",
     "NGC6541"
    ],
    "names": [],
@@ -87239,6 +87314,7 @@
   {
    "id": "NGC6543",
    "designations": [
+    "C6",
     "NGC6543"
    ],
    "names": [
@@ -89569,6 +89645,7 @@
   {
    "id": "NGC6729",
    "designations": [
+    "C68",
     "NGC6729"
    ],
    "names": [],
@@ -89756,6 +89833,7 @@
   {
    "id": "NGC6744",
    "designations": [
+    "C101",
     "NGC6744",
     "PGC62836"
    ],
@@ -89859,6 +89937,7 @@
   {
    "id": "NGC6752",
    "designations": [
+    "C93",
     "NGC6752",
     "NGC6777"
    ],
@@ -90719,6 +90798,7 @@
   {
    "id": "NGC6822",
    "designations": [
+    "C57",
     "NGC6822",
     "IC4895",
     "PGC63616"
@@ -90775,6 +90855,7 @@
   {
    "id": "NGC6826",
    "designations": [
+    "C15",
     "NGC6826"
    ],
    "names": [
@@ -91654,6 +91735,7 @@
   {
    "id": "NGC6882",
    "designations": [
+    "C37",
     "NGC6882",
     "NGC6885"
    ],
@@ -91717,6 +91799,7 @@
   {
    "id": "NGC6888",
    "designations": [
+    "C27",
     "NGC6888",
     "LBN203"
    ],
@@ -92358,6 +92441,7 @@
   {
    "id": "NGC6934",
    "designations": [
+    "C47",
     "NGC6934"
    ],
    "names": [],
@@ -92522,6 +92606,7 @@
   {
    "id": "NGC6946",
    "designations": [
+    "C12",
     "NGC6946",
     "UGC11597",
     "PGC65001"
@@ -92696,6 +92781,7 @@
   {
    "id": "NGC6960",
    "designations": [
+    "C34",
     "NGC6960",
     "LBN191"
    ],
@@ -93108,6 +93194,7 @@
   {
    "id": "NGC6992",
    "designations": [
+    "C33",
     "NGC6992"
    ],
    "names": [
@@ -93212,6 +93299,7 @@
   {
    "id": "NGC7000",
    "designations": [
+    "C20",
     "NGC7000",
     "LBN373"
    ],
@@ -93292,6 +93380,7 @@
   {
    "id": "NGC7006",
    "designations": [
+    "C42",
     "NGC7006"
    ],
    "names": [],
@@ -93329,6 +93418,7 @@
   {
    "id": "NGC7009",
    "designations": [
+    "C55",
     "NGC7009"
    ],
    "names": [
@@ -93501,6 +93591,7 @@
   {
    "id": "NGC7023",
    "designations": [
+    "C4",
     "NGC7023",
     "LBN487"
    ],
@@ -96450,6 +96541,7 @@
   {
    "id": "NGC7243",
    "designations": [
+    "C16",
     "NGC7243"
    ],
    "names": [],
@@ -97135,6 +97227,7 @@
   {
    "id": "NGC7293",
    "designations": [
+    "C63",
     "NGC7293"
    ],
    "names": [
@@ -97667,6 +97760,7 @@
   {
    "id": "NGC7331",
    "designations": [
+    "C30",
     "NGC7331",
     "UGC12113",
     "PGC69327"
@@ -99671,6 +99765,7 @@
   {
    "id": "NGC7479",
    "designations": [
+    "C44",
     "NGC7479",
     "UGC12343",
     "PGC70419"
@@ -101784,6 +101879,7 @@
   {
    "id": "NGC7635",
    "designations": [
+    "C11",
     "NGC7635",
     "LBN548"
    ],
@@ -102148,6 +102244,7 @@
   {
    "id": "NGC7662",
    "designations": [
+    "C22",
     "NGC7662"
    ],
    "names": [
@@ -104208,6 +104305,7 @@
   {
    "id": "NGC7814",
    "designations": [
+    "C43",
     "NGC7814",
     "UGC8",
     "PGC218"

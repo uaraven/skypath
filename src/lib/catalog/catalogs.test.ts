@@ -29,6 +29,14 @@ describe('parseDesignation', () => {
     expect(parseDesignation('NGC4a')).toEqual({ catalog: 'NGC', number: '4a' })
   })
 
+  it('reads Caldwell without mistaking it for Collinder', () => {
+    for (const text of ['C14', 'c 14', 'caldwell14']) {
+      expect(parseDesignation(text)).toEqual({ catalog: 'C', number: '14' })
+    }
+    // The one-letter `C` prefix must not swallow the longer `Cr` prefix.
+    expect(parseDesignation('Cr50')).toEqual({ catalog: 'Cr', number: '50' })
+  })
+
   it('rejects unregistered prefixes and non-designations', () => {
     expect(parseDesignation('XYZ42')).toBeNull()
     expect(parseDesignation('orion')).toBeNull()
