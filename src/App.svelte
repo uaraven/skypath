@@ -11,6 +11,7 @@
   import HelpDialog from './components/HelpDialog.svelte'
   import Icon from './components/Icon.svelte'
   import ObjectSearch from './components/ObjectSearch.svelte'
+  import { defaultFilters } from './components/searchFilters'
   import ObservatoryManager from './components/ObservatoryManager.svelte'
   import ResultsPanel from './components/ResultsPanel.svelte'
   import type { SkyObject } from './lib/astro/types'
@@ -58,8 +59,10 @@
   let tab = $state<Tab>(restored ? 'results' : 'search')
   let object = $state<SkyObject | null>(restored)
   // Held here, not in ObjectSearch, because the tabview unmounts the inactive
-  // tab — the search term has to survive a trip to Results and back.
+  // tab — the search term and its filters have to survive a trip to Results
+  // and back.
   let query = $state('')
+  let filters = $state(defaultFilters())
   // `<input type="date">` speaks `YYYY-MM-DD`; keeping the state in that form
   // avoids round-tripping a Date through the local/UTC boundary on every edit.
   let dateText = $state(
@@ -176,6 +179,7 @@
             {date}
             onselect={choose}
             bind:query
+            bind:filters
           />
         </div>
       {:else}

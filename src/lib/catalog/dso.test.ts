@@ -26,6 +26,12 @@ describe('bundled deep-sky catalog', () => {
       ),
     )
     for (let n = 1; n <= 110; n++) {
+      // M40 (Winnecke 4) is a double star, dropped along with the other stars,
+      // so it is deliberately absent — every other Messier number is present.
+      if (n === 40) {
+        expect(numbers, 'M40').not.toContain(40)
+        continue
+      }
       expect(numbers, `M${n}`).toContain(n)
     }
   })
@@ -148,7 +154,8 @@ describe('bundled deep-sky catalog', () => {
 
     // Objects in more than one catalog are filed under the earliest, so NGC
     // is short its ~40 Messier entries and IC short those it shares with NGC.
-    expect(primary('M')).toBe(110)
+    // 109, not 110: M40 is a double star and dropped on import.
+    expect(primary('M')).toBe(109)
     expect(primary('NGC')).toBeGreaterThan(7000)
     expect(primary('IC')).toBeGreaterThan(4000)
     expect(primary('Sh2')).toBe(313)

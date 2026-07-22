@@ -83,17 +83,32 @@ const MESSIER_OVERRIDES = {
 }
 
 /**
+ * Individual stars, not deep-sky targets. OpenNGC catalogues both a lone star
+ * (`*`) and a double star (`**`), but neither is something a deep-sky planner
+ * points at, so they are dropped on import — the picker never offered them as a
+ * filter type either. This also removes M40 (Winnecke 4, a double star), the
+ * one Messier "object" that is really just a pair of stars.
+ */
+const STAR_TYPES = new Set(['*', '**'])
+
+/**
  * Rows OpenNGC carries that are not observable targets:
  *
  * - `Dup` rows are stubs for an object catalogued twice. They are not objects
  *   in their own right, but the designation is still one a user may search
  *   for, so `duplicateAliases` folds it into the surviving object first.
  * - `NonEx` rows are catalogue entries with nothing at the position.
+ * - Individual stars and double stars (see `STAR_TYPES`).
  * - Names containing a space are NED sub-components of a larger galaxy
  *   ("IC0080 NED01"), not objects anyone points a telescope at.
  */
 function isRealObject(row) {
-  return row.Type !== 'Dup' && row.Type !== 'NonEx' && !row.Name.includes(' ')
+  return (
+    row.Type !== 'Dup' &&
+    row.Type !== 'NonEx' &&
+    !STAR_TYPES.has(row.Type) &&
+    !row.Name.includes(' ')
+  )
 }
 
 /**
@@ -121,7 +136,9 @@ const OPENNGC_BUILDS = [
         : row.M === ''
           ? null
           : String(Number(row.M)),
-    expect: 110,
+    // 109, not the full 110: M40 (Winnecke 4) is a double star, dropped by
+    // `isRealObject` along with the other stars.
+    expect: 109,
   },
   {
     catalog: 'NGC',

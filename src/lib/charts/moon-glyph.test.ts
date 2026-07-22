@@ -39,7 +39,10 @@ describe('moonPhasePath', () => {
     // (r ± |rx|)·½πr. Dividing by πr² recovers the illuminated fraction — proof
     // the path fills the lit side and not its complement.
     for (const lit of [0.2, 0.45, 0.55, 0.85]) {
-      expect(litFraction(moonPhasePath(0, 0, 10, lit, true))).toBeCloseTo(lit, 2)
+      expect(litFraction(moonPhasePath(0, 0, 10, lit, true))).toBeCloseTo(
+        lit,
+        2,
+      )
     }
   })
 })

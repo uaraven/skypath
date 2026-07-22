@@ -33,7 +33,7 @@ SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and
 
 **Observatories** — named combination of a location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
 
-**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it. 
+**Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it.
 
 ### Development
 

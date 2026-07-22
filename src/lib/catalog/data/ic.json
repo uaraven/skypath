@@ -4,17 +4,6 @@
  "source": "OpenNGC (https://github.com/mattiaverga/OpenNGC), CC-BY-SA-4.0, plus the Messier designations of the addendum file.",
  "objects": [
   {
-   "id": "IC1",
-   "designations": [
-    "IC1"
-   ],
-   "names": [],
-   "ra": 0.140847,
-   "dec": 27.717667,
-   "type": "**",
-   "constellation": "Peg"
-  },
-  {
    "id": "IC2",
    "designations": [
     "IC2",
@@ -161,17 +150,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "IC14",
-   "designations": [
-    "IC14"
-   ],
-   "names": [],
-   "ra": 0.375358,
-   "dec": 10.49025,
-   "type": "**",
-   "constellation": "Psc"
-  },
-  {
    "id": "IC15",
    "designations": [
     "IC15"
@@ -286,17 +264,6 @@
    "type": "G",
    "magnitude": 15.05,
    "constellation": "Cet"
-  },
-  {
-   "id": "IC24",
-   "designations": [
-    "IC24"
-   ],
-   "names": [],
-   "ra": 0.521286,
-   "dec": 30.839306,
-   "type": "**",
-   "constellation": "And"
   },
   {
    "id": "IC25",
@@ -641,17 +608,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "IC54",
-   "designations": [
-    "IC54"
-   ],
-   "names": [],
-   "ra": 0.846347,
-   "dec": -2.287778,
-   "type": "**",
-   "constellation": "Cet"
-  },
-  {
    "id": "IC55",
    "designations": [
     "IC55",
@@ -838,28 +794,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC71",
-   "designations": [
-    "IC71"
-   ],
-   "names": [],
-   "ra": 1.022017,
-   "dec": -6.767167,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
-   "id": "IC72",
-   "designations": [
-    "IC72"
-   ],
-   "names": [],
-   "ra": 1.026308,
-   "dec": -6.777944,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
    "id": "IC73",
    "designations": [
     "IC73",
@@ -1014,17 +948,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC85",
-   "designations": [
-    "IC85"
-   ],
-   "names": [],
-   "ra": 1.197097,
-   "dec": -0.452472,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
    "id": "IC86",
    "designations": [
     "IC86"
@@ -1099,17 +1022,6 @@
    "type": "G",
    "magnitude": 13.57,
    "constellation": "Cet"
-  },
-  {
-   "id": "IC94",
-   "designations": [
-    "IC94"
-   ],
-   "names": [],
-   "ra": 1.334858,
-   "dec": 32.717333,
-   "type": "*",
-   "constellation": "Psc"
   },
   {
    "id": "IC95",
@@ -1215,18 +1127,6 @@
    "dec": 2.04425,
    "type": "G",
    "magnitude": 15.36,
-   "constellation": "Cet"
-  },
-  {
-   "id": "IC104",
-   "designations": [
-    "IC104"
-   ],
-   "names": [],
-   "ra": 1.409333,
-   "dec": -1.456722,
-   "type": "**",
-   "magnitude": 8.79,
    "constellation": "Cet"
   },
   {
@@ -1451,18 +1351,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC124",
-   "designations": [
-    "IC124"
-   ],
-   "names": [],
-   "ra": 1.485856,
-   "dec": -1.937028,
-   "type": "*",
-   "magnitude": 14.4,
-   "constellation": "Cet"
-  },
-  {
    "id": "IC125",
    "designations": [
     "IC125",
@@ -1575,18 +1463,6 @@
    "dec": 30.888389,
    "type": "HII",
    "magnitude": 18.45,
-   "constellation": "Tri"
-  },
-  {
-   "id": "IC134",
-   "designations": [
-    "IC134"
-   ],
-   "names": [],
-   "ra": 1.556944,
-   "dec": 30.900667,
-   "type": "*",
-   "magnitude": 15.98,
    "constellation": "Tri"
   },
   {
@@ -2969,17 +2845,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC242",
-   "designations": [
-    "IC242"
-   ],
-   "names": [],
-   "ra": 2.639981,
-   "dec": -6.933944,
-   "type": "**",
-   "constellation": "Cet"
-  },
-  {
    "id": "IC243",
    "designations": [
     "IC243",
@@ -3632,17 +3497,6 @@
    "constellation": "Per"
   },
   {
-   "id": "IC297",
-   "designations": [
-    "IC297"
-   ],
-   "names": [],
-   "ra": 3.221772,
-   "dec": 42.148778,
-   "type": "**",
-   "constellation": "Per"
-  },
-  {
    "id": "IC298",
    "designations": [
     "IC298"
@@ -3932,17 +3786,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "IC319",
-   "designations": [
-    "IC319"
-   ],
-   "names": [],
-   "ra": 3.391403,
-   "dec": 41.416361,
-   "type": "*",
-   "constellation": "Per"
-  },
-  {
    "id": "IC320",
    "designations": [
     "IC320",
@@ -4171,17 +4014,6 @@
    "type": "G",
    "magnitude": 14.94,
    "constellation": "Tau"
-  },
-  {
-   "id": "IC339",
-   "designations": [
-    "IC339"
-   ],
-   "names": [],
-   "ra": 3.633953,
-   "dec": -18.397778,
-   "type": "*",
-   "constellation": "Eri"
   },
   {
    "id": "IC340",
@@ -4594,17 +4426,6 @@
    "dec": -9.394833,
    "type": "G",
    "magnitude": 14.94,
-   "constellation": "Eri"
-  },
-  {
-   "id": "IC371",
-   "designations": [
-    "IC371"
-   ],
-   "names": [],
-   "ra": 4.503497,
-   "dec": -0.561,
-   "type": "*",
    "constellation": "Eri"
   },
   {
@@ -5584,17 +5405,6 @@
    "constellation": "Cam"
   },
   {
-   "id": "IC453",
-   "designations": [
-    "IC453"
-   ],
-   "names": [],
-   "ra": 6.819847,
-   "dec": -16.90675,
-   "type": "*",
-   "constellation": "CMa"
-  },
-  {
    "id": "IC454",
    "designations": [
     "IC454",
@@ -5689,17 +5499,6 @@
    "constellation": "Lyn"
   },
   {
-   "id": "IC462",
-   "designations": [
-    "IC462"
-   ],
-   "names": [],
-   "ra": 7.182169,
-   "dec": 50.180833,
-   "type": "*",
-   "constellation": "Lyn"
-  },
-  {
    "id": "IC463",
    "designations": [
     "IC463"
@@ -5774,18 +5573,6 @@
    "type": "G",
    "magnitude": 13.48,
    "constellation": "Cep"
-  },
-  {
-   "id": "IC470",
-   "designations": [
-    "IC470"
-   ],
-   "names": [],
-   "ra": 7.392083,
-   "dec": 46.078667,
-   "type": "**",
-   "magnitude": 12.93,
-   "constellation": "Lyn"
   },
   {
    "id": "IC471",
@@ -5946,17 +5733,6 @@
    "constellation": "Gem"
   },
   {
-   "id": "IC483",
-   "designations": [
-    "IC483"
-   ],
-   "names": [],
-   "ra": 7.997883,
-   "dec": 25.925333,
-   "type": "**",
-   "constellation": "Gem"
-  },
-  {
    "id": "IC484",
    "designations": [
     "IC484",
@@ -6006,17 +5782,6 @@
    "ra": 8.013753,
    "dec": 25.901861,
    "type": "Other",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC489",
-   "designations": [
-    "IC489"
-   ],
-   "names": [],
-   "ra": 8.02715,
-   "dec": 25.996389,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -6971,17 +6736,6 @@
    "type": "G",
    "magnitude": 15.32,
    "constellation": "Sex"
-  },
-  {
-   "id": "IC567",
-   "designations": [
-    "IC567"
-   ],
-   "names": [],
-   "ra": 9.842717,
-   "dec": 12.784722,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC568",
@@ -8252,17 +8006,6 @@
    "constellation": "UMa"
   },
   {
-   "id": "IC675",
-   "designations": [
-    "IC675"
-   ],
-   "names": [],
-   "ra": 11.1826,
-   "dec": 3.594222,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC676",
    "designations": [
     "IC676",
@@ -8681,17 +8424,6 @@
    "type": "G",
    "magnitude": 14.39,
    "constellation": "UMa"
-  },
-  {
-   "id": "IC713",
-   "designations": [
-    "IC713"
-   ],
-   "names": [],
-   "ra": 11.57895,
-   "dec": 16.846889,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC715",
@@ -9740,17 +9472,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC802",
-   "designations": [
-    "IC802"
-   ],
-   "names": [],
-   "ra": 12.599342,
-   "dec": 74.301333,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC803",
    "designations": [
     "IC803"
@@ -9958,17 +9679,6 @@
    "dec": 30.077194,
    "type": "G",
    "magnitude": 15.44,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC823",
-   "designations": [
-    "IC823"
-   ],
-   "names": [],
-   "ra": 12.797461,
-   "dec": 27.209167,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -11129,17 +10839,6 @@
    "constellation": "Boo"
   },
   {
-   "id": "IC917",
-   "designations": [
-    "IC917"
-   ],
-   "names": [],
-   "ra": 13.708681,
-   "dec": 55.636917,
-   "type": "*",
-   "constellation": "UMa"
-  },
-  {
    "id": "IC918",
    "designations": [
     "IC918",
@@ -11845,18 +11544,6 @@
    "dec": -17.228194,
    "type": "PN",
    "magnitude": 13.9,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC974",
-   "designations": [
-    "IC974"
-   ],
-   "names": [],
-   "ra": 14.109544,
-   "dec": -5.492417,
-   "type": "*",
-   "magnitude": 16.72,
    "constellation": "Vir"
   },
   {
@@ -13271,17 +12958,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC1088",
-   "designations": [
-    "IC1088"
-   ],
-   "names": [],
-   "ra": 15.113172,
-   "dec": 3.791861,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC1089",
    "designations": [
     "IC1089",
@@ -13397,17 +13073,6 @@
    "constellation": "Boo"
   },
   {
-   "id": "IC1098",
-   "designations": [
-    "IC1098"
-   ],
-   "names": [],
-   "ra": 15.107011,
-   "dec": 55.601667,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC1099",
    "designations": [
     "IC1099",
@@ -13460,17 +13125,6 @@
    "type": "G",
    "magnitude": 15.81,
    "constellation": "Se1"
-  },
-  {
-   "id": "IC1104",
-   "designations": [
-    "IC1104"
-   ],
-   "names": [],
-   "ra": 15.213856,
-   "dec": -5.055611,
-   "type": "*",
-   "constellation": "Lib"
   },
   {
    "id": "IC1105",
@@ -13564,28 +13218,6 @@
    "constellation": "Se1"
   },
   {
-   "id": "IC1114",
-   "designations": [
-    "IC1114"
-   ],
-   "names": [],
-   "ra": 15.190469,
-   "dec": 75.426694,
-   "type": "*",
-   "constellation": "UMi"
-  },
-  {
-   "id": "IC1115",
-   "designations": [
-    "IC1115"
-   ],
-   "names": [],
-   "ra": 15.37195,
-   "dec": -4.473861,
-   "type": "**",
-   "constellation": "Lib"
-  },
-  {
    "id": "IC1116",
    "designations": [
     "IC1116",
@@ -13676,17 +13308,6 @@
    "constellation": "Se1"
   },
   {
-   "id": "IC1123",
-   "designations": [
-    "IC1123"
-   ],
-   "names": [],
-   "ra": 15.481697,
-   "dec": 42.898528,
-   "type": "*",
-   "constellation": "Boo"
-  },
-  {
    "id": "IC1124",
    "designations": [
     "IC1124",
@@ -13713,17 +13334,6 @@
    "dec": -1.62825,
    "type": "G",
    "magnitude": 14.32,
-   "constellation": "Se1"
-  },
-  {
-   "id": "IC1126",
-   "designations": [
-    "IC1126"
-   ],
-   "names": [],
-   "ra": 15.583561,
-   "dec": 4.990417,
-   "type": "*",
    "constellation": "Se1"
   },
   {
@@ -14180,17 +13790,6 @@
    "constellation": "Se1"
   },
   {
-   "id": "IC1164",
-   "designations": [
-    "IC1164"
-   ],
-   "names": [],
-   "ra": 15.917419,
-   "dec": 70.586972,
-   "type": "*",
-   "constellation": "UMi"
-  },
-  {
    "id": "IC1165",
    "designations": [
     "IC1165"
@@ -14266,17 +13865,6 @@
    "constellation": "Her"
   },
   {
-   "id": "IC1171",
-   "designations": [
-    "IC1171"
-   ],
-   "names": [],
-   "ra": 16.081067,
-   "dec": 17.978222,
-   "type": "*",
-   "constellation": "Her"
-  },
-  {
    "id": "IC1173",
    "designations": [
     "IC1173",
@@ -14305,17 +13893,6 @@
    "constellation": "Se1"
   },
   {
-   "id": "IC1175",
-   "designations": [
-    "IC1175"
-   ],
-   "names": [],
-   "ra": 16.089617,
-   "dec": 18.163111,
-   "type": "**",
-   "constellation": "Her"
-  },
-  {
    "id": "IC1177",
    "designations": [
     "IC1177",
@@ -14340,17 +13917,6 @@
    "dec": 17.601444,
    "type": "G",
    "magnitude": 13.92,
-   "constellation": "Her"
-  },
-  {
-   "id": "IC1180",
-   "designations": [
-    "IC1180"
-   ],
-   "names": [],
-   "ra": 16.091697,
-   "dec": 18.149667,
-   "type": "*",
    "constellation": "Her"
   },
   {
@@ -14987,17 +14553,6 @@
    "constellation": "Dra"
   },
   {
-   "id": "IC1234",
-   "designations": [
-    "IC1234"
-   ],
-   "names": [],
-   "ra": 16.880808,
-   "dec": 56.877778,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC1235",
    "designations": [
     "IC1235",
@@ -15037,17 +14592,6 @@
    "type": "G",
    "magnitude": 14.6,
    "constellation": "Dra"
-  },
-  {
-   "id": "IC1238",
-   "designations": [
-    "IC1238"
-   ],
-   "names": [],
-   "ra": 17.008375,
-   "dec": 23.07675,
-   "type": "**",
-   "constellation": "Her"
   },
   {
    "id": "IC1240",
@@ -15126,28 +14670,6 @@
    "type": "G",
    "magnitude": 14.9,
    "constellation": "Her"
-  },
-  {
-   "id": "IC1246",
-   "designations": [
-    "IC1246"
-   ],
-   "names": [],
-   "ra": 17.236744,
-   "dec": 20.237306,
-   "type": "*",
-   "constellation": "Her"
-  },
-  {
-   "id": "IC1247",
-   "designations": [
-    "IC1247"
-   ],
-   "names": [],
-   "ra": 17.272817,
-   "dec": -12.780889,
-   "type": "*",
-   "constellation": "Oph"
   },
   {
    "id": "IC1248",
@@ -15431,17 +14953,6 @@
    "constellation": "Her"
   },
   {
-   "id": "IC1270",
-   "designations": [
-    "IC1270"
-   ],
-   "names": [],
-   "ra": 17.799167,
-   "dec": 62.223444,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC1271",
    "designations": [
     "IC1271"
@@ -15461,17 +14972,6 @@
    "ra": 18.082153,
    "dec": 25.129194,
    "type": "Other",
-   "constellation": "Her"
-  },
-  {
-   "id": "IC1273",
-   "designations": [
-    "IC1273"
-   ],
-   "names": [],
-   "ra": 18.084097,
-   "dec": 25.132111,
-   "type": "**",
    "constellation": "Her"
   },
   {
@@ -15983,20 +15483,6 @@
    "constellation": "Aql"
   },
   {
-   "id": "IC1318",
-   "designations": [
-    "IC1318"
-   ],
-   "names": [
-    "gam Cyg"
-   ],
-   "ra": 20.370469,
-   "dec": 40.256694,
-   "type": "*",
-   "magnitude": 2.23,
-   "constellation": "Cyg"
-  },
-  {
    "id": "IC1319",
    "designations": [
     "IC1319",
@@ -16047,17 +15533,6 @@
    "dec": -15.227833,
    "type": "G",
    "magnitude": 15.47,
-   "constellation": "Cap"
-  },
-  {
-   "id": "IC1323",
-   "designations": [
-    "IC1323"
-   ],
-   "names": [],
-   "ra": 20.508056,
-   "dec": -15.181944,
-   "type": "**",
    "constellation": "Cap"
   },
   {
@@ -17267,17 +16742,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "IC1424",
-   "designations": [
-    "IC1424"
-   ],
-   "names": [],
-   "ra": 22.052608,
-   "dec": 11.197139,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "IC1425",
    "designations": [
     "IC1425",
@@ -17289,17 +16753,6 @@
    "type": "G",
    "magnitude": 15.1,
    "constellation": "Peg"
-  },
-  {
-   "id": "IC1426",
-   "designations": [
-    "IC1426"
-   ],
-   "names": [],
-   "ra": 22.064244,
-   "dec": -9.919306,
-   "type": "**",
-   "constellation": "Aqr"
   },
   {
    "id": "IC1427",
@@ -17326,17 +16779,6 @@
    "dec": 2.630861,
    "type": "G",
    "magnitude": 15.56,
-   "constellation": "Peg"
-  },
-  {
-   "id": "IC1429",
-   "designations": [
-    "IC1429"
-   ],
-   "names": [],
-   "ra": 22.117347,
-   "dec": 10.109222,
-   "type": "*",
    "constellation": "Peg"
   },
   {
@@ -17580,17 +17022,6 @@
    "constellation": "Aqr"
   },
   {
-   "id": "IC1450",
-   "designations": [
-    "IC1450"
-   ],
-   "names": [],
-   "ra": 22.632758,
-   "dec": 34.5355,
-   "type": "**",
-   "constellation": "Peg"
-  },
-  {
    "id": "IC1451",
    "designations": [
     "IC1451",
@@ -17704,28 +17135,6 @@
    "type": "G",
    "magnitude": 15.01,
    "constellation": "Peg"
-  },
-  {
-   "id": "IC1462",
-   "designations": [
-    "IC1462"
-   ],
-   "names": [],
-   "ra": 22.976986,
-   "dec": 8.441306,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
-   "id": "IC1463",
-   "designations": [
-    "IC1463"
-   ],
-   "names": [],
-   "ra": 22.989147,
-   "dec": -10.530861,
-   "type": "**",
-   "constellation": "Aqr"
   },
   {
    "id": "IC1464",
@@ -18110,17 +17519,6 @@
    "constellation": "Aqr"
   },
   {
-   "id": "IC1499",
-   "designations": [
-    "IC1499"
-   ],
-   "names": [],
-   "ra": 23.532508,
-   "dec": -13.439694,
-   "type": "**",
-   "constellation": "Aqr"
-  },
-  {
    "id": "IC1500",
    "designations": [
     "IC1500",
@@ -18266,28 +17664,6 @@
    "dec": 2.073333,
    "type": "GGroup",
    "constellation": "Psc"
-  },
-  {
-   "id": "IC1511",
-   "designations": [
-    "IC1511"
-   ],
-   "names": [],
-   "ra": 23.850125,
-   "dec": 27.060861,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
-   "id": "IC1512",
-   "designations": [
-    "IC1512"
-   ],
-   "names": [],
-   "ra": 23.850397,
-   "dec": 27.027139,
-   "type": "*",
-   "constellation": "Peg"
   },
   {
    "id": "IC1513",
@@ -19163,17 +18539,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC1589",
-   "designations": [
-    "IC1589"
-   ],
-   "names": [],
-   "ra": 0.866489,
-   "dec": -34.422056,
-   "type": "**",
-   "constellation": "Scl"
-  },
-  {
    "id": "IC1590",
    "designations": [
     "IC1590"
@@ -19196,17 +18561,6 @@
    "dec": 5.770389,
    "type": "G",
    "magnitude": 15.36,
-   "constellation": "Psc"
-  },
-  {
-   "id": "IC1593",
-   "designations": [
-    "IC1593"
-   ],
-   "names": [],
-   "ra": 0.911008,
-   "dec": 32.519472,
-   "type": "**",
    "constellation": "Psc"
   },
   {
@@ -20623,17 +19977,6 @@
    "constellation": "Psc"
   },
   {
-   "id": "IC1713",
-   "designations": [
-    "IC1713"
-   ],
-   "names": [],
-   "ra": 1.5455,
-   "dec": 35.324472,
-   "type": "*",
-   "constellation": "Tri"
-  },
-  {
    "id": "IC1714",
    "designations": [
     "IC1714",
@@ -20659,17 +20002,6 @@
    "type": "G",
    "magnitude": 14.48,
    "constellation": "Psc"
-  },
-  {
-   "id": "IC1716",
-   "designations": [
-    "IC1716"
-   ],
-   "names": [],
-   "ra": 1.557458,
-   "dec": -12.307944,
-   "type": "*",
-   "constellation": "Cet"
   },
   {
    "id": "IC1717",
@@ -20971,17 +20303,6 @@
    "dec": -34.055583,
    "type": "G",
    "magnitude": 14.75,
-   "constellation": "For"
-  },
-  {
-   "id": "IC1740",
-   "designations": [
-    "IC1740"
-   ],
-   "names": [],
-   "ra": 1.814322,
-   "dec": -30.085972,
-   "type": "**",
    "constellation": "For"
   },
   {
@@ -21903,17 +21224,6 @@
    "constellation": "Ari"
   },
   {
-   "id": "IC1822",
-   "designations": [
-    "IC1822"
-   ],
-   "names": [],
-   "ra": 2.595097,
-   "dec": -8.562806,
-   "type": "*",
-   "constellation": "Cet"
-  },
-  {
    "id": "IC1823",
    "designations": [
     "IC1823",
@@ -22139,18 +21449,6 @@
    "constellation": "Cet"
   },
   {
-   "id": "IC1845",
-   "designations": [
-    "IC1845"
-   ],
-   "names": [],
-   "ra": 2.732472,
-   "dec": -27.968917,
-   "type": "**",
-   "magnitude": 10.17,
-   "constellation": "For"
-  },
-  {
    "id": "IC1847",
    "designations": [
     "IC1847",
@@ -22188,18 +21486,6 @@
    "type": "G",
    "magnitude": 15.44,
    "constellation": "Cet"
-  },
-  {
-   "id": "IC1851",
-   "designations": [
-    "IC1851"
-   ],
-   "names": [],
-   "ra": 2.862756,
-   "dec": 58.314306,
-   "type": "*",
-   "magnitude": 6.44,
-   "constellation": "Cas"
   },
   {
    "id": "IC1853",
@@ -22862,17 +22148,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "IC1911",
-   "designations": [
-    "IC1911"
-   ],
-   "names": [],
-   "ra": 3.346994,
-   "dec": 35.321806,
-   "type": "*",
-   "constellation": "Per"
-  },
-  {
    "id": "IC1912",
    "designations": [
     "IC1912",
@@ -23057,17 +22332,6 @@
    "dec": -51.701056,
    "type": "G",
    "magnitude": 16.59,
-   "constellation": "Hor"
-  },
-  {
-   "id": "IC1927",
-   "designations": [
-    "IC1927"
-   ],
-   "names": [],
-   "ra": 3.422136,
-   "dec": -51.719444,
-   "type": "**",
    "constellation": "Hor"
   },
   {
@@ -23705,17 +22969,6 @@
    "constellation": "Hor"
   },
   {
-   "id": "IC1979",
-   "designations": [
-    "IC1979"
-   ],
-   "names": [],
-   "ra": 3.612853,
-   "dec": -57.944556,
-   "type": "**",
-   "constellation": "Ret"
-  },
-  {
    "id": "IC1980",
    "designations": [
     "IC1980",
@@ -23940,17 +23193,6 @@
    "constellation": "Hor"
   },
   {
-   "id": "IC2001",
-   "designations": [
-    "IC2001"
-   ],
-   "names": [],
-   "ra": 3.8477,
-   "dec": -48.599639,
-   "type": "**",
-   "constellation": "Hor"
-  },
-  {
    "id": "IC2003",
    "designations": [
     "IC2003"
@@ -24040,17 +23282,6 @@
    "dec": -59.929361,
    "type": "G",
    "magnitude": 13.71,
-   "constellation": "Ret"
-  },
-  {
-   "id": "IC2011",
-   "designations": [
-    "IC2011"
-   ],
-   "names": [],
-   "ra": 3.874208,
-   "dec": -57.468417,
-   "type": "**",
    "constellation": "Ret"
   },
   {
@@ -24428,18 +23659,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "IC2042",
-   "designations": [
-    "IC2042"
-   ],
-   "names": [],
-   "ra": 4.19535,
-   "dec": -47.270083,
-   "type": "*",
-   "magnitude": 10.94,
-   "constellation": "Hor"
-  },
-  {
    "id": "IC2043",
    "designations": [
     "IC2043",
@@ -24657,17 +23876,6 @@
    "constellation": "Tau"
   },
   {
-   "id": "IC2062",
-   "designations": [
-    "IC2062"
-   ],
-   "names": [],
-   "ra": 4.53385,
-   "dec": 71.919861,
-   "type": "*",
-   "constellation": "Cam"
-  },
-  {
    "id": "IC2063",
    "designations": [
     "IC2063"
@@ -24824,18 +24032,6 @@
    "dec": -48.228861,
    "type": "Other",
    "constellation": "Cae"
-  },
-  {
-   "id": "IC2078",
-   "designations": [
-    "IC2078"
-   ],
-   "names": [],
-   "ra": 4.531172,
-   "dec": -4.698694,
-   "type": "*",
-   "magnitude": 14.4,
-   "constellation": "Eri"
   },
   {
    "id": "IC2079",
@@ -25009,17 +24205,6 @@
    "constellation": "Eri"
   },
   {
-   "id": "IC2093",
-   "designations": [
-    "IC2093"
-   ],
-   "names": [],
-   "ra": 4.7923,
-   "dec": -2.709028,
-   "type": "*",
-   "constellation": "Ori"
-  },
-  {
    "id": "IC2094",
    "designations": [
     "IC2094"
@@ -25079,17 +24264,6 @@
    "dec": -5.418667,
    "type": "G",
    "magnitude": 14.66,
-   "constellation": "Eri"
-  },
-  {
-   "id": "IC2100",
-   "designations": [
-    "IC2100"
-   ],
-   "names": [],
-   "ra": 4.85415,
-   "dec": -4.830917,
-   "type": "**",
    "constellation": "Eri"
   },
   {
@@ -25170,28 +24344,6 @@
    "constellation": "Cae"
   },
   {
-   "id": "IC2109",
-   "designations": [
-    "IC2109"
-   ],
-   "names": [],
-   "ra": 4.983106,
-   "dec": -0.305306,
-   "type": "*",
-   "constellation": "Ori"
-  },
-  {
-   "id": "IC2110",
-   "designations": [
-    "IC2110"
-   ],
-   "names": [],
-   "ra": 4.983833,
-   "dec": -0.302639,
-   "type": "*",
-   "constellation": "Ori"
-  },
-  {
    "id": "IC2111",
    "designations": [
     "IC2111"
@@ -25214,18 +24366,6 @@
    "type": "G",
    "magnitude": 15.36,
    "constellation": "Ori"
-  },
-  {
-   "id": "IC2115",
-   "designations": [
-    "IC2115"
-   ],
-   "names": [],
-   "ra": 4.952422,
-   "dec": -66.390194,
-   "type": "*",
-   "magnitude": 11.27,
-   "constellation": "Dor"
   },
   {
    "id": "IC2116",
@@ -25711,17 +24851,6 @@
    "constellation": "Lyn"
   },
   {
-   "id": "IC2168",
-   "designations": [
-    "IC2168"
-   ],
-   "names": [],
-   "ra": 6.563256,
-   "dec": 44.685472,
-   "type": "**",
-   "constellation": "Aur"
-  },
-  {
    "id": "IC2170",
    "designations": [
     "IC2170"
@@ -25746,17 +24875,6 @@
    "constellation": "CMa"
   },
   {
-   "id": "IC2173",
-   "designations": [
-    "IC2173"
-   ],
-   "names": [],
-   "ra": 6.846433,
-   "dec": 33.458056,
-   "type": "*",
-   "constellation": "Gem"
-  },
-  {
    "id": "IC2174",
    "designations": [
     "IC2174",
@@ -25769,17 +24887,6 @@
    "type": "G",
    "magnitude": 13.55,
    "constellation": "Cam"
-  },
-  {
-   "id": "IC2175",
-   "designations": [
-    "IC2175"
-   ],
-   "names": [],
-   "ra": 7.14435,
-   "dec": 35.28825,
-   "type": "**",
-   "constellation": "Gem"
   },
   {
    "id": "IC2176",
@@ -26173,18 +25280,6 @@
    "constellation": "Gem"
   },
   {
-   "id": "IC2206",
-   "designations": [
-    "IC2206"
-   ],
-   "names": [],
-   "ra": 7.763997,
-   "dec": -34.330167,
-   "type": "*",
-   "magnitude": 10.5,
-   "constellation": "Pup"
-  },
-  {
    "id": "IC2207",
    "designations": [
     "IC2207",
@@ -26224,17 +25319,6 @@
    "type": "G",
    "magnitude": 13.8,
    "constellation": "Cam"
-  },
-  {
-   "id": "IC2210",
-   "designations": [
-    "IC2210"
-   ],
-   "names": [],
-   "ra": 7.949025,
-   "dec": 56.682333,
-   "type": "**",
-   "constellation": "Lyn"
   },
   {
    "id": "IC2211",
@@ -26300,17 +25384,6 @@
    "dec": 24.928972,
    "type": "Other",
    "constellation": "Gem"
-  },
-  {
-   "id": "IC2216",
-   "designations": [
-    "IC2216"
-   ],
-   "names": [],
-   "ra": 7.990986,
-   "dec": 5.6145,
-   "type": "**",
-   "constellation": "CMi"
   },
   {
    "id": "IC2217",
@@ -26446,17 +25519,6 @@
    "constellation": "Lyn"
   },
   {
-   "id": "IC2228",
-   "designations": [
-    "IC2228"
-   ],
-   "names": [],
-   "ra": 8.118236,
-   "dec": 8.025361,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2230",
    "designations": [
     "IC2230",
@@ -26511,50 +25573,6 @@
    "constellation": "Lyn"
   },
   {
-   "id": "IC2235",
-   "designations": [
-    "IC2235"
-   ],
-   "names": [],
-   "ra": 8.226064,
-   "dec": 24.076778,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2236",
-   "designations": [
-    "IC2236"
-   ],
-   "names": [],
-   "ra": 8.227089,
-   "dec": 24.048806,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2237",
-   "designations": [
-    "IC2237"
-   ],
-   "names": [],
-   "ra": 8.235581,
-   "dec": 24.679306,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2238",
-   "designations": [
-    "IC2238"
-   ],
-   "names": [],
-   "ra": 8.235725,
-   "dec": 24.661889,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2239",
    "designations": [
     "IC2239",
@@ -26565,83 +25583,6 @@
    "dec": 23.866361,
    "type": "G",
    "magnitude": 15.24,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2240",
-   "designations": [
-    "IC2240"
-   ],
-   "names": [],
-   "ra": 8.246522,
-   "dec": 24.467556,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2241",
-   "designations": [
-    "IC2241"
-   ],
-   "names": [],
-   "ra": 8.2524,
-   "dec": 24.129389,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2242",
-   "designations": [
-    "IC2242"
-   ],
-   "names": [],
-   "ra": 8.253183,
-   "dec": 24.132944,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2243",
-   "designations": [
-    "IC2243"
-   ],
-   "names": [],
-   "ra": 8.255119,
-   "dec": 23.962278,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2244",
-   "designations": [
-    "IC2244"
-   ],
-   "names": [],
-   "ra": 8.256186,
-   "dec": 24.545833,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2245",
-   "designations": [
-    "IC2245"
-   ],
-   "names": [],
-   "ra": 8.257894,
-   "dec": 24.536056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2246",
-   "designations": [
-    "IC2246"
-   ],
-   "names": [],
-   "ra": 8.266886,
-   "dec": 23.84975,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -26697,28 +25638,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2251",
-   "designations": [
-    "IC2251"
-   ],
-   "names": [],
-   "ra": 8.277442,
-   "dec": 23.949639,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2252",
-   "designations": [
-    "IC2252"
-   ],
-   "names": [],
-   "ra": 8.278319,
-   "dec": 24.693889,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2253",
    "designations": [
     "IC2253",
@@ -26745,17 +25664,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2255",
-   "designations": [
-    "IC2255"
-   ],
-   "names": [],
-   "ra": 8.278661,
-   "dec": 23.457111,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2256",
    "designations": [
     "IC2256",
@@ -26766,116 +25674,6 @@
    "dec": 24.176833,
    "type": "G",
    "magnitude": 15.13,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2257",
-   "designations": [
-    "IC2257"
-   ],
-   "names": [],
-   "ra": 8.286336,
-   "dec": 23.649917,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2258",
-   "designations": [
-    "IC2258"
-   ],
-   "names": [],
-   "ra": 8.2879,
-   "dec": 23.577528,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2259",
-   "designations": [
-    "IC2259"
-   ],
-   "names": [],
-   "ra": 8.288375,
-   "dec": 23.565639,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2260",
-   "designations": [
-    "IC2260"
-   ],
-   "names": [],
-   "ra": 8.290994,
-   "dec": 24.67325,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2261",
-   "designations": [
-    "IC2261"
-   ],
-   "names": [],
-   "ra": 8.29245,
-   "dec": 23.512333,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2262",
-   "designations": [
-    "IC2262"
-   ],
-   "names": [],
-   "ra": 8.2896,
-   "dec": 18.4545,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2263",
-   "designations": [
-    "IC2263"
-   ],
-   "names": [],
-   "ra": 8.2947,
-   "dec": 23.580111,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2264",
-   "designations": [
-    "IC2264"
-   ],
-   "names": [],
-   "ra": 8.295814,
-   "dec": 23.71475,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2265",
-   "designations": [
-    "IC2265"
-   ],
-   "names": [],
-   "ra": 8.297286,
-   "dec": 24.193528,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2266",
-   "designations": [
-    "IC2266"
-   ],
-   "names": [],
-   "ra": 8.294014,
-   "dec": 18.410361,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -26919,17 +25717,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2270",
-   "designations": [
-    "IC2270"
-   ],
-   "names": [],
-   "ra": 8.300103,
-   "dec": 19.097667,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2271",
    "designations": [
     "IC2271",
@@ -26940,28 +25727,6 @@
    "dec": 24.526917,
    "type": "G",
    "magnitude": 15.42,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2272",
-   "designations": [
-    "IC2272"
-   ],
-   "names": [],
-   "ra": 8.301992,
-   "dec": 18.735889,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2273",
-   "designations": [
-    "IC2273"
-   ],
-   "names": [],
-   "ra": 8.303561,
-   "dec": 18.401667,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -26976,17 +25741,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2275",
-   "designations": [
-    "IC2275"
-   ],
-   "names": [],
-   "ra": 8.303811,
-   "dec": 18.411444,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2276",
    "designations": [
     "IC2276"
@@ -26998,17 +25752,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2277",
-   "designations": [
-    "IC2277"
-   ],
-   "names": [],
-   "ra": 8.309011,
-   "dec": 18.650056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2278",
    "designations": [
     "IC2278"
@@ -27017,40 +25760,6 @@
    "ra": 8.309569,
    "dec": 18.461528,
    "type": "Other",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2279",
-   "designations": [
-    "IC2279"
-   ],
-   "names": [],
-   "ra": 8.309867,
-   "dec": 18.567944,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2280",
-   "designations": [
-    "IC2280"
-   ],
-   "names": [],
-   "ra": 8.3107,
-   "dec": 18.44975,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2281",
-   "designations": [
-    "IC2281"
-   ],
-   "names": [],
-   "ra": 8.315042,
-   "dec": 18.909111,
-   "type": "*",
-   "magnitude": 12.29,
    "constellation": "Cnc"
   },
   {
@@ -27067,61 +25776,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2283",
-   "designations": [
-    "IC2283"
-   ],
-   "names": [],
-   "ra": 8.321536,
-   "dec": 24.786417,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2284",
-   "designations": [
-    "IC2284"
-   ],
-   "names": [],
-   "ra": 8.3163,
-   "dec": 18.605583,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2285",
-   "designations": [
-    "IC2285"
-   ],
-   "names": [],
-   "ra": 8.317447,
-   "dec": 18.914667,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2286",
-   "designations": [
-    "IC2286"
-   ],
-   "names": [],
-   "ra": 8.317803,
-   "dec": 18.956111,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2287",
-   "designations": [
-    "IC2287"
-   ],
-   "names": [],
-   "ra": 8.318786,
-   "dec": 19.400472,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2288",
    "designations": [
     "IC2288",
@@ -27132,17 +25786,6 @@
    "dec": 23.747306,
    "type": "G",
    "magnitude": 15.62,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2289",
-   "designations": [
-    "IC2289"
-   ],
-   "names": [],
-   "ra": 8.318789,
-   "dec": 18.498278,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -27159,28 +25802,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2291",
-   "designations": [
-    "IC2291"
-   ],
-   "names": [],
-   "ra": 8.321708,
-   "dec": 18.508389,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2292",
-   "designations": [
-    "IC2292"
-   ],
-   "names": [],
-   "ra": 8.322775,
-   "dec": 19.563583,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2293",
    "designations": [
     "IC2293",
@@ -27191,149 +25812,6 @@
    "dec": 21.394306,
    "type": "G",
    "magnitude": 14.37,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2294",
-   "designations": [
-    "IC2294"
-   ],
-   "names": [],
-   "ra": 8.3239,
-   "dec": 18.984694,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2295",
-   "designations": [
-    "IC2295"
-   ],
-   "names": [],
-   "ra": 8.324164,
-   "dec": 18.414222,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2296",
-   "designations": [
-    "IC2296"
-   ],
-   "names": [],
-   "ra": 8.324597,
-   "dec": 18.89875,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2297",
-   "designations": [
-    "IC2297"
-   ],
-   "names": [],
-   "ra": 8.334617,
-   "dec": 18.381972,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2298",
-   "designations": [
-    "IC2298"
-   ],
-   "names": [],
-   "ra": 8.3353,
-   "dec": 18.403111,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2299",
-   "designations": [
-    "IC2299"
-   ],
-   "names": [],
-   "ra": 8.335947,
-   "dec": 19.337444,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2300",
-   "designations": [
-    "IC2300"
-   ],
-   "names": [],
-   "ra": 8.336833,
-   "dec": 18.420056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2301",
-   "designations": [
-    "IC2301"
-   ],
-   "names": [],
-   "ra": 8.337203,
-   "dec": 18.43375,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2302",
-   "designations": [
-    "IC2302"
-   ],
-   "names": [],
-   "ra": 8.338133,
-   "dec": 19.357222,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2303",
-   "designations": [
-    "IC2303"
-   ],
-   "names": [],
-   "ra": 8.338686,
-   "dec": 19.419,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2304",
-   "designations": [
-    "IC2304"
-   ],
-   "names": [],
-   "ra": 8.343247,
-   "dec": 19.439528,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2305",
-   "designations": [
-    "IC2305"
-   ],
-   "names": [],
-   "ra": 8.344467,
-   "dec": 19.452917,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2306",
-   "designations": [
-    "IC2306"
-   ],
-   "names": [],
-   "ra": 8.344278,
-   "dec": 19.110278,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -27375,17 +25853,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2310",
-   "designations": [
-    "IC2310"
-   ],
-   "names": [],
-   "ra": 8.3462,
-   "dec": 18.4635,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2311",
    "designations": [
     "IC2311",
@@ -27407,138 +25874,6 @@
    "ra": 8.348161,
    "dec": 18.510889,
    "type": "GPair",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2313",
-   "designations": [
-    "IC2313"
-   ],
-   "names": [],
-   "ra": 8.348494,
-   "dec": 18.514194,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2314",
-   "designations": [
-    "IC2314"
-   ],
-   "names": [],
-   "ra": 8.351011,
-   "dec": 18.762667,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2315",
-   "designations": [
-    "IC2315"
-   ],
-   "names": [],
-   "ra": 8.352969,
-   "dec": 18.91525,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2316",
-   "designations": [
-    "IC2316"
-   ],
-   "names": [],
-   "ra": 8.354222,
-   "dec": 19.759417,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2317",
-   "designations": [
-    "IC2317"
-   ],
-   "names": [],
-   "ra": 8.355961,
-   "dec": 18.844333,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2318",
-   "designations": [
-    "IC2318"
-   ],
-   "names": [],
-   "ra": 8.3591,
-   "dec": 18.622889,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2319",
-   "designations": [
-    "IC2319"
-   ],
-   "names": [],
-   "ra": 8.359183,
-   "dec": 18.476722,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2320",
-   "designations": [
-    "IC2320"
-   ],
-   "names": [],
-   "ra": 8.359833,
-   "dec": 18.67025,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2321",
-   "designations": [
-    "IC2321"
-   ],
-   "names": [],
-   "ra": 8.360881,
-   "dec": 18.469139,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2322",
-   "designations": [
-    "IC2322"
-   ],
-   "names": [],
-   "ra": 8.360828,
-   "dec": 18.484111,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2323",
-   "designations": [
-    "IC2323"
-   ],
-   "names": [],
-   "ra": 8.36145,
-   "dec": 18.61325,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2324",
-   "designations": [
-    "IC2324"
-   ],
-   "names": [],
-   "ra": 8.366314,
-   "dec": 19.194028,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -27603,61 +25938,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2330",
-   "designations": [
-    "IC2330"
-   ],
-   "names": [],
-   "ra": 8.373094,
-   "dec": 18.853611,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2331",
-   "designations": [
-    "IC2331"
-   ],
-   "names": [],
-   "ra": 8.376431,
-   "dec": 19.679667,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2332",
-   "designations": [
-    "IC2332"
-   ],
-   "names": [],
-   "ra": 8.377675,
-   "dec": 19.923056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2333",
-   "designations": [
-    "IC2333"
-   ],
-   "names": [],
-   "ra": 8.383569,
-   "dec": 19.081861,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2334",
-   "designations": [
-    "IC2334"
-   ],
-   "names": [],
-   "ra": 8.383325,
-   "dec": 18.613778,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2335",
    "designations": [
     "IC2335",
@@ -27668,17 +25948,6 @@
    "dec": 19.408028,
    "type": "G",
    "magnitude": 16.77,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2336",
-   "designations": [
-    "IC2336"
-   ],
-   "names": [],
-   "ra": 8.388622,
-   "dec": 18.537444,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -27748,72 +26017,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2342",
-   "designations": [
-    "IC2342"
-   ],
-   "names": [],
-   "ra": 8.39225,
-   "dec": 18.579611,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2343",
-   "designations": [
-    "IC2343"
-   ],
-   "names": [],
-   "ra": 8.398314,
-   "dec": 19.025639,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2344",
-   "designations": [
-    "IC2344"
-   ],
-   "names": [],
-   "ra": 8.398539,
-   "dec": 18.659722,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2345",
-   "designations": [
-    "IC2345"
-   ],
-   "names": [],
-   "ra": 8.402344,
-   "dec": 19.952167,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2346",
-   "designations": [
-    "IC2346"
-   ],
-   "names": [],
-   "ra": 8.403028,
-   "dec": 19.706222,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2347",
-   "designations": [
-    "IC2347"
-   ],
-   "names": [],
-   "ra": 8.403911,
-   "dec": 18.773861,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2348",
    "designations": [
     "IC2348",
@@ -27827,17 +26030,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2349",
-   "designations": [
-    "IC2349"
-   ],
-   "names": [],
-   "ra": 8.404642,
-   "dec": 19.008056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2350",
    "designations": [
     "IC2350"
@@ -27846,105 +26038,6 @@
    "ra": 8.407883,
    "dec": 19.552056,
    "type": "Other",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2351",
-   "designations": [
-    "IC2351"
-   ],
-   "names": [],
-   "ra": 8.408389,
-   "dec": 18.588778,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2352",
-   "designations": [
-    "IC2352"
-   ],
-   "names": [],
-   "ra": 8.411106,
-   "dec": 19.602778,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2353",
-   "designations": [
-    "IC2353"
-   ],
-   "names": [],
-   "ra": 8.410472,
-   "dec": 18.656556,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2354",
-   "designations": [
-    "IC2354"
-   ],
-   "names": [],
-   "ra": 8.411322,
-   "dec": 18.666444,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2355",
-   "designations": [
-    "IC2355"
-   ],
-   "names": [],
-   "ra": 8.414392,
-   "dec": 20.463472,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2356",
-   "designations": [
-    "IC2356"
-   ],
-   "names": [],
-   "ra": 8.416906,
-   "dec": 19.497556,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2357",
-   "designations": [
-    "IC2357"
-   ],
-   "names": [],
-   "ra": 8.417933,
-   "dec": 19.508861,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2358",
-   "designations": [
-    "IC2358"
-   ],
-   "names": [],
-   "ra": 8.418083,
-   "dec": 19.495194,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2360",
-   "designations": [
-    "IC2360"
-   ],
-   "names": [],
-   "ra": 8.420858,
-   "dec": 19.516444,
-   "type": "*",
    "constellation": "Cnc"
   },
   {
@@ -27962,17 +26055,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2362",
-   "designations": [
-    "IC2362"
-   ],
-   "names": [],
-   "ra": 8.428172,
-   "dec": 19.942222,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2363",
    "designations": [
     "IC2363",
@@ -27983,17 +26065,6 @@
    "dec": 19.449278,
    "type": "G",
    "magnitude": 14.87,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2364",
-   "designations": [
-    "IC2364"
-   ],
-   "names": [],
-   "ra": 8.430969,
-   "dec": 19.759722,
-   "type": "**",
    "constellation": "Cnc"
   },
   {
@@ -28023,61 +26094,6 @@
    "type": "G",
    "magnitude": 12.05,
    "constellation": "Pup"
-  },
-  {
-   "id": "IC2368",
-   "designations": [
-    "IC2368"
-   ],
-   "names": [],
-   "ra": 8.433692,
-   "dec": 19.883,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2369",
-   "designations": [
-    "IC2369"
-   ],
-   "names": [],
-   "ra": 8.437794,
-   "dec": 20.23225,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2370",
-   "designations": [
-    "IC2370"
-   ],
-   "names": [],
-   "ra": 8.439672,
-   "dec": 19.638056,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2371",
-   "designations": [
-    "IC2371"
-   ],
-   "names": [],
-   "ra": 8.443606,
-   "dec": 19.798583,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2372",
-   "designations": [
-    "IC2372"
-   ],
-   "names": [],
-   "ra": 8.444617,
-   "dec": 19.883083,
-   "type": "*",
-   "constellation": "Cnc"
   },
   {
    "id": "IC2373",
@@ -28183,17 +26199,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2381",
-   "designations": [
-    "IC2381"
-   ],
-   "names": [],
-   "ra": 8.472706,
-   "dec": 19.791639,
-   "type": "**",
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2382",
    "designations": [
     "IC2382",
@@ -28244,17 +26249,6 @@
    "type": "G",
    "magnitude": 15.07,
    "constellation": "Lyn"
-  },
-  {
-   "id": "IC2386",
-   "designations": [
-    "IC2386"
-   ],
-   "names": [],
-   "ra": 8.578844,
-   "dec": 25.806694,
-   "type": "*",
-   "constellation": "Cnc"
   },
   {
    "id": "IC2387",
@@ -28364,28 +26358,6 @@
    "type": "OCl",
    "magnitude": 4.6,
    "constellation": "Vel"
-  },
-  {
-   "id": "IC2396",
-   "designations": [
-    "IC2396"
-   ],
-   "names": [],
-   "ra": 8.777942,
-   "dec": 17.649194,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2397",
-   "designations": [
-    "IC2397"
-   ],
-   "names": [],
-   "ra": 8.778294,
-   "dec": 17.659778,
-   "type": "**",
-   "constellation": "Cnc"
   },
   {
    "id": "IC2398",
@@ -28520,18 +26492,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2408",
-   "designations": [
-    "IC2408"
-   ],
-   "names": [],
-   "ra": 8.805622,
-   "dec": 19.037417,
-   "type": "*",
-   "magnitude": 16.5,
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2409",
    "designations": [
     "IC2409",
@@ -28543,28 +26503,6 @@
    "dec": 18.331139,
    "type": "G",
    "magnitude": 14.3,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2412",
-   "designations": [
-    "IC2412"
-   ],
-   "names": [],
-   "ra": 8.823253,
-   "dec": 18.543167,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2413",
-   "designations": [
-    "IC2413"
-   ],
-   "names": [],
-   "ra": 8.825436,
-   "dec": 18.74475,
-   "type": "**",
    "constellation": "Cnc"
   },
   {
@@ -28581,41 +26519,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2415",
-   "designations": [
-    "IC2415"
-   ],
-   "names": [],
-   "ra": 8.833864,
-   "dec": 18.651611,
-   "type": "*",
-   "magnitude": 16.3,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2416",
-   "designations": [
-    "IC2416"
-   ],
-   "names": [],
-   "ra": 8.842264,
-   "dec": 18.559611,
-   "type": "*",
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2417",
-   "designations": [
-    "IC2417"
-   ],
-   "names": [],
-   "ra": 8.852267,
-   "dec": 18.624917,
-   "type": "*",
-   "magnitude": 14.5,
-   "constellation": "Cnc"
-  },
-  {
    "id": "IC2418",
    "designations": [
     "IC2418",
@@ -28626,17 +26529,6 @@
    "dec": 17.94525,
    "type": "G",
    "magnitude": 16.42,
-   "constellation": "Cnc"
-  },
-  {
-   "id": "IC2419",
-   "designations": [
-    "IC2419"
-   ],
-   "names": [],
-   "ra": 8.869278,
-   "dec": 18.101361,
-   "type": "**",
    "constellation": "Cnc"
   },
   {
@@ -28692,17 +26584,6 @@
    "type": "G",
    "magnitude": 14.57,
    "constellation": "Cnc"
-  },
-  {
-   "id": "IC2425",
-   "designations": [
-    "IC2425"
-   ],
-   "names": [],
-   "ra": 8.930592,
-   "dec": -3.423139,
-   "type": "*",
-   "constellation": "Hya"
   },
   {
    "id": "IC2426",
@@ -28837,17 +26718,6 @@
    "constellation": "Cnc"
   },
   {
-   "id": "IC2436",
-   "designations": [
-    "IC2436"
-   ],
-   "names": [],
-   "ra": 9.089922,
-   "dec": -19.165472,
-   "type": "**",
-   "constellation": "Hya"
-  },
-  {
    "id": "IC2437",
    "designations": [
     "IC2437",
@@ -28883,17 +26753,6 @@
    "type": "G",
    "magnitude": 16.06,
    "constellation": "Cnc"
-  },
-  {
-   "id": "IC2440",
-   "designations": [
-    "IC2440"
-   ],
-   "names": [],
-   "ra": 9.263933,
-   "dec": 73.459056,
-   "type": "*",
-   "constellation": "Cam"
   },
   {
    "id": "IC2441",
@@ -29688,17 +27547,6 @@
    "constellation": "LMi"
   },
   {
-   "id": "IC2509",
-   "designations": [
-    "IC2509"
-   ],
-   "names": [],
-   "ra": 9.7822,
-   "dec": 5.701944,
-   "type": "*",
-   "constellation": "Sex"
-  },
-  {
    "id": "IC2510",
    "designations": [
     "IC2510",
@@ -30103,17 +27951,6 @@
    "type": "G",
    "magnitude": 15.32,
    "constellation": "LMi"
-  },
-  {
-   "id": "IC2545",
-   "designations": [
-    "IC2545"
-   ],
-   "names": [],
-   "ra": 10.109739,
-   "dec": -33.858278,
-   "type": "**",
-   "constellation": "Ant"
   },
   {
    "id": "IC2546",
@@ -30881,17 +28718,6 @@
    "constellation": "LMi"
   },
   {
-   "id": "IC2611",
-   "designations": [
-    "IC2611"
-   ],
-   "names": [],
-   "ra": 10.877481,
-   "dec": 10.136361,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2612",
    "designations": [
     "IC2612",
@@ -30954,17 +28780,6 @@
    "type": "G",
    "magnitude": 14.8,
    "constellation": "UMa"
-  },
-  {
-   "id": "IC2618",
-   "designations": [
-    "IC2618"
-   ],
-   "names": [],
-   "ra": 11.033006,
-   "dec": 27.78925,
-   "type": "**",
-   "constellation": "LMi"
   },
   {
    "id": "IC2619",
@@ -31070,17 +28885,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2630",
-   "designations": [
-    "IC2630"
-   ],
-   "names": [],
-   "ra": 11.211997,
-   "dec": 12.318944,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2631",
    "designations": [
     "IC2631"
@@ -31128,17 +28932,6 @@
    "dec": 10.485972,
    "type": "G",
    "magnitude": 15,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2635",
-   "designations": [
-    "IC2635"
-   ],
-   "names": [],
-   "ra": 11.224947,
-   "dec": 11.463889,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -31207,17 +29000,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2641",
-   "designations": [
-    "IC2641"
-   ],
-   "names": [],
-   "ra": 11.236264,
-   "dec": 9.399333,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2642",
    "designations": [
     "IC2642"
@@ -31226,17 +29008,6 @@
    "ra": 11.237722,
    "dec": 12.265667,
    "type": "Other",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2643",
-   "designations": [
-    "IC2643"
-   ],
-   "names": [],
-   "ra": 11.240711,
-   "dec": 10.126222,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31275,17 +29046,6 @@
    "dec": 12.5285,
    "type": "G",
    "magnitude": 16.91,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2647",
-   "designations": [
-    "IC2647"
-   ],
-   "names": [],
-   "ra": 11.244061,
-   "dec": 12.142,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31354,17 +29114,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2653",
-   "designations": [
-    "IC2653"
-   ],
-   "names": [],
-   "ra": 11.248286,
-   "dec": 10.548361,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2654",
    "designations": [
     "IC2654"
@@ -31415,28 +29164,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2658",
-   "designations": [
-    "IC2658"
-   ],
-   "names": [],
-   "ra": 11.252431,
-   "dec": 12.996611,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2659",
-   "designations": [
-    "IC2659"
-   ],
-   "names": [],
-   "ra": 11.257733,
-   "dec": 12.887667,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2660",
    "designations": [
     "IC2660",
@@ -31471,28 +29198,6 @@
    "ra": 11.258553,
    "dec": 12.771056,
    "type": "Other",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2663",
-   "designations": [
-    "IC2663"
-   ],
-   "names": [],
-   "ra": 11.258994,
-   "dec": 12.603917,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2664",
-   "designations": [
-    "IC2664"
-   ],
-   "names": [],
-   "ra": 11.260678,
-   "dec": 12.562694,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -31548,17 +29253,6 @@
    "constellation": "Crt"
   },
   {
-   "id": "IC2669",
-   "designations": [
-    "IC2669"
-   ],
-   "names": [],
-   "ra": 11.264783,
-   "dec": 13.429556,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2670",
    "designations": [
     "IC2670",
@@ -31569,28 +29263,6 @@
    "dec": 11.783361,
    "type": "G",
    "magnitude": 16.57,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2671",
-   "designations": [
-    "IC2671"
-   ],
-   "names": [],
-   "ra": 11.267589,
-   "dec": 13.12425,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2672",
-   "designations": [
-    "IC2672"
-   ],
-   "names": [],
-   "ra": 11.267728,
-   "dec": 10.157278,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31619,17 +29291,6 @@
    "dec": 11.048639,
    "type": "G",
    "magnitude": 15.4,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2675",
-   "designations": [
-    "IC2675"
-   ],
-   "names": [],
-   "ra": 11.269669,
-   "dec": 12.249306,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31708,17 +29369,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2682",
-   "designations": [
-    "IC2682"
-   ],
-   "names": [],
-   "ra": 11.2767,
-   "dec": 9.410778,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2683",
    "designations": [
     "IC2683",
@@ -31742,39 +29392,6 @@
    "dec": 13.099639,
    "type": "G",
    "magnitude": 17.03,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2685",
-   "designations": [
-    "IC2685"
-   ],
-   "names": [],
-   "ra": 11.283358,
-   "dec": 10.094083,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2686",
-   "designations": [
-    "IC2686"
-   ],
-   "names": [],
-   "ra": 11.284031,
-   "dec": 12.951667,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2687",
-   "designations": [
-    "IC2687"
-   ],
-   "names": [],
-   "ra": 11.286661,
-   "dec": 10.158111,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -31803,17 +29420,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2691",
-   "designations": [
-    "IC2691"
-   ],
-   "names": [],
-   "ra": 11.290161,
-   "dec": 12.031083,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2692",
    "designations": [
     "IC2692"
@@ -31823,17 +29429,6 @@
    "dec": 10.768056,
    "type": "G",
    "magnitude": 16.62,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2693",
-   "designations": [
-    "IC2693"
-   ],
-   "names": [],
-   "ra": 11.293419,
-   "dec": 13.548833,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31863,28 +29458,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2696",
-   "designations": [
-    "IC2696"
-   ],
-   "names": [],
-   "ra": 11.296925,
-   "dec": 12.75575,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2697",
-   "designations": [
-    "IC2697"
-   ],
-   "names": [],
-   "ra": 11.297536,
-   "dec": 13.399972,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2698",
    "designations": [
     "IC2698",
@@ -31895,17 +29468,6 @@
    "dec": 11.885778,
    "type": "G",
    "magnitude": 15.81,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2699",
-   "designations": [
-    "IC2699"
-   ],
-   "names": [],
-   "ra": 11.297958,
-   "dec": 11.909222,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -31973,28 +29535,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2705",
-   "designations": [
-    "IC2705"
-   ],
-   "names": [],
-   "ra": 11.301022,
-   "dec": 11.904083,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2706",
-   "designations": [
-    "IC2706"
-   ],
-   "names": [],
-   "ra": 11.308111,
-   "dec": 12.548444,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2707",
    "designations": [
     "IC2707",
@@ -32030,28 +29570,6 @@
    "dec": 12.561694,
    "type": "G",
    "magnitude": 17.47,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2710",
-   "designations": [
-    "IC2710"
-   ],
-   "names": [],
-   "ra": 11.312311,
-   "dec": 13.566583,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2711",
-   "designations": [
-    "IC2711"
-   ],
-   "names": [],
-   "ra": 11.312914,
-   "dec": 13.738444,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -32115,17 +29633,6 @@
    "dec": 11.698556,
    "type": "G",
    "magnitude": 17.7,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2717",
-   "designations": [
-    "IC2717"
-   ],
-   "names": [],
-   "ra": 11.321881,
-   "dec": 12.048556,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -32251,17 +29758,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2728",
-   "designations": [
-    "IC2728"
-   ],
-   "names": [],
-   "ra": 11.334758,
-   "dec": 13.427,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2729",
    "designations": [
     "IC2729",
@@ -32275,28 +29771,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2730",
-   "designations": [
-    "IC2730"
-   ],
-   "names": [],
-   "ra": 11.335386,
-   "dec": 12.366528,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2731",
-   "designations": [
-    "IC2731"
-   ],
-   "names": [],
-   "ra": 11.336186,
-   "dec": 13.558278,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2732",
    "designations": [
     "IC2732",
@@ -32307,17 +29781,6 @@
    "dec": 12.404028,
    "type": "G",
    "magnitude": 17.17,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2733",
-   "designations": [
-    "IC2733"
-   ],
-   "names": [],
-   "ra": 11.338142,
-   "dec": 13.83525,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -32345,28 +29808,6 @@
    "type": "G",
    "magnitude": 15.1,
    "constellation": "UMa"
-  },
-  {
-   "id": "IC2736",
-   "designations": [
-    "IC2736"
-   ],
-   "names": [],
-   "ra": 11.348506,
-   "dec": 12.408667,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2737",
-   "designations": [
-    "IC2737"
-   ],
-   "names": [],
-   "ra": 11.352292,
-   "dec": 14.293194,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC2738",
@@ -32434,17 +29875,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2743",
-   "designations": [
-    "IC2743"
-   ],
-   "names": [],
-   "ra": 11.356942,
-   "dec": 8.693111,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2744",
    "designations": [
     "IC2744",
@@ -32480,17 +29910,6 @@
    "dec": 11.737083,
    "type": "G",
    "magnitude": 16.72,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2747",
-   "designations": [
-    "IC2747"
-   ],
-   "names": [],
-   "ra": 11.361156,
-   "dec": 8.80325,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -32579,17 +29998,6 @@
    "dec": 14.144056,
    "type": "G",
    "magnitude": 16.97,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2755",
-   "designations": [
-    "IC2755"
-   ],
-   "names": [],
-   "ra": 11.367336,
-   "dec": 13.793111,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -32799,39 +30207,6 @@
    "dec": 12.519167,
    "type": "G",
    "magnitude": 18.11,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2772",
-   "designations": [
-    "IC2772"
-   ],
-   "names": [],
-   "ra": 11.375111,
-   "dec": 13.599139,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2773",
-   "designations": [
-    "IC2773"
-   ],
-   "names": [],
-   "ra": 11.376475,
-   "dec": 13.574528,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2774",
-   "designations": [
-    "IC2774"
-   ],
-   "names": [],
-   "ra": 11.376986,
-   "dec": 12.514944,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33077,17 +30452,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2794",
-   "designations": [
-    "IC2794"
-   ],
-   "names": [],
-   "ra": 11.401014,
-   "dec": 12.790972,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2795",
    "designations": [
     "IC2795",
@@ -33212,28 +30576,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2805",
-   "designations": [
-    "IC2805"
-   ],
-   "names": [],
-   "ra": 11.416636,
-   "dec": 14.014472,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2806",
-   "designations": [
-    "IC2806"
-   ],
-   "names": [],
-   "ra": 11.420917,
-   "dec": 9.652222,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2807",
    "designations": [
     "IC2807",
@@ -33244,28 +30586,6 @@
    "dec": 11.530056,
    "type": "G",
    "magnitude": 17.47,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2808",
-   "designations": [
-    "IC2808"
-   ],
-   "names": [],
-   "ra": 11.424133,
-   "dec": 9.132056,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2809",
-   "designations": [
-    "IC2809"
-   ],
-   "names": [],
-   "ra": 11.427158,
-   "dec": 8.526278,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33357,17 +30677,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2817",
-   "designations": [
-    "IC2817"
-   ],
-   "names": [],
-   "ra": 11.438558,
-   "dec": 9.149,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2818",
    "designations": [
     "IC2818"
@@ -33444,28 +30753,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2824",
-   "designations": [
-    "IC2824"
-   ],
-   "names": [],
-   "ra": 11.451353,
-   "dec": 14.085278,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2825",
-   "designations": [
-    "IC2825"
-   ],
-   "names": [],
-   "ra": 11.450989,
-   "dec": 8.443917,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2826",
    "designations": [
     "IC2826",
@@ -33476,17 +30763,6 @@
    "dec": 13.238722,
    "type": "G",
    "magnitude": 15.17,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2827",
-   "designations": [
-    "IC2827"
-   ],
-   "names": [],
-   "ra": 11.452686,
-   "dec": 11.514389,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33529,39 +30805,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2831",
-   "designations": [
-    "IC2831"
-   ],
-   "names": [],
-   "ra": 11.456281,
-   "dec": 8.978917,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2832",
-   "designations": [
-    "IC2832"
-   ],
-   "names": [],
-   "ra": 11.456978,
-   "dec": 13.989444,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2833",
-   "designations": [
-    "IC2833"
-   ],
-   "names": [],
-   "ra": 11.457253,
-   "dec": 13.602806,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2834",
    "designations": [
     "IC2834",
@@ -33584,17 +30827,6 @@
    "dec": 12.142889,
    "type": "G",
    "magnitude": 16.86,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2836",
-   "designations": [
-    "IC2836"
-   ],
-   "names": [],
-   "ra": 11.460336,
-   "dec": 9.084806,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33644,17 +30876,6 @@
    "dec": 13.425889,
    "type": "G",
    "magnitude": 17.28,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2841",
-   "designations": [
-    "IC2841"
-   ],
-   "names": [],
-   "ra": 11.463572,
-   "dec": 12.603111,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33747,17 +30968,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2849",
-   "designations": [
-    "IC2849"
-   ],
-   "names": [],
-   "ra": 11.469906,
-   "dec": 9.094,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2850",
    "designations": [
     "IC2850",
@@ -33808,17 +31018,6 @@
    "dec": 9.147028,
    "type": "G",
    "magnitude": 14.48,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2854",
-   "designations": [
-    "IC2854"
-   ],
-   "names": [],
-   "ra": 11.472186,
-   "dec": 8.968722,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33874,17 +31073,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2859",
-   "designations": [
-    "IC2859"
-   ],
-   "names": [],
-   "ra": 11.478267,
-   "dec": 9.1085,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2860",
    "designations": [
     "IC2860"
@@ -33922,17 +31110,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2863",
-   "designations": [
-    "IC2863"
-   ],
-   "names": [],
-   "ra": 11.481661,
-   "dec": 9.095306,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2864",
    "designations": [
     "IC2864"
@@ -33942,28 +31119,6 @@
    "dec": 12.367722,
    "type": "G",
    "magnitude": 16.8,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2865",
-   "designations": [
-    "IC2865"
-   ],
-   "names": [],
-   "ra": 11.483264,
-   "dec": 9.1155,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2866",
-   "designations": [
-    "IC2866"
-   ],
-   "names": [],
-   "ra": 11.483342,
-   "dec": 9.042194,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -33977,28 +31132,6 @@
    "dec": 9.089389,
    "type": "G",
    "magnitude": 15.92,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2868",
-   "designations": [
-    "IC2868"
-   ],
-   "names": [],
-   "ra": 11.484944,
-   "dec": 9.094306,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2869",
-   "designations": [
-    "IC2869"
-   ],
-   "names": [],
-   "ra": 11.485756,
-   "dec": 9.017389,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34064,17 +31197,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2875",
-   "designations": [
-    "IC2875"
-   ],
-   "names": [],
-   "ra": 11.493036,
-   "dec": 12.989889,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2876",
    "designations": [
     "IC2876",
@@ -34126,17 +31248,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2880",
-   "designations": [
-    "IC2880"
-   ],
-   "names": [],
-   "ra": 11.498061,
-   "dec": 13.198833,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2881",
    "designations": [
     "IC2881",
@@ -34147,17 +31258,6 @@
    "dec": 12.511222,
    "type": "G",
    "magnitude": 18.52,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2882",
-   "designations": [
-    "IC2882"
-   ],
-   "names": [],
-   "ra": 11.502622,
-   "dec": 11.989139,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34182,17 +31282,6 @@
    "dec": -79.734389,
    "type": "*Ass",
    "constellation": "Cha"
-  },
-  {
-   "id": "IC2885",
-   "designations": [
-    "IC2885"
-   ],
-   "names": [],
-   "ra": 11.506281,
-   "dec": 9.772056,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC2886",
@@ -34229,17 +31318,6 @@
    "type": "G",
    "magnitude": 14.7,
    "constellation": "Crt"
-  },
-  {
-   "id": "IC2890",
-   "designations": [
-    "IC2890"
-   ],
-   "names": [],
-   "ra": 11.512819,
-   "dec": 13.181833,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC2891",
@@ -34291,17 +31369,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2895",
-   "designations": [
-    "IC2895"
-   ],
-   "names": [],
-   "ra": 11.515914,
-   "dec": 9.976861,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2896",
    "designations": [
     "IC2896"
@@ -34311,17 +31378,6 @@
    "dec": 12.350056,
    "type": "G",
    "magnitude": 16.56,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2897",
-   "designations": [
-    "IC2897"
-   ],
-   "names": [],
-   "ra": 11.522047,
-   "dec": 11.549056,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34335,17 +31391,6 @@
    "dec": 13.336222,
    "type": "G",
    "magnitude": 16.63,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2899",
-   "designations": [
-    "IC2899"
-   ],
-   "names": [],
-   "ra": 11.522325,
-   "dec": 10.634722,
-   "type": "**",
    "constellation": "Leo"
   },
   {
@@ -34373,17 +31418,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2902",
-   "designations": [
-    "IC2902"
-   ],
-   "names": [],
-   "ra": 11.525878,
-   "dec": 14.22275,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2903",
    "designations": [
     "IC2903",
@@ -34394,62 +31428,6 @@
    "dec": 12.642583,
    "type": "G",
    "magnitude": 16.81,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2904",
-   "designations": [
-    "IC2904"
-   ],
-   "names": [],
-   "ra": 11.528436,
-   "dec": 13.184139,
-   "type": "*",
-   "magnitude": 16.8,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2905",
-   "designations": [
-    "IC2905"
-   ],
-   "names": [],
-   "ra": 11.529717,
-   "dec": 9.106972,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2906",
-   "designations": [
-    "IC2906"
-   ],
-   "names": [],
-   "ra": 11.530447,
-   "dec": 13.132889,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2907",
-   "designations": [
-    "IC2907"
-   ],
-   "names": [],
-   "ra": 11.530208,
-   "dec": 9.899444,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2908",
-   "designations": [
-    "IC2908"
-   ],
-   "names": [],
-   "ra": 11.530689,
-   "dec": 12.937889,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34477,17 +31455,6 @@
    "type": "G",
    "magnitude": 14.63,
    "constellation": "Crt"
-  },
-  {
-   "id": "IC2911",
-   "designations": [
-    "IC2911"
-   ],
-   "names": [],
-   "ra": 11.534619,
-   "dec": 12.977361,
-   "type": "**",
-   "constellation": "Leo"
   },
   {
    "id": "IC2912",
@@ -34529,17 +31496,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2916",
-   "designations": [
-    "IC2916"
-   ],
-   "names": [],
-   "ra": 11.537819,
-   "dec": 11.683722,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2917",
    "designations": [
     "IC2917",
@@ -34550,17 +31506,6 @@
    "dec": 10.945444,
    "type": "G",
    "magnitude": 18,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2918",
-   "designations": [
-    "IC2918"
-   ],
-   "names": [],
-   "ra": 11.540619,
-   "dec": 13.2485,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34577,17 +31522,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2920",
-   "designations": [
-    "IC2920"
-   ],
-   "names": [],
-   "ra": 11.546853,
-   "dec": 12.557111,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2921",
    "designations": [
     "IC2921"
@@ -34597,17 +31531,6 @@
    "dec": 10.296472,
    "type": "G",
    "magnitude": 16.94,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2922",
-   "designations": [
-    "IC2922"
-   ],
-   "names": [],
-   "ra": 11.547561,
-   "dec": 12.922833,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34624,17 +31547,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2924",
-   "designations": [
-    "IC2924"
-   ],
-   "names": [],
-   "ra": 11.547831,
-   "dec": 9.023278,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2925",
    "designations": [
     "IC2925",
@@ -34646,28 +31558,6 @@
    "type": "G",
    "magnitude": 15.34,
    "constellation": "UMa"
-  },
-  {
-   "id": "IC2926",
-   "designations": [
-    "IC2926"
-   ],
-   "names": [],
-   "ra": 11.551131,
-   "dec": 12.436444,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2927",
-   "designations": [
-    "IC2927"
-   ],
-   "names": [],
-   "ra": 11.551325,
-   "dec": 13.085722,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC2928",
@@ -34709,28 +31599,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2931",
-   "designations": [
-    "IC2931"
-   ],
-   "names": [],
-   "ra": 11.564025,
-   "dec": 12.467222,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2932",
-   "designations": [
-    "IC2932"
-   ],
-   "names": [],
-   "ra": 11.564919,
-   "dec": 10.543389,
-   "type": "**",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2933",
    "designations": [
     "IC2933",
@@ -34758,17 +31626,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2935",
-   "designations": [
-    "IC2935"
-   ],
-   "names": [],
-   "ra": 11.580058,
-   "dec": 10.250139,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2936",
    "designations": [
     "IC2936",
@@ -34782,17 +31639,6 @@
    "constellation": "Leo"
   },
   {
-   "id": "IC2937",
-   "designations": [
-    "IC2937"
-   ],
-   "names": [],
-   "ra": 11.584269,
-   "dec": 10.103361,
-   "type": "*",
-   "constellation": "Leo"
-  },
-  {
    "id": "IC2938",
    "designations": [
     "IC2938",
@@ -34803,17 +31649,6 @@
    "dec": 13.680722,
    "type": "G",
    "magnitude": 15.26,
-   "constellation": "Leo"
-  },
-  {
-   "id": "IC2939",
-   "designations": [
-    "IC2939"
-   ],
-   "names": [],
-   "ra": 11.593883,
-   "dec": 10.697083,
-   "type": "*",
    "constellation": "Leo"
   },
   {
@@ -34931,17 +31766,6 @@
    "constellation": "Cen"
   },
   {
-   "id": "IC2949",
-   "designations": [
-    "IC2949"
-   ],
-   "names": [],
-   "ra": 11.681764,
-   "dec": -46.454583,
-   "type": "**",
-   "constellation": "Cen"
-  },
-  {
    "id": "IC2950",
    "designations": [
     "IC2950",
@@ -34980,17 +31804,6 @@
    "type": "G",
    "magnitude": 15.78,
    "constellation": "UMa"
-  },
-  {
-   "id": "IC2954",
-   "designations": [
-    "IC2954"
-   ],
-   "names": [],
-   "ra": 11.750906,
-   "dec": 26.7865,
-   "type": "*",
-   "constellation": "Leo"
   },
   {
    "id": "IC2955",
@@ -36041,17 +32854,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3048",
-   "designations": [
-    "IC3048"
-   ],
-   "names": [],
-   "ra": 12.222622,
-   "dec": 13.069028,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3049",
    "designations": [
     "IC3049",
@@ -36275,39 +33077,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3070",
-   "designations": [
-    "IC3070"
-   ],
-   "names": [],
-   "ra": 12.256853,
-   "dec": 13.039472,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3071",
-   "designations": [
-    "IC3071"
-   ],
-   "names": [],
-   "ra": 12.25885,
-   "dec": 9.545556,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3072",
-   "designations": [
-    "IC3072"
-   ],
-   "names": [],
-   "ra": 12.260592,
-   "dec": 9.555639,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3073",
    "designations": [
     "IC3073",
@@ -36347,17 +33116,6 @@
    "type": "G",
    "magnitude": 15.13,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3076",
-   "designations": [
-    "IC3076"
-   ],
-   "names": [],
-   "ra": 12.267772,
-   "dec": 9.078944,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "IC3077",
@@ -36465,50 +33223,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3085",
-   "designations": [
-    "IC3085"
-   ],
-   "names": [],
-   "ra": 12.273892,
-   "dec": 9.469,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3086",
-   "designations": [
-    "IC3086"
-   ],
-   "names": [],
-   "ra": 12.274372,
-   "dec": 9.009167,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3087",
-   "designations": [
-    "IC3087"
-   ],
-   "names": [],
-   "ra": 12.274028,
-   "dec": 13.287778,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3088",
-   "designations": [
-    "IC3088"
-   ],
-   "names": [],
-   "ra": 12.274544,
-   "dec": 9.458806,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3089",
    "designations": [
     "IC3089",
@@ -36520,17 +33234,6 @@
    "type": "G",
    "magnitude": 15.67,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3090",
-   "designations": [
-    "IC3090"
-   ],
-   "names": [],
-   "ra": 12.275447,
-   "dec": 9.439444,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "IC3091",
@@ -36666,18 +33369,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3103",
-   "designations": [
-    "IC3103"
-   ],
-   "names": [],
-   "ra": 12.291236,
-   "dec": 9.360444,
-   "type": "*",
-   "magnitude": 14.56,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3104",
    "designations": [
     "IC3104",
@@ -36702,17 +33393,6 @@
    "dec": 12.388111,
    "type": "G",
    "magnitude": 14.81,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3106",
-   "designations": [
-    "IC3106"
-   ],
-   "names": [],
-   "ra": 12.296058,
-   "dec": 9.613139,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -36795,17 +33475,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3114",
-   "designations": [
-    "IC3114"
-   ],
-   "names": [],
-   "ra": 12.299097,
-   "dec": 9.135389,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3116",
    "designations": [
     "IC3116",
@@ -36817,17 +33486,6 @@
    "type": "G",
    "magnitude": 16.19,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3117",
-   "designations": [
-    "IC3117"
-   ],
-   "names": [],
-   "ra": 12.301294,
-   "dec": 9.076528,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "IC3118",
@@ -36895,40 +33553,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3123",
-   "designations": [
-    "IC3123"
-   ],
-   "names": [],
-   "ra": 12.307664,
-   "dec": 8.064917,
-   "type": "*",
-   "magnitude": 7.26,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3124",
-   "designations": [
-    "IC3124"
-   ],
-   "names": [],
-   "ra": 12.307647,
-   "dec": 9.588389,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3125",
-   "designations": [
-    "IC3125"
-   ],
-   "names": [],
-   "ra": 12.307075,
-   "dec": 24.365111,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3126",
    "designations": [
     "IC3126",
@@ -36989,28 +33613,6 @@
    "dec": 11.735028,
    "type": "G",
    "magnitude": 18.27,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3129",
-   "designations": [
-    "IC3129"
-   ],
-   "names": [],
-   "ra": 12.312489,
-   "dec": 9.590667,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3130",
-   "designations": [
-    "IC3130"
-   ],
-   "names": [],
-   "ra": 12.313778,
-   "dec": 8.232972,
-   "type": "**",
    "constellation": "Vir"
   },
   {
@@ -37104,28 +33706,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3139",
-   "designations": [
-    "IC3139"
-   ],
-   "names": [],
-   "ra": 12.316878,
-   "dec": 9.126778,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3140",
-   "designations": [
-    "IC3140"
-   ],
-   "names": [],
-   "ra": 12.316078,
-   "dec": 27.129472,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3141",
    "designations": [
     "IC3141",
@@ -37174,17 +33754,6 @@
    "dec": 25.296972,
    "type": "G",
    "magnitude": 16.77,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3145",
-   "designations": [
-    "IC3145"
-   ],
-   "names": [],
-   "ra": 12.319581,
-   "dec": 24.294139,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -37340,17 +33909,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3158",
-   "designations": [
-    "IC3158"
-   ],
-   "names": [],
-   "ra": 12.330517,
-   "dec": 9.28975,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3159",
    "designations": [
     "IC3159",
@@ -37362,61 +33920,6 @@
    "type": "G",
    "magnitude": 16.6,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3160",
-   "designations": [
-    "IC3160"
-   ],
-   "names": [],
-   "ra": 12.333292,
-   "dec": 9.101889,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3161",
-   "designations": [
-    "IC3161"
-   ],
-   "names": [],
-   "ra": 12.333669,
-   "dec": 8.999056,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3162",
-   "designations": [
-    "IC3162"
-   ],
-   "names": [],
-   "ra": 12.334203,
-   "dec": 8.996972,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3163",
-   "designations": [
-    "IC3163"
-   ],
-   "names": [],
-   "ra": 12.334931,
-   "dec": 9.255611,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3164",
-   "designations": [
-    "IC3164"
-   ],
-   "names": [],
-   "ra": 12.334692,
-   "dec": 24.955917,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3165",
@@ -37582,17 +34085,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3178",
-   "designations": [
-    "IC3178"
-   ],
-   "names": [],
-   "ra": 12.343072,
-   "dec": 26.169306,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3179",
    "designations": [
     "IC3179",
@@ -37615,28 +34107,6 @@
    "dec": 60.694333,
    "type": "Other",
    "constellation": "UMa"
-  },
-  {
-   "id": "IC3182",
-   "designations": [
-    "IC3182"
-   ],
-   "names": [],
-   "ra": 12.3466,
-   "dec": 12.730139,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3183",
-   "designations": [
-    "IC3183"
-   ],
-   "names": [],
-   "ra": 12.346908,
-   "dec": 6.686722,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "IC3184",
@@ -37717,28 +34187,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3190",
-   "designations": [
-    "IC3190"
-   ],
-   "names": [],
-   "ra": 12.350669,
-   "dec": 9.569778,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3191",
-   "designations": [
-    "IC3191"
-   ],
-   "names": [],
-   "ra": 12.351431,
-   "dec": 7.704417,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3192",
    "designations": [
     "IC3192",
@@ -37800,28 +34248,6 @@
    "type": "G",
    "magnitude": 16.43,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3197",
-   "designations": [
-    "IC3197"
-   ],
-   "names": [],
-   "ra": 12.357194,
-   "dec": 25.443889,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3198",
-   "designations": [
-    "IC3198"
-   ],
-   "names": [],
-   "ra": 12.35865,
-   "dec": 26.366306,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3199",
@@ -38004,17 +34430,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3214",
-   "designations": [
-    "IC3214"
-   ],
-   "names": [],
-   "ra": 12.369197,
-   "dec": 27.235083,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3215",
    "designations": [
     "IC3215",
@@ -38155,17 +34570,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3226",
-   "designations": [
-    "IC3226"
-   ],
-   "names": [],
-   "ra": 12.376375,
-   "dec": 26.067333,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3227",
    "designations": [
     "IC3227",
@@ -38227,17 +34631,6 @@
    "ra": 12.378828,
    "dec": 24.820472,
    "type": "G",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3232",
-   "designations": [
-    "IC3232"
-   ],
-   "names": [],
-   "ra": 12.379942,
-   "dec": 24.424528,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -38431,17 +34824,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3248",
-   "designations": [
-    "IC3248"
-   ],
-   "names": [],
-   "ra": 12.388022,
-   "dec": 25.552028,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3249",
    "designations": [
     "IC3249",
@@ -38452,39 +34834,6 @@
    "dec": 25.444667,
    "type": "G",
    "magnitude": 16.79,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3250",
-   "designations": [
-    "IC3250"
-   ],
-   "names": [],
-   "ra": 12.388283,
-   "dec": 25.628806,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3251",
-   "designations": [
-    "IC3251"
-   ],
-   "names": [],
-   "ra": 12.388581,
-   "dec": 25.653389,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3252",
-   "designations": [
-    "IC3252"
-   ],
-   "names": [],
-   "ra": 12.390256,
-   "dec": 28.618222,
-   "type": "**",
    "constellation": "Com"
   },
   {
@@ -38603,17 +34952,6 @@
    "type": "G",
    "magnitude": 16.72,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3265",
-   "designations": [
-    "IC3265"
-   ],
-   "names": [],
-   "ra": 12.399675,
-   "dec": 7.803778,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "IC3267",
@@ -38742,17 +35080,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3279",
-   "designations": [
-    "IC3279"
-   ],
-   "names": [],
-   "ra": 12.406675,
-   "dec": 12.852444,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3280",
    "designations": [
     "IC3280",
@@ -38775,17 +35102,6 @@
    "dec": 7.819139,
    "type": "Other",
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3282",
-   "designations": [
-    "IC3282"
-   ],
-   "names": [],
-   "ra": 12.407792,
-   "dec": 25.670639,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3283",
@@ -38812,17 +35128,6 @@
    "type": "G",
    "magnitude": 15.25,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3285",
-   "designations": [
-    "IC3285"
-   ],
-   "names": [],
-   "ra": 12.409303,
-   "dec": 24.859667,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3286",
@@ -38959,17 +35264,6 @@
    "dec": 24.382861,
    "type": "G",
    "magnitude": 15.54,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3297",
-   "designations": [
-    "IC3297"
-   ],
-   "names": [],
-   "ra": 12.41615,
-   "dec": 26.771194,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -39119,17 +35413,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3310",
-   "designations": [
-    "IC3310"
-   ],
-   "names": [],
-   "ra": 12.432028,
-   "dec": 15.680528,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3311",
    "designations": [
     "IC3311",
@@ -39219,18 +35502,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3318",
-   "designations": [
-    "IC3318"
-   ],
-   "names": [],
-   "ra": 12.430514,
-   "dec": 9.762806,
-   "type": "*",
-   "magnitude": 11.44,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3319",
    "designations": [
     "IC3319"
@@ -39266,17 +35537,6 @@
    "type": "G",
    "magnitude": 14.08,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3323",
-   "designations": [
-    "IC3323"
-   ],
-   "names": [],
-   "ra": 12.430022,
-   "dec": 27.542389,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3324",
@@ -39391,18 +35651,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3333",
-   "designations": [
-    "IC3333"
-   ],
-   "names": [],
-   "ra": 12.435769,
-   "dec": 13.132944,
-   "type": "*",
-   "magnitude": 14.8,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3334",
    "designations": [
     "IC3334",
@@ -39492,28 +35740,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3342",
-   "designations": [
-    "IC3342"
-   ],
-   "names": [],
-   "ra": 12.440936,
-   "dec": 27.138639,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3343",
-   "designations": [
-    "IC3343"
-   ],
-   "names": [],
-   "ra": 12.443083,
-   "dec": 8.874278,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3344",
    "designations": [
     "IC3344",
@@ -39591,29 +35817,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3350",
-   "designations": [
-    "IC3350"
-   ],
-   "names": [],
-   "ra": 12.446231,
-   "dec": 9.442611,
-   "type": "**",
-   "magnitude": 12.68,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3351",
-   "designations": [
-    "IC3351"
-   ],
-   "names": [],
-   "ra": 12.444719,
-   "dec": 27.605583,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3352",
    "designations": [
     "IC3352"
@@ -39636,17 +35839,6 @@
    "type": "G",
    "magnitude": 16.82,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3354",
-   "designations": [
-    "IC3354"
-   ],
-   "names": [],
-   "ra": 12.447628,
-   "dec": 12.097139,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "IC3355",
@@ -39713,17 +35905,6 @@
    "dec": 23.498167,
    "type": "G",
    "magnitude": 16.64,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3360",
-   "designations": [
-    "IC3360"
-   ],
-   "names": [],
-   "ra": 12.447422,
-   "dec": 26.046639,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -39904,17 +36085,6 @@
    "type": "G",
    "magnitude": 15.4,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3375",
-   "designations": [
-    "IC3375"
-   ],
-   "names": [],
-   "ra": 12.461211,
-   "dec": 27.36475,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3376",
@@ -40201,29 +36371,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3399",
-   "designations": [
-    "IC3399"
-   ],
-   "names": [],
-   "ra": 12.482217,
-   "dec": 25.696083,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3400",
-   "designations": [
-    "IC3400"
-   ],
-   "names": [],
-   "ra": 12.484139,
-   "dec": 9.406167,
-   "type": "*",
-   "magnitude": 11.5,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3401",
    "designations": [
     "IC3401"
@@ -40313,18 +36460,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3408",
-   "designations": [
-    "IC3408"
-   ],
-   "names": [],
-   "ra": 12.487719,
-   "dec": 11.875889,
-   "type": "*",
-   "magnitude": 10.87,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3409",
    "designations": [
     "IC3409",
@@ -40404,17 +36539,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3415",
-   "designations": [
-    "IC3415"
-   ],
-   "names": [],
-   "ra": 12.489336,
-   "dec": 26.766222,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3416",
    "designations": [
     "IC3416",
@@ -40425,17 +36549,6 @@
    "dec": 10.793083,
    "type": "G",
    "magnitude": 15.38,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3417",
-   "designations": [
-    "IC3417"
-   ],
-   "names": [],
-   "ra": 12.494228,
-   "dec": 7.861278,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -40466,17 +36579,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3420",
-   "designations": [
-    "IC3420"
-   ],
-   "names": [],
-   "ra": 12.495156,
-   "dec": 13.446417,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3421",
    "designations": [
     "IC3421",
@@ -40500,18 +36602,6 @@
    "dec": 14.688361,
    "type": "G",
    "magnitude": 16.08,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3423",
-   "designations": [
-    "IC3423"
-   ],
-   "names": [],
-   "ra": 12.496256,
-   "dec": 13.658778,
-   "type": "*",
-   "magnitude": 15.6,
    "constellation": "Com"
   },
   {
@@ -40540,29 +36630,6 @@
    "type": "G",
    "magnitude": 14.57,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3426",
-   "designations": [
-    "IC3426"
-   ],
-   "names": [],
-   "ra": 12.500406,
-   "dec": 13.598167,
-   "type": "*",
-   "magnitude": 14.9,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3428",
-   "designations": [
-    "IC3428"
-   ],
-   "names": [],
-   "ra": 12.502086,
-   "dec": 23.675028,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3429",
@@ -40746,17 +36813,6 @@
    "type": "G",
    "magnitude": 15.03,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3444",
-   "designations": [
-    "IC3444"
-   ],
-   "names": [],
-   "ra": 12.520525,
-   "dec": 27.549639,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3445",
@@ -40989,17 +37045,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3464",
-   "designations": [
-    "IC3464"
-   ],
-   "names": [],
-   "ra": 12.533389,
-   "dec": 26.004833,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3465",
    "designations": [
     "IC3465",
@@ -41161,17 +37206,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3477",
-   "designations": [
-    "IC3477"
-   ],
-   "names": [],
-   "ra": 12.543947,
-   "dec": 26.038444,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3478",
    "designations": [
     "IC3478",
@@ -41195,17 +37229,6 @@
    "dec": 25.406111,
    "type": "G",
    "magnitude": 17.13,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3480",
-   "designations": [
-    "IC3480"
-   ],
-   "names": [],
-   "ra": 12.544858,
-   "dec": 26.828556,
-   "type": "**",
    "constellation": "Com"
   },
   {
@@ -41259,17 +37282,6 @@
    "type": "G",
    "magnitude": 15.01,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3485",
-   "designations": [
-    "IC3485"
-   ],
-   "names": [],
-   "ra": 12.553128,
-   "dec": 9.217278,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "IC3486",
@@ -41362,17 +37374,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3493",
-   "designations": [
-    "IC3493"
-   ],
-   "names": [],
-   "ra": 12.555244,
-   "dec": 9.393194,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3494",
    "designations": [
     "IC3494"
@@ -41382,39 +37383,6 @@
    "dec": 27.584111,
    "type": "G",
    "magnitude": 17.14,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3495",
-   "designations": [
-    "IC3495"
-   ],
-   "names": [],
-   "ra": 12.554525,
-   "dec": 26.808806,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3496",
-   "designations": [
-    "IC3496"
-   ],
-   "names": [],
-   "ra": 12.555364,
-   "dec": 26.755444,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3497",
-   "designations": [
-    "IC3497"
-   ],
-   "names": [],
-   "ra": 12.557928,
-   "dec": 25.48875,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -41481,28 +37449,6 @@
    "type": "G",
    "magnitude": 17.44,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3503",
-   "designations": [
-    "IC3503"
-   ],
-   "names": [],
-   "ra": 12.563408,
-   "dec": 37.789306,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3504",
-   "designations": [
-    "IC3504"
-   ],
-   "names": [],
-   "ra": 12.568847,
-   "dec": 6.886361,
-   "type": "*",
-   "constellation": "Vir"
   },
   {
    "id": "IC3505",
@@ -41581,50 +37527,6 @@
    "type": "G",
    "magnitude": 14.87,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3511",
-   "designations": [
-    "IC3511"
-   ],
-   "names": [],
-   "ra": 12.569303,
-   "dec": 27.348639,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3512",
-   "designations": [
-    "IC3512"
-   ],
-   "names": [],
-   "ra": 12.56935,
-   "dec": 27.361111,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3513",
-   "designations": [
-    "IC3513"
-   ],
-   "names": [],
-   "ra": 12.569892,
-   "dec": 27.330556,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3514",
-   "designations": [
-    "IC3514"
-   ],
-   "names": [],
-   "ra": 12.571053,
-   "dec": 26.700611,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3515",
@@ -41749,17 +37651,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3524",
-   "designations": [
-    "IC3524"
-   ],
-   "names": [],
-   "ra": 12.578639,
-   "dec": 14.244333,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3525",
    "designations": [
     "IC3525"
@@ -41772,28 +37663,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3526",
-   "designations": [
-    "IC3526"
-   ],
-   "names": [],
-   "ra": 12.577947,
-   "dec": 25.684139,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3527",
-   "designations": [
-    "IC3527"
-   ],
-   "names": [],
-   "ra": 12.578414,
-   "dec": 26.155111,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3528",
    "designations": [
     "IC3528",
@@ -41804,17 +37673,6 @@
    "dec": 15.565611,
    "type": "G",
    "magnitude": 15.2,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3529",
-   "designations": [
-    "IC3529"
-   ],
-   "names": [],
-   "ra": 12.580489,
-   "dec": 25.698778,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -41840,17 +37698,6 @@
    "dec": 26.626583,
    "type": "G",
    "magnitude": 16.55,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3532",
-   "designations": [
-    "IC3532"
-   ],
-   "names": [],
-   "ra": 12.582644,
-   "dec": 25.880639,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -41880,17 +37727,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3535",
-   "designations": [
-    "IC3535"
-   ],
-   "names": [],
-   "ra": 12.586361,
-   "dec": 25.731972,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3536",
    "designations": [
     "IC3536",
@@ -41901,39 +37737,6 @@
    "dec": 26.533417,
    "type": "G",
    "magnitude": 16.13,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3537",
-   "designations": [
-    "IC3537"
-   ],
-   "names": [],
-   "ra": 12.589572,
-   "dec": 7.653,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3538",
-   "designations": [
-    "IC3538"
-   ],
-   "names": [],
-   "ra": 12.587656,
-   "dec": 26.235528,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3539",
-   "designations": [
-    "IC3539"
-   ],
-   "names": [],
-   "ra": 12.588914,
-   "dec": 23.983139,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -41950,17 +37753,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3541",
-   "designations": [
-    "IC3541"
-   ],
-   "names": [],
-   "ra": 12.589367,
-   "dec": 23.97525,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3542",
    "designations": [
     "IC3542",
@@ -41974,28 +37766,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3544",
-   "designations": [
-    "IC3544"
-   ],
-   "names": [],
-   "ra": 12.5965,
-   "dec": 14.300556,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3547",
-   "designations": [
-    "IC3547"
-   ],
-   "names": [],
-   "ra": 12.596914,
-   "dec": 26.329111,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3548",
    "designations": [
     "IC3548",
@@ -42007,17 +37777,6 @@
    "type": "G",
    "magnitude": 16.1,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3549",
-   "designations": [
-    "IC3549"
-   ],
-   "names": [],
-   "ra": 12.597458,
-   "dec": 26.395222,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3551",
@@ -42039,28 +37798,6 @@
    "ra": 12.598306,
    "dec": 27.993889,
    "type": "HII",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3553",
-   "designations": [
-    "IC3553"
-   ],
-   "names": [],
-   "ra": 12.598869,
-   "dec": 26.193056,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3554",
-   "designations": [
-    "IC3554"
-   ],
-   "names": [],
-   "ra": 12.598664,
-   "dec": 27.927333,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -42234,17 +37971,6 @@
    "constellation": "Cam"
   },
   {
-   "id": "IC3570",
-   "designations": [
-    "IC3570"
-   ],
-   "names": [],
-   "ra": 12.605078,
-   "dec": 24.078472,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3571",
    "designations": [
     "IC3571",
@@ -42256,17 +37982,6 @@
    "type": "G",
    "magnitude": 17.52,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3572",
-   "designations": [
-    "IC3572"
-   ],
-   "names": [],
-   "ra": 12.607758,
-   "dec": 11.6185,
-   "type": "**",
-   "constellation": "Vir"
   },
   {
    "id": "IC3573",
@@ -42346,17 +38061,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3579",
-   "designations": [
-    "IC3579"
-   ],
-   "names": [],
-   "ra": 12.609094,
-   "dec": 26.104139,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3580",
    "designations": [
     "IC3580"
@@ -42408,17 +38112,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3584",
-   "designations": [
-    "IC3584"
-   ],
-   "names": [],
-   "ra": 12.612528,
-   "dec": 12.233056,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3585",
    "designations": [
     "IC3585",
@@ -42460,18 +38153,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3589",
-   "designations": [
-    "IC3589"
-   ],
-   "names": [],
-   "ra": 12.617,
-   "dec": 6.937,
-   "type": "*",
-   "magnitude": 15.6,
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3590",
    "designations": [
     "IC3590"
@@ -42496,17 +38177,6 @@
    "type": "G",
    "magnitude": 14.4,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3594",
-   "designations": [
-    "IC3594"
-   ],
-   "names": [],
-   "ra": 12.615664,
-   "dec": 26.1155,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3595",
@@ -42810,17 +38480,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3619",
-   "designations": [
-    "IC3619"
-   ],
-   "names": [],
-   "ra": 12.655217,
-   "dec": 24.142417,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3620",
    "designations": [
     "IC3620",
@@ -42923,17 +38582,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3628",
-   "designations": [
-    "IC3628"
-   ],
-   "names": [],
-   "ra": 12.660781,
-   "dec": 26.238889,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3629",
    "designations": [
     "IC3629",
@@ -42944,17 +38592,6 @@
    "dec": 13.533306,
    "type": "G",
    "magnitude": 15.26,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3630",
-   "designations": [
-    "IC3630"
-   ],
-   "names": [],
-   "ra": 12.662944,
-   "dec": 25.432528,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -43023,17 +38660,6 @@
    "type": "G",
    "magnitude": 14.65,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3636",
-   "designations": [
-    "IC3636"
-   ],
-   "names": [],
-   "ra": 12.670983,
-   "dec": 22.074556,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3637",
@@ -43139,17 +38765,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3645",
-   "designations": [
-    "IC3645"
-   ],
-   "names": [],
-   "ra": 12.677114,
-   "dec": 26.541361,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3646",
    "designations": [
     "IC3646",
@@ -43177,17 +38792,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3648",
-   "designations": [
-    "IC3648"
-   ],
-   "names": [],
-   "ra": 12.681164,
-   "dec": 12.985,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3649",
    "designations": [
     "IC3649",
@@ -43198,17 +38802,6 @@
    "dec": 21.10475,
    "type": "G",
    "magnitude": 16.93,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3650",
-   "designations": [
-    "IC3650"
-   ],
-   "names": [],
-   "ra": 12.680142,
-   "dec": 26.472722,
-   "type": "**",
    "constellation": "Com"
   },
   {
@@ -43327,17 +38920,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3660",
-   "designations": [
-    "IC3660"
-   ],
-   "names": [],
-   "ra": 12.693567,
-   "dec": 21.093361,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3661",
    "designations": [
     "IC3661",
@@ -43377,17 +38959,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3664",
-   "designations": [
-    "IC3664"
-   ],
-   "names": [],
-   "ra": 12.694875,
-   "dec": 19.944139,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3665",
    "designations": [
     "IC3665",
@@ -43399,17 +38970,6 @@
    "dec": 11.48825,
    "type": "G",
    "magnitude": 15.09,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3666",
-   "designations": [
-    "IC3666"
-   ],
-   "names": [],
-   "ra": 12.698158,
-   "dec": 7.845028,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -43463,39 +39023,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3673",
-   "designations": [
-    "IC3673"
-   ],
-   "names": [],
-   "ra": 12.7012,
-   "dec": 21.138333,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3674",
-   "designations": [
-    "IC3674"
-   ],
-   "names": [],
-   "ra": 12.701422,
-   "dec": 22.510778,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3676",
-   "designations": [
-    "IC3676"
-   ],
-   "names": [],
-   "ra": 12.703411,
-   "dec": 13.559833,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3677",
    "designations": [
     "IC3677"
@@ -43521,50 +39048,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3679",
-   "designations": [
-    "IC3679"
-   ],
-   "names": [],
-   "ra": 12.703119,
-   "dec": 22.818278,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3680",
-   "designations": [
-    "IC3680"
-   ],
-   "names": [],
-   "ra": 12.700253,
-   "dec": 39.10425,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3681",
-   "designations": [
-    "IC3681"
-   ],
-   "names": [],
-   "ra": 12.700486,
-   "dec": 39.083417,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3682",
-   "designations": [
-    "IC3682"
-   ],
-   "names": [],
-   "ra": 12.705411,
-   "dec": 20.864444,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3683",
    "designations": [
     "IC3683"
@@ -43587,17 +39070,6 @@
    "dec": 11.740306,
    "type": "G",
    "magnitude": 15.99,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3685",
-   "designations": [
-    "IC3685"
-   ],
-   "names": [],
-   "ra": 12.708956,
-   "dec": 6.870917,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -43707,17 +39179,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3695",
-   "designations": [
-    "IC3695"
-   ],
-   "names": [],
-   "ra": 12.718556,
-   "dec": 22.741944,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3696",
    "designations": [
     "IC3696",
@@ -43757,28 +39218,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3699",
-   "designations": [
-    "IC3699"
-   ],
-   "names": [],
-   "ra": 12.721425,
-   "dec": 19.000194,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3700",
-   "designations": [
-    "IC3700"
-   ],
-   "names": [],
-   "ra": 12.722222,
-   "dec": 19.265944,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3701",
    "designations": [
     "IC3701",
@@ -43805,17 +39244,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3703",
-   "designations": [
-    "IC3703"
-   ],
-   "names": [],
-   "ra": 12.722778,
-   "dec": 37.974528,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3704",
    "designations": [
     "IC3704",
@@ -43839,28 +39267,6 @@
    "dec": 19.325278,
    "type": "GPair",
    "constellation": "Com"
-  },
-  {
-   "id": "IC3706",
-   "designations": [
-    "IC3706"
-   ],
-   "names": [],
-   "ra": 12.729997,
-   "dec": 9.231139,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3707",
-   "designations": [
-    "IC3707"
-   ],
-   "names": [],
-   "ra": 12.724633,
-   "dec": 37.982694,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC3708",
@@ -44173,17 +39579,6 @@
    "constellation": "Vir"
   },
   {
-   "id": "IC3733",
-   "designations": [
-    "IC3733"
-   ],
-   "names": [],
-   "ra": 12.754644,
-   "dec": 6.956889,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3734",
    "designations": [
     "IC3734"
@@ -44222,17 +39617,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3737",
-   "designations": [
-    "IC3737"
-   ],
-   "names": [],
-   "ra": 12.755519,
-   "dec": 21.958167,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3738",
    "designations": [
     "IC3738",
@@ -44267,17 +39651,6 @@
    "dec": 20.815944,
    "type": "G",
    "magnitude": 15.57,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3741",
-   "designations": [
-    "IC3741"
-   ],
-   "names": [],
-   "ra": 12.759244,
-   "dec": 19.204139,
-   "type": "**",
    "constellation": "Com"
   },
   {
@@ -44344,50 +39717,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3747",
-   "designations": [
-    "IC3747"
-   ],
-   "names": [],
-   "ra": 12.759561,
-   "dec": 37.968528,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3748",
-   "designations": [
-    "IC3748"
-   ],
-   "names": [],
-   "ra": 12.764144,
-   "dec": 19.430333,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3749",
-   "designations": [
-    "IC3749"
-   ],
-   "names": [],
-   "ra": 12.764272,
-   "dec": 19.535583,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3750",
-   "designations": [
-    "IC3750"
-   ],
-   "names": [],
-   "ra": 12.76585,
-   "dec": 19.103861,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3751",
    "designations": [
     "IC3751"
@@ -44398,28 +39727,6 @@
    "type": "G",
    "magnitude": 16.6,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC3752",
-   "designations": [
-    "IC3752"
-   ],
-   "names": [],
-   "ra": 12.767803,
-   "dec": 19.011444,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3753",
-   "designations": [
-    "IC3753"
-   ],
-   "names": [],
-   "ra": 12.767883,
-   "dec": 19.121167,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3754",
@@ -44434,17 +39741,6 @@
    "type": "G",
    "magnitude": 14.54,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3755",
-   "designations": [
-    "IC3755"
-   ],
-   "names": [],
-   "ra": 12.769281,
-   "dec": 19.15725,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3756",
@@ -44547,17 +39843,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3765",
-   "designations": [
-    "IC3765"
-   ],
-   "names": [],
-   "ra": 12.776431,
-   "dec": 38.573889,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3766",
    "designations": [
     "IC3766"
@@ -44580,39 +39865,6 @@
    "dec": 10.182417,
    "type": "G",
    "magnitude": 16.07,
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3768",
-   "designations": [
-    "IC3768"
-   ],
-   "names": [],
-   "ra": 12.777975,
-   "dec": 40.597667,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3769",
-   "designations": [
-    "IC3769"
-   ],
-   "names": [],
-   "ra": 12.780019,
-   "dec": 40.470194,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3770",
-   "designations": [
-    "IC3770"
-   ],
-   "names": [],
-   "ra": 12.787694,
-   "dec": 9.199111,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -44696,17 +39948,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3777",
-   "designations": [
-    "IC3777"
-   ],
-   "names": [],
-   "ra": 12.790375,
-   "dec": 9.143472,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3778",
    "designations": [
     "IC3778",
@@ -44731,39 +39972,6 @@
    "type": "G",
    "magnitude": 14.82,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3780",
-   "designations": [
-    "IC3780"
-   ],
-   "names": [],
-   "ra": 12.785578,
-   "dec": 40.236028,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3781",
-   "designations": [
-    "IC3781"
-   ],
-   "names": [],
-   "ra": 12.790158,
-   "dec": 22.569778,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3782",
-   "designations": [
-    "IC3782"
-   ],
-   "names": [],
-   "ra": 12.787686,
-   "dec": 40.36775,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC3783",
@@ -44815,17 +40023,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3787",
-   "designations": [
-    "IC3787"
-   ],
-   "names": [],
-   "ra": 12.794958,
-   "dec": 40.623778,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3788",
    "designations": [
     "IC3788",
@@ -44852,28 +40049,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3790",
-   "designations": [
-    "IC3790"
-   ],
-   "names": [],
-   "ra": 12.804069,
-   "dec": 11.107583,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3792",
-   "designations": [
-    "IC3792"
-   ],
-   "names": [],
-   "ra": 12.803933,
-   "dec": 11.086333,
-   "type": "**",
-   "constellation": "Vir"
-  },
-  {
    "id": "IC3793",
    "designations": [
     "IC3793"
@@ -44883,17 +40058,6 @@
    "dec": 19.151694,
    "type": "G",
    "magnitude": 17.35,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3794",
-   "designations": [
-    "IC3794"
-   ],
-   "names": [],
-   "ra": 12.805975,
-   "dec": 19.170306,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -44910,17 +40074,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3796",
-   "designations": [
-    "IC3796"
-   ],
-   "names": [],
-   "ra": 12.8075,
-   "dec": 20.037694,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3797",
    "designations": [
     "IC3797"
@@ -44929,17 +40082,6 @@
    "ra": 12.809697,
    "dec": 11.597806,
    "type": "Other",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3798",
-   "designations": [
-    "IC3798"
-   ],
-   "names": [],
-   "ra": 12.811922,
-   "dec": 9.241028,
-   "type": "*",
    "constellation": "Vir"
   },
   {
@@ -44976,39 +40118,6 @@
    "dec": 10.955972,
    "type": "Other",
    "constellation": "Vir"
-  },
-  {
-   "id": "IC3802",
-   "designations": [
-    "IC3802"
-   ],
-   "names": [],
-   "ra": 12.811836,
-   "dec": 38.246444,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3803",
-   "designations": [
-    "IC3803"
-   ],
-   "names": [],
-   "ra": 12.817889,
-   "dec": 10.631806,
-   "type": "*",
-   "constellation": "Vir"
-  },
-  {
-   "id": "IC3805",
-   "designations": [
-    "IC3805"
-   ],
-   "names": [],
-   "ra": 12.811842,
-   "dec": 38.253056,
-   "type": "**",
-   "constellation": "CVn"
   },
   {
    "id": "IC3806",
@@ -45059,28 +40168,6 @@
    "type": "G",
    "magnitude": 16.29,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC3810",
-   "designations": [
-    "IC3810"
-   ],
-   "names": [],
-   "ra": 12.81755,
-   "dec": 40.646639,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3811",
-   "designations": [
-    "IC3811"
-   ],
-   "names": [],
-   "ra": 12.823769,
-   "dec": 21.462139,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3812",
@@ -45198,17 +40285,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3821",
-   "designations": [
-    "IC3821"
-   ],
-   "names": [],
-   "ra": 12.832653,
-   "dec": 20.969028,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3822",
    "designations": [
     "IC3822",
@@ -45220,18 +40296,6 @@
    "type": "G",
    "magnitude": 15.34,
    "constellation": "Crv"
-  },
-  {
-   "id": "IC3823",
-   "designations": [
-    "IC3823"
-   ],
-   "names": [],
-   "ra": 12.828883,
-   "dec": 40.883444,
-   "type": "*",
-   "magnitude": 16.7,
-   "constellation": "CVn"
   },
   {
    "id": "IC3824",
@@ -45308,17 +40372,6 @@
    "type": "G",
    "magnitude": 11.7,
    "constellation": "Hya"
-  },
-  {
-   "id": "IC3830",
-   "designations": [
-    "IC3830"
-   ],
-   "names": [],
-   "ra": 12.847603,
-   "dec": 19.836694,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3831",
@@ -45398,17 +40451,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3839",
-   "designations": [
-    "IC3839"
-   ],
-   "names": [],
-   "ra": 12.86285,
-   "dec": 20.420972,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3840",
    "designations": [
     "IC3840",
@@ -45419,17 +40461,6 @@
    "dec": 21.735194,
    "type": "G",
    "magnitude": 16.02,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3841",
-   "designations": [
-    "IC3841"
-   ],
-   "names": [],
-   "ra": 12.864028,
-   "dec": 22.3445,
-   "type": "**",
    "constellation": "Com"
   },
   {
@@ -45469,17 +40500,6 @@
    "dec": 39.81825,
    "type": "G",
    "magnitude": 16.34,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3845",
-   "designations": [
-    "IC3845"
-   ],
-   "names": [],
-   "ra": 12.869072,
-   "dec": 38.619,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -45539,17 +40559,6 @@
    "type": "G",
    "magnitude": 15.29,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC3851",
-   "designations": [
-    "IC3851"
-   ],
-   "names": [],
-   "ra": 12.884647,
-   "dec": 21.909167,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3852",
@@ -45625,17 +40634,6 @@
    "dec": 19.607139,
    "type": "G",
    "magnitude": 17.51,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3858",
-   "designations": [
-    "IC3858"
-   ],
-   "names": [],
-   "ra": 12.898761,
-   "dec": 20.789028,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -45875,17 +40873,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3878",
-   "designations": [
-    "IC3878"
-   ],
-   "names": [],
-   "ra": 12.908211,
-   "dec": 40.069722,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3879",
    "designations": [
     "IC3879",
@@ -45988,17 +40975,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3887",
-   "designations": [
-    "IC3887"
-   ],
-   "names": [],
-   "ra": 12.912158,
-   "dec": 40.304639,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3888",
    "designations": [
     "IC3888",
@@ -46009,17 +40985,6 @@
    "dec": 39.571278,
    "type": "G",
    "magnitude": 15.24,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3889",
-   "designations": [
-    "IC3889"
-   ],
-   "names": [],
-   "ra": 12.914139,
-   "dec": 36.016833,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -46073,17 +41038,6 @@
    "type": "G",
    "magnitude": 16.91,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC3894",
-   "designations": [
-    "IC3894"
-   ],
-   "names": [],
-   "ra": 12.924336,
-   "dec": 19.069111,
-   "type": "**",
-   "constellation": "Com"
   },
   {
    "id": "IC3895",
@@ -46162,39 +41116,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3901",
-   "designations": [
-    "IC3901"
-   ],
-   "names": [],
-   "ra": 12.930694,
-   "dec": 21.939028,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3902",
-   "designations": [
-    "IC3902"
-   ],
-   "names": [],
-   "ra": 12.927383,
-   "dec": 35.995833,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3903",
-   "designations": [
-    "IC3903"
-   ],
-   "names": [],
-   "ra": 12.927428,
-   "dec": 40.399667,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3904",
    "designations": [
     "IC3904",
@@ -46217,17 +41138,6 @@
    "dec": 19.852083,
    "type": "GTrpl",
    "constellation": "Com"
-  },
-  {
-   "id": "IC3906",
-   "designations": [
-    "IC3906"
-   ],
-   "names": [],
-   "ra": 12.93085,
-   "dec": 40.463861,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC3907",
@@ -46269,17 +41179,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3910",
-   "designations": [
-    "IC3910"
-   ],
-   "names": [],
-   "ra": 12.934592,
-   "dec": 39.719889,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3911",
    "designations": [
     "IC3911"
@@ -46288,17 +41187,6 @@
    "ra": 12.935953,
    "dec": 35.63825,
    "type": "GPair",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3912",
-   "designations": [
-    "IC3912"
-   ],
-   "names": [],
-   "ra": 12.935428,
-   "dec": 39.910667,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -46328,17 +41216,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3915",
-   "designations": [
-    "IC3915"
-   ],
-   "names": [],
-   "ra": 12.944172,
-   "dec": 20.291694,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3916",
    "designations": [
     "IC3916",
@@ -46351,17 +41228,6 @@
    "type": "G",
    "magnitude": 15.36,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC3917",
-   "designations": [
-    "IC3917"
-   ],
-   "names": [],
-   "ra": 12.947675,
-   "dec": 22.006056,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC3918",
@@ -46426,17 +41292,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3923",
-   "designations": [
-    "IC3923"
-   ],
-   "names": [],
-   "ra": 12.950314,
-   "dec": 37.955722,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3924",
    "designations": [
     "IC3924",
@@ -46447,28 +41302,6 @@
    "dec": 18.781528,
    "type": "G",
    "magnitude": 18.11,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3925",
-   "designations": [
-    "IC3925"
-   ],
-   "names": [],
-   "ra": 12.9542,
-   "dec": 36.422,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3926",
-   "designations": [
-    "IC3926"
-   ],
-   "names": [],
-   "ra": 12.958447,
-   "dec": 22.811944,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -46534,28 +41367,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3932",
-   "designations": [
-    "IC3932"
-   ],
-   "names": [],
-   "ra": 12.968139,
-   "dec": 19.583444,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3933",
-   "designations": [
-    "IC3933"
-   ],
-   "names": [],
-   "ra": 12.965889,
-   "dec": 36.645056,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3934",
    "designations": [
     "IC3934",
@@ -46592,28 +41403,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3938",
-   "designations": [
-    "IC3938"
-   ],
-   "names": [],
-   "ra": 12.973711,
-   "dec": 18.752639,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3939",
-   "designations": [
-    "IC3939"
-   ],
-   "names": [],
-   "ra": 12.97445,
-   "dec": 18.751861,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3940",
    "designations": [
     "IC3940",
@@ -46636,17 +41425,6 @@
    "dec": 39.772833,
    "type": "G",
    "magnitude": 16.41,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3942",
-   "designations": [
-    "IC3942"
-   ],
-   "names": [],
-   "ra": 12.972192,
-   "dec": 36.10875,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -46878,17 +41656,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3962",
-   "designations": [
-    "IC3962"
-   ],
-   "names": [],
-   "ra": 12.987494,
-   "dec": 23.668,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC3963",
    "designations": [
     "IC3963",
@@ -46899,18 +41666,6 @@
    "dec": 27.774611,
    "type": "G",
    "magnitude": 14.72,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC3964",
-   "designations": [
-    "IC3964"
-   ],
-   "names": [],
-   "ra": 12.987147,
-   "dec": 27.850944,
-   "type": "*",
-   "magnitude": 15.91,
    "constellation": "Com"
   },
   {
@@ -46976,17 +41731,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3970",
-   "designations": [
-    "IC3970"
-   ],
-   "names": [],
-   "ra": 12.986508,
-   "dec": 40.401917,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3971",
    "designations": [
     "IC3971",
@@ -46998,17 +41742,6 @@
    "type": "G",
    "magnitude": 16.68,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3972",
-   "designations": [
-    "IC3972"
-   ],
-   "names": [],
-   "ra": 12.988097,
-   "dec": 37.279139,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC3973",
@@ -47050,17 +41783,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3977",
-   "designations": [
-    "IC3977"
-   ],
-   "names": [],
-   "ra": 12.988794,
-   "dec": 36.798083,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3978",
    "designations": [
     "IC3978",
@@ -47074,17 +41796,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3979",
-   "designations": [
-    "IC3979"
-   ],
-   "names": [],
-   "ra": 12.989097,
-   "dec": 36.324333,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3980",
    "designations": [
     "IC3980",
@@ -47095,39 +41806,6 @@
    "dec": 39.15125,
    "type": "G",
    "magnitude": 16.82,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3981",
-   "designations": [
-    "IC3981"
-   ],
-   "names": [],
-   "ra": 12.989292,
-   "dec": 37.227806,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3982",
-   "designations": [
-    "IC3982"
-   ],
-   "names": [],
-   "ra": 12.988497,
-   "dec": 40.080528,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3983",
-   "designations": [
-    "IC3983"
-   ],
-   "names": [],
-   "ra": 12.989031,
-   "dec": 39.246639,
-   "type": "**",
    "constellation": "CVn"
   },
   {
@@ -47182,28 +41860,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC3988",
-   "designations": [
-    "IC3988"
-   ],
-   "names": [],
-   "ra": 12.990783,
-   "dec": 37.244972,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3989",
-   "designations": [
-    "IC3989"
-   ],
-   "names": [],
-   "ra": 12.991317,
-   "dec": 36.756583,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3990",
    "designations": [
     "IC3990",
@@ -47230,17 +41886,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC3992",
-   "designations": [
-    "IC3992"
-   ],
-   "names": [],
-   "ra": 12.992581,
-   "dec": 36.771833,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC3993",
    "designations": [
     "IC3993"
@@ -47264,28 +41909,6 @@
    "type": "G",
    "magnitude": 17.22,
    "constellation": "Com"
-  },
-  {
-   "id": "IC3995",
-   "designations": [
-    "IC3995"
-   ],
-   "names": [],
-   "ra": 12.992758,
-   "dec": 39.039778,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC3996",
-   "designations": [
-    "IC3996"
-   ],
-   "names": [],
-   "ra": 12.992083,
-   "dec": 40.467556,
-   "type": "**",
-   "constellation": "CVn"
   },
   {
    "id": "IC3997",
@@ -47378,28 +42001,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4005",
-   "designations": [
-    "IC4005"
-   ],
-   "names": [],
-   "ra": 13.000706,
-   "dec": 22.639917,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4006",
-   "designations": [
-    "IC4006"
-   ],
-   "names": [],
-   "ra": 12.996867,
-   "dec": 37.011083,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4007",
    "designations": [
     "IC4007",
@@ -47411,28 +42012,6 @@
    "type": "G",
    "magnitude": 16.33,
    "constellation": "Com"
-  },
-  {
-   "id": "IC4008",
-   "designations": [
-    "IC4008"
-   ],
-   "names": [],
-   "ra": 13.001594,
-   "dec": 22.3505,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4009",
-   "designations": [
-    "IC4009"
-   ],
-   "names": [],
-   "ra": 12.998,
-   "dec": 36.66075,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4010",
@@ -47473,17 +42052,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4013",
-   "designations": [
-    "IC4013"
-   ],
-   "names": [],
-   "ra": 12.999397,
-   "dec": 37.199389,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4014",
    "designations": [
     "IC4014",
@@ -47521,17 +42089,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4019",
-   "designations": [
-    "IC4019"
-   ],
-   "names": [],
-   "ra": 13.004842,
-   "dec": 23.720833,
-   "type": "**",
-   "constellation": "Com"
-  },
-  {
    "id": "IC4020",
    "designations": [
     "IC4020"
@@ -47557,17 +42114,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4022",
-   "designations": [
-    "IC4022"
-   ],
-   "names": [],
-   "ra": 13.001369,
-   "dec": 38.478917,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4023",
    "designations": [
     "IC4023"
@@ -47578,17 +42124,6 @@
    "type": "G",
    "magnitude": 16.6,
    "constellation": "Com"
-  },
-  {
-   "id": "IC4024",
-   "designations": [
-    "IC4024"
-   ],
-   "names": [],
-   "ra": 13.001103,
-   "dec": 40.509139,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4025",
@@ -47731,17 +42266,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4036",
-   "designations": [
-    "IC4036"
-   ],
-   "names": [],
-   "ra": 13.005764,
-   "dec": 36.909056,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4037",
    "designations": [
     "IC4037"
@@ -47858,17 +42382,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4046",
-   "designations": [
-    "IC4046"
-   ],
-   "names": [],
-   "ra": 13.010953,
-   "dec": 36.685917,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4047",
    "designations": [
     "IC4047",
@@ -47908,17 +42421,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4050",
-   "designations": [
-    "IC4050"
-   ],
-   "names": [],
-   "ra": 13.012172,
-   "dec": 36.739861,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4051",
    "designations": [
     "IC4051",
@@ -47929,39 +42431,6 @@
    "dec": 28.042806,
    "type": "G",
    "magnitude": 13.61,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4052",
-   "designations": [
-    "IC4052"
-   ],
-   "names": [],
-   "ra": 13.011644,
-   "dec": 39.667639,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4053",
-   "designations": [
-    "IC4053"
-   ],
-   "names": [],
-   "ra": 13.017031,
-   "dec": 22.924722,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4054",
-   "designations": [
-    "IC4054"
-   ],
-   "names": [],
-   "ra": 13.017044,
-   "dec": 22.905028,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -47988,17 +42457,6 @@
    "type": "G",
    "magnitude": 15.96,
    "constellation": "CVn"
-  },
-  {
-   "id": "IC4057",
-   "designations": [
-    "IC4057"
-   ],
-   "names": [],
-   "ra": 13.018128,
-   "dec": 23.157694,
-   "type": "*",
-   "constellation": "Com"
   },
   {
    "id": "IC4058",
@@ -48102,17 +42560,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4066",
-   "designations": [
-    "IC4066"
-   ],
-   "names": [],
-   "ra": 13.027822,
-   "dec": 19.272611,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC4067",
    "designations": [
     "IC4067"
@@ -48173,17 +42620,6 @@
    "type": "G",
    "magnitude": 14.7,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC4072",
-   "designations": [
-    "IC4072"
-   ],
-   "names": [],
-   "ra": 13.023844,
-   "dec": 37.353722,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4073",
@@ -48248,17 +42684,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4078",
-   "designations": [
-    "IC4078"
-   ],
-   "names": [],
-   "ra": 13.026572,
-   "dec": 36.593222,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4079",
    "designations": [
     "IC4079",
@@ -48320,17 +42745,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4084",
-   "designations": [
-    "IC4084"
-   ],
-   "names": [],
-   "ra": 13.028064,
-   "dec": 36.965667,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4085",
    "designations": [
     "IC4085",
@@ -48382,17 +42796,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4090",
-   "designations": [
-    "IC4090"
-   ],
-   "names": [],
-   "ra": 13.029528,
-   "dec": 36.837944,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4091",
    "designations": [
     "IC4091"
@@ -48402,17 +42805,6 @@
    "dec": 19.893,
    "type": "G",
    "magnitude": 16.85,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4092",
-   "designations": [
-    "IC4092"
-   ],
-   "names": [],
-   "ra": 13.037119,
-   "dec": 19.184167,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -48463,17 +42855,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4097",
-   "designations": [
-    "IC4097"
-   ],
-   "names": [],
-   "ra": 13.034706,
-   "dec": 36.605444,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4098",
    "designations": [
     "IC4098"
@@ -48509,17 +42890,6 @@
    "dec": 40.408361,
    "type": "G",
    "magnitude": 14.81,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4101",
-   "designations": [
-    "IC4101"
-   ],
-   "names": [],
-   "ra": 13.037153,
-   "dec": 39.940361,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -48611,17 +42981,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4109",
-   "designations": [
-    "IC4109"
-   ],
-   "names": [],
-   "ra": 13.049436,
-   "dec": 19.003694,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC4110",
    "designations": [
     "IC4110"
@@ -48645,17 +43004,6 @@
    "type": "G",
    "magnitude": 15.64,
    "constellation": "Com"
-  },
-  {
-   "id": "IC4112",
-   "designations": [
-    "IC4112"
-   ],
-   "names": [],
-   "ra": 13.045878,
-   "dec": 37.212167,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4113",
@@ -48698,28 +43046,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4116",
-   "designations": [
-    "IC4116"
-   ],
-   "names": [],
-   "ra": 13.052811,
-   "dec": 19.083361,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4117",
-   "designations": [
-    "IC4117"
-   ],
-   "names": [],
-   "ra": 13.046833,
-   "dec": 40.524889,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4118",
    "designations": [
     "IC4118",
@@ -48742,28 +43068,6 @@
    "dec": 19.232778,
    "type": "G",
    "magnitude": 17.44,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4120",
-   "designations": [
-    "IC4120"
-   ],
-   "names": [],
-   "ra": 13.050431,
-   "dec": 37.081667,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4121",
-   "designations": [
-    "IC4121"
-   ],
-   "names": [],
-   "ra": 13.055978,
-   "dec": 19.282306,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -48815,17 +43119,6 @@
    "dec": 18.803389,
    "type": "G",
    "magnitude": 15.75,
-   "constellation": "Com"
-  },
-  {
-   "id": "IC4126",
-   "designations": [
-    "IC4126"
-   ],
-   "names": [],
-   "ra": 13.060125,
-   "dec": 19.323444,
-   "type": "*",
    "constellation": "Com"
   },
   {
@@ -48889,17 +43182,6 @@
    "dec": 38.951278,
    "type": "G",
    "magnitude": 16.39,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4132",
-   "designations": [
-    "IC4132"
-   ],
-   "names": [],
-   "ra": 13.0594,
-   "dec": 38.377583,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -48992,28 +43274,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4142",
-   "designations": [
-    "IC4142"
-   ],
-   "names": [],
-   "ra": 13.063108,
-   "dec": 38.195083,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4143",
-   "designations": [
-    "IC4143"
-   ],
-   "names": [],
-   "ra": 13.062639,
-   "dec": 40.207083,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4144",
    "designations": [
     "IC4144",
@@ -49090,17 +43350,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4150",
-   "designations": [
-    "IC4150"
-   ],
-   "names": [],
-   "ra": 13.070289,
-   "dec": 21.986722,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC4151",
    "designations": [
     "IC4151"
@@ -49124,17 +43373,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4153",
-   "designations": [
-    "IC4153"
-   ],
-   "names": [],
-   "ra": 13.074047,
-   "dec": 19.044972,
-   "type": "*",
-   "constellation": "Com"
-  },
-  {
    "id": "IC4154",
    "designations": [
     "IC4154",
@@ -49146,28 +43384,6 @@
    "type": "G",
    "magnitude": 15.5,
    "constellation": "Com"
-  },
-  {
-   "id": "IC4155",
-   "designations": [
-    "IC4155"
-   ],
-   "names": [],
-   "ra": 13.069139,
-   "dec": 40.015444,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4157",
-   "designations": [
-    "IC4157"
-   ],
-   "names": [],
-   "ra": 13.071828,
-   "dec": 38.663583,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4158",
@@ -49358,17 +43574,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4174",
-   "designations": [
-    "IC4174"
-   ],
-   "names": [],
-   "ra": 13.091267,
-   "dec": 36.396417,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4175",
    "designations": [
     "IC4175",
@@ -49406,17 +43611,6 @@
    "dec": 36.017472,
    "type": "G",
    "magnitude": 16.19,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4179",
-   "designations": [
-    "IC4179"
-   ],
-   "names": [],
-   "ra": 13.096083,
-   "dec": 37.197806,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -49494,17 +43688,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4186",
-   "designations": [
-    "IC4186"
-   ],
-   "names": [],
-   "ra": 13.099267,
-   "dec": 36.986056,
-   "type": "**",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4187",
    "designations": [
     "IC4187",
@@ -49545,17 +43728,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4190",
-   "designations": [
-    "IC4190"
-   ],
-   "names": [],
-   "ra": 13.101772,
-   "dec": 37.610028,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4191",
    "designations": [
     "IC4191"
@@ -49592,28 +43764,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4194",
-   "designations": [
-    "IC4194"
-   ],
-   "names": [],
-   "ra": 13.102164,
-   "dec": 38.873583,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4195",
-   "designations": [
-    "IC4195"
-   ],
-   "names": [],
-   "ra": 13.104286,
-   "dec": 37.039778,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4197",
    "designations": [
     "IC4197",
@@ -49625,17 +43775,6 @@
    "type": "G",
    "magnitude": 12.48,
    "constellation": "Hya"
-  },
-  {
-   "id": "IC4199",
-   "designations": [
-    "IC4199"
-   ],
-   "names": [],
-   "ra": 13.125742,
-   "dec": 35.859833,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4200",
@@ -49678,17 +43817,6 @@
    "constellation": "Com"
   },
   {
-   "id": "IC4203",
-   "designations": [
-    "IC4203"
-   ],
-   "names": [],
-   "ra": 13.138631,
-   "dec": 40.427889,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4204",
    "designations": [
     "IC4204",
@@ -49700,17 +43828,6 @@
    "dec": 39.461167,
    "type": "G",
    "magnitude": 15.93,
-   "constellation": "CVn"
-  },
-  {
-   "id": "IC4206",
-   "designations": [
-    "IC4206"
-   ],
-   "names": [],
-   "ra": 13.156094,
-   "dec": 39.02225,
-   "type": "*",
    "constellation": "CVn"
   },
   {
@@ -49727,17 +43844,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4208",
-   "designations": [
-    "IC4208"
-   ],
-   "names": [],
-   "ra": 13.160553,
-   "dec": 37.255583,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4209",
    "designations": [
     "IC4209",
@@ -49749,17 +43855,6 @@
    "type": "G",
    "magnitude": 14.48,
    "constellation": "Vir"
-  },
-  {
-   "id": "IC4211",
-   "designations": [
-    "IC4211"
-   ],
-   "names": [],
-   "ra": 13.182356,
-   "dec": 37.17625,
-   "type": "*",
-   "constellation": "CVn"
   },
   {
    "id": "IC4212",
@@ -51305,17 +45400,6 @@
    "constellation": "CVn"
   },
   {
-   "id": "IC4335",
-   "designations": [
-    "IC4335"
-   ],
-   "names": [],
-   "ra": 13.829186,
-   "dec": 33.673639,
-   "type": "*",
-   "constellation": "CVn"
-  },
-  {
    "id": "IC4336",
    "designations": [
     "IC4336",
@@ -51341,18 +45425,6 @@
    "type": "G",
    "magnitude": 15.22,
    "constellation": "Boo"
-  },
-  {
-   "id": "IC4339",
-   "designations": [
-    "IC4339"
-   ],
-   "names": [],
-   "ra": 13.891342,
-   "dec": 37.539028,
-   "type": "*",
-   "magnitude": 11.5,
-   "constellation": "CVn"
   },
   {
    "id": "IC4340",
@@ -52113,17 +46185,6 @@
    "constellation": "Boo"
   },
   {
-   "id": "IC4404",
-   "designations": [
-    "IC4404"
-   ],
-   "names": [],
-   "ra": 14.180603,
-   "dec": 78.628306,
-   "type": "*",
-   "constellation": "UMi"
-  },
-  {
    "id": "IC4405",
    "designations": [
     "IC4405",
@@ -52481,17 +46542,6 @@
    "dec": 26.5045,
    "type": "G",
    "magnitude": 14.75,
-   "constellation": "Boo"
-  },
-  {
-   "id": "IC4437",
-   "designations": [
-    "IC4437"
-   ],
-   "names": [],
-   "ra": 14.458794,
-   "dec": 41.503222,
-   "type": "**",
    "constellation": "Boo"
   },
   {
@@ -53131,17 +47181,6 @@
    "type": "G",
    "magnitude": 16.78,
    "constellation": "Boo"
-  },
-  {
-   "id": "IC4490",
-   "designations": [
-    "IC4490"
-   ],
-   "names": [],
-   "ra": 14.755908,
-   "dec": -36.173361,
-   "type": "**",
-   "constellation": "Cen"
   },
   {
    "id": "IC4492",
@@ -54371,17 +48410,6 @@
    "constellation": "Se1"
   },
   {
-   "id": "IC4589",
-   "designations": [
-    "IC4589"
-   ],
-   "names": [],
-   "ra": 16.123497,
-   "dec": -6.385306,
-   "type": "*",
-   "constellation": "Oph"
-  },
-  {
    "id": "IC4590",
    "designations": [
     "IC4590",
@@ -54774,17 +48802,6 @@
    "constellation": "Her"
   },
   {
-   "id": "IC4626",
-   "designations": [
-    "IC4626"
-   ],
-   "names": [],
-   "ra": 16.889286,
-   "dec": 2.338722,
-   "type": "**",
-   "constellation": "Oph"
-  },
-  {
    "id": "IC4627",
    "designations": [
     "IC4627"
@@ -54891,17 +48908,6 @@
    "type": "G",
    "magnitude": 14.87,
    "constellation": "Aps"
-  },
-  {
-   "id": "IC4636",
-   "designations": [
-    "IC4636"
-   ],
-   "names": [],
-   "ra": 16.985228,
-   "dec": 47.195417,
-   "type": "*",
-   "constellation": "Her"
   },
   {
    "id": "IC4637",
@@ -55029,17 +49035,6 @@
    "type": "G",
    "magnitude": 14.47,
    "constellation": "Aps"
-  },
-  {
-   "id": "IC4648",
-   "designations": [
-    "IC4648"
-   ],
-   "names": [],
-   "ra": 17.269453,
-   "dec": 43.862583,
-   "type": "**",
-   "constellation": "Her"
   },
   {
    "id": "IC4650",
@@ -55240,17 +49235,6 @@
    "constellation": "Oph"
   },
   {
-   "id": "IC4666",
-   "designations": [
-    "IC4666"
-   ],
-   "names": [],
-   "ra": 17.767322,
-   "dec": 55.775583,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC4667",
    "designations": [
     "IC4667"
@@ -55259,17 +49243,6 @@
    "ra": 17.771933,
    "dec": 55.875639,
    "type": "Other",
-   "constellation": "Dra"
-  },
-  {
-   "id": "IC4668",
-   "designations": [
-    "IC4668"
-   ],
-   "names": [],
-   "ra": 17.783169,
-   "dec": 57.400694,
-   "type": "*",
    "constellation": "Dra"
   },
   {
@@ -55422,18 +49395,6 @@
    "constellation": "Pav"
   },
   {
-   "id": "IC4681",
-   "designations": [
-    "IC4681"
-   ],
-   "names": [],
-   "ra": 18.138889,
-   "dec": -23.432028,
-   "type": "*",
-   "magnitude": 9.1,
-   "constellation": "Sgr"
-  },
-  {
    "id": "IC4682",
    "designations": [
     "IC4682",
@@ -55583,17 +49544,6 @@
    "dec": -58.208917,
    "type": "G",
    "magnitude": 13.76,
-   "constellation": "Pav"
-  },
-  {
-   "id": "IC4695",
-   "designations": [
-    "IC4695"
-   ],
-   "names": [],
-   "ra": 18.289853,
-   "dec": -58.925472,
-   "type": "**",
    "constellation": "Pav"
   },
   {
@@ -56058,17 +50008,6 @@
    "constellation": "Sgr"
   },
   {
-   "id": "IC4733",
-   "designations": [
-    "IC4733"
-   ],
-   "names": [],
-   "ra": 18.443939,
-   "dec": 64.967417,
-   "type": "*",
-   "constellation": "Dra"
-  },
-  {
    "id": "IC4734",
    "designations": [
     "IC4734",
@@ -56429,17 +50368,6 @@
    "type": "G",
    "magnitude": 13.92,
    "constellation": "Tel"
-  },
-  {
-   "id": "IC4762",
-   "designations": [
-    "IC4762"
-   ],
-   "names": [],
-   "ra": 18.541258,
-   "dec": 67.858028,
-   "type": "**",
-   "constellation": "Dra"
   },
   {
    "id": "IC4764",
@@ -57707,18 +51635,6 @@
    "constellation": "Pav"
   },
   {
-   "id": "IC4863",
-   "designations": [
-    "IC4863"
-   ],
-   "names": [],
-   "ra": 19.464358,
-   "dec": -36.216889,
-   "type": "**",
-   "magnitude": 11.38,
-   "constellation": "Sgr"
-  },
-  {
    "id": "IC4864",
    "designations": [
     "IC4864",
@@ -57732,17 +51648,6 @@
    "constellation": "Oct"
   },
   {
-   "id": "IC4865",
-   "designations": [
-    "IC4865"
-   ],
-   "names": [],
-   "ra": 19.513983,
-   "dec": -46.698444,
-   "type": "**",
-   "constellation": "Tel"
-  },
-  {
    "id": "IC4866",
    "designations": [
     "IC4866",
@@ -57754,18 +51659,6 @@
    "type": "G",
    "magnitude": 12.97,
    "constellation": "Pav"
-  },
-  {
-   "id": "IC4868",
-   "designations": [
-    "IC4868"
-   ],
-   "names": [],
-   "ra": 19.559278,
-   "dec": -45.892694,
-   "type": "**",
-   "magnitude": 10.56,
-   "constellation": "Tel"
   },
   {
    "id": "IC4869",
@@ -59428,17 +53321,6 @@
    "constellation": "Cap"
   },
   {
-   "id": "IC5006",
-   "designations": [
-    "IC5006"
-   ],
-   "names": [],
-   "ra": 20.396367,
-   "dec": 6.449167,
-   "type": "**",
-   "constellation": "Aql"
-  },
-  {
    "id": "IC5007",
    "designations": [
     "IC5007",
@@ -59998,17 +53880,6 @@
    "constellation": "Mic"
   },
   {
-   "id": "IC5057",
-   "designations": [
-    "IC5057"
-   ],
-   "names": [],
-   "ra": 20.787083,
-   "dec": 0.322111,
-   "type": "*",
-   "constellation": "Aqr"
-  },
-  {
    "id": "IC5059",
    "designations": [
     "IC5059",
@@ -60043,17 +53914,6 @@
    "ra": 20.793653,
    "dec": 0.335667,
    "type": "Other",
-   "constellation": "Aqr"
-  },
-  {
-   "id": "IC5062",
-   "designations": [
-    "IC5062"
-   ],
-   "names": [],
-   "ra": 20.802833,
-   "dec": -8.35975,
-   "type": "**",
    "constellation": "Aqr"
   },
   {
@@ -60261,17 +54121,6 @@
    "type": "G",
    "magnitude": 12.65,
    "constellation": "Cap"
-  },
-  {
-   "id": "IC5079",
-   "designations": [
-    "IC5079"
-   ],
-   "names": [],
-   "ra": 21.095558,
-   "dec": -56.23025,
-   "type": "*",
-   "constellation": "Ind"
   },
   {
    "id": "IC5080",
@@ -60670,17 +54519,6 @@
    "type": "G",
    "magnitude": 15.05,
    "constellation": "Aqr"
-  },
-  {
-   "id": "IC5113",
-   "designations": [
-    "IC5113"
-   ],
-   "names": [],
-   "ra": 21.494303,
-   "dec": 6.818,
-   "type": "**",
-   "constellation": "Peg"
   },
   {
    "id": "IC5115",
@@ -61105,17 +54943,6 @@
    "constellation": "Ind"
   },
   {
-   "id": "IC5155",
-   "designations": [
-    "IC5155"
-   ],
-   "names": [],
-   "ra": 22.035072,
-   "dec": 0.488278,
-   "type": "**",
-   "constellation": "Aqr"
-  },
-  {
    "id": "IC5156",
    "designations": [
     "IC5156",
@@ -61153,17 +54980,6 @@
    "type": "G",
    "magnitude": 15.22,
    "constellation": "Ind"
-  },
-  {
-   "id": "IC5159",
-   "designations": [
-    "IC5159"
-   ],
-   "names": [],
-   "ra": 22.044414,
-   "dec": 0.319,
-   "type": "*",
-   "constellation": "Aqr"
   },
   {
    "id": "IC5160",
@@ -61217,17 +55033,6 @@
    "constellation": "Peg"
   },
   {
-   "id": "IC5164",
-   "designations": [
-    "IC5164"
-   ],
-   "names": [],
-   "ra": 22.0995,
-   "dec": 27.047472,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "IC5165",
    "designations": [
     "IC5165",
@@ -61239,28 +55044,6 @@
    "type": "G",
    "magnitude": 14.81,
    "constellation": "Tuc"
-  },
-  {
-   "id": "IC5166",
-   "designations": [
-    "IC5166"
-   ],
-   "names": [],
-   "ra": 22.1019,
-   "dec": 27.068,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
-   "id": "IC5167",
-   "designations": [
-    "IC5167"
-   ],
-   "names": [],
-   "ra": 22.125497,
-   "dec": -8.122611,
-   "type": "*",
-   "constellation": "Aqr"
   },
   {
    "id": "IC5168",
@@ -61537,17 +55320,6 @@
    "type": "G",
    "magnitude": 13.84,
    "constellation": "Tuc"
-  },
-  {
-   "id": "IC5189",
-   "designations": [
-    "IC5189"
-   ],
-   "names": [],
-   "ra": 22.270597,
-   "dec": -5.004306,
-   "type": "*",
-   "constellation": "Aqr"
   },
   {
    "id": "IC5190",
@@ -62645,17 +56417,6 @@
    "constellation": "Tuc"
   },
   {
-   "id": "IC5281",
-   "designations": [
-    "IC5281"
-   ],
-   "names": [],
-   "ra": 23.039858,
-   "dec": 27.006389,
-   "type": "*",
-   "constellation": "Peg"
-  },
-  {
    "id": "IC5282",
    "designations": [
     "IC5282",
@@ -62917,17 +56678,6 @@
    "constellation": "Tuc"
   },
   {
-   "id": "IC5303",
-   "designations": [
-    "IC5303"
-   ],
-   "names": [],
-   "ra": 23.298539,
-   "dec": 0.264528,
-   "type": "**",
-   "constellation": "Psc"
-  },
-  {
    "id": "IC5304",
    "designations": [
     "IC5304",
@@ -63004,17 +56754,6 @@
    "type": "G",
    "magnitude": 15.4,
    "constellation": "Aqr"
-  },
-  {
-   "id": "IC5311",
-   "designations": [
-    "IC5311"
-   ],
-   "names": [],
-   "ra": 23.343819,
-   "dec": 17.274139,
-   "type": "**",
-   "constellation": "Peg"
   },
   {
    "id": "IC5312",
@@ -63210,17 +56949,6 @@
    "type": "G",
    "magnitude": 15.62,
    "constellation": "Peg"
-  },
-  {
-   "id": "IC5330",
-   "designations": [
-    "IC5330"
-   ],
-   "names": [],
-   "ra": 23.557314,
-   "dec": -2.883139,
-   "type": "*",
-   "constellation": "Psc"
   },
   {
    "id": "IC5331",
