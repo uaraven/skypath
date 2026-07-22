@@ -37,8 +37,14 @@ const SOURCE =
 /**
  * Catalogs we lift out of the free-form `Identifiers` column. Everything else
  * there is survey-internal (MWSC, SDSS, 2MASX…) and of no use in a picker.
+ *
+ * `C` is the Caldwell catalogue — Patrick Moore's 109-object companion to
+ * Messier. Its members are all existing NGC/IC objects, so the Caldwell number
+ * folds into them the same way UGC/PGC/LBN do; it needs no file of its own.
+ * OpenNGC tags 105 of the 109 (it omits C9=Sh2-155, C14=the Double Cluster,
+ * C41=the Hyades and C99=the Coalsack, none of which have a single NGC/IC row).
  */
-const IDENTIFIER_CATALOGS = ['UGC', 'PGC', 'LBN']
+const IDENTIFIER_CATALOGS = ['C', 'UGC', 'PGC', 'LBN']
 
 /**
  * Order in which designations are listed on an object; earliest wins as
@@ -46,6 +52,7 @@ const IDENTIFIER_CATALOGS = ['UGC', 'PGC', 'LBN']
  */
 const CATALOG_ORDER = [
   'M',
+  'C',
   'NGC',
   'IC',
   'Mel',

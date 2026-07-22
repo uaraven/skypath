@@ -32,6 +32,11 @@ requirement to cite the original publication, which the `source` string does.
   designation is folded into the object it duplicates so it stays searchable.
 - Rows in VII/7A that the catalogue never numbered are dropped — there is no
   designation to file them under (1802 numbers, 1787 usable rows).
+- The **Caldwell** catalogue (`C`) is lifted from OpenNGC's `Identifiers`
+  column, so its numbers fold into the NGC/IC objects they name rather than
+  forming a file of their own (105 of the 109 tagged). The four OpenNGC does not
+  carry — C9 (Sh2-155), C14 (the Double Cluster), C41 (the Hyades) and C99 (the
+  Coalsack) — have no single NGC/IC row to attach to, so they are absent.
 
 ## Known gap: no cross-match between Sharpless/LDN and NGC/IC
 
