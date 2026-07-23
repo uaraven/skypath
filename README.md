@@ -2,6 +2,8 @@
 
 A static single-page web app for planning a night of astronomical observation. Pick a target, a date and a location, and see where the object goes across the sky that night taking _your_ horizon into account.
 
+**NOTE**: This project violates the Codeberg terms of use related to LLM-generated content. I respect Codeberg's decision and will stop developing it here and will move the main repo GitHub. 
+
 ![Main screen preview](images/preview.png)
 
 No backend, no accounts, no server-side state. Everything runs in the browser and everything you save stays in `localStorage`.
