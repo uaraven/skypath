@@ -174,7 +174,9 @@ const VIZIER_BUILDS = [
       'https://vizier.cds.unistra.fr/).',
     table: 'VII/20',
     key: 'Sh2',
-    columns: ['Sh2', '_RAJ2000', '_DEJ2000'],
+    columns: ['Sh2', '_RAJ2000', '_DEJ2000', 'Diam'],
+    // `Diam` is the region's angular diameter in arcminutes.
+    sizeColumn: 'Diam',
     type: 'HII',
     /** Sharpless numbers are conventionally written `Sh2-155`. */
     designation: (number) => `Sh2-${number}`,
@@ -318,6 +320,11 @@ function magnitudeOf(row) {
   return value === '' ? undefined : Number(value)
 }
 
+/** Major axis in arcminutes, or undefined for rows OpenNGC has no size for. */
+function sizeOf(row) {
+  return row.MajAx === '' ? undefined : Number(row.MajAx)
+}
+
 function buildObject(row, primary, aliases = new Map()) {
   const own = [primary, ...designationsOf(row)]
   const designations = [
@@ -334,6 +341,7 @@ function buildObject(row, primary, aliases = new Map()) {
     dec: parseDec(row.Dec),
     type: row.Type,
     magnitude: magnitudeOf(row),
+    size: sizeOf(row),
     constellation: row.Const || undefined,
   }
 }
@@ -398,6 +406,11 @@ function buildVizierObject(row, build) {
     ? build.designation(number)
     : `${build.catalog}${number}`
 
+  const size =
+    build.sizeColumn && row[build.sizeColumn]
+      ? round(Number(row[build.sizeColumn]), 2)
+      : undefined
+
   return {
     id: designation,
     designations: [designation],
@@ -405,6 +418,7 @@ function buildVizierObject(row, build) {
     ra,
     dec,
     type: build.type,
+    size,
     constellation: Constellation(ra, dec).symbol,
   }
 }

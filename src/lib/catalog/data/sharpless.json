@@ -12,6 +12,7 @@
    "ra": 15.980891,
    "dec": -26.12052,
    "type": "HII",
+   "size": 150,
    "constellation": "Sco"
   },
   {
@@ -23,6 +24,7 @@
    "ra": 17.068507,
    "dec": -38.14249,
    "type": "HII",
+   "size": 60,
    "constellation": "Sco"
   },
   {
@@ -34,6 +36,7 @@
    "ra": 17.229176,
    "dec": -38.503106,
    "type": "HII",
+   "size": 12,
    "constellation": "Sco"
   },
   {
@@ -45,6 +48,7 @@
    "ra": 17.330218,
    "dec": -39.338753,
    "type": "HII",
+   "size": 5,
    "constellation": "Sco"
   },
   {
@@ -56,6 +60,7 @@
    "ra": 17.334297,
    "dec": -38.45477,
    "type": "HII",
+   "size": 100,
    "constellation": "Sco"
   },
   {
@@ -67,6 +72,7 @@
    "ra": 17.251143,
    "dec": -37.116545,
    "type": "HII",
+   "size": 4,
    "constellation": "Sco"
   },
   {
@@ -78,6 +84,7 @@
    "ra": 16.00549,
    "dec": -22.950642,
    "type": "HII",
+   "size": 240,
    "constellation": "Sco"
   },
   {
@@ -89,6 +96,7 @@
    "ra": 17.356902,
    "dec": -36.034691,
    "type": "HII",
+   "size": 120,
    "constellation": "Sco"
   },
   {
@@ -100,6 +108,7 @@
    "ra": 16.353026,
    "dec": -25.589444,
    "type": "HII",
+   "size": 80,
    "constellation": "Sco"
   },
   {
@@ -111,6 +120,7 @@
    "ra": 17.31667,
    "dec": -34.090316,
    "type": "HII",
+   "size": 60,
    "constellation": "Sco"
   },
   {
@@ -122,6 +132,7 @@
    "ra": 17.441931,
    "dec": -34.205691,
    "type": "HII",
+   "size": 90,
    "constellation": "Sco"
   },
   {
@@ -133,6 +144,7 @@
    "ra": 17.598938,
    "dec": -32.599595,
    "type": "HII",
+   "size": 120,
    "constellation": "Sco"
   },
   {
@@ -144,6 +156,7 @@
    "ra": 17.507933,
    "dec": -31.562676,
    "type": "HII",
+   "size": 40,
    "constellation": "Sco"
   },
   {
@@ -155,6 +168,7 @@
    "ra": 17.505133,
    "dec": -30.262997,
    "type": "HII",
+   "size": 2,
    "constellation": "Sco"
   },
   {
@@ -166,6 +180,7 @@
    "ra": 17.842887,
    "dec": -31.264091,
    "type": "HII",
+   "size": 30,
    "constellation": "Sco"
   },
   {
@@ -177,6 +192,7 @@
    "ra": 17.797836,
    "dec": -29.303855,
    "type": "HII",
+   "size": 20,
    "constellation": "Sgr"
   },
   {
@@ -188,6 +204,7 @@
    "ra": 17.769113,
    "dec": -28.858004,
    "type": "HII",
+   "size": 25,
    "constellation": "Sgr"
   },
   {
@@ -199,6 +216,7 @@
    "ra": 17.812798,
    "dec": -29.251675,
    "type": "HII",
+   "size": 4,
    "constellation": "Sgr"
   },
   {
@@ -210,6 +228,7 @@
    "ra": 17.822688,
    "dec": -29.116895,
    "type": "HII",
+   "size": 12,
    "constellation": "Sgr"
   },
   {
@@ -221,6 +240,7 @@
    "ra": 17.820641,
    "dec": -28.667165,
    "type": "HII",
+   "size": 10,
    "constellation": "Sgr"
   },
   {
@@ -232,6 +252,7 @@
    "ra": 17.860847,
    "dec": -28.89466,
    "type": "HII",
+   "size": 5,
    "constellation": "Sgr"
   },
   {
@@ -243,6 +264,7 @@
    "ra": 17.917717,
    "dec": -25.036147,
    "type": "HII",
+   "size": 60,
    "constellation": "Sgr"
   },
   {
@@ -254,6 +276,7 @@
    "ra": 16.223506,
    "dec": -8.372276,
    "type": "HII",
+   "size": 50,
    "constellation": "Sco"
   },
   {
@@ -265,6 +288,7 @@
    "ra": 16.184391,
    "dec": -7.077277,
    "type": "HII",
+   "size": 30,
    "constellation": "Oph"
   },
   {
@@ -276,6 +300,7 @@
    "ra": 18.090566,
    "dec": -24.394248,
    "type": "HII",
+   "size": 90,
    "constellation": "Sgr"
   },
   {
@@ -287,6 +312,7 @@
    "ra": 17.983064,
    "dec": -23.326526,
    "type": "HII",
+   "size": 20,
    "constellation": "Sgr"
   },
   {
@@ -298,6 +324,7 @@
    "ra": 16.620114,
    "dec": -10.569733,
    "type": "HII",
+   "size": 480,
    "constellation": "Oph"
   },
   {
@@ -309,6 +336,7 @@
    "ra": 18.044935,
    "dec": -23.584187,
    "type": "HII",
+   "size": 40,
    "constellation": "Sgr"
   },
   {
@@ -320,6 +348,7 @@
    "ra": 18.175254,
    "dec": -23.998547,
    "type": "HII",
+   "size": 40,
    "constellation": "Sgr"
   },
   {
@@ -331,6 +360,7 @@
    "ra": 18.059499,
    "dec": -23.015365,
    "type": "HII",
+   "size": 20,
    "constellation": "Sgr"
   },
   {
@@ -342,6 +372,7 @@
    "ra": 18.18843,
    "dec": -23.796616,
    "type": "HII",
+   "size": 8,
    "constellation": "Sgr"
   },
   {
@@ -353,6 +384,7 @@
    "ra": 18.181649,
    "dec": -23.647595,
    "type": "HII",
+   "size": 8,
    "constellation": "Sgr"
   },
   {
@@ -364,6 +396,7 @@
    "ra": 15.997882,
    "dec": -1.617448,
    "type": "HII",
+   "size": 35,
    "constellation": "Ser"
   },
   {
@@ -375,6 +408,7 @@
    "ra": 18.106805,
    "dec": -21.658393,
    "type": "HII",
+   "size": 90,
    "constellation": "Sgr"
   },
   {
@@ -386,6 +420,7 @@
    "ra": 18.264082,
    "dec": -20.252068,
    "type": "HII",
+   "size": 20,
    "constellation": "Sgr"
   },
   {
@@ -397,6 +432,7 @@
    "ra": 16.09176,
    "dec": 0.394481,
    "type": "HII",
+   "size": 45,
    "constellation": "Ser"
   },
   {
@@ -408,6 +444,7 @@
    "ra": 18.295313,
    "dec": -19.664158,
    "type": "HII",
+   "size": 20,
    "constellation": "Sgr"
   },
   {
@@ -419,6 +456,7 @@
    "ra": 18.145985,
    "dec": -18.269167,
    "type": "HII",
+   "size": 3,
    "constellation": "Sgr"
   },
   {
@@ -430,6 +468,7 @@
    "ra": 18.27958,
    "dec": -18.649727,
    "type": "HII",
+   "size": 3,
    "constellation": "Sgr"
   },
   {
@@ -441,6 +480,7 @@
    "ra": 18.200606,
    "dec": -17.744513,
    "type": "HII",
+   "size": 15,
    "constellation": "Sgr"
   },
   {
@@ -452,6 +492,7 @@
    "ra": 18.264284,
    "dec": -18.235265,
    "type": "HII",
+   "size": 90,
    "constellation": "Sgr"
   },
   {
@@ -463,6 +504,7 @@
    "ra": 18.171615,
    "dec": -16.815356,
    "type": "HII",
+   "size": 3,
    "constellation": "Sgr"
   },
   {
@@ -474,6 +516,7 @@
    "ra": 18.273687,
    "dec": -17.40052,
    "type": "HII",
+   "size": 15,
    "constellation": "Sgr"
   },
   {
@@ -485,6 +528,7 @@
    "ra": 18.274882,
    "dec": -16.733645,
    "type": "HII",
+   "size": 60,
    "constellation": "Sgr"
   },
   {
@@ -496,6 +540,7 @@
    "ra": 18.346144,
    "dec": -16.17325,
    "type": "HII",
+   "size": 60,
    "constellation": "Sgr"
   },
   {
@@ -507,6 +552,7 @@
    "ra": 18.103095,
    "dec": -14.15854,
    "type": "HII",
+   "size": 25,
    "constellation": "Ser"
   },
   {
@@ -518,6 +564,7 @@
    "ra": 18.29576,
    "dec": -15.613882,
    "type": "HII",
+   "size": 5,
    "constellation": "Ser"
   },
   {
@@ -529,6 +576,7 @@
    "ra": 18.37337,
    "dec": -14.58588,
    "type": "HII",
+   "size": 10,
    "constellation": "Sct"
   },
   {
@@ -540,6 +588,7 @@
    "ra": 18.311282,
    "dec": -13.961541,
    "type": "HII",
+   "size": 90,
    "constellation": "Ser"
   },
   {
@@ -551,6 +600,7 @@
    "ra": 18.425114,
    "dec": -14.711707,
    "type": "HII",
+   "size": 35,
    "constellation": "Sct"
   },
   {
@@ -562,6 +612,7 @@
    "ra": 18.679647,
    "dec": -16.558348,
    "type": "HII",
+   "size": 35,
    "constellation": "Sgr"
   },
   {
@@ -573,6 +624,7 @@
    "ra": 19.796346,
    "dec": -23.087477,
    "type": "HII",
+   "size": 2,
    "constellation": "Sgr"
   },
   {
@@ -584,6 +636,7 @@
    "ra": 18.420765,
    "dec": -13.228931,
    "type": "HII",
+   "size": 15,
    "constellation": "Sct"
   },
   {
@@ -595,6 +648,7 @@
    "ra": 18.298099,
    "dec": -11.730014,
    "type": "HII",
+   "size": 140,
    "constellation": "Ser"
   },
   {
@@ -606,6 +660,7 @@
    "ra": 18.536418,
    "dec": -11.762104,
    "type": "HII",
+   "size": 5,
    "constellation": "Sct"
   },
   {
@@ -617,6 +672,7 @@
    "ra": 18.518391,
    "dec": -9.714613,
    "type": "HII",
+   "size": 7,
    "constellation": "Sct"
   },
   {
@@ -628,6 +684,7 @@
    "ra": 18.509334,
    "dec": -8.615871,
    "type": "HII",
+   "size": 2,
    "constellation": "Sct"
   },
   {
@@ -639,6 +696,7 @@
    "ra": 18.524232,
    "dec": -8.463708,
    "type": "HII",
+   "size": 8,
    "constellation": "Sct"
   },
   {
@@ -650,6 +708,7 @@
    "ra": 18.616987,
    "dec": -7.600271,
    "type": "HII",
+   "size": 20,
    "constellation": "Sct"
   },
   {
@@ -661,6 +720,7 @@
    "ra": 18.611402,
    "dec": -6.701034,
    "type": "HII",
+   "size": 20,
    "constellation": "Sct"
   },
   {
@@ -672,6 +732,7 @@
    "ra": 18.548644,
    "dec": -5.010015,
    "type": "HII",
+   "size": 2,
    "constellation": "Sct"
   },
   {
@@ -683,6 +744,7 @@
    "ra": 18.459568,
    "dec": -3.856186,
    "type": "HII",
+   "size": 4,
    "constellation": "Ser"
   },
   {
@@ -694,6 +756,7 @@
    "ra": 19.961995,
    "dec": -14.115665,
    "type": "HII",
+   "size": 55,
    "constellation": "Sgr"
   },
   {
@@ -705,6 +768,7 @@
    "ra": 18.526647,
    "dec": -1.91305,
    "type": "HII",
+   "size": 25,
    "constellation": "Ser"
   },
   {
@@ -716,6 +780,7 @@
    "ra": 18.782812,
    "dec": -3.742939,
    "type": "HII",
+   "size": 7,
    "constellation": "Aql"
   },
   {
@@ -727,6 +792,7 @@
    "ra": 18.758366,
    "dec": -1.996359,
    "type": "HII",
+   "size": 8,
    "constellation": "Aql"
   },
   {
@@ -738,6 +804,7 @@
    "ra": 18.823591,
    "dec": -2.353714,
    "type": "HII",
+   "size": 10,
    "constellation": "Aql"
   },
   {
@@ -749,6 +816,7 @@
    "ra": 18.419861,
    "dec": 0.854944,
    "type": "HII",
+   "size": 8,
    "constellation": "Ser"
   },
   {
@@ -760,6 +828,7 @@
    "ra": 18.740607,
    "dec": -0.282159,
    "type": "HII",
+   "size": 20,
    "constellation": "Aql"
   },
   {
@@ -771,6 +840,7 @@
    "ra": 18.244144,
    "dec": 7.063032,
    "type": "HII",
+   "size": 5,
    "constellation": "Oph"
   },
   {
@@ -782,6 +852,7 @@
    "ra": 19.034086,
    "dec": 2.159682,
    "type": "HII",
+   "size": 3,
    "constellation": "Aql"
   },
   {
@@ -793,6 +864,7 @@
    "ra": 19.063994,
    "dec": 2.313897,
    "type": "HII",
+   "size": 25,
    "constellation": "Aql"
   },
   {
@@ -804,6 +876,7 @@
    "ra": 16.185451,
    "dec": 21.874001,
    "type": "HII",
+   "size": 75,
    "constellation": "Her"
   },
   {
@@ -815,6 +888,7 @@
    "ra": 19.14695,
    "dec": 5.609001,
    "type": "HII",
+   "size": 3,
    "constellation": "Aql"
   },
   {
@@ -826,6 +900,7 @@
    "ra": 18.987609,
    "dec": 7.120011,
    "type": "HII",
+   "size": 10,
    "constellation": "Aql"
   },
   {
@@ -837,6 +912,7 @@
    "ra": 18.940483,
    "dec": 7.813373,
    "type": "HII",
+   "size": 7,
    "constellation": "Aql"
   },
   {
@@ -848,6 +924,7 @@
    "ra": 19.8048,
    "dec": 1.147923,
    "type": "HII",
+   "size": 8,
    "constellation": "Aql"
   },
   {
@@ -859,6 +936,7 @@
    "ra": 19.053093,
    "dec": 14.129562,
    "type": "HII",
+   "size": 12,
    "constellation": "Aql"
   },
   {
@@ -870,6 +948,7 @@
    "ra": 19.388455,
    "dec": 13.976087,
    "type": "HII",
+   "size": 40,
    "constellation": "Aql"
   },
   {
@@ -881,6 +960,7 @@
    "ra": 19.191372,
    "dec": 16.865698,
    "type": "HII",
+   "size": 2,
    "constellation": "Sge"
   },
   {
@@ -892,6 +972,7 @@
    "ra": 20.020411,
    "dec": 11.792703,
    "type": "HII",
+   "size": 10,
    "constellation": "Aql"
   },
   {
@@ -903,6 +984,7 @@
    "ra": 19.505766,
    "dec": 18.275551,
    "type": "HII",
+   "size": 9,
    "constellation": "Sge"
   },
   {
@@ -914,6 +996,7 @@
    "ra": 19.408931,
    "dec": 20.795858,
    "type": "HII",
+   "size": 2,
    "constellation": "Vul"
   },
   {
@@ -925,6 +1008,7 @@
    "ra": 19.817776,
    "dec": 18.400282,
    "type": "HII",
+   "size": 15,
    "constellation": "Sge"
   },
   {
@@ -936,6 +1020,7 @@
    "ra": 19.054786,
    "dec": 25.830382,
    "type": "HII",
+   "size": 6,
    "constellation": "Lyr"
   },
   {
@@ -947,6 +1032,7 @@
    "ra": 19.71936,
    "dec": 23.287607,
    "type": "HII",
+   "size": 40,
    "constellation": "Vul"
   },
   {
@@ -958,6 +1044,7 @@
    "ra": 19.773528,
    "dec": 24.628112,
    "type": "HII",
+   "size": 10,
    "constellation": "Vul"
   },
   {
@@ -969,6 +1056,7 @@
    "ra": 19.766341,
    "dec": 25.343871,
    "type": "HII",
+   "size": 25,
    "constellation": "Vul"
   },
   {
@@ -980,6 +1068,7 @@
    "ra": 19.834003,
    "dec": 26.486076,
    "type": "HII",
+   "size": 5,
    "constellation": "Vul"
   },
   {
@@ -991,6 +1080,7 @@
    "ra": 19.820364,
    "dec": 26.867656,
    "type": "HII",
+   "size": 6,
    "constellation": "Vul"
   },
   {
@@ -1002,6 +1092,7 @@
    "ra": 19.59279,
    "dec": 29.604452,
    "type": "HII",
+   "size": 120,
    "constellation": "Cyg"
   },
   {
@@ -1013,6 +1104,7 @@
    "ra": 19.777586,
    "dec": 28.245479,
    "type": "HII",
+   "size": 50,
    "constellation": "Vul"
   },
   {
@@ -1024,6 +1116,7 @@
    "ra": 19.917005,
    "dec": 27.213485,
    "type": "HII",
+   "size": 1,
    "constellation": "Vul"
   },
   {
@@ -1035,6 +1128,7 @@
    "ra": 19.464335,
    "dec": 31.470599,
    "type": "HII",
+   "size": 25,
    "constellation": "Cyg"
   },
   {
@@ -1046,6 +1140,7 @@
    "ra": 19.917145,
    "dec": 29.296933,
    "type": "HII",
+   "size": 1,
    "constellation": "Vul"
   },
   {
@@ -1057,6 +1152,7 @@
    "ra": 19.478348,
    "dec": 32.689232,
    "type": "HII",
+   "size": 25,
    "constellation": "Cyg"
   },
   {
@@ -1068,6 +1164,7 @@
    "ra": 19.934795,
    "dec": 30.265907,
    "type": "HII",
+   "size": 10,
    "constellation": "Cyg"
   },
   {
@@ -1079,6 +1176,7 @@
    "ra": 19.979035,
    "dec": 31.421603,
    "type": "HII",
+   "size": 15,
    "constellation": "Cyg"
   },
   {
@@ -1090,6 +1188,7 @@
    "ra": 20.014175,
    "dec": 33.492825,
    "type": "HII",
+   "size": 5,
    "constellation": "Cyg"
   },
   {
@@ -1101,6 +1200,7 @@
    "ra": 20.030881,
    "dec": 33.511601,
    "type": "HII",
+   "size": 4,
    "constellation": "Cyg"
   },
   {
@@ -1112,6 +1212,7 @@
    "ra": 19.999312,
    "dec": 35.291038,
    "type": "HII",
+   "size": 20,
    "constellation": "Cyg"
   },
   {
@@ -1123,6 +1224,7 @@
    "ra": 20.529742,
    "dec": 30.605153,
    "type": "HII",
+   "size": 40,
    "constellation": "Cyg"
   },
   {
@@ -1134,6 +1236,7 @@
    "ra": 20.842353,
    "dec": 30.923446,
    "type": "HII",
+   "size": 210,
    "constellation": "Cyg"
   },
   {
@@ -1145,6 +1248,7 @@
    "ra": 20.295872,
    "dec": 36.744464,
    "type": "HII",
+   "size": 7,
    "constellation": "Cyg"
   },
   {
@@ -1156,6 +1260,7 @@
    "ra": 20.200772,
    "dec": 38.349646,
    "type": "HII",
+   "size": 18,
    "constellation": "Cyg"
   },
   {
@@ -1167,6 +1272,7 @@
    "ra": 20.457687,
    "dec": 37.397065,
    "type": "HII",
+   "size": 3,
    "constellation": "Cyg"
   },
   {
@@ -1178,6 +1284,7 @@
    "ra": 20.713007,
    "dec": 36.34282,
    "type": "HII",
+   "size": 5,
    "constellation": "Cyg"
   },
   {
@@ -1189,6 +1296,7 @@
    "ra": 20.376522,
    "dec": 40.254302,
    "type": "HII",
+   "size": 180,
    "constellation": "Cyg"
   },
   {
@@ -1200,6 +1308,7 @@
    "ra": 20.560684,
    "dec": 40.342476,
    "type": "HII",
+   "size": 1080,
    "constellation": "Cyg"
   },
   {
@@ -1211,6 +1320,7 @@
    "ra": 21.346906,
    "dec": 32.457864,
    "type": "HII",
+   "size": 50,
    "constellation": "Cyg"
   },
   {
@@ -1222,6 +1332,7 @@
    "ra": 21.698137,
    "dec": 30.105702,
    "type": "HII",
+   "size": 90,
    "constellation": "Cyg"
   },
   {
@@ -1233,6 +1344,7 @@
    "ra": 20.56399,
    "dec": 45.659808,
    "type": "HII",
+   "size": 15,
    "constellation": "Cyg"
   },
   {
@@ -1244,6 +1356,7 @@
    "ra": 21.346716,
    "dec": 38.091341,
    "type": "HII",
+   "size": 15,
    "constellation": "Cyg"
   },
   {
@@ -1255,6 +1368,7 @@
    "ra": 21.353003,
    "dec": 38.708617,
    "type": "HII",
+   "size": 9,
    "constellation": "Cyg"
   },
   {
@@ -1266,6 +1380,7 @@
    "ra": 20.576112,
    "dec": 46.877934,
    "type": "HII",
+   "size": 50,
    "constellation": "Cyg"
   },
   {
@@ -1277,6 +1392,7 @@
    "ra": 20.538681,
    "dec": 47.357009,
    "type": "HII",
+   "size": 2,
    "constellation": "Cyg"
   },
   {
@@ -1288,6 +1404,7 @@
    "ra": 20.9796,
    "dec": 44.321858,
    "type": "HII",
+   "size": 240,
    "constellation": "Cyg"
   },
   {
@@ -1299,6 +1416,7 @@
    "ra": 21.616981,
    "dec": 40.215724,
    "type": "HII",
+   "size": 480,
    "constellation": "Cyg"
   },
   {
@@ -1310,6 +1428,7 @@
    "ra": 21.307164,
    "dec": 43.937802,
    "type": "HII",
+   "size": 160,
    "constellation": "Cyg"
   },
   {
@@ -1321,6 +1440,7 @@
    "ra": 21.063086,
    "dec": 49.880726,
    "type": "HII",
+   "size": 1,
    "constellation": "Cyg"
   },
   {
@@ -1332,6 +1452,7 @@
    "ra": 21.086861,
    "dec": 49.64979,
    "type": "HII",
+   "size": 1,
    "constellation": "Cyg"
   },
   {
@@ -1343,6 +1464,7 @@
    "ra": 23.14647,
    "dec": 14.92496,
    "type": "HII",
+   "size": 40,
    "constellation": "Peg"
   },
   {
@@ -1354,6 +1476,7 @@
    "ra": 21.70633,
    "dec": 44.540061,
    "type": "HII",
+   "size": 13,
    "constellation": "Cyg"
   },
   {
@@ -1365,6 +1488,7 @@
    "ra": 21.639365,
    "dec": 50.351297,
    "type": "HII",
+   "size": 70,
    "constellation": "Cyg"
   },
   {
@@ -1376,6 +1500,7 @@
    "ra": 21.89255,
    "dec": 47.27172,
    "type": "HII",
+   "size": 9,
    "constellation": "Cyg"
   },
   {
@@ -1387,6 +1512,7 @@
    "ra": 22.557642,
    "dec": 38.582232,
    "type": "HII",
+   "size": 160,
    "constellation": "Lac"
   },
   {
@@ -1398,6 +1524,7 @@
    "ra": 21.478309,
    "dec": 54.620754,
    "type": "HII",
+   "size": 2,
    "constellation": "Cyg"
   },
   {
@@ -1409,6 +1536,7 @@
    "ra": 21.535785,
    "dec": 55.859258,
    "type": "HII",
+   "size": 1,
    "constellation": "Cep"
   },
   {
@@ -1420,6 +1548,7 @@
    "ra": 21.195812,
    "dec": 59.961301,
    "type": "HII",
+   "size": 140,
    "constellation": "Cep"
   },
   {
@@ -1431,6 +1560,7 @@
    "ra": 20.716569,
    "dec": 63.228471,
    "type": "HII",
+   "size": 3,
    "constellation": "Cep"
   },
   {
@@ -1442,6 +1572,7 @@
    "ra": 21.65009,
    "dec": 57.485863,
    "type": "HII",
+   "size": 170,
    "constellation": "Cep"
   },
   {
@@ -1453,6 +1584,7 @@
    "ra": 22.313243,
    "dec": 56.134785,
    "type": "HII",
+   "size": 90,
    "constellation": "Cep"
   },
   {
@@ -1464,6 +1596,7 @@
    "ra": 21.483319,
    "dec": 64.30521,
    "type": "HII",
+   "size": 80,
    "constellation": "Cep"
   },
   {
@@ -1475,6 +1608,7 @@
    "ra": 22.191633,
    "dec": 59.410326,
    "type": "HII",
+   "size": 160,
    "constellation": "Cep"
   },
   {
@@ -1486,6 +1620,7 @@
    "ra": 22.369902,
    "dec": 58.738369,
    "type": "HII",
+   "size": 15,
    "constellation": "Cep"
   },
   {
@@ -1497,6 +1632,7 @@
    "ra": 21.274911,
    "dec": 68.253161,
    "type": "HII",
+   "size": 5,
    "constellation": "Cep"
   },
   {
@@ -1508,6 +1644,7 @@
    "ra": 21.951989,
    "dec": 64.693635,
    "type": "HII",
+   "size": 90,
    "constellation": "Cep"
   },
   {
@@ -1519,6 +1656,7 @@
    "ra": 22.544315,
    "dec": 58.481799,
    "type": "HII",
+   "size": 1,
    "constellation": "Cep"
   },
   {
@@ -1530,6 +1668,7 @@
    "ra": 22.58344,
    "dec": 58.217249,
    "type": "HII",
+   "size": 10,
    "constellation": "Cep"
   },
   {
@@ -1541,6 +1680,7 @@
    "ra": 22.318844,
    "dec": 63.285379,
    "type": "HII",
+   "size": 30,
    "constellation": "Cep"
   },
   {
@@ -1552,6 +1692,7 @@
    "ra": 22.475129,
    "dec": 61.644674,
    "type": "HII",
+   "size": 5,
    "constellation": "Cep"
   },
   {
@@ -1563,6 +1704,7 @@
    "ra": 22.793259,
    "dec": 58.061042,
    "type": "HII",
+   "size": 30,
    "constellation": "Cep"
   },
   {
@@ -1574,6 +1716,7 @@
    "ra": 22.837477,
    "dec": 57.713043,
    "type": "HII",
+   "size": 4,
    "constellation": "Cep"
   },
   {
@@ -1585,6 +1728,7 @@
    "ra": 22.747825,
    "dec": 59.892275,
    "type": "HII",
+   "size": 4,
    "constellation": "Cep"
   },
   {
@@ -1596,6 +1740,7 @@
    "ra": 22.426008,
    "dec": 64.308586,
    "type": "HII",
+   "size": 90,
    "constellation": "Cep"
   },
   {
@@ -1607,6 +1752,7 @@
    "ra": 22.823984,
    "dec": 59.92914,
    "type": "HII",
+   "size": 2,
    "constellation": "Cep"
   },
   {
@@ -1618,6 +1764,7 @@
    "ra": 22.924917,
    "dec": 58.466813,
    "type": "HII",
+   "size": 2,
    "constellation": "Cep"
   },
   {
@@ -1629,6 +1776,7 @@
    "ra": 22.936726,
    "dec": 58.5173,
    "type": "HII",
+   "size": 2,
    "constellation": "Cep"
   },
   {
@@ -1640,6 +1788,7 @@
    "ra": 22.940099,
    "dec": 58.534105,
    "type": "HII",
+   "size": 1,
    "constellation": "Cep"
   },
   {
@@ -1651,6 +1800,7 @@
    "ra": 22.519984,
    "dec": 65.113988,
    "type": "HII",
+   "size": 40,
    "constellation": "Cep"
   },
   {
@@ -1662,6 +1812,7 @@
    "ra": 23.050931,
    "dec": 57.071732,
    "type": "HII",
+   "size": 20,
    "constellation": "Cas"
   },
   {
@@ -1673,6 +1824,7 @@
    "ra": 22.977161,
    "dec": 58.785598,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -1684,6 +1836,7 @@
    "ra": 22.987347,
    "dec": 58.735998,
    "type": "HII",
+   "size": 5,
    "constellation": "Cas"
   },
   {
@@ -1695,6 +1848,7 @@
    "ra": 22.85684,
    "dec": 61.18062,
    "type": "HII",
+   "size": 60,
    "constellation": "Cep"
   },
   {
@@ -1706,6 +1860,7 @@
    "ra": 22.945495,
    "dec": 62.617717,
    "type": "HII",
+   "size": 60,
    "constellation": "Cep"
   },
   {
@@ -1717,6 +1872,7 @@
    "ra": 23.086265,
    "dec": 60.256376,
    "type": "HII",
+   "size": 2,
    "constellation": "Cep"
   },
   {
@@ -1728,6 +1884,7 @@
    "ra": 23.267657,
    "dec": 60.045551,
    "type": "HII",
+   "size": 90,
    "constellation": "Cas"
   },
   {
@@ -1739,6 +1896,7 @@
    "ra": 23.227864,
    "dec": 61.51105,
    "type": "HII",
+   "size": 10,
    "constellation": "Cep"
   },
   {
@@ -1750,6 +1908,7 @@
    "ra": 23.261985,
    "dec": 61.145395,
    "type": "HII",
+   "size": 7,
    "constellation": "Cas"
   },
   {
@@ -1761,6 +1920,7 @@
    "ra": 23.09658,
    "dec": 64.67346,
    "type": "HII",
+   "size": 80,
    "constellation": "Cep"
   },
   {
@@ -1772,6 +1932,7 @@
    "ra": 23.258186,
    "dec": 61.861956,
    "type": "HII",
+   "size": 55,
    "constellation": "Cas"
   },
   {
@@ -1783,6 +1944,7 @@
    "ra": 23.345036,
    "dec": 61.197683,
    "type": "HII",
+   "size": 40,
    "constellation": "Cas"
   },
   {
@@ -1794,6 +1956,7 @@
    "ra": 23.555445,
    "dec": 60.785671,
    "type": "HII",
+   "size": 10,
    "constellation": "Cas"
   },
   {
@@ -1805,6 +1968,7 @@
    "ra": 23.640437,
    "dec": 59.970418,
    "type": "HII",
+   "size": 3,
    "constellation": "Cas"
   },
   {
@@ -1816,6 +1980,7 @@
    "ra": 23.663633,
    "dec": 61.937426,
    "type": "HII",
+   "size": 10,
    "constellation": "Cas"
   },
   {
@@ -1827,6 +1992,7 @@
    "ra": 23.7029,
    "dec": 60.971286,
    "type": "HII",
+   "size": 10,
    "constellation": "Cas"
   },
   {
@@ -1838,6 +2004,7 @@
    "ra": 23.589576,
    "dec": 64.852947,
    "type": "HII",
+   "size": 2,
    "constellation": "Cep"
   },
   {
@@ -1849,6 +2016,7 @@
    "ra": 23.884395,
    "dec": 60.47298,
    "type": "HII",
+   "size": 7,
    "constellation": "Cas"
   },
   {
@@ -1860,6 +2028,7 @@
    "ra": 23.899662,
    "dec": 60.373066,
    "type": "HII",
+   "size": 5,
    "constellation": "Cas"
   },
   {
@@ -1871,6 +2040,7 @@
    "ra": 0.028439,
    "dec": 64.623442,
    "type": "HII",
+   "size": 20,
    "constellation": "Cas"
   },
   {
@@ -1882,6 +2052,7 @@
    "ra": 0.077849,
    "dec": 67.156754,
    "type": "HII",
+   "size": 180,
    "constellation": "Cep"
   },
   {
@@ -1893,6 +2064,7 @@
    "ra": 0.259147,
    "dec": 61.255903,
    "type": "HII",
+   "size": 1,
    "constellation": "Cas"
   },
   {
@@ -1904,6 +2076,7 @@
    "ra": 0.364415,
    "dec": 61.738175,
    "type": "HII",
+   "size": 30,
    "constellation": "Cas"
   },
   {
@@ -1915,6 +2088,7 @@
    "ra": 23.78035,
    "dec": 80.938866,
    "type": "HII",
+   "size": 10,
    "constellation": "Cep"
   },
   {
@@ -1926,6 +2100,7 @@
    "ra": 0.455337,
    "dec": 64.703596,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -1937,6 +2112,7 @@
    "ra": 0.527576,
    "dec": 57.285703,
    "type": "HII",
+   "size": 10,
    "constellation": "Cas"
   },
   {
@@ -1948,6 +2124,7 @@
    "ra": 0.525856,
    "dec": 62.469078,
    "type": "HII",
+   "size": 40,
    "constellation": "Cas"
   },
   {
@@ -1959,6 +2136,7 @@
    "ra": 22.315625,
    "dec": 87.761599,
    "type": "HII",
+   "size": 420,
    "constellation": "UMi"
   },
   {
@@ -1970,6 +2148,7 @@
    "ra": 0.673721,
    "dec": 62.866004,
    "type": "HII",
+   "size": 1,
    "constellation": "Cas"
   },
   {
@@ -1981,6 +2160,7 @@
    "ra": 0.81297,
    "dec": 62.929036,
    "type": "HII",
+   "size": 15,
    "constellation": "Cas"
   },
   {
@@ -1992,6 +2172,7 @@
    "ra": 0.821298,
    "dec": 65.21215,
    "type": "HII",
+   "size": 15,
    "constellation": "Cas"
   },
   {
@@ -2003,6 +2184,7 @@
    "ra": 0.837965,
    "dec": 64.744991,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -2014,6 +2196,7 @@
    "ra": 0.899947,
    "dec": 65.709768,
    "type": "HII",
+   "size": 35,
    "constellation": "Cas"
   },
   {
@@ -2025,6 +2208,7 @@
    "ra": 0.880769,
    "dec": 56.610293,
    "type": "HII",
+   "size": 40,
    "constellation": "Cas"
   },
   {
@@ -2036,6 +2220,7 @@
    "ra": 1.000004,
    "dec": 60.989678,
    "type": "HII",
+   "size": 120,
    "constellation": "Cas"
   },
   {
@@ -2047,6 +2232,7 @@
    "ra": 1.147531,
    "dec": 63.134072,
    "type": "HII",
+   "size": 1,
    "constellation": "Cas"
   },
   {
@@ -2058,6 +2244,7 @@
    "ra": 1.385493,
    "dec": 61.856646,
    "type": "HII",
+   "size": 10,
    "constellation": "Cas"
   },
   {
@@ -2069,6 +2256,7 @@
    "ra": 1.510931,
    "dec": 58.366758,
    "type": "HII",
+   "size": 9,
    "constellation": "Cas"
   },
   {
@@ -2080,6 +2268,7 @@
    "ra": 2.202375,
    "dec": 64.171696,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -2091,6 +2280,7 @@
    "ra": 2.556432,
    "dec": 61.442324,
    "type": "HII",
+   "size": 150,
    "constellation": "Cas"
   },
   {
@@ -2102,6 +2292,7 @@
    "ra": 2.610926,
    "dec": 59.637358,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -2113,6 +2304,7 @@
    "ra": 2.787273,
    "dec": 61.987958,
    "type": "HII",
+   "size": 1,
    "constellation": "Cas"
   },
   {
@@ -2124,6 +2316,7 @@
    "ra": 2.792373,
    "dec": 62.004143,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -2135,6 +2328,7 @@
    "ra": 2.788867,
    "dec": 61.937803,
    "type": "HII",
+   "size": 2,
    "constellation": "Cas"
   },
   {
@@ -2146,6 +2340,7 @@
    "ra": 2.668347,
    "dec": 59.64883,
    "type": "HII",
+   "size": 3,
    "constellation": "Cas"
   },
   {
@@ -2157,6 +2352,7 @@
    "ra": 2.855336,
    "dec": 62.231473,
    "type": "HII",
+   "size": 4,
    "constellation": "Cas"
   },
   {
@@ -2168,6 +2364,7 @@
    "ra": 2.698729,
    "dec": 59.646042,
    "type": "HII",
+   "size": 5,
    "constellation": "Cas"
   },
   {
@@ -2179,6 +2376,7 @@
    "ra": 2.83384,
    "dec": 59.69999,
    "type": "HII",
+   "size": 9,
    "constellation": "Cas"
   },
   {
@@ -2190,6 +2388,7 @@
    "ra": 2.909325,
    "dec": 60.409384,
    "type": "HII",
+   "size": 120,
    "constellation": "Cas"
   },
   {
@@ -2201,6 +2400,7 @@
    "ra": 3.179187,
    "dec": 62.815491,
    "type": "HII",
+   "size": 6,
    "constellation": "Cas"
   },
   {
@@ -2212,6 +2412,7 @@
    "ra": 3.052881,
    "dec": 60.478346,
    "type": "HII",
+   "size": 5,
    "constellation": "Cas"
   },
   {
@@ -2223,6 +2424,7 @@
    "ra": 3.314316,
    "dec": 59.633997,
    "type": "HII",
+   "size": 170,
    "constellation": "Cam"
   },
   {
@@ -2234,6 +2436,7 @@
    "ra": 3.366953,
    "dec": 54.87779,
    "type": "HII",
+   "size": 45,
    "constellation": "Per"
   },
   {
@@ -2245,6 +2448,7 @@
    "ra": 3.929349,
    "dec": 57.428936,
    "type": "HII",
+   "size": 40,
    "constellation": "Cam"
   },
   {
@@ -2256,6 +2460,7 @@
    "ra": 3.935602,
    "dec": 53.194393,
    "type": "HII",
+   "size": 120,
    "constellation": "Cam"
   },
   {
@@ -2267,6 +2472,7 @@
    "ra": 4.053632,
    "dec": 51.329528,
    "type": "HII",
+   "size": 50,
    "constellation": "Per"
   },
   {
@@ -2278,6 +2484,7 @@
    "ra": 4.334713,
    "dec": 53.143657,
    "type": "HII",
+   "size": 4,
    "constellation": "Cam"
   },
   {
@@ -2289,6 +2496,7 @@
    "ra": 4.329417,
    "dec": 52.977665,
    "type": "HII",
+   "size": 1,
    "constellation": "Cam"
   },
   {
@@ -2300,6 +2508,7 @@
    "ra": 4.184169,
    "dec": 51.162946,
    "type": "HII",
+   "size": 14,
    "constellation": "Per"
   },
   {
@@ -2311,6 +2520,7 @@
    "ra": 4.516415,
    "dec": 52.55291,
    "type": "HII",
+   "size": 20,
    "constellation": "Per"
   },
   {
@@ -2322,6 +2532,7 @@
    "ra": 4.616056,
    "dec": 50.939353,
    "type": "HII",
+   "size": 2,
    "constellation": "Per"
   },
   {
@@ -2333,6 +2544,7 @@
    "ra": 4.677157,
    "dec": 50.381015,
    "type": "HII",
+   "size": 5,
    "constellation": "Per"
   },
   {
@@ -2344,6 +2556,7 @@
    "ra": 4.345269,
    "dec": 44.924881,
    "type": "HII",
+   "size": 1,
    "constellation": "Per"
   },
   {
@@ -2355,6 +2568,7 @@
    "ra": 4.359696,
    "dec": 44.372947,
    "type": "HII",
+   "size": 4,
    "constellation": "Per"
   },
   {
@@ -2366,6 +2580,7 @@
    "ra": 4.292487,
    "dec": 42.614943,
    "type": "HII",
+   "size": 2,
    "constellation": "Per"
   },
   {
@@ -2377,6 +2592,7 @@
    "ra": 4.749176,
    "dec": 46.820848,
    "type": "HII",
+   "size": 80,
    "constellation": "Per"
   },
   {
@@ -2388,6 +2604,7 @@
    "ra": 4.979866,
    "dec": 48.005693,
    "type": "HII",
+   "size": 9,
    "constellation": "Aur"
   },
   {
@@ -2399,6 +2616,7 @@
    "ra": 5.687937,
    "dec": 52.188411,
    "type": "HII",
+   "size": 70,
    "constellation": "Aur"
   },
   {
@@ -2410,6 +2628,7 @@
    "ra": 4.935561,
    "dec": 47.395149,
    "type": "HII",
+   "size": 3,
    "constellation": "Aur"
   },
   {
@@ -2421,6 +2640,7 @@
    "ra": 4.010659,
    "dec": 36.61725,
    "type": "HII",
+   "size": 320,
    "constellation": "Per"
   },
   {
@@ -2432,6 +2652,7 @@
    "ra": 5.027781,
    "dec": 46.34883,
    "type": "HII",
+   "size": 120,
    "constellation": "Aur"
   },
   {
@@ -2443,6 +2664,7 @@
    "ra": 4.502736,
    "dec": 35.270057,
    "type": "HII",
+   "size": 6,
    "constellation": "Per"
   },
   {
@@ -2454,6 +2676,7 @@
    "ra": 5.286639,
    "dec": 42.211837,
    "type": "HII",
+   "size": 70,
    "constellation": "Aur"
   },
   {
@@ -2465,6 +2688,7 @@
    "ra": 5.454479,
    "dec": 42.971187,
    "type": "HII",
+   "size": 30,
    "constellation": "Aur"
   },
   {
@@ -2476,6 +2700,7 @@
    "ra": 5.450106,
    "dec": 40.621623,
    "type": "HII",
+   "size": 10,
    "constellation": "Aur"
   },
   {
@@ -2487,6 +2712,7 @@
    "ra": 5.185229,
    "dec": 37.99261,
    "type": "HII",
+   "size": 3,
    "constellation": "Aur"
   },
   {
@@ -2498,6 +2724,7 @@
    "ra": 5.331466,
    "dec": 38.955179,
    "type": "HII",
+   "size": 20,
    "constellation": "Aur"
   },
   {
@@ -2509,6 +2736,7 @@
    "ra": 5.226424,
    "dec": 37.453387,
    "type": "HII",
+   "size": 8,
    "constellation": "Aur"
   },
   {
@@ -2520,6 +2748,7 @@
    "ra": 5.271941,
    "dec": 34.463366,
    "type": "HII",
+   "size": 65,
    "constellation": "Aur"
   },
   {
@@ -2531,6 +2760,7 @@
    "ra": 5.375103,
    "dec": 34.131925,
    "type": "HII",
+   "size": 300,
    "constellation": "Aur"
   },
   {
@@ -2542,6 +2772,7 @@
    "ra": 5.655436,
    "dec": 35.924953,
    "type": "HII",
+   "size": 12,
    "constellation": "Aur"
   },
   {
@@ -2553,6 +2784,7 @@
    "ra": 5.707414,
    "dec": 36.200769,
    "type": "HII",
+   "size": 40,
    "constellation": "Aur"
   },
   {
@@ -2564,6 +2796,7 @@
    "ra": 5.645298,
    "dec": 35.79308,
    "type": "HII",
+   "size": 2,
    "constellation": "Aur"
   },
   {
@@ -2575,6 +2808,7 @@
    "ra": 5.468828,
    "dec": 34.435144,
    "type": "HII",
+   "size": 12,
    "constellation": "Aur"
   },
   {
@@ -2586,6 +2820,7 @@
    "ra": 5.683722,
    "dec": 35.854181,
    "type": "HII",
+   "size": 10,
    "constellation": "Aur"
   },
   {
@@ -2597,6 +2832,7 @@
    "ra": 5.376065,
    "dec": 33.36507,
    "type": "HII",
+   "size": 55,
    "constellation": "Aur"
   },
   {
@@ -2608,6 +2844,7 @@
    "ra": 5.523736,
    "dec": 34.277219,
    "type": "HII",
+   "size": 7,
    "constellation": "Aur"
   },
   {
@@ -2619,6 +2856,7 @@
    "ra": 4.363884,
    "dec": 19.537712,
    "type": "HII",
+   "size": 1,
    "constellation": "Tau"
   },
   {
@@ -2630,6 +2868,7 @@
    "ra": 4.5215,
    "dec": 18.11669,
    "type": "HII",
+   "size": 5,
    "constellation": "Tau"
   },
   {
@@ -2641,6 +2880,7 @@
    "ra": 5.683426,
    "dec": 28.103722,
    "type": "HII",
+   "size": 180,
    "constellation": "Tau"
   },
   {
@@ -2652,6 +2892,7 @@
    "ra": 6.068697,
    "dec": 30.247783,
    "type": "HII",
+   "size": 10,
    "constellation": "Aur"
   },
   {
@@ -2663,6 +2904,7 @@
    "ra": 5.864272,
    "dec": 27.010706,
    "type": "HII",
+   "size": 7,
    "constellation": "Tau"
   },
   {
@@ -2674,6 +2916,7 @@
    "ra": 5.656256,
    "dec": 23.290721,
    "type": "HII",
+   "size": 6,
    "constellation": "Tau"
   },
   {
@@ -2685,6 +2928,7 @@
    "ra": 5.575204,
    "dec": 21.952384,
    "type": "HII",
+   "size": 5,
    "constellation": "Tau"
   },
   {
@@ -2696,6 +2940,7 @@
    "ra": 4.042625,
    "dec": 4.128584,
    "type": "HII",
+   "size": 720,
    "constellation": "Tau"
   },
   {
@@ -2707,6 +2952,7 @@
    "ra": 5.035998,
    "dec": 14.095695,
    "type": "HII",
+   "size": 65,
    "constellation": "Ori"
   },
   {
@@ -2718,6 +2964,7 @@
    "ra": 6.141762,
    "dec": 21.619964,
    "type": "HII",
+   "size": 9,
    "constellation": "Gem"
   },
   {
@@ -2729,6 +2976,7 @@
    "ra": 6.277411,
    "dec": 22.500255,
    "type": "HII",
+   "size": 50,
    "constellation": "Gem"
   },
   {
@@ -2740,6 +2988,7 @@
    "ra": 6.34951,
    "dec": 23.089801,
    "type": "HII",
+   "size": 80,
    "constellation": "Gem"
   },
   {
@@ -2751,6 +3000,7 @@
    "ra": 4.669812,
    "dec": 7.362835,
    "type": "HII",
+   "size": 10,
    "constellation": "Tau"
   },
   {
@@ -2762,6 +3012,7 @@
    "ra": 4.547175,
    "dec": 5.862733,
    "type": "HII",
+   "size": 35,
    "constellation": "Tau"
   },
   {
@@ -2773,6 +3024,7 @@
    "ra": 6.160929,
    "dec": 20.500444,
    "type": "HII",
+   "size": 40,
    "constellation": "Ori"
   },
   {
@@ -2784,6 +3036,7 @@
    "ra": 6.428868,
    "dec": 20.028111,
    "type": "HII",
+   "size": 5,
    "constellation": "Gem"
   },
   {
@@ -2795,6 +3048,7 @@
    "ra": 6.205807,
    "dec": 18.043776,
    "type": "HII",
+   "size": 11,
    "constellation": "Ori"
   },
   {
@@ -2806,6 +3060,7 @@
    "ra": 6.21909,
    "dec": 17.975171,
    "type": "HII",
+   "size": 3,
    "constellation": "Ori"
   },
   {
@@ -2817,6 +3072,7 @@
    "ra": 6.210734,
    "dec": 17.943053,
    "type": "HII",
+   "size": 1,
    "constellation": "Ori"
   },
   {
@@ -2828,6 +3084,7 @@
    "ra": 6.214091,
    "dec": 17.975899,
    "type": "HII",
+   "size": 3,
    "constellation": "Ori"
   },
   {
@@ -2839,6 +3096,7 @@
    "ra": 6.225719,
    "dec": 17.924203,
    "type": "HII",
+   "size": 1,
    "constellation": "Ori"
   },
   {
@@ -2850,6 +3108,7 @@
    "ra": 6.193714,
    "dec": 17.445507,
    "type": "HII",
+   "size": 2,
    "constellation": "Ori"
   },
   {
@@ -2861,6 +3120,7 @@
    "ra": 4.918854,
    "dec": 5.661731,
    "type": "HII",
+   "size": 22,
    "constellation": "Ori"
   },
   {
@@ -2872,6 +3132,7 @@
    "ra": 6.149223,
    "dec": 15.801905,
    "type": "HII",
+   "size": 45,
    "constellation": "Ori"
   },
   {
@@ -2883,6 +3144,7 @@
    "ra": 5.112566,
    "dec": 6.167872,
    "type": "HII",
+   "size": 20,
    "constellation": "Ori"
   },
   {
@@ -2894,6 +3156,7 @@
    "ra": 5.362411,
    "dec": 8.399039,
    "type": "HII",
+   "size": 22,
    "constellation": "Ori"
   },
   {
@@ -2905,6 +3168,7 @@
    "ra": 5.586815,
    "dec": 9.933437,
    "type": "HII",
+   "size": 390,
    "constellation": "Ori"
   },
   {
@@ -2916,6 +3180,7 @@
    "ra": 5.310106,
    "dec": 7.439821,
    "type": "HII",
+   "size": 70,
    "constellation": "Ori"
   },
   {
@@ -2927,6 +3192,7 @@
    "ra": 6.313845,
    "dec": 15.277909,
    "type": "HII",
+   "size": 1,
    "constellation": "Ori"
   },
   {
@@ -2938,6 +3204,7 @@
    "ra": 6.264818,
    "dec": 14.268325,
    "type": "HII",
+   "size": 4,
    "constellation": "Ori"
   },
   {
@@ -2949,6 +3216,7 @@
    "ra": 6.170848,
    "dec": 13.331964,
    "type": "HII",
+   "size": 60,
    "constellation": "Ori"
   },
   {
@@ -2960,6 +3228,7 @@
    "ra": 6.242846,
    "dec": 13.821501,
    "type": "HII",
+   "size": 4,
    "constellation": "Ori"
   },
   {
@@ -2971,6 +3240,7 @@
    "ra": 6.170495,
    "dec": 12.815323,
    "type": "HII",
+   "size": 1,
    "constellation": "Ori"
   },
   {
@@ -2982,6 +3252,7 @@
    "ra": 6.248511,
    "dec": 12.353937,
    "type": "HII",
+   "size": 2,
    "constellation": "Ori"
   },
   {
@@ -2993,6 +3264,7 @@
    "ra": 6.250167,
    "dec": 12.337029,
    "type": "HII",
+   "size": 1,
    "constellation": "Ori"
   },
   {
@@ -3004,6 +3276,7 @@
    "ra": 6.680141,
    "dec": 9.907967,
    "type": "HII",
+   "size": 250,
    "constellation": "Mon"
   },
   {
@@ -3015,6 +3288,7 @@
    "ra": 7.48525,
    "dec": 13.261891,
    "type": "HII",
+   "size": 8,
    "constellation": "Gem"
   },
   {
@@ -3026,6 +3300,7 @@
    "ra": 6.528581,
    "dec": 4.929592,
    "type": "HII",
+   "size": 100,
    "constellation": "Mon"
   },
   {
@@ -3037,6 +3312,7 @@
    "ra": 5.457812,
    "dec": -3.965242,
    "type": "HII",
+   "size": 1200,
    "constellation": "Ori"
   },
   {
@@ -3048,6 +3324,7 @@
    "ra": 5.678786,
    "dec": -2.447136,
    "type": "HII",
+   "size": 120,
    "constellation": "Ori"
   },
   {
@@ -3059,6 +3336,7 @@
    "ra": 5.330064,
    "dec": -5.663628,
    "type": "HII",
+   "size": 50,
    "constellation": "Ori"
   },
   {
@@ -3070,6 +3348,7 @@
    "ra": 5.588931,
    "dec": -4.800887,
    "type": "HII",
+   "size": 20,
    "constellation": "Ori"
   },
   {
@@ -3081,6 +3360,7 @@
    "ra": 6.572038,
    "dec": 2.539868,
    "type": "HII",
+   "size": 40,
    "constellation": "Mon"
   },
   {
@@ -3092,6 +3372,7 @@
    "ra": 5.581833,
    "dec": -5.466557,
    "type": "HII",
+   "size": 60,
    "constellation": "Ori"
   },
   {
@@ -3103,6 +3384,7 @@
    "ra": 6.633046,
    "dec": 1.514355,
    "type": "HII",
+   "size": 35,
    "constellation": "Mon"
   },
   {
@@ -3114,6 +3396,7 @@
    "ra": 6.644199,
    "dec": 0.712711,
    "type": "HII",
+   "size": 3,
    "constellation": "Mon"
   },
   {
@@ -3125,6 +3408,7 @@
    "ra": 6.750561,
    "dec": 0.230744,
    "type": "HII",
+   "size": 80,
    "constellation": "Mon"
   },
   {
@@ -3136,6 +3420,7 @@
    "ra": 6.9201,
    "dec": -0.510139,
    "type": "HII",
+   "size": 1,
    "constellation": "Mon"
   },
   {
@@ -3147,6 +3432,7 @@
    "ra": 6.909236,
    "dec": -4.508777,
    "type": "HII",
+   "size": 6,
    "constellation": "Mon"
   },
   {
@@ -3158,6 +3444,7 @@
    "ra": 6.992402,
    "dec": -4.803904,
    "type": "HII",
+   "size": 12,
    "constellation": "Mon"
   },
   {
@@ -3169,6 +3456,7 @@
    "ra": 7.14275,
    "dec": -4.308344,
    "type": "HII",
+   "size": 1,
    "constellation": "Mon"
   },
   {
@@ -3180,6 +3468,7 @@
    "ra": 6.765721,
    "dec": -7.33844,
    "type": "HII",
+   "size": 11,
    "constellation": "Mon"
   },
   {
@@ -3191,6 +3480,7 @@
    "ra": 8.903079,
    "dec": 8.921139,
    "type": "HII",
+   "size": 17,
    "constellation": "Cnc"
   },
   {
@@ -3202,6 +3492,7 @@
    "ra": 6.92366,
    "dec": -8.027651,
    "type": "HII",
+   "size": 8,
    "constellation": "Mon"
   },
   {
@@ -3213,6 +3504,7 @@
    "ra": 7.073833,
    "dec": -10.448963,
    "type": "HII",
+   "size": 21,
    "constellation": "Mon"
   },
   {
@@ -3224,6 +3516,7 @@
    "ra": 7.029919,
    "dec": -11.309492,
    "type": "HII",
+   "size": 11,
    "constellation": "CMa"
   },
   {
@@ -3235,6 +3528,7 @@
    "ra": 7.27625,
    "dec": -9.44379,
    "type": "HII",
+   "size": 7,
    "constellation": "Mon"
   },
   {
@@ -3246,6 +3540,7 @@
    "ra": 7.044828,
    "dec": -11.461598,
    "type": "HII",
+   "size": 8,
    "constellation": "CMa"
   },
   {
@@ -3257,6 +3552,7 @@
    "ra": 7.096681,
    "dec": -11.21887,
    "type": "HII",
+   "size": 200,
    "constellation": "CMa"
   },
   {
@@ -3268,6 +3564,7 @@
    "ra": 7.087617,
    "dec": -12.334317,
    "type": "HII",
+   "size": 7,
    "constellation": "CMa"
   },
   {
@@ -3279,6 +3576,7 @@
    "ra": 7.310546,
    "dec": -13.198687,
    "type": "HII",
+   "size": 22,
    "constellation": "CMa"
   },
   {
@@ -3290,6 +3588,7 @@
    "ra": 7.511044,
    "dec": -15.292796,
    "type": "HII",
+   "size": 1,
    "constellation": "Pup"
   },
   {
@@ -3301,6 +3600,7 @@
    "ra": 7.517642,
    "dec": -15.410358,
    "type": "HII",
+   "size": 3,
    "constellation": "Pup"
   },
   {
@@ -3312,6 +3612,7 @@
    "ra": 7.163567,
    "dec": -18.478562,
    "type": "HII",
+   "size": 9,
    "constellation": "CMa"
   },
   {
@@ -3323,6 +3624,7 @@
    "ra": 7.528302,
    "dec": -16.978531,
    "type": "HII",
+   "size": 21,
    "constellation": "Pup"
   },
   {
@@ -3334,6 +3636,7 @@
    "ra": 6.900498,
    "dec": -22.425061,
    "type": "HII",
+   "size": 90,
    "constellation": "CMa"
   },
   {
@@ -3345,6 +3648,7 @@
    "ra": 6.724057,
    "dec": -24.133306,
    "type": "HII",
+   "size": 200,
    "constellation": "CMa"
   },
   {
@@ -3356,6 +3660,7 @@
    "ra": 7.502249,
    "dec": -18.525085,
    "type": "HII",
+   "size": 4,
    "constellation": "Pup"
   },
   {
@@ -3367,6 +3672,7 @@
    "ra": 7.510201,
    "dec": -19.109519,
    "type": "HII",
+   "size": 30,
    "constellation": "Pup"
   },
   {
@@ -3378,6 +3684,7 @@
    "ra": 7.592214,
    "dec": -18.753859,
    "type": "HII",
+   "size": 6,
    "constellation": "Pup"
   },
   {
@@ -3389,6 +3696,7 @@
    "ra": 6.902702,
    "dec": -23.942122,
    "type": "HII",
+   "size": 35,
    "constellation": "CMa"
   },
   {
@@ -3400,6 +3708,7 @@
    "ra": 7.535019,
    "dec": -19.429546,
    "type": "HII",
+   "size": 12,
    "constellation": "Pup"
   },
   {
@@ -3411,6 +3720,7 @@
    "ra": 7.2176,
    "dec": -24.586383,
    "type": "HII",
+   "size": 480,
    "constellation": "CMa"
   },
   {
@@ -3422,6 +3732,7 @@
    "ra": 7.872441,
    "dec": -26.44106,
    "type": "HII",
+   "size": 45,
    "constellation": "Pup"
   },
   {
@@ -3433,6 +3744,7 @@
    "ra": 8.986034,
    "dec": -25.688557,
    "type": "HII",
+   "size": 720,
    "constellation": "Pyx"
   },
   {
@@ -3444,6 +3756,7 @@
    "ra": 12.892121,
    "dec": -22.859898,
    "type": "HII",
+   "size": 12,
    "constellation": "Hya"
   }
  ]

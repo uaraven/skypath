@@ -33,6 +33,8 @@ export interface DeepSkyObject {
   dec: number
   type?: string
   magnitude?: number
+  /** Apparent major axis in arcminutes, where the catalog records one. */
+  size?: number
 }
 
 export type SkyObject = SolarSystemObject | DeepSkyObject

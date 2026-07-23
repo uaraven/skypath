@@ -29,6 +29,8 @@
     activeFilterCount,
     defaultFilters,
     filtersActive,
+    formatAngularSize,
+    minSizeArcmin,
     resetFilters,
     type SearchFilters,
   } from './searchFilters'
@@ -109,6 +111,7 @@
         ? new Set(appliedFilters.types)
         : undefined,
     maxMagnitude: appliedFilters.maxMagnitude ?? undefined,
+    minSize: minSizeArcmin(appliedFilters),
   })
 
   // The "above" filter needs a trajectory per object, so it runs after the
@@ -179,7 +182,10 @@
     }
     const designations = object.designations.map(formatDesignation).join(' · ')
     const type = typeLabel(object.type)
-    return type ? `${designations} — ${type}` : designations
+    const head = type ? `${designations} — ${type}` : designations
+    return object.size != null
+      ? `${head} · ${formatAngularSize(object.size)}`
+      : head
   }
 
   /**
@@ -245,6 +251,25 @@
       </div>
 
       <div class="field">
+        <span>Larger than</span>
+        <input
+          class="size-input"
+          type="number"
+          min="0"
+          step="1"
+          bind:value={filters.minSize}
+          placeholder="size"
+          aria-label="minimum size"
+        />
+        <label class="visually-hidden" for="size-unit">size unit</label>
+        <select id="size-unit" bind:value={filters.minSizeUnit}>
+          <option value="deg">°</option>
+          <option value="arcmin">′</option>
+          <option value="arcsec">″</option>
+        </select>
+      </div>
+
+      <div class="field">
         <label for="above-threshold">Above</label>
         <select id="above-threshold" bind:value={filters.above}>
           <option value="">—</option>
@@ -283,8 +308,8 @@
     <p class="empty">
       Search the Messier, NGC, IC, Sharpless 2 and LDN catalogues and the
       planets by name, designation or type — or use the filters to browse by
-      type, brightness and how long a target clears your horizon. Pick a result
-      to see it in full.
+      type, brightness, apparent size and how long a target clears your horizon.
+      Pick a result to see it in full.
     </p>
   {:else if rows.length === 0}
     <p class="empty">
@@ -388,6 +413,11 @@
   .field input[type='number'] {
     width: 4rem;
     font-family: var(--font-mono);
+  }
+
+  /* Wider so the "size" placeholder isn't clipped. */
+  .field input.size-input {
+    width: 5.5rem;
   }
 
   .field select {
