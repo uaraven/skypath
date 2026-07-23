@@ -52,5 +52,7 @@ export interface CatalogFileEntry {
   dec: number
   type?: string
   magnitude?: number
+  /** Apparent major axis in arcminutes, where the catalog records one. */
+  size?: number
   constellation?: string
 }

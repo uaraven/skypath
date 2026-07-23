@@ -95,6 +95,7 @@ function newObject(
     dec: entry.dec,
     type: entry.type,
     magnitude: entry.magnitude,
+    size: entry.size,
     constellation: entry.constellation,
     designations,
     names: [...entry.names],
@@ -118,6 +119,7 @@ function mergeInto(
   }
   object.type ??= entry.type
   object.magnitude ??= entry.magnitude
+  object.size ??= entry.size
   object.constellation ??= entry.constellation
   object.name = displayName(object.names, object.designations)
 }

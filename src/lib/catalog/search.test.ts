@@ -107,6 +107,10 @@ function magnitudeOf(object: SkyObject): number | undefined {
   return 'magnitude' in object ? object.magnitude : undefined
 }
 
+function sizeOf(object: SkyObject): number | undefined {
+  return 'size' in object ? object.size : undefined
+}
+
 describe('catalog filters', () => {
   it('keeps only the requested object types', () => {
     const results = searchObjects('cluster', 50, {
@@ -150,6 +154,33 @@ describe('catalog filters', () => {
     const results = searchObjects('nebula', 50, { types: new Set(['PN']) })
     expect(results.length).toBeGreaterThan(0)
     expect(results.every((r) => typeOf(r.object) === 'PN')).toBe(true)
+  })
+
+  it('keeps only objects at least as large as the minimum size', () => {
+    const results = searchObjects('', 50, { minSize: 30 })
+    expect(results.length).toBeGreaterThan(0)
+    for (const { object } of results) {
+      const size = sizeOf(object)
+      expect(size).toBeDefined()
+      expect(size!).toBeGreaterThanOrEqual(30)
+    }
+  })
+
+  it('excludes objects with no recorded size when filtering by size', () => {
+    // LDN dark nebulae carry no size, so a size filter should drop them.
+    const results = searchObjects('LDN', 50, { minSize: 1 })
+    expect(results).toEqual([])
+  })
+
+  it('narrows a text query by minimum size', () => {
+    // "galaxy" matches many objects; a 60′ floor keeps only the large ones
+    // (M31 at ~178′ survives) and every survivor clears the threshold.
+    const results = searchObjects('galaxy', 50, { minSize: 60 })
+    expect(results.length).toBeGreaterThan(0)
+    expect(results.map((r) => r.object.id)).toContain('M31')
+    for (const { object } of results) {
+      expect(sizeOf(object)!).toBeGreaterThanOrEqual(60)
+    }
   })
 })
 

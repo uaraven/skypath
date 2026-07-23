@@ -17,6 +17,7 @@
    "dec": 22.014472,
    "type": "SNR",
    "magnitude": 8.4,
+   "size": 8,
    "constellation": "Tau"
   },
   {
@@ -30,6 +31,7 @@
    "dec": -0.823306,
    "type": "GCl",
    "magnitude": 6.25,
+   "size": 8.4,
    "constellation": "Aqr"
   },
   {
@@ -43,6 +45,7 @@
    "dec": 28.375444,
    "type": "GCl",
    "magnitude": 6.39,
+   "size": 16.2,
    "constellation": "CVn"
   },
   {
@@ -56,6 +59,7 @@
    "dec": -26.525528,
    "type": "GCl",
    "magnitude": 5.4,
+   "size": 28.2,
    "constellation": "Sco"
   },
   {
@@ -69,6 +73,7 @@
    "dec": 2.082694,
    "type": "GCl",
    "magnitude": 5.95,
+   "size": 15,
    "constellation": "Se1"
   },
   {
@@ -84,6 +89,7 @@
    "dec": -32.254167,
    "type": "OCl",
    "magnitude": 4.2,
+   "size": 15.6,
    "constellation": "Sco"
   },
   {
@@ -99,6 +105,7 @@
    "dec": -34.792833,
    "type": "OCl",
    "magnitude": 3.3,
+   "size": 22.2,
    "constellation": "Sco"
   },
   {
@@ -116,6 +123,7 @@
    "dec": -24.380167,
    "type": "Neb",
    "magnitude": 5.8,
+   "size": 45,
    "constellation": "Sgr"
   },
   {
@@ -129,6 +137,7 @@
    "dec": -18.51625,
    "type": "GCl",
    "magnitude": 8.42,
+   "size": 6.9,
    "constellation": "Oph"
   },
   {
@@ -142,6 +151,7 @@
    "dec": -4.099333,
    "type": "GCl",
    "magnitude": 4.98,
+   "size": 9.3,
    "constellation": "Oph"
   },
   {
@@ -158,6 +168,7 @@
    "dec": -6.270028,
    "type": "OCl",
    "magnitude": 5.8,
+   "size": 9,
    "constellation": "Sct"
   },
   {
@@ -171,6 +182,7 @@
    "dec": -1.947833,
    "type": "GCl",
    "magnitude": 6.07,
+   "size": 11.1,
    "constellation": "Oph"
   },
   {
@@ -186,6 +198,7 @@
    "dec": 36.461306,
    "type": "GCl",
    "magnitude": 5.8,
+   "size": 16.5,
    "constellation": "Her"
   },
   {
@@ -199,6 +212,7 @@
    "dec": -3.245917,
    "type": "GCl",
    "magnitude": 5.73,
+   "size": 9.9,
    "constellation": "Oph"
   },
   {
@@ -212,6 +226,7 @@
    "dec": 12.166833,
    "type": "GCl",
    "magnitude": 6.3,
+   "size": 11.1,
    "constellation": "Peg"
   },
   {
@@ -228,6 +243,7 @@
    "dec": -13.807222,
    "type": "Neb",
    "magnitude": 6,
+   "size": 120,
    "constellation": "Se2"
   },
   {
@@ -247,6 +263,7 @@
    "dec": -16.171528,
    "type": "Neb",
    "magnitude": 7,
+   "size": 12.6,
    "constellation": "Sgr"
   },
   {
@@ -260,6 +277,7 @@
    "dec": -17.101972,
    "type": "OCl",
    "magnitude": 6.9,
+   "size": 6,
    "constellation": "Sgr"
   },
   {
@@ -273,6 +291,7 @@
    "dec": -26.267944,
    "type": "GCl",
    "magnitude": 5.57,
+   "size": 7.5,
    "constellation": "Oph"
   },
   {
@@ -289,6 +308,7 @@
    "dec": -22.971889,
    "type": "Neb",
    "magnitude": 8.5,
+   "size": 28,
    "constellation": "Sgr"
   },
   {
@@ -302,6 +322,7 @@
    "dec": -22.490056,
    "type": "OCl",
    "magnitude": 5.9,
+   "size": 6,
    "constellation": "Sgr"
   },
   {
@@ -315,6 +336,7 @@
    "dec": -23.903417,
    "type": "GCl",
    "magnitude": 6.17,
+   "size": 12.6,
    "constellation": "Sgr"
   },
   {
@@ -328,6 +350,7 @@
    "dec": -18.985333,
    "type": "OCl",
    "magnitude": 5.5,
+   "size": 16.8,
    "constellation": "Sgr"
   },
   {
@@ -343,6 +366,7 @@
    "dec": -18.514556,
    "type": "*Ass",
    "magnitude": 4.5,
+   "size": 120,
    "constellation": "Sgr"
   },
   {
@@ -356,6 +380,7 @@
    "dec": -19.114944,
    "type": "OCl",
    "magnitude": 4.6,
+   "size": 14.1,
    "constellation": "Sgr"
   },
   {
@@ -369,6 +394,7 @@
    "dec": -9.383611,
    "type": "OCl",
    "magnitude": 8.87,
+   "size": 6,
    "constellation": "Sct"
   },
   {
@@ -384,6 +410,7 @@
    "dec": 22.721028,
    "type": "PN",
    "magnitude": 7.4,
+   "size": 6.7,
    "constellation": "Vul"
   },
   {
@@ -397,6 +424,7 @@
    "dec": -24.869833,
    "type": "GCl",
    "magnitude": 6.9,
+   "size": 5.1,
    "constellation": "Sgr"
   },
   {
@@ -410,6 +438,7 @@
    "dec": 38.507667,
    "type": "OCl",
    "magnitude": 6.6,
+   "size": 3.6,
    "constellation": "Cyg"
   },
   {
@@ -423,6 +452,7 @@
    "dec": -23.179083,
    "type": "GCl",
    "magnitude": 7.1,
+   "size": 9,
    "constellation": "Cap"
   },
   {
@@ -440,6 +470,7 @@
    "dec": 41.269056,
    "type": "G",
    "magnitude": 3.44,
+   "size": 177.83,
    "constellation": "And"
   },
   {
@@ -455,6 +486,7 @@
    "dec": 40.865278,
    "type": "G",
    "magnitude": 8.13,
+   "size": 7.74,
    "constellation": "And"
   },
   {
@@ -473,6 +505,7 @@
    "dec": 30.660222,
    "type": "G",
    "magnitude": 5.79,
+   "size": 62.09,
    "constellation": "Tri"
   },
   {
@@ -486,6 +519,7 @@
    "dec": 42.746139,
    "type": "OCl",
    "magnitude": 5.2,
+   "size": 22.5,
    "constellation": "Per"
   },
   {
@@ -499,6 +533,7 @@
    "dec": 24.338639,
    "type": "OCl",
    "magnitude": 5.1,
+   "size": 24,
    "constellation": "Gem"
   },
   {
@@ -512,6 +547,7 @@
    "dec": 34.14075,
    "type": "OCl",
    "magnitude": 6,
+   "size": 7.2,
    "constellation": "Aur"
   },
   {
@@ -525,6 +561,7 @@
    "dec": 32.553,
    "type": "OCl",
    "magnitude": 5.6,
+   "size": 11.4,
    "constellation": "Aur"
   },
   {
@@ -538,6 +575,7 @@
    "dec": 35.854917,
    "type": "OCl",
    "magnitude": 6.4,
+   "size": 9.6,
    "constellation": "Aur"
   },
   {
@@ -551,6 +589,7 @@
    "dec": 48.438167,
    "type": "OCl",
    "magnitude": 4.6,
+   "size": 19.5,
    "constellation": "Cyg"
   },
   {
@@ -564,6 +603,7 @@
    "dec": -20.754222,
    "type": "OCl",
    "magnitude": 4.5,
+   "size": 12,
    "constellation": "CMa"
   },
   {
@@ -581,6 +621,7 @@
    "dec": -5.389667,
    "type": "Cl+N",
    "magnitude": 4,
+   "size": 90,
    "constellation": "Ori"
   },
   {
@@ -596,6 +637,7 @@
    "dec": -5.267472,
    "type": "HII",
    "magnitude": 9,
+   "size": 20,
    "constellation": "Ori"
   },
   {
@@ -612,6 +654,7 @@
    "dec": 19.672056,
    "type": "OCl",
    "magnitude": 3.1,
+   "size": 108.6,
    "constellation": "Cnc"
   },
   {
@@ -627,6 +670,7 @@
    "dec": 24.105278,
    "type": "OCl",
    "magnitude": 1.2,
+   "size": 150,
    "constellation": "Tau"
   },
   {
@@ -640,6 +684,7 @@
    "dec": -14.81,
    "type": "OCl",
    "magnitude": 6.1,
+   "size": 21,
    "constellation": "Pup"
   },
   {
@@ -654,6 +699,7 @@
    "dec": -14.482611,
    "type": "OCl",
    "magnitude": 4.4,
+   "size": 19.8,
    "constellation": "Pup"
   },
   {
@@ -667,6 +713,7 @@
    "dec": -5.750444,
    "type": "OCl",
    "magnitude": 5.8,
+   "size": 28.2,
    "constellation": "Hya"
   },
   {
@@ -682,6 +729,7 @@
    "dec": 8.000472,
    "type": "G",
    "magnitude": 8.28,
+   "size": 10.21,
    "constellation": "Vir"
   },
   {
@@ -695,6 +743,7 @@
    "dec": -8.364028,
    "type": "OCl",
    "magnitude": 5.9,
+   "size": 14.1,
    "constellation": "Mon"
   },
   {
@@ -712,6 +761,7 @@
    "dec": 47.195167,
    "type": "G",
    "magnitude": 8.36,
+   "size": 13.71,
    "constellation": "CVn"
   },
   {
@@ -725,6 +775,7 @@
    "dec": 61.593167,
    "type": "OCl",
    "magnitude": 6.9,
+   "size": 9.9,
    "constellation": "Cas"
   },
   {
@@ -738,6 +789,7 @@
    "dec": 18.169111,
    "type": "GCl",
    "magnitude": 7.79,
+   "size": 9,
    "constellation": "Com"
   },
   {
@@ -751,6 +803,7 @@
    "dec": -30.4785,
    "type": "GCl",
    "magnitude": 7.7,
+   "size": 5.1,
    "constellation": "Sgr"
   },
   {
@@ -764,6 +817,7 @@
    "dec": -30.962083,
    "type": "GCl",
    "magnitude": 6.49,
+   "size": 12,
    "constellation": "Sgr"
   },
   {
@@ -777,6 +831,7 @@
    "dec": 30.1845,
    "type": "GCl",
    "magnitude": 8.4,
+   "size": 5.8,
    "constellation": "Lyr"
   },
   {
@@ -792,6 +847,7 @@
    "dec": 33.028583,
    "type": "PN",
    "magnitude": 8.8,
+   "size": 1.27,
    "constellation": "Lyr"
   },
   {
@@ -807,6 +863,7 @@
    "dec": 11.818194,
    "type": "G",
    "magnitude": 10.3,
+   "size": 5.01,
    "constellation": "Vir"
   },
   {
@@ -822,6 +879,7 @@
    "dec": 11.647028,
    "type": "G",
    "magnitude": 9.56,
+   "size": 4.55,
    "constellation": "Vir"
   },
   {
@@ -837,6 +895,7 @@
    "dec": 11.552694,
    "type": "G",
    "magnitude": 8.79,
+   "size": 6.78,
    "constellation": "Vir"
   },
   {
@@ -852,6 +911,7 @@
    "dec": 4.473639,
    "type": "G",
    "magnitude": 10.25,
+   "size": 6.89,
    "constellation": "Vir"
   },
   {
@@ -865,6 +925,7 @@
    "dec": -30.112361,
    "type": "GCl",
    "magnitude": 7.39,
+   "size": 7.8,
    "constellation": "Oph"
   },
   {
@@ -882,6 +943,7 @@
    "dec": 42.029278,
    "type": "G",
    "magnitude": 8.61,
+   "size": 11.83,
    "constellation": "CVn"
   },
   {
@@ -900,6 +962,7 @@
    "dec": 21.682972,
    "type": "G",
    "magnitude": 8.52,
+   "size": 10.52,
    "constellation": "Com"
   },
   {
@@ -915,6 +978,7 @@
    "dec": 13.092361,
    "type": "G",
    "magnitude": 9.32,
+   "size": 7.64,
    "constellation": "Leo"
   },
   {
@@ -930,6 +994,7 @@
    "dec": 12.991528,
    "type": "G",
    "magnitude": 8.92,
+   "size": 10.28,
    "constellation": "Leo"
   },
   {
@@ -943,6 +1008,7 @@
    "dec": 11.811944,
    "type": "OCl",
    "magnitude": 6.9,
+   "size": 33,
    "constellation": "Cnc"
   },
   {
@@ -956,6 +1022,7 @@
    "dec": -26.743028,
    "type": "GCl",
    "magnitude": 7.96,
+   "size": 6.6,
    "constellation": "Hya"
   },
   {
@@ -970,6 +1037,7 @@
    "dec": -32.347972,
    "type": "GCl",
    "magnitude": 8.31,
+   "size": 5.7,
    "constellation": "Sgr"
   },
   {
@@ -983,6 +1051,7 @@
    "dec": -32.291889,
    "type": "GCl",
    "magnitude": 9.06,
+   "size": 6.6,
    "constellation": "Sgr"
   },
   {
@@ -997,6 +1066,7 @@
    "dec": 18.778389,
    "type": "GCl",
    "magnitude": 6.1,
+   "size": 6.9,
    "constellation": "Sge"
   },
   {
@@ -1010,6 +1080,7 @@
    "dec": -12.537056,
    "type": "GCl",
    "magnitude": 8.96,
+   "size": 4.5,
    "constellation": "Aqr"
   },
   {
@@ -1038,6 +1109,7 @@
    "dec": 15.783667,
    "type": "G",
    "magnitude": 9.31,
+   "size": 9.89,
    "constellation": "Psc"
   },
   {
@@ -1051,6 +1123,7 @@
    "dec": -21.922222,
    "type": "GCl",
    "magnitude": 8.26,
+   "size": 3.6,
    "constellation": "Sgr"
   },
   {
@@ -1069,6 +1142,7 @@
    "dec": 51.575472,
    "type": "PN",
    "magnitude": 10.1,
+   "size": 1.12,
    "constellation": "Per"
   },
   {
@@ -1084,6 +1158,7 @@
    "dec": -0.013278,
    "type": "G",
    "magnitude": 9.29,
+   "size": 6.11,
    "constellation": "Cet"
   },
   {
@@ -1097,6 +1172,7 @@
    "dec": 0.079306,
    "type": "RfN",
    "magnitude": 8,
+   "size": 4.5,
    "constellation": "Ori"
   },
   {
@@ -1110,6 +1186,7 @@
    "dec": -24.524222,
    "type": "GCl",
    "magnitude": 8.16,
+   "size": 7.2,
    "constellation": "Lep"
   },
   {
@@ -1123,6 +1200,7 @@
    "dec": -22.975111,
    "type": "GCl",
    "magnitude": 7.3,
+   "size": 5.7,
    "constellation": "Sco"
   },
   {
@@ -1140,6 +1218,7 @@
    "dec": 69.065306,
    "type": "G",
    "magnitude": 6.92,
+   "size": 21.63,
    "constellation": "UMa"
   },
   {
@@ -1157,6 +1236,7 @@
    "dec": 69.679389,
    "type": "G",
    "magnitude": 8.3,
+   "size": 10.99,
    "constellation": "UMa"
   },
   {
@@ -1173,6 +1253,7 @@
    "dec": -29.865417,
    "type": "G",
    "magnitude": 7.21,
+   "size": 13.61,
    "constellation": "Hya"
   },
   {
@@ -1188,6 +1269,7 @@
    "dec": 12.886972,
    "type": "G",
    "magnitude": 9.79,
+   "size": 7.41,
    "constellation": "Vir"
   },
   {
@@ -1203,6 +1285,7 @@
    "dec": 18.1915,
    "type": "G",
    "magnitude": 9.05,
+   "size": 6.95,
    "constellation": "Com"
   },
   {
@@ -1218,6 +1301,7 @@
    "dec": 12.946222,
    "type": "G",
    "magnitude": 8.86,
+   "size": 11.53,
    "constellation": "Vir"
   },
   {
@@ -1235,6 +1319,7 @@
    "dec": 12.391111,
    "type": "G",
    "magnitude": 9,
+   "size": 7.11,
    "constellation": "Vir"
   },
   {
@@ -1250,6 +1335,7 @@
    "dec": 14.420389,
    "type": "G",
    "magnitude": 10.33,
+   "size": 8.65,
    "constellation": "Com"
   },
   {
@@ -1265,6 +1351,7 @@
    "dec": 12.556333,
    "type": "G",
    "magnitude": 10.08,
+   "size": 8.13,
    "constellation": "Vir"
   },
   {
@@ -1280,6 +1367,7 @@
    "dec": 13.162944,
    "type": "G",
    "magnitude": 9.54,
+   "size": 9.12,
    "constellation": "Vir"
   },
   {
@@ -1295,6 +1383,7 @@
    "dec": 14.496333,
    "type": "G",
    "magnitude": 10.96,
+   "size": 5.55,
    "constellation": "Com"
   },
   {
@@ -1308,6 +1397,7 @@
    "dec": 43.136528,
    "type": "GCl",
    "magnitude": 6.52,
+   "size": 14.4,
    "constellation": "Her"
   },
   {
@@ -1321,6 +1411,7 @@
    "dec": -23.853083,
    "type": "OCl",
    "magnitude": 6.2,
+   "size": 15,
    "constellation": "Pup"
   },
   {
@@ -1336,6 +1427,7 @@
    "dec": 41.120444,
    "type": "G",
    "magnitude": 8.24,
+   "size": 7.74,
    "constellation": "CVn"
   },
   {
@@ -1351,6 +1443,7 @@
    "dec": 11.703806,
    "type": "G",
    "magnitude": 9.77,
+   "size": 7.23,
    "constellation": "Leo"
   },
   {
@@ -1366,6 +1459,7 @@
    "dec": 11.819944,
    "type": "G",
    "magnitude": 9.21,
+   "size": 8.26,
    "constellation": "Leo"
   },
   {
@@ -1381,6 +1475,7 @@
    "dec": 55.019028,
    "type": "PN",
    "magnitude": 9.9,
+   "size": 3.58,
    "constellation": "UMa"
   },
   {
@@ -1396,6 +1491,7 @@
    "dec": 14.900333,
    "type": "G",
    "magnitude": 10.84,
+   "size": 11.04,
    "constellation": "Com"
   },
   {
@@ -1414,6 +1510,7 @@
    "dec": 14.4165,
    "type": "G",
    "magnitude": 9.84,
+   "size": 5.04,
    "constellation": "Com"
   },
   {
@@ -1429,6 +1526,7 @@
    "dec": 15.821806,
    "type": "G",
    "magnitude": 9.47,
+   "size": 6.1,
    "constellation": "Com"
   },
   {
@@ -1444,6 +1542,7 @@
    "dec": 54.348944,
    "type": "G",
    "magnitude": 7.9,
+   "size": 23.99,
    "constellation": "UMa"
   },
   {
@@ -1459,6 +1558,7 @@
    "dec": 55.763222,
    "type": "G",
    "magnitude": 9.89,
+   "size": 6.31,
    "constellation": "Dra"
   },
   {
@@ -1472,6 +1572,7 @@
    "dec": 60.658,
    "type": "OCl",
    "magnitude": 7.4,
+   "size": 4.5,
    "constellation": "Cas"
   },
   {
@@ -1488,6 +1589,7 @@
    "dec": -11.623056,
    "type": "G",
    "magnitude": 8.59,
+   "size": 8.45,
    "constellation": "Vir"
   },
   {
@@ -1503,6 +1605,7 @@
    "dec": 12.581611,
    "type": "G",
    "magnitude": 9.27,
+   "size": 4.89,
    "constellation": "Leo"
   },
   {
@@ -1518,6 +1621,7 @@
    "dec": 47.303972,
    "type": "G",
    "magnitude": 9.29,
+   "size": 16.98,
    "constellation": "CVn"
   },
   {
@@ -1531,6 +1635,7 @@
    "dec": -13.053639,
    "type": "GCl",
    "magnitude": 8.85,
+   "size": 7.8,
    "constellation": "Oph"
   },
   {
@@ -1546,6 +1651,7 @@
    "dec": 55.674111,
    "type": "G",
    "magnitude": 10.05,
+   "size": 3.98,
    "constellation": "UMa"
   },
   {
@@ -1561,6 +1667,7 @@
    "dec": 53.374528,
    "type": "G",
    "magnitude": 9.88,
+   "size": 8.07,
    "constellation": "UMa"
   },
   {
@@ -1576,6 +1683,7 @@
    "dec": 41.685306,
    "type": "G",
    "magnitude": 8.15,
+   "size": 16.22,
    "constellation": "And"
   }
  ]

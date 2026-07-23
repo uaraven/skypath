@@ -248,6 +248,29 @@ describe('filters', () => {
     await user.click(screen.getByRole('button', { name: /clear filters/i }))
     expect(globular).not.toBeChecked()
   })
+
+  it('narrows a query by minimum size and counts the filter', async () => {
+    const user = userEvent.setup()
+    setup()
+
+    await user.type(queryBox(), 'andromeda')
+
+    await openFilters(user)
+    // 1° floor keeps M31 (~3°); a tiny neighbour would be culled.
+    await user.selectOptions(
+      screen.getByRole('combobox', { name: /size unit/i }),
+      'deg',
+    )
+    const size = screen.getByLabelText(/minimum size/i)
+    await user.clear(size)
+    await user.type(size, '1')
+
+    await waitFor(() =>
+      expect(screen.getByText('Andromeda Galaxy')).toBeInTheDocument(),
+    )
+    // The badge on the Filters summary counts the active size filter.
+    expect(screen.getByText(/^\s*Filters \(1\)/)).toBeInTheDocument()
+  })
 })
 
 describe('debouncing', () => {

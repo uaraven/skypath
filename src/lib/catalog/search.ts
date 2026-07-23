@@ -42,12 +42,16 @@ export interface SearchResult {
 export interface CatalogFilters {
   types?: ReadonlySet<string>
   maxMagnitude?: number
+  /** Keep objects at least this large (major axis, arcminutes), excluding those with no recorded size. */
+  minSize?: number
 }
 
 function hasFilters(filters?: CatalogFilters): boolean {
   return (
     !!filters &&
-    ((filters.types?.size ?? 0) > 0 || filters.maxMagnitude != null)
+    ((filters.types?.size ?? 0) > 0 ||
+      filters.maxMagnitude != null ||
+      filters.minSize != null)
   )
 }
 
@@ -62,6 +66,11 @@ function passesFilters(object: SkyObject, filters?: CatalogFilters): boolean {
   if (filters.maxMagnitude != null) {
     const magnitude = isDeepSky(object) ? object.magnitude : undefined
     if (magnitude == null || magnitude > filters.maxMagnitude) return false
+  }
+
+  if (filters.minSize != null) {
+    const size = isDeepSky(object) ? object.size : undefined
+    if (size == null || size < filters.minSize) return false
   }
 
   return true
