@@ -16,7 +16,11 @@ describe('first launch', () => {
   it('starts with nothing chosen', () => {
     const store = new SessionStore(storage)
 
-    expect(store.state).toEqual({ objectId: null, dateText: null })
+    expect(store.state).toEqual({
+      objectId: null,
+      dateText: null,
+      imageOpen: true,
+    })
   })
 
   it('opens on today when no date was saved', () => {
@@ -34,7 +38,32 @@ describe('persistence', () => {
 
     const reloaded = new SessionStore(storage)
 
-    expect(reloaded.state).toEqual({ objectId: 'M13', dateText: '2026-10-15' })
+    expect(reloaded.state).toEqual({
+      objectId: 'M13',
+      dateText: '2026-10-15',
+      imageOpen: true,
+    })
+  })
+
+  it('remembers the sky image collapsed', () => {
+    new SessionStore(storage).setImageOpen(false)
+
+    expect(new SessionStore(storage).state.imageOpen).toBe(false)
+  })
+
+  // Added after v1 shipped: an older saved session has no such field, and it
+  // must read as the default rather than force a schema bump that would
+  // discard the object and the night along with it.
+  it('reads a session saved before the sky image existed', () => {
+    storage.setItem(
+      SESSION_KEY,
+      JSON.stringify({ version: 1, objectId: 'M13', dateText: '2026-10-15' }),
+    )
+
+    const store = new SessionStore(storage)
+
+    expect(store.state.imageOpen).toBe(true)
+    expect(store.state.objectId).toBe('M13')
   })
 
   it('writes a version alongside the state', () => {
@@ -68,6 +97,7 @@ describe('recovering from bad stored data', () => {
     expect(new SessionStore(storage).state).toEqual({
       objectId: null,
       dateText: null,
+      imageOpen: true,
     })
   })
 
@@ -93,6 +123,7 @@ describe('recovering from bad stored data', () => {
     expect(new SessionStore(storage).state).toEqual({
       objectId: null,
       dateText: null,
+      imageOpen: true,
     })
   })
 

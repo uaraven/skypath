@@ -10,14 +10,21 @@
   } from '../lib/astro/coordinates'
   import { nightEvents } from '../lib/astro/events'
   import { MS_PER_MINUTE, nightWindow, windowHours } from '../lib/astro/time'
-  import type { GeoLocation, SkyObject } from '../lib/astro/types'
+  import {
+    isDeepSky,
+    type GeoLocation,
+    type SkyObject,
+  } from '../lib/astro/types'
   import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
   import { allSkyChartModel, altitudeChartModel, clamp } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
+  import { skyViewFieldDegrees, skyViewUrl } from '../lib/images'
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
   import EventTimesPanel from './EventTimesPanel.svelte'
   import Icon from './Icon.svelte'
+  import ObjectImage from './ObjectImage.svelte'
+  import { formatAngularSize } from './searchFilters'
   import TimeSlider from './TimeSlider.svelte'
 
   interface Props {
@@ -26,9 +33,33 @@
     horizon: Horizon
     date: Date
     observatoryName: string
+    /** Whether the sky-image block is expanded; persisted by the caller. */
+    imageOpen?: boolean
   }
 
-  let { object, location, horizon, date, observatoryName }: Props = $props()
+  let {
+    object,
+    location,
+    horizon,
+    date,
+    observatoryName,
+    imageOpen = $bindable(true),
+  }: Props = $props()
+
+  /**
+   * Only deep-sky objects get a survey image. A planet or the Moon moves
+   * against the background stars, so a cutout of the sky it happens to be
+   * crossing tonight would show everything except the target.
+   */
+  const image = $derived.by(() => {
+    if (!object || !isDeepSky(object)) return null
+    const field = skyViewFieldDegrees(object.size)
+    return {
+      url: skyViewUrl(object),
+      alt: `Digitized Sky Survey image of ${object.name}`,
+      caption: `${formatAngularSize(field * 60)} field · DSS2 red`,
+    }
+  })
 
   // The Moon is drawn on both charts as an overlay; the checkbox under the
   // slider toggles it. When the Moon itself is the target, the overlay would
@@ -126,6 +157,15 @@
   </p>
 {:else}
   <div class="results">
+    {#if image}
+      <ObjectImage
+        url={image.url}
+        alt={image.alt}
+        caption={image.caption}
+        bind:open={imageOpen}
+      />
+    {/if}
+
     <header>
       <h2>{object.name}</h2>
       <p class="meta">

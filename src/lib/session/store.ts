@@ -22,9 +22,11 @@ export interface Session {
   objectId: string | null
   /** The chosen night as `YYYY-MM-DD`, the form `<input type="date">` speaks. */
   dateText: string | null
+  /** Whether the Results tab's sky image is expanded. */
+  imageOpen: boolean
 }
 
-const EMPTY: Session = { objectId: null, dateText: null }
+const EMPTY: Session = { objectId: null, dateText: null, imageOpen: true }
 
 export class SessionStore {
   #state: Session
@@ -62,6 +64,10 @@ export class SessionStore {
     this.#commit({ ...this.#state, dateText: formatIsoDate(date) })
   }
 
+  setImageOpen(imageOpen: boolean): void {
+    this.#commit({ ...this.#state, imageOpen })
+  }
+
   /** Drops the persisted session and returns to first-launch state. */
   reset(): void {
     this.#storage?.removeItem(SESSION_KEY)
@@ -89,7 +95,11 @@ export class SessionStore {
     try {
       const parsed: unknown = JSON.parse(raw)
       if (typeof parsed !== 'object' || parsed === null) return EMPTY
-      const candidate = parsed as { objectId?: unknown; dateText?: unknown }
+      const candidate = parsed as {
+        objectId?: unknown
+        dateText?: unknown
+        imageOpen?: unknown
+      }
       return {
         objectId:
           typeof candidate.objectId === 'string' ? candidate.objectId : null,
@@ -100,6 +110,12 @@ export class SessionStore {
           parseIsoDate(candidate.dateText)
             ? candidate.dateText
             : null,
+        // Additive field: a session written before it existed reads as open,
+        // which is the default the block ships with. That is why the schema
+        // version stays at 1 — bumping it would orphan every saved session
+        // over a field whose absence is already meaningful.
+        imageOpen:
+          typeof candidate.imageOpen === 'boolean' ? candidate.imageOpen : true,
       }
     } catch {
       // Corrupt JSON — start fresh rather than breaking boot.

@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **SkyPath** — a static single-page web app (no backend) for planning astronomical observations: pick a target (Messier object or planet), a date, and an observatory (location + custom horizon), and see the target's sky trajectory plus rise/set/culmination and twilight times. Deploys as plain files to S3 as part of the voronin.cc site. The directory is named `skyproject/` for historical reasons; the project name is SkyPath.
 
-## Current state: all phases (0–9) done — the app is complete and deployed
+## Current state: all phases (0–10) done — the app is complete and deployed
 
-Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, a Help dialog, and the Moon (both as an optional overlay and as a selectable target — trajectory/rise/set/phase) are all in. The app is built and deployed to **skypath.voronin.cc** (subdomain, decided in phase 9). See `.plan/state.md` for the authoritative per-phase table.
+Both charts (altitude + all-sky/azimuthal), event times, the linked time slider, observatory CRUD with JSON export/import, a Help dialog, the Moon (both as an optional overlay and as a selectable target — trajectory/rise/set/phase), and a NASA SkyView preview image for deep-sky targets are all in. The app is built and deployed to **skypath.voronin.cc** (subdomain, decided in phase 9). See `.plan/state.md` for the authoritative per-phase table.
 
 The Moon is drawn two ways and they must not collide: as a **companion overlay** on both charts (the "Show the Moon" toggle → `includeMoon`, a dashed `.moon-track` + phase glyph), and as the **selected target** itself. When `object.id === MOON.id` the chart models fill the same `moon` field from the _primary_ trajectory (glyph only, no second sample), the components skip the redundant dimmed track/peak marker, and `ResultsPanel`/`EventTimesPanel` suppress the now-duplicate overlay toggle and standalone "Moon" times group.
 
@@ -48,10 +48,12 @@ Planning documents live in `.plan/`:
   - Twilight bands come from scanning the sun's altitude and bisecting phase changes, _not_ from assembling `computeSunEvents`' individually-nullable crossings. That's what makes polar day/night fall out for free.
   - `altitudeToY` clamps to 0–90° on purpose: a set object runs flat along the baseline rather than leaving a gap.
   - `model.ts` caches the twilight bands for the last (window, location). They don't depend on the object and they're the expensive part of a model, so the per-row charts in the search results all hit the cache.
+- `src/lib/images/` — `skyViewUrl` for the NASA SkyView cutout shown above the object title (deep-sky only). URL building only; the app never fetches those bytes. SkyView sends **no CORS header**, so an `<img src>` is the only way to load one without a backend — never `fetch` it and never add `crossorigin`. RA is catalogued in **hours** and `position` wants **degrees** (×15), and coordinates must be the **J2000 catalogue** ones, not `equatorialPosition`'s of-date output. A bad query still returns `200 image/gif` with the error drawn into the picture, so a failed query is undetectable client-side — `onerror` fires only on network failure.
 - `src/components/` — Svelte UI, laid out per `.plan/ui-mocks.md`: observatory list left, Search / Results tabview right.
   - `ObservatoryManager` is the **list only** — selection plus add/edit/delete. The form lives in `ObservatoryEditor`, opened as a modal, which never touches the store: it hands a validated `ObservatoryInput` to `onsave` or nothing at all. `ObservatoryManager` takes an optional `store` prop (defaults to the app-wide singleton) so tests can inject one over `MemoryStorage`.
   - Dialogs go through `Modal` / `ConfirmDialog`, not `<dialog>` and not `window.confirm`. `ObservatoryImportDialog` handles the export/import flow; `HelpDialog` holds the credits and catalog attribution (there is **no** attribution footer — it was removed).
   - `AllSkyChart` renders the polar view, `EventTimesPanel` the rise/set/twilight/moon rows, and `TimeSlider` drives the marker shared by both charts on the Results tab.
+  - `ObjectImage` is the collapsible SkyView block. It takes a ready-made `url` (the panel builds it) and sets `src` **only while open**, so a collapsed block costs no download; the visual project must never let it reach skyview.gsfc.nasa.gov — `setup-visual.ts` collapses it and the dedicated test feeds a `data:` URI.
   - The search results render **one `AltitudeChart` per row**. Any chart component must therefore give its SVG ids per-instance (`$props.id()`) — a hard-coded id makes every chart on the page clip to the first one's plot.
 
 ## Decided stack (do not re-litigate without the user)

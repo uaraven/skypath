@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/svelte'
+import { cleanup, render, screen, waitFor } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App.svelte'
@@ -104,6 +104,25 @@ describe('persisting the selections', () => {
     await waitFor(() => {
       expect(persisted(storage).objectId).toBe('M13')
     })
+  })
+
+  it('saves the sky image collapsed, and reopens it that way', async () => {
+    const user = userEvent.setup()
+    const { storage } = setup({ objectId: 'M13', dateText: '2026-10-15' })
+
+    await user.click(await screen.findByRole('button', { name: /sky image/i }))
+
+    await waitFor(() => {
+      expect(persisted(storage).imageOpen).toBe(false)
+    })
+
+    // A reload lands on the same object with the block still closed — the
+    // point of collapsing it is that it stays collapsed.
+    cleanup()
+    render(App, { props: { session: new SessionStore(storage) } })
+    expect(
+      await screen.findByRole('button', { name: /sky image/i }),
+    ).toHaveAttribute('aria-expanded', 'false')
   })
 })
 
