@@ -15,6 +15,7 @@
     | 'help'
     | 'copy'
     | 'check'
+    | 'chevron'
 
   interface Props {
     name: IconName
@@ -67,6 +68,9 @@
     <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
   {:else if name === 'check'}
     <path d="M20 6 9 17l-5-5" />
+  {:else if name === 'chevron'}
+    <!-- Points down; callers rotate it to mean "expanded". -->
+    <path d="m6 9 6 6 6-6" />
   {/if}
 </svg>
 

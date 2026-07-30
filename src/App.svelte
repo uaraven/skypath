@@ -68,6 +68,9 @@
   let dateText = $state(
     untrack(() => formatIsoDate(session.dateOr(new Date()))),
   )
+  // Lives here for the same reason as the object and the night: it is a user
+  // choice that has to outlive the tabview unmounting the Results panel.
+  let imageOpen = $state(untrack(() => session.state.imageOpen))
 
   const date = $derived(parseDateText(dateText))
 
@@ -75,6 +78,7 @@
   // in the app, and a browser tab is as likely to be closed as navigated away.
   $effect(() => session.setObjectId(object?.id ?? null))
   $effect(() => session.setDate(date))
+  $effect(() => session.setImageOpen(imageOpen))
 
   /**
    * The date input's value as a local date. Parsed here rather than with
@@ -190,6 +194,7 @@
             {horizon}
             {date}
             observatoryName={selected.name}
+            bind:imageOpen
           />
         </div>
       {/if}

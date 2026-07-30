@@ -25,6 +25,12 @@ beforeEach(() => {
   // not enough: without this, a test that opens an object leaves the *next*
   // render starting on the Results tab with that object already loaded.
   session.reset()
+  // The browser here is real, so an expanded sky image would really call NASA
+  // SkyView — a ~7 s third-party round trip inside the test suite, and a
+  // failure whenever it is slow or the machine is offline. The app tests open
+  // the Results tab with the block collapsed; `object-image.test.ts` renders
+  // the component directly against a `data:` URI instead.
+  session.setImageOpen(false)
 })
 
 // Registered explicitly for the same reason as in the jsdom project: Vitest

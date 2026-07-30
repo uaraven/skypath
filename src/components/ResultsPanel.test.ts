@@ -8,7 +8,7 @@ import { fireEvent, render, screen } from '@testing-library/svelte'
 import { describe, expect, it } from 'vitest'
 import ResultsPanel from './ResultsPanel.svelte'
 import type { GeoLocation } from '../lib/astro/types'
-import { MOON, objectByDesignation } from '../lib/catalog'
+import { MOON, objectById, objectByDesignation } from '../lib/catalog'
 import { FLAT_HORIZON } from '../lib/horizon'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
@@ -96,6 +96,27 @@ describe('ResultsPanel', () => {
     expect(screen.queryByText('Show the Moon')).not.toBeInTheDocument()
     // And no dimmed companion track is drawn on top of the primary trajectory.
     expect(container.querySelector('.moon-track')).toBeNull()
+  })
+
+  it('shows a sky image of the object, centred on its catalogue position', () => {
+    setup()
+
+    const src = new URL(document.querySelector('img')!.src)
+    expect(src.hostname).toBe('skyview.gsfc.nasa.gov')
+    // RA is catalogued in hours and SkyView wants degrees — M13 is at 16.69h.
+    const [ra, dec] = src.searchParams.get('position')!.split(',').map(Number)
+    expect(ra).toBeCloseTo(M13.ra * 15, 6)
+    expect(dec).toBeCloseTo(M13.dec, 6)
+  })
+
+  // A survey cutout is of fixed sky, so it says nothing useful about a body
+  // that moves across it.
+  it('offers no sky image for the planets or the Moon', () => {
+    setup({ object: objectById('jupiter')! })
+    expect(document.querySelector('img')).toBeNull()
+
+    setup({ object: MOON })
+    expect(document.querySelector('img')).toBeNull()
   })
 
   it('keeps the chosen time of night when the date changes', async () => {

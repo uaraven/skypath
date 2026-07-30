@@ -127,6 +127,17 @@
       </li>
     </ul>
     <p>
+      Sky images come from the
+      <a
+        href="https://skyview.gsfc.nasa.gov/"
+        target="_blank"
+        rel="noopener noreferrer">SkyView Virtual Observatory</a
+      >
+      (NASA/GSFC), drawn from the Digitized Sky Survey — based on photographic plates
+      from the Palomar and UK Schmidt telescopes, digitized by the Space Telescope
+      Science Institute (AURA) and the Caltech Palomar Observatory Sky Survey.
+    </p>
+    <p>
       Ephemeris calculations use
       <a
         href="https://github.com/cosinekitty/astronomy"
