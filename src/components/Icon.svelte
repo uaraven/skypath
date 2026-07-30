@@ -13,6 +13,8 @@
     | 'download'
     | 'upload'
     | 'help'
+    | 'copy'
+    | 'check'
 
   interface Props {
     name: IconName
@@ -60,6 +62,11 @@
     <circle cx="12" cy="12" r="9" />
     <path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2.5 2-2.5 3.5" />
     <path d="M12 17h.01" />
+  {:else if name === 'copy'}
+    <rect x="9" y="9" width="12" height="12" rx="2" />
+    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+  {:else if name === 'check'}
+    <path d="M20 6 9 17l-5-5" />
   {/if}
 </svg>
 

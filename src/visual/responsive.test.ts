@@ -79,7 +79,7 @@ describe('at phone width', () => {
     const { container } = await showResults()
 
     const dial = container
-      .querySelectorAll('[role="tabpanel"] svg')[1]!
+      .querySelectorAll('[role="tabpanel"] .chart svg')[1]!
       .getBoundingClientRect()
 
     expect(dial.width).toBeGreaterThan(200)

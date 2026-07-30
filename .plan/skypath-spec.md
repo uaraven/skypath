@@ -64,3 +64,8 @@ Visual styling must be consistent with the main website (voronin.cc, sources in 
  - accent colors: links `#228da8`, highlights `#74bbf1`, headings `#c3cfec`
  - cards/panels: `rgba(1, 20, 29, 0.5)` background, `1px solid rgba(98, 169, 255, 0.3)` border, 10px radius
  - rounded pill buttons, 0.3s ease transitions
+
+
+Get images frm skyview
+
+https://skyview.gsfc.nasa.gov/current/cgi/runquery.pl?Survey=digitized+sky+survey&position=10.6847,41.2692&Return=GIF&size=5
