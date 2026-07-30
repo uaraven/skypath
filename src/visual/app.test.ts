@@ -136,7 +136,7 @@ describe('app shell rendering', () => {
     const row = await screen.findByText('Andromeda Galaxy')
     await userEvent.click(row)
 
-    const svg = container.querySelector('[role="tabpanel"] svg')!
+    const svg = container.querySelector('[role="tabpanel"] .chart svg')!
     const box = svg.getBoundingClientRect()
 
     expect(box.width).toBeGreaterThan(400)
@@ -158,7 +158,7 @@ describe('app shell rendering', () => {
     )
     await userEvent.click(await screen.findByText('Sh2-155'))
 
-    const path = container.querySelector('[role="tabpanel"] svg path')
+    const path = container.querySelector('[role="tabpanel"] .chart svg path')
     expect(path).not.toBeNull()
     expect(path!.getAttribute('d')).toMatch(/^M[\s\d.,-]/)
     expect(screen.getByText(/HII region/i)).toBeVisible()

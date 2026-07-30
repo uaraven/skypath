@@ -2,6 +2,12 @@
   /**
    * The Results tab: everything about one object on one night from one site.
    */
+  import {
+    equatorialPosition,
+    formatCoordinatesForClipboard,
+    formatDec,
+    formatRa,
+  } from '../lib/astro/coordinates'
   import { nightEvents } from '../lib/astro/events'
   import { MS_PER_MINUTE, nightWindow, windowHours } from '../lib/astro/time'
   import type { GeoLocation, SkyObject } from '../lib/astro/types'
@@ -11,6 +17,7 @@
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
   import EventTimesPanel from './EventTimesPanel.svelte'
+  import Icon from './Icon.svelte'
   import TimeSlider from './TimeSlider.svelte'
 
   interface Props {
@@ -69,6 +76,30 @@
     object && isCatalogObject(object) ? typeLabel(object.type) : null,
   )
 
+  // Anchored on local midnight rather than the scrubbed marker time: a
+  // moving body's coordinates would otherwise creep across the night, and
+  // this is a subtitle, not a live readout.
+  const coordinates = $derived(
+    object
+      ? equatorialPosition(object, nightWindow(date).midnight, location)
+      : null,
+  )
+
+  // Reverts on its own after a beat rather than on the next click, so the
+  // button doesn't need a separate "reset" trigger.
+  let copied = $state(false)
+  let copiedTimeout: ReturnType<typeof setTimeout> | undefined
+
+  async function copyCoordinates() {
+    if (!coordinates) return
+    await navigator.clipboard.writeText(
+      formatCoordinatesForClipboard(coordinates),
+    )
+    copied = true
+    clearTimeout(copiedTimeout)
+    copiedTimeout = setTimeout(() => (copied = false), 1500)
+  }
+
   /**
    * The scrubbed time, held as minutes from the start of the night so that it
    * survives a change of date or object: the user is picking a moment of the
@@ -100,6 +131,21 @@
       <p class="meta">
         {#if designations}<span>{designations}</span>{/if}
         {#if type}<span>{type}</span>{/if}
+        {#if coordinates}
+          <span class="coordinates">
+            ({formatRa(coordinates.ra)}
+            {formatDec(coordinates.dec)})
+            <button
+              type="button"
+              class="icon-button"
+              aria-label={copied ? 'Coordinates copied' : 'Copy coordinates'}
+              title={copied ? 'Copied!' : 'Copy coordinates'}
+              onclick={copyCoordinates}
+            >
+              <Icon name={copied ? 'check' : 'copy'} size={14} />
+            </button>
+          </span>
+        {/if}
         <span>from {observatoryName}</span>
         <span>{date.toLocaleDateString()}</span>
       </p>
@@ -168,6 +214,19 @@
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-dim);
+  }
+
+  .coordinates {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem;
   }
 
   section h3 {

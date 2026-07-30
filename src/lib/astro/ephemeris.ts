@@ -80,7 +80,7 @@ export function withEngineBody<T>(object: SkyObject, fn: (body: Body) => T): T {
  * feeding J2000 values straight to Horizon() would misplace an object by
  * roughly a quarter of a degree at present.
  */
-function equatorOfDate(
+export function equatorOfDate(
   object: SkyObject,
   time: FlexibleDateTime,
   observer: Observer,
