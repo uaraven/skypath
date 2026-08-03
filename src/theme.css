@@ -70,4 +70,6 @@
   --chart-moon: rgba(230, 214, 160, 0.55);
   --chart-moon-lit: rgb(233, 224, 190);
   --chart-moon-dark: rgb(52, 60, 66);
+  /* Gray, not the warm marker orange: it flags the Moon's position, not the target's. */
+  --chart-moon-marker: rgb(160, 165, 170);
 }

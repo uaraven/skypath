@@ -127,6 +127,26 @@
     return null
   })
 
+  const MOON_MARKER_SIZE = 9
+
+  /** Same interpolation as `marker`, but over the Moon's own arcs. */
+  const moonMarker = $derived.by(() => {
+    if (!markerTime || !model.moon || targetIsMoon) return null
+
+    for (const arc of model.moon.arcs) {
+      const at = trajectoryAt(arc, markerTime)
+      if (at) {
+        return {
+          path: markerTriangle(
+            polarPoint(at.azimuth, at.altitude, DIAL),
+            MOON_MARKER_SIZE,
+          ),
+        }
+      }
+    }
+    return null
+  })
+
   const summary = $derived(
     marker
       ? `${describe(model)}; at the marked time it is at ${Math.round(marker.altitude)}° in the ${compassPoint(marker.azimuth)}`
@@ -207,6 +227,10 @@
 
       {#if peak && !targetIsMoon}
         <circle class="peak" cx={peak.x} cy={peak.y} r={5} />
+      {/if}
+
+      {#if moonMarker}
+        <path class="moon-marker" d={moonMarker.path} />
       {/if}
 
       {#if marker}
@@ -325,6 +349,10 @@
 
   .marker {
     fill: var(--chart-marker);
+  }
+
+  .moon-marker {
+    fill: var(--chart-moon-marker);
   }
 
   .label {
