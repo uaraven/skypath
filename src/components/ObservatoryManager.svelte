@@ -167,9 +167,6 @@
         ondblclick={openEdit}
       >
         <span class="site-name">{observatory.name}</span>
-        <!-- <span class="site-coords">
-          {observatory.latitude.toFixed(2)}, {observatory.longitude.toFixed(2)}
-        </span> -->
       </button>
     {/each}
   </div>
@@ -309,12 +306,6 @@
   .site-name {
     font-size: 0.9rem;
     line-height: 1.3;
-  }
-
-  .site-coords {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text-faint);
   }
 
   footer {
