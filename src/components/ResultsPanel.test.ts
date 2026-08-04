@@ -119,6 +119,40 @@ describe('ResultsPanel', () => {
     expect(document.querySelector('img')).toBeNull()
   })
 
+  const yearlyPanel = (container: HTMLElement) =>
+    [...container.querySelectorAll('.panel')].find(
+      (panel) => panel.querySelector('h3')?.textContent === 'Yearly altitude',
+    )!
+
+  it('shows the yearly altitude panel below the all-sky view, with a trajectory', () => {
+    const { container } = setup()
+
+    const headings = [...container.querySelectorAll('h3')].map(
+      (h) => h.textContent,
+    )
+    expect(headings.indexOf('Yearly altitude')).toBeGreaterThan(
+      headings.indexOf('All-sky view'),
+    )
+    expect(yearlyPanel(container).querySelector('.trajectory')).not.toBeNull()
+  })
+
+  it('plots a different year once the date crosses New Year', async () => {
+    const { container, rerender } = setup({ date: new Date(2026, 11, 28) })
+    const pathBefore = yearlyPanel(container)
+      .querySelector('.trajectory')!
+      .getAttribute('d')
+
+    await rerender({ date: new Date(2027, 0, 4) })
+    const pathAfter = yearlyPanel(container)
+      .querySelector('.trajectory')!
+      .getAttribute('d')
+
+    // 2026 and 2027 plot different altitudes at the same calendar dates, so
+    // crossing the boundary redraws the curve even though the month axis
+    // (Jan..Dec either way) looks unchanged.
+    expect(pathAfter).not.toBe(pathBefore)
+  })
+
   it('keeps the chosen time of night when the date changes', async () => {
     const { rerender } = setup()
 

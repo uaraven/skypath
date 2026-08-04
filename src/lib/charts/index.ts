@@ -60,3 +60,11 @@ export {
   type HourMark,
   type MoonDial,
 } from './all-sky'
+export {
+  yearlyChartModel,
+  monthTicks,
+  yearWindow,
+  type YearlyChartModel,
+  type YearlyChartInput,
+  type MonthTick,
+} from './yearly'

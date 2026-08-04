@@ -19,6 +19,7 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
 | 8 | Extended: Moon (trajectory, rise/set, phase) | done | Most landed incidentally in Phases 5–7.5 (Moon overlay + searchable target); this phase integrated the Moon-*as-target* case. 7 more tests — see log |
 | 9 | Build, deploy to S3 & polish | done | Deployed to the **skypath.voronin.cc** subdomain; footer links back to voronin.cc/astro — see log |
 | 10 | DSO preview image (NASA SkyView) | done | User request after Phase 9; plan in [object-img-plan.md](object-img-plan.md). 39 more tests (530 total) — see log |
+| 11 | Yearly altitude chart (midnight altitude across the calendar year) | done | User request after Phase 10; plan in [yearly-altitude-plan.md](yearly-altitude-plan.md). 26 more tests (556 total) — see log |
 
 ## Log
 
@@ -159,3 +160,8 @@ Statuses: `not started` · `in progress` · `blocked` · `done`
   - Session gained `imageOpen`, read tolerantly and **without bumping `SCHEMA_VERSION`**: a session saved before the field existed reads as open, which is the default anyway, and bumping would have orphaned the saved object and night over a purely additive field.
   - **The visual project must not touch skyview.gsfc.nasa.gov** — a ~7 s third-party CGI in the suite is a flake generator, and offline runs would fail. `setup-visual.ts` therefore collapses the image block for the app-level tests, and `object-image.test.ts` renders the component directly against a `data:` URI. Screenshot `object-image`.
   - HelpDialog credits NASA/GSFC's SkyView and the DSS plate origin (Palomar/UK Schmidt, digitized by STScI/AURA and Caltech), alongside the existing OpenNGC and VizieR attribution.
+- 2026-08-04 — **Phase 11 done: a third Results-tab chart plotting altitude at local midnight across the calendar year** ([yearly-altitude-plan.md](yearly-altitude-plan.md)). New `src/lib/astro/yearly.ts` (sampling), `src/lib/charts/yearly.ts` (`yearlyChartModel`, deliberately thin — no horizon, no Moon overlay, no twilight bands) and `YearlyChart.svelte`, wired into `ResultsPanel` below "All-sky view". 26 new tests (556 total, all green aside from one pre-existing unrelated failure); `npm run check` clean.
+  - **Shows the calendar year of the currently selected observing date**, not a rolling 12 months — so scrubbing the date across New Year's swaps the whole curve to the other year's. A deliberate reading of "months Jan to Dec," confirmed with the user before building.
+  - **A "you are here" marker (dot + vertical guide) was added beyond the literal ask**, confirmed with the user — it's what turns the chart from a shape into an answer to "is now a good time of year for this object."
+  - Confirmed with the user that "search results" meant the Results tab (`ResultsPanel`, single selected object), not the per-row thumbnails in the search list — those use only a `compact AltitudeChart` and have no all-sky chart to sit "below."
+- 2026-08-04 — **Yearly chart switched from weekly (Monday-anchored, Moon every 3 days) to sampling every day of the year**, for every object including the Moon. `mondayMidnights`/`periodicMidnights`/`MOON_STEP_DAYS` removed in favor of a single `dailyMidnights` in `src/lib/astro/yearly.ts`; `yearlyChartModel` no longer special-cases the Moon.
