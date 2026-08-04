@@ -16,7 +16,12 @@
     type SkyObject,
   } from '../lib/astro/types'
   import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
-  import { allSkyChartModel, altitudeChartModel, clamp } from '../lib/charts'
+  import {
+    allSkyChartModel,
+    altitudeChartModel,
+    clamp,
+    yearlyChartModel,
+  } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
   import { skyViewFieldDegrees, skyViewUrl } from '../lib/images'
   import AllSkyChart from './AllSkyChart.svelte'
@@ -26,6 +31,7 @@
   import ObjectImage from './ObjectImage.svelte'
   import { formatAngularSize } from './searchFilters'
   import TimeSlider from './TimeSlider.svelte'
+  import YearlyChart from './YearlyChart.svelte'
 
   interface Props {
     object: SkyObject | null
@@ -97,6 +103,17 @@
     object ? nightEvents({ object, location, date, horizon }) : null,
   )
 
+  const yearlyModel = $derived(
+    object
+      ? yearlyChartModel({
+          object,
+          location,
+          year: date.getFullYear(),
+          date,
+        })
+      : null,
+  )
+
   const designations = $derived(
     object && isCatalogObject(object)
       ? object.designations.map(formatDesignation).join(' · ')
@@ -151,7 +168,7 @@
   )
 </script>
 
-{#if !object || !model || !allSkyModel || !events}
+{#if !object || !model || !allSkyModel || !events || !yearlyModel}
   <p class="empty">
     No object chosen yet — find one in the Search tab and pick it.
   </p>
@@ -227,6 +244,11 @@
           <span>Show the Moon</span>
         </label>
       {/if}
+    </section>
+
+    <section class="panel">
+      <h3>Yearly altitude</h3>
+      <YearlyChart model={yearlyModel} />
     </section>
 
     <section class="panel">

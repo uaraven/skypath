@@ -58,10 +58,11 @@ describe('listing observatories', () => {
     })
   })
 
-  it('shows each site’s coordinates', () => {
+  it('shows the site name only, not its coordinates', () => {
     setup()
 
-    expect(screen.getByRole('option')).toHaveTextContent('51.48, -0.00')
+    expect(screen.getByRole('option')).toHaveTextContent('Greenwich')
+    expect(screen.getByRole('option')).not.toHaveTextContent('51.48')
   })
 
   it('selects the observatory that is clicked, and persists the choice', async () => {
