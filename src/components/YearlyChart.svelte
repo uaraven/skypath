@@ -50,11 +50,19 @@
   const months = $derived(monthTicks(model.year))
   const altitudes = altitudeTicks()
 
+  function formatDate(time: Date): string {
+    return time.toLocaleDateString(undefined, {
+      day: 'numeric',
+      month: 'short',
+    })
+  }
+
   const peak = $derived(
     model.peak && model.peak.altitude > 0
       ? {
           ...toPoint(model.peak),
           label: `${Math.round(model.peak.altitude)}°`,
+          date: formatDate(model.peak.time),
         }
       : null,
   )
@@ -64,8 +72,8 @@
   const summary = $derived(
     [
       peak
-        ? `${model.object.name} in ${model.year}: peaks around ${peak.label} at midnight`
-        : `${model.object.name} in ${model.year}: stays below the horizon at midnight all year`,
+        ? `${model.object.name} in ${model.year}: peaks around ${peak.label} on ${peak.date}`
+        : `${model.object.name} in ${model.year}: stays below the horizon all year`,
       model.current &&
         `currently around ${Math.round(model.current.altitude)}°`,
     ]
