@@ -84,6 +84,14 @@ describe('ResultsPanel', () => {
     }
   })
 
+  it('shows the altitude reading beside the altitude slider only', () => {
+    setup()
+
+    const [altitudeReadout, allSkyReadout] = readouts()
+    expect(altitudeReadout.textContent).toMatch(/—\s*-?\d+°$/)
+    expect(allSkyReadout.textContent).not.toMatch(/°/)
+  })
+
   it('moves the chart indicator when the slider moves', async () => {
     const { container } = setup()
 

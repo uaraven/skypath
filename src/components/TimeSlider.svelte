@@ -28,6 +28,12 @@
      * the default formatting can't express.
      */
     readout?: string
+    /**
+     * Appended after the readout (date/override alike) as "— {suffix}", so
+     * the altitude chart's slider can show the target's altitude at the
+     * scrubbed instant without replacing the date/time readout entirely.
+     */
+    suffix?: string
   }
 
   let {
@@ -37,18 +43,21 @@
     label,
     step = 5,
     readout: readoutOverride,
+    suffix,
   }: Props = $props()
 
-  const readout = $derived(
-    readoutOverride ??
+  const readout = $derived.by(() => {
+    const base =
+      readoutOverride ??
       time.toLocaleString(undefined, {
         weekday: 'short',
         day: 'numeric',
         month: 'short',
         hour: '2-digit',
         minute: '2-digit',
-      }),
-  )
+      })
+    return suffix ? `${base} — ${suffix}` : base
+  })
 
   /** How far along the track the thumb is, 0–1. Drives the filled portion. */
   const fill = $derived(max === 0 ? 0 : value / max)
@@ -170,11 +179,12 @@
     color: var(--text);
     white-space: nowrap;
     /*
-     * Reserve the width the longest date needs: the readout changes on every
-     * drag frame, and letting it size to its content shoves the slider
-     * sideways under the user's pointer.
+     * Reserve the width the longest reading needs — date, time and a
+     * negative-altitude suffix together: the readout changes on every drag
+     * frame, and letting it size to its content shoves the slider sideways
+     * under the user's pointer.
      */
-    min-width: 15ch;
+    min-width: 28ch;
     text-align: right;
   }
 
