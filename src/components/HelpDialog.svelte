@@ -87,12 +87,47 @@
       twilight and darkness begin, and so on. You can also overlay the Moon's
       path and phase on either chart.
     </p>
+    <p>
+      The Results tab also shows a yearly altitude chart: the target's
+      altitude at local midnight for every day of the year, so you can spot
+      which season brings it highest above your horizon.
+    </p>
+
+    <h4>Creating a horizon file</h4>
+    <p>
+      SkyPath reads the same horizon file format as NINA — a plain text file
+      with one <code>azimuth altitude</code> pair per line. If you don't
+      already have one, these tools can generate it:
+    </p>
+    <ul>
+      <li> There are several
+        <a
+          href="https://davidmoulton.me/nina-plugins/"
+          target="_blank"
+          rel="noopener noreferrer">NINA plugins</a
+        > that simplify creation of horizn files.
+      </li>
+      <li>
+        <a
+          href="https://rkinnett.github.io/gyrocam/"
+          target="_blank"
+          rel="noopener noreferrer">Gyrocam</a
+        >, a phone-based horizon tracer.
+      </li>
+      <li>
+        <a
+          href="https://neuronburner.com/hrz-creator/"
+          target="_blank"
+          rel="noopener noreferrer">HRZ Creator</a
+        >.
+      </li>
+    </ul>
 
     <h4>Report bugs and suggestions</h4>
     <p>
       To report a bug or suggest an improvement, open an issue in the
       <a
-        href="https://codeberg.org/uaraven/skypath/issues"
+        href="https://github.com/uaraven/skypath/issues"
         target="_blank"
         rel="noopener noreferrer">issue tracker</a
       >.
@@ -169,9 +204,9 @@
       SkyPath is free and open-source software, licensed under the GPL-3.0
       license. The source code is hosted on
       <a
-        href="https://codeberg.org/uaraven/skypath"
+        href="https://github.com/uaraven/skypath"
         target="_blank"
-        rel="noopener noreferrer">Codeberg</a
+        rel="noopener noreferrer">GitHub</a
       >.
     </p>
   </div>
