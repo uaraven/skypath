@@ -174,15 +174,6 @@
   </p>
 {:else}
   <div class="results">
-    {#if image}
-      <ObjectImage
-        url={image.url}
-        alt={image.alt}
-        caption={image.caption}
-        bind:open={imageOpen}
-      />
-    {/if}
-
     <header>
       <h2>{object.name}</h2>
       <p class="meta">
@@ -207,6 +198,15 @@
         <span>{date.toLocaleDateString()}</span>
       </p>
     </header>
+
+    {#if image}
+      <ObjectImage
+        url={image.url}
+        alt={image.alt}
+        caption={image.caption}
+        bind:open={imageOpen}
+      />
+    {/if}
 
     <section class="panel">
       <h3>Altitude</h3>
