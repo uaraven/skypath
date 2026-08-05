@@ -58,16 +58,25 @@ describe('YearlyChart', () => {
     expect(svg.querySelectorAll('.peak')).toHaveLength(1)
   })
 
-  it('draws a "current" marker when the model has one', () => {
+  it('draws a marker at the current date by default', () => {
     const svg = renderChart()
-    expect(svg.querySelectorAll('.current')).toHaveLength(1)
-    expect(svg.querySelectorAll('.current-line')).toHaveLength(1)
+    expect(svg.querySelectorAll('.marker')).toHaveLength(1)
+    expect(svg.querySelectorAll('.marker-line')).toHaveLength(1)
   })
 
-  it('omits the "current" marker when the model has none', () => {
+  it('defaults the marker to the first day of the year when the model has no current date', () => {
     const svg = renderChart({ date: undefined })
-    expect(svg.querySelectorAll('.current')).toHaveLength(0)
-    expect(svg.querySelectorAll('.current-line')).toHaveLength(0)
+    expect(svg.querySelectorAll('.marker')).toHaveLength(1)
+    expect(svg.querySelectorAll('.marker-line')).toHaveLength(1)
+  })
+
+  it('renders a slider that lets any day of the year be selected', () => {
+    const { container } = render(YearlyChart, { model: model() })
+    const slider = container.querySelector('input[type="range"]')
+    expect(slider).not.toBeNull()
+    expect(slider?.getAttribute('max')).toBe(
+      String(model().points.length - 1),
+    )
   })
 
   it('renders the Moon with the same daily cadence as a fixed object', () => {

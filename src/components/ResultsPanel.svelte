@@ -248,7 +248,9 @@
 
     <section class="panel">
       <h3>Yearly altitude</h3>
-      <YearlyChart model={yearlyModel} />
+      {#key `${object.id}-${yearlyModel.year}`}
+        <YearlyChart model={yearlyModel} />
+      {/key}
     </section>
 
     <section class="panel">

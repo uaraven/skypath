@@ -11,6 +11,7 @@
   import {
     altitudeTicks,
     altitudeToY,
+    markerTriangle,
     monthTicks,
     plotBottom,
     plotRight,
@@ -21,12 +22,32 @@
     type PlotArea,
     type YearlyChartModel,
   } from '../lib/charts'
+  import TimeSlider from './TimeSlider.svelte'
 
   interface Props {
     model: YearlyChartModel
   }
 
   let { model }: Props = $props()
+
+  /**
+   * Day of the year shown by the slider, as an index into `model.points`
+   * (one sample per day). Initialised to the point nearest `model.current`
+   * so the chart opens on today's position; the caller resets this
+   * component (via `{#key}`) when the object or year changes, so a fresh
+   * default is picked up rather than carrying a stale index across targets.
+   */
+  function defaultIndex(): number {
+    if (model.current) {
+      const idx = model.points.findIndex(
+        (p) => p.time.getTime() === model.current!.time.getTime(),
+      )
+      if (idx >= 0) return idx
+    }
+    return 0
+  }
+
+  let selectedIndex = $state(defaultIndex())
 
   const WIDTH = 960
   const HEIGHT = 260
@@ -67,15 +88,33 @@
       : null,
   )
 
-  const current = $derived(model.current ? toPoint(model.current) : null)
+  const MARKER_SIZE = 12
+
+  /** The sample the slider currently points at. */
+  const selected = $derived(model.points[selectedIndex] ?? null)
+
+  const marker = $derived.by(() => {
+    if (!selected) return null
+    const point = toPoint(selected)
+    return {
+      x: point.x,
+      path: markerTriangle(point, MARKER_SIZE),
+    }
+  })
+
+  const selectedReadout = $derived(
+    selected
+      ? `${formatDate(selected.time)} — ${Math.round(selected.altitude)}°`
+      : '',
+  )
 
   const summary = $derived(
     [
       peak
         ? `${model.object.name} in ${model.year}: peaks around ${peak.label} on ${peak.date}`
         : `${model.object.name} in ${model.year}: stays below the horizon all year`,
-      model.current &&
-        `currently around ${Math.round(model.current.altitude)}°`,
+      selected &&
+        `${formatDate(selected.time)} selected: around ${Math.round(selected.altitude)}°`,
     ]
       .filter(Boolean)
       .join('; '),
@@ -129,15 +168,15 @@
         <circle class="peak" cx={peak.x} cy={peak.y} r={5} />
       {/if}
 
-      {#if current}
+      {#if marker}
         <line
-          class="current-line"
-          x1={current.x}
-          x2={current.x}
+          class="marker-line"
+          x1={marker.x}
+          x2={marker.x}
           y1={PLOT.top}
           y2={baseline}
         />
-        <circle class="current" cx={current.x} cy={current.y} r={5} />
+        <path class="marker" d={marker.path} />
       {/if}
     </g>
 
@@ -180,6 +219,17 @@
   </svg>
 </figure>
 
+{#if selected}
+  <TimeSlider
+    bind:value={selectedIndex}
+    max={model.points.length - 1}
+    step={1}
+    time={selected.time}
+    label="Date shown on the yearly chart"
+    readout={selectedReadout}
+  />
+{/if}
+
 <style>
   .chart {
     margin: 0;
@@ -217,11 +267,11 @@
     fill: var(--text);
   }
 
-  .current {
+  .marker {
     fill: var(--chart-marker);
   }
 
-  .current-line {
+  .marker-line {
     stroke: var(--chart-marker);
     stroke-width: 1;
     opacity: 0.45;

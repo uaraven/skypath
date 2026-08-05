@@ -25,11 +25,21 @@ function setup(overrides = {}) {
   })
 }
 
-const sliders = () => screen.getAllByRole('slider') as HTMLInputElement[]
+/**
+ * The two night sliders (altitude + all-sky), which scrub the shared time
+ * marker in step. The yearly chart below them has its own, independent
+ * slider over dates rather than times of night — excluded here by taking
+ * just the first two, DOM order matching source order.
+ */
+const sliders = () =>
+  (screen.getAllByRole('slider') as HTMLInputElement[]).slice(0, 2)
 
-/** The two slider readouts, distinct from the chart's own axis date labels. */
+/** The two night-slider readouts, distinct from the chart's own axis date labels. */
 const readouts = () =>
-  Array.from(document.querySelectorAll('.readout')) as HTMLElement[]
+  (Array.from(document.querySelectorAll('.readout')) as HTMLElement[]).slice(
+    0,
+    2,
+  )
 
 /** Marker apex x on the altitude chart, which is the one that always has one. */
 function markerX(container: HTMLElement): number {
@@ -134,6 +144,20 @@ describe('ResultsPanel', () => {
       headings.indexOf('All-sky view'),
     )
     expect(yearlyPanel(container).querySelector('.trajectory')).not.toBeNull()
+  })
+
+  it('gives the yearly chart its own slider, defaulted to the chosen date', () => {
+    const { container } = setup()
+
+    const yearlySlider = yearlyPanel(container).querySelector(
+      'input[type="range"]',
+    ) as HTMLInputElement
+    expect(yearlySlider).not.toBeNull()
+    // Oct 15 2026 is day 288 (index 287) of the year.
+    expect(yearlySlider.value).toBe('287')
+    expect(
+      yearlyPanel(container).querySelector('.readout')!.textContent,
+    ).toMatch(/Oct 15/)
   })
 
   it('plots a different year once the date crosses New Year', async () => {

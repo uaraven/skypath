@@ -178,13 +178,18 @@ describe('app shell rendering', () => {
     )
     await userEvent.click(await screen.findByText('Andromeda Galaxy'))
 
-    const sliders = screen.getAllByRole('slider') as HTMLInputElement[]
+    // The altitude and all-sky sliders scrub the shared night marker; the
+    // yearly chart below them has its own, independent date slider and
+    // marker, excluded here by taking just the first two in DOM order.
+    const sliders = (
+      screen.getAllByRole('slider') as HTMLInputElement[]
+    ).slice(0, 2)
     expect(sliders).toHaveLength(2)
 
     const markerX = () =>
-      [...container.querySelectorAll('[role="tabpanel"] .marker')].map((m) =>
-        m.getBoundingClientRect().x.toFixed(1),
-      )
+      [...container.querySelectorAll('[role="tabpanel"] .marker')]
+        .slice(0, 2)
+        .map((m) => m.getBoundingClientRect().x.toFixed(1))
     const before = markerX()
     expect(before).toHaveLength(2)
 

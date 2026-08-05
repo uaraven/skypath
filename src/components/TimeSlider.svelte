@@ -16,25 +16,38 @@
     time: Date
     /** Names the control for screen readers; the charts carry the visible one. */
     label: string
+    /**
+     * Granularity of `value`. Defaults to five minutes, matching the
+     * trajectory sampling step; the yearly chart's slider steps by whole
+     * days instead, so it passes 1.
+     */
+    step?: number
+    /**
+     * Overrides the built-in "weekday, date, time" readout. The yearly
+     * chart shows a date and an altitude instead of a time of night, which
+     * the default formatting can't express.
+     */
+    readout?: string
   }
 
-  let { value = $bindable(), max, time, label }: Props = $props()
-
-  /**
-   * Five minutes matches the trajectory sampling step: a finer slider would
-   * only interpolate between the same two samples, and it keeps a keyboard
-   * traverse of the night down to a few hundred presses.
-   */
-  const STEP_MINUTES = 5
+  let {
+    value = $bindable(),
+    max,
+    time,
+    label,
+    step = 5,
+    readout: readoutOverride,
+  }: Props = $props()
 
   const readout = $derived(
-    time.toLocaleString(undefined, {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
+    readoutOverride ??
+      time.toLocaleString(undefined, {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
   )
 
   /** How far along the track the thumb is, 0–1. Drives the filled portion. */
@@ -46,7 +59,7 @@
     type="range"
     min="0"
     {max}
-    step={STEP_MINUTES}
+    {step}
     bind:value
     style="--fill: {fill}"
     aria-label={label}
