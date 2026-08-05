@@ -16,26 +16,48 @@
     time: Date
     /** Names the control for screen readers; the charts carry the visible one. */
     label: string
+    /**
+     * Granularity of `value`. Defaults to five minutes, matching the
+     * trajectory sampling step; the yearly chart's slider steps by whole
+     * days instead, so it passes 1.
+     */
+    step?: number
+    /**
+     * Overrides the built-in "weekday, date, time" readout. The yearly
+     * chart shows a date and an altitude instead of a time of night, which
+     * the default formatting can't express.
+     */
+    readout?: string
+    /**
+     * Appended after the readout (date/override alike) as "— {suffix}", so
+     * the altitude chart's slider can show the target's altitude at the
+     * scrubbed instant without replacing the date/time readout entirely.
+     */
+    suffix?: string
   }
 
-  let { value = $bindable(), max, time, label }: Props = $props()
+  let {
+    value = $bindable(),
+    max,
+    time,
+    label,
+    step = 5,
+    readout: readoutOverride,
+    suffix,
+  }: Props = $props()
 
-  /**
-   * Five minutes matches the trajectory sampling step: a finer slider would
-   * only interpolate between the same two samples, and it keeps a keyboard
-   * traverse of the night down to a few hundred presses.
-   */
-  const STEP_MINUTES = 5
-
-  const readout = $derived(
-    time.toLocaleString(undefined, {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit',
-    }),
-  )
+  const readout = $derived.by(() => {
+    const base =
+      readoutOverride ??
+      time.toLocaleString(undefined, {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    return suffix ? `${base} — ${suffix}` : base
+  })
 
   /** How far along the track the thumb is, 0–1. Drives the filled portion. */
   const fill = $derived(max === 0 ? 0 : value / max)
@@ -46,7 +68,7 @@
     type="range"
     min="0"
     {max}
-    step={STEP_MINUTES}
+    {step}
     bind:value
     style="--fill: {fill}"
     aria-label={label}
@@ -157,11 +179,12 @@
     color: var(--text);
     white-space: nowrap;
     /*
-     * Reserve the width the longest date needs: the readout changes on every
-     * drag frame, and letting it size to its content shoves the slider
-     * sideways under the user's pointer.
+     * Reserve the width the longest reading needs — date, time and a
+     * negative-altitude suffix together: the readout changes on every drag
+     * frame, and letting it size to its content shoves the slider sideways
+     * under the user's pointer.
      */
-    min-width: 15ch;
+    min-width: 28ch;
     text-align: right;
   }
 

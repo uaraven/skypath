@@ -20,6 +20,7 @@
     allSkyChartModel,
     altitudeChartModel,
     clamp,
+    trajectoryAt,
     yearlyChartModel,
   } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
@@ -166,6 +167,12 @@
         clamp(offsetMinutes, 0, spanMinutes) * MS_PER_MINUTE,
     ),
   )
+
+  // Altitude at the scrubbed instant, read alongside the altitude chart's
+  // own slider — the all-sky chart's slider stays date/time-only.
+  const markerAltitude = $derived(
+    model ? trajectoryAt(model.points, markerTime) : null,
+  )
 </script>
 
 {#if !object || !model || !allSkyModel || !events || !yearlyModel}
@@ -220,6 +227,9 @@
         max={spanMinutes}
         time={markerTime}
         label="Time shown on the altitude chart"
+        suffix={markerAltitude
+          ? `${Math.round(markerAltitude.altitude)}°`
+          : undefined}
       />
       {#if !targetIsMoon}
         <label class="moon-toggle">
@@ -248,7 +258,9 @@
 
     <section class="panel">
       <h3>Yearly altitude</h3>
-      <YearlyChart model={yearlyModel} />
+      {#key `${object.id}-${yearlyModel.year}`}
+        <YearlyChart model={yearlyModel} />
+      {/key}
     </section>
 
     <section class="panel">
