@@ -24,9 +24,19 @@ There is also an all-sky chart — a fish-eye view of the whole sky as if you we
 
 Drag the time slider to see when the target crosses your horizon, when twilight and darkness begin, and so on. You can also overlay the Moon's path and phase on either chart.
 
+The Results tab also shows a yearly altitude chart: the target's altitude at local midnight for every day of the year, so you can spot which season brings it highest above your horizon.
+
+## Creating a horizon file
+
+SkyPath reads the same horizon file format as NINA — a plain text file with one `azimuth altitude` pair per line. If you don't already have one, these tools can generate it:
+
+- There are several [NINA plugins](https://davidmoulton.me/nina-plugins/) that help with creating a horizon file.
+- [Gyrocam](https://rkinnett.github.io/gyrocam/), a phone-based horizon tracer.
+- [HRZ Creator](https://neuronburner.com/hrz-creator/).
+
 ## Report bugs and suggestions
 
-To report a bug or suggest an improvement, open an issue in the [issue tracker](https://codeberg.org/uaraven/skypath/issues).
+To report a bug or suggest an improvement, open an issue in the [issue tracker](https://github.com/uaraven/skypath/issues).
 
 ## Data and open source
 
@@ -46,4 +56,4 @@ SkyPath is built with [Svelte](https://svelte.dev/) and [Vite](https://vite.dev/
 
 SkyPath is free and open-source software, licensed under the GPL-3.0 license.
 
-The source code is hosted on [Codeberg](https://codeberg.org/uaraven/skypath).
+The source code is hosted on [GitHub](https://github.com/uaraven/skypath).
