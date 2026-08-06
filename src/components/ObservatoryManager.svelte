@@ -285,6 +285,18 @@
     overflow-y: auto;
   }
 
+  /* Above the stacked-layout breakpoint the panel is stretched to the full
+     height of the workspace next to it (App.svelte); let the list claim
+     whatever space that leaves so the toolbar sits at the panel's bottom
+     edge instead of right under a short list. */
+  @media (min-width: 801px) {
+    .list {
+      flex: 1;
+      max-height: none;
+      min-height: 0;
+    }
+  }
+
   .site {
     /* Not a pill: these are list rows, so they override the shared button. */
     display: flex;

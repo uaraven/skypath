@@ -175,29 +175,31 @@
         </label>
       </div>
 
-      {#if tab === 'search'}
-        <div role="tabpanel" id="panel-search" aria-labelledby="tab-search">
-          <ObjectSearch
-            {location}
-            {horizon}
-            {date}
-            onselect={choose}
-            bind:query
-            bind:filters
-          />
-        </div>
-      {:else}
-        <div role="tabpanel" id="panel-results" aria-labelledby="tab-results">
-          <ResultsPanel
-            {object}
-            {location}
-            {horizon}
-            {date}
-            observatoryName={selected.name}
-            bind:imageOpen
-          />
-        </div>
-      {/if}
+      <div class="tabpanel-scroll">
+        {#if tab === 'search'}
+          <div role="tabpanel" id="panel-search" aria-labelledby="tab-search">
+            <ObjectSearch
+              {location}
+              {horizon}
+              {date}
+              onselect={choose}
+              bind:query
+              bind:filters
+            />
+          </div>
+        {:else}
+          <div role="tabpanel" id="panel-results" aria-labelledby="tab-results">
+            <ResultsPanel
+              {object}
+              {location}
+              {horizon}
+              {date}
+              observatoryName={selected.name}
+              bind:imageOpen
+            />
+          </div>
+        {/if}
+      </div>
     </section>
   </main>
 
@@ -217,21 +219,50 @@
   .app {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /*
+   * Above the stacked-layout breakpoint, `#app` fills the viewport (see
+   * app.css) and this column has to match it exactly: the masthead and
+   * footer keep their natural size, `main` takes what's left, and only the
+   * active tabpanel scrolls — the sidebar and tab titles stay fixed.
+   */
+  @media (min-width: 801px) {
+    .app {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .masthead,
+    .colophon {
+      flex: none;
+    }
+
+    main {
+      flex: 1;
+      min-height: 0;
+    }
   }
 
   .masthead {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .title {
     display: flex;
     align-items: center;
     gap: 0.85rem;
+  }
+
+  .title h1 {
+    font-size: 1.25rem;
+    line-height: 1.2;
   }
 
   .logo {
@@ -255,12 +286,10 @@
   }
 
   .colophon {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    margin-top: 0.35rem;
     color: var(--text-dim);
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
   }
 
@@ -275,7 +304,47 @@
   .workspace {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    /* Matches padding-bottom below: the gap above the tabpanel and the
+       padding below it are the scroll area's top/bottom breathing room. */
+    gap: 0.5rem;
+    /* Override .panel's uniform padding: the bottom edge sits below the
+       scrollable tabpanel, not against static content, so it doesn't need
+       as much room as the other three sides. Left/right are dropped
+       entirely — .tabpanel-scroll needs to reach the panel's border so its
+       scrollbar sits flush against it, not inset inside the gutter; the
+       gutter moves onto .tabbar and the tabpanel content instead. */
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media (min-width: 801px) {
+    /* Both columns stretch to `main`'s full height so the sidebar and the
+       workspace's tabbar sit fixed while the tabpanel below them scrolls. */
+    main {
+      align-items: stretch;
+    }
+
+    .workspace {
+      min-height: 0;
+    }
+
+    /* The sidebar can outgrow the viewport on its own (many observatories);
+       it scrolls internally rather than pushing the page taller. */
+    main > :global(.observatories) {
+      overflow-y: auto;
+      min-height: 0;
+    }
+
+    .tabbar {
+      flex: none;
+    }
+
+    .tabpanel-scroll {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
   }
 
   .tabbar {
@@ -284,7 +353,15 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
+    padding: 0 1.5rem;
     border-bottom: 1px solid var(--border);
+  }
+
+  /* The gutter .workspace no longer provides (see above) — kept on the
+     tabpanel content itself so the scrollbar of .tabpanel-scroll can sit
+     flush against the panel's border instead of inset inside the padding. */
+  :global([role='tabpanel']) {
+    padding: 0 1.5rem;
   }
 
   [role='tablist'] {
@@ -359,6 +436,12 @@
     /* Panel padding is 1.5rem a side — a quarter of a phone's width. */
     .app :global(.panel) {
       padding: 1rem;
+    }
+
+    .tabbar,
+    :global([role='tabpanel']) {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 </style>
