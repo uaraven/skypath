@@ -1,14 +1,19 @@
 <script lang="ts">
   /**
    * Altitude at local midnight across a calendar year: months left-to-right,
-   * altitude 0–90° up. No horizon, no Moon overlay, no twilight bands — the
-   * seasonal shape of "how high does this get around midnight," not a single
-   * night's track (that's `AltitudeChart`).
+   * altitude 0–90° up. No horizon, no Moon overlay, no twilight bands on
+   * this plot itself — the seasonal shape of "how high does this get around
+   * midnight," not a single night's track.
    *
-   * Purely presentational — everything astronomical arrives in `model`
-   * (`lib/charts/yearly.ts`).
+   * The day-of-year slider below it also drives a second, full-detail
+   * `AltitudeChart` for the selected night (horizon + Moon, no time-of-night
+   * marker) — that's the nightly track the yearly plot deliberately omits.
+   *
+   * Purely presentational — everything astronomical arrives via `model`
+   * (`lib/charts/yearly.ts`) and `altitudeChartModel` for the nightly preview.
    */
   import {
+    altitudeChartModel,
     altitudeTicks,
     altitudeToY,
     markerTriangle,
@@ -22,13 +27,20 @@
     type PlotArea,
     type YearlyChartModel,
   } from '../lib/charts'
+  import type { GeoLocation } from '../lib/astro/types'
+  import type { Horizon } from '../lib/horizon'
+  import AltitudeChart from './AltitudeChart.svelte'
   import TimeSlider from './TimeSlider.svelte'
 
   interface Props {
     model: YearlyChartModel
+    location: GeoLocation
+    horizon: Horizon
+    /** Whether the nightly preview chart overlays the Moon. */
+    includeMoon?: boolean
   }
 
-  let { model }: Props = $props()
+  let { model, location, horizon, includeMoon = true }: Props = $props()
 
   /**
    * Day of the year shown by the slider, as an index into `model.points`
@@ -106,6 +118,19 @@
     selected
       ? `${formatDate(selected.time)} — ${Math.round(selected.altitude)}°`
       : '',
+  )
+
+  /** The full night around the day-of-year slider's current selection. */
+  const nightlyModel = $derived(
+    selected
+      ? altitudeChartModel({
+          object: model.object,
+          location,
+          date: selected.time,
+          horizon,
+          includeMoon,
+        })
+      : null,
   )
 
   const summary = $derived(
@@ -218,6 +243,10 @@
     {/if}
   </svg>
 </figure>
+
+{#if nightlyModel}
+  <AltitudeChart model={nightlyModel} height={HEIGHT} />
+{/if}
 
 {#if selected}
   <TimeSlider
