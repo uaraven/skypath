@@ -31,6 +31,24 @@ body {
   min-height: 100%;
 }
 
+/*
+ * Above the stacked-layout breakpoint (App.svelte's own `main` query), the
+ * page itself no longer scrolls: the masthead, sidebar and tab titles stay
+ * put and only the active tabpanel scrolls, so `#app` has to fill the
+ * viewport rather than just its content's height.
+ */
+@media (min-width: 801px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #app {
+    height: 100%;
+  }
+}
+
 a {
   color: var(--accent);
   transition: color var(--transition);
