@@ -105,7 +105,7 @@
           href="https://davidmoulton.me/nina-plugins/"
           target="_blank"
           rel="noopener noreferrer">NINA plugins</a
-        > that simplify creation of horizn files.
+        > that simplify creation of horizon files.
       </li>
       <li>
         <a
