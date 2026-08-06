@@ -257,9 +257,14 @@
     </section>
 
     <section class="panel">
-      <h3>Yearly altitude</h3>
+      <h3>Yearly altitude at midnight</h3>
       {#key `${object.id}-${yearlyModel.year}`}
-        <YearlyChart model={yearlyModel} />
+        <YearlyChart
+          model={yearlyModel}
+          {location}
+          {horizon}
+          includeMoon={overlayMoon}
+        />
       {/key}
     </section>
 

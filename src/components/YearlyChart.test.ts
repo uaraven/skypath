@@ -8,6 +8,7 @@ import { describe, expect, it } from 'vitest'
 import YearlyChart from './YearlyChart.svelte'
 import type { GeoLocation } from '../lib/astro/types'
 import { yearlyChartModel } from '../lib/charts'
+import { FLAT_HORIZON } from '../lib/horizon'
 import { objectByDesignation } from '../lib/catalog'
 import { MOON } from '../lib/astro/moon'
 
@@ -26,8 +27,13 @@ function model(
   })
 }
 
-function renderChart(overrides = {}) {
-  const { container } = render(YearlyChart, { model: model(overrides) })
+function renderChart(overrides = {}, props: Record<string, unknown> = {}) {
+  const { container } = render(YearlyChart, {
+    model: model(overrides),
+    location: KYIV,
+    horizon: FLAT_HORIZON,
+    ...props,
+  })
   return container.querySelector('svg')!
 }
 
@@ -38,7 +44,7 @@ describe('YearlyChart', () => {
     expect(paths).toHaveLength(1)
   })
 
-  it('draws no horizon or Moon elements — this chart has neither', () => {
+  it("draws no horizon or Moon elements on the yearly plot itself — that's the nightly chart's job", () => {
     const svg = renderChart()
     expect(svg.querySelectorAll('[class*="horizon"]')).toHaveLength(0)
     expect(svg.querySelectorAll('[class*="moon"]')).toHaveLength(0)
@@ -71,7 +77,11 @@ describe('YearlyChart', () => {
   })
 
   it('renders a slider that lets any day of the year be selected', () => {
-    const { container } = render(YearlyChart, { model: model() })
+    const { container } = render(YearlyChart, {
+      model: model(),
+      location: KYIV,
+      horizon: FLAT_HORIZON,
+    })
     const slider = container.querySelector('input[type="range"]')
     expect(slider).not.toBeNull()
     expect(slider?.getAttribute('max')).toBe(
@@ -86,8 +96,43 @@ describe('YearlyChart', () => {
       year: 2026,
     })
     expect(moonModel.points.length).toBe(model().points.length)
-    // Still just one polyline — the component doesn't assume a point count.
-    const { container } = render(YearlyChart, { model: moonModel })
-    expect(container.querySelectorAll('.trajectory')).toHaveLength(1)
+    const { container } = render(YearlyChart, {
+      model: moonModel,
+      location: KYIV,
+      horizon: FLAT_HORIZON,
+    })
+    // The yearly plot's own trajectory — the nightly preview chart draws a
+    // second one, for the selected night.
+    expect(container.querySelector('svg')!.querySelectorAll('.trajectory'))
+      .toHaveLength(1)
+  })
+
+  it('renders a nightly preview chart for the day the slider currently selects', () => {
+    const { container } = render(YearlyChart, {
+      model: model(),
+      location: KYIV,
+      horizon: FLAT_HORIZON,
+    })
+    const svgs = container.querySelectorAll('svg')
+    expect(svgs).toHaveLength(2)
+    const nightly = svgs[1]
+    // Horizon and Moon are drawn on the nightly chart...
+    expect(nightly.querySelectorAll('.horizon-line')).toHaveLength(1)
+    expect(nightly.querySelectorAll('[class*="moon"]').length).toBeGreaterThan(
+      0,
+    )
+    // ...but there is no time-of-night marker, unlike the Results tab's chart.
+    expect(nightly.querySelectorAll('.marker')).toHaveLength(0)
+  })
+
+  it('omits the Moon from the nightly preview when told to', () => {
+    const { container } = render(YearlyChart, {
+      model: model(),
+      location: KYIV,
+      horizon: FLAT_HORIZON,
+      includeMoon: false,
+    })
+    const nightly = container.querySelectorAll('svg')[1]
+    expect(nightly.querySelectorAll('[class*="moon"]')).toHaveLength(0)
   })
 })

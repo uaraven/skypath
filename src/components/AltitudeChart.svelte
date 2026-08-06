@@ -45,21 +45,35 @@
      * clicked. Omitted — the default — leaves the chart non-interactive.
      */
     onScrub?: (minutes: number) => void
+    /**
+     * Full-size viewBox height in user units. Lets a caller shrink the plot
+     * (e.g. to match a neighbouring chart's rendered height) while keeping
+     * every full-mode feature — bands, axes, horizon, Moon. Ignored in
+     * compact mode, which has its own fixed thumbnail size.
+     */
+    height?: number
   }
 
-  let { model, compact = false, markerTime = null, onScrub }: Props = $props()
+  let {
+    model,
+    compact = false,
+    markerTime = null,
+    onScrub,
+    height = 400,
+  }: Props = $props()
 
   const interactive = $derived(!compact && !!onScrub)
 
   const WIDTH = $derived(compact ? 420 : 960)
-  const HEIGHT = $derived(compact ? 96 : 400)
+  const HEIGHT = $derived(compact ? 96 : height)
   // The full chart keeps a tall top margin — the header band — so the compass
   // row and a near-zenith transit label sit above the plot without clipping at
-  // the viewBox edge or reaching down into the plotted area.
+  // the viewBox edge or reaching down into the plotted area. Top/bottom margins
+  // stay fixed as `height` varies; only the plot itself grows or shrinks.
   const PLOT: PlotArea = $derived(
     compact
       ? { left: 0, top: 0, width: 420, height: 96 }
-      : { left: 46, top: 58, width: 900, height: 296 },
+      : { left: 46, top: 58, width: 900, height: height - 58 - 46 },
   )
 
   /** Text baseline for the compass row, near the top of the header band. */
