@@ -193,6 +193,15 @@
       flex-wrap: wrap;
     }
 
+    /*
+     * flex:1 + min-width:0 lets the input shrink to nothing instead of
+     * wrapping, so it never gets the "flex-wrap" treatment it needs to move
+     * to its own line. Forcing it onto a full-width row fixes that.
+     */
+    input {
+      flex-basis: 100%;
+    }
+
     .readout {
       text-align: left;
     }
