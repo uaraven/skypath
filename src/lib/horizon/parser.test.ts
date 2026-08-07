@@ -107,6 +107,16 @@ describe('parseHorizon', () => {
     expect(parseHorizon('')).toEqual({ points: [], issues: [] })
     expect(parseHorizon('   \n\n')).toEqual({ points: [], issues: [] })
   })
+
+  it('caps pathologically long input and reports the overflow', () => {
+    const lines = Array.from({ length: 405 }, (_, i) => `${i % 360} 10`)
+    const { points, issues } = parseHorizon(lines.join('\n'))
+
+    expect(points.length).toBeLessThanOrEqual(360)
+    expect(
+      issues.some((issue) => issue.message.includes('too many lines')),
+    ).toBe(true)
+  })
 })
 
 describe('horizonFromText', () => {

@@ -27,7 +27,8 @@ Planning documents live in `.plan/`:
 - `npm test` (`test:watch`) — Vitest; `npm run check` — svelte-check + tsc
   - Three projects: `test:unit` (Node, `src/lib/**`), `test:components` (jsdom + Testing Library, `src/components/**`) and `test:visual` (real Chromium via Playwright, `src/visual/**`). Put a test next to what it covers; the project is chosen by directory, not by filename.
   - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face. The Playwright instance also pins `context.timezoneId` — `env: { TZ }` only reaches the Node process, and since the charts are built from _local_ noon, the host timezone would otherwise draw a different night than the assertions compute.
-- `npm run format` — Prettier (no ESLint)
+- `npm run format` — Prettier
+- `npm run lint` (`lint:fix`) — ESLint (TypeScript + Svelte, flat config in `eslint.config.js`)
 - `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC (Messier/NGC/IC) and VizieR (Sharpless 2, LDN)
 
 ## Code layout

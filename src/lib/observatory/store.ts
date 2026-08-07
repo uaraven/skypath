@@ -235,10 +235,10 @@ function initialState(): ObservatoryState {
 }
 
 function newId(): string {
-  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
-    return crypto.randomUUID()
-  }
-  return `obs-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+  return (
+    crypto?.randomUUID?.() ??
+    `obs-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+  )
 }
 
 /** The app-wide store. Tests build their own with an injected storage. */

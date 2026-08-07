@@ -16,12 +16,20 @@
   /** Issues are listed in full up to this many; beyond it the rest are counted. */
   const MAX_LISTED_ISSUES = 5
 
+  /** A horizon file is a handful of "azimuth altitude" lines — well under this. */
+  const MAX_FILE_BYTES = 1_000_000
+
   async function loadFile(event: Event) {
     const input = event.currentTarget as HTMLInputElement
     const file = input.files?.[0]
     if (!file) return
 
     fileError = null
+    if (file.size > MAX_FILE_BYTES) {
+      fileError = `${file.name} is too large (over 1 MB).`
+      input.value = ''
+      return
+    }
     try {
       text = await file.text()
     } catch {
@@ -54,12 +62,16 @@
 
   <label>
     <span>…or paste it here</span>
+    <!-- eslint-disable svelte/no-useless-mustaches -- the \n escapes need
+         the mustache; a plain attribute would print them literally instead
+         of breaking the placeholder into lines. -->
     <textarea
       bind:value={text}
       rows="8"
       spellcheck="false"
       placeholder={'# azimuth altitude, one pair per line\n0 15\n90 22\n180 8'}
     ></textarea>
+    <!-- eslint-enable svelte/no-useless-mustaches -->
   </label>
 
   <p class="summary" class:warn={parsed.issues.length > 0}>

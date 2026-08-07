@@ -40,6 +40,7 @@ SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and
 ```sh
 npm test           # all three Vitest projects
 npm run check      # svelte-check + tsc
+npm run lint       # ESLint (TypeScript + Svelte)
 npm run format     # Prettier
 npm run catalog:build   # regenerate catalogue JSON from OpenNGC and VizieR
 ```
