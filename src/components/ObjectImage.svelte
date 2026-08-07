@@ -96,6 +96,7 @@
           {alt}
           width="300"
           height="300"
+          referrerpolicy="no-referrer"
           class:hidden={status !== 'loaded'}
           onload={() => (loadedSrc = src)}
           onerror={() => (failedSrc = src)}

@@ -128,6 +128,26 @@ describe('altitudeChartModel', () => {
     expect(model.bands[0].start).toEqual(model.window.start)
     expect(model.bands[model.bands.length - 1].end).toEqual(model.window.end)
   })
+
+  it('caches by input so identical calls reuse the same model', () => {
+    const input = { object: M13, location: KYIV, date: DATE }
+    const first = altitudeChartModel(input)
+    const second = altitudeChartModel({ ...input })
+
+    expect(second).toBe(first)
+  })
+
+  it('does not share a cached model across different horizons', () => {
+    const input = { object: M13, location: KYIV, date: DATE }
+    const flat = altitudeChartModel(input)
+    const withHorizon = altitudeChartModel({
+      ...input,
+      horizon: horizonFromText(carrHorizon),
+    })
+
+    expect(withHorizon).not.toBe(flat)
+    expect(withHorizon.horizonTrack).not.toEqual(flat.horizonTrack)
+  })
 })
 
 describe('cardinalCrossings', () => {

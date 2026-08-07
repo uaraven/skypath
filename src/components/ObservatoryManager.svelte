@@ -81,6 +81,9 @@
     URL.revokeObjectURL(url)
   }
 
+  /** Above this, a file is treated as malformed rather than parsed. */
+  const MAX_IMPORT_BYTES = 2_000_000
+
   /** Reads the picked file and opens the import dialog with what it found. */
   async function loadImportFile(event: Event) {
     const input = event.currentTarget as HTMLInputElement
@@ -88,6 +91,16 @@
     // Reset first, so re-picking the same file after a change fires again.
     input.value = ''
     if (!file) return
+
+    if (file.size > MAX_IMPORT_BYTES) {
+      importResult = {
+        observatories: [],
+        invalid: 0,
+        error: `${file.name} is too large to import (over 2 MB).`,
+      }
+      dialog = 'import'
+      return
+    }
 
     let text: string
     try {

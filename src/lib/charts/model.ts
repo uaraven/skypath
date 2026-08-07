@@ -81,7 +81,64 @@ export interface AltitudeChartInput {
   includeMoon?: boolean
 }
 
-export function altitudeChartModel({
+/**
+ * Search results render one `AltitudeChart` per row, and every keystroke
+ * rebuilds the whole result set — so the same (object, night, observatory)
+ * model gets recomputed on each edit even though nothing about it changed.
+ * A small keyed cache turns those repeats into a lookup.
+ *
+ * Capped rather than unbounded: a long search session can touch far more
+ * than 50 distinct objects, and the memory a stale model holds (a night's
+ * worth of trajectory points) isn't worth keeping past that.
+ */
+const MODEL_CACHE_LIMIT = 50
+const modelCache = new Map<string, AltitudeChartModel>()
+
+export function altitudeChartModel(
+  input: AltitudeChartInput,
+): AltitudeChartModel {
+  const key = modelCacheKey(input)
+  const cached = modelCache.get(key)
+  if (cached) {
+    // Re-insert so the key counts as recently used for the LRU eviction below.
+    modelCache.delete(key)
+    modelCache.set(key, cached)
+    return cached
+  }
+
+  const model = computeAltitudeChartModel(input)
+  modelCache.set(key, model)
+  if (modelCache.size > MODEL_CACHE_LIMIT) {
+    const oldest = modelCache.keys().next().value
+    if (oldest !== undefined) modelCache.delete(oldest)
+  }
+  return model
+}
+
+function modelCacheKey({
+  object,
+  location,
+  date,
+  horizon = FLAT_HORIZON,
+  stepMinutes,
+  includeMoon = false,
+}: AltitudeChartInput): string {
+  return [
+    object.id,
+    location.latitude.toFixed(6),
+    location.longitude.toFixed(6),
+    nightWindow(date).start.getTime(),
+    stepMinutes ?? '',
+    horizonHash(horizon),
+    includeMoon,
+  ].join('|')
+}
+
+function horizonHash(horizon: Horizon): string {
+  return horizon.points.map((p) => `${p.azimuth},${p.altitude}`).join(';')
+}
+
+function computeAltitudeChartModel({
   object,
   location,
   date,
@@ -205,7 +262,7 @@ function cachedBands(
   window: TimeWindow,
   location: GeoLocation,
 ): readonly SkyBand[] {
-  const key = `${window.start.getTime()}|${window.end.getTime()}|${location.latitude}|${location.longitude}`
+  const key = `${window.start.getTime()}|${window.end.getTime()}|${location.latitude.toFixed(6)}|${location.longitude.toFixed(6)}`
   if (lastBands?.key !== key) {
     lastBands = { key, bands: skyBands(window, location) }
   }

@@ -42,11 +42,28 @@ const SEPARATOR = /[\s,]+/
 const MIN_ALTITUDE = -90
 const MAX_ALTITUDE = 90
 
+/**
+ * A real horizon has at most a few hundred points. Anything past this is
+ * pathological input (or an attempt to make the browser parse a huge file) —
+ * later lines are reported as skipped rather than processed.
+ */
+const MAX_LINES = 400
+
 export function parseHorizon(text: string): HorizonParseResult {
   const issues: HorizonParseIssue[] = []
   const byAzimuth = new Map<number, HorizonPoint>()
 
-  text.split(/\r?\n/).forEach((raw, index) => {
+  const allLines = text.split(/\r?\n/)
+  const lines = allLines.slice(0, MAX_LINES)
+  if (allLines.length > MAX_LINES) {
+    issues.push({
+      line: MAX_LINES + 1,
+      text: '',
+      message: `too many lines; only the first ${MAX_LINES} were read`,
+    })
+  }
+
+  lines.forEach((raw, index) => {
     const line = index + 1
     const content = raw.replace(COMMENT, '').trim()
     if (content === '') return

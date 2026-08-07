@@ -139,7 +139,9 @@ describe('ResultsPanel', () => {
 
   const yearlyPanel = (container: HTMLElement) =>
     [...container.querySelectorAll('.panel')].find(
-      (panel) => panel.querySelector('h3')?.textContent === 'Yearly altitude',
+      (panel) =>
+        panel.querySelector('h3')?.textContent ===
+        'Yearly altitude at midnight',
     )!
 
   it('shows the yearly altitude panel below the all-sky view, with a trajectory', () => {
@@ -148,7 +150,7 @@ describe('ResultsPanel', () => {
     const headings = [...container.querySelectorAll('h3')].map(
       (h) => h.textContent,
     )
-    expect(headings.indexOf('Yearly altitude')).toBeGreaterThan(
+    expect(headings.indexOf('Yearly altitude at midnight')).toBeGreaterThan(
       headings.indexOf('All-sky view'),
     )
     expect(yearlyPanel(container).querySelector('.trajectory')).not.toBeNull()

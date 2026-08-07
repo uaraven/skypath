@@ -1,7 +1,7 @@
 {
   "name": "skypath",
   "private": true,
-  "version": "0.5.1",
+  "version": "0.5.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,12 +16,15 @@
     "test:visual": "vitest run --project visual",
     "test:visual:open": "vitest --project visual --browser.headless=false",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "astronomy-engine": "^2.1.19"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/svelte": "^5.4.2",
@@ -29,6 +32,9 @@
     "@tsconfig/svelte": "^5.0.8",
     "@types/node": "^24.13.2",
     "@vitest/browser": "^3.2.7",
+    "eslint": "^10.8.0",
+    "eslint-plugin-svelte": "^3.22.0",
+    "globals": "^17.9.0",
     "jsdom": "^29.1.1",
     "playwright": "^1.61.1",
     "prettier": "^3.4.2",
@@ -36,6 +42,7 @@
     "svelte": "^5.56.4",
     "svelte-check": "^4.7.1",
     "typescript": "~6.0.2",
+    "typescript-eslint": "^8.66.0",
     "vite": "^8.1.1",
     "vitest": "^3.0.5"
   },
