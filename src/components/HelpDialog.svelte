@@ -201,8 +201,8 @@
 
     <h4>License</h4>
     <p>
-      SkyPath is free and open-source software, licensed under the GPL-3.0
-      license. The source code is hosted on
+      SkyPath is free and open-source software, released into the public
+      domain under the Unlicense. The source code is hosted on
       <a
         href="https://github.com/uaraven/skypath"
         target="_blank"

@@ -54,6 +54,6 @@ SkyPath is built with [Svelte](https://svelte.dev/) and [Vite](https://vite.dev/
 
 ## License
 
-SkyPath is free and open-source software, licensed under the GPL-3.0 license.
+SkyPath is free and open-source software, released into the public domain under the Unlicense.
 
 The source code is hosted on [GitHub](https://github.com/uaraven/skypath).

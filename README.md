@@ -67,4 +67,4 @@ Messier, NGC and IC are generated from [OpenNGC](https://github.com/mattiaverga/
 
 ## Licence
 
-[GPL-3.0](LICENSE).
+As this project is coded almost exclusively using LLMs, the only proper way to license it is to put it into public domain, thus this project is released under the terms of [The Unlicense](LICENSE).
