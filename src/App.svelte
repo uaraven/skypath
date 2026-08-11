@@ -206,7 +206,7 @@
   <footer class="colophon">
     <p>
       SkyPath v{version}.
-      <a href="https://voronin.cc/astro">https://voronin.cc/astro</a>
+      <a href="https://voronin.cc/projects/astro">https://voronin.cc/projects/astro</a>
     </p>
   </footer>
 
