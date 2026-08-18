@@ -56,7 +56,7 @@
         : undefined
 
     rows.push({
-      label: 'Rises (0°)',
+      label: 'Rises',
       time: target.rise?.time ?? null,
       point: target.rise,
       absent,
@@ -88,7 +88,7 @@
     }
 
     rows.push({
-      label: 'Sets (0°)',
+      label: 'Sets',
       time: target.set?.time ?? null,
       point: target.set,
       absent,
