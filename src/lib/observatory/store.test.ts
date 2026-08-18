@@ -153,6 +153,55 @@ describe('CRUD', () => {
   })
 })
 
+describe('reorder', () => {
+  it('moves an entry before its target', () => {
+    const store = new ObservatoryStore(storage)
+    const greenwich = store.all[0]
+    const kyiv = store.create(KYIV)
+    const dark = store.create(DARK_SITE)
+
+    store.reorder(dark.id, greenwich.id, 'before')
+
+    expect(store.all.map((o) => o.id)).toEqual([dark.id, greenwich.id, kyiv.id])
+  })
+
+  it('moves an entry after its target', () => {
+    const store = new ObservatoryStore(storage)
+    const greenwich = store.all[0]
+    const kyiv = store.create(KYIV)
+    const dark = store.create(DARK_SITE)
+
+    store.reorder(greenwich.id, kyiv.id, 'after')
+
+    expect(store.all.map((o) => o.id)).toEqual([kyiv.id, greenwich.id, dark.id])
+  })
+
+  it('leaves selection and persistence intact', () => {
+    const store = new ObservatoryStore(storage)
+    const greenwich = store.all[0]
+    const kyiv = store.create(KYIV)
+    store.select(greenwich.id)
+
+    store.reorder(kyiv.id, greenwich.id, 'before')
+
+    expect(store.selected.id).toBe(greenwich.id)
+    const reloaded = new ObservatoryStore(storage)
+    expect(reloaded.all.map((o) => o.id)).toEqual([kyiv.id, greenwich.id])
+  })
+
+  it('is a no-op for unknown ids or moving an entry relative to itself', () => {
+    const store = new ObservatoryStore(storage)
+    const greenwich = store.all[0]
+    const before = store.state
+
+    store.reorder(greenwich.id, greenwich.id, 'before')
+    store.reorder('nope', greenwich.id, 'before')
+    store.reorder(greenwich.id, 'nope', 'before')
+
+    expect(store.state).toEqual(before)
+  })
+})
+
 describe('importObservatories', () => {
   const withId = (input: ObservatoryInput, id: string): Observatory => ({
     ...input,

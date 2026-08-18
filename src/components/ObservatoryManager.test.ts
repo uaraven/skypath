@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/svelte'
+import { fireEvent, render, screen, waitFor } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { MemoryStorage } from '../lib/storage'
@@ -76,6 +76,51 @@ describe('listing observatories', () => {
 
     expect(store.selected.id).toBe(greenwich)
     expect(persisted(storage).selectedId).toBe(greenwich)
+  })
+})
+
+describe('reordering', () => {
+  /**
+   * jsdom has no `DragEvent` constructor and its plain `Event` ignores
+   * unrecognised init properties (`clientY`, `dataTransfer`), so
+   * `fireEvent.dragOver` etc. can't carry the values the handlers read —
+   * define them on the event by hand instead.
+   */
+  function dragEvent(
+    type: string,
+    init: { dataTransfer?: unknown; clientY?: number } = {},
+  ) {
+    const event = new Event(type, { bubbles: true, cancelable: true })
+    if (init.dataTransfer !== undefined) {
+      Object.defineProperty(event, 'dataTransfer', { value: init.dataTransfer })
+    }
+    if (init.clientY !== undefined) {
+      Object.defineProperty(event, 'clientY', { value: init.clientY })
+    }
+    return event
+  }
+
+  it('moves a site via drag and drop on its handle', async () => {
+    const { store } = setup()
+    addSite(store, 'Dark site')
+    await waitFor(() => expect(screen.getAllByRole('option')).toHaveLength(2))
+
+    const [greenwich, darkSite] = screen.getAllByRole('option')
+    // Land the drop in the top half of Greenwich's row, so Dark site ends up
+    // ahead of it.
+    greenwich.getBoundingClientRect = () =>
+      ({ top: 0, bottom: 40, height: 40 }) as DOMRect
+    const dataTransfer = { setData: vi.fn() }
+    const handle = darkSite.querySelector('.drag-handle')!
+
+    await fireEvent(handle, dragEvent('dragstart', { dataTransfer }))
+    await fireEvent(
+      greenwich,
+      dragEvent('dragover', { dataTransfer, clientY: 5 }),
+    )
+    await fireEvent(greenwich, dragEvent('drop', { dataTransfer, clientY: 5 }))
+
+    expect(store.all.map((o) => o.name)).toEqual(['Dark site', 'Greenwich'])
   })
 })
 
