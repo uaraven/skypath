@@ -51,6 +51,60 @@
       storeState.observatories[0],
   )
 
+  /** The site currently being dragged, and where it would land if dropped now. */
+  let draggedId = $state<string | null>(null)
+  let dragOver = $state<{ id: string; position: 'before' | 'after' } | null>(
+    null,
+  )
+
+  function onHandleDragStart(event: DragEvent, id: string) {
+    draggedId = id
+    event.dataTransfer?.setData('text/plain', id)
+    if (event.dataTransfer) event.dataTransfer.effectAllowed = 'move'
+  }
+
+  function onRowDragOver(event: DragEvent, id: string) {
+    if (!draggedId || draggedId === id) return
+    event.preventDefault()
+    if (event.dataTransfer) event.dataTransfer.dropEffect = 'move'
+
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
+    if (event.clientY < rect.top + rect.height / 2) {
+      dragOver = { id, position: 'before' }
+      return
+    }
+
+    // The bottom half of this row and the top half of the next are the same
+    // gap. Normalize to the next row's "before" so that gap has exactly one
+    // state — otherwise the two halves each draw their own edge line and the
+    // gap gets a double indicator.
+    const rows = storeState.observatories
+    const next = rows[rows.findIndex((o) => o.id === id) + 1]
+    dragOver =
+      next && next.id !== draggedId
+        ? { id: next.id, position: 'before' }
+        : { id, position: 'after' }
+  }
+
+  function onRowDragLeave(id: string) {
+    if (dragOver?.id === id) dragOver = null
+  }
+
+  function onRowDrop(event: DragEvent, targetId: string) {
+    event.preventDefault()
+    const sourceId = draggedId
+    const position = dragOver?.position ?? 'before'
+    draggedId = null
+    dragOver = null
+    if (!sourceId || sourceId === targetId) return
+    store.reorder(sourceId, targetId, position)
+  }
+
+  function onHandleDragEnd() {
+    draggedId = null
+    dragOver = null
+  }
+
   function openNew() {
     editing = null
     dialog = 'editor'
@@ -176,9 +230,26 @@
         role="option"
         aria-selected={observatory.id === storeState.selectedId}
         class:selected={observatory.id === storeState.selectedId}
+        class:drag-over-before={dragOver?.id === observatory.id &&
+          dragOver.position === 'before'}
+        class:drag-over-after={dragOver?.id === observatory.id &&
+          dragOver.position === 'after'}
         onclick={() => store.select(observatory.id)}
         ondblclick={openEdit}
+        ondragover={(event) => onRowDragOver(event, observatory.id)}
+        ondragleave={() => onRowDragLeave(observatory.id)}
+        ondrop={(event) => onRowDrop(event, observatory.id)}
       >
+        <span
+          class="drag-handle"
+          draggable="true"
+          aria-hidden="true"
+          ondragstart={(event) => onHandleDragStart(event, observatory.id)}
+          ondragend={onHandleDragEnd}
+          onclick={(event) => event.stopPropagation()}
+        >
+          <Icon name="grip" size={14} />
+        </span>
         <span class="site-name">{observatory.name}</span>
       </button>
     {/each}
@@ -313,9 +384,9 @@
   .site {
     /* Not a pill: these are list rows, so they override the shared button. */
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
     width: 100%;
     padding: 0.4rem 0.6rem;
     border: 1px solid transparent;
@@ -326,6 +397,31 @@
   .site.selected {
     background-color: rgba(116, 187, 241, 0.12);
     border-color: var(--border);
+  }
+
+  /* A line at the top or bottom edge previews where the dragged site would
+     land, without waiting for the drop to actually reorder anything. */
+  .site.drag-over-before {
+    box-shadow: inset 0 2px 0 var(--accent-bright);
+  }
+
+  .site.drag-over-after {
+    box-shadow: inset 0 -2px 0 var(--accent-bright);
+  }
+
+  .drag-handle {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    margin: -0.4rem 0;
+    padding: 0.4rem 0.1rem;
+    color: var(--text-dim);
+    cursor: grab;
+  }
+
+  .drag-handle:active {
+    cursor: grabbing;
   }
 
   .site-name {

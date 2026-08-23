@@ -137,6 +137,25 @@ export class ObservatoryStore {
     return { added: added.length, skipped: incoming.length - added.length }
   }
 
+  /**
+   * Moves `id` to sit immediately before or after `targetId`, for drag-and-drop
+   * reordering. A no-op if either id is unknown or they're the same entry.
+   */
+  reorder(id: string, targetId: string, position: 'before' | 'after'): void {
+    if (id === targetId) return
+    const observatories = this.#state.observatories
+    if (!observatories.some((o) => o.id === id)) return
+
+    const moved = observatories.find((o) => o.id === id)!
+    const without = observatories.filter((o) => o.id !== id)
+    const targetIndex = without.findIndex((o) => o.id === targetId)
+    if (targetIndex === -1) return
+
+    const insertAt = position === 'before' ? targetIndex : targetIndex + 1
+    without.splice(insertAt, 0, moved)
+    this.#commit({ ...this.#state, observatories: without })
+  }
+
   /** Selects an existing observatory; unknown ids are ignored. */
   select(id: string): void {
     if (!this.byId(id)) return
