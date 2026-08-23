@@ -77,7 +77,7 @@ describe('EventTimesPanel', () => {
     expect(valueOf('Phase')).toMatch(/Crescent|Gibbous|Quarter|Full|New/)
     expect(screen.queryByText('Moonrise')).not.toBeInTheDocument()
     expect(screen.queryByText('Moonset')).not.toBeInTheDocument()
-    expect(valueOf('Rises (0°)')).toMatch(/\d\d:\d\d/)
+    expect(valueOf('Rises')).toMatch(/\d\d:\d\d/)
   })
 
   it('lists all eight sun events', () => {
@@ -136,8 +136,8 @@ describe('EventTimesPanel', () => {
   it('says a circumpolar object never sets instead of showing a dash', () => {
     renderPanel({ object: POLARIS })
 
-    expect(valueOf('Rises (0°)')).toContain('circumpolar')
-    expect(valueOf('Sets (0°)')).toContain('circumpolar')
+    expect(valueOf('Rises')).toContain('circumpolar')
+    expect(valueOf('Sets')).toContain('circumpolar')
   })
 
   it('says an object below the horizon all night never rises', () => {
@@ -145,8 +145,8 @@ describe('EventTimesPanel', () => {
     // equator ever comes up.
     renderPanel({ object: M42, location: NORTH_POLE })
 
-    expect(valueOf('Rises (0°)')).toContain('never rises')
-    expect(valueOf('Sets (0°)')).toContain('never rises')
+    expect(valueOf('Rises')).toContain('never rises')
+    expect(valueOf('Sets')).toContain('never rises')
   })
 
   it('explains polar day rather than showing eight blank sun rows', () => {
@@ -163,7 +163,7 @@ describe('EventTimesPanel', () => {
     expect(valueOf('Above horizon')).toContain('stays blocked')
     expect(valueOf('Below horizon')).toContain('stays blocked')
     // The mathematical horizon is a different question and still has answers.
-    expect(valueOf('Rises (0°)')).toMatch(/\d\d:\d\d/)
+    expect(valueOf('Rises')).toMatch(/\d\d:\d\d/)
   })
 
   it('drops the observer-horizon rows when the horizon is flat', () => {
@@ -171,7 +171,7 @@ describe('EventTimesPanel', () => {
 
     expect(screen.queryByText('Above horizon')).not.toBeInTheDocument()
     expect(screen.queryByText('Below horizon')).not.toBeInTheDocument()
-    expect(screen.getByText('Rises (0°)')).toBeInTheDocument()
+    expect(screen.getByText('Rises')).toBeInTheDocument()
   })
 
   it('keeps the observer-horizon rows when a horizon is set', () => {
@@ -179,7 +179,7 @@ describe('EventTimesPanel', () => {
 
     // With the Carr horizon in place these are genuinely different times from
     // the 0° rise and set, which is the whole reason both are listed.
-    expect(valueOf('Above horizon')).not.toBe(valueOf('Rises (0°)'))
-    expect(valueOf('Below horizon')).not.toBe(valueOf('Sets (0°)'))
+    expect(valueOf('Above horizon')).not.toBe(valueOf('Rises'))
+    expect(valueOf('Below horizon')).not.toBe(valueOf('Sets'))
   })
 })
