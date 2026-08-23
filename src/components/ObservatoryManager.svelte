@@ -67,10 +67,23 @@
     if (!draggedId || draggedId === id) return
     event.preventDefault()
     if (event.dataTransfer) event.dataTransfer.dropEffect = 'move'
+
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
-    const position =
-      event.clientY < rect.top + rect.height / 2 ? 'before' : 'after'
-    dragOver = { id, position }
+    if (event.clientY < rect.top + rect.height / 2) {
+      dragOver = { id, position: 'before' }
+      return
+    }
+
+    // The bottom half of this row and the top half of the next are the same
+    // gap. Normalize to the next row's "before" so that gap has exactly one
+    // state — otherwise the two halves each draw their own edge line and the
+    // gap gets a double indicator.
+    const rows = storeState.observatories
+    const next = rows[rows.findIndex((o) => o.id === id) + 1]
+    dragOver =
+      next && next.id !== draggedId
+        ? { id: next.id, position: 'before' }
+        : { id, position: 'after' }
   }
 
   function onRowDragLeave(id: string) {
