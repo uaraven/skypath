@@ -24,12 +24,12 @@
     yearlyChartModel,
   } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
-  import { skyViewFieldDegrees, skyViewUrl } from '../lib/images'
+  import { aladinViewParams } from '../lib/images'
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
   import EventTimesPanel from './EventTimesPanel.svelte'
   import Icon from './Icon.svelte'
-  import ObjectImage from './ObjectImage.svelte'
+  import ObjectSkyView from './ObjectSkyView.svelte'
   import { formatAngularSize } from './searchFilters'
   import TimeSlider from './TimeSlider.svelte'
   import YearlyChart from './YearlyChart.svelte'
@@ -54,17 +54,19 @@
   }: Props = $props()
 
   /**
-   * Only deep-sky objects get a survey image. A planet or the Moon moves
-   * against the background stars, so a cutout of the sky it happens to be
-   * crossing tonight would show everything except the target.
+   * Only deep-sky objects get a sky view. A planet or the Moon moves against
+   * the background stars, so a cutout of the sky it happens to be crossing
+   * tonight would show everything except the target.
    */
   const image = $derived.by(() => {
     if (!object || !isDeepSky(object)) return null
-    const field = skyViewFieldDegrees(object.size)
+    const { target, fov, survey } = aladinViewParams(object)
     return {
-      url: skyViewUrl(object),
-      alt: `Digitized Sky Survey image of ${object.name}`,
-      caption: `${formatAngularSize(field * 60)} field · DSS2 red`,
+      target,
+      fov,
+      survey,
+      alt: `Sky view of ${object.name}`,
+      caption: `${formatAngularSize(fov * 60)} field`,
     }
   })
 
@@ -207,8 +209,10 @@
     </header>
 
     {#if image}
-      <ObjectImage
-        url={image.url}
+      <ObjectSkyView
+        target={image.target}
+        fov={image.fov}
+        survey={image.survey}
         alt={image.alt}
         caption={image.caption}
         bind:open={imageOpen}

@@ -88,19 +88,20 @@
       path and phase on either chart.
     </p>
     <p>
-      The Results tab also shows a yearly altitude chart: the target's
-      altitude at local midnight for every day of the year, so you can spot
-      which season brings it highest above your horizon.
+      The Results tab also shows a yearly altitude chart: the target's altitude
+      at local midnight for every day of the year, so you can spot which season
+      brings it highest above your horizon.
     </p>
 
     <h4>Creating a horizon file</h4>
     <p>
       SkyPath reads the same horizon file format as NINA — a plain text file
-      with one <code>azimuth altitude</code> pair per line. If you don't
-      already have one, these tools can generate it:
+      with one <code>azimuth altitude</code> pair per line. If you don't already have
+      one, these tools can generate it:
     </p>
     <ul>
-      <li> There are several
+      <li>
+        There are several
         <a
           href="https://davidmoulton.me/nina-plugins/"
           target="_blank"
@@ -162,15 +163,16 @@
       </li>
     </ul>
     <p>
-      Sky images come from the
+      Sky views are rendered with
       <a
-        href="https://skyview.gsfc.nasa.gov/"
+        href="https://aladin.cds.unistra.fr/"
         target="_blank"
-        rel="noopener noreferrer">SkyView Virtual Observatory</a
+        rel="noopener noreferrer">Aladin Lite</a
       >
-      (NASA/GSFC), drawn from the Digitized Sky Survey — based on photographic plates
-      from the Palomar and UK Schmidt telescopes, digitized by the Space Telescope
-      Science Institute (AURA) and the Caltech Palomar Observatory Sky Survey.
+      (CDS, Strasbourg Observatory), drawn from the Digitized Sky Survey — based on
+      photographic plates from the Palomar and UK Schmidt telescopes, digitized by
+      the Space Telescope Science Institute (AURA) and the Caltech Palomar Observatory
+      Sky Survey.
     </p>
     <p>
       Ephemeris calculations use
@@ -201,8 +203,8 @@
 
     <h4>License</h4>
     <p>
-      SkyPath is free and open-source software, released into the public
-      domain under the Unlicense. The source code is hosted on
+      SkyPath is free and open-source software, released into the public domain
+      under the Unlicense. The source code is hosted on
       <a
         href="https://github.com/uaraven/skypath"
         target="_blank"

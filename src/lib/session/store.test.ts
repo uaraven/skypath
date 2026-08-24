@@ -45,7 +45,7 @@ describe('persistence', () => {
     })
   })
 
-  it('remembers the sky image collapsed', () => {
+  it('remembers the sky view collapsed', () => {
     new SessionStore(storage).setImageOpen(false)
 
     expect(new SessionStore(storage).state.imageOpen).toBe(false)
@@ -54,7 +54,7 @@ describe('persistence', () => {
   // Added after v1 shipped: an older saved session has no such field, and it
   // must read as the default rather than force a schema bump that would
   // discard the object and the night along with it.
-  it('reads a session saved before the sky image existed', () => {
+  it('reads a session saved before the sky view existed', () => {
     storage.setItem(
       SESSION_KEY,
       JSON.stringify({ version: 1, objectId: 'M13', dateText: '2026-10-15' }),

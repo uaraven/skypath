@@ -106,11 +106,11 @@ describe('persisting the selections', () => {
     })
   })
 
-  it('saves the sky image collapsed, and reopens it that way', async () => {
+  it('saves the sky view collapsed, and reopens it that way', async () => {
     const user = userEvent.setup()
     const { storage } = setup({ objectId: 'M13', dateText: '2026-10-15' })
 
-    await user.click(await screen.findByRole('button', { name: /sky image/i }))
+    await user.click(await screen.findByRole('button', { name: /sky view/i }))
 
     await waitFor(() => {
       expect(persisted(storage).imageOpen).toBe(false)
@@ -121,7 +121,7 @@ describe('persisting the selections', () => {
     cleanup()
     render(App, { props: { session: new SessionStore(storage) } })
     expect(
-      await screen.findByRole('button', { name: /sky image/i }),
+      await screen.findByRole('button', { name: /sky view/i }),
     ).toHaveAttribute('aria-expanded', 'false')
   })
 })

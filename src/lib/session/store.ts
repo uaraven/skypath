@@ -22,7 +22,7 @@ export interface Session {
   objectId: string | null
   /** The chosen night as `YYYY-MM-DD`, the form `<input type="date">` speaks. */
   dateText: string | null
-  /** Whether the Results tab's sky image is expanded. */
+  /** Whether the Results tab's sky view is expanded. */
   imageOpen: boolean
 }
 
