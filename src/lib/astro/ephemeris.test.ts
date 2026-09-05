@@ -1,6 +1,12 @@
 import { Body, Equator, Horizon, SearchHourAngle } from 'astronomy-engine'
 import { describe, expect, it } from 'vitest'
-import { horizontalAt, toObserver, withEngineBody } from './ephemeris'
+import {
+  angularSeparation,
+  horizontalAt,
+  toObserver,
+  withEngineBody,
+} from './ephemeris'
+import { MOON } from './moon'
 import type { DeepSkyObject, GeoLocation, SkyObject } from './types'
 
 const KYIV: GeoLocation = { latitude: 50.45, longitude: 30.52 }
@@ -149,5 +155,43 @@ describe('withEngineBody', () => {
     // Precession shifts J2000 slightly, so compare loosely.
     expect(eq.ra).toBeCloseTo(M13.ra, 1)
     expect(eq.dec).toBeCloseTo(M13.dec, 1)
+  })
+})
+
+describe('angularSeparation', () => {
+  const time = new Date(Date.UTC(2026, 6, 18, 22))
+
+  it('is zero for an object against itself', () => {
+    expect(angularSeparation(M13, M13, time, KYIV)).toBeCloseTo(0, 6)
+  })
+
+  /**
+   * Pure spherical geometry, independent of the library: two points on the
+   * celestial equator 6h (90°) apart in RA are 90° apart on the sky.
+   */
+  it('matches the great-circle distance for two equatorial points', () => {
+    const a = dso('a', 0, 0)
+    const b = dso('b', 6, 0)
+
+    expect(angularSeparation(a, b, time, KYIV)).toBeCloseTo(90, 1)
+  })
+
+  it('is symmetric', () => {
+    expect(angularSeparation(M13, M104, time, KYIV)).toBeCloseTo(
+      angularSeparation(M104, M13, time, KYIV),
+      6,
+    )
+  })
+
+  /**
+   * Exercises the Moon specifically — its topocentric parallax (up to about
+   * a degree) is the whole reason this function goes through `equatorOfDate`
+   * rather than raw catalogue coordinates.
+   */
+  it('returns a sane separation against the Moon', () => {
+    const separation = angularSeparation(M13, MOON, time, KYIV)
+
+    expect(separation).toBeGreaterThanOrEqual(0)
+    expect(separation).toBeLessThanOrEqual(180)
   })
 })

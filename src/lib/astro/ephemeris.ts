@@ -1,4 +1,5 @@
 import {
+  AngleBetween,
   Body,
   DefineStar,
   Equator,
@@ -106,4 +107,27 @@ export function horizontalAt(
   const eq = equatorOfDate(object, time, observer)
   const hor = Horizon(time, observer, eq.ra, eq.dec, REFRACTION[convention])
   return { altitude: hor.altitude, azimuth: hor.azimuth }
+}
+
+/**
+ * Angular separation between two objects as seen from `location`, in
+ * degrees.
+ *
+ * Uses topocentric of-date equatorial coordinates for both — the same call
+ * `horizontalAt` makes — so the Moon's parallax (up to about a degree) is
+ * accounted for rather than ignored: this is the one measurement in the app
+ * made *between* two bodies instead of against the horizon, so it matters
+ * more here than anywhere else. `AngleBetween` on the underlying vectors
+ * avoids hand-rolling the spherical trig.
+ */
+export function angularSeparation(
+  a: SkyObject,
+  b: SkyObject,
+  time: FlexibleDateTime,
+  location: GeoLocation,
+): number {
+  const observer = toObserver(location)
+  const eqA = equatorOfDate(a, time, observer)
+  const eqB = equatorOfDate(b, time, observer)
+  return AngleBetween(eqA.vec, eqB.vec)
 }
