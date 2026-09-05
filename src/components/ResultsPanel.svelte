@@ -9,6 +9,8 @@
     formatRa,
   } from '../lib/astro/coordinates'
   import { nightEvents } from '../lib/astro/events'
+  import { angularSeparation } from '../lib/astro/ephemeris'
+  import { MOON } from '../lib/astro/moon'
   import { MS_PER_MINUTE, nightWindow, windowHours } from '../lib/astro/time'
   import {
     isDeepSky,
@@ -170,10 +172,30 @@
     ),
   )
 
-  // Altitude at the scrubbed instant, read alongside the altitude chart's
-  // own slider — the all-sky chart's slider stays date/time-only.
+  // Altitude at the scrubbed instant, read alongside both sliders.
   const markerAltitude = $derived(
     model ? trajectoryAt(model.points, markerTime) : null,
+  )
+
+  // Angular distance to the Moon at the scrubbed instant. Solved exactly
+  // rather than read off a sampled track — there's no arc to draw, just a
+  // number, and two extra ephemeris calls per scrub frame is cheap. Null
+  // when the Moon itself is the target: a distance to itself is not a fact
+  // worth showing, the same reasoning that already hides the Moon overlay
+  // toggle for that case.
+  const moonSeparation = $derived(
+    object && !targetIsMoon
+      ? angularSeparation(object, MOON, markerTime, location)
+      : null,
+  )
+
+  const suffix = $derived(
+    [
+      markerAltitude && `Alt: ${Math.round(markerAltitude.altitude)}°`,
+      moonSeparation !== null && `To Moon: ${Math.round(moonSeparation)}°`,
+    ]
+      .filter(Boolean)
+      .join(' · ') || undefined,
   )
 </script>
 
@@ -231,9 +253,7 @@
         max={spanMinutes}
         time={markerTime}
         label="Time shown on the altitude chart"
-        suffix={markerAltitude
-          ? `${Math.round(markerAltitude.altitude)}°`
-          : undefined}
+        {suffix}
       />
       {#if !targetIsMoon}
         <label class="moon-toggle">
@@ -251,6 +271,7 @@
         max={spanMinutes}
         time={markerTime}
         label="Time shown on the all-sky chart"
+        {suffix}
       />
       {#if !targetIsMoon}
         <label class="moon-toggle">

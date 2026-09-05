@@ -179,12 +179,13 @@
     color: var(--text);
     white-space: nowrap;
     /*
-     * Reserve the width the longest reading needs — date, time and a
-     * negative-altitude suffix together: the readout changes on every drag
-     * frame, and letting it size to its content shoves the slider sideways
-     * under the user's pointer.
+     * Reserve the width the longest reading needs — date, time and an
+     * "Alt: "-plus-negative-altitude-plus-Moon-separation suffix together
+     * (e.g. "Wed 3 Sep, 23:45 — Alt: -12° · To Moon: 180°"): the readout
+     * changes on every drag frame, and letting it size to its content
+     * shoves the slider sideways under the user's pointer.
      */
-    min-width: 28ch;
+    min-width: 40ch;
     text-align: right;
   }
 
@@ -204,6 +205,14 @@
 
     .readout {
       text-align: left;
+      /*
+       * On its own row below the slider, the reserved-width and no-wrap
+       * rules above serve no purpose — nothing to hold steady next to —
+       * and the longest suffix is wider than a phone viewport. Let it wrap
+       * instead of forcing the page to scroll sideways.
+       */
+      min-width: 0;
+      white-space: normal;
     }
   }
 </style>

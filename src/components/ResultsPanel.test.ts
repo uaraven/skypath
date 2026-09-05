@@ -84,12 +84,40 @@ describe('ResultsPanel', () => {
     }
   })
 
-  it('shows the altitude reading beside the altitude slider only', () => {
+  it('shows the same altitude reading beside both sliders', () => {
     setup()
 
     const [altitudeReadout, allSkyReadout] = readouts()
-    expect(altitudeReadout.textContent).toMatch(/—\s*-?\d+°$/)
-    expect(allSkyReadout.textContent).not.toMatch(/°/)
+    expect(altitudeReadout.textContent).toMatch(/—\s*Alt:\s*-?\d+°/)
+    expect(allSkyReadout.textContent).toBe(altitudeReadout.textContent)
+  })
+
+  it('shows the Moon separation beside both sliders for an ordinary target', () => {
+    setup()
+
+    for (const readout of readouts()) {
+      expect(readout.textContent).toMatch(
+        /—\s*Alt:\s*-?\d+°\s*·\s*To Moon:\s*\d+°$/,
+      )
+    }
+  })
+
+  it('omits the Moon separation when the Moon itself is the target', () => {
+    setup({ object: MOON })
+
+    for (const readout of readouts()) {
+      expect(readout.textContent).toMatch(/—\s*Alt:\s*-?\d+°$/)
+      expect(readout.textContent).not.toMatch(/Moon/)
+    }
+  })
+
+  it('keeps the Moon separation in step between both sliders after a scrub', async () => {
+    setup()
+
+    await fireEvent.input(sliders()[0], { target: { value: '300' } })
+
+    const [altitudeReadout, allSkyReadout] = readouts()
+    expect(altitudeReadout.textContent).toBe(allSkyReadout.textContent)
   })
 
   it('moves the chart indicator when the slider moves', async () => {

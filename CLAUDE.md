@@ -35,6 +35,7 @@ Planning documents live in `.plan/`:
 
 - `src/lib/astro/` — ephemeris, sun/twilight, trajectory sampling. Knows nothing about catalogs.
   - Watch the refraction convention: twilight is _geometric_ altitude, rise/set and the charts are _apparent_. See `AltitudeConvention` in `ephemeris.ts`.
+  - `angularSeparation` in `ephemeris.ts` gives the angle between any two `SkyObject`s as seen from a location, via astronomy-engine's `AngleBetween` over topocentric of-date equatorial vectors — accounts for the Moon's parallax, unlike a raw catalogue-coordinate comparison.
   - Deep-sky objects reach astronomy-engine via `withEngineBody()`, which reuses one shared `Body.Star1` slot — never retain the `Body` past the callback.
   - `yearly.ts` samples altitude at local midnight every day of a calendar year for the Results tab's yearly chart — distinct from `trajectory.ts`'s single-night sampling. Same cadence for every object, including the Moon.
 - `src/lib/catalog/` — targets the user can pick. `index.ts` is the public API (`searchObjects`, `objectById`, `objectByDesignation`, `allObjects`).
