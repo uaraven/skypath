@@ -100,6 +100,23 @@ export function designationKey(designation: Designation): string {
   return `${designation.catalog.toLowerCase()}${designation.number}`
 }
 
+/** Catalogs Telescopius indexes under `/deep-sky-objects/<catalog><number>`. */
+const TELESCOPIUS_CATALOGS = new Set(['M', 'C', 'NGC', 'IC'])
+
+/**
+ * Telescopius' page for an object, or null if none of its designations are
+ * in a catalog Telescopius indexes. `designations` is already ordered by
+ * `CATALOGS`, so the first match is the preferred one.
+ */
+export function telescopiusUrl(designations: Designation[]): string | null {
+  const designation = designations.find((d) =>
+    TELESCOPIUS_CATALOGS.has(d.catalog),
+  )
+  return designation
+    ? `https://telescopius.com/deep-sky-objects/${designationKey(designation)}`
+    : null
+}
+
 /**
  * Object type codes as used by OpenNGC, mapped to labels we show. Unknown
  * codes fall back to the raw code so a new data source degrades gracefully
