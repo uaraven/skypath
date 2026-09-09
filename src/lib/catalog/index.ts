@@ -28,6 +28,7 @@ export {
   formatDesignation,
   parseDesignation,
   designationKey,
+  telescopiusUrl,
   typeLabel,
   OBJECT_TYPES,
   type CatalogDefinition,

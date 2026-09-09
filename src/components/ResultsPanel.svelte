@@ -17,7 +17,12 @@
     type GeoLocation,
     type SkyObject,
   } from '../lib/astro/types'
-  import { formatDesignation, isCatalogObject, typeLabel } from '../lib/catalog'
+  import {
+    formatDesignation,
+    isCatalogObject,
+    telescopiusUrl,
+    typeLabel,
+  } from '../lib/catalog'
   import {
     allSkyChartModel,
     altitudeChartModel,
@@ -32,6 +37,7 @@
   import EventTimesPanel from './EventTimesPanel.svelte'
   import Icon from './Icon.svelte'
   import ObjectSkyView from './ObjectSkyView.svelte'
+  import telescopiusIcon from '../assets/telescopius-favicon.png'
   import { formatAngularSize } from './searchFilters'
   import TimeSlider from './TimeSlider.svelte'
   import YearlyChart from './YearlyChart.svelte'
@@ -129,6 +135,12 @@
     object && isCatalogObject(object) ? typeLabel(object.type) : null,
   )
 
+  const telescopiusHref = $derived(
+    object && isCatalogObject(object)
+      ? telescopiusUrl(object.designations)
+      : null,
+  )
+
   // Anchored on local midnight rather than the scrubbed marker time: a
   // moving body's coordinates would otherwise creep across the night, and
   // this is a subtitle, not a live readout.
@@ -206,7 +218,20 @@
 {:else}
   <div class="results">
     <header>
-      <h2>{object.name}</h2>
+      <h2>
+        {object.name}
+        {#if telescopiusHref}
+          <a
+            class="telescopius-link"
+            href={telescopiusHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${object.name} on Telescopius`}
+            title={`View ${object.name} on Telescopius`}>
+            <img src={telescopiusIcon} alt="" width="16" height="16" />
+          </a>
+        {/if}
+      </h2>
       <p class="meta">
         {#if designations}<span>{designations}</span>{/if}
         {#if type}<span>{type}</span>{/if}
@@ -308,7 +333,24 @@
   }
 
   header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     line-height: 1.2;
+  }
+
+  .telescopius-link {
+    display: inline-flex;
+    opacity: 0.7;
+  }
+
+  .telescopius-link:hover {
+    opacity: 1;
+  }
+
+  .telescopius-link img {
+    display: block;
+    border-radius: 3px;
   }
 
   .meta {
