@@ -100,21 +100,26 @@ export function designationKey(designation: Designation): string {
   return `${designation.catalog.toLowerCase()}${designation.number}`
 }
 
-/** Catalogs Telescopius indexes under `/deep-sky-objects/<catalog><number>`. */
-const TELESCOPIUS_CATALOGS = new Set(['M', 'C', 'NGC', 'IC'])
+/** Catalogs Telescopius indexes under `/deep-sky-objects/<slug>`. */
+const TELESCOPIUS_CATALOGS = new Set(['M', 'C', 'NGC', 'IC', 'Sh2'])
 
 /**
  * Telescopius' page for an object, or null if none of its designations are
  * in a catalog Telescopius indexes. `designations` is already ordered by
  * `CATALOGS`, so the first match is the preferred one.
+ *
+ * The URL slug is the formatted designation lowercased with spaces removed:
+ * `NGC 6205` -> `ngc6205`, but `Sh2-155` keeps its hyphen -> `sh2-155` —
+ * Telescopius 404s on `sh2155`, unlike the space-separated catalogs, which
+ * accept the number run straight up against the prefix.
  */
 export function telescopiusUrl(designations: Designation[]): string | null {
   const designation = designations.find((d) =>
     TELESCOPIUS_CATALOGS.has(d.catalog),
   )
-  return designation
-    ? `https://telescopius.com/deep-sky-objects/${designationKey(designation)}`
-    : null
+  if (!designation) return null
+  const slug = formatDesignation(designation).toLowerCase().replace(/\s+/g, '')
+  return `https://telescopius.com/deep-sky-objects/${slug}`
 }
 
 /**
