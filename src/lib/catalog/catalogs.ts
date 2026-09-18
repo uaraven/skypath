@@ -101,7 +101,15 @@ export function designationKey(designation: Designation): string {
 }
 
 /** Catalogs Telescopius indexes under `/deep-sky-objects/<slug>`. */
-const TELESCOPIUS_CATALOGS = new Set(['M', 'C', 'NGC', 'IC', 'Sh2'])
+const TELESCOPIUS_CATALOGS = new Set([
+  'M',
+  'C',
+  'NGC',
+  'IC',
+  'Sh2',
+  'LDN',
+  'LBN',
+])
 
 /**
  * Telescopius' page for an object, or null if none of its designations are

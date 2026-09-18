@@ -15,11 +15,12 @@ npm run catalog:build
 | `ic.json`        |   5 028 | OpenNGC                                      |
 | `sharpless.json` |     313 | VizieR VII/20 — Sharpless (1959) ApJS 4, 257 |
 | `ldn.json`       |   1 787 | VizieR VII/7A — Lynds (1962) ApJS 7, 1       |
+| `lbn.json`       |   1 125 | VizieR VII/9 — Lynds (1965) ApJS 12, 163     |
 
 [OpenNGC](https://github.com/mattiaverga/OpenNGC) by Mattia Verga is licensed
 **CC-BY-SA-4.0**. Attribution has to appear in the app (the credits line built
 from `catalogSources`), and the share-alike term applies to the data, not to the
-surrounding code. The two VizieR tables are served by CDS and carry the usual
+surrounding code. The three VizieR tables are served by CDS and carry the usual
 requirement to cite the original publication, which the `source` string does.
 
 ## Departures from the sources
@@ -37,6 +38,12 @@ requirement to cite the original publication, which the `source` string does.
   forming a file of their own (105 of the 109 tagged). The four OpenNGC does not
   carry — C9 (Sh2-155), C14 (the Double Cluster), C41 (the Hyades) and C99 (the
   Coalsack) — have no single NGC/IC row to attach to, so they are absent.
+- **LBN** numbers are lifted from the `Identifiers` column too, _and_ have
+  their own file (`lbn.json`). OpenNGC only tags ~99 of the 1 125 Lynds
+  numbers on an NGC/IC object; reading them from `Identifiers` first means
+  those objects already claim the designation by the time `lbn.json` is
+  merged in, so its rows for them fold in instead of duplicating, and the
+  other ~1 026 become standalone objects.
 
 ## Known gap: no cross-match between Sharpless/LDN and NGC/IC
 
@@ -46,7 +53,8 @@ LDN ones). So NGC 7000 and Sh2-117 are the same nebula but appear as two
 entries, and the Sharpless and LDN objects have no common names at all —
 searching "Cave Nebula" will not find Sh2-155. Closing this needs either a
 positional cross-match (risky for degree-scale objects whose catalogued centres
-disagree) or a curated alias table in the generator.
+disagree) or a curated alias table in the generator. LBN is the exception: see
+above for how it partially cross-matches via OpenNGC's `Identifiers` column.
 
 ## File format
 

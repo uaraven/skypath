@@ -38087,6 +38087,21 @@
    "constellation": "Vir"
   },
   {
+   "id": "IC3322A",
+   "designations": [
+    "IC3322A",
+    "UGC7513",
+    "PGC40566"
+   ],
+   "names": [],
+   "ra": 12.428489,
+   "dec": 7.216667,
+   "type": "G",
+   "magnitude": 13.56,
+   "size": 3.58,
+   "constellation": "Vir"
+  },
+  {
    "id": "IC3324",
    "designations": [
     "IC3324"

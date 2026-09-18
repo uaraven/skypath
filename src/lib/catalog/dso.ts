@@ -10,6 +10,7 @@ import ngc from './data/ngc.json'
 import ic from './data/ic.json'
 import sharpless from './data/sharpless.json'
 import ldn from './data/ldn.json'
+import lbn from './data/lbn.json'
 
 /**
  * Data files bundled into the app. To add a catalog, generate its JSON (see
@@ -19,8 +20,11 @@ import ldn from './data/ldn.json'
  * Order is significant — the first file to carry an object wins on
  * coordinates — so these run most-curated first: Messier's 110 positions are
  * spot-checked against published values, NGC and IC come from the same
- * OpenNGC pass, and the two VizieR catalogs of extended nebulosity come last,
- * their positions being cloud centroids rather than anything pointlike.
+ * OpenNGC pass, and the three VizieR catalogs of extended nebulosity come
+ * last, their positions being cloud centroids rather than anything pointlike.
+ * ~99 of LBN's 1125 numbers are already carried as a designation on an
+ * NGC/IC object (lifted from OpenNGC's Identifiers column), so most of
+ * `lbn.json`'s merges land there; the rest become new standalone objects.
  */
 const FILES: CatalogFile[] = [
   messier as CatalogFile,
@@ -28,6 +32,7 @@ const FILES: CatalogFile[] = [
   ic as CatalogFile,
   sharpless as CatalogFile,
   ldn as CatalogFile,
+  lbn as CatalogFile,
 ]
 
 /**
