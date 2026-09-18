@@ -54,8 +54,8 @@
     </p>
     <p>
       SkyPath brings the NINA horizon and a quick search across the most popular
-      deep-sky catalogs — Messier, NGC, IC, Sharpless, and LDN — together in one
-      place.
+      deep-sky catalogs — Messier, NGC, IC, Sharpless, LDN, and LBN — together
+      in one place.
     </p>
 
     <h4>Using SkyPath</h4>
@@ -155,6 +155,14 @@
       </li>
       <li>
         Lynds (1962) ApJS 7, 1 — catalogue VII/7A, via
+        <a
+          href="https://vizier.cds.unistra.fr/"
+          target="_blank"
+          rel="noopener noreferrer">VizieR</a
+        > (CDS).
+      </li>
+      <li>
+        Lynds (1965) ApJS 12, 163 — catalogue VII/9, via
         <a
           href="https://vizier.cds.unistra.fr/"
           target="_blank"

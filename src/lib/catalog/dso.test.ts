@@ -90,7 +90,7 @@ describe('bundled deep-sky catalog', () => {
    * Sampled rather than exhaustive: a trajectory per object is ~25 ephemeris
    * solutions, which at catalog scale runs for minutes. The coordinates of
    * every object are checked above; this covers the step from coordinates to
-   * a plotted path, and the stride crosses all five data files.
+   * a plotted path, and the stride crosses all six data files.
    */
   it('resolves sampled objects across every catalog to a valid trajectory', () => {
     const date = new Date('2026-10-15T12:00:00Z')
@@ -136,13 +136,28 @@ describe('bundled deep-sky catalog', () => {
     const ldn = find('LDN1622')
     expect(ldn.type).toBe('DrkN')
     expect(ldn.magnitude).toBeUndefined()
+
+    // LBN1 has no OpenNGC identifier pointing at it, so it stays a
+    // standalone object rather than merging into an NGC/IC row.
+    const lbn = find('LBN1')
+    expect(lbn.type).toBe('Neb')
+    expect(lbn.size).toBe(4)
+    expect(lbn.constellation).toBe('Sgr')
+  })
+
+  it('merges an LBN number that OpenNGC already tags on an NGC/IC object', () => {
+    // The Orion Nebula (NGC 1976 / M42) is LBN 974 in Lynds' catalogue; that
+    // number is already in OpenNGC's Identifiers column, so lbn.json's row
+    // for it should fold into M42 rather than appearing a second time.
+    expect(designations('M42')).toContain('LBN974')
+    expect(deepSkyObjects.filter((o) => o.id === 'LBN974')).toHaveLength(0)
   })
 
   it('attributes every bundled source', () => {
-    expect(catalogSources).toHaveLength(3)
+    expect(catalogSources).toHaveLength(4)
     expect(catalogSources.some((s) => s.includes('OpenNGC'))).toBe(true)
     expect(catalogSources.some((s) => s.includes('Sharpless'))).toBe(true)
-    expect(catalogSources.some((s) => s.includes('Lynds'))).toBe(true)
+    expect(catalogSources.filter((s) => s.includes('Lynds'))).toHaveLength(2)
     // CC-BY-SA-4.0 makes the OpenNGC line a licence obligation, not a nicety.
     expect(catalogSources.some((s) => s.includes('CC-BY-SA-4.0'))).toBe(true)
   })
@@ -160,6 +175,9 @@ describe('bundled deep-sky catalog', () => {
     expect(primary('IC')).toBeGreaterThan(4000)
     expect(primary('Sh2')).toBe(313)
     expect(primary('LDN')).toBe(1787)
+    // Short of the full 1125: ~99 numbers already merge into an NGC/IC object.
+    expect(primary('LBN')).toBeGreaterThan(1000)
+    expect(primary('LBN')).toBeLessThan(1125)
   })
 })
 

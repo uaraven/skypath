@@ -9,8 +9,8 @@
  * - **OpenNGC** (https://github.com/mattiaverga/OpenNGC, CC-BY-SA-4.0) gives
  *   Messier, NGC and IC. Add an OpenNGC-derived catalog by appending to
  *   `OPENNGC_BUILDS`.
- * - **VizieR** (CDS) gives the catalogs OpenNGC does not carry — Sharpless 2
- *   and LDN. Add one by appending to `VIZIER_BUILDS`.
+ * - **VizieR** (CDS) gives the catalogs OpenNGC does not carry — Sharpless 2,
+ *   LDN and LBN. Add one by appending to `VIZIER_BUILDS`.
  *
  * Either way the catalog must also be registered in
  * src/lib/catalog/catalogs.ts, the file imported in dso.ts, and the emitted
@@ -40,9 +40,16 @@ const SOURCE =
  *
  * `C` is the Caldwell catalogue — Patrick Moore's 109-object companion to
  * Messier. Its members are all existing NGC/IC objects, so the Caldwell number
- * folds into them the same way UGC/PGC/LBN do; it needs no file of its own.
+ * folds into them the same way UGC/PGC do; it needs no file of its own.
  * OpenNGC tags 105 of the 109 (it omits C9=Sh2-155, C14=the Double Cluster,
  * C41=the Hyades and C99=the Coalsack, none of which have a single NGC/IC row).
+ *
+ * `LBN` is also lifted here even though it *does* get its own file below
+ * (`lbn.json`, from VizieR): OpenNGC's Identifiers column already tags ~99 of
+ * the 1125 Lynds numbers on the NGC/IC object they name, and reading them here
+ * first means those objects claim the designation before `lbn.json` is merged
+ * in, so its rows for them fold into the existing object instead of forming
+ * duplicates.
  */
 const IDENTIFIER_CATALOGS = ['C', 'UGC', 'PGC', 'LBN']
 
@@ -196,6 +203,23 @@ const VIZIER_BUILDS = [
     // A few rows in VII/7A are clouds the catalogue never numbered; without a
     // number there is no designation to file them under, so they are dropped.
     expect: 1787,
+  },
+  {
+    catalog: 'LBN',
+    file: 'lbn.json',
+    title: 'Lynds Catalogue of Bright Nebulae',
+    source:
+      'Lynds (1965) ApJS 12, 163 — catalogue VII/9 via VizieR (CDS, ' +
+      'https://vizier.cds.unistra.fr/).',
+    table: 'VII/9',
+    key: 'Seq',
+    columns: ['Seq', '_RAJ2000', '_DEJ2000', 'Diam1'],
+    // `Diam1` is the nebula's largest dimension in arcminutes.
+    sizeColumn: 'Diam1',
+    // The catalogue doesn't distinguish emission from reflection nebulae in a
+    // way `OBJECT_TYPES` already models, so every row is the generic `Neb`.
+    type: 'Neb',
+    expect: 1125,
   },
 ]
 

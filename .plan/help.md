@@ -10,7 +10,7 @@ I built SkyPath to solve one particular problem: my backyard has a very limited 
 
 And if I decide to drive out to a dark site, I have to switch NINA to a different horizon file, change the coordinates, and search all over again.
 
-SkyPath brings the NINA horizon and a quick search across the most popular deep-sky catalogs — Messier, NGC, IC, Sharpless, and LDN — together in one place.
+SkyPath brings the NINA horizon and a quick search across the most popular deep-sky catalogs — Messier, NGC, IC, Sharpless, LDN, and LBN — together in one place.
 
 ## Using SkyPath
 
@@ -45,6 +45,7 @@ Deep-sky data:
 - Messier, NGC and IC objects: [OpenNGC](https://github.com/mattiaverga/OpenNGC), licensed CC-BY-SA-4.0.
 - Sharpless (1959) ApJS 4, 257 — catalogue VII/20, via [VizieR](https://vizier.cds.unistra.fr/) (CDS).
 - Lynds (1962) ApJS 7, 1 — catalogue VII/7A, via [VizieR](https://vizier.cds.unistra.fr/) (CDS).
+- Lynds (1965) ApJS 12, 163 — catalogue VII/9, via [VizieR](https://vizier.cds.unistra.fr/) (CDS).
 
 Ephemeris calculations use [astronomy-engine](https://github.com/cosinekitty/astronomy).
 

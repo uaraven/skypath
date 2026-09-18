@@ -29,7 +29,7 @@ Planning documents live in `.plan/`:
   - Visual tests are for what jsdom cannot answer — computed layout, applied fonts, real visibility, chart geometry. `npm run test:visual:open` runs them headed; screenshots land in `screenshots/` (gitignored). `src/visual/tester.html` must keep the same font `<link>`s as `index.html`, or the browser falls back to Helvetica while `font-family` still reports the declared face. The Playwright instance also pins `context.timezoneId` — `env: { TZ }` only reaches the Node process, and since the charts are built from _local_ noon, the host timezone would otherwise draw a different night than the assertions compute.
 - `npm run format` — Prettier
 - `npm run lint` (`lint:fix`) — ESLint (TypeScript + Svelte, flat config in `eslint.config.js`)
-- `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC (Messier/NGC/IC) and VizieR (Sharpless 2, LDN)
+- `npm run catalog:build` — regenerate `src/lib/catalog/data/*.json` from OpenNGC (Messier/NGC/IC) and VizieR (Sharpless 2, LDN, LBN)
 
 ## Code layout
 
@@ -41,8 +41,8 @@ Planning documents live in `.plan/`:
 - `src/lib/catalog/` — targets the user can pick. `index.ts` is the public API (`searchObjects`, `objectById`, `objectByDesignation`, `allObjects`).
   - An object belongs to **many catalogs and has many names** — `CatalogObject.designations` / `.names`. Don't collapse either to a single value.
   - To add a catalog: register it in `catalogs.ts`, generate JSON into `data/`, import it in `dso.ts`. Entries sharing a designation merge into one object.
-  - Bundled: Messier, NGC, IC (from OpenNGC) and Sharpless 2, LDN (from VizieR) — ~15 000 objects. Caldwell (`C`) numbers are lifted from OpenNGC's `Identifiers` column and fold into the NGC/IC objects they name (like UGC/PGC/LBN — no file of their own; 105 of 109, the four not in NGC/IC are absent). Data is generated, never hand-edit `data/*.json`. OpenNGC is **CC-BY-SA-4.0 — attribution required** (all sources exposed as `catalogSources`).
-  - Sharpless/LDN **do not cross-match** to NGC/IC: no shared designations exist in either source, so NGC 7000 and Sh2-117 are two entries, and neither VizieR catalog carries common names. See `data/README.md`.
+  - Bundled: Messier, NGC, IC (from OpenNGC) and Sharpless 2, LDN, LBN (from VizieR) — ~15 200 objects. Caldwell (`C`) numbers are lifted from OpenNGC's `Identifiers` column and fold into the NGC/IC objects they name (like UGC/PGC — no file of their own; 105 of 109, the four not in NGC/IC are absent). Data is generated, never hand-edit `data/*.json`. OpenNGC is **CC-BY-SA-4.0 — attribution required** (all sources exposed as `catalogSources`).
+  - Sharpless/LDN **do not cross-match** to NGC/IC: no shared designations exist in either source, so NGC 7000 and Sh2-117 are two entries, and neither VizieR catalog carries common names. LBN is the exception — OpenNGC's `Identifiers` column already tags ~99 of its 1125 numbers onto the NGC/IC object they name, so `lbn.json`'s rows for those merge in rather than duplicating; the rest become standalone objects. See `data/README.md`.
 - `src/lib/horizon/` — NINA file parsing and `Horizon.altitudeAt(azimuth)`. The azimuth axis is circular: the segment between the last and first point wraps through north, and getting that wrong silently reports a clear horizon.
 - `src/lib/observatory/` — named location + horizon bundles in localStorage. Invariants: the list is never empty and one is always selected. The horizon is stored as **raw text**, parsed on the render path by the memoizing `horizonFromText`.
   - `transfer.ts` moves observatories between machines as a tagged JSON file (`serializeObservatories` / `parseObservatoryImport`). `selectedId` is deliberately **not** exported — highlight is a property of the browser, not the collection — and the horizon travels as its raw NINA text, so a round trip is byte-for-byte.
