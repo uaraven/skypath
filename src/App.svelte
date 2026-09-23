@@ -311,7 +311,7 @@
   /* The mock's vertical split: a fixed-width site list, charts taking the rest. */
   main {
     display: grid;
-    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-columns: 15.5rem minmax(0, 1fr);
     align-items: start;
     gap: 1.5rem;
   }
@@ -345,10 +345,15 @@
     }
 
     /* The sidebar can outgrow the viewport on its own (many observatories or
-       rigs); it scrolls internally rather than pushing the page taller. */
+       rigs); it scrolls internally rather than pushing the page taller.
+       scrollbar-gutter reserves a lane for it so the (often overlay) bar
+       doesn't sit on top of the list's icon buttons; the padding-right is
+       the same gutter for browsers that don't support the property. */
     main > :global(.sidebar) {
       overflow-y: auto;
       min-height: 0;
+      scrollbar-gutter: stable;
+      padding-right: 0.5rem;
     }
 
     .tabbar {
