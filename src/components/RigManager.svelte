@@ -1,49 +1,46 @@
 <script lang="ts">
   /**
-   * The left-hand observatory panel: the list of sites, and the add / edit /
-   * delete controls beneath it.
+   * The left-hand rig panel: the list of telescope + camera combinations, and
+   * the add / edit / delete controls beneath it.
    *
-   * The form itself lives in `ObservatoryEditor`, opened as a modal — this
-   * component owns *which* observatory is selected and which dialog is open,
-   * and is the only place that writes to the store. The overflow menu
-   * (export/import) lives one level up, in `Sidebar`, because it now covers
-   * both this list and `RigManager`'s.
+   * Mirrors `ObservatoryManager` — same selection/dialog/drag-reorder pattern
+   * — with the divergences the rig list requires: it may be empty, nothing
+   * may be selected, and there is no shared "a default will take its place"
+   * story on delete. The overflow menu (export/import) lives one level up, in
+   * `Sidebar`, because it covers both lists.
    */
   import {
-    observatories,
-    ObservatoryStore,
-    type Observatory,
-    type ObservatoryInput,
-  } from '../lib/observatory'
+    RigStore,
+    rigs,
+    selectedRig,
+    type Rig,
+    type RigInput,
+  } from '../lib/rig'
   import { untrack } from 'svelte'
   import ConfirmDialog from './ConfirmDialog.svelte'
   import Icon from './Icon.svelte'
-  import ObservatoryEditor from './ObservatoryEditor.svelte'
+  import RigEditor from './RigEditor.svelte'
 
   interface Props {
     /** Defaults to the app-wide store; tests inject one with its own storage. */
-    store?: ObservatoryStore
+    store?: RigStore
   }
 
-  let { store = observatories }: Props = $props()
+  let { store = rigs }: Props = $props()
 
-  // Bridge the store contract into runes. `subscribe` fires immediately and
-  // returns its unsubscribe function, which is exactly the effect's cleanup.
-  // The `untrack` is deliberate: the store instance is fixed for the life of
-  // the component, and only its *contents* are reactive.
+  // Bridge the store contract into runes — see ObservatoryManager for why the
+  // `untrack` is deliberate: the store instance is fixed for the component's
+  // life, only its contents are reactive.
   let storeState = $state(untrack(() => store.state))
   $effect(() => store.subscribe((state) => (storeState = state)))
 
   /** Which modal is open. `editing: null` means the editor is in create mode. */
   let dialog = $state<'editor' | 'delete' | null>(null)
-  let editing = $state<Observatory | null>(null)
+  let editing = $state<Rig | null>(null)
 
-  const selected = $derived(
-    storeState.observatories.find((o) => o.id === storeState.selectedId) ??
-      storeState.observatories[0],
-  )
+  const selected = $derived(selectedRig(storeState))
 
-  /** The site currently being dragged, and where it would land if dropped now. */
+  /** The rig currently being dragged, and where it would land if dropped now. */
   let draggedId = $state<string | null>(null)
   let dragOver = $state<{ id: string; position: 'before' | 'after' } | null>(
     null,
@@ -66,12 +63,10 @@
       return
     }
 
-    // The bottom half of this row and the top half of the next are the same
-    // gap. Normalize to the next row's "before" so that gap has exactly one
-    // state — otherwise the two halves each draw their own edge line and the
-    // gap gets a double indicator.
-    const rows = storeState.observatories
-    const next = rows[rows.findIndex((o) => o.id === id) + 1]
+    // Same normalization ObservatoryManager uses: the bottom half of this row
+    // and the top half of the next are the same gap, so give it one state.
+    const rows = storeState.rigs
+    const next = rows[rows.findIndex((r) => r.id === id) + 1]
     dragOver =
       next && next.id !== draggedId
         ? { id: next.id, position: 'before' }
@@ -103,6 +98,7 @@
   }
 
   function openEdit() {
+    if (!selected) return
     editing = selected
     dialog = 'editor'
   }
@@ -112,7 +108,7 @@
     editing = null
   }
 
-  function save(input: ObservatoryInput) {
+  function save(input: RigInput) {
     if (editing) {
       store.update(editing.id, input)
     } else {
@@ -122,54 +118,71 @@
   }
 
   function confirmDelete() {
+    if (!selected) return
     store.remove(selected.id)
     close()
   }
 
+  /**
+   * Copies the selected rig's telescope and camera into a new entry, named
+   * after the original so it's obvious where it came from. `store.create`
+   * selects the copy, same as Add does — the point of duplicating is usually
+   * to tweak one field on a near-identical rig, and that's the one you're
+   * about to edit.
+   */
+  function duplicateSelected() {
+    if (!selected) return
+    const { id: _id, ...input } = selected
+    store.create({ ...input, name: `Copy of ${selected.name}` })
+  }
+
   const deleteMessage = $derived(
-    storeState.observatories.length === 1
-      ? `Delete “${selected.name}”? It is the only one, so a default observatory will take its place.`
-      : `Delete “${selected.name}”? Its location and horizon will be lost.`,
+    selected ? `Delete “${selected.name}”? This cannot be undone.` : '',
   )
 </script>
 
-<section class="panel observatories">
-  <h2>Observatories</h2>
+<section class="panel rigs">
+  <h2>Rigs</h2>
 
   <!--
-    The options sit directly inside the listbox, with no <li> wrappers: a
-    listbox's children are options, and wrapping them also published a second,
-    meaningless `listitem` role for every site.
+    Same listbox shape as ObservatoryManager: options directly inside, no
+    wrapping <li>, so there is exactly one role per row.
   -->
-  <div class="list" role="listbox" aria-label="Observatories" tabindex="-1">
-    {#each storeState.observatories as observatory (observatory.id)}
+  <div class="list" role="listbox" aria-label="Rigs" tabindex="-1">
+    {#if storeState.rigs.length === 0}
+      <p class="empty">No rigs yet — add your telescope and camera.</p>
+    {/if}
+    {#each storeState.rigs as rig (rig.id)}
       <button
         type="button"
-        class="site"
+        class="rig"
         role="option"
-        aria-selected={observatory.id === storeState.selectedId}
-        class:selected={observatory.id === storeState.selectedId}
-        class:drag-over-before={dragOver?.id === observatory.id &&
+        aria-selected={rig.id === storeState.selectedId}
+        class:selected={rig.id === storeState.selectedId}
+        class:drag-over-before={dragOver?.id === rig.id &&
           dragOver.position === 'before'}
-        class:drag-over-after={dragOver?.id === observatory.id &&
+        class:drag-over-after={dragOver?.id === rig.id &&
           dragOver.position === 'after'}
-        onclick={() => store.select(observatory.id)}
-        ondblclick={openEdit}
-        ondragover={(event) => onRowDragOver(event, observatory.id)}
-        ondragleave={() => onRowDragLeave(observatory.id)}
-        ondrop={(event) => onRowDrop(event, observatory.id)}
+        onclick={() => store.select(rig.id)}
+        ondblclick={() => {
+          editing = rig
+          dialog = 'editor'
+        }}
+        ondragover={(event) => onRowDragOver(event, rig.id)}
+        ondragleave={() => onRowDragLeave(rig.id)}
+        ondrop={(event) => onRowDrop(event, rig.id)}
       >
         <span
           class="drag-handle"
           draggable="true"
           aria-hidden="true"
-          ondragstart={(event) => onHandleDragStart(event, observatory.id)}
+          ondragstart={(event) => onHandleDragStart(event, rig.id)}
           ondragend={onHandleDragEnd}
           onclick={(event) => event.stopPropagation()}
         >
           <Icon name="grip" size={14} />
         </span>
-        <span class="site-name">{observatory.name}</span>
+        <span class="rig-name">{rig.name}</span>
       </button>
     {/each}
   </div>
@@ -178,39 +191,44 @@
     <button
       type="button"
       class="icon-button"
-      aria-label="Add observatory"
-      title="Add observatory"
+      aria-label="Add rig"
+      title="Add rig"
       onclick={openNew}><Icon name="plus" /></button
     >
     <button
       type="button"
       class="icon-button"
-      aria-label="Edit observatory"
-      title="Edit observatory"
+      aria-label="Edit rig"
+      title="Edit rig"
+      disabled={!selected}
       onclick={openEdit}><Icon name="pencil" /></button
     >
     <button
       type="button"
+      class="icon-button"
+      aria-label="Duplicate rig"
+      title="Duplicate rig"
+      disabled={!selected}
+      onclick={duplicateSelected}><Icon name="copy" /></button
+    >
+    <button
+      type="button"
       class="icon-button danger"
-      aria-label="Delete observatory"
-      title="Delete observatory"
+      aria-label="Delete rig"
+      title="Delete rig"
+      disabled={!selected}
       onclick={() => (dialog = 'delete')}><Icon name="trash" /></button
     >
   </footer>
 </section>
 
 {#if dialog === 'editor'}
-  <ObservatoryEditor
-    observatory={editing}
-    seed={selected}
-    onsave={save}
-    oncancel={close}
-  />
+  <RigEditor rig={editing} onsave={save} oncancel={close} />
 {/if}
 
-{#if dialog === 'delete'}
+{#if dialog === 'delete' && selected}
   <ConfirmDialog
-    title="Delete observatory"
+    title="Delete rig"
     message={deleteMessage}
     onconfirm={confirmDelete}
     oncancel={close}
@@ -218,7 +236,7 @@
 {/if}
 
 <style>
-  .observatories {
+  .rigs {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -228,26 +246,23 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    /* Size to the list so the toolbar sits directly under the last site; a long
-       list scrolls within this cap rather than pushing the controls away. */
     max-height: 50vh;
     overflow-y: auto;
   }
 
-  /* Above the stacked-layout breakpoint the panel is stretched to the full
-     height of the workspace next to it (App.svelte); let the list claim
-     whatever space that leaves so the toolbar sits at the panel's bottom
-     edge instead of right under a short list. */
   @media (min-width: 801px) {
     .list {
-      flex: 1;
       max-height: none;
-      min-height: 0;
     }
   }
 
-  .site {
-    /* Not a pill: these are list rows, so they override the shared button. */
+  .empty {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .rig {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -259,18 +274,16 @@
     text-align: left;
   }
 
-  .site.selected {
+  .rig.selected {
     background-color: rgba(116, 187, 241, 0.12);
     border-color: var(--border);
   }
 
-  /* A line at the top or bottom edge previews where the dragged site would
-     land, without waiting for the drop to actually reorder anything. */
-  .site.drag-over-before {
+  .rig.drag-over-before {
     box-shadow: inset 0 2px 0 var(--accent-bright);
   }
 
-  .site.drag-over-after {
+  .rig.drag-over-after {
     box-shadow: inset 0 -2px 0 var(--accent-bright);
   }
 
@@ -289,7 +302,7 @@
     cursor: grabbing;
   }
 
-  .site-name {
+  .rig-name {
     font-size: 0.9rem;
     line-height: 1.3;
   }
@@ -307,7 +320,11 @@
     padding: 0.4rem;
   }
 
-  .danger:hover {
+  .icon-button:disabled {
+    opacity: 0.4;
+  }
+
+  .danger:hover:not(:disabled) {
     border-color: #e08585;
     color: #e08585;
   }

@@ -31,12 +31,13 @@
     yearlyChartModel,
   } from '../lib/charts'
   import type { Horizon } from '../lib/horizon'
-  import { aladinViewParams } from '../lib/images'
+  import { framingViewParams } from '../lib/images'
+  import { rigOptics, type Rig } from '../lib/rig'
   import AllSkyChart from './AllSkyChart.svelte'
   import AltitudeChart from './AltitudeChart.svelte'
   import EventTimesPanel from './EventTimesPanel.svelte'
+  import FramingAssistant from './FramingAssistant.svelte'
   import Icon from './Icon.svelte'
-  import ObjectSkyView from './ObjectSkyView.svelte'
   import telescopiusIcon from '../assets/telescopius-favicon.png'
   import { formatAngularSize } from './searchFilters'
   import TimeSlider from './TimeSlider.svelte'
@@ -50,6 +51,13 @@
     observatoryName: string
     /** Whether the sky-image block is expanded; persisted by the caller. */
     imageOpen?: boolean
+    /** The selected rig, if any — sizes the framing assistant's view and
+     *  draws the camera-frame rectangle. Null renders exactly today's
+     *  object-sized sky view, with no frame. */
+    rig?: Rig | null
+    /** Camera rotation (position angle, 0–360°); one value shared across
+     *  every rig and object, persisted by the caller. */
+    frameRotation?: number
   }
 
   let {
@@ -59,6 +67,8 @@
     date,
     observatoryName,
     imageOpen = $bindable(true),
+    rig = null,
+    frameRotation = $bindable(0),
   }: Props = $props()
 
   /**
@@ -68,15 +78,26 @@
    */
   const image = $derived.by(() => {
     if (!object || !isDeepSky(object)) return null
-    const { target, fov, survey } = aladinViewParams(object)
+    const { target, fov, survey, frame } = framingViewParams(object, rig)
     return {
       target,
       fov,
       survey,
+      frame,
       alt: `Sky view of ${object.name}`,
-      caption: `${formatAngularSize(fov * 60)} field`,
+      caption: rig
+        ? formatRigCaption(rig)
+        : `${formatAngularSize(fov * 60)} field`,
     }
   })
+
+  function formatRigCaption(rig: Rig): string {
+    const optics = rigOptics(rig)
+    return (
+      `${optics.fovWidthDeg.toFixed(2)}° × ${optics.fovHeightDeg.toFixed(2)}° · ` +
+      `${optics.arcsecPerPixelX.toFixed(2)}″/px`
+    )
+  }
 
   // The Moon is drawn on both charts as an overlay; the checkbox under the
   // slider toggles it. When the Moon itself is the target, the overlay would
@@ -227,7 +248,8 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${object.name} on Telescopius`}
-            title={`View ${object.name} on Telescopius`}>
+            title={`View ${object.name} on Telescopius`}
+          >
             <img src={telescopiusIcon} alt="" width="16" height="16" />
           </a>
         {/if}
@@ -256,12 +278,14 @@
     </header>
 
     {#if image}
-      <ObjectSkyView
+      <FramingAssistant
         target={image.target}
         fov={image.fov}
         survey={image.survey}
         alt={image.alt}
         caption={image.caption}
+        frame={image.frame}
+        bind:rotation={frameRotation}
         bind:open={imageOpen}
       />
     {/if}

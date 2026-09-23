@@ -12,8 +12,8 @@
   import Icon from './components/Icon.svelte'
   import ObjectSearch from './components/ObjectSearch.svelte'
   import { defaultFilters } from './components/searchFilters'
-  import ObservatoryManager from './components/ObservatoryManager.svelte'
   import ResultsPanel from './components/ResultsPanel.svelte'
+  import Sidebar from './components/Sidebar.svelte'
   import type { SkyObject } from './lib/astro/types'
   import { objectById } from './lib/catalog'
   import { horizonFromText } from './lib/horizon'
@@ -22,6 +22,7 @@
     observatoryLocation,
     selectedObservatory,
   } from './lib/observatory'
+  import { rigs, selectedRig } from './lib/rig'
   import {
     formatIsoDate,
     session as sessionStore,
@@ -47,6 +48,11 @@
 
   const location = $derived(observatoryLocation(selected))
 
+  // Drives the framing assistant's field of view and camera-frame rectangle
+  // (`ResultsPanel`/`FramingAssistant`) — null renders exactly today's
+  // object-sized sky view, same as having no rigs at all.
+  const rig = $derived(selectedRig($rigs))
+
   // The saved object and night, restored before first paint so the app never
   // renders "nothing chosen" and then flips. `untrack` because the store
   // instance is fixed for the life of the component — only reading it here
@@ -71,6 +77,10 @@
   // Lives here for the same reason as the object and the night: it is a user
   // choice that has to outlive the tabview unmounting the Results panel.
   let imageOpen = $state(untrack(() => session.state.imageOpen))
+  // The framing assistant's camera rotation — one value shared across every
+  // rig and object (`.plan/framing-assistant-plan.md` decision 11), not a
+  // property of the rig itself.
+  let frameRotation = $state(untrack(() => session.state.frameRotation))
 
   const date = $derived(parseDateText(dateText))
 
@@ -79,6 +89,7 @@
   $effect(() => session.setObjectId(object?.id ?? null))
   $effect(() => session.setDate(date))
   $effect(() => session.setImageOpen(imageOpen))
+  $effect(() => session.setFrameRotation(frameRotation))
 
   /**
    * The date input's value as a local date. Parsed here rather than with
@@ -133,7 +144,7 @@
       <div>
         <h1>SkyPath</h1>
         <p class="tagline">
-          Know what's up tonight — and when it clears your horizon
+          Astrophotography planning without digital trace
         </p>
       </div>
     </div>
@@ -144,7 +155,7 @@
   </header>
 
   <main>
-    <ObservatoryManager />
+    <Sidebar />
 
     <section class="panel workspace">
       <div class="tabbar">
@@ -194,8 +205,10 @@
               {location}
               {horizon}
               {date}
+              {rig}
               observatoryName={selected.name}
               bind:imageOpen
+              bind:frameRotation
             />
           </div>
         {/if}
@@ -206,7 +219,9 @@
   <footer class="colophon">
     <p>
       SkyPath v{version}.
-      <a href="https://voronin.cc/projects/astro">https://voronin.cc/projects/astro</a>
+      <a href="https://voronin.cc/projects/astro"
+        >https://voronin.cc/projects/astro</a
+      >
     </p>
   </footer>
 
@@ -329,9 +344,9 @@
       min-height: 0;
     }
 
-    /* The sidebar can outgrow the viewport on its own (many observatories);
-       it scrolls internally rather than pushing the page taller. */
-    main > :global(.observatories) {
+    /* The sidebar can outgrow the viewport on its own (many observatories or
+       rigs); it scrolls internally rather than pushing the page taller. */
+    main > :global(.sidebar) {
       overflow-y: auto;
       min-height: 0;
     }

@@ -29,14 +29,25 @@ export interface AladinViewOptions {
   survey: string
 }
 
+/**
+ * The slice of a live Aladin instance the app drives after mounting it.
+ * Returning this rather than `void` is what lets the framing assistant
+ * change the field of view on a rig switch via the documented `setFov` API
+ * instead of tearing down and remounting the whole viewer (which would
+ * re-fetch tiles and flash the panel).
+ */
+export interface AladinHandle {
+  setFov(degrees: number): void
+}
+
 export type AladinLoader = (
   el: HTMLElement,
   options: AladinViewOptions,
-) => Promise<void>
+) => Promise<AladinHandle>
 
 interface AladinApi {
   init: Promise<void>
-  aladin: (el: HTMLElement, options: Record<string, unknown>) => unknown
+  aladin: (el: HTMLElement, options: Record<string, unknown>) => AladinHandle
 }
 
 declare global {
@@ -127,7 +138,7 @@ const MINIMAL_VIEWER_OPTIONS = {
 export async function loadAladinView(
   el: HTMLElement,
   options: AladinViewOptions,
-): Promise<void> {
+): Promise<AladinHandle> {
   if (!hasWebgl2()) {
     throw new Error('WebGL2 is not available')
   }
@@ -135,7 +146,7 @@ export async function loadAladinView(
   const A = await loadScript()
   await withTimeout(A.init, 'Timed out initializing Aladin Lite')
 
-  A.aladin(el, {
+  return A.aladin(el, {
     ...MINIMAL_VIEWER_OPTIONS,
     target: options.target,
     fov: options.fov,

@@ -20,6 +20,7 @@ describe('first launch', () => {
       objectId: null,
       dateText: null,
       imageOpen: true,
+      frameRotation: 0,
     })
   })
 
@@ -42,6 +43,7 @@ describe('persistence', () => {
       objectId: 'M13',
       dateText: '2026-10-15',
       imageOpen: true,
+      frameRotation: 0,
     })
   })
 
@@ -49,6 +51,12 @@ describe('persistence', () => {
     new SessionStore(storage).setImageOpen(false)
 
     expect(new SessionStore(storage).state.imageOpen).toBe(false)
+  })
+
+  it('remembers the camera rotation', () => {
+    new SessionStore(storage).setFrameRotation(215)
+
+    expect(new SessionStore(storage).state.frameRotation).toBe(215)
   })
 
   // Added after v1 shipped: an older saved session has no such field, and it
@@ -64,6 +72,37 @@ describe('persistence', () => {
 
     expect(store.state.imageOpen).toBe(true)
     expect(store.state.objectId).toBe('M13')
+  })
+
+  // Same additive-field story, one release later: a session saved before
+  // rigs existed has no `frameRotation` at all.
+  it('reads a session saved before the framing assistant existed', () => {
+    storage.setItem(
+      SESSION_KEY,
+      JSON.stringify({ version: 1, objectId: 'M13', dateText: '2026-10-15' }),
+    )
+
+    const store = new SessionStore(storage)
+
+    expect(store.state.frameRotation).toBe(0)
+  })
+
+  it('normalizes an out-of-range stored rotation into 0-360', () => {
+    storage.setItem(
+      SESSION_KEY,
+      JSON.stringify({ version: 1, frameRotation: 405 }),
+    )
+
+    expect(new SessionStore(storage).state.frameRotation).toBe(45)
+  })
+
+  it('ignores a non-numeric stored rotation', () => {
+    storage.setItem(
+      SESSION_KEY,
+      JSON.stringify({ version: 1, frameRotation: 'ninety' }),
+    )
+
+    expect(new SessionStore(storage).state.frameRotation).toBe(0)
   })
 
   it('writes a version alongside the state', () => {
@@ -98,6 +137,7 @@ describe('recovering from bad stored data', () => {
       objectId: null,
       dateText: null,
       imageOpen: true,
+      frameRotation: 0,
     })
   })
 
@@ -124,6 +164,7 @@ describe('recovering from bad stored data', () => {
       objectId: null,
       dateText: null,
       imageOpen: true,
+      frameRotation: 0,
     })
   })
 
