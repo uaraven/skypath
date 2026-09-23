@@ -29,7 +29,12 @@ const fakeLoadAladin: AladinLoader = (el) =>
   new Promise<AladinHandle>((resolve) => {
     setTimeout(() => {
       el.style.background = 'linear-gradient(135deg, #1a2540, #0d1220)'
-      resolve({ setFov: () => {} })
+      resolve({
+        setFov: () => {},
+        gotoRaDec: () => {},
+        getRaDec: () => [10.68, 41.27],
+        on: () => {},
+      })
     }, 50)
   })
 
@@ -51,6 +56,8 @@ function renderBlock(overrides: Record<string, unknown> = {}) {
     container,
     frame: () => container.querySelector('.frame'),
     frameRect: () => container.querySelector('.frame-rect'),
+    recenterButton: () =>
+      screen.queryByRole('button', { name: /recenter/i }),
   }
 }
 
@@ -104,6 +111,21 @@ describe('framing assistant block', () => {
     expect(collapsed).toBeLessThan(expanded - boxHeight + 50)
     // The heading stays reachable, or the block could not be reopened.
     expect(toggle()).toBeVisible()
+  })
+
+  it('floats the recenter button inside the reserved box, once ready', async () => {
+    const { container, frame, recenterButton } = renderBlock()
+
+    const view = container.querySelector('[role="img"]')!
+    await waitUntilReady(view)
+
+    const box = frame()!.getBoundingClientRect()
+    const button = recenterButton()!.getBoundingClientRect()
+
+    expect(button.width).toBeGreaterThan(0)
+    expect(button.left).toBeGreaterThanOrEqual(box.left)
+    expect(button.right).toBeLessThanOrEqual(box.right + 1)
+    expect(button.top).toBeGreaterThanOrEqual(box.top)
   })
 
   it('paints the view once it is ready', async () => {

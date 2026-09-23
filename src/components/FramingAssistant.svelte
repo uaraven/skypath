@@ -14,10 +14,28 @@
    * The frame is a plain SVG overlay, not an Aladin graphic overlay: the
    * documented Aladin API has no per-shape removal (only `removeLayers()`,
    * which would tear down every graphic on every slider tick), and an SVG
-   * `transform` is one attribute write. This is provably fine only because
-   * the view itself is static — `pointer-events: none` below means the
-   * projection under the SVG never pans or zooms. If the view ever becomes
-   * interactive, move the frame to `A.polyline` instead.
+   * `transform` is one attribute write.
+   *
+   * The view is pannable (Aladin's own mouse/touch drag handling, left
+   * enabled in `aladinLoader.ts`) — but **not zoomable**: the frame rectangle
+   * is a fixed fraction of the view box, so letting the scale change would
+   * make it lie about the field it represents. Aladin has no option to turn
+   * off zoom input itself, so the container below intercepts wheel/pinch
+   * events in the capture phase (`blockWheelZoom`/`blockPinchZoom`) before
+   * they ever reach Aladin's own listeners, while leaving single-touch/mouse
+   * drags untouched.
+   *
+   * The frame rectangle is deliberately **screen-space, not sky-anchored**:
+   * dragging the view moves the sky under a rectangle that stays put at the
+   * view's centre. That is intentional, confirmed with the user, rather than
+   * a gap: it lets the rectangle be used to *reframe* a shot (pan the target
+   * off-centre, rotate, see what falls inside the sensor) without the extra
+   * work of reprojecting it through `world2pix` on every pan tick. The
+   * Recenter button undoes a pan via the handle's `gotoRaDec`/`setFov`, back
+   * to the object-centred view the panel originally computed. A coordinate
+   * readout below the view tracks the current view centre via the handle's
+   * `getRaDec()` (seeded once, on load) and `on('positionChanged', …)`
+   * (kept live as the user drags).
    *
    * Presentational otherwise: the caller computes target/fov/survey/frame;
    * loading Aladin itself is delegated to the injectable `loadAladin` prop
@@ -30,6 +48,7 @@
    * below deliberately excludes `fov` from its key.
    */
   import { untrack } from 'svelte'
+  import { formatDec, formatRa } from '../lib/astro/coordinates'
   import type { AladinHandle, AladinLoader } from './aladinLoader'
   import { loadAladinView } from './aladinLoader'
   import Icon from './Icon.svelte'
@@ -81,6 +100,12 @@
    *  read reactively by anything that needs to re-run when it changes. */
   let handle: AladinHandle | null = null
 
+  /** The view centre, for the coordinate readout — `ra`/`dec` in decimal
+   *  degrees, ICRS, same convention as `target`. Null until the view is
+   *  ready and has reported a centre at least once. */
+  let centerRa = $state<number | null>(null)
+  let centerDec = $state<number | null>(null)
+
   /** What the `{#key}` block below is keyed on — same string, same mount.
    *  Tracked explicitly (rather than trusting the effect to skip a rerun on
    *  its own) because a prop update elsewhere in the component tree can
@@ -101,6 +126,8 @@
       status = 'idle'
       handle = null
       loadedKey = null
+      centerRa = null
+      centerDec = null
       return
     }
 
@@ -111,6 +138,8 @@
     const el = container
     status = 'loading'
     handle = null
+    centerRa = null
+    centerDec = null
     let cancelled = false
 
     // The initial fov only — later changes go through `handle.setFov` in the
@@ -121,6 +150,14 @@
         if (cancelled) return
         handle = result
         status = 'ready'
+
+        const [ra, dec] = result.getRaDec()
+        centerRa = ra
+        centerDec = dec
+        result.on('positionChanged', (position) => {
+          centerRa = position.ra
+          centerDec = position.dec
+        })
       },
       () => {
         if (!cancelled) status = 'failed'
@@ -148,6 +185,37 @@
    *  is clockwise-positive. Pinned by a test — this is the one detail that
    *  is silently, plausibly wrong in the mirror image if guessed. */
   const screenRotationDeg = $derived(-rotation)
+
+  /** Undoes a user pan, back to the object-centred view the panel computed —
+   *  `target` is already "RA Dec" degrees (Aladin's ICRSd frame), the same
+   *  string `loadAladin` was called with. Sets the readout directly rather
+   *  than waiting on a `positionChanged` callback, which a fake handle in
+   *  tests has no reason to fire. */
+  function recenter() {
+    if (!handle) return
+    const [ra, dec] = target.split(' ').map(Number)
+    handle.gotoRaDec(ra, dec)
+    handle.setFov(fov)
+    centerRa = ra
+    centerDec = dec
+  }
+
+  /** Blocks scroll-wheel zoom before it reaches Aladin's own listener (bound
+   *  directly to its canvas) — see the file doc above for why zoom has to
+   *  stay off. Caught in the capture phase, on an ancestor of that canvas, so
+   *  `stopPropagation` here keeps the event from ever reaching it. Not
+   *  `preventDefault`ed: the page is free to scroll normally under the
+   *  cursor, same as if the widget weren't there. */
+  function blockWheelZoom(event: WheelEvent) {
+    event.stopPropagation()
+  }
+
+  /** Same idea for pinch-zoom, but only for an actual pinch (2+ touch
+   *  points) — a single touch has to reach Aladin's listener untouched, or
+   *  drag-to-pan on a touchscreen breaks along with the zoom it's blocking. */
+  function blockPinchZoom(event: TouchEvent) {
+    if (event.touches.length >= 2) event.stopPropagation()
+  }
 </script>
 
 <section class="framing-assistant">
@@ -186,6 +254,9 @@
             class:hidden={status !== 'ready'}
             role="img"
             aria-label={alt}
+            onwheelcapture={blockWheelZoom}
+            ontouchstartcapture={blockPinchZoom}
+            ontouchmovecapture={blockPinchZoom}
           ></div>
         {/key}
 
@@ -205,6 +276,24 @@
               transform={`rotate(${screenRotationDeg} 50 50)`}
             />
           </svg>
+        {/if}
+
+        {#if status === 'ready'}
+          <button
+            type="button"
+            class="recenter"
+            title="Recenter view"
+            aria-label="Recenter view"
+            onclick={recenter}
+          >
+            <Icon name="target" size={16} />
+          </button>
+        {/if}
+
+        {#if centerRa !== null && centerDec !== null}
+          <p class="center-coords">
+            RA: {formatRa(centerRa / 15)} Dec: {formatDec(centerDec)}
+          </p>
         {/if}
       </div>
 
@@ -294,17 +383,9 @@
     overflow: hidden;
   }
 
-  /*
-   * Aladin has no option to turn off panning/zooming/double-click-recenter
-   * themselves (its mouse/touch/wheel listeners attach unconditionally) — so
-   * this is a static preview, not an explorable atlas, by CSS instead: no
-   * pointer event ever reaches Aladin's own listeners. That staticness is
-   * also what keeps the SVG frame in sync with the view under it.
-   */
   .aladin-view {
     width: 100%;
     height: 100%;
-    pointer-events: none;
   }
 
   /* Kept in the DOM while loading/failed — a remount is what Retry is for. */
@@ -325,6 +406,44 @@
     stroke: var(--accent-bright);
     stroke-width: 0.6;
     vector-effect: non-scaling-stroke;
+  }
+
+  /* Floats over the tile imagery, so it needs its own backdrop to stay
+   * legible regardless of what's under it. */
+  .recenter {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    color: var(--text);
+  }
+
+  .recenter:hover {
+    background: var(--bg-inset);
+    color: var(--accent-bright);
+  }
+
+  /* Same floating-over-imagery treatment as .recenter, opposite corner. */
+  .center-coords {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    pointer-events: none;
   }
 
   .rotation {

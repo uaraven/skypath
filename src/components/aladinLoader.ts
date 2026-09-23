@@ -1,12 +1,12 @@
 /**
- * Loads Aladin Lite from CDS's CDN and mounts a minimal, read-only sky view
+ * Loads Aladin Lite from CDS's CDN and mounts a minimal, pannable sky view
  * into a given element.
  *
  * Lives in `src/components/`, not `src/lib/`: this is the one place in the
  * sky-view feature that touches `window`/`document`, and `src/lib/**` tests
- * run in bare Node with no DOM at all. `ObjectSkyView.svelte` depends on this
- * only through the injectable `loadAladin` prop, so tests never need a real
- * script fetch, WebGL, or network access.
+ * run in bare Node with no DOM at all. `FramingAssistant.svelte` depends on
+ * this only through the injectable `loadAladin` prop, so tests never need a
+ * real script fetch, WebGL, or network access.
  *
  * There is no documented tile-load-failure event for Aladin Lite (unlike
  * SkyView, which always answered 200 and baked its own errors into the
@@ -38,6 +38,18 @@ export interface AladinViewOptions {
  */
 export interface AladinHandle {
   setFov(degrees: number): void
+  /** RA/Dec in decimal degrees. Used by the framing assistant's Recenter
+   *  button to undo a user pan without remounting the view. */
+  gotoRaDec(ra: number, dec: number): void
+  /** `[ra, dec]` in decimal degrees, ICRS, of the current view centre. */
+  getRaDec(): number[]
+  /** Only `'positionChanged'` is used — fired (including on a plain pan, not
+   *  just a drag) with the new view centre, which is what drives the
+   *  coordinate readout below the view. */
+  on(
+    event: 'positionChanged',
+    callback: (position: { ra: number; dec: number }) => void,
+  ): void
 }
 
 export type AladinLoader = (
@@ -106,12 +118,19 @@ function loadScript(): Promise<AladinApi> {
 }
 
 /**
- * Every control and overlay is off on purpose: the widget is meant to read
- * as a static preview, not an explorable atlas. Aladin has no option to
- * disable panning/zooming/double-click-recenter themselves (verified against
- * the library's own event-wiring source — the listeners are attached
- * unconditionally), so that's done separately with `pointer-events: none` on
- * the container in ObjectSkyView.svelte.
+ * Every chrome control is off — corner text, zoom buttons, the layer/share/
+ * projection/coordinate-grid UI — so the widget reads as a clean sky view
+ * rather than a full Aladin app shell. Panning and double-click recenter are
+ * deliberately left enabled: FramingAssistant.svelte lets the user drag the
+ * view to compose a shot, with its own Recenter button (via `gotoRaDec` +
+ * `setFov` on the returned handle) to undo it. Zoom (scroll wheel, pinch) is
+ * *not* left enabled — the camera-frame rectangle is a fixed fraction of the
+ * view box, so a changed scale would silently make it lie about the field it
+ * represents. Aladin has no option to disable zoom input itself (verified
+ * against the library's own event-wiring source — the wheel/pinch listeners
+ * are attached unconditionally to its canvas), so FramingAssistant.svelte
+ * intercepts and stops those events in the capture phase before they reach
+ * it, while leaving single-touch/mouse-drag panning untouched.
  */
 const MINIMAL_VIEWER_OPTIONS = {
   cooFrame: 'ICRSd',

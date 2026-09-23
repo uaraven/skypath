@@ -12,18 +12,16 @@ import type { DeepSkyObject } from '../astro/types'
 import { rigOptics, type Rig } from '../rig'
 import {
   aladinViewParams,
-  DEFAULT_FIELD_ARCMIN,
   MAX_FIELD_DEGREES,
   MIN_FIELD_DEGREES,
   type AladinOptions,
 } from './aladin'
 
 /**
- * How much wider the view is than whichever is larger, the rig's field or
- * the object. Distinct from `aladin.ts`'s `FRAMING_FACTOR` (1.5): that one
- * answers "how much sky around the object", this one answers "how much room
- * around the sensor's field", and the no-rig sky view keeps using the
- * former unchanged.
+ * How much wider the view is than the rig's own field. Distinct from
+ * `aladin.ts`'s `FRAMING_FACTOR` (1.5): that one answers "how much sky
+ * around the object", this one answers "how much room around the sensor's
+ * field", and the no-rig sky view keeps using the former unchanged.
  */
 export const FRAME_MARGIN = 1.25
 
@@ -59,24 +57,16 @@ export interface FramingView {
   frame: { width: number; height: number } | null
 }
 
-/** The object's own major axis, in degrees, with the same missing-size
- *  fallback `aladin.ts` uses. Unmultiplied — the margin is applied once,
- *  uniformly, over whichever of the rig or the object turns out larger. */
-function objectFieldDegrees(object: DeepSkyObject): number {
-  const arcmin =
-    object.size && object.size > 0 ? object.size : DEFAULT_FIELD_ARCMIN
-  return arcmin / 60
-}
-
 /**
  * Framing-assistant view parameters for an object, optionally through a rig.
  *
  * Without a rig, this degrades to exactly today's sky view: `aladin.ts`'s
- * object-sized field, no rectangle. With one, the view is sized to
- * `FRAME_MARGIN` times whichever is larger — the rig's *diagonal* (see
- * `rigDiagonalDeg`) or the object's own size — so a widefield rig on a small
- * target shows the rig's field around it, and a long focal length on a large
- * target shows the whole object with the sensor cropping a corner of it. The
+ * object-sized field, no rectangle. With one, the view is always sized off
+ * *that rig's own field* — `FRAME_MARGIN` times its diagonal (see
+ * `rigDiagonalDeg`) — regardless of how big the object's catalog size is, so
+ * switching rigs always changes the view, and a long focal length on a big
+ * object shows a properly zoomed-in crop rather than ballooning out to fit
+ * the whole object with the sensor rectangle shrunk to a sliver. The
  * diagonal, not the larger axis, is what has to fit: the rotation slider
  * spins the frame in place, and only the diagonal is rotation-invariant.
  */
@@ -91,12 +81,9 @@ export function framingViewParams(
   }
 
   const optics = rigOptics(rig)
-  const larger = Math.max(
-    rigDiagonalDeg(optics.fovWidthDeg, optics.fovHeightDeg),
-    objectFieldDegrees(object),
-  )
+  const diagonal = rigDiagonalDeg(optics.fovWidthDeg, optics.fovHeightDeg)
   const fov = Math.min(
-    Math.max(FRAME_MARGIN * larger, MIN_FIELD_DEGREES),
+    Math.max(FRAME_MARGIN * diagonal, MIN_FIELD_DEGREES),
     MAX_FIELD_DEGREES,
   )
 

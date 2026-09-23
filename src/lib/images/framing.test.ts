@@ -46,7 +46,7 @@ describe('without a rig', () => {
   })
 })
 
-describe('with a rig larger than the object', () => {
+describe('with a rig', () => {
   it("sizes the view to 1.25x the rig's diagonal, not its larger axis", () => {
     const params = framingViewParams(object({ size: 30 }), WIDEFIELD)
 
@@ -70,23 +70,26 @@ describe('with a rig larger than the object', () => {
     expect(frameDiagonal).toBeCloseTo(1 / FRAME_MARGIN, 6)
     expect(params.frame!.height).toBeLessThan(params.frame!.width)
   })
-})
 
-describe('with an object larger than the rig', () => {
-  it('sizes the view from the object, not the rig', () => {
+  it('ignores the object size entirely — the object never changes the fov or frame', () => {
     // M31-scale object (178′ major axis = ~2.97°), much bigger than the
-    // long-focal-length rig's ~0.09° field.
-    const params = framingViewParams(object({ size: 178 }), LONG_FOCAL)
+    // long-focal-length rig's ~0.09° field: the view still zooms to the
+    // rig, not out to the object.
+    const small = framingViewParams(object({ size: 1 }), LONG_FOCAL)
+    const large = framingViewParams(object({ size: 178 }), LONG_FOCAL)
 
-    const objectDeg = 178 / 60
-    expect(params.fov).toBeCloseTo(FRAME_MARGIN * objectDeg, 2)
+    const optics = rigOptics(LONG_FOCAL)
+    const diagonal = Math.hypot(optics.fovWidthDeg, optics.fovHeightDeg)
+    expect(small.fov).toBeCloseTo(FRAME_MARGIN * diagonal, 6)
+    expect(large.fov).toBeCloseTo(small.fov, 6)
+    expect(large.frame).toEqual(small.frame)
   })
 
-  it('shrinks the frame rectangle to a small fraction of the box', () => {
-    const params = framingViewParams(object({ size: 178 }), LONG_FOCAL)
+  it('switching to a different rig changes the view even for the same object', () => {
+    const wide = framingViewParams(object({ size: 30 }), WIDEFIELD)
+    const long = framingViewParams(object({ size: 30 }), LONG_FOCAL)
 
-    expect(params.frame!.width).toBeLessThan(0.05)
-    expect(params.frame!.height).toBeLessThan(0.05)
+    expect(wide.fov).not.toBeCloseTo(long.fov, 2)
   })
 })
 
@@ -98,8 +101,7 @@ describe('missing object size', () => {
       WIDEFIELD,
     )
 
-    // 30' is smaller than the rig's field either way, so the two should
-    // agree — this just confirms the fallback doesn't silently win.
+    // The object's size no longer affects the rig-sized view at all.
     expect(withoutSize.fov).toBeCloseTo(withSize.fov, 6)
   })
 })
@@ -120,7 +122,7 @@ describe('clamping', () => {
     expect(params.frame!.width).toBeGreaterThan(1)
   })
 
-  it('clamps a very small combined field to MIN_FIELD_DEGREES', () => {
+  it("clamps a very small rig field to MIN_FIELD_DEGREES", () => {
     const tinyRig: Rig = {
       id: 'd',
       name: 'Deep rig',

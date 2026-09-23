@@ -17,6 +17,7 @@
     | 'check'
     | 'chevron'
     | 'grip'
+    | 'target'
 
   interface Props {
     name: IconName
@@ -79,6 +80,10 @@
     <circle cx="15" cy="12" r="1" fill="currentColor" stroke="none" />
     <circle cx="9" cy="18" r="1" fill="currentColor" stroke="none" />
     <circle cx="15" cy="18" r="1" fill="currentColor" stroke="none" />
+  {:else if name === 'target'}
+    <circle cx="12" cy="12" r="8" />
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
   {/if}
 </svg>
 

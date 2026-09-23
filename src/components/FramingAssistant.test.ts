@@ -23,7 +23,13 @@ function deferred<T>() {
 }
 
 function fakeHandle(overrides: Partial<AladinHandle> = {}): AladinHandle {
-  return { setFov: vi.fn(), ...overrides }
+  return {
+    setFov: vi.fn(),
+    gotoRaDec: vi.fn(),
+    getRaDec: vi.fn(() => [10.68, 41.27]),
+    on: vi.fn(),
+    ...overrides,
+  }
 }
 
 function setup(overrides = {}) {
@@ -47,6 +53,9 @@ const toggle = () => screen.getByRole('button', { name: /sky view/i })
 const frameRect = () => document.querySelector('.frame-rect')
 const rotationSlider = () =>
   screen.queryByRole('slider', { name: /camera rotation/i })
+const recenterButton = () =>
+  screen.queryByRole('button', { name: /recenter/i })
+const centerCoords = () => document.querySelector('.center-coords')
 
 describe('loading', () => {
   it('starts expanded and invokes the loader', () => {
@@ -252,5 +261,141 @@ describe('changing fov without remounting', () => {
     expect(handle.setFov).toHaveBeenCalledWith(3)
     // Same target/survey — a rig switch must not re-invoke the loader.
     expect(loadAladin).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('recenter', () => {
+  it('is absent until the view is ready', () => {
+    setup({ loadAladin: () => deferred<AladinHandle>().promise })
+
+    expect(recenterButton()).toBeNull()
+  })
+
+  it('sends the view back to the original target and fov', async () => {
+    const handle = fakeHandle()
+    setup({
+      loadAladin: () => Promise.resolve(handle),
+      target: '10.68 41.27',
+      fov: 1.5,
+    })
+    await Promise.resolve()
+    await Promise.resolve()
+
+    await fireEvent.click(recenterButton()!)
+
+    expect(handle.gotoRaDec).toHaveBeenCalledWith(10.68, 41.27)
+    expect(handle.setFov).toHaveBeenCalledWith(1.5)
+  })
+
+  it('is offered with or without a rig frame', async () => {
+    setup({
+      loadAladin: () => Promise.resolve(fakeHandle()),
+      frame: { width: 0.8, height: 0.4 },
+    })
+    await Promise.resolve()
+    await Promise.resolve()
+
+    expect(recenterButton()).toBeInTheDocument()
+  })
+})
+
+describe('coordinate readout', () => {
+  it('is absent until the view is ready', () => {
+    setup({ loadAladin: () => deferred<AladinHandle>().promise })
+
+    expect(centerCoords()).toBeNull()
+  })
+
+  it('seeds from getRaDec once the view loads', async () => {
+    setup({
+      loadAladin: () =>
+        Promise.resolve(fakeHandle({ getRaDec: () => [10.68, 41.27] })),
+    })
+    await Promise.resolve()
+    await Promise.resolve()
+
+    // formatRa takes hours, getRaDec reports degrees — 10.68° / 15 = 0.712h.
+    expect(centerCoords()!.textContent).toContain('RA: 00h 42m 43s')
+    expect(centerCoords()!.textContent).toContain('Dec: +41° 16′ 12″')
+  })
+
+  it('tracks positionChanged as the user pans', async () => {
+    let onPositionChanged: ((p: { ra: number; dec: number }) => void) | null =
+      null
+    const handle = fakeHandle({
+      getRaDec: () => [10.68, 41.27],
+      on: (_event, callback) => {
+        onPositionChanged = callback
+      },
+    })
+    setup({ loadAladin: () => Promise.resolve(handle) })
+    await Promise.resolve()
+    await Promise.resolve()
+    expect(centerCoords()!.textContent).toContain('Dec: +41° 16′ 12″')
+
+    onPositionChanged!({ ra: 20, dec: -10 })
+    await Promise.resolve()
+
+    expect(centerCoords()!.textContent).toContain('RA: 01h 20m 00s')
+    expect(centerCoords()!.textContent).toContain('Dec: -10° 00′ 00″')
+  })
+})
+
+describe('zoom is disabled, panning is not', () => {
+  async function readyView(overrides: Record<string, unknown> = {}) {
+    setup({ loadAladin: () => Promise.resolve(fakeHandle()), ...overrides })
+    await Promise.resolve()
+    await Promise.resolve()
+    return view()!
+  }
+
+  it('stops a wheel event before it reaches a descendant (Aladin\'s canvas)', async () => {
+    const el = await readyView()
+    const canvas = document.createElement('canvas')
+    el.appendChild(canvas)
+    const spy = vi.fn()
+    canvas.addEventListener('wheel', spy)
+
+    canvas.dispatchEvent(
+      new WheelEvent('wheel', { bubbles: true, cancelable: true }),
+    )
+
+    expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('stops a two-finger touch (pinch) before it reaches a descendant', async () => {
+    const el = await readyView()
+    const canvas = document.createElement('canvas')
+    el.appendChild(canvas)
+    const spy = vi.fn()
+    canvas.addEventListener('touchstart', spy)
+
+    canvas.dispatchEvent(
+      new TouchEvent('touchstart', {
+        bubbles: true,
+        cancelable: true,
+        touches: [{} as Touch, {} as Touch],
+      }),
+    )
+
+    expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('lets a single-finger touch through, so drag-to-pan still works', async () => {
+    const el = await readyView()
+    const canvas = document.createElement('canvas')
+    el.appendChild(canvas)
+    const spy = vi.fn()
+    canvas.addEventListener('touchstart', spy)
+
+    canvas.dispatchEvent(
+      new TouchEvent('touchstart', {
+        bubbles: true,
+        cancelable: true,
+        touches: [{} as Touch],
+      }),
+    )
+
+    expect(spy).toHaveBeenCalledTimes(1)
   })
 })

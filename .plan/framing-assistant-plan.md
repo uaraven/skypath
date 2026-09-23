@@ -13,9 +13,9 @@ and a rotation slider.
    `ObservatoryManager` and becomes **one menu for the whole sidebar**,
    exporting and importing both collections in a single file.
 2. `ObjectSkyView` becomes `FramingAssistant`: same collapsible Aladin block,
-   but the field of view is 25 % wider than **whichever is larger, the
-   selected rig's field or the object**, a **rectangle** marks what the camera
-   sees, and a **0–360° slider** under the view rotates it.
+   but the field of view is 25 % wider than **the selected rig's own field**
+   (revised 2026-09-23 — see decision 8), a **rectangle** marks what the
+   camera sees, and a **0–360° slider** under the view rotates it.
 3. The rig add/edit dialog computes and shows, live: image scale (″/px),
    telescope diffraction limit, and the field of view in both axes.
 
@@ -243,9 +243,32 @@ SVG over the Aladin container instead, for three reasons:
 
 The cost is that the rectangle is drawn in the tangent plane rather than
 projected: at the ≤ 5° fields in play, the gnomonic distortion across the
-frame is under ~0.2 %, i.e. sub-pixel. **If the view ever becomes pannable
-and zoomable, this decision flips** — that's the trigger to move to
-`A.polyline`, and it belongs in the code comment.
+frame is under ~0.2 %, i.e. sub-pixel.
+
+**Update, 2026-09-23**: the view did become pannable (Aladin's own
+mouse/touch drag handling, previously suppressed with `pointer-events: none`
+on the container), but this decision did **not** flip to `A.polyline`. Asked
+the user how the rectangle should behave under panning, and the answer was:
+stay put in screen space, don't track the sky. That's a feature, not a
+compromise — it lets the rectangle be used to *reframe* a shot (pan the
+target off-centre and see what still falls inside the sensor) rather than
+only ever showing it centred, and it means the SVG-overlay approach above
+still holds with no reprojection work. A **Recenter** button (bullseye icon,
+top-right of the view) calls the loader handle's `gotoRaDec`/`setFov` to
+return to the object-centred view the panel originally computed.
+
+**Follow-up, same day**: zoom was cut back out — the user pointed out it
+"doesn't mesh with static rectangle" (a changed scale, unlike a changed
+centre, would make the fixed-fraction rectangle lie about the field it
+represents). Aladin has no option to disable zoom input on its own, so
+`FramingAssistant.svelte` intercepts wheel and multi-touch (2+ point) events
+in the capture phase on the container — an ancestor of the canvas Aladin
+binds its own listeners to — and calls `stopPropagation()` before they ever
+reach it, while single-touch/mouse drags pass through untouched. Also added:
+a coordinate readout (bottom-left of the view) showing the current view
+centre, via two more real, verified Aladin methods on the handle —
+`getRaDec()` (seeded once on load) and `on('positionChanged', callback)`
+(kept live as the user drags, firing `{ra, dec, dragging}` in degrees).
 
 Geometry lives in `src/lib/images/framing.ts`, pure and unit-tested:
 
@@ -272,15 +295,28 @@ With a rig:
 
 ```
 rigDiagonal = hypot(rig.fovWidthDeg, rig.fovHeightDeg)
-fov = clamp(FRAME_MARGIN × max(rigDiagonal, objectDeg))
+fov = clamp(FRAME_MARGIN × rigDiagonal)
 ```
 
-where `objectDeg` is the object's major axis (the catalogue size in arcmin
+**Revised 2026-09-23**: the view is sized off the *rig alone*, never the
+object. The original decision (below, struck through) sized the view to
+whichever was larger — the rig's field or the object's catalogue size — so a
+long focal length on a big, diffuse target (e.g. a degree-scale emission
+nebula) would balloon the view out to fit the whole object, shrinking the
+camera-frame rectangle to a near-invisible sliver. In real use that read as
+"the view doesn't change when I switch rigs" for any rig narrower than the
+object, and as "too small a view" for the frame itself — the opposite of
+what the panel is for, which is showing what *this* rig, at its own zoom,
+will actually capture. Dropping the object side of the `max` means switching
+rigs always changes the view, and the frame rectangle is always a consistent
+~80% of the box's diagonal (decision 8, second half, still applies).
+
+~~where `objectDeg` is the object's major axis (the catalogue size in arcmin
 ÷ 60, or the existing 30′ fallback). **The larger of the rig and the target
 sets the scale**: a widefield rig on M13 shows the rig's field with a small
 cluster inside it, and a long focal length on M31 shows the whole galaxy with
 the sensor's rectangle cropping a corner of it — which is exactly the
-question the panel is there to answer. The frame fractions are then each rig
+question the panel is there to answer.~~ The frame fractions are each rig
 axis' FOV over `fov`.
 
 **The rig side of the `max` uses its diagonal, not its larger axis** — found
@@ -442,9 +478,9 @@ Each is independently shippable and leaves the suite green.
   deleting the last rig leaves `selectedId: null`, a stored rig failing
   `isRig` is dropped not fatal); `backup.test.ts` (round trip, v1 file,
   garbage, one collection empty, `selectedId` absent from the output);
-  `framing.test.ts` (fov = 1.25 × the larger of rig and object — **both ways
-  round**, since the max is the part that silently degenerates to one branch;
-  fractions, no-rig fallback, wide-rig clamp overflow, the PA→screen sign).
+  `framing.test.ts` (fov = 1.25 × the selected rig's own diagonal,
+  independent of object size; fractions, no-rig fallback, wide-rig clamp
+  overflow, the PA→screen sign).
 - **Components** — `RigEditor.test.ts` (picking a sensor fills the fields;
   editing mm rewrites pitch and back; validation rejects a zero focal length;
   Cancel writes nothing to the store); `RigManager.test.ts` (list, selection,
@@ -470,9 +506,10 @@ Rough count: ~60 new tests on top of the current 581.
 Answered 2026-09-22; recorded here because the reasoning is not recoverable
 from the code these turn into.
 
-1. **What sizes the view** — the **selected** rig or the object, whichever
-   field is larger, then × 1.25 (decision 8). Not "the largest rig in the
-   list", which was the other reading of the spec's sentence.
+1. **What sizes the view** — the **selected** rig's own field × 1.25
+   (decision 8). Not "the largest rig in the list", which was the other
+   reading of the spec's sentence. Originally the larger of the rig and the
+   object; revised 2026-09-23 to the rig alone (decision 8).
 2. **No rigs** — empty list, no rectangle, today's object-sized view
    (decision 4). No fabricated default rig.
 3. **Diffraction** — **Dawes**, `116/D` (decision 3).
