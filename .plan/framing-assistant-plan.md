@@ -273,7 +273,7 @@ centre, via two more real, verified Aladin methods on the handle —
 Geometry lives in `src/lib/images/framing.ts`, pure and unit-tested:
 
 ```ts
-export const FRAME_MARGIN = 1.25
+export const FRAME_MARGIN = 1.1
 
 export interface FramingView {
   target: string
@@ -309,7 +309,11 @@ object, and as "too small a view" for the frame itself — the opposite of
 what the panel is for, which is showing what *this* rig, at its own zoom,
 will actually capture. Dropping the object side of the `max` means switching
 rigs always changes the view, and the frame rectangle is always a consistent
-~80% of the box's diagonal (decision 8, second half, still applies).
+fraction of the box's diagonal (decision 8, second half, still applies).
+`FRAME_MARGIN` itself was tightened from 1.25 to 1.1 the same day, per an
+explicit request, once the rig-only sizing made the margin's effect on the
+rectangle's on-screen size directly visible — less breathing room around the
+frame, so `1/FRAME_MARGIN ≈ 91%` of the box's diagonal rather than 80%.
 
 ~~where `objectDeg` is the object's major axis (the catalogue size in arcmin
 ÷ 60, or the existing 30′ fallback). **The larger of the rig and the target
@@ -326,13 +330,14 @@ larger *unrotated* axis only guarantees the frame fits at rotation 0°; the
 slider spins the rectangle about the box's centre, and at the worst angle a
 rectangle reaches out to its own diagonal in every direction. Using the
 diagonal here is what keeps the frame inside the box at *every* rotation,
-not just the default one — the cost is that the rectangle now fills
-`1/1.25 ≈ 80%` of the box's diagonal rather than 80% of one side, so it
-reads a little smaller unrotated than the previous version did.
+not just the default one — the cost is that the rectangle fills
+`1/FRAME_MARGIN` of the box's diagonal (≈91% at the current 1.1 margin)
+rather than the full side, so it reads a little smaller unrotated than a
+larger-axis sizing would.
 
 Without a rig: today's `fieldOfViewDegrees(object.size)` and `frame: null`,
 so the block degrades to exactly the current sky view. Note that path keeps
-its existing `FRAMING_FACTOR` of 1.5 while the framing path uses 1.25 — the
+its existing `FRAMING_FACTOR` of 1.5 while the framing path uses `FRAME_MARGIN` (1.1) — the
 two numbers answer different questions (breathing room around a target vs.
 the spec's margin around a sensor field) and collapsing them would change
 today's sky view for no reason.
@@ -478,7 +483,7 @@ Each is independently shippable and leaves the suite green.
   deleting the last rig leaves `selectedId: null`, a stored rig failing
   `isRig` is dropped not fatal); `backup.test.ts` (round trip, v1 file,
   garbage, one collection empty, `selectedId` absent from the output);
-  `framing.test.ts` (fov = 1.25 × the selected rig's own diagonal,
+  `framing.test.ts` (fov = `FRAME_MARGIN` × the selected rig's own diagonal,
   independent of object size; fractions, no-rig fallback, wide-rig clamp
   overflow, the PA→screen sign).
 - **Components** — `RigEditor.test.ts` (picking a sensor fills the fields;
@@ -506,7 +511,7 @@ Rough count: ~60 new tests on top of the current 581.
 Answered 2026-09-22; recorded here because the reasoning is not recoverable
 from the code these turn into.
 
-1. **What sizes the view** — the **selected** rig's own field × 1.25
+1. **What sizes the view** — the **selected** rig's own field × `FRAME_MARGIN`
    (decision 8). Not "the largest rig in the list", which was the other
    reading of the spec's sentence. Originally the larger of the rig and the
    object; revised 2026-09-23 to the rig alone (decision 8).
