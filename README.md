@@ -10,7 +10,7 @@ No backend, no accounts, no server-side state. Everything runs in the browser an
 
 I like planning a session in [Telescopius](https://telescopius.com), but it doesn't know what obstructs my view. In NINA, I can create a custom horizon and it will overlay it on the target trajectory when planning, but NINA is running on a separate computer, which is usually attached to a telescope and requires VNC or RDP to connect to it.
 
-SkyPath combines a (very much) simplified NINA search and a NINA horizon and displays it to you in your browser.
+SkyPath combines a (very much) simplified Telescopius-style search with a NINA-style horizon, right in your browser.
 
 ## What it does
 
@@ -19,23 +19,33 @@ SkyPath draws **two charts of the night, both centred on local midnight** (the w
 - **Altitude chart** — the sky unwrapped: object altitude against time, with day, twilight and night shaded behind it, and your horizon drawn as the obstruction along the object's own azimuth track.
 - **All-sky chart** — a circular down-top view. Rim is altitude 0°, centre is the zenith, north at the top. The obstruction is drawn as a wall around the edge and the target path as it moves across the sky.
 
-A time slider under the charts links them: both flag the same moment with a marker. There is also a toggle to show the moon path and its phase.
+A time slider under the charts links them: both flag the same moment with a marker. There is also a toggle to show the Moon's path and phase.
 
-Additionally, SkyPath calculates **event times**, in a 24-hour clock, local timezone:
+SkyPath also calculates **event times** (24-hour clock, local timezone):
 
 - object rises above 0° / above your horizon
 - object at maximum altitude (transit), with the altitude and direction
 - object sets below your horizon / below 0°
 - sunset, sunrise, and civil / nautical / astronomical twilight and dawn
-- moonrise, moonset and the moon phase
+- moonrise, moonset and the Moon's phase
 
-SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2 and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
+SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2, LBN and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
 
 **Observatories** — named combination of a location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
 
 **Horizons** are NINA-compatible plain text: one `azimuth altitude` pair per line, azimuth 0–359°. Upload a file or paste it.
 
-### Development
+## Framing assistant
+
+You can define **rigs** — a telescope and camera combination — to preview how a target will be framed. This only works for deep-sky objects.
+
+The preview shows your target and draws an approximate frame outline around it, sized to the currently selected rig.
+
+## Your data
+
+Everything you save — observatories and rigs — stays in your browser's `localStorage`; nothing is sent anywhere. The upside is no account, no payment, no ads. The downside is that the data doesn't travel with you from one computer to another on its own, so SkyPath also lets you export and import observatories and rigs to move them between browsers and machines.
+
+## Development
 
 ```sh
 npm test           # all three Vitest projects
@@ -51,11 +61,11 @@ npm run catalog:build   # regenerate catalogue JSON from OpenNGC and VizieR
 
 ## Use of AI
 
-This is the first project that I completely vibe coded. I've generated programs with AI before, but I always check the code afterwards to make sure I understand what it does and that it does it efficiently. This project is not it.
+This is the first project I've completely vibe-coded. I've generated programs with AI before, but I always checked the code afterwards to make sure I understood what it did and that it did it efficiently. This project is not that.
 
-I am not a front-end developer. I can do some JS coding and just to have the app to look as I want to would have taken me a week.
+I'm not a front-end developer. I can do some JS coding, but getting the app to look the way I wanted on my own would have taken me a week.
 
-I decided that I don't really care how it works (also Claude Code with Opus/Fable/Sonnet 5 combination generates fine code. I still find ways to improve it, but all-in-all it's not bad at all) as long as it works fast enough and looks the way I want.
+I decided I don't really care how it works, as long as it's fast enough and looks the way I want — and Claude Code, with the Opus/Fable/Sonnet 5 combination, generates fine code. I still find ways to improve it, but all in all it's not bad at all.
 
 ## Data and credits
 

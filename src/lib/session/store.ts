@@ -24,9 +24,18 @@ export interface Session {
   dateText: string | null
   /** Whether the Results tab's sky view is expanded. */
   imageOpen: boolean
+  /** The framing assistant's camera rotation (position angle, 0–360°). One
+   *  value shared across every rig and object — it's view state like the
+   *  scrub position, not a property of the equipment. */
+  frameRotation: number
 }
 
-const EMPTY: Session = { objectId: null, dateText: null, imageOpen: true }
+const EMPTY: Session = {
+  objectId: null,
+  dateText: null,
+  imageOpen: true,
+  frameRotation: 0,
+}
 
 export class SessionStore {
   #state: Session
@@ -68,6 +77,10 @@ export class SessionStore {
     this.#commit({ ...this.#state, imageOpen })
   }
 
+  setFrameRotation(frameRotation: number): void {
+    this.#commit({ ...this.#state, frameRotation })
+  }
+
   /** Drops the persisted session and returns to first-launch state. */
   reset(): void {
     this.#storage?.removeItem(SESSION_KEY)
@@ -99,6 +112,7 @@ export class SessionStore {
         objectId?: unknown
         dateText?: unknown
         imageOpen?: unknown
+        frameRotation?: unknown
       }
       return {
         objectId:
@@ -116,6 +130,13 @@ export class SessionStore {
         // over a field whose absence is already meaningful.
         imageOpen:
           typeof candidate.imageOpen === 'boolean' ? candidate.imageOpen : true,
+        // Same additive-field precedent as `imageOpen`, one release later: a
+        // session written before rigs existed reads as unrotated.
+        frameRotation:
+          typeof candidate.frameRotation === 'number' &&
+          Number.isFinite(candidate.frameRotation)
+            ? ((candidate.frameRotation % 360) + 360) % 360
+            : 0,
       }
     } catch {
       // Corrupt JSON — start fresh rather than breaking boot.

@@ -93,6 +93,35 @@
       brings it highest above your horizon.
     </p>
 
+    <h4>Rigs and the framing assistant</h4>
+    <p>
+      Alongside observatories, SkyPath lets you define <em>rigs</em> — a telescope
+      and camera pairing, described by focal length and (optionally) aperture, plus
+      the camera's resolution and pixel pitch. Pick from a list of popular astro camera
+      sensors or enter your own numbers. The rig editor shows the resulting image
+      scale, field of view, and the telescope's Dawes diffraction limit as you type.
+    </p>
+    <p>
+      Selecting a rig turns the sky-view block above a deep-sky target's details
+      into a <em>framing assistant</em>: it sizes the view around whichever is
+      larger, the rig's field of view or the target, and draws a rectangle
+      showing what your sensor would actually capture. A slider below it rotates
+      that rectangle through 0–360°, so you can check how the target sits in
+      frame at a given camera angle before you head out. It's a preview to plan
+      a shot with, not a plate solve — the rectangle is drawn in screen space,
+      not fitted to the stars underneath it. You can drag the sky view itself
+      to explore or reframe the shot (zooming is turned off, since it would
+      throw off the rectangle's scale); the rectangle stays put on screen
+      while you do, and the bullseye button in the corner of the view resets
+      it back to the original position. A readout in the opposite corner
+      shows the RA/Dec of whatever point is currently centred.
+    </p>
+    <p>
+      Like observatories, rigs are kept in the browser's local storage; the same
+      Export and Import in the sidebar's menu now carry both collections in one
+      file, with a choice of which one(s) to bring in.
+    </p>
+
     <h4>Creating a horizon file</h4>
     <p>
       SkyPath reads the same horizon file format as NINA — a plain text file

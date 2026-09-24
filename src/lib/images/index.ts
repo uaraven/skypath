@@ -14,3 +14,4 @@ export {
   type AladinOptions,
   type AladinViewParams,
 } from './aladin'
+export { framingViewParams, FRAME_MARGIN, type FramingView } from './framing'

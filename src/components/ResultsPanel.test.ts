@@ -147,23 +147,39 @@ describe('ResultsPanel', () => {
   it('shows a sky view of the object', () => {
     const { container } = setup()
 
-    // Scoped to the sky-view block: the charts also carry `role="img"`.
+    // Scoped to the framing block: the charts also carry `role="img"`.
     expect(
-      container.querySelector('.object-sky-view [role="img"]'),
+      container.querySelector('.framing-assistant [role="img"]'),
     ).toHaveAttribute('aria-label', `Sky view of ${M13.name}`)
     // RA-to-degrees conversion and field-of-view sizing are pinned in
     // `lib/images/aladin.test.ts`; this just checks the panel wires them in.
     expect(screen.getByText(/field$/)).toBeInTheDocument()
   })
 
+  it('shows a rig-driven caption once a rig is selected', () => {
+    // The frame rectangle itself only appears once Aladin reports ready
+    // (`FramingAssistant.test.ts`, with an injected fake loader); this only
+    // checks that the panel builds and wires the rig-driven values in.
+    const rig = {
+      id: 'r1',
+      name: 'Widefield newt',
+      telescope: { focalLength: 530, aperture: 130 },
+      camera: { pixelsX: 6252, pixelsY: 4176, pitchX: 3.76, pitchY: 3.76 },
+    }
+    setup({ rig })
+
+    expect(screen.getByText(/2\.54.*1\.70/)).toBeInTheDocument()
+    expect(screen.getByText(/1\.46.*px/)).toBeInTheDocument()
+  })
+
   // A survey cutout is of fixed sky, so it says nothing useful about a body
   // that moves across it.
   it('offers no sky view for the planets or the Moon', () => {
     const { container: planet } = setup({ object: objectById('jupiter')! })
-    expect(planet.querySelector('.object-sky-view')).toBeNull()
+    expect(planet.querySelector('.framing-assistant')).toBeNull()
 
     const { container: moon } = setup({ object: MOON })
-    expect(moon.querySelector('.object-sky-view')).toBeNull()
+    expect(moon.querySelector('.framing-assistant')).toBeNull()
   })
 
   const yearlyPanel = (container: HTMLElement) =>

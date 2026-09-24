@@ -65,11 +65,12 @@ describe('loading', () => {
     })
 
     const script = document.querySelector(SCRIPT_SELECTOR)!
-    const aladin = vi.fn()
+    const handle = { setFov: vi.fn() }
+    const aladin = vi.fn().mockReturnValue(handle)
     window.A = { init: Promise.resolve(), aladin }
     script.dispatchEvent(new Event('load'))
 
-    await promise
+    await expect(promise).resolves.toBe(handle)
 
     expect(aladin).toHaveBeenCalledTimes(1)
     const [calledEl, options] = aladin.mock.calls[0]
