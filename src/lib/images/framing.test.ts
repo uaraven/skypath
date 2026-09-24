@@ -47,7 +47,7 @@ describe('without a rig', () => {
 })
 
 describe('with a rig', () => {
-  it("sizes the view to 1.25x the rig's diagonal, not its larger axis", () => {
+  it("sizes the view to FRAME_MARGIN x the rig's diagonal, not its larger axis", () => {
     const params = framingViewParams(object({ size: 30 }), WIDEFIELD)
 
     const optics = rigOptics(WIDEFIELD)

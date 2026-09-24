@@ -23,7 +23,7 @@ import {
  * around the object", this one answers "how much room around the sensor's
  * field", and the no-rig sky view keeps using the former unchanged.
  */
-export const FRAME_MARGIN = 1.25
+export const FRAME_MARGIN = 1.10
 
 /**
  * The rig's own diagonal, in degrees — what the frame rectangle's on-screen
