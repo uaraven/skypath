@@ -6,7 +6,7 @@
  * that in Phase 4/5 if the SVG output turns out to warrant it.
  */
 
-import { page } from '@vitest/browser/context'
+import { page } from 'vitest/browser'
 
 /**
  * Shoots `element` when given one. A bare page shot also captures Vitest's own

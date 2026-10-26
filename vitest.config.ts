@@ -1,4 +1,5 @@
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
 import pkg from './package.json' with { type: 'json' }
 
@@ -59,6 +60,9 @@ export default defineConfig({
           // which esbuild has no loader for. Leave those two to the Svelte
           // plugin instead of prebundling them.
           exclude: ['@testing-library/svelte', '@testing-library/svelte-core'],
+          // jest-dom imports named exports from this CommonJS package; served
+          // raw to the browser they don't exist, so force it through prebundling.
+          include: ['aria-query', 'lz-string', 'pretty-format'],
         },
         test: {
           name: 'visual',
@@ -67,7 +71,7 @@ export default defineConfig({
           env: { TZ: 'UTC' },
           browser: {
             enabled: true,
-            provider: 'playwright',
+            provider: playwright(),
             // Headless by default so `npm test` stays non-interactive;
             // `npm run test:visual:open` flips it for eyeballing.
             headless: true,

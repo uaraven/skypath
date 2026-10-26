@@ -55,6 +55,10 @@ describe('restoring the previous session', () => {
   })
 
   it('restores the saved night into the date input', () => {
+    // A saved night in the past falls back to today, so pin "today" before it.
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date(2026, 9, 1, 21))
+
     setup({ objectId: 'M13', dateText: '2026-10-15' })
 
     expect(screen.getByLabelText(/night of/i)).toHaveValue('2026-10-15')

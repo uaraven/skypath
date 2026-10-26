@@ -6,7 +6,7 @@
  * component tests under `src/components/`.
  */
 
-import { page } from '@vitest/browser/context'
+import { page } from 'vitest/browser'
 import { render, screen } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'

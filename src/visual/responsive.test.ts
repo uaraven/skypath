@@ -7,7 +7,7 @@
 
 import { render, screen } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
-import { page } from '@vitest/browser/context'
+import { page } from 'vitest/browser'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import App from '../App.svelte'
 import { screenshot } from './screenshot'

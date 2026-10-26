@@ -144,7 +144,7 @@
       <div>
         <h1>SkyPath</h1>
         <p class="tagline">
-          Astrophotography planning without digital trace
+          Astrophotography planning for <em>your</em> equipment, in <em>your</em> browser
         </p>
       </div>
     </div>

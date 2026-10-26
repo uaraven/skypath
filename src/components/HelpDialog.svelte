@@ -102,17 +102,11 @@
       scale, field of view, and the telescope's Dawes diffraction limit as you type.
     </p>
     <p>
-      Selecting a rig turns the sky-view block above a deep-sky target's details
-      into a <em>framing assistant</em>: it sizes the view around whichever is
-      larger, the rig's field of view or the target, and draws a rectangle
-      showing what your sensor would actually capture. A slider below it rotates
-      that rectangle through 0–360°, so you can check how the target sits in
-      frame at a given camera angle before you head out. It's a preview to plan
-      a shot with, not a plate solve — the rectangle is drawn in screen space,
-      not fitted to the stars underneath it. You can drag the sky view itself
-      to explore or reframe the shot (zooming is turned off, since it would
-      throw off the rectangle's scale); the rectangle stays put on screen
-      while you do, and the bullseye button in the corner of the view resets
+      Selecting a rig turns the sky-view panel into a <em>framing assistant</em>: 
+      it shows the target and the rig's field of view, showing what your sensor would actually capture. 
+      A slider below it controls the rotation of between 0º and 360°, so you can check how the target sits in
+      frame at a given camera angle before the session. You can pan the view around,
+      to get the better view and the bullseye button in the corner of the view resets
       it back to the original position. A readout in the opposite corner
       shows the RA/Dec of whatever point is currently centred.
     </p>
