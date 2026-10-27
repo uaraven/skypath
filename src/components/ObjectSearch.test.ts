@@ -285,3 +285,20 @@ describe('debouncing', () => {
     )
   })
 })
+
+describe('coordinate search', () => {
+  it('offers a result for RA/DEC coordinates and selects it', async () => {
+    const user = userEvent.setup()
+    const { onselect } = setup()
+    await search(user, 'RA 05 35 17.3 DEC -05 23 28')
+
+    expect(await screen.findByText(/custom coordinates/i)).toBeTruthy()
+    await user.click(
+      screen.getByRole('button', { name: /custom coordinates/i }),
+    )
+
+    const object = onselect.mock.calls[0][0]
+    expect(object.ra).toBeCloseTo(5 + 35 / 60 + 17.3 / 3600, 6)
+    expect(object.dec).toBeCloseTo(-(5 + 23 / 60 + 28 / 3600), 6)
+  })
+})

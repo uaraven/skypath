@@ -66,6 +66,15 @@
       just deep-sky objects.
     </p>
     <p>
+      Besides catalog names, you can search by position. Type
+      <code>RA hh mm ss DEC dd mm ss</code> into the search box, for example
+      <code>RA 05 35 17.3 DEC -05 23 28</code>. The keywords are not case
+      sensitive, seconds may have any number of decimals (or none), and the
+      declination may carry a sign. The coordinates are read as J2000 right
+      ascension and declination, and the result is a target you can open like
+      any other — charts, event times and the framing assistant included.
+    </p>
+    <p>
       SkyPath runs entirely in your browser and sends no data to any server.
       There is no account to create: your observatories are kept in the
       browser's local storage and never leave your computer. That does mean they
