@@ -8,6 +8,7 @@
 
 import type { SkyObject } from '../astro/types'
 import { designationKey, parseDesignation } from './catalogs'
+import { coordinateObjectById } from './coordinates'
 import { deepSkyObjects } from './dso'
 import { SearchIndex, type CatalogFilters, type SearchResult } from './search'
 import { solarSystemObjects } from './solar-system'
@@ -22,6 +23,11 @@ export {
   type SearchResult,
 } from './search'
 export { buildCatalog } from './dso'
+export {
+  parseCoordinateQuery,
+  coordinateObject,
+  coordinateObjectById,
+} from './coordinates'
 export {
   CATALOGS,
   catalogById,
@@ -68,9 +74,13 @@ export function searchObjects(
   return index.search(query, limit, filters, browse)
 }
 
-/** Looks up an object by its stable id, e.g. `M13` or `jupiter`. */
+/**
+ * Looks up an object by its stable id, e.g. `M13` or `jupiter`. Coordinate
+ * targets (`RADEC:…`) aren't in the catalog; their id carries the position, so
+ * they are rebuilt from it.
+ */
 export function objectById(id: string): SkyObject | undefined {
-  return byId.get(id)
+  return byId.get(id) ?? coordinateObjectById(id)
 }
 
 const byDesignation = new Map(

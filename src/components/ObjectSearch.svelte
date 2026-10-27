@@ -14,8 +14,10 @@
     observingWindow,
   } from '../lib/astro/observability'
   import {
+    coordinateObject,
     formatDesignation,
     isCatalogObject,
+    parseCoordinateQuery,
     OBJECT_TYPES,
     searchObjects,
     typeLabel,
@@ -129,9 +131,20 @@
     ),
   )
 
-  const matched = $derived(
-    observabilityActive ? observableWithin(candidates) : candidates,
+  // A query of the form `RA hh mm ss DEC dd mm ss` names a position, not a
+  // catalogue entry; it leads the list, ahead of whatever else the text matched.
+  const coordinateResult = $derived.by((): SearchResult | null => {
+    const position = parseCoordinateQuery(applied)
+    return position
+      ? { object: coordinateObject(position.ra, position.dec), score: Infinity }
+      : null
+  })
+
+  const pool = $derived(
+    coordinateResult ? [coordinateResult, ...candidates] : candidates,
   )
+
+  const matched = $derived(observabilityActive ? observableWithin(pool) : pool)
 
   const rows = $derived(
     matched.map(({ object }) => ({
@@ -178,6 +191,7 @@
   /** Every designation the object answers to, or its kind for a planet. */
   function subtitleOf(object: SkyObject): string {
     if (!isCatalogObject(object)) {
+      if (object.id.startsWith('RADEC:')) return 'Custom coordinates (J2000)'
       return object.kind === 'planet' ? 'Planet' : object.kind
     }
     const designations = object.designations.map(formatDesignation).join(' · ')
@@ -214,7 +228,7 @@
       id="object-query"
       type="search"
       bind:value={query}
-      placeholder="Andromeda, M 31, NGC 224, Jupiter…"
+      placeholder="Andromeda, M 31, NGC 224, Jupiter, RA 05 35 17 DEC -05 23 28…"
       autocomplete="off"
     />
     <button type="submit">Search</button>
@@ -307,9 +321,10 @@
   {#if applied.trim() === '' && !anyFilterActive}
     <p class="empty">
       Search the Messier, NGC, IC, Sharpless 2 and LDN catalogues and the
-      planets by name, designation or type — or use the filters to browse by
-      type, brightness, apparent size and how long a target clears your horizon.
-      Pick a result to see it in full.
+      planets by name, designation or type, or enter coordinates as
+      <code>RA hh mm [ss] DEC dd mm [ss]</code> — or use the filters to browse by
+      type, brightness, apparent size and how long a target clears your horizon. Pick
+      a result to see it in full.
     </p>
   {:else if rows.length === 0}
     <p class="empty">
