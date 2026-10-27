@@ -19,6 +19,13 @@ describe('parseCoordinateQuery', () => {
     expect(p.dec).toBeCloseTo(5 + 23 / 60 + 28.123456 / 3600, 9)
   })
 
+  it('treats omitted seconds as zero', () => {
+    const p = parseCoordinateQuery('RA 05 35 DEC -05 23')!
+    expect(p.ra).toBeCloseTo(5 + 35 / 60, 9)
+    expect(p.dec).toBeCloseTo(-(5 + 23 / 60), 9)
+    expect(p).toEqual(parseCoordinateQuery('RA 05 35 00 DEC -05 23 00'))
+  })
+
   it('ignores case and extra whitespace', () => {
     expect(parseCoordinateQuery('  Ra  1 2 3   DeC  4 5 6 ')).not.toBeNull()
   })
@@ -39,6 +46,8 @@ describe('parseCoordinateQuery', () => {
   it.each([
     'M31',
     'RA 05 35 17',
+    'RA 5 DEC 1',
+    'RA 5 0 0 0 DEC 1 2 3',
     'RA 24 00 00 DEC 0 0 0',
     'RA 25 00 00 DEC 0 0 0',
     'RA 5 60 0 DEC 0 0 0',
@@ -46,7 +55,6 @@ describe('parseCoordinateQuery', () => {
     'RA 5 0 0 DEC 91 0 0',
     'RA 5 0 0 DEC 90 0 1',
     'RA 5 0 0 DEC x y z',
-    'RA 5 0 0 DEC 1 2',
   ])('rejects %j', (text) => {
     expect(parseCoordinateQuery(text)).toBeNull()
   })

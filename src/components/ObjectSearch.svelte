@@ -322,9 +322,9 @@
     <p class="empty">
       Search the Messier, NGC, IC, Sharpless 2 and LDN catalogues and the
       planets by name, designation or type, or enter coordinates as
-      <code>RA hh mm ss DEC dd mm ss</code> — or use the filters to browse by type,
-      brightness, apparent size and how long a target clears your horizon. Pick a
-      result to see it in full.
+      <code>RA hh mm [ss] DEC dd mm [ss]</code> — or use the filters to browse by
+      type, brightness, apparent size and how long a target clears your horizon. Pick
+      a result to see it in full.
     </p>
   {:else if rows.length === 0}
     <p class="empty">

@@ -67,10 +67,10 @@
     </p>
     <p>
       Besides catalog names, you can search by position. Type
-      <code>RA hh mm ss DEC dd mm ss</code> into the search box, for example
+      <code>RA hh mm [ss] DEC dd mm [ss]</code> into the search box, for example
       <code>RA 05 35 17.3 DEC -05 23 28</code>. The keywords are not case
-      sensitive, seconds may have any number of decimals (or none), and the
-      declination may carry a sign. The coordinates are read as J2000 right
+      sensitive, seconds are optional and may have any number of decimals, and
+      the declination may carry a sign. The coordinates are read as J2000 right
       ascension and declination, and the result is a target you can open like
       any other — charts, event times and the framing assistant included.
     </p>

@@ -16,14 +16,17 @@ const ID_PREFIX = 'RADEC:'
 const INTEGER = /^\d+$/
 const DECIMAL = /^\d+(?:\.\d+)?$/
 
-/** Hours (or degrees), minutes, seconds → a decimal value, or null if invalid. */
+/**
+ * Hours (or degrees), minutes and optional seconds → a decimal value, or null
+ * if invalid. Seconds default to zero when omitted.
+ */
 function sexagesimal(
   fields: string[],
   max: number,
   signed: boolean,
 ): number | null {
-  if (fields.length !== 3) return null
-  const [first, minutes, seconds] = fields
+  if (fields.length !== 2 && fields.length !== 3) return null
+  const [first, minutes, seconds = '0'] = fields
   const negative = signed && first.startsWith('-')
   const whole = signed ? first.replace(/^[+-]/, '') : first
   if (!INTEGER.test(whole) || !INTEGER.test(minutes)) return null
@@ -50,7 +53,7 @@ function fieldsOf(text: string): string[] {
 
 /**
  * Reads `RA <h m s> DEC <d m s>` (keywords case-insensitive, seconds optionally
- * fractional, declination optionally signed). Returns J2000 right ascension in
+ * fractional or omitted, declination optionally signed). Returns J2000 right ascension in
  * hours and declination in degrees, or null for anything that isn't a
  * well-formed, in-range coordinate pair — so ordinary catalogue queries fall
  * through untouched.

@@ -31,7 +31,7 @@ SkyPath also calculates **event times** (24-hour clock, local timezone):
 
 SkyPath bundles about 15 000 deep-sky objects (Messier, NGC, IC, Sharpless 2, LBN and LDN) plus the solar system planets, searchable by any designation or common name (`M13`, `messier 13`, `NGC 6205`, bare `6205`, `Sh2-155`, `Hercules`). The catalogue model is multi-catalogue by design: an object belongs to many catalogues and carries many names, so M13 and NGC 6205 are one entry with two numbers, not two rows.
 
-You can also search by position: type `RA hh mm ss DEC dd mm ss` (e.g. `RA 05 35 17.3 DEC -05 23 28`) and SkyPath treats it as a J2000 target at those coordinates. Keywords are case-insensitive, seconds may be fractional, and the declination may be signed.
+You can also search by position: type `RA hh mm [ss] DEC dd mm [ss]` (e.g. `RA 05 35 17.3 DEC -05 23 28`) and SkyPath treats it as a J2000 target at those coordinates. Keywords are case-insensitive, seconds are optional and may be fractional, and the declination may be signed.
 
 **Observatories** — named combination of a location and a horizon, created, edited, selected and deleted in-app, persisted to `localStorage`. The selected one drives every calculation and both charts.
 
