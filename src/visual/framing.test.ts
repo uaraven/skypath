@@ -8,7 +8,7 @@
  *
  * The loader is a fake that paints a plain block into the container after a
  * short delay — enough to exercise the real layout and the loading state.
- * **Nothing here may touch aladin.cds.unistra.fr**: a real Aladin Lite fetch
+ * **Nothing here may touch the Aladin CDN**: a real Aladin Lite fetch
  * (CDN script + WASM + live HiPS tiles) in the suite would be exactly the
  * kind of third-party round trip this project's visual tests are built to
  * avoid, and the view-parameter building it would exercise is already pinned

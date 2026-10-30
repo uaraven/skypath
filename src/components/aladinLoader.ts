@@ -15,8 +15,10 @@
  * own canvas, outside this module's visibility.
  */
 
+// Pinned and served from jsDelivr rather than CDS's own host, which has been
+// unreachable from some networks. Tile data still comes from CDS's HiPS servers.
 const SCRIPT_URL =
-  'https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js'
+  'https://cdn.jsdelivr.net/npm/aladin-lite@3.8.2/dist/aladin.min.js'
 
 const LOAD_TIMEOUT_MS = 15000
 

@@ -2,14 +2,14 @@
  * jsdom never fetches a real `<script>`, so `load`/`error` are dispatched by
  * hand, and jsdom's real `getContext('webgl2')` returns `null`, so leaving it
  * unstubbed doubles as the "WebGL2 unavailable" test. Nothing here ever
- * touches aladin.cds.unistra.fr.
+ * touches the Aladin CDN.
  */
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { AladinLoader } from './aladinLoader'
 
 const SCRIPT_SELECTOR =
-  'script[src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js"]'
+  'script[src="https://cdn.jsdelivr.net/npm/aladin-lite@3.8.2/dist/aladin.min.js"]'
 
 function scripts() {
   return document.querySelectorAll(SCRIPT_SELECTOR)
