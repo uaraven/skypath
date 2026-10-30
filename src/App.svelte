@@ -11,6 +11,7 @@
   import HelpDialog from './components/HelpDialog.svelte'
   import Icon from './components/Icon.svelte'
   import ObjectSearch from './components/ObjectSearch.svelte'
+  import ProviderNotice from './components/ProviderNotice.svelte'
   import { defaultFilters } from './components/searchFilters'
   import ResultsPanel from './components/ResultsPanel.svelte'
   import Sidebar from './components/Sidebar.svelte'
@@ -138,13 +139,16 @@
 </script>
 
 <div class="app">
+  <ProviderNotice />
+
   <header class="masthead">
     <div class="title">
       <img class="logo" src={skypathIcon} alt="" width="56" height="56" />
       <div>
         <h1>SkyPath</h1>
         <p class="tagline">
-          Astrophotography planning for <em>your</em> equipment, in <em>your</em> browser
+          Astrophotography planning for <em>your</em> equipment, in
+          <em>your</em> browser
         </p>
       </div>
     </div>
