@@ -23,7 +23,7 @@ import {
  * around the object", this one answers "how much room around the sensor's
  * field", and the no-rig sky view keeps using the former unchanged.
  */
-export const FRAME_MARGIN = 1.10
+export const FRAME_MARGIN = 1.1
 
 /**
  * The rig's own diagonal, in degrees — what the frame rectangle's on-screen
@@ -41,7 +41,7 @@ function rigDiagonalDeg(fovWidthDeg: number, fovHeightDeg: number): number {
 export interface FramingView {
   /** "RA Dec" in decimal degrees (Aladin's ICRSd frame). */
   target: string
-  /** HiPS survey id. */
+  /** Survey key. */
   survey: string
   /** Degrees across the (square) view box. */
   fov: number

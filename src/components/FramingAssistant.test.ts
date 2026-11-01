@@ -1,5 +1,5 @@
 /**
- * Every case here injects a fake `loadAladin` prop instead of the real CDN
+ * Every case here injects a fake `loadSkyView` prop instead of the real CDN
  * loader — this component never touches the network or WebGL in tests; that
  * belongs to `aladinLoader.test.ts`. Everything here is about what the
  * component does around the load, plus the frame rectangle and rotation
@@ -9,7 +9,7 @@
 
 import { fireEvent, render, screen } from '@testing-library/svelte'
 import { describe, expect, it, vi } from 'vitest'
-import type { AladinHandle, AladinLoader } from './aladinLoader'
+import type { SkyViewHandle, SkyViewLoader } from './skyView'
 import FramingAssistant from './FramingAssistant.svelte'
 
 function deferred<T>() {
@@ -22,7 +22,7 @@ function deferred<T>() {
   return { promise, resolve, reject }
 }
 
-function fakeHandle(overrides: Partial<AladinHandle> = {}): AladinHandle {
+function fakeHandle(overrides: Partial<SkyViewHandle> = {}): SkyViewHandle {
   return {
     setFov: vi.fn(),
     gotoRaDec: vi.fn(),
@@ -39,7 +39,7 @@ function setup(overrides = {}) {
     props: {
       target: '10.68 41.27',
       fov: 1.5,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
       alt: 'Sky view of M13',
       caption: '45′ field · DSS2 color',
       ...overrides,
@@ -53,54 +53,53 @@ const toggle = () => screen.getByRole('button', { name: /sky view/i })
 const frameRect = () => document.querySelector('.frame-rect')
 const rotationSlider = () =>
   screen.queryByRole('slider', { name: /camera rotation/i })
-const recenterButton = () =>
-  screen.queryByRole('button', { name: /recenter/i })
+const recenterButton = () => screen.queryByRole('button', { name: /recenter/i })
 const centerCoords = () => document.querySelector('.center-coords')
 
 describe('loading', () => {
   it('starts expanded and invokes the loader', () => {
-    const loadAladin = vi.fn<AladinLoader>(
-      () => deferred<AladinHandle>().promise,
+    const loadSkyView = vi.fn<SkyViewLoader>(
+      () => deferred<SkyViewHandle>().promise,
     )
-    setup({ loadAladin })
+    setup({ loadSkyView })
 
     expect(toggle()).toHaveAttribute('aria-expanded', 'true')
-    expect(loadAladin).toHaveBeenCalledTimes(1)
-    const [el, options] = loadAladin.mock.calls[0]
+    expect(loadSkyView).toHaveBeenCalledTimes(1)
+    const [el, options] = loadSkyView.mock.calls[0]
     expect(el).toBeInstanceOf(HTMLElement)
     expect(options).toEqual({
       target: '10.68 41.27',
       fov: 1.5,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
   })
 
   // The whole reason the container is bound to `open`: a collapsed block
   // must not spend a load on a view nobody asked to see.
   it('requests nothing while collapsed', () => {
-    const loadAladin = vi.fn(() => deferred<AladinHandle>().promise)
-    setup({ open: false, loadAladin })
+    const loadSkyView = vi.fn(() => deferred<SkyViewHandle>().promise)
+    setup({ open: false, loadSkyView })
 
-    expect(loadAladin).not.toHaveBeenCalled()
+    expect(loadSkyView).not.toHaveBeenCalled()
     expect(view()).toBeNull()
     expect(toggle()).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('collapses on click and re-invokes the loader on reopen', async () => {
-    const loadAladin = vi.fn(() => Promise.resolve(fakeHandle()))
-    setup({ loadAladin })
-    expect(loadAladin).toHaveBeenCalledTimes(1)
+    const loadSkyView = vi.fn(() => Promise.resolve(fakeHandle()))
+    setup({ loadSkyView })
+    expect(loadSkyView).toHaveBeenCalledTimes(1)
 
     await fireEvent.click(toggle())
     expect(view()).toBeNull()
 
     await fireEvent.click(toggle())
-    expect(loadAladin).toHaveBeenCalledTimes(2)
+    expect(loadSkyView).toHaveBeenCalledTimes(2)
   })
 
   it('spins until the loader resolves', async () => {
-    const { promise, resolve } = deferred<AladinHandle>()
-    setup({ loadAladin: () => promise })
+    const { promise, resolve } = deferred<SkyViewHandle>()
+    setup({ loadSkyView: () => promise })
 
     expect(spinner()).toBeInTheDocument()
     expect(view()).toHaveClass('hidden')
@@ -114,19 +113,21 @@ describe('loading', () => {
   })
 
   it('spins again against a fresh container when the object changes', async () => {
-    const loadAladin = vi.fn<AladinLoader>(() => Promise.resolve(fakeHandle()))
-    const { rerender } = setup({ loadAladin })
+    const loadSkyView = vi.fn<SkyViewLoader>(() =>
+      Promise.resolve(fakeHandle()),
+    )
+    const { rerender } = setup({ loadSkyView })
     await Promise.resolve()
     await Promise.resolve()
     const firstView = view()
 
-    await rerender({ target: '5.5 -5.5', fov: 1.5, survey: 'P/DSS2/color' })
+    await rerender({ target: '5.5 -5.5', fov: 1.5, survey: 'dss-color' })
 
-    expect(loadAladin).toHaveBeenCalledTimes(2)
-    expect(loadAladin.mock.calls[1][1]).toEqual({
+    expect(loadSkyView).toHaveBeenCalledTimes(2)
+    expect(loadSkyView.mock.calls[1][1]).toEqual({
       target: '5.5 -5.5',
       fov: 1.5,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
     // A stale mount under the new title would be a view of the wrong
     // object, so a change of target remounts a fresh container.
@@ -134,7 +135,7 @@ describe('loading', () => {
   })
 
   it('offers a retry when the loader fails', async () => {
-    setup({ loadAladin: () => Promise.reject(new Error('nope')) })
+    setup({ loadSkyView: () => Promise.reject(new Error('nope')) })
 
     await Promise.resolve()
     await Promise.resolve()
@@ -144,19 +145,19 @@ describe('loading', () => {
   })
 
   it('retries against a fresh container', async () => {
-    const { promise: firstAttempt, reject } = deferred<AladinHandle>()
-    const loadAladin = vi.fn().mockReturnValueOnce(firstAttempt)
-    setup({ loadAladin })
+    const { promise: firstAttempt, reject } = deferred<SkyViewHandle>()
+    const loadSkyView = vi.fn().mockReturnValueOnce(firstAttempt)
+    setup({ loadSkyView })
     const firstContainer = view()
 
     reject(new Error('nope'))
     await firstAttempt.catch(() => {})
     await Promise.resolve()
 
-    loadAladin.mockReturnValueOnce(deferred<AladinHandle>().promise)
+    loadSkyView.mockReturnValueOnce(deferred<SkyViewHandle>().promise)
     await fireEvent.click(screen.getByRole('button', { name: 'Retry' }))
 
-    expect(loadAladin).toHaveBeenCalledTimes(2)
+    expect(loadSkyView).toHaveBeenCalledTimes(2)
     // A fresh container, not the one the failed attempt was mounted into —
     // Aladin has no API to re-target or destroy an existing instance.
     expect(view()).not.toBe(firstContainer)
@@ -164,7 +165,7 @@ describe('loading', () => {
   })
 
   it('describes the view and the field it covers', () => {
-    setup({ loadAladin: () => deferred<AladinHandle>().promise })
+    setup({ loadSkyView: () => deferred<SkyViewHandle>().promise })
 
     expect(view()).toHaveAttribute('aria-label', 'Sky view of M13')
     expect(screen.getByText('45′ field · DSS2 color')).toBeInTheDocument()
@@ -173,7 +174,7 @@ describe('loading', () => {
 
 describe('the frame rectangle', () => {
   it('is absent with no rig (frame: null)', async () => {
-    setup({ loadAladin: () => Promise.resolve(fakeHandle()), frame: null })
+    setup({ loadSkyView: () => Promise.resolve(fakeHandle()), frame: null })
     await Promise.resolve()
     await Promise.resolve()
 
@@ -182,8 +183,8 @@ describe('the frame rectangle', () => {
   })
 
   it('is drawn once a rig gives a frame, only after the view is ready', async () => {
-    const { promise, resolve } = deferred<AladinHandle>()
-    setup({ loadAladin: () => promise, frame: { width: 0.8, height: 0.4 } })
+    const { promise, resolve } = deferred<SkyViewHandle>()
+    setup({ loadSkyView: () => promise, frame: { width: 0.8, height: 0.4 } })
 
     // Not drawn while still loading — nothing to anchor it to yet.
     expect(frameRect()).toBeNull()
@@ -200,7 +201,7 @@ describe('the frame rectangle', () => {
 
   it('shows the rotation slider whenever a frame is present', async () => {
     setup({
-      loadAladin: () => Promise.resolve(fakeHandle()),
+      loadSkyView: () => Promise.resolve(fakeHandle()),
       frame: { width: 0.8, height: 0.4 },
     })
     await Promise.resolve()
@@ -213,7 +214,7 @@ describe('the frame rectangle', () => {
 describe('rotation', () => {
   it('rotates the rectangle to match the position angle, sign included', async () => {
     setup({
-      loadAladin: () => Promise.resolve(fakeHandle()),
+      loadSkyView: () => Promise.resolve(fakeHandle()),
       frame: { width: 0.8, height: 0.4 },
       rotation: 90,
     })
@@ -227,7 +228,7 @@ describe('rotation', () => {
 
   it('updates the transform as the slider moves', async () => {
     setup({
-      loadAladin: () => Promise.resolve(fakeHandle()),
+      loadSkyView: () => Promise.resolve(fakeHandle()),
       frame: { width: 0.8, height: 0.4 },
       rotation: 0,
     })
@@ -243,15 +244,15 @@ describe('rotation', () => {
 describe('changing fov without remounting', () => {
   it('pushes a fov change through the handle instead of reloading', async () => {
     const handle = fakeHandle()
-    const loadAladin = vi.fn<AladinLoader>(() => Promise.resolve(handle))
-    const { rerender } = setup({ loadAladin, fov: 1.5 })
+    const loadSkyView = vi.fn<SkyViewLoader>(() => Promise.resolve(handle))
+    const { rerender } = setup({ loadSkyView, fov: 1.5 })
     await Promise.resolve()
     await Promise.resolve()
-    expect(loadAladin).toHaveBeenCalledTimes(1)
+    expect(loadSkyView).toHaveBeenCalledTimes(1)
 
     await rerender({
       target: '10.68 41.27',
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
       fov: 3,
       alt: 'Sky view of M13',
     })
@@ -260,13 +261,13 @@ describe('changing fov without remounting', () => {
 
     expect(handle.setFov).toHaveBeenCalledWith(3)
     // Same target/survey — a rig switch must not re-invoke the loader.
-    expect(loadAladin).toHaveBeenCalledTimes(1)
+    expect(loadSkyView).toHaveBeenCalledTimes(1)
   })
 })
 
 describe('recenter', () => {
   it('is absent until the view is ready', () => {
-    setup({ loadAladin: () => deferred<AladinHandle>().promise })
+    setup({ loadSkyView: () => deferred<SkyViewHandle>().promise })
 
     expect(recenterButton()).toBeNull()
   })
@@ -274,7 +275,7 @@ describe('recenter', () => {
   it('sends the view back to the original target and fov', async () => {
     const handle = fakeHandle()
     setup({
-      loadAladin: () => Promise.resolve(handle),
+      loadSkyView: () => Promise.resolve(handle),
       target: '10.68 41.27',
       fov: 1.5,
     })
@@ -289,7 +290,7 @@ describe('recenter', () => {
 
   it('is offered with or without a rig frame', async () => {
     setup({
-      loadAladin: () => Promise.resolve(fakeHandle()),
+      loadSkyView: () => Promise.resolve(fakeHandle()),
       frame: { width: 0.8, height: 0.4 },
     })
     await Promise.resolve()
@@ -301,14 +302,14 @@ describe('recenter', () => {
 
 describe('coordinate readout', () => {
   it('is absent until the view is ready', () => {
-    setup({ loadAladin: () => deferred<AladinHandle>().promise })
+    setup({ loadSkyView: () => deferred<SkyViewHandle>().promise })
 
     expect(centerCoords()).toBeNull()
   })
 
   it('seeds from getRaDec once the view loads', async () => {
     setup({
-      loadAladin: () =>
+      loadSkyView: () =>
         Promise.resolve(fakeHandle({ getRaDec: () => [10.68, 41.27] })),
     })
     await Promise.resolve()
@@ -328,7 +329,7 @@ describe('coordinate readout', () => {
         onPositionChanged = callback
       },
     })
-    setup({ loadAladin: () => Promise.resolve(handle) })
+    setup({ loadSkyView: () => Promise.resolve(handle) })
     await Promise.resolve()
     await Promise.resolve()
     expect(centerCoords()!.textContent).toContain('Dec: +41° 16′ 12″')
@@ -343,13 +344,13 @@ describe('coordinate readout', () => {
 
 describe('zoom is disabled, panning is not', () => {
   async function readyView(overrides: Record<string, unknown> = {}) {
-    setup({ loadAladin: () => Promise.resolve(fakeHandle()), ...overrides })
+    setup({ loadSkyView: () => Promise.resolve(fakeHandle()), ...overrides })
     await Promise.resolve()
     await Promise.resolve()
     return view()!
   }
 
-  it('stops a wheel event before it reaches a descendant (Aladin\'s canvas)', async () => {
+  it("stops a wheel event before it reaches a descendant (Aladin's canvas)", async () => {
     const el = await readyView()
     const canvas = document.createElement('canvas')
     el.appendChild(canvas)

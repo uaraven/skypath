@@ -1,3 +1,5 @@
+import type { SkyViewHandle, SkyViewOptions } from './skyView'
+
 /**
  * Loads Aladin Lite from CDS's CDN and mounts a minimal, pannable sky view
  * into a given element.
@@ -20,46 +22,17 @@ const SCRIPT_URL =
 
 const LOAD_TIMEOUT_MS = 15000
 
-export interface AladinViewOptions {
-  /** "RA Dec" in decimal degrees. */
-  target: string
-  /** Field of view, in degrees. */
-  fov: number
-  /** HiPS survey id. */
-  survey: string
+/** Neutral survey key → Aladin HiPS id. Unknown values pass through, so a
+ *  raw HiPS id still works. */
+const SURVEYS: Record<string, string> = {
+  'dss-color': 'P/DSS2/color',
+  '2mass': 'P/2MASS/color',
+  galex: 'P/GALEXGR6_7/NUV',
 }
-
-/**
- * The slice of a live Aladin instance the app drives after mounting it.
- * Returning this rather than `void` is what lets the framing assistant
- * change the field of view on a rig switch via the documented `setFov` API
- * instead of tearing down and remounting the whole viewer (which would
- * re-fetch tiles and flash the panel).
- */
-export interface AladinHandle {
-  setFov(degrees: number): void
-  /** RA/Dec in decimal degrees. Used by the framing assistant's Recenter
-   *  button to undo a user pan without remounting the view. */
-  gotoRaDec(ra: number, dec: number): void
-  /** `[ra, dec]` in decimal degrees, ICRS, of the current view centre. */
-  getRaDec(): number[]
-  /** Only `'positionChanged'` is used — fired (including on a plain pan, not
-   *  just a drag) with the new view centre, which is what drives the
-   *  coordinate readout below the view. */
-  on(
-    event: 'positionChanged',
-    callback: (position: { ra: number; dec: number }) => void,
-  ): void
-}
-
-export type AladinLoader = (
-  el: HTMLElement,
-  options: AladinViewOptions,
-) => Promise<AladinHandle>
 
 interface AladinApi {
   init: Promise<void>
-  aladin: (el: HTMLElement, options: Record<string, unknown>) => AladinHandle
+  aladin: (el: HTMLElement, options: Record<string, unknown>) => SkyViewHandle
 }
 
 declare global {
@@ -156,8 +129,8 @@ const MINIMAL_VIEWER_OPTIONS = {
 
 export async function loadAladinView(
   el: HTMLElement,
-  options: AladinViewOptions,
-): Promise<AladinHandle> {
+  options: SkyViewOptions,
+): Promise<SkyViewHandle> {
   if (!hasWebgl2()) {
     throw new Error('WebGL2 is not available')
   }
@@ -169,6 +142,6 @@ export async function loadAladinView(
     ...MINIMAL_VIEWER_OPTIONS,
     target: options.target,
     fov: options.fov,
-    survey: options.survey,
+    survey: SURVEYS[options.survey] ?? options.survey,
   })
 }
