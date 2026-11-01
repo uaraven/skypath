@@ -30,7 +30,7 @@ beforeEach(() => {
   // inside the test suite, and a failure whenever it is slow or the machine
   // is offline. The app tests open the Results tab with the block collapsed;
   // `framing.test.ts` renders the component directly against a fake
-  // `loadAladin` instead.
+  // `loadSkyView` instead.
   session.setImageOpen(false)
 })
 

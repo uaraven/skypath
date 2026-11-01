@@ -122,7 +122,7 @@ describe('clamping', () => {
     expect(params.frame!.width).toBeGreaterThan(1)
   })
 
-  it("clamps a very small rig field to MIN_FIELD_DEGREES", () => {
+  it('clamps a very small rig field to MIN_FIELD_DEGREES', () => {
     const tinyRig: Rig = {
       id: 'd',
       name: 'Deep rig',

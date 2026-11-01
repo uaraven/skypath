@@ -6,7 +6,7 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { AladinLoader } from './aladinLoader'
+import type { SkyViewLoader } from './skyView'
 
 const SCRIPT_SELECTOR =
   'script[src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js"]'
@@ -21,7 +21,7 @@ function stubWebgl2() {
   )
 }
 
-async function importLoader(): Promise<{ loadAladinView: AladinLoader }> {
+async function importLoader(): Promise<{ loadAladinView: SkyViewLoader }> {
   return import('./aladinLoader')
 }
 
@@ -44,7 +44,7 @@ describe('WebGL2 unavailable', () => {
       loadAladinView(document.createElement('div'), {
         target: '10 20',
         fov: 1,
-        survey: 'P/DSS2/color',
+        survey: 'dss-color',
       }),
     ).rejects.toThrow(/webgl2/i)
 
@@ -61,7 +61,7 @@ describe('loading', () => {
     const promise = loadAladinView(el, {
       target: '10.68 41.27',
       fov: 2,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
 
     const script = document.querySelector(SCRIPT_SELECTOR)!
@@ -78,6 +78,7 @@ describe('loading', () => {
     expect(options).toMatchObject({
       target: '10.68 41.27',
       fov: 2,
+      // The neutral key is mapped to Aladin's HiPS id by the loader.
       survey: 'P/DSS2/color',
       cooFrame: 'ICRSd',
       showReticle: false,
@@ -110,7 +111,7 @@ describe('loading', () => {
     const first = loadAladinView(document.createElement('div'), {
       target: '0 0',
       fov: 1,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
     window.A = { init: Promise.resolve(), aladin: vi.fn() }
     document.querySelector(SCRIPT_SELECTOR)!.dispatchEvent(new Event('load'))
@@ -119,7 +120,7 @@ describe('loading', () => {
     await loadAladinView(document.createElement('div'), {
       target: '0 0',
       fov: 1,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
 
     expect(scripts()).toHaveLength(1)
@@ -134,7 +135,7 @@ describe('failure', () => {
     const first = loadAladinView(document.createElement('div'), {
       target: '0 0',
       fov: 1,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
     document.querySelector(SCRIPT_SELECTOR)!.dispatchEvent(new Event('error'))
     await expect(first).rejects.toThrow()
@@ -142,7 +143,7 @@ describe('failure', () => {
     const second = loadAladinView(document.createElement('div'), {
       target: '0 0',
       fov: 1,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
     expect(scripts()).toHaveLength(2)
 
@@ -159,7 +160,7 @@ describe('failure', () => {
     const promise = loadAladinView(document.createElement('div'), {
       target: '0 0',
       fov: 1,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
     })
     // `A.init` never settles — simulates a hung or blocked initialization.
     window.A = { init: new Promise(() => {}), aladin: vi.fn() }

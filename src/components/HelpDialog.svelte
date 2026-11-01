@@ -8,6 +8,7 @@
    * This is also where the data attribution lives now that the footer is gone.
    * The OpenNGC credit is a licence term (CC-BY-SA-4.0), not decoration.
    */
+  import { SKY_VIEW_BACKEND } from '../config'
   import Modal from './Modal.svelte'
 
   interface Props {
@@ -111,13 +112,14 @@
       scale, field of view, and the telescope's Dawes diffraction limit as you type.
     </p>
     <p>
-      Selecting a rig turns the sky-view panel into a <em>framing assistant</em>: 
-      it shows the target and the rig's field of view, showing what your sensor would actually capture. 
-      A slider below it controls the rotation of between 0º and 360°, so you can check how the target sits in
-      frame at a given camera angle before the session. You can pan the view around,
-      to get the better view and the bullseye button in the corner of the view resets
-      it back to the original position. A readout in the opposite corner
-      shows the RA/Dec of whatever point is currently centred.
+      Selecting a rig turns the sky-view panel into a <em>framing assistant</em
+      >: it shows the target and the rig's field of view, showing what your
+      sensor would actually capture. A slider below it controls the rotation of
+      between 0º and 360°, so you can check how the target sits in frame at a
+      given camera angle before the session. You can pan the view around, to get
+      the better view and the bullseye button in the corner of the view resets
+      it back to the original position. A readout in the opposite corner shows
+      the RA/Dec of whatever point is currently centred.
     </p>
     <p>
       Like observatories, rigs are kept in the browser's local storage; the same
@@ -204,14 +206,24 @@
     </ul>
     <p>
       Sky views are rendered with
-      <a
-        href="https://aladin.cds.unistra.fr/"
-        target="_blank"
-        rel="noopener noreferrer">Aladin Lite</a
-      >
-      (CDS, Strasbourg Observatory), drawn from the Digitized Sky Survey — based on
-      photographic plates from the Palomar and UK Schmidt telescopes, digitized by
-      the Space Telescope Science Institute (AURA) and the Caltech Palomar Observatory
+      {#if SKY_VIEW_BACKEND === 'wwt'}
+        <a
+          href="https://worldwidetelescope.org/"
+          target="_blank"
+          rel="noopener noreferrer">AAS WorldWide Telescope</a
+        >
+        (American Astronomical Society, MIT licence), drawn from the Digitized Sky
+        Survey
+      {:else}
+        <a
+          href="https://aladin.cds.unistra.fr/"
+          target="_blank"
+          rel="noopener noreferrer">Aladin Lite</a
+        >
+        (CDS, Strasbourg Observatory), drawn from the Digitized Sky Survey
+      {/if}
+      — based on photographic plates from the Palomar and UK Schmidt telescopes, digitized
+      by the Space Telescope Science Institute (AURA) and the Caltech Palomar Observatory
       Sky Survey.
     </p>
     <p>

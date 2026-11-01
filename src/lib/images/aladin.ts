@@ -29,11 +29,14 @@ export const FRAMING_FACTOR = 1.5
 export const MIN_FIELD_DEGREES = 0.1
 export const MAX_FIELD_DEGREES = 5
 
-/** Aladin's own default HiPS survey. */
-export const DEFAULT_SURVEY = 'P/DSS2/color'
+/**
+ * Default survey, as a backend-neutral key: each sky-view loader maps it to
+ * its own id (Aladin's `P/DSS2/color` HiPS, WWT's DSS colour imageset).
+ */
+export const DEFAULT_SURVEY = 'dss-color'
 
 export interface AladinOptions {
-  /** HiPS survey id; defaults to DSS2 color. */
+  /** Survey key; defaults to DSS2 color. */
   survey?: string
   /** Field of view in degrees; otherwise derived from the object's size. */
   fieldDegrees?: number
@@ -44,7 +47,7 @@ export interface AladinViewParams {
   target: string
   /** Field of view, in degrees. */
   fov: number
-  /** HiPS survey id. */
+  /** Survey key. */
   survey: string
 }
 

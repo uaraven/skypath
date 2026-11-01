@@ -18,15 +18,15 @@
 import { render, screen } from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
-import type { AladinHandle, AladinLoader } from '../components/aladinLoader'
+import type { SkyViewHandle, SkyViewLoader } from '../components/skyView'
 import FramingAssistant from '../components/FramingAssistant.svelte'
 import type { DeepSkyObject } from '../lib/astro/types'
 import { framingViewParams } from '../lib/images'
 import type { Rig } from '../lib/rig'
 import { screenshot } from './screenshot'
 
-const fakeLoadAladin: AladinLoader = (el) =>
-  new Promise<AladinHandle>((resolve) => {
+const fakeLoadSkyView: SkyViewLoader = (el) =>
+  new Promise<SkyViewHandle>((resolve) => {
     setTimeout(() => {
       el.style.background = 'linear-gradient(135deg, #1a2540, #0d1220)'
       resolve({
@@ -45,10 +45,10 @@ function renderBlock(overrides: Record<string, unknown> = {}) {
     props: {
       target: '10.68 41.27',
       fov: 1.5,
-      survey: 'P/DSS2/color',
+      survey: 'dss-color',
       alt: 'Sky view of M13',
       caption: '45′ field · DSS2 color',
-      loadAladin: fakeLoadAladin,
+      loadSkyView: fakeLoadSkyView,
       ...overrides,
     },
   })
@@ -56,8 +56,7 @@ function renderBlock(overrides: Record<string, unknown> = {}) {
     container,
     frame: () => container.querySelector('.frame'),
     frameRect: () => container.querySelector('.frame-rect'),
-    recenterButton: () =>
-      screen.queryByRole('button', { name: /recenter/i }),
+    recenterButton: () => screen.queryByRole('button', { name: /recenter/i }),
   }
 }
 

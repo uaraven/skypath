@@ -38,7 +38,7 @@
    * (kept live as the user drags).
    *
    * Presentational otherwise: the caller computes target/fov/survey/frame;
-   * loading Aladin itself is delegated to the injectable `loadAladin` prop
+   * loading Aladin itself is delegated to the injectable `loadSkyView` prop
    * (default `loadAladinView`, from `./aladinLoader`). The container mounts
    * only while the block is open, and Aladin has no documented API to
    * re-target or destroy an existing instance, so a changed object or a
@@ -49,8 +49,8 @@
    */
   import { untrack } from 'svelte'
   import { formatDec, formatRa } from '../lib/astro/coordinates'
-  import type { AladinHandle, AladinLoader } from './aladinLoader'
-  import { loadAladinView } from './aladinLoader'
+  import type { SkyViewHandle, SkyViewLoader } from './skyView'
+  import { getSkyViewLoader } from './skyView'
   import Icon from './Icon.svelte'
 
   interface Props {
@@ -71,8 +71,8 @@
      *  camera frame's rotation. Ignored (and hidden) when `frame` is null. */
     rotation?: number
     open?: boolean
-    /** Defaults to the real CDN loader; tests inject a fake one. */
-    loadAladin?: AladinLoader
+    /** Defaults to the configured backend's real loader; tests inject a fake. */
+    loadSkyView?: SkyViewLoader
   }
 
   let {
@@ -84,7 +84,7 @@
     frame = null,
     rotation = $bindable(0),
     open = $bindable(true),
-    loadAladin = loadAladinView,
+    loadSkyView = getSkyViewLoader(),
   }: Props = $props()
 
   const regionId = $props.id()
@@ -98,7 +98,7 @@
   /** Set once the current mount resolves; used to push later fov changes in
    *  place. Plain, not `$state` — it's driven by the mount effect below, not
    *  read reactively by anything that needs to re-run when it changes. */
-  let handle: AladinHandle | null = null
+  let handle: SkyViewHandle | null = null
 
   /** The view centre, for the coordinate readout — `ra`/`dec` in decimal
    *  degrees, ICRS, same convention as `target`. Null until the view is
@@ -145,7 +145,7 @@
     // The initial fov only — later changes go through `handle.setFov` in the
     // effect below instead of retriggering this one, which is why `fov` is
     // read `untrack`ed here and left out of `mountKey`.
-    loadAladin(el, { target, fov: untrack(() => fov), survey }).then(
+    loadSkyView(el, { target, fov: untrack(() => fov), survey }).then(
       (result) => {
         if (cancelled) return
         handle = result
@@ -188,7 +188,7 @@
 
   /** Undoes a user pan, back to the object-centred view the panel computed —
    *  `target` is already "RA Dec" degrees (Aladin's ICRSd frame), the same
-   *  string `loadAladin` was called with. Sets the readout directly rather
+   *  string `loadSkyView` was called with. Sets the readout directly rather
    *  than waiting on a `positionChanged` callback, which a fake handle in
    *  tests has no reason to fire. */
   function recenter() {
