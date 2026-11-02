@@ -35,6 +35,8 @@ function fakeEngine() {
     gotoRaDecZoom: vi.fn(),
     getRA: vi.fn(() => 0.7),
     getDec: vi.fn(() => 41.27),
+    get_fov: vi.fn(() => 2),
+    get_roll: vi.fn(() => 0),
     settings: setters,
   }
   const initControl = vi.fn((id: string) => {
@@ -194,6 +196,91 @@ describe('input blocking', () => {
 
     dispatch({ button: 0 })
     expect(engineSees).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('scale lock', () => {
+  async function mounted() {
+    stubWebgl()
+    const { loadWwtView } = await importLoader()
+    const fake = fakeEngine()
+    const el = document.createElement('div')
+    const promise = mount(loadWwtView, el)
+    await vi.waitFor(() => expect(scripts()).toHaveLength(1))
+    window.wwtlib = { WWTControl: { initControl: fake.initControl } }
+    scripts()[0].dispatchEvent(new Event('load'))
+    await promise
+    return { ...fake, el }
+  }
+
+  it('stops wheel, gesture, double-click and second-pointer input', async () => {
+    const { el } = await mounted()
+    const canvas = el.querySelector('canvas')!
+    const engineSees = vi.fn()
+    for (const type of [
+      'wheel',
+      'gesturestart',
+      'gesturechange',
+      'dblclick',
+      'pointermove',
+    ]) {
+      canvas.addEventListener(type, engineSees)
+    }
+
+    canvas.dispatchEvent(new WheelEvent('wheel', { bubbles: true }))
+    canvas.dispatchEvent(new Event('gesturestart', { bubbles: true }))
+    canvas.dispatchEvent(new Event('gesturechange', { bubbles: true }))
+    canvas.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }))
+    expect(engineSees).not.toHaveBeenCalled()
+
+    // First pointer is the pan; a second one would be a pinch.
+    const pointer = (type: string, pointerId: number) => {
+      const event = new Event(type, { bubbles: true })
+      Object.assign(event, { pointerId })
+      canvas.dispatchEvent(event)
+    }
+    pointer('pointerdown', 1)
+    pointer('pointermove', 1)
+    expect(engineSees).toHaveBeenCalledTimes(1)
+    pointer('pointerdown', 2)
+    pointer('pointermove', 2)
+    expect(engineSees).toHaveBeenCalledTimes(1)
+  })
+
+  it('snaps the scale back after a keyboard zoom', async () => {
+    let frames: FrameRequestCallback[] = []
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+      frames.push(cb)
+      return frames.length
+    })
+    const { wwt } = await mounted()
+    wwt.gotoRaDecZoom.mockClear()
+
+    // The engine zoomed in on a keypress: 2° became 1°.
+    wwt.get_fov.mockReturnValue(1)
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'z' }))
+    const run = frames
+    frames = []
+    run.forEach((cb) => cb(0))
+
+    expect(wwt.gotoRaDecZoom).toHaveBeenCalledWith(0.7 * 15, 41.27, 2, true, 0)
+  })
+
+  it('leaves a pure pan alone', async () => {
+    let frames: FrameRequestCallback[] = []
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+      frames.push(cb)
+      return frames.length
+    })
+    const { wwt } = await mounted()
+    wwt.gotoRaDecZoom.mockClear()
+
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }))
+    const run = frames
+    frames = []
+    run.forEach((cb) => cb(0))
+
+    expect(wwt.gotoRaDecZoom).not.toHaveBeenCalled()
   })
 })
 

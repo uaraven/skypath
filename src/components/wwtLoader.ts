@@ -60,6 +60,10 @@ interface WwtInterface {
   getRA(): number
   /** Degrees. */
   getDec(): number
+  /** Viewport height in degrees — the same unit `gotoRaDecZoom` takes. */
+  get_fov(): number
+  /** Roll, radians. */
+  get_roll(): number
   settings: Record<string, unknown>
 }
 
@@ -144,12 +148,65 @@ function applyCleanSettings(wwt: WwtInterface): void {
 }
 
 /**
- * Only a plain left-button drag may reach the engine. Right-drag, and drags
- * with Ctrl/Alt/Shift held, tilt, roll or zoom the view — all of which would
- * make the fixed camera-frame rectangle lie, same reasoning as the wheel and
- * pinch blockers in `FramingAssistant.svelte`.
+ * Panning is the only input the view may act on. Anything that changes the
+ * scale (or tilts/rolls the view) would make the fixed camera-frame rectangle
+ * lie about the field it represents, so each route the engine listens on is
+ * stopped in the capture phase, on an ancestor of its canvas, before the
+ * engine's own listeners see it:
+ *
+ * - wheel / Ctrl+wheel, and multi-point touch (the touch + wheel blockers in
+ *   `FramingAssistant.svelte` do the same; repeated here so the loader is
+ *   safe on its own);
+ * - Safari's trackpad `gesture*` pinch events;
+ * - a *second* simultaneous pointer, which the engine reads as a pinch;
+ * - any mouse button but the left, and Ctrl/Alt/Shift/Meta-modified drags,
+ *   which tilt, roll or zoom;
+ * - double-click.
+ *
+ * Keyboard shortcuts bind to `document.body` and cannot be intercepted ahead
+ * of the engine, so `enforceScale` in `loadWwtView` is the backstop for those.
  */
-function blockNonPanDrags(el: HTMLElement): void {
+function blockNonPanInput(el: HTMLElement): void {
+  const stop = (event: Event) => event.stopPropagation()
+  const swallow = (event: Event) => {
+    event.stopPropagation()
+    event.preventDefault()
+  }
+
+  el.addEventListener('wheel', stop, true)
+  el.addEventListener('mousewheel', stop, true)
+  el.addEventListener('DOMMouseScroll', stop, true)
+  el.addEventListener('dblclick', swallow, true)
+  for (const type of ['gesturestart', 'gesturechange', 'gestureend']) {
+    el.addEventListener(type, swallow, true)
+  }
+
+  const touchGuard = (event: TouchEvent) => {
+    if (event.touches.length >= 2) event.stopPropagation()
+  }
+  el.addEventListener('touchstart', touchGuard, true)
+  el.addEventListener('touchmove', touchGuard, true)
+
+  let primary: number | null = null
+  const pointerGuard = (event: PointerEvent) => {
+    if (event.type === 'pointerdown' && primary === null) {
+      primary = event.pointerId
+    } else if (event.pointerId !== primary) {
+      event.stopPropagation()
+    }
+    if (event.type === 'pointerup' || event.type === 'pointercancel') {
+      if (event.pointerId === primary) primary = null
+    }
+  }
+  for (const type of [
+    'pointerdown',
+    'pointermove',
+    'pointerup',
+    'pointercancel',
+  ]) {
+    el.addEventListener(type, pointerGuard as EventListener, true)
+  }
+
   el.addEventListener(
     'mousedown',
     (event) => {
@@ -222,7 +279,7 @@ export async function loadWwtView(
 
   const { wwt, canvas } = await engine(el)
   if (canvas.parentElement !== el) el.appendChild(canvas)
-  blockNonPanDrags(el)
+  blockNonPanInput(el)
 
   const [ra, dec] = options.target.split(' ').map(Number)
   let fov = options.fov
@@ -232,12 +289,33 @@ export async function loadWwtView(
   const centre = (): [number, number] => [wwt.getRA() * 15, wwt.getDec()]
   const listeners: Array<(position: { ra: number; dec: number }) => void> = []
 
-  // Poll while the user drags, and until the view stops coasting.
+  // Backstop for whatever still changes the scale or roll — chiefly keyboard
+  // shortcuts, which bind to `document.body` ahead of anything we can block.
+  // Snaps back to the intended field, keeping whatever centre the user has
+  // panned to.
+  const enforceScale = () => {
+    const drift = Math.abs(wwt.get_fov() - fov) / fov
+    if (drift > 1e-3 || Math.abs(wwt.get_roll()) > 1e-6) {
+      const [cra, cdec] = centre()
+      wwt.gotoRaDecZoom(cra, cdec, fov, true, 0)
+    }
+  }
+
+  // Runs while the user drags and until the view stops coasting: reports the
+  // centre (there is no position event) and enforces the scale each frame.
   let frame = 0
   let down = false
   let last: [number, number] = centre()
   let still = 0
   const tick = () => {
+    if (!el.isConnected) {
+      frame = 0
+      document.removeEventListener('keydown', startPolling)
+      window.removeEventListener('pointerup', release)
+      window.removeEventListener('pointercancel', release)
+      return
+    }
+    enforceScale()
     const [nra, ndec] = centre()
     if (nra !== last[0] || ndec !== last[1]) {
       last = [nra, ndec]
@@ -248,20 +326,23 @@ export async function loadWwtView(
     }
     frame = down || still < SETTLE_FRAMES ? requestAnimationFrame(tick) : 0
   }
-  const startPolling = () => {
+  function startPolling() {
     still = 0
     if (!frame) frame = requestAnimationFrame(tick)
+  }
+  function release() {
+    down = false
+    startPolling()
   }
   el.addEventListener('pointerdown', () => {
     down = true
     startPolling()
   })
-  const release = () => {
-    down = false
-    startPolling()
-  }
   window.addEventListener('pointerup', release)
   window.addEventListener('pointercancel', release)
+  // Keys fire after the engine's own handler has run; the next frame sees
+  // whatever it did and undoes any zoom.
+  document.addEventListener('keydown', startPolling)
 
   return {
     setFov(degrees) {
