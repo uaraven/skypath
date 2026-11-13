@@ -206,8 +206,21 @@
    *  `stopPropagation` here keeps the event from ever reaching it. Not
    *  `preventDefault`ed: the page is free to scroll normally under the
    *  cursor, same as if the widget weren't there. */
-  function blockWheelZoom(event: WheelEvent) {
+  function blockWheelZoom(event: Event) {
     event.stopPropagation()
+  }
+
+  /** WorldWide Telescope also listens for the legacy `mousewheel` and
+   *  `DOMMouseScroll` events on its canvas, which `onwheelcapture` doesn't
+   *  cover. Chrome and Safari still fire `mousewheel` alongside `wheel`, so
+   *  without this the wheel zooms the sky view anyway. */
+  function blockLegacyWheelZoom(node: HTMLElement) {
+    const types = ['mousewheel', 'DOMMouseScroll']
+    for (const type of types) node.addEventListener(type, blockWheelZoom, true)
+    return () => {
+      for (const type of types)
+        node.removeEventListener(type, blockWheelZoom, true)
+    }
   }
 
   /** Same idea for pinch-zoom, but only for an actual pinch (2+ touch
@@ -255,6 +268,7 @@
             role="img"
             aria-label={alt}
             onwheelcapture={blockWheelZoom}
+            {@attach blockLegacyWheelZoom}
             ontouchstartcapture={blockPinchZoom}
             ontouchmovecapture={blockPinchZoom}
           ></div>
