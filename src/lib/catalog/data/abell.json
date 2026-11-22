@@ -1,0 +1,807 @@
+{
+ "catalog": "Abell",
+ "title": "Abell's planetary nebulae",
+ "source": "Abell (1966) planetary nebulae, as numbered in the Strasbourg-ESO Catalogue of Galactic Planetary Nebulae (Acker et al. 1992) — catalogue V/84 via VizieR (CDS, https://vizier.cds.unistra.fr/).",
+ "objects": [
+  {
+   "id": "Abell1",
+   "designations": [
+    "Abell1"
+   ],
+   "names": [],
+   "ra": 0.210093,
+   "dec": 69.177924,
+   "type": "PN",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Abell2",
+   "designations": [
+    "Abell2"
+   ],
+   "names": [],
+   "ra": 0.760026,
+   "dec": 57.956453,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell3",
+   "designations": [
+    "Abell3",
+    "Sh2-189"
+   ],
+   "names": [],
+   "ra": 2.203223,
+   "dec": 64.151152,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell4",
+   "designations": [
+    "Abell4"
+   ],
+   "names": [],
+   "ra": 2.757163,
+   "dec": 42.543223,
+   "type": "PN",
+   "constellation": "Per"
+  },
+  {
+   "id": "Abell5",
+   "designations": [
+    "Abell5"
+   ],
+   "names": [],
+   "ra": 2.870393,
+   "dec": 50.597818,
+   "type": "PN",
+   "constellation": "Per"
+  },
+  {
+   "id": "Abell6",
+   "designations": [
+    "Abell6"
+   ],
+   "names": [],
+   "ra": 2.981372,
+   "dec": 64.499489,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell7",
+   "designations": [
+    "Abell7"
+   ],
+   "names": [],
+   "ra": 5.052234,
+   "dec": -15.603626,
+   "type": "PN",
+   "constellation": "Lep"
+  },
+  {
+   "id": "Abell8",
+   "designations": [
+    "Abell8"
+   ],
+   "names": [],
+   "ra": 5.110521,
+   "dec": 39.135413,
+   "type": "PN",
+   "constellation": "Aur"
+  },
+  {
+   "id": "Abell12",
+   "designations": [
+    "Abell12"
+   ],
+   "names": [],
+   "ra": 6.039668,
+   "dec": 9.650731,
+   "type": "PN",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Abell13",
+   "designations": [
+    "Abell13"
+   ],
+   "names": [],
+   "ra": 6.079653,
+   "dec": 3.940806,
+   "type": "PN",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Abell14",
+   "designations": [
+    "Abell14"
+   ],
+   "names": [],
+   "ra": 6.18577,
+   "dec": 11.779836,
+   "type": "PN",
+   "constellation": "Ori"
+  },
+  {
+   "id": "Abell15",
+   "designations": [
+    "Abell15"
+   ],
+   "names": [],
+   "ra": 6.450604,
+   "dec": -25.381796,
+   "type": "PN",
+   "constellation": "CMa"
+  },
+  {
+   "id": "Abell16",
+   "designations": [
+    "Abell16"
+   ],
+   "names": [],
+   "ra": 6.73201,
+   "dec": 61.79029,
+   "type": "PN",
+   "constellation": "Lyn"
+  },
+  {
+   "id": "Abell18",
+   "designations": [
+    "Abell18"
+   ],
+   "names": [],
+   "ra": 6.937309,
+   "dec": -2.885576,
+   "type": "PN",
+   "constellation": "Mon"
+  },
+  {
+   "id": "Abell19",
+   "designations": [
+    "Abell19"
+   ],
+   "names": [],
+   "ra": 6.999066,
+   "dec": 14.613038,
+   "type": "PN",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Abell20",
+   "designations": [
+    "Abell20"
+   ],
+   "names": [],
+   "ra": 7.382729,
+   "dec": 1.760411,
+   "type": "PN",
+   "constellation": "CMi"
+  },
+  {
+   "id": "Abell21",
+   "designations": [
+    "Abell21",
+    "Sh2-274"
+   ],
+   "names": [],
+   "ra": 7.484136,
+   "dec": 13.241699,
+   "type": "PN",
+   "constellation": "Gem"
+  },
+  {
+   "id": "Abell23",
+   "designations": [
+    "Abell23"
+   ],
+   "names": [],
+   "ra": 7.721926,
+   "dec": -34.753588,
+   "type": "PN",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Abell24",
+   "designations": [
+    "Abell24"
+   ],
+   "names": [],
+   "ra": 7.860701,
+   "dec": 3.007514,
+   "type": "PN",
+   "constellation": "CMi"
+  },
+  {
+   "id": "Abell26",
+   "designations": [
+    "Abell26"
+   ],
+   "names": [],
+   "ra": 8.150367,
+   "dec": -32.670888,
+   "type": "PN",
+   "constellation": "Pup"
+  },
+  {
+   "id": "Abell28",
+   "designations": [
+    "Abell28"
+   ],
+   "names": [],
+   "ra": 8.692938,
+   "dec": 58.231773,
+   "type": "PN",
+   "constellation": "UMa"
+  },
+  {
+   "id": "Abell29",
+   "designations": [
+    "Abell29"
+   ],
+   "names": [],
+   "ra": 8.670622,
+   "dec": -20.894769,
+   "type": "PN",
+   "constellation": "Pyx"
+  },
+  {
+   "id": "Abell30",
+   "designations": [
+    "Abell30"
+   ],
+   "names": [],
+   "ra": 8.781779,
+   "dec": 17.875773,
+   "type": "PN",
+   "constellation": "Cnc"
+  },
+  {
+   "id": "Abell31",
+   "designations": [
+    "Abell31",
+    "Sh2-290"
+   ],
+   "names": [],
+   "ra": 8.903654,
+   "dec": 8.899689,
+   "type": "PN",
+   "constellation": "Cnc"
+  },
+  {
+   "id": "Abell33",
+   "designations": [
+    "Abell33"
+   ],
+   "names": [],
+   "ra": 9.652506,
+   "dec": -2.809017,
+   "type": "PN",
+   "constellation": "Hya"
+  },
+  {
+   "id": "Abell34",
+   "designations": [
+    "Abell34"
+   ],
+   "names": [],
+   "ra": 9.759753,
+   "dec": -13.170464,
+   "type": "PN",
+   "constellation": "Hya"
+  },
+  {
+   "id": "Abell35",
+   "designations": [
+    "Abell35",
+    "Sh2-313"
+   ],
+   "names": [],
+   "ra": 12.894835,
+   "dec": -22.861697,
+   "type": "PN",
+   "constellation": "Hya"
+  },
+  {
+   "id": "Abell36",
+   "designations": [
+    "Abell36"
+   ],
+   "names": [],
+   "ra": 13.678125,
+   "dec": -19.882358,
+   "type": "PN",
+   "constellation": "Vir"
+  },
+  {
+   "id": "Abell39",
+   "designations": [
+    "Abell39"
+   ],
+   "names": [],
+   "ra": 16.459286,
+   "dec": 27.909652,
+   "type": "PN",
+   "constellation": "Her"
+  },
+  {
+   "id": "Abell40",
+   "designations": [
+    "Abell40"
+   ],
+   "names": [],
+   "ra": 16.809418,
+   "dec": -21.010973,
+   "type": "PN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Abell41",
+   "designations": [
+    "Abell41"
+   ],
+   "names": [],
+   "ra": 17.484379,
+   "dec": -15.222516,
+   "type": "PN",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Abell42",
+   "designations": [
+    "Abell42"
+   ],
+   "names": [],
+   "ra": 17.525404,
+   "dec": -8.319467,
+   "type": "PN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Abell43",
+   "designations": [
+    "Abell43"
+   ],
+   "names": [],
+   "ra": 17.892323,
+   "dec": 10.622126,
+   "type": "PN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "Abell44",
+   "designations": [
+    "Abell44"
+   ],
+   "names": [],
+   "ra": 18.503131,
+   "dec": -16.757404,
+   "type": "PN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Abell45",
+   "designations": [
+    "Abell45"
+   ],
+   "names": [],
+   "ra": 18.504843,
+   "dec": -11.614993,
+   "type": "PN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Abell46",
+   "designations": [
+    "Abell46"
+   ],
+   "names": [],
+   "ra": 18.521908,
+   "dec": 26.938107,
+   "type": "PN",
+   "constellation": "Lyr"
+  },
+  {
+   "id": "Abell47",
+   "designations": [
+    "Abell47"
+   ],
+   "names": [],
+   "ra": 18.589465,
+   "dec": -0.225416,
+   "type": "PN",
+   "constellation": "Ser"
+  },
+  {
+   "id": "Abell48",
+   "designations": [
+    "Abell48"
+   ],
+   "names": [],
+   "ra": 18.713753,
+   "dec": -3.216517,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell49",
+   "designations": [
+    "Abell49"
+   ],
+   "names": [],
+   "ra": 18.891452,
+   "dec": -6.487208,
+   "type": "PN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "Abell50",
+   "designations": [
+    "NGC6742",
+    "Abell50"
+   ],
+   "names": [],
+   "ra": 18.989145,
+   "dec": 48.470486,
+   "type": "PN",
+   "constellation": "Dra"
+  },
+  {
+   "id": "Abell51",
+   "designations": [
+    "Abell51"
+   ],
+   "names": [],
+   "ra": 19.016963,
+   "dec": -18.204301,
+   "type": "PN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Abell52",
+   "designations": [
+    "Abell52"
+   ],
+   "names": [],
+   "ra": 19.075616,
+   "dec": 17.952726,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell53",
+   "designations": [
+    "Abell53"
+   ],
+   "names": [],
+   "ra": 19.112735,
+   "dec": 6.398805,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell54",
+   "designations": [
+    "Abell54"
+   ],
+   "names": [],
+   "ra": 19.144261,
+   "dec": 22.980918,
+   "type": "PN",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Abell55",
+   "designations": [
+    "Abell55"
+   ],
+   "names": [],
+   "ra": 19.175126,
+   "dec": -2.350548,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell56",
+   "designations": [
+    "Abell56"
+   ],
+   "names": [],
+   "ra": 19.218511,
+   "dec": 2.880298,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell57",
+   "designations": [
+    "Abell57"
+   ],
+   "names": [],
+   "ra": 19.284322,
+   "dec": 25.623989,
+   "type": "PN",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Abell58",
+   "designations": [
+    "Abell58"
+   ],
+   "names": [],
+   "ra": 19.305661,
+   "dec": 1.780748,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell59",
+   "designations": [
+    "Abell59"
+   ],
+   "names": [],
+   "ra": 19.311376,
+   "dec": 19.565499,
+   "type": "PN",
+   "constellation": "Sge"
+  },
+  {
+   "id": "Abell60",
+   "designations": [
+    "Abell60"
+   ],
+   "names": [],
+   "ra": 19.321532,
+   "dec": -12.247751,
+   "type": "PN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Abell61",
+   "designations": [
+    "Abell61"
+   ],
+   "names": [],
+   "ra": 19.319496,
+   "dec": 46.243407,
+   "type": "PN",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Abell62",
+   "designations": [
+    "Abell62"
+   ],
+   "names": [],
+   "ra": 19.555091,
+   "dec": 10.616951,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell63",
+   "designations": [
+    "Abell63"
+   ],
+   "names": [],
+   "ra": 19.702914,
+   "dec": 17.085453,
+   "type": "PN",
+   "constellation": "Sge"
+  },
+  {
+   "id": "Abell65",
+   "designations": [
+    "Abell65",
+    "Sh2-52"
+   ],
+   "names": [],
+   "ra": 19.776046,
+   "dec": -23.136802,
+   "type": "PN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Abell66",
+   "designations": [
+    "Abell66"
+   ],
+   "names": [],
+   "ra": 19.958837,
+   "dec": -21.610258,
+   "type": "PN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "Abell67",
+   "designations": [
+    "Abell67"
+   ],
+   "names": [],
+   "ra": 19.974796,
+   "dec": 3.03959,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell68",
+   "designations": [
+    "Abell68"
+   ],
+   "names": [],
+   "ra": 20.002994,
+   "dec": 21.715988,
+   "type": "PN",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Abell69",
+   "designations": [
+    "Abell69"
+   ],
+   "names": [],
+   "ra": 20.332334,
+   "dec": 38.408658,
+   "type": "PN",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Abell70",
+   "designations": [
+    "Abell70"
+   ],
+   "names": [],
+   "ra": 20.525876,
+   "dec": -7.089223,
+   "type": "PN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "Abell71",
+   "designations": [
+    "Abell71",
+    "Sh2-116"
+   ],
+   "names": [],
+   "ra": 20.539789,
+   "dec": 47.350939,
+   "type": "PN",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Abell72",
+   "designations": [
+    "Abell72"
+   ],
+   "names": [],
+   "ra": 20.833901,
+   "dec": 13.557845,
+   "type": "PN",
+   "constellation": "Del"
+  },
+  {
+   "id": "Abell73",
+   "designations": [
+    "Abell73"
+   ],
+   "names": [],
+   "ra": 20.940633,
+   "dec": 57.432292,
+   "type": "PN",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Abell74",
+   "designations": [
+    "Abell74"
+   ],
+   "names": [],
+   "ra": 21.281212,
+   "dec": 24.147524,
+   "type": "PN",
+   "constellation": "Vul"
+  },
+  {
+   "id": "Abell75",
+   "designations": [
+    "Abell75"
+   ],
+   "names": [],
+   "ra": 21.440045,
+   "dec": 62.890686,
+   "type": "PN",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Abell77",
+   "designations": [
+    "Abell77",
+    "Sh2-128"
+   ],
+   "names": [],
+   "ra": 21.536306,
+   "dec": 55.879303,
+   "type": "PN",
+   "constellation": "Cep"
+  },
+  {
+   "id": "Abell78",
+   "designations": [
+    "Abell78"
+   ],
+   "names": [],
+   "ra": 21.591533,
+   "dec": 31.695687,
+   "type": "PN",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "Abell79",
+   "designations": [
+    "Abell79"
+   ],
+   "names": [],
+   "ra": 22.43817,
+   "dec": 54.827927,
+   "type": "PN",
+   "constellation": "Lac"
+  },
+  {
+   "id": "Abell80",
+   "designations": [
+    "Abell80"
+   ],
+   "names": [],
+   "ra": 22.579393,
+   "dec": 52.434361,
+   "type": "PN",
+   "constellation": "Lac"
+  },
+  {
+   "id": "Abell82",
+   "designations": [
+    "Abell82"
+   ],
+   "names": [],
+   "ra": 23.763188,
+   "dec": 57.066808,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell83",
+   "designations": [
+    "Abell83"
+   ],
+   "names": [],
+   "ra": 23.779402,
+   "dec": 54.744387,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell84",
+   "designations": [
+    "Abell84"
+   ],
+   "names": [],
+   "ra": 23.795799,
+   "dec": 51.399185,
+   "type": "PN",
+   "constellation": "Cas"
+  },
+  {
+   "id": "Abell86",
+   "designations": [
+    "Abell86"
+   ],
+   "names": [],
+   "ra": 0.026115,
+   "dec": 70.711593,
+   "type": "PN",
+   "constellation": "Cep"
+  }
+ ]
+}

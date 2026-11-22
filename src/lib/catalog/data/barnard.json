@@ -1,0 +1,4138 @@
+{
+ "catalog": "B",
+ "title": "Barnard's Catalogue of Dark Markings",
+ "source": "Barnard (1927) A Photographic Atlas of Selected Regions of the Milky Way — catalogue VII/220A via VizieR (CDS, https://vizier.cds.unistra.fr/).",
+ "objects": [
+  {
+   "id": "B1",
+   "designations": [
+    "B1"
+   ],
+   "names": [],
+   "ra": 3.54928,
+   "dec": 31.1592,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Per"
+  },
+  {
+   "id": "B2",
+   "designations": [
+    "B2"
+   ],
+   "names": [],
+   "ra": 3.558687,
+   "dec": 32.3245,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Per"
+  },
+  {
+   "id": "B3",
+   "designations": [
+    "B3"
+   ],
+   "names": [],
+   "ra": 3.6672,
+   "dec": 31.9754,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Per"
+  },
+  {
+   "id": "B4",
+   "designations": [
+    "B4"
+   ],
+   "names": [],
+   "ra": 3.734,
+   "dec": 31.7988,
+   "type": "DrkN",
+   "constellation": "Per"
+  },
+  {
+   "id": "B5",
+   "designations": [
+    "B5"
+   ],
+   "names": [],
+   "ra": 3.798073,
+   "dec": 32.8893,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Per"
+  },
+  {
+   "id": "B6",
+   "designations": [
+    "B6"
+   ],
+   "names": [],
+   "ra": 3.939827,
+   "dec": 56.1202,
+   "type": "DrkN",
+   "constellation": "Cam"
+  },
+  {
+   "id": "B7",
+   "designations": [
+    "B7"
+   ],
+   "names": [],
+   "ra": 4.290267,
+   "dec": 28.5618,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B8",
+   "designations": [
+    "B8"
+   ],
+   "names": [],
+   "ra": 4.29746,
+   "dec": 55.2469,
+   "type": "DrkN",
+   "constellation": "Cam"
+  },
+  {
+   "id": "B9",
+   "designations": [
+    "B9"
+   ],
+   "names": [],
+   "ra": 4.315807,
+   "dec": 55.0606,
+   "type": "DrkN",
+   "constellation": "Cam"
+  },
+  {
+   "id": "B10",
+   "designations": [
+    "B10"
+   ],
+   "names": [],
+   "ra": 4.311453,
+   "dec": 28.275,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B11",
+   "designations": [
+    "B11"
+   ],
+   "names": [],
+   "ra": 4.44368,
+   "dec": 55.0396,
+   "type": "DrkN",
+   "constellation": "Cam"
+  },
+  {
+   "id": "B12",
+   "designations": [
+    "B12"
+   ],
+   "names": [],
+   "ra": 4.496493,
+   "dec": 54.2474,
+   "type": "DrkN",
+   "size": 24,
+   "constellation": "Cam"
+  },
+  {
+   "id": "B13",
+   "designations": [
+    "B13"
+   ],
+   "names": [],
+   "ra": 4.521693,
+   "dec": 54.8933,
+   "type": "DrkN",
+   "size": 11,
+   "constellation": "Cam"
+  },
+  {
+   "id": "B14",
+   "designations": [
+    "B14"
+   ],
+   "names": [],
+   "ra": 4.666393,
+   "dec": 25.749,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B15",
+   "designations": [
+    "B15"
+   ],
+   "names": [],
+   "ra": 4.532207,
+   "dec": 46.6236,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Per"
+  },
+  {
+   "id": "B16",
+   "designations": [
+    "B16"
+   ],
+   "names": [],
+   "ra": 4.54056,
+   "dec": 46.6056,
+   "type": "DrkN",
+   "constellation": "Per"
+  },
+  {
+   "id": "B17",
+   "designations": [
+    "B17"
+   ],
+   "names": [],
+   "ra": 4.54182,
+   "dec": 46.522,
+   "type": "DrkN",
+   "constellation": "Per"
+  },
+  {
+   "id": "B18",
+   "designations": [
+    "B18"
+   ],
+   "names": [],
+   "ra": 4.52036,
+   "dec": 24.3568,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B19",
+   "designations": [
+    "B19"
+   ],
+   "names": [],
+   "ra": 4.56108,
+   "dec": 26.2668,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B20",
+   "designations": [
+    "B20"
+   ],
+   "names": [],
+   "ra": 4.617913,
+   "dec": 50.9765,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Per"
+  },
+  {
+   "id": "B21",
+   "designations": [
+    "B21"
+   ],
+   "names": [],
+   "ra": 4.632667,
+   "dec": 55.3582,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Cam"
+  },
+  {
+   "id": "B22",
+   "designations": [
+    "B22"
+   ],
+   "names": [],
+   "ra": 4.644407,
+   "dec": 26.0527,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B23",
+   "designations": [
+    "B23"
+   ],
+   "names": [],
+   "ra": 4.675953,
+   "dec": 29.881,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B24",
+   "designations": [
+    "B24"
+   ],
+   "names": [],
+   "ra": 4.7148,
+   "dec": 29.741,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B25",
+   "designations": [
+    "B25"
+   ],
+   "names": [],
+   "ra": 4.867793,
+   "dec": 46.0165,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B26",
+   "designations": [
+    "B26"
+   ],
+   "names": [],
+   "ra": 4.910607,
+   "dec": 30.624,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B27",
+   "designations": [
+    "B27"
+   ],
+   "names": [],
+   "ra": 4.918887,
+   "dec": 30.5559,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B28",
+   "designations": [
+    "B28"
+   ],
+   "names": [],
+   "ra": 4.931227,
+   "dec": 30.6371,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B29",
+   "designations": [
+    "B29"
+   ],
+   "names": [],
+   "ra": 5.106487,
+   "dec": 31.5898,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B30",
+   "designations": [
+    "B30"
+   ],
+   "names": [],
+   "ra": 5.50458,
+   "dec": 12.7673,
+   "type": "DrkN",
+   "size": 67,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B31",
+   "designations": [
+    "B31"
+   ],
+   "names": [],
+   "ra": 5.53376,
+   "dec": 12.762,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B32",
+   "designations": [
+    "B32"
+   ],
+   "names": [],
+   "ra": 5.5357,
+   "dec": 12.4283,
+   "type": "DrkN",
+   "constellation": "Ori"
+  },
+  {
+   "id": "B33",
+   "designations": [
+    "B33"
+   ],
+   "names": [],
+   "ra": 5.681373,
+   "dec": -2.4658,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B34",
+   "designations": [
+    "B34"
+   ],
+   "names": [],
+   "ra": 5.72518,
+   "dec": 32.6457,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B35",
+   "designations": [
+    "B35"
+   ],
+   "names": [],
+   "ra": 5.758513,
+   "dec": 9.0543,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B36",
+   "designations": [
+    "B36"
+   ],
+   "names": [],
+   "ra": 5.829407,
+   "dec": 7.4247,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B37",
+   "designations": [
+    "B37"
+   ],
+   "names": [],
+   "ra": 6.5486,
+   "dec": 10.4775,
+   "type": "DrkN",
+   "size": 175,
+   "constellation": "Mon"
+  },
+  {
+   "id": "B38",
+   "designations": [
+    "B38"
+   ],
+   "names": [],
+   "ra": 6.561593,
+   "dec": 11.0752,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Mon"
+  },
+  {
+   "id": "B39",
+   "designations": [
+    "B39"
+   ],
+   "names": [],
+   "ra": 6.634013,
+   "dec": 10.3287,
+   "type": "DrkN",
+   "constellation": "Mon"
+  },
+  {
+   "id": "B40",
+   "designations": [
+    "B40"
+   ],
+   "names": [],
+   "ra": 16.244113,
+   "dec": -18.9686,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B41",
+   "designations": [
+    "B41"
+   ],
+   "names": [],
+   "ra": 16.371567,
+   "dec": -19.6312,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B42",
+   "designations": [
+    "B42"
+   ],
+   "names": [],
+   "ra": 16.4249,
+   "dec": -23.4393,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B43",
+   "designations": [
+    "B43"
+   ],
+   "names": [],
+   "ra": 16.505267,
+   "dec": -19.7757,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B44",
+   "designations": [
+    "B44"
+   ],
+   "names": [],
+   "ra": 16.676007,
+   "dec": -24.0805,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B44a",
+   "designations": [
+    "B44a"
+   ],
+   "names": [],
+   "ra": 16.745853,
+   "dec": -40.3368,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B45",
+   "designations": [
+    "B45"
+   ],
+   "names": [],
+   "ra": 16.773967,
+   "dec": -21.5969,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B46",
+   "designations": [
+    "B46"
+   ],
+   "names": [],
+   "ra": 16.9536,
+   "dec": -22.7326,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B47",
+   "designations": [
+    "B47"
+   ],
+   "names": [],
+   "ra": 16.995247,
+   "dec": -22.642,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B48",
+   "designations": [
+    "B48"
+   ],
+   "names": [],
+   "ra": 17.028353,
+   "dec": -40.6879,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B49",
+   "designations": [
+    "B49"
+   ],
+   "names": [],
+   "ra": 17.04432,
+   "dec": -33.2676,
+   "type": "DrkN",
+   "constellation": "Sco"
+  },
+  {
+   "id": "B50",
+   "designations": [
+    "B50"
+   ],
+   "names": [],
+   "ra": 17.048367,
+   "dec": -34.3837,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B51",
+   "designations": [
+    "B51"
+   ],
+   "names": [],
+   "ra": 17.078907,
+   "dec": -22.2606,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B53",
+   "designations": [
+    "B53"
+   ],
+   "names": [],
+   "ra": 17.10314,
+   "dec": -33.5907,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B54",
+   "designations": [
+    "B54"
+   ],
+   "names": [],
+   "ra": 17.109467,
+   "dec": -34.2563,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B55",
+   "designations": [
+    "B55"
+   ],
+   "names": [],
+   "ra": 17.125873,
+   "dec": -32.0032,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B56",
+   "designations": [
+    "B56"
+   ],
+   "names": [],
+   "ra": 17.146853,
+   "dec": -32.0995,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B57",
+   "designations": [
+    "B57"
+   ],
+   "names": [],
+   "ra": 17.139513,
+   "dec": -22.8333,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B58",
+   "designations": [
+    "B58"
+   ],
+   "names": [],
+   "ra": 17.18674,
+   "dec": -40.41,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B59",
+   "designations": [
+    "B59"
+   ],
+   "names": [],
+   "ra": 17.189893,
+   "dec": -27.4914,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B60",
+   "designations": [
+    "B60"
+   ],
+   "names": [],
+   "ra": 17.197553,
+   "dec": -22.4396,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B61",
+   "designations": [
+    "B61"
+   ],
+   "names": [],
+   "ra": 17.249993,
+   "dec": -20.4801,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B62",
+   "designations": [
+    "B62"
+   ],
+   "names": [],
+   "ra": 17.2701,
+   "dec": -20.8766,
+   "type": "DrkN",
+   "size": 19,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B63",
+   "designations": [
+    "B63"
+   ],
+   "names": [],
+   "ra": 17.274533,
+   "dec": -21.4759,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B64",
+   "designations": [
+    "B64"
+   ],
+   "names": [],
+   "ra": 17.28854,
+   "dec": -18.4898,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B65",
+   "designations": [
+    "B65"
+   ],
+   "names": [],
+   "ra": 17.326793,
+   "dec": -26.7003,
+   "type": "DrkN",
+   "size": 12,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B66",
+   "designations": [
+    "B66"
+   ],
+   "names": [],
+   "ra": 17.332553,
+   "dec": -26.8993,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B67",
+   "designations": [
+    "B67"
+   ],
+   "names": [],
+   "ra": 17.349207,
+   "dec": -26.863,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B67a",
+   "designations": [
+    "B67a"
+   ],
+   "names": [],
+   "ra": 17.37502,
+   "dec": -21.8913,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B68",
+   "designations": [
+    "B68"
+   ],
+   "names": [],
+   "ra": 17.3768,
+   "dec": -23.7911,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B69",
+   "designations": [
+    "B69"
+   ],
+   "names": [],
+   "ra": 17.382207,
+   "dec": -23.9235,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B70",
+   "designations": [
+    "B70"
+   ],
+   "names": [],
+   "ra": 17.392327,
+   "dec": -24.0383,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B71",
+   "designations": [
+    "B71"
+   ],
+   "names": [],
+   "ra": 17.38396,
+   "dec": -24.0065,
+   "type": "DrkN",
+   "size": 1,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B72",
+   "designations": [
+    "B72"
+   ],
+   "names": [],
+   "ra": 17.39332,
+   "dec": -23.6215,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B73",
+   "designations": [
+    "B73"
+   ],
+   "names": [],
+   "ra": 17.4023,
+   "dec": -24.2866,
+   "type": "DrkN",
+   "size": 1,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B74",
+   "designations": [
+    "B74"
+   ],
+   "names": [],
+   "ra": 17.4189,
+   "dec": -24.2003,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B75",
+   "designations": [
+    "B75"
+   ],
+   "names": [],
+   "ra": 17.42158,
+   "dec": -22.0329,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B76",
+   "designations": [
+    "B76"
+   ],
+   "names": [],
+   "ra": 17.427447,
+   "dec": -24.4154,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B77",
+   "designations": [
+    "B77"
+   ],
+   "names": [],
+   "ra": 17.47696,
+   "dec": -23.8565,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B78",
+   "designations": [
+    "B78"
+   ],
+   "names": [],
+   "ra": 17.545373,
+   "dec": -25.5943,
+   "type": "DrkN",
+   "size": 180,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B79",
+   "designations": [
+    "B79"
+   ],
+   "names": [],
+   "ra": 17.62312,
+   "dec": -19.613,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B80",
+   "designations": [
+    "B80"
+   ],
+   "names": [],
+   "ra": 17.62854,
+   "dec": -21.2789,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B81",
+   "designations": [
+    "B81"
+   ],
+   "names": [],
+   "ra": 17.642433,
+   "dec": -23.9266,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B82",
+   "designations": [
+    "B82"
+   ],
+   "names": [],
+   "ra": 17.64368,
+   "dec": -23.7763,
+   "type": "DrkN",
+   "constellation": "Oph"
+  },
+  {
+   "id": "B83",
+   "designations": [
+    "B83"
+   ],
+   "names": [],
+   "ra": 17.649627,
+   "dec": -24.1753,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B83a",
+   "designations": [
+    "B83a"
+   ],
+   "names": [],
+   "ra": 17.755213,
+   "dec": -20.0058,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B84",
+   "designations": [
+    "B84"
+   ],
+   "names": [],
+   "ra": 17.77378,
+   "dec": -20.2524,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B84a",
+   "designations": [
+    "B84a"
+   ],
+   "names": [],
+   "ra": 17.960387,
+   "dec": -17.6683,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B85",
+   "designations": [
+    "B85"
+   ],
+   "names": [],
+   "ra": 18.040333,
+   "dec": -23.0208,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B86",
+   "designations": [
+    "B86"
+   ],
+   "names": [],
+   "ra": 18.050433,
+   "dec": -27.8694,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B87",
+   "designations": [
+    "B87"
+   ],
+   "names": [],
+   "ra": 18.069627,
+   "dec": -32.4997,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B88",
+   "designations": [
+    "B88"
+   ],
+   "names": [],
+   "ra": 18.076393,
+   "dec": -24.1144,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B89",
+   "designations": [
+    "B89"
+   ],
+   "names": [],
+   "ra": 18.0833,
+   "dec": -24.3631,
+   "type": "DrkN",
+   "size": 0.5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B90",
+   "designations": [
+    "B90"
+   ],
+   "names": [],
+   "ra": 18.170587,
+   "dec": -28.2809,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B91",
+   "designations": [
+    "B91"
+   ],
+   "names": [],
+   "ra": 18.168767,
+   "dec": -23.6975,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B92",
+   "designations": [
+    "B92"
+   ],
+   "names": [],
+   "ra": 18.259787,
+   "dec": -18.2305,
+   "type": "DrkN",
+   "size": 12,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B93",
+   "designations": [
+    "B93"
+   ],
+   "names": [],
+   "ra": 18.28158,
+   "dec": -18.0598,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B94",
+   "designations": [
+    "B94"
+   ],
+   "names": [],
+   "ra": 18.431567,
+   "dec": -10.6653,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B95",
+   "designations": [
+    "B95"
+   ],
+   "names": [],
+   "ra": 18.426647,
+   "dec": -11.7496,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B96",
+   "designations": [
+    "B96"
+   ],
+   "names": [],
+   "ra": 18.440153,
+   "dec": -10.2971,
+   "type": "DrkN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "B97",
+   "designations": [
+    "B97"
+   ],
+   "names": [],
+   "ra": 18.484833,
+   "dec": -9.9223,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B98",
+   "designations": [
+    "B98"
+   ],
+   "names": [],
+   "ra": 18.55456,
+   "dec": -26.061,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B99",
+   "designations": [
+    "B99"
+   ],
+   "names": [],
+   "ra": 18.55488,
+   "dec": -21.4772,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B100",
+   "designations": [
+    "B100"
+   ],
+   "names": [],
+   "ra": 18.544733,
+   "dec": -9.1447,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B101",
+   "designations": [
+    "B101"
+   ],
+   "names": [],
+   "ra": 18.54446,
+   "dec": -8.8114,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B102",
+   "designations": [
+    "B102"
+   ],
+   "names": [],
+   "ra": 18.62828,
+   "dec": -13.7467,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B103",
+   "designations": [
+    "B103"
+   ],
+   "names": [],
+   "ra": 18.65714,
+   "dec": -6.6743,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B104",
+   "designations": [
+    "B104"
+   ],
+   "names": [],
+   "ra": 18.788733,
+   "dec": -4.5338,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B105",
+   "designations": [
+    "B105"
+   ],
+   "names": [],
+   "ra": 18.795647,
+   "dec": -6.9161,
+   "type": "DrkN",
+   "size": 0.5,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B106",
+   "designations": [
+    "B106"
+   ],
+   "names": [],
+   "ra": 18.813887,
+   "dec": -5.0794,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B107",
+   "designations": [
+    "B107"
+   ],
+   "names": [],
+   "ra": 18.82522,
+   "dec": -5.0107,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B108",
+   "designations": [
+    "B108"
+   ],
+   "names": [],
+   "ra": 18.82626,
+   "dec": -6.3106,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B109",
+   "designations": [
+    "B109"
+   ],
+   "names": [],
+   "ra": 18.826713,
+   "dec": -7.5606,
+   "type": "DrkN",
+   "size": 0.7,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B110",
+   "designations": [
+    "B110"
+   ],
+   "names": [],
+   "ra": 18.8356,
+   "dec": -4.7921,
+   "type": "DrkN",
+   "size": 11,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B111",
+   "designations": [
+    "B111"
+   ],
+   "names": [],
+   "ra": 18.844067,
+   "dec": -4.9573,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B112",
+   "designations": [
+    "B112"
+   ],
+   "names": [],
+   "ra": 18.85238,
+   "dec": -6.6726,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B113",
+   "designations": [
+    "B113"
+   ],
+   "names": [],
+   "ra": 18.856887,
+   "dec": -4.3216,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B114",
+   "designations": [
+    "B114"
+   ],
+   "names": [],
+   "ra": 18.886487,
+   "dec": -6.9499,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B115",
+   "designations": [
+    "B115"
+   ],
+   "names": [],
+   "ra": 18.888753,
+   "dec": -6.6661,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B116",
+   "designations": [
+    "B116"
+   ],
+   "names": [],
+   "ra": 18.8925,
+   "dec": -7.1822,
+   "type": "DrkN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "B117",
+   "designations": [
+    "B117"
+   ],
+   "names": [],
+   "ra": 18.895467,
+   "dec": -7.415,
+   "type": "DrkN",
+   "size": 1,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B117a",
+   "designations": [
+    "B117a"
+   ],
+   "names": [],
+   "ra": 18.89508,
+   "dec": -4.8482,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B118",
+   "designations": [
+    "B118"
+   ],
+   "names": [],
+   "ra": 18.898827,
+   "dec": -7.4477,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B119",
+   "designations": [
+    "B119"
+   ],
+   "names": [],
+   "ra": 18.910113,
+   "dec": -4.5455,
+   "type": "DrkN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "B119a",
+   "designations": [
+    "B119a"
+   ],
+   "names": [],
+   "ra": 18.910893,
+   "dec": -5.1788,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B120",
+   "designations": [
+    "B120"
+   ],
+   "names": [],
+   "ra": 18.914873,
+   "dec": -4.5947,
+   "type": "DrkN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "B121",
+   "designations": [
+    "B121"
+   ],
+   "names": [],
+   "ra": 18.923773,
+   "dec": -4.6098,
+   "type": "DrkN",
+   "constellation": "Sct"
+  },
+  {
+   "id": "B122",
+   "designations": [
+    "B122"
+   ],
+   "names": [],
+   "ra": 18.94694,
+   "dec": -4.7557,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B123",
+   "designations": [
+    "B123"
+   ],
+   "names": [],
+   "ra": 18.96108,
+   "dec": -4.7198,
+   "type": "DrkN",
+   "size": 1.5,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B124",
+   "designations": [
+    "B124"
+   ],
+   "names": [],
+   "ra": 18.96162,
+   "dec": -4.353,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B125",
+   "designations": [
+    "B125"
+   ],
+   "names": [],
+   "ra": 18.972753,
+   "dec": -4.3844,
+   "type": "DrkN",
+   "size": 9,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B126",
+   "designations": [
+    "B126"
+   ],
+   "names": [],
+   "ra": 18.98398,
+   "dec": -4.5324,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B127",
+   "designations": [
+    "B127"
+   ],
+   "names": [],
+   "ra": 19.025527,
+   "dec": -5.4418,
+   "type": "DrkN",
+   "size": 4.5,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B128",
+   "designations": [
+    "B128"
+   ],
+   "names": [],
+   "ra": 19.027893,
+   "dec": -4.5747,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B129",
+   "designations": [
+    "B129"
+   ],
+   "names": [],
+   "ra": 19.034587,
+   "dec": -5.3069,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B130",
+   "designations": [
+    "B130"
+   ],
+   "names": [],
+   "ra": 19.032293,
+   "dec": -5.574,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B131",
+   "designations": [
+    "B131"
+   ],
+   "names": [],
+   "ra": 19.037733,
+   "dec": -4.3729,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B132",
+   "designations": [
+    "B132"
+   ],
+   "names": [],
+   "ra": 19.07444,
+   "dec": -4.4331,
+   "type": "DrkN",
+   "size": 16,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B133",
+   "designations": [
+    "B133"
+   ],
+   "names": [],
+   "ra": 19.1036,
+   "dec": -6.8949,
+   "type": "DrkN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "B134",
+   "designations": [
+    "B134"
+   ],
+   "names": [],
+   "ra": 19.114747,
+   "dec": -6.2429,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B135",
+   "designations": [
+    "B135"
+   ],
+   "names": [],
+   "ra": 19.1257,
+   "dec": -3.9241,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B136",
+   "designations": [
+    "B136"
+   ],
+   "names": [],
+   "ra": 19.147147,
+   "dec": -4.0037,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B137",
+   "designations": [
+    "B137"
+   ],
+   "names": [],
+   "ra": 19.266733,
+   "dec": -1.3327,
+   "type": "DrkN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "B138",
+   "designations": [
+    "B138"
+   ],
+   "names": [],
+   "ra": 19.27332,
+   "dec": 0.2185,
+   "type": "DrkN",
+   "size": 180,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B139",
+   "designations": [
+    "B139"
+   ],
+   "names": [],
+   "ra": 19.300127,
+   "dec": -1.4103,
+   "type": "DrkN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "B140",
+   "designations": [
+    "B140"
+   ],
+   "names": [],
+   "ra": 19.330313,
+   "dec": 5.2287,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B141",
+   "designations": [
+    "B141"
+   ],
+   "names": [],
+   "ra": 19.33648,
+   "dec": 1.8962,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B142",
+   "designations": [
+    "B142"
+   ],
+   "names": [],
+   "ra": 19.661487,
+   "dec": 10.5184,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B143",
+   "designations": [
+    "B143"
+   ],
+   "names": [],
+   "ra": 19.690307,
+   "dec": 11.0065,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B144",
+   "designations": [
+    "B144"
+   ],
+   "names": [],
+   "ra": 19.978167,
+   "dec": 35.3383,
+   "type": "DrkN",
+   "size": 270,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B145",
+   "designations": [
+    "B145"
+   ],
+   "names": [],
+   "ra": 20.047047,
+   "dec": 37.6827,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B146",
+   "designations": [
+    "B146"
+   ],
+   "names": [],
+   "ra": 20.058073,
+   "dec": 36.0177,
+   "type": "DrkN",
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B147",
+   "designations": [
+    "B147"
+   ],
+   "names": [],
+   "ra": 20.113993,
+   "dec": 35.3763,
+   "type": "DrkN",
+   "size": 11,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B148",
+   "designations": [
+    "B148"
+   ],
+   "names": [],
+   "ra": 20.795267,
+   "dec": 59.6284,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B149",
+   "designations": [
+    "B149"
+   ],
+   "names": [],
+   "ra": 20.81718,
+   "dec": 59.5314,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B150",
+   "designations": [
+    "B150"
+   ],
+   "names": [],
+   "ra": 20.844373,
+   "dec": 60.3018,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B151",
+   "designations": [
+    "B151"
+   ],
+   "names": [],
+   "ra": 21.13714,
+   "dec": 56.3224,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B152",
+   "designations": [
+    "B152"
+   ],
+   "names": [],
+   "ra": 21.24156,
+   "dec": 61.7358,
+   "type": "DrkN",
+   "size": 9,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B153",
+   "designations": [
+    "B153"
+   ],
+   "names": [],
+   "ra": 21.35092,
+   "dec": 56.4482,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B154",
+   "designations": [
+    "B154"
+   ],
+   "names": [],
+   "ra": 21.356267,
+   "dec": 56.6155,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B155",
+   "designations": [
+    "B155"
+   ],
+   "names": [],
+   "ra": 21.5357,
+   "dec": 44.9684,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B156",
+   "designations": [
+    "B156"
+   ],
+   "names": [],
+   "ra": 21.5665,
+   "dec": 45.5884,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B157",
+   "designations": [
+    "B157"
+   ],
+   "names": [],
+   "ra": 21.561553,
+   "dec": 54.6718,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B158",
+   "designations": [
+    "B158"
+   ],
+   "names": [],
+   "ra": 21.620447,
+   "dec": 43.4108,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B159",
+   "designations": [
+    "B159"
+   ],
+   "names": [],
+   "ra": 21.639673,
+   "dec": 43.2296,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B160",
+   "designations": [
+    "B160"
+   ],
+   "names": [],
+   "ra": 21.633047,
+   "dec": 56.2296,
+   "type": "DrkN",
+   "size": 31,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B161",
+   "designations": [
+    "B161"
+   ],
+   "names": [],
+   "ra": 21.672833,
+   "dec": 57.8173,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B162",
+   "designations": [
+    "B162"
+   ],
+   "names": [],
+   "ra": 21.685907,
+   "dec": 56.3186,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B163",
+   "designations": [
+    "B163"
+   ],
+   "names": [],
+   "ra": 21.702807,
+   "dec": 56.7037,
+   "type": "DrkN",
+   "constellation": "Cep"
+  },
+  {
+   "id": "B164",
+   "designations": [
+    "B164"
+   ],
+   "names": [],
+   "ra": 21.775533,
+   "dec": 51.0941,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B165",
+   "designations": [
+    "B165"
+   ],
+   "names": [],
+   "ra": 21.8156,
+   "dec": 60.2154,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B166",
+   "designations": [
+    "B166"
+   ],
+   "names": [],
+   "ra": 21.851453,
+   "dec": 60.0856,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B167",
+   "designations": [
+    "B167"
+   ],
+   "names": [],
+   "ra": 21.86618,
+   "dec": 60.0703,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B168",
+   "designations": [
+    "B168"
+   ],
+   "names": [],
+   "ra": 21.88908,
+   "dec": 47.2718,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B169",
+   "designations": [
+    "B169"
+   ],
+   "names": [],
+   "ra": 21.981367,
+   "dec": 58.7645,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B170",
+   "designations": [
+    "B170"
+   ],
+   "names": [],
+   "ra": 21.967493,
+   "dec": 58.9632,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B171",
+   "designations": [
+    "B171"
+   ],
+   "names": [],
+   "ra": 22.0219,
+   "dec": 58.8682,
+   "type": "DrkN",
+   "size": 91,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B173",
+   "designations": [
+    "B173"
+   ],
+   "names": [],
+   "ra": 22.12472,
+   "dec": 59.6774,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B174",
+   "designations": [
+    "B174"
+   ],
+   "names": [],
+   "ra": 22.12222,
+   "dec": 59.0771,
+   "type": "DrkN",
+   "size": 19,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B175",
+   "designations": [
+    "B175"
+   ],
+   "names": [],
+   "ra": 22.2336,
+   "dec": 69.9374,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B201",
+   "designations": [
+    "B201"
+   ],
+   "names": [],
+   "ra": 2.216687,
+   "dec": 57.0891,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Per"
+  },
+  {
+   "id": "B202",
+   "designations": [
+    "B202"
+   ],
+   "names": [],
+   "ra": 3.427427,
+   "dec": 30.2764,
+   "type": "DrkN",
+   "size": 22,
+   "constellation": "Ari"
+  },
+  {
+   "id": "B203",
+   "designations": [
+    "B203"
+   ],
+   "names": [],
+   "ra": 3.430633,
+   "dec": 30.776,
+   "type": "DrkN",
+   "constellation": "Ari"
+  },
+  {
+   "id": "B204",
+   "designations": [
+    "B204"
+   ],
+   "names": [],
+   "ra": 3.474787,
+   "dec": 30.1864,
+   "type": "DrkN",
+   "size": 14,
+   "constellation": "Ari"
+  },
+  {
+   "id": "B205",
+   "designations": [
+    "B205"
+   ],
+   "names": [],
+   "ra": 3.475567,
+   "dec": 31.103,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Per"
+  },
+  {
+   "id": "B206",
+   "designations": [
+    "B206"
+   ],
+   "names": [],
+   "ra": 3.485947,
+   "dec": 30.1848,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Ari"
+  },
+  {
+   "id": "B207",
+   "designations": [
+    "B207"
+   ],
+   "names": [],
+   "ra": 4.076507,
+   "dec": 26.3459,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B208",
+   "designations": [
+    "B208"
+   ],
+   "names": [],
+   "ra": 4.19248,
+   "dec": 25.1607,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B209",
+   "designations": [
+    "B209"
+   ],
+   "names": [],
+   "ra": 4.20646,
+   "dec": 28.3253,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B210",
+   "designations": [
+    "B210"
+   ],
+   "names": [],
+   "ra": 4.25924,
+   "dec": 25.0665,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B211",
+   "designations": [
+    "B211"
+   ],
+   "names": [],
+   "ra": 4.286787,
+   "dec": 27.8123,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B212",
+   "designations": [
+    "B212"
+   ],
+   "names": [],
+   "ra": 4.320727,
+   "dec": 25.3066,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B213",
+   "designations": [
+    "B213"
+   ],
+   "names": [],
+   "ra": 4.35294,
+   "dec": 27.0514,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B214",
+   "designations": [
+    "B214"
+   ],
+   "names": [],
+   "ra": 4.36548,
+   "dec": 28.5495,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B215",
+   "designations": [
+    "B215"
+   ],
+   "names": [],
+   "ra": 4.3929,
+   "dec": 25.0447,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B216",
+   "designations": [
+    "B216"
+   ],
+   "names": [],
+   "ra": 4.3999,
+   "dec": 26.627,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B217",
+   "designations": [
+    "B217"
+   ],
+   "names": [],
+   "ra": 4.4607,
+   "dec": 26.1169,
+   "type": "DrkN",
+   "constellation": "Tau"
+  },
+  {
+   "id": "B218",
+   "designations": [
+    "B218"
+   ],
+   "names": [],
+   "ra": 4.469207,
+   "dec": 26.2822,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B219",
+   "designations": [
+    "B219"
+   ],
+   "names": [],
+   "ra": 4.58098,
+   "dec": 29.597,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B220",
+   "designations": [
+    "B220"
+   ],
+   "names": [],
+   "ra": 4.691673,
+   "dec": 25.9947,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Tau"
+  },
+  {
+   "id": "B221",
+   "designations": [
+    "B221"
+   ],
+   "names": [],
+   "ra": 4.733567,
+   "dec": 31.738,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B222",
+   "designations": [
+    "B222"
+   ],
+   "names": [],
+   "ra": 5.139953,
+   "dec": 32.1673,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B223",
+   "designations": [
+    "B223"
+   ],
+   "names": [],
+   "ra": 5.357793,
+   "dec": 8.3266,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B224",
+   "designations": [
+    "B224"
+   ],
+   "names": [],
+   "ra": 5.398573,
+   "dec": 10.6195,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B225",
+   "designations": [
+    "B225"
+   ],
+   "names": [],
+   "ra": 5.482767,
+   "dec": 11.6044,
+   "type": "DrkN",
+   "constellation": "Ori"
+  },
+  {
+   "id": "B226",
+   "designations": [
+    "B226"
+   ],
+   "names": [],
+   "ra": 5.609613,
+   "dec": 33.7001,
+   "type": "DrkN",
+   "size": 17,
+   "constellation": "Aur"
+  },
+  {
+   "id": "B227",
+   "designations": [
+    "B227"
+   ],
+   "names": [],
+   "ra": 6.123293,
+   "dec": 19.6554,
+   "type": "DrkN",
+   "size": 12,
+   "constellation": "Ori"
+  },
+  {
+   "id": "B228",
+   "designations": [
+    "B228"
+   ],
+   "names": [],
+   "ra": 15.74942,
+   "dec": -34.5134,
+   "type": "DrkN",
+   "size": 240,
+   "constellation": "Lup"
+  },
+  {
+   "id": "B229",
+   "designations": [
+    "B229"
+   ],
+   "names": [],
+   "ra": 16.294693,
+   "dec": -27.311,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B230",
+   "designations": [
+    "B230"
+   ],
+   "names": [],
+   "ra": 16.452727,
+   "dec": -16.7842,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B231",
+   "designations": [
+    "B231"
+   ],
+   "names": [],
+   "ra": 16.640087,
+   "dec": -35.421,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B232",
+   "designations": [
+    "B232"
+   ],
+   "names": [],
+   "ra": 16.729013,
+   "dec": -39.823,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B233",
+   "designations": [
+    "B233"
+   ],
+   "names": [],
+   "ra": 16.745953,
+   "dec": -35.4029,
+   "type": "DrkN",
+   "size": 37,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B234",
+   "designations": [
+    "B234"
+   ],
+   "names": [],
+   "ra": 16.774047,
+   "dec": -30.481,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B235",
+   "designations": [
+    "B235"
+   ],
+   "names": [],
+   "ra": 16.785107,
+   "dec": -44.4806,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B236",
+   "designations": [
+    "B236"
+   ],
+   "names": [],
+   "ra": 16.81512,
+   "dec": -29.8072,
+   "type": "DrkN",
+   "constellation": "Sco"
+  },
+  {
+   "id": "B237",
+   "designations": [
+    "B237"
+   ],
+   "names": [],
+   "ra": 16.815293,
+   "dec": -29.9738,
+   "type": "DrkN",
+   "size": 37,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B238",
+   "designations": [
+    "B238"
+   ],
+   "names": [],
+   "ra": 16.872727,
+   "dec": -23.13,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B239",
+   "designations": [
+    "B239"
+   ],
+   "names": [],
+   "ra": 16.916713,
+   "dec": -31.1231,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B240",
+   "designations": [
+    "B240"
+   ],
+   "names": [],
+   "ra": 16.98824,
+   "dec": -35.361,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B241",
+   "designations": [
+    "B241"
+   ],
+   "names": [],
+   "ra": 16.9909,
+   "dec": -30.1934,
+   "type": "DrkN",
+   "size": 12,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B242",
+   "designations": [
+    "B242"
+   ],
+   "names": [],
+   "ra": 17.08514,
+   "dec": -32.4271,
+   "type": "DrkN",
+   "size": 19,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B243",
+   "designations": [
+    "B243"
+   ],
+   "names": [],
+   "ra": 17.162807,
+   "dec": -29.5797,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B244",
+   "designations": [
+    "B244"
+   ],
+   "names": [],
+   "ra": 17.18108,
+   "dec": -28.4097,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B245",
+   "designations": [
+    "B245"
+   ],
+   "names": [],
+   "ra": 17.1988,
+   "dec": -29.4067,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B246",
+   "designations": [
+    "B246"
+   ],
+   "names": [],
+   "ra": 17.20054,
+   "dec": -22.6558,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B247",
+   "designations": [
+    "B247"
+   ],
+   "names": [],
+   "ra": 17.218607,
+   "dec": -30.2532,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B248",
+   "designations": [
+    "B248"
+   ],
+   "names": [],
+   "ra": 17.21784,
+   "dec": -28.9866,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B249",
+   "designations": [
+    "B249"
+   ],
+   "names": [],
+   "ra": 17.218013,
+   "dec": -29.1532,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B250",
+   "designations": [
+    "B250"
+   ],
+   "names": [],
+   "ra": 17.21724,
+   "dec": -28.4033,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B251",
+   "designations": [
+    "B251"
+   ],
+   "names": [],
+   "ra": 17.230233,
+   "dec": -20.1503,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B252",
+   "designations": [
+    "B252"
+   ],
+   "names": [],
+   "ra": 17.255153,
+   "dec": -32.1469,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B253",
+   "designations": [
+    "B253"
+   ],
+   "names": [],
+   "ra": 17.258853,
+   "dec": -22.5621,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B254",
+   "designations": [
+    "B254"
+   ],
+   "names": [],
+   "ra": 17.341447,
+   "dec": -30.1313,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B255",
+   "designations": [
+    "B255"
+   ],
+   "names": [],
+   "ra": 17.34312,
+   "dec": -23.4638,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B256",
+   "designations": [
+    "B256"
+   ],
+   "names": [],
+   "ra": 17.370113,
+   "dec": -28.8261,
+   "type": "DrkN",
+   "size": 50,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B257",
+   "designations": [
+    "B257"
+   ],
+   "names": [],
+   "ra": 17.379647,
+   "dec": -35.6251,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B258",
+   "designations": [
+    "B258"
+   ],
+   "names": [],
+   "ra": 17.382747,
+   "dec": -34.7244,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B259",
+   "designations": [
+    "B259"
+   ],
+   "names": [],
+   "ra": 17.367093,
+   "dec": -19.2925,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B260",
+   "designations": [
+    "B260"
+   ],
+   "names": [],
+   "ra": 17.4136,
+   "dec": -25.618,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B261",
+   "designations": [
+    "B261"
+   ],
+   "names": [],
+   "ra": 17.417793,
+   "dec": -23.0337,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B262",
+   "designations": [
+    "B262"
+   ],
+   "names": [],
+   "ra": 17.42574,
+   "dec": -22.6156,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B263",
+   "designations": [
+    "B263"
+   ],
+   "names": [],
+   "ra": 17.449013,
+   "dec": -42.7801,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B264",
+   "designations": [
+    "B264"
+   ],
+   "names": [],
+   "ra": 17.453553,
+   "dec": -25.5275,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B265",
+   "designations": [
+    "B265"
+   ],
+   "names": [],
+   "ra": 17.46018,
+   "dec": -25.1929,
+   "type": "DrkN",
+   "size": 12,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B266",
+   "designations": [
+    "B266"
+   ],
+   "names": [],
+   "ra": 17.468673,
+   "dec": -20.941,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B267",
+   "designations": [
+    "B267"
+   ],
+   "names": [],
+   "ra": 17.4755,
+   "dec": -25.2235,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B268",
+   "designations": [
+    "B268"
+   ],
+   "names": [],
+   "ra": 17.52388,
+   "dec": -20.5144,
+   "type": "DrkN",
+   "size": 75,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B269",
+   "designations": [
+    "B269"
+   ],
+   "names": [],
+   "ra": 17.537087,
+   "dec": -22.7622,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B270",
+   "designations": [
+    "B270"
+   ],
+   "names": [],
+   "ra": 17.54528,
+   "dec": -19.5938,
+   "type": "DrkN",
+   "size": 11,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B271",
+   "designations": [
+    "B271"
+   ],
+   "names": [],
+   "ra": 17.571347,
+   "dec": -34.2571,
+   "type": "DrkN",
+   "size": 120,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B272",
+   "designations": [
+    "B272"
+   ],
+   "names": [],
+   "ra": 17.626653,
+   "dec": -23.4127,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B273",
+   "designations": [
+    "B273"
+   ],
+   "names": [],
+   "ra": 17.641473,
+   "dec": -33.3443,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B274",
+   "designations": [
+    "B274"
+   ],
+   "names": [],
+   "ra": 17.634347,
+   "dec": -22.7279,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B275",
+   "designations": [
+    "B275"
+   ],
+   "names": [],
+   "ra": 17.649767,
+   "dec": -32.3261,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B276",
+   "designations": [
+    "B276"
+   ],
+   "names": [],
+   "ra": 17.660833,
+   "dec": -19.8229,
+   "type": "DrkN",
+   "size": 45,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B277",
+   "designations": [
+    "B277"
+   ],
+   "names": [],
+   "ra": 17.67914,
+   "dec": -23.0699,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Oph"
+  },
+  {
+   "id": "B278",
+   "designations": [
+    "B278"
+   ],
+   "names": [],
+   "ra": 17.71092,
+   "dec": -32.315,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B279",
+   "designations": [
+    "B279"
+   ],
+   "names": [],
+   "ra": 17.74258,
+   "dec": -22.5583,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B280",
+   "designations": [
+    "B280"
+   ],
+   "names": [],
+   "ra": 17.7492,
+   "dec": -20.7236,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B281",
+   "designations": [
+    "B281"
+   ],
+   "names": [],
+   "ra": 17.779813,
+   "dec": -23.7183,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B282",
+   "designations": [
+    "B282"
+   ],
+   "names": [],
+   "ra": 17.81014,
+   "dec": -23.4628,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B283",
+   "designations": [
+    "B283"
+   ],
+   "names": [],
+   "ra": 17.854473,
+   "dec": -33.8724,
+   "type": "DrkN",
+   "size": 75,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B284",
+   "designations": [
+    "B284"
+   ],
+   "names": [],
+   "ra": 17.835253,
+   "dec": -14.3741,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Ser"
+  },
+  {
+   "id": "B285",
+   "designations": [
+    "B285"
+   ],
+   "names": [],
+   "ra": 17.858973,
+   "dec": -12.8697,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Ser"
+  },
+  {
+   "id": "B286",
+   "designations": [
+    "B286"
+   ],
+   "names": [],
+   "ra": 17.88436,
+   "dec": -35.6171,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B287",
+   "designations": [
+    "B287"
+   ],
+   "names": [],
+   "ra": 17.907467,
+   "dec": -35.1962,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B288",
+   "designations": [
+    "B288"
+   ],
+   "names": [],
+   "ra": 17.95178,
+   "dec": -37.0884,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sco"
+  },
+  {
+   "id": "B289",
+   "designations": [
+    "B289"
+   ],
+   "names": [],
+   "ra": 17.94356,
+   "dec": -29.0224,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B290",
+   "designations": [
+    "B290"
+   ],
+   "names": [],
+   "ra": 17.989093,
+   "dec": -37.1483,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "CrA"
+  },
+  {
+   "id": "B291",
+   "designations": [
+    "B291"
+   ],
+   "names": [],
+   "ra": 17.995393,
+   "dec": -33.8967,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B292",
+   "designations": [
+    "B292"
+   ],
+   "names": [],
+   "ra": 18.009473,
+   "dec": -33.3441,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B293",
+   "designations": [
+    "B293"
+   ],
+   "names": [],
+   "ra": 18.020187,
+   "dec": -35.3424,
+   "type": "DrkN",
+   "size": 18,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B294",
+   "designations": [
+    "B294"
+   ],
+   "names": [],
+   "ra": 18.025087,
+   "dec": -28.6075,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B295",
+   "designations": [
+    "B295"
+   ],
+   "names": [],
+   "ra": 18.068133,
+   "dec": -31.1665,
+   "type": "DrkN",
+   "size": 50,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B296",
+   "designations": [
+    "B296"
+   ],
+   "names": [],
+   "ra": 18.067913,
+   "dec": -24.5326,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B297",
+   "designations": [
+    "B297"
+   ],
+   "names": [],
+   "ra": 18.07248,
+   "dec": -18.748,
+   "type": "DrkN",
+   "size": 75,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B298",
+   "designations": [
+    "B298"
+   ],
+   "names": [],
+   "ra": 18.086407,
+   "dec": -30.0964,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B299",
+   "designations": [
+    "B299"
+   ],
+   "names": [],
+   "ra": 18.10568,
+   "dec": -27.2927,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B300",
+   "designations": [
+    "B300"
+   ],
+   "names": [],
+   "ra": 18.117033,
+   "dec": -32.6578,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B301",
+   "designations": [
+    "B301"
+   ],
+   "names": [],
+   "ra": 18.14744,
+   "dec": -18.701,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B302",
+   "designations": [
+    "B302"
+   ],
+   "names": [],
+   "ra": 18.153753,
+   "dec": -23.9669,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B303",
+   "designations": [
+    "B303"
+   ],
+   "names": [],
+   "ra": 18.157947,
+   "dec": -23.9995,
+   "type": "DrkN",
+   "size": 1,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B304",
+   "designations": [
+    "B304"
+   ],
+   "names": [],
+   "ra": 18.22246,
+   "dec": -18.7206,
+   "type": "DrkN",
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B305",
+   "designations": [
+    "B305"
+   ],
+   "names": [],
+   "ra": 18.243827,
+   "dec": -31.8013,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B306",
+   "designations": [
+    "B306"
+   ],
+   "names": [],
+   "ra": 18.2624,
+   "dec": -25.714,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B307",
+   "designations": [
+    "B307"
+   ],
+   "names": [],
+   "ra": 18.310647,
+   "dec": -17.9545,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B308",
+   "designations": [
+    "B308"
+   ],
+   "names": [],
+   "ra": 18.319013,
+   "dec": -22.2367,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B309",
+   "designations": [
+    "B309"
+   ],
+   "names": [],
+   "ra": 18.385707,
+   "dec": -24.0247,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B310",
+   "designations": [
+    "B310"
+   ],
+   "names": [],
+   "ra": 18.50366,
+   "dec": -18.5862,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B311",
+   "designations": [
+    "B311"
+   ],
+   "names": [],
+   "ra": 18.50756,
+   "dec": -17.6688,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B312",
+   "designations": [
+    "B312"
+   ],
+   "names": [],
+   "ra": 18.536273,
+   "dec": -15.5801,
+   "type": "DrkN",
+   "size": 75,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B313",
+   "designations": [
+    "B313"
+   ],
+   "names": [],
+   "ra": 18.59912,
+   "dec": -15.6854,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B314",
+   "designations": [
+    "B314"
+   ],
+   "names": [],
+   "ra": 18.617967,
+   "dec": -9.7149,
+   "type": "DrkN",
+   "size": 35,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B315",
+   "designations": [
+    "B315"
+   ],
+   "names": [],
+   "ra": 18.705133,
+   "dec": -20.0333,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Sgr"
+  },
+  {
+   "id": "B316",
+   "designations": [
+    "B316"
+   ],
+   "names": [],
+   "ra": 18.697373,
+   "dec": -2.1334,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B317",
+   "designations": [
+    "B317"
+   ],
+   "names": [],
+   "ra": 18.76278,
+   "dec": -14.2059,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B318",
+   "designations": [
+    "B318"
+   ],
+   "names": [],
+   "ra": 18.828547,
+   "dec": -6.3935,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B319",
+   "designations": [
+    "B319"
+   ],
+   "names": [],
+   "ra": 18.866133,
+   "dec": -1.2698,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B320",
+   "designations": [
+    "B320"
+   ],
+   "names": [],
+   "ra": 18.879773,
+   "dec": -5.851,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B321",
+   "designations": [
+    "B321"
+   ],
+   "names": [],
+   "ra": 18.900567,
+   "dec": -11.2977,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B322",
+   "designations": [
+    "B322"
+   ],
+   "names": [],
+   "ra": 18.929767,
+   "dec": -4.4587,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Sct"
+  },
+  {
+   "id": "B323",
+   "designations": [
+    "B323"
+   ],
+   "names": [],
+   "ra": 18.959493,
+   "dec": -3.42,
+   "type": "DrkN",
+   "size": 17,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B324",
+   "designations": [
+    "B324"
+   ],
+   "names": [],
+   "ra": 18.989713,
+   "dec": -2.998,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B325",
+   "designations": [
+    "B325"
+   ],
+   "names": [],
+   "ra": 18.998333,
+   "dec": -4.0632,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B326",
+   "designations": [
+    "B326"
+   ],
+   "names": [],
+   "ra": 19.057107,
+   "dec": -0.3859,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B327",
+   "designations": [
+    "B327"
+   ],
+   "names": [],
+   "ra": 19.07416,
+   "dec": -5.1332,
+   "type": "DrkN",
+   "size": 25,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B328",
+   "designations": [
+    "B328"
+   ],
+   "names": [],
+   "ra": 19.080407,
+   "dec": -4.2487,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B329",
+   "designations": [
+    "B329"
+   ],
+   "names": [],
+   "ra": 19.116547,
+   "dec": 3.1914,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B330",
+   "designations": [
+    "B330"
+   ],
+   "names": [],
+   "ra": 19.326007,
+   "dec": 7.5614,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B331",
+   "designations": [
+    "B331"
+   ],
+   "names": [],
+   "ra": 19.434387,
+   "dec": 7.58,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B332",
+   "designations": [
+    "B332"
+   ],
+   "names": [],
+   "ra": 19.46684,
+   "dec": 8.7523,
+   "type": "DrkN",
+   "constellation": "Aql"
+  },
+  {
+   "id": "B333",
+   "designations": [
+    "B333"
+   ],
+   "names": [],
+   "ra": 19.482033,
+   "dec": 10.6716,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B334",
+   "designations": [
+    "B334"
+   ],
+   "names": [],
+   "ra": 19.585013,
+   "dec": 12.3224,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B335",
+   "designations": [
+    "B335"
+   ],
+   "names": [],
+   "ra": 19.61504,
+   "dec": 7.6105,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B336",
+   "designations": [
+    "B336"
+   ],
+   "names": [],
+   "ra": 19.611413,
+   "dec": 12.3435,
+   "type": "DrkN",
+   "size": 2,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B337",
+   "designations": [
+    "B337"
+   ],
+   "names": [],
+   "ra": 19.61694,
+   "dec": 12.3944,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B338",
+   "designations": [
+    "B338"
+   ],
+   "names": [],
+   "ra": 19.717447,
+   "dec": 7.4608,
+   "type": "DrkN",
+   "size": 8,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B339",
+   "designations": [
+    "B339"
+   ],
+   "names": [],
+   "ra": 19.73406,
+   "dec": 8.2969,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B340",
+   "designations": [
+    "B340"
+   ],
+   "names": [],
+   "ra": 19.812353,
+   "dec": 11.41,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Aql"
+  },
+  {
+   "id": "B341",
+   "designations": [
+    "B341"
+   ],
+   "names": [],
+   "ra": 19.8337,
+   "dec": 34.2817,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B342",
+   "designations": [
+    "B342"
+   ],
+   "names": [],
+   "ra": 20.15856,
+   "dec": 41.2004,
+   "type": "DrkN",
+   "size": 4,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B343",
+   "designations": [
+    "B343"
+   ],
+   "names": [],
+   "ra": 20.223907,
+   "dec": 40.277,
+   "type": "DrkN",
+   "size": 13,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B344",
+   "designations": [
+    "B344"
+   ],
+   "names": [],
+   "ra": 20.270073,
+   "dec": 40.2174,
+   "type": "DrkN",
+   "size": 7,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B345",
+   "designations": [
+    "B345"
+   ],
+   "names": [],
+   "ra": 20.350087,
+   "dec": 46.5633,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B346",
+   "designations": [
+    "B346"
+   ],
+   "names": [],
+   "ra": 20.44614,
+   "dec": 43.7439,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B347",
+   "designations": [
+    "B347"
+   ],
+   "names": [],
+   "ra": 20.474393,
+   "dec": 39.9144,
+   "type": "DrkN",
+   "size": 1,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B348",
+   "designations": [
+    "B348"
+   ],
+   "names": [],
+   "ra": 20.573973,
+   "dec": 42.0956,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B349",
+   "designations": [
+    "B349"
+   ],
+   "names": [],
+   "ra": 20.79006,
+   "dec": 43.9593,
+   "type": "DrkN",
+   "size": 6,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B350",
+   "designations": [
+    "B350"
+   ],
+   "names": [],
+   "ra": 20.818547,
+   "dec": 45.88,
+   "type": "DrkN",
+   "size": 3,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B351",
+   "designations": [
+    "B351"
+   ],
+   "names": [],
+   "ra": 20.874333,
+   "dec": 47.4043,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B352",
+   "designations": [
+    "B352"
+   ],
+   "names": [],
+   "ra": 20.953,
+   "dec": 45.8979,
+   "type": "DrkN",
+   "size": 22,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B353",
+   "designations": [
+    "B353"
+   ],
+   "names": [],
+   "ra": 20.956293,
+   "dec": 45.4816,
+   "type": "DrkN",
+   "size": 9,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B354",
+   "designations": [
+    "B354"
+   ],
+   "names": [],
+   "ra": 20.97032,
+   "dec": 58.1514,
+   "type": "DrkN",
+   "size": 60,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B355",
+   "designations": [
+    "B355"
+   ],
+   "names": [],
+   "ra": 20.993907,
+   "dec": 43.1864,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B356",
+   "designations": [
+    "B356"
+   ],
+   "names": [],
+   "ra": 20.99968,
+   "dec": 46.6874,
+   "type": "DrkN",
+   "size": 24,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B357",
+   "designations": [
+    "B357"
+   ],
+   "names": [],
+   "ra": 20.997807,
+   "dec": 55.5713,
+   "type": "DrkN",
+   "size": 30,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B358",
+   "designations": [
+    "B358"
+   ],
+   "names": [],
+   "ra": 21.094613,
+   "dec": 43.2826,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B359",
+   "designations": [
+    "B359"
+   ],
+   "names": [],
+   "ra": 21.113053,
+   "dec": 57.1695,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B360",
+   "designations": [
+    "B360"
+   ],
+   "names": [],
+   "ra": 21.13118,
+   "dec": 56.505,
+   "type": "DrkN",
+   "size": 54,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B361",
+   "designations": [
+    "B361"
+   ],
+   "names": [],
+   "ra": 21.212733,
+   "dec": 47.4309,
+   "type": "DrkN",
+   "size": 20,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B362",
+   "designations": [
+    "B362"
+   ],
+   "names": [],
+   "ra": 21.399387,
+   "dec": 50.2033,
+   "type": "DrkN",
+   "size": 15,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B363",
+   "designations": [
+    "B363"
+   ],
+   "names": [],
+   "ra": 21.414967,
+   "dec": 48.9383,
+   "type": "DrkN",
+   "size": 40,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B364",
+   "designations": [
+    "B364"
+   ],
+   "names": [],
+   "ra": 21.56792,
+   "dec": 54.5558,
+   "type": "DrkN",
+   "size": 75,
+   "constellation": "Cyg"
+  },
+  {
+   "id": "B365",
+   "designations": [
+    "B365"
+   ],
+   "names": [],
+   "ra": 21.581533,
+   "dec": 56.7242,
+   "type": "DrkN",
+   "size": 22,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B366",
+   "designations": [
+    "B366"
+   ],
+   "names": [],
+   "ra": 21.67264,
+   "dec": 59.5674,
+   "type": "DrkN",
+   "size": 10,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B367",
+   "designations": [
+    "B367"
+   ],
+   "names": [],
+   "ra": 21.74016,
+   "dec": 57.1742,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B368",
+   "designations": [
+    "B368"
+   ],
+   "names": [],
+   "ra": 21.848787,
+   "dec": 58.9852,
+   "type": "DrkN",
+   "size": 14,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B369",
+   "designations": [
+    "B369"
+   ],
+   "names": [],
+   "ra": 22.26516,
+   "dec": 56.0223,
+   "type": "DrkN",
+   "size": 5,
+   "constellation": "Cep"
+  },
+  {
+   "id": "B370",
+   "designations": [
+    "B370"
+   ],
+   "names": [],
+   "ra": 22.580767,
+   "dec": 56.6457,
+   "type": "DrkN",
+   "constellation": "Lac"
+  }
+ ]
+}

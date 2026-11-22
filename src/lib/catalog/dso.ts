@@ -8,9 +8,11 @@ import type { CatalogFile, CatalogFileEntry, CatalogObject } from './types'
 import messier from './data/messier.json'
 import ngc from './data/ngc.json'
 import ic from './data/ic.json'
+import abell from './data/abell.json'
 import sharpless from './data/sharpless.json'
 import ldn from './data/ldn.json'
 import lbn from './data/lbn.json'
+import barnard from './data/barnard.json'
 
 /**
  * Data files bundled into the app. To add a catalog, generate its JSON (see
@@ -22,6 +24,11 @@ import lbn from './data/lbn.json'
  * spot-checked against published values, NGC and IC come from the same
  * OpenNGC pass, and the three VizieR catalogs of extended nebulosity come
  * last, their positions being cloud centroids rather than anything pointlike.
+ * The exception is Abell's planetary nebulae, which sit *before* Sharpless:
+ * seven of them are also Sharpless regions (Abell 21 = Sh2-274), and these
+ * are point-like nebulae with accurate positions, so they should win over the
+ * Sharpless centroid and be typed `PN` rather than `HII`. A few more name an
+ * NGC (Abell 50 = NGC 6742) and merge into that object instead.
  * ~99 of LBN's 1125 numbers are already carried as a designation on an
  * NGC/IC object (lifted from OpenNGC's Identifiers column), so most of
  * `lbn.json`'s merges land there; the rest become new standalone objects.
@@ -30,9 +37,11 @@ const FILES: CatalogFile[] = [
   messier as CatalogFile,
   ngc as CatalogFile,
   ic as CatalogFile,
+  abell as CatalogFile,
   sharpless as CatalogFile,
   ldn as CatalogFile,
   lbn as CatalogFile,
+  barnard as CatalogFile,
 ]
 
 /**
