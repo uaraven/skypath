@@ -10,7 +10,9 @@
  *   Messier, NGC and IC. Add an OpenNGC-derived catalog by appending to
  *   `OPENNGC_BUILDS`.
  * - **VizieR** (CDS) gives the catalogs OpenNGC does not carry — Sharpless 2,
- *   LDN and LBN. Add one by appending to `VIZIER_BUILDS`.
+ *   LDN, LBN, Barnard and Abell's planetary nebulae. Add one by appending to
+ *   `VIZIER_BUILDS`. Set `VIZIER_HOST` to use a mirror when the Strasbourg
+ *   server is down (e.g. `VIZIER_HOST=vizier.cfa.harvard.edu`).
  *
  * Either way the catalog must also be registered in
  * src/lib/catalog/catalogs.ts, the file imported in dso.ts, and the emitted
@@ -26,6 +28,8 @@ import { Constellation } from 'astronomy-engine'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const OUT_DIR = join(ROOT, 'src/lib/catalog/data')
+
+const VIZIER_HOST = process.env.VIZIER_HOST ?? 'vizier.cds.unistra.fr'
 
 const BASE_URL =
   'https://raw.githubusercontent.com/mattiaverga/OpenNGC/master/database_files'
@@ -64,6 +68,8 @@ const CATALOG_ORDER = [
   'IC',
   'Mel',
   'Cr',
+  'Abell',
+  'B',
   'Sh2',
   'LDN',
   'UGC',
@@ -221,6 +227,53 @@ const VIZIER_BUILDS = [
     type: 'Neb',
     expect: 1125,
   },
+  {
+    catalog: 'B',
+    file: 'barnard.json',
+    title: "Barnard's Catalogue of Dark Markings",
+    source:
+      'Barnard (1927) A Photographic Atlas of Selected Regions of the Milky ' +
+      'Way — catalogue VII/220A via VizieR (CDS, https://vizier.cds.unistra.fr/).',
+    // The bare `VII/220A` also serves a second, free-text table whose rows
+    // would be read as data; naming the catalogue table keeps it out.
+    table: 'VII/220A/barnard',
+    key: 'Barn',
+    columns: ['Barn', '_RAJ2000', '_DEJ2000', 'Diam'],
+    // `Diam` is the marking's diameter in arcminutes; 58 rows have none.
+    sizeColumn: 'Diam',
+    type: 'DrkN',
+    // Numbers can carry a letter ("44a"), which `number` below preserves.
+    expect: 349,
+  },
+  {
+    catalog: 'Abell',
+    file: 'abell.json',
+    title: "Abell's planetary nebulae",
+    source:
+      'Abell (1966) planetary nebulae, as numbered in the Strasbourg-ESO ' +
+      'Catalogue of Galactic Planetary Nebulae (Acker et al. 1992) — ' +
+      'catalogue V/84 via VizieR (CDS, https://vizier.cds.unistra.fr/).',
+    table: 'V/84',
+    // V/84 lists ~15 000 planetary nebulae and candidates; only Abell's are
+    // wanted, picked out by their `Name` ("A 21"). 72 of Abell's 86 are in it.
+    key: 'Name',
+    columns: ['Name', 'Idents', '_RAJ2000', '_DEJ2000'],
+    type: 'PN',
+    number: (row) => /^A\s+(\d+)$/.exec(row.Name)?.[1] ?? null,
+    // `Idents` lists the object's other names. A few are catalogues we carry,
+    // so lifting them lets Abell 21 merge with Sh2-274 and Abell 50 with
+    // NGC 6742 instead of appearing twice. VizieR's own comma-separation
+    // splits some of these ("NGC,6742"), hence the loose separators.
+    crossReferences: (row) => [
+      ...[...row.Idents.matchAll(/\bSh\s*2-\s*(\d+)/g)].map(
+        (m) => `Sh2-${m[1]}`,
+      ),
+      ...[...row.Idents.matchAll(/\b(NGC|IC)[\s,]+(\d+)/g)].map(
+        (m) => `${m[1]}${m[2]}`,
+      ),
+    ],
+    expect: 72,
+  },
 ]
 
 async function fetchCsv(name) {
@@ -233,7 +286,7 @@ async function fetchCsv(name) {
 
 async function fetchVizier(build) {
   const url =
-    `https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=${build.table}` +
+    `https://${VIZIER_HOST}/viz-bin/asu-tsv?-source=${build.table}` +
     `&-out.max=unlimited&-out=${build.columns.join(',')}`
   const response = await fetch(url)
   if (!response.ok) {
@@ -422,13 +475,25 @@ function duplicateAliases(rows) {
   return aliases
 }
 
+/**
+ * A catalogue number as text: plain numbers are normalised ("0044" → "44"),
+ * anything with a letter ("44a" in Barnard) is kept as written.
+ */
+function numberText(raw) {
+  const value = Number(raw)
+  return Number.isNaN(value) ? raw.trim() : String(value)
+}
+
 function buildVizierObject(row, build) {
   const ra = round(Number(row._RAJ2000) / 15, 6)
   const dec = round(Number(row._DEJ2000), 6)
-  const number = String(Number(row[build.key]))
+  const number = build.number ? build.number(row) : numberText(row[build.key])
   const designation = build.designation
     ? build.designation(number)
     : `${build.catalog}${number}`
+  const designations = [designation, ...(build.crossReferences?.(row) ?? [])]
+    .filter((value, i, all) => all.indexOf(value) === i)
+    .sort(byCatalogThenNumber)
 
   const size =
     build.sizeColumn && row[build.sizeColumn]
@@ -437,7 +502,7 @@ function buildVizierObject(row, build) {
 
   return {
     id: designation,
-    designations: [designation],
+    designations,
     names: [],
     ra,
     dec,
@@ -499,8 +564,15 @@ async function buildFromVizier() {
     const rows = await fetchVizier(build)
     const objects = rows
       // Unnumbered rows have no designation to file them under; rows without a
-      // position cannot be plotted. Both exist in VII/7A.
-      .filter((row) => row[build.key] && row._RAJ2000 && row._DEJ2000)
+      // position cannot be plotted. Both exist in VII/7A. A build's own
+      // `number` may also reject a row (V/84's non-Abell nebulae).
+      .filter(
+        (row) =>
+          row[build.key] &&
+          row._RAJ2000 &&
+          row._DEJ2000 &&
+          (!build.number || build.number(row) !== null),
+      )
       .map((row) => buildVizierObject(row, build))
 
     objects.sort((a, b) => numberOf(a.id) - numberOf(b.id))

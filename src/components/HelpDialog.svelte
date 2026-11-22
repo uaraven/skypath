@@ -55,8 +55,8 @@
     </p>
     <p>
       SkyPath brings the NINA horizon and a quick search across the most popular
-      deep-sky catalogs — Messier, NGC, IC, Sharpless, LDN, and LBN — together
-      in one place.
+      deep-sky catalogs — Messier, NGC, IC, Sharpless, LDN, LBN, Barnard, and
+      Abell's planetary nebulae — together in one place.
     </p>
 
     <h4>Using SkyPath</h4>
@@ -197,6 +197,27 @@
       </li>
       <li>
         Lynds (1965) ApJS 12, 163 — catalogue VII/9, via
+        <a
+          href="https://vizier.cds.unistra.fr/"
+          target="_blank"
+          rel="noopener noreferrer">VizieR</a
+        > (CDS).
+      </li>
+      <li>
+        Barnard (1927) <em
+          >A Photographic Atlas of Selected Regions of the Milky Way</em
+        >
+        — catalogue VII/220A, via
+        <a
+          href="https://vizier.cds.unistra.fr/"
+          target="_blank"
+          rel="noopener noreferrer">VizieR</a
+        > (CDS).
+      </li>
+      <li>
+        Abell (1966) planetary nebulae, as listed in the Strasbourg-ESO
+        Catalogue of Galactic Planetary Nebulae (Acker et al. 1992) — catalogue
+        V/84, via
         <a
           href="https://vizier.cds.unistra.fr/"
           target="_blank"

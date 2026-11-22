@@ -30,6 +30,22 @@ describe('parseDesignation', () => {
     expect(parseDesignation('NGC4a')).toEqual({ catalog: 'NGC', number: '4a' })
   })
 
+  it('reads Barnard and Abell, with their letter suffixes and aliases', () => {
+    expect(parseDesignation('B33')).toEqual({ catalog: 'B', number: '33' })
+    expect(parseDesignation('barnard 44a')).toEqual({
+      catalog: 'B',
+      number: '44a',
+    })
+    expect(parseDesignation('Abell 21')).toEqual({
+      catalog: 'Abell',
+      number: '21',
+    })
+    expect(parseDesignation('A21')).toEqual({ catalog: 'Abell', number: '21' })
+    expect(formatDesignation({ catalog: 'Abell', number: '21' })).toBe(
+      'Abell 21',
+    )
+  })
+
   it('reads Caldwell without mistaking it for Collinder', () => {
     for (const text of ['C14', 'c 14', 'caldwell14']) {
       expect(parseDesignation(text)).toEqual({ catalog: 'C', number: '14' })

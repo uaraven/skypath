@@ -153,8 +153,38 @@ describe('bundled deep-sky catalog', () => {
     expect(deepSkyObjects.filter((o) => o.id === 'LBN974')).toHaveLength(0)
   })
 
+  it('carries Barnard dark markings, letter suffixes included', () => {
+    const horsehead = find('B33')
+    expect(horsehead.type).toBe('DrkN')
+    expect(horsehead.constellation).toBe('Ori')
+    // The Horsehead sits at 05h40m, -02°28' — a sanity check on the J2000
+    // conversion VizieR does from Barnard's 1875 positions.
+    expect(horsehead.ra).toBeCloseTo(5.68, 1)
+    expect(horsehead.dec).toBeCloseTo(-2.47, 1)
+
+    // "44a" is a distinct marking from B 44, not NaN or a duplicate of it.
+    expect(find('B44a').designations[0]).toEqual({
+      catalog: 'B',
+      number: '44a',
+    })
+    expect(find('B44').designations).toHaveLength(1)
+  })
+
+  it('carries Abell planetary nebulae, merged with the catalogs they share', () => {
+    // Abell 21 (the Medusa) is also Sh2-274: one object, typed as the
+    // planetary nebula it is rather than the HII region Sharpless lists.
+    const medusa = find('Abell21')
+    expect(medusa.type).toBe('PN')
+    expect(designations('Abell21')).toEqual(['Abell21', 'Sh2274'])
+    expect(deepSkyObjects.filter((o) => o.id === 'Sh2-274')).toHaveLength(0)
+
+    // Abell 50 is NGC 6742 and folds into that object rather than adding one.
+    expect(designations('NGC6742')).toContain('Abell50')
+    expect(deepSkyObjects.filter((o) => o.id === 'Abell50')).toHaveLength(0)
+  })
+
   it('attributes every bundled source', () => {
-    expect(catalogSources).toHaveLength(4)
+    expect(catalogSources).toHaveLength(6)
     expect(catalogSources.some((s) => s.includes('OpenNGC'))).toBe(true)
     expect(catalogSources.some((s) => s.includes('Sharpless'))).toBe(true)
     expect(catalogSources.filter((s) => s.includes('Lynds'))).toHaveLength(2)
@@ -173,11 +203,15 @@ describe('bundled deep-sky catalog', () => {
     expect(primary('M')).toBe(109)
     expect(primary('NGC')).toBeGreaterThan(7000)
     expect(primary('IC')).toBeGreaterThan(4000)
-    expect(primary('Sh2')).toBe(313)
+    // 313 less the seven Sharpless regions that are also Abell nebulae.
+    expect(primary('Sh2')).toBe(306)
     expect(primary('LDN')).toBe(1787)
     // Short of the full 1125: ~99 numbers already merge into an NGC/IC object.
     expect(primary('LBN')).toBeGreaterThan(1000)
     expect(primary('LBN')).toBeLessThan(1125)
+    expect(primary('B')).toBe(349)
+    // 72 numbers, one of which (Abell 50 = NGC 6742) is filed under NGC.
+    expect(primary('Abell')).toBe(71)
   })
 })
 

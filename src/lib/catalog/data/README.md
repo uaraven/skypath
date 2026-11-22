@@ -16,6 +16,8 @@ npm run catalog:build
 | `sharpless.json` |     313 | VizieR VII/20 — Sharpless (1959) ApJS 4, 257 |
 | `ldn.json`       |   1 787 | VizieR VII/7A — Lynds (1962) ApJS 7, 1       |
 | `lbn.json`       |   1 125 | VizieR VII/9 — Lynds (1965) ApJS 12, 163     |
+| `barnard.json`   |     349 | VizieR VII/220A — Barnard (1927) Atlas       |
+| `abell.json`     |      72 | VizieR V/84 — Strasbourg-ESO PN catalogue    |
 
 [OpenNGC](https://github.com/mattiaverga/OpenNGC) by Mattia Verga is licensed
 **CC-BY-SA-4.0**. Attribution has to appear in the app (the credits line built
@@ -44,6 +46,24 @@ requirement to cite the original publication, which the `source` string does.
   those objects already claim the designation by the time `lbn.json` is
   merged in, so its rows for them fold in instead of duplicating, and the
   other ~1 026 become standalone objects.
+
+- **Abell means the planetary nebulae**, not the galaxy clusters. They share
+  numbers (A 21 is both), so only one can own the `Abell` prefix; the nebulae
+  are the amateur imaging targets. V/84 lists ~15 000 planetary nebulae, so
+  the generator keeps the rows named `A nn` — 72 of Abell's 86; the other 14
+  are not in V/84 under that name. Its `Idents` column carries cross-IDs that
+  the generator lifts (`Sh 2-274`, `NGC 6742`): Abell 21 merges with Sh2-274
+  and Abell 50 into NGC 6742. `abell.json` is loaded **before** Sharpless so
+  the planetary nebula's position and `PN` type win over the HII centroid.
+  Neither Abell nor Barnard rows carry a magnitude or common name; Abell has no
+  size either.
+- **Barnard** numbers can carry a letter (`B 44a`); the generator keeps them
+  as written. 58 of the 349 have no catalogued diameter. There is no
+  Barnard↔LDN cross-match (B 33, the Horsehead, is one object and LDN 1630
+  another), same gap as below.
+- The generator's `VIZIER_HOST` environment variable swaps the server
+  (`VIZIER_HOST=vizier.cfa.harvard.edu npm run catalog:build`); the Strasbourg
+  host was returning 404 on 2026-11-14.
 
 ## Known gap: no cross-match between Sharpless/LDN and NGC/IC
 

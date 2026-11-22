@@ -32,6 +32,21 @@ export const CATALOGS: CatalogDefinition[] = [
   { id: 'IC', name: 'Index Catalogue', separator: ' ' },
   { id: 'Mel', name: 'Melotte', separator: ' ', aliases: ['melotte'] },
   { id: 'Cr', name: 'Collinder', separator: ' ', aliases: ['collinder'] },
+  // Abell's planetary nebulae, not his galaxy clusters — the two share numbers
+  // (A 21 is both), and only the nebulae are bundled. `a` is the form
+  // imagers write ("A 21").
+  {
+    id: 'Abell',
+    name: 'Abell planetary nebulae',
+    separator: ' ',
+    aliases: ['a'],
+  },
+  {
+    id: 'B',
+    name: 'Barnard dark markings',
+    separator: ' ',
+    aliases: ['barnard'],
+  },
   {
     id: 'Sh2',
     name: 'Sharpless 2',
